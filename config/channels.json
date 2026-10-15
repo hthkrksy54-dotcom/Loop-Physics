@@ -6,6 +6,7 @@
     "quote_rate": "-12%",
     "pitch": "-2Hz",
     "youtube": {
+      "upload_enabled": false,
       "refresh_token_secret": "YT_REFRESH_TOKEN_DE",
       "privacy": "public",
       "category_id": "27",
@@ -30,6 +31,7 @@
     "quote_rate": "-11%",
     "pitch": "-2Hz",
     "youtube": {
+      "upload_enabled": false,
       "refresh_token_secret": "YT_REFRESH_TOKEN_EN",
       "privacy": "public",
       "category_id": "27",

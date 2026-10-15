@@ -87,10 +87,12 @@ def produce(lang: str, topic_id: str | None, upload: bool, with_short: bool, kee
         "duration_min": round(long["duration"] / 60, 1),
     }
     if upload:
-        if youtube.configured(cfg["youtube"]["refresh_token_secret"]):
+        connected = youtube.configured(cfg["youtube"]["refresh_token_secret"])
+        if connected and cfg["youtube"].get("upload_enabled"):
             record.update(publish.to_youtube(script, cfg, long, short))
         else:
-            print("  YouTube not connected yet – publishing as GitHub release instead", flush=True)
+            reason = "upload paused until the API audit is approved" if connected else "YouTube not connected yet"
+            print(f"  {reason} – publishing as GitHub release instead", flush=True)
             record.update(publish.to_github_release(script, cfg, long, short))
         if keep_record:
             state = _load(STATE, {})

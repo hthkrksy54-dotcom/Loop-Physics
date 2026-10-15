@@ -79,9 +79,10 @@ Die Prüfung (Audit) ist kostenlos, dauert aber einige Tage bis Wochen:
 - Angaben: *Internes Tool, lädt ausschließlich eigene Inhalte auf die eigenen zwei Kanäle hoch;
   keine Nutzer außer dem Kanalinhaber.* Projekt-ID aus der Cloud Console angeben.
 
-**Empfehlung:** Trage die `YT_REFRESH_TOKEN_*`-Secrets erst ein, **wenn das Audit genehmigt ist**.
-Bis dahin landen die Videos als GitHub-Release, und du lädst sie per App hoch.
-Gesperrte private Videos lassen sich später meist nicht mehr öffentlich schalten.
+Die `YT_REFRESH_TOKEN_*`-Secrets kannst du **sofort** eintragen: Der Upload ist in `config/channels.json`
+(`"upload_enabled": false`) pausiert, bis das Audit genehmigt ist. So lässt sich die Verbindung vorher mit dem
+Workflow **Verbindungstest** prüfen, ohne dass Videos als „privat gesperrt“ hochgeladen werden. Nach der
+Genehmigung `upload_enabled` auf `true` setzen (oder Claude Bescheid geben).
 
 ## 6. Testlauf
 

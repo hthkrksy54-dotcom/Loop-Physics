@@ -60,7 +60,8 @@ def _youtube(cfg: dict) -> bool:
                 continue
             title = items[0]["snippet"]["title"]
             note = "" if title == c["channel_name"] else f" – Achtung: config erwartet „{c['channel_name']}“"
-            print(f"[OK]   YouTube {lang}: verbunden mit Kanal „{title}“{note}")
+            paused = "" if c["youtube"].get("upload_enabled") else " – Upload pausiert bis zur API-Freigabe (Videos gehen bis dahin als Release raus)"
+            print(f"[OK]   YouTube {lang}: verbunden mit Kanal „{title}“{note}{paused}")
         except Exception as err:
             print(f"[FEHLER] YouTube {lang}: {str(err)[:200]}")
             ok = False
