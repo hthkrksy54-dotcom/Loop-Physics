@@ -46,26 +46,35 @@ def _github_models(messages: list[dict], max_tokens: int) -> str:
     token = os.environ.get("GITHUB_MODELS_TOKEN") or os.environ.get("GITHUB_TOKEN")
     if not token:
         raise NotConfigured("no GitHub token")
-    model = os.environ.get("GITHUB_MODELS_MODEL", "openai/gpt-4.1")
-    resp = requests.post(
-        "https://models.github.ai/inference/chat/completions",
-        headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
-        json={
-            "model": model,
-            "messages": messages,
-            "temperature": 0.7,
-            "max_tokens": max_tokens,
-            "response_format": {"type": "json_object"},
-        },
-        timeout=180,
-    )
+    model = os.environ.get("GITHUB_MODELS_MODEL") or "openai/gpt-4.1"
+    url = "https://models.github.ai/inference/chat/completions"
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+        "Content-Type": "application/json",
+    }
+    body = {
+        "model": model,
+        "messages": messages,
+        "temperature": 0.7,
+        "max_tokens": max_tokens,
+        "response_format": {"type": "json_object"},
+    }
+    # Follow redirects manually so the request stays a POST with its body.
+    for _ in range(4):
+        resp = requests.post(url, headers=headers, json=body, timeout=180, allow_redirects=False)
+        if resp.status_code in (301, 302, 303, 307, 308) and resp.headers.get("Location"):
+            url = requests.compat.urljoin(url, resp.headers["Location"])
+            continue
+        break
     if resp.status_code != 200:
         raise LLMError(f"GitHub Models {resp.status_code}: {resp.text[:300]}")
     try:
         content = resp.json()["choices"][0]["message"]["content"]
     except (ValueError, KeyError, IndexError, TypeError) as err:
         raise LLMError(
-            f"GitHub Models unexpected response ({err}; type={resp.headers.get('content-type')}): {resp.text[:300]!r}"
+            f"GitHub Models unexpected response ({err}; url={resp.url}; type={resp.headers.get('content-type')}): {resp.text[:300]!r}"
         )
     if not content:
         raise LLMError(f"GitHub Models returned empty content: {resp.text[:300]!r}")
