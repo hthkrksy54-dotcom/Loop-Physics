@@ -61,13 +61,13 @@ Repo auf GitHub → **Settings** → **Secrets and variables** → **Actions** �
 | `YT_CLIENT_SECRET` | Clientschlüssel aus Schritt 2 |
 | `YT_REFRESH_TOKEN_DE` | Refresh-Token von „Leise Gedanken“ |
 | `YT_REFRESH_TOKEN_EN` | Refresh-Token von „Quiet Thoughts“ |
-| `GEMINI_API_KEY` | **kostenloser** Schlüssel von <https://aistudio.google.com/apikey> (gleiches Google-Konto, keine Kreditkarte). Damit schreibt die Pipeline neue Skripte. |
+| `GEMINI_API_KEY` *(Reserve)* | **kostenloser** Schlüssel von <https://aistudio.google.com/apikey> (gleiches Google-Konto, keine Kreditkarte). Damit schreibt die Pipeline neue Skripte. |
 | `GROQ_API_KEY` *(optional)* | kostenloser Schlüssel von <https://console.groq.com/keys>, Reserve, falls Gemini mal ausfällt |
 
 Für einen einzelnen Kanal einfach nur dessen Token eintragen. Der andere Kanal bleibt dann beim GitHub-Release.
 
-> **Am wichtigsten ist `GEMINI_API_KEY`, und den kannst du sofort eintragen.** Ohne ihn produziert die
-> Pipeline nur die fertig geschriebenen Skripte und bleibt danach stehen.
+> Neue Skripte schreibt Claude jeden Sonntag per geplanter Aufgabe direkt ins Repo. `GEMINI_API_KEY` ist
+> nur die Reserve, falls dort einmal nichts nachkommt.
 
 ## 5. Freigabe für öffentliche Uploads beantragen (wichtig)
 
@@ -92,7 +92,8 @@ Zum Ausprobieren `upload` abhaken. Die Videos liegen dann unter *Artifacts* des 
 
 ## Wie die Skripte entstehen
 
-1. Zuerst die fertig geschriebenen Skripte in `content/scripts/<sprache>/`.
+1. Zuerst die fertig geschriebenen Skripte in `content/scripts/<sprache>/`. Claude schreibt jeden Sonntag
+   die Skripte für die kommende Woche nach (geplante Aufgabe „Wöchentliche Skripte ytauto“).
 2. Danach schreibt ein kostenloses Sprachmodell neue Skripte zu den Themen in `content/topics.json`:
    **Gemini** (Free Tier), als Reserve **Groq**. Jedes Skript geht durch eine zweite Faktenprüfung und wird im
    Repo gespeichert, sodass du es nachlesen kannst.
