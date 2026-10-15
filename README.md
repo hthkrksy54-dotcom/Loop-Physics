@@ -1,3 +1,24 @@
+<p><img src="docs/developed-with-youtube-sentence-case-dark.png" alt="Developed with YouTube" width="210"></p>
+
+# ytauto – Quiet Thoughts
+
+**ytauto** is a private, internal tool that produces calm educational video essays about philosophy and
+psychology and uploads them to the owner's own YouTube channel
+**[Quiet Thoughts](https://www.youtube.com/@quietthoughts-20)** using the YouTube Data API v3
+(`videos.insert`, `thumbnails.set`, `captions.insert`). It has a single user (the channel owner), no public
+sign-in and no viewer data.
+
+**[Privacy Policy](PRIVACY.md)** · **[Terms of Service](TERMS.md)** ·
+[YouTube Terms of Service](https://www.youtube.com/t/terms) ·
+[Google Privacy Policy](https://policies.google.com/privacy) ·
+[Revoke access](https://security.google.com/settings/security/permissions)
+
+**How it works:** a scheduled GitHub Actions workflow (`.github/workflows/produce.yml`) renders a video,
+authenticates with the owner's OAuth refresh token (stored as an encrypted GitHub secret) and uploads the
+video, thumbnail and captions to the owner's channel. See [docs/architecture.png](docs/architecture.png).
+
+---
+
 # ytauto – autonome YouTube-Videos über Philosophie & Psychologie
 
 Ruhige Video-Essays auf **Deutsch** und **Englisch**, vollautomatisch und **ohne laufende Kosten**.

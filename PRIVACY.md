@@ -1,19 +1,51 @@
-# Privacy Policy – ytauto
+<p><img src="docs/developed-with-youtube-sentence-case-dark.png" alt="Developed with YouTube" width="210"></p>
 
-ytauto is a private, internal automation tool operated by the owner of the YouTube channels
-"Leise Gedanken" and "Quiet Thoughts". It is not offered to any other users.
+# Privacy Policy – ytauto (Quiet Thoughts)
 
-**What it does:** It produces educational videos and uploads them, together with thumbnails and
-captions, to the owner's own YouTube channels via the YouTube Data API.
+_Last updated: 15 October 2026_
 
-**Data accessed:** Only the OAuth credentials of the channel owner, used solely to upload videos,
-set thumbnails and add captions to the owner's own channels. No data about viewers or other YouTube
-users is requested, read, stored or shared.
+ytauto is a private, internal automation tool operated by the owner of the YouTube channel
+[Quiet Thoughts](https://www.youtube.com/@quietthoughts-20). It is not offered to the public and has exactly
+one user: the channel owner.
 
-**Storage:** OAuth refresh tokens are stored encrypted as GitHub Actions secrets of this repository.
-No other personal data is stored.
+## Use of YouTube API Services
 
-**Revoking access:** The owner can revoke access at any time at
-<https://myaccount.google.com/permissions>.
+ytauto uses the **YouTube API Services** to upload videos, set thumbnails and add captions to the owner's own
+YouTube channel. By using ytauto you agree to be bound by the
+[YouTube Terms of Service](https://www.youtube.com/t/terms).
 
-**Contact:** via the issue tracker of this repository.
+Google's privacy practices apply to all data processed through YouTube API Services:
+**[Google Privacy Policy](https://policies.google.com/privacy)**.
+
+## What data is accessed
+
+- The OAuth 2.0 authorization granted by the channel owner (scope `https://www.googleapis.com/auth/youtube.force-ssl`).
+- The owner's own channel ID and title (to confirm the correct channel is connected).
+
+ytauto does **not** access, collect or store any data about viewers, subscribers, commenters or any other YouTube
+users. It does not read analytics, comments or private videos.
+
+## How data is used, stored and shared
+
+- The OAuth refresh token is stored encrypted as a GitHub Actions secret and is used only to upload the owner's
+  own videos, thumbnails and captions to the owner's own channel.
+- Video metadata (title, description, tags) is created by ytauto itself and stored in this repository.
+- No data is sold, shared with third parties, or used for advertising.
+- ytauto does not use cookies or tracking technologies.
+
+## Retention and deletion
+
+- The refresh token is kept only while the tool is in use. Deleting the GitHub secret removes it immediately.
+- No other personal data is stored. Data obtained from YouTube API Services (channel ID and title) is not
+  persisted beyond a single run.
+- To request deletion of any data or ask questions, open an issue at
+  <https://github.com/hthkrksy54-dotcom/Yt/issues>.
+
+## Revoking access
+
+Access can be revoked at any time on the Google security settings page:
+<https://security.google.com/settings/security/permissions>.
+
+## Contact
+
+<https://github.com/hthkrksy54-dotcom/Yt/issues>
