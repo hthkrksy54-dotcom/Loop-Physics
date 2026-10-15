@@ -253,3 +253,99 @@ def branding() -> None:
     if not r.ok:
         raise SystemExit(f"channel update failed ({r.status_code}): {r.text[:300]}")
     print(f"branded {ch['snippet']['title']} ({ch['id']}): banner, description, keywords", flush=True)
+
+
+PLAYLISTS = {
+    "escape": ("Can the ball escape? – Ring escapes", "A ball against spinning rings – every bounce plays a melody."),
+    "battle": ("Which color wins? – Color battles", "Pick your colour before it starts."),
+    "grow": ("Every bounce makes it bigger", "A ball that grows with every bounce until the circle is full."),
+    "polygon": ("Polygon escapes", "Spinning polygons, one ball, one way out."),
+    "plinko": ("Plinko – bell curves", "Hundreds of balls turn randomness into a perfect curve."),
+    "stringart": ("String art – bounces that draw", "Every bounce leaves a line until a pattern appears."),
+    "multiply": ("Every bounce adds a ball", "One ball becomes a cloud of colour."),
+    "pendulum": ("Pendulum waves", "Pendulums drift into waves and snakes and fall back in sync."),
+}
+
+
+def _norm(text: str) -> str:
+    return " ".join((text or "").replace("#shorts", "").replace("#Shorts", "").split()).casefold()
+
+
+def youtube_polish(apply: bool = False) -> None:
+    """Match the owner's manual uploads to produced simulations, then (apply=True) give them our title,
+    description and tags, sort them into one playlist per format and remember their YouTube ids."""
+    import re
+
+    import requests
+
+    cfg, state = load(CONFIG, {}), load(STATE, {"videos": []})
+    token = _youtube_token(cfg)
+    if not token:
+        raise SystemExit("YouTube token or client credentials missing")
+    api, h = "https://www.googleapis.com/youtube/v3", {"Authorization": f"Bearer {token}"}
+
+    def get(path: str, **params) -> dict:
+        r = requests.get(f"{api}/{path}", params=params, headers=h, timeout=30)
+        r.raise_for_status()
+        return r.json()
+
+    def send(method: str, path: str, part: str, body: dict) -> dict:
+        r = requests.request(method, f"{api}/{path}", params={"part": part}, timeout=60,
+                             headers={**h, "Content-Type": "application/json"}, data=json.dumps(body))
+        if not r.ok:
+            raise SystemExit(f"{path} failed ({r.status_code}): {r.text[:300]}")
+        return r.json()
+
+    ch = get("channels", part="snippet,brandingSettings,contentDetails,statistics", mine="true")["items"][0]
+    if ch["snippet"]["title"] != cfg["channel_name"]:
+        raise SystemExit(f"token belongs to '{ch['snippet']['title']}', not '{cfg['channel_name']}'")
+    bs = ch.get("brandingSettings", {})
+    print(f"channel {ch['snippet']['title']}: {ch['statistics'].get('subscriberCount')} subscribers, "
+          f"{ch['statistics'].get('viewCount')} views | banner set: {bool(bs.get('image', {}).get('bannerExternalUrl'))} | "
+          f"description: {bs.get('channel', {}).get('description', '')[:50]!r}", flush=True)
+
+    ids = [i["contentDetails"]["videoId"] for i in get(
+        "playlistItems", part="contentDetails", maxResults=50,
+        playlistId=ch["contentDetails"]["relatedPlaylists"]["uploads"]).get("items", [])]
+    videos = get("videos", part="snippet,contentDetails,fileDetails,statistics", id=",".join(ids))["items"] if ids else []
+    records = state.get("videos", [])
+    taken = {r["youtube_id"] for r in records if r.get("youtube_id")}
+    matches = []
+    for v in videos:
+        m = re.fullmatch(r"P(?:T)?(?:(\d+)M)?(?:(\d+)S)?", v["contentDetails"]["duration"]) or None
+        secs = (int(m.group(1) or 0) * 60 + int(m.group(2) or 0)) if m else 0
+        fname = (v.get("fileDetails", {}).get("fileName") or "").casefold()
+        title = _norm(v["snippet"]["title"])
+        rec = next((r for r in records if r.get("youtube_id") == v["id"]), None)
+        free = [r for r in records if not r.get("youtube_id") and abs(r.get("duration", 0) - secs) <= 1.5]
+        rec = rec or next((r for r in free if f"{r['kind']}-{r['seed']}" in fname), None) \
+            or next((r for r in free if r["kind"] in fname), None) \
+            or next((r for r in free if _norm(r["title"]) == title), None) \
+            or (free[0] if len(free) == 1 else None)
+        print(f"  {v['id']} {secs:3d}s views={v['statistics'].get('viewCount', 0):>5} file={fname[:38]!r:40} "
+              f"title={v['snippet']['title'][:45]!r} -> {rec['kind'] + '-' + str(rec['seed']) if rec else 'NO MATCH'}",
+              flush=True)
+        if rec and v["id"] not in taken:
+            matches.append((v, rec))
+            rec["youtube_id"] = v["id"]
+            taken.add(v["id"])
+    if not apply:
+        print(f"dry run: {len(matches)} uploads would be updated", flush=True)
+        return
+
+    existing = {p["snippet"]["title"]: p["id"] for p in get("playlists", part="snippet", mine="true",
+                                                            maxResults=50).get("items", [])}
+    for v, rec in matches:
+        meta = metadata(rec["kind"], rec["seed"], rec["melody"], cfg)
+        send("PUT", "videos", "snippet", {"id": v["id"], "snippet": {
+            "title": meta["title"], "description": meta["description"], "tags": meta["tags"],
+            "categoryId": cfg["youtube"]["category_id"], "defaultLanguage": cfg["youtube"]["default_language"]}})
+        name, about = PLAYLISTS.get(rec["kind"], (rec["kind"], ""))
+        if name not in existing:
+            existing[name] = send("POST", "playlists", "snippet,status", {
+                "snippet": {"title": name, "description": f"{about} New simulations every few hours on Loop Physics.",
+                            "defaultLanguage": "en"}, "status": {"privacyStatus": "public"}})["id"]
+        send("POST", "playlistItems", "snippet", {"snippet": {
+            "playlistId": existing[name], "resourceId": {"kind": "youtube#video", "videoId": v["id"]}}})
+        print(f"  updated {v['id']}: {meta['title']!r} -> playlist {name!r}", flush=True)
+    save(STATE, state)

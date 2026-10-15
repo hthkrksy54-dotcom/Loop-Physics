@@ -270,6 +270,7 @@ def main(argv: list[str] | None = None) -> int:
     sc = sub.add_parser("sims", help="Loop Physics channel: render and publish the next simulation Short")
     sc.add_argument("--no-upload", action="store_true")
     sc.add_argument("--branding", action="store_true", help="set banner, description and keywords on YouTube")
+    sc.add_argument("--youtube", choices=["check", "apply"], help="match manual YouTube uploads and polish them")
     hl = sub.add_parser("highlights", help="list recent stories by the highlight they belong in")
     hl.add_argument("--days", type=int, default=7)
     args = ap.parse_args(argv)
@@ -301,6 +302,8 @@ def main(argv: list[str] | None = None) -> int:
     if args.cmd == "sims":
         if args.branding:
             simchannel.branding()
+        elif args.youtube:
+            simchannel.youtube_polish(apply=args.youtube == "apply")
         else:
             simchannel.run(upload=not args.no_upload)
         return 0

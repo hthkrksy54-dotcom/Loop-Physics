@@ -15,6 +15,11 @@ on:
         description: "Only update the YouTube channel branding (banner, description)"
         type: boolean
         default: false
+      youtube:
+        description: "Only polish manual YouTube uploads (check = dry run)"
+        type: choice
+        options: ["none", "check", "apply"]
+        default: "none"
 
 permissions:
   contents: write
@@ -49,8 +54,10 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           IN_UPLOAD: ${{ github.event.inputs.upload }}
           IN_BRANDING: ${{ github.event.inputs.branding }}
+          IN_YOUTUBE: ${{ github.event.inputs.youtube }}
         run: |
           if [ "$IN_BRANDING" = "true" ]; then python -m ytauto sims --branding
+          elif [ "$IN_YOUTUBE" = "check" ] || [ "$IN_YOUTUBE" = "apply" ]; then python -m ytauto sims --youtube "$IN_YOUTUBE"
           elif [ "$IN_UPLOAD" = "false" ]; then python -m ytauto sims --no-upload
           else python -m ytauto sims; fi
 
