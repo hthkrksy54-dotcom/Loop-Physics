@@ -56,7 +56,24 @@ TITLES = {  # {onscreen} = the question shown in the video, {n} = rings/polygons
         "Every bounce draws a line – wait for the pattern",
         "A bouncing ball draws this – with {song}",
     ],
+    "multiply": [
+        "{onscreen}",
+        "One ball becomes chaos – every bounce adds another",
+        "Every bounce adds a ball – wait for the ending",
+        "Every bounce plays {song} and adds a ball",
+    ],
+    "pendulum": [
+        "{onscreen}",
+        "Watch these pendulums fall back in sync",
+        "Pure physics: every pendulum swings a little faster",
+        "Wait for the moment they all line up",
+    ],
 }
+BODIES = {  # what the sound does, per format (default: the melody)
+    "pendulum": "Each pendulum swings a little faster than the one above it and rings its own note – "
+                "waves and snakes appear, until they all line up again.",
+}
+RANGES = [(28, 40), (35, 48), (42, 56)]  # alternate short, medium and long runs
 QUESTIONS = {
     "escape": ["How many seconds did you guess?", "Which ring was the hardest one?", "Did you recognise the melody?"],
     "grow": ["At what percent did you start holding your breath?", "Did you recognise the melody?",
@@ -65,9 +82,12 @@ QUESTIONS = {
     "polygon": ["How many seconds did you guess?", "Rings or polygons – which is harder?"],
     "plinko": ["Did you expect such a clean bell curve?", "Which slot would you bet on?"],
     "stringart": ["What does the pattern remind you of?", "More bounces next time?"],
+    "multiply": ["How many balls should the next one have?", "At which number did it get chaotic for you?"],
+    "pendulum": ["Which pattern was your favourite?", "Did you see the snake?", "Could you watch this on loop?"],
 }
 COMPOSERS = {"fur_elise": "Beethoven", "ode_to_joy": "Beethoven", "mountain_king": "Grieg", "twinkle": "Mozart",
-             "canon": "Pachelbel"}
+             "canon": "Pachelbel", "nachtmusik": "Mozart", "turkish_march": "Mozart", "minuet": "Bach",
+             "blue_danube": "Strauss", "lullaby": "Brahms", "morning_mood": "Grieg", "moonlight": "Beethoven"}
 TAGS = ["satisfying", "oddly satisfying", "physics simulation", "bouncing ball", "satisfying video",
         "simulation", "relaxing", "asmr", "classical music"]
 
@@ -89,7 +109,11 @@ def plan(cfg: dict, state: dict) -> tuple[str, int, str]:
     last = videos[-1]["kind"] if videos else None
     kind = min(kinds, key=lambda k: (k == last and len(kinds) > 1, used[k], kinds.index(k)))
     start = max((v["seed"] for v in videos if v["kind"] == kind), default=-1) + 1
-    seed = sims.pick_seed(kind, start)
+    lo, hi = RANGES[len(videos) % len(RANGES)]
+    try:
+        seed = sims.pick_seed(kind, start, lo, hi, tries=60)
+    except RuntimeError:  # some formats can't be that short or long
+        seed = sims.pick_seed(kind, start)
     tunes = Counter(v["melody"] for v in videos)
     last_tune = videos[-1]["melody"] if videos else None
     melody = min(sims.MELODIES, key=lambda m: (m == last_tune, tunes[m], m))
@@ -105,19 +129,19 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict) -> dict:
     title = rnd.choice(TITLES.get(kind, ["{onscreen}"])).format(**params)
     question = rnd.choice(QUESTIONS.get(kind, ["Did you recognise the melody?"]))
     composer = COMPOSERS.get(melody, "")
-    body = (f"Every bounce plays the next note of {song_full}.\n"
+    body = (BODIES.get(kind, f"Every bounce plays the next note of {song_full}.") + "\n"
             "Physics, picture and sound are all generated in code – no two runs are the same.")
     description = "\n\n".join([
         body,
         f"💬 {question}",
-        f"New simulation every day on {cfg['channel_name']}.",
+        f"A new simulation every few hours on {cfg['channel_name']}.",
         "#satisfying #physics #simulation #shorts",
     ])
     caption = "\n\n".join([
         title,
         body,
         f"💬 {question}",
-        f"Follow {cfg['handle']} for a new one every day.",
+        f"Follow {cfg['handle']} – a new one every few hours.",
         (cfg["instagram"].get("hashtags", "") + (f" #{composer.lower()}" if composer else "")).strip(),
     ])
     return {"title": title[:95], "description": description, "caption": caption[:2150],
@@ -142,7 +166,7 @@ def run(upload: bool = True) -> dict:
     print(f"[sims] {name}: {meta['title']} ({sims.MELODIES[melody][0]})", flush=True)
     result = sims.render(kind, seed, OUT / f"{name}.mp4", melody, cfg.get("handle", ""))
     record = {"date": stamp.isoformat(timespec="seconds"), "kind": kind, "seed": seed, "melody": melody,
-              "title": meta["title"], "duration": round(result["duration"], 1)}
+              "timbre": result.get("timbre"), "title": meta["title"], "duration": round(result["duration"], 1)}
     if not upload:
         print(f"  rendered {result['video']} ({result['duration']:.1f}s)", flush=True)
         return record

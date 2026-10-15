@@ -9,6 +9,8 @@ public-domain melody) – so each video is original and free of third-party righ
   polygon:   a ball escapes from counter-rotating nested polygons
   plinko:    a Galton board – hundreds of balls fall through pegs and stack up into a bell curve
   stringart: every bounce leaves a line between successive contact points and draws a pattern
+  multiply:  every bounce of the white ball adds a new ball until the circle is full of colour
+  pendulum:  a pendulum wave drifts into snakes and waves and falls back in sync (one note per pendulum)
 
 Each seed also picks its own look (palette, background) and parameters (rings, gaps, sizes, speeds).
 """
@@ -53,7 +55,32 @@ MELODIES = {
     "canon": ("Canon in D – Pachelbel", [
         78, 76, 74, 73, 71, 69, 71, 73, 74, 73, 71, 69, 67, 66, 67, 64,
         62, 66, 69, 67, 66, 62, 66, 64, 62, 59, 62, 69, 67, 71, 69, 67]),
+    "nachtmusik": ("Eine kleine Nachtmusik – Mozart", [
+        79, 74, 79, 74, 79, 74, 79, 83, 86, 84, 81, 84, 81, 84, 81, 78, 81, 74]),
+    "turkish_march": ("Rondo alla Turca – Mozart", [
+        71, 69, 68, 69, 72, 74, 72, 71, 72, 76, 77, 76, 75, 76, 83, 81, 80, 81, 83, 81, 80, 81, 84]),
+    "minuet": ("Minuet in G – Bach notebook", [
+        74, 67, 69, 71, 72, 74, 67, 67, 76, 72, 74, 76, 78, 79, 67, 67,
+        72, 74, 72, 71, 69, 71, 72, 71, 69, 67, 66, 67, 69, 71, 67, 71, 69]),
+    "blue_danube": ("The Blue Danube – Strauss", [n + 12 for n in [
+        62, 62, 66, 69, 69, 81, 81, 78, 78, 62, 62, 66, 69, 69, 81, 81, 79, 79,
+        61, 61, 64, 71, 71, 83, 83, 79, 79, 61, 61, 64, 71, 71, 83, 83, 78, 78]]),
+    "lullaby": ("Brahms' Lullaby – Brahms", [
+        76, 76, 79, 76, 76, 79, 76, 79, 84, 83, 81, 81, 79, 74, 76, 77, 74, 74, 76, 77,
+        74, 77, 83, 81, 79, 83, 84, 72, 72, 84, 81, 77, 79, 76, 72, 77, 79, 81, 79,
+        72, 72, 84, 81, 77, 79, 76, 72, 77, 76, 74, 72]),
+    "greensleeves": ("Greensleeves – traditional", [
+        69, 72, 74, 76, 77, 76, 74, 71, 67, 69, 71, 72, 69, 69, 68, 69, 71, 68, 64,
+        69, 72, 74, 76, 77, 76, 74, 71, 67, 69, 71, 72, 71, 69, 68, 66, 68, 69, 69]),
+    "morning_mood": ("Morning Mood – Grieg", [
+        79, 76, 74, 72, 74, 76, 79, 76, 74, 72, 74, 76, 74, 76, 79, 76, 79, 81, 76, 81, 79, 76, 74, 72]),
+    "moonlight": ("Moonlight Sonata – Beethoven", [n + 12 for n in
+        [56, 61, 64] * 4 + [57, 61, 64] * 2 + [57, 62, 66] * 2 + [56, 60, 66, 56, 61, 64, 56, 61, 63, 54, 60, 63]]),
+    "frere_jacques": ("Frère Jacques – traditional", [
+        72, 74, 76, 72, 72, 74, 76, 72, 76, 77, 79, 76, 77, 79, 79, 81, 79, 77, 76, 72,
+        79, 81, 79, 77, 76, 72, 72, 67, 72, 72, 67, 72]),
 }
+TIMBRES = ["bell", "marimba", "pluck", "chip", "glass"]
 
 PALETTES = {  # name: (start hue – None = random, hue span, saturation)
     "rainbow": (None, 0.75, 0.78),
@@ -204,6 +231,10 @@ class Sim:
 
     def finale_text(self) -> str:
         return ""
+
+    def credit(self, melody_name: str) -> str:
+        """Line under the picture: normally the melody the bounces play."""
+        return melody_name
 
     def draw_text(self, p: Painter, d: ImageDraw.ImageDraw) -> None:
         for i, line in enumerate(self.title()):
@@ -786,7 +817,149 @@ class StringArt(Sim):
         return "BEAUTIFUL!"
 
 
-KINDS = {k.kind: k for k in (Escape, Grow, Battle, Polygon, Plinko, StringArt)}
+class Multiply(Sim):
+    """Every bounce of the white ball adds a new ball – until the circle is a cloud of colour."""
+    kind = "multiply"
+
+    def __init__(self, seed: int):
+        super().__init__(seed)
+        rnd = self.rnd
+        self.R = rnd.uniform(420, 450)
+        self.N = rnd.choice([40, 50, 64, 75])
+        self.g = rnd.uniform(1300, 1700)
+        self.rb_new = rnd.uniform(12, 16)
+        a, s = rnd.uniform(0, TAU), rnd.uniform(750, 900)
+        self.balls = [Ball(rnd.uniform(-40, 40), -100.0, math.cos(a) * s, math.sin(a) * s, 16.0)]
+        self.last_hit = -9.0
+
+    def step(self, dt: float) -> None:
+        self.t += dt
+        for j, b in enumerate(self.balls):
+            b.move(dt, self.g)
+            d = math.hypot(b.x, b.y) or 1e-9
+            if d + b.rb < self.R:
+                continue
+            nx, ny = b.x / d, b.y / d
+            if b.vx * nx + b.vy * ny > 0:
+                b.vx, b.vy = _reflect(b.vx, b.vy, nx, ny, self.rnd, 0.07, 300)
+                if j == 0 and self.end is None:
+                    n = len(self.balls)
+                    a, sp = self.rnd.uniform(0, TAU), self.rnd.uniform(250, 550)
+                    self.balls.append(Ball(b.x - nx * 30, b.y - ny * 30, b.vx * 0.5 + math.cos(a) * sp,
+                                           b.vy * 0.5 + math.sin(a) * sp, self.rb_new, self.look.color(n / self.N)))
+                    self.last_hit = self.t
+                    self.events.append((self.t, "bounce", n))
+                    if n >= self.N:
+                        self.finish()
+            d2 = self.R - b.rb - 0.01
+            b.x, b.y = nx * d2, ny * d2
+
+    def on_event(self, p: Painter, kind: str, i: int) -> None:
+        if kind == "bounce" and i < len(self.balls):
+            b = self.balls[i]
+            p.parts.burst_point(p.rng, b.x, b.y, b.col, 14, 260)
+        elif kind == "finale":
+            p.parts.burst_point(p.rng, 0, 0, self.look.color(1.0), 240, 950)
+
+    def draw(self, p: Painter) -> None:
+        n = len(self.balls) - 1
+        col = self.look.color(n / self.N)
+        flash = max(0.0, 1 - (self.t - self.last_hit) / 0.18) * 0.6
+        p.ring(self.R + 6, 0, 360, col, 9, flash)
+        p.particles()
+        for b in self.balls[1:]:
+            p.ball(b.x, b.y, b.rb, b.col)
+            p.glow_disc(b.x, b.y, b.rb * 1.5, b.col)
+        lead = self.balls[0]
+        p.trail(0, lead.x, lead.y, lead.rb, col)
+        p.ball(lead.x, lead.y, lead.rb, (255, 255, 255), col, 3)
+        p.glow_disc(lead.x, lead.y, lead.rb * 1.8, (255, 255, 255))
+
+    def title(self) -> list[str]:
+        return ["Every bounce adds", "a new ball"]
+
+    def counter(self) -> str:
+        return f"{min(self.N, len(self.balls) - 1)} / {self.N} balls"
+
+    def finale_text(self) -> str:
+        return f"{self.N} BALLS!"
+
+
+class Pendulum(Sim):
+    """Pendulum wave seen from below: K bobs with slightly different swing rates drift into waves and
+    snakes and fall back in line at the end. Each bob rings its own note when it reaches the right side."""
+    kind = "pendulum"
+    counter_color = (150, 230, 255)
+
+    def __init__(self, seed: int):
+        super().__init__(seed)
+        rnd = self.rnd
+        self.K = rnd.choice([12, 13, 15])
+        self.T = rnd.uniform(34, 54)  # everything lines up again at T
+        n0 = rnd.choice([10, 12, 14])
+        self.f = [(n0 + i) / self.T for i in range(self.K)]  # swings per second, slowest at the top
+        self.A = rnd.uniform(330, 380)
+        self.top, self.bottom = -390.0, 440.0
+        self.rb = rnd.uniform(15, 19)
+        self.sign = [1.0] * self.K
+        self.hit = [-9.0] * self.K
+        self.snake = self.look.rnd.random() < 0.7
+
+    def pos(self, i: int) -> tuple[float, float]:
+        y = self.top + (self.bottom - self.top) * i / (self.K - 1)
+        return self.A * math.cos(TAU * self.f[i] * min(self.t, self.T)), y  # the in-sync line freezes at the end
+
+    def step(self, dt: float) -> None:
+        self.t += dt
+        if self.end is not None:
+            return
+        for i, f in enumerate(self.f):
+            s = math.sin(TAU * f * self.t)
+            if s >= 0 > self.sign[i]:  # reached the right end
+                self.hit[i] = self.t
+                self.events.append((self.t, "tone", i))
+            self.sign[i] = s
+        if self.t >= self.T:
+            self.finish()
+
+    def on_event(self, p: Painter, kind: str, i: int) -> None:
+        if kind == "finale":
+            for j in range(self.K):
+                x, y = self.pos(j)
+                p.parts.burst_point(p.rng, x, y, self.look.color(j / self.K), 16, 500)
+
+    def draw(self, p: Painter) -> None:
+        pts = [self.pos(i) for i in range(self.K)]
+        for i, (x, y) in enumerate(pts):
+            col = self.look.color(i / self.K)
+            p.line([(-self.A - self.rb, y), (self.A + self.rb, y)], _mix(col, 0.22), 2, glow=None)
+            k = max(0.0, 1 - (self.t - self.hit[i]) / 0.25)
+            if k:
+                p.ball(self.A + self.rb + 10, y, 6 + 6 * k, _mix(col, 0.4 + 0.6 * k))
+                p.glow_disc(self.A + self.rb + 10, y, 30 * k, col)
+        if self.snake:
+            p.line(pts, (255, 255, 255), 2.2, glow=_mix(self.look.color(0.5), 0.6))
+        p.particles()
+        for i, (x, y) in enumerate(pts):
+            col = self.look.color(i / self.K)
+            p.trail(i, x, y, self.rb, col, 8)
+            p.ball(x, y, self.rb, col, (255, 255, 255), 2)
+            p.glow_disc(x, y, self.rb * 1.7, col)
+
+    def title(self) -> list[str]:
+        return [f"{self.K} pendulums,", "one perfect moment"]
+
+    def counter(self) -> str:
+        return f"in sync again in {max(0, math.ceil(self.T - self.t))} s" if self.end is None else "in sync!"
+
+    def finale_text(self) -> str:
+        return "IN SYNC!"
+
+    def credit(self, melody_name: str) -> str:
+        return "Every pendulum plays its own note"
+
+
+KINDS = {k.kind: k for k in (Escape, Grow, Battle, Polygon, Plinko, StringArt, Multiply, Pendulum)}
 
 
 def simulate(kind: str, seed: int, **params) -> Sim:
@@ -798,8 +971,8 @@ def simulate(kind: str, seed: int, **params) -> Sim:
     return sim
 
 
-def pick_seed(kind: str, start: int, lo: float = 35, hi: float = 55, **params) -> int:
-    for seed in range(start, start + 400):
+def pick_seed(kind: str, start: int, lo: float = 35, hi: float = 55, tries: int = 400, **params) -> int:
+    for seed in range(start, start + tries):
         sim = simulate(kind, seed, **params)
         if sim.end is not None and lo <= sim.end <= hi:
             return seed
@@ -809,14 +982,25 @@ def pick_seed(kind: str, start: int, lo: float = 35, hi: float = 55, **params) -
 # ---------------------------------------------------------------- sound
 
 
-def _note(midi: int, dur: float = 1.1, vel: float = 0.8) -> np.ndarray:
+def _note(midi: int, dur: float = 1.1, vel: float = 0.8, timbre: str = "bell") -> np.ndarray:
     f = 440.0 * 2 ** ((midi - 69) / 12)
     t = np.arange(int(SR * dur)) / SR
     att = np.minimum(1.0, t / 0.003)
-    sig = (np.sin(TAU * f * t) * np.exp(-t * 3.2)
-           + 0.45 * np.sin(TAU * 2 * f * t) * np.exp(-t * 6)
-           + 0.18 * np.sin(TAU * 3.01 * f * t) * np.exp(-t * 11)
-           + 0.08 * np.sin(TAU * 4.2 * f * t) * np.exp(-t * 18))
+
+    def osc(k: float, decay: float) -> np.ndarray:
+        return np.sin(TAU * k * f * t) * np.exp(-t * decay)
+
+    if timbre == "marimba":  # woody: strong fundamental, inharmonic 4th partial, quick decay
+        sig = osc(1, 6.5) + 0.35 * osc(3.93, 16) + 0.12 * osc(9.2, 40) + 0.3 * osc(0.5, 30)
+    elif timbre == "pluck":  # harp-like: many harmonics, higher ones die first
+        sig = sum(osc(k, 1.6 + 1.3 * k) * 0.85 ** k / k ** 0.5 for k in range(1, 11))
+    elif timbre == "chip":  # soft 8-bit square (odd harmonics), short
+        sig = sum(osc(k, 4.5) / k for k in (1, 3, 5, 7, 9)) * 0.75
+    elif timbre == "glass":  # glass harmonica: slow attack, long ring, inharmonic shimmer
+        att = np.minimum(1.0, t / 0.012)
+        sig = osc(1, 1.8) + 0.4 * osc(2.76, 4) + 0.18 * osc(5.4, 8)
+    else:  # bell
+        sig = osc(1, 3.2) + 0.45 * osc(2, 6) + 0.18 * osc(3.01, 11) + 0.08 * osc(4.2, 18)
     return (sig * att * vel).astype(np.float32)
 
 
@@ -844,9 +1028,17 @@ def _clack(rnd: random.Random, dur: float = 0.12) -> np.ndarray:
     return (sig * np.minimum(1.0, t / 0.001) * 0.22).astype(np.float32)
 
 
-def soundtrack(sim, melody: str, duration: float, seed: int) -> np.ndarray:
+def soundtrack(sim, melody: str, duration: float, seed: int, timbre: str = "bell") -> np.ndarray:
     notes = MELODIES[melody][1]
     rnd = random.Random(seed)
+    root = min(notes) - min(notes) % 12 + (notes[-1] % 12)  # key of the melody, lowest octave it uses
+    penta = [root + 12 * (k // 5) + (0, 2, 4, 7, 9)[k % 5] for k in range(40)]
+    cache: dict[tuple, np.ndarray] = {}
+
+    def note(m: int, dur: float = 1.1, vel: float = 0.75) -> np.ndarray:
+        if (m, dur, vel) not in cache:
+            cache[m, dur, vel] = _note(m, dur, vel, timbre)
+        return cache[m, dur, vel]
     mix = np.zeros(int(SR * (duration + 2)), dtype=np.float32)
     idx, last, last_clack = 0, -1.0, -1.0
 
@@ -855,13 +1047,15 @@ def soundtrack(sim, melody: str, duration: float, seed: int) -> np.ndarray:
         j = min(len(mix), i + len(sig))
         mix[i:j] += sig[: j - i]
 
-    for t, kind, _ in sim.events:
+    for t, kind, i in sim.events:
         if kind in ("bounce", "land"):
             if t - last < 0.045:  # very fast bounces: don't turn the melody into noise
                 continue
             last = t
-            put(t, _note(notes[idx % len(notes)], vel=0.75))
+            put(t, note(notes[idx % len(notes)]))
             idx += 1
+        elif kind == "tone":  # pendulum i: its own note of the scale, low (long) to high (short)
+            put(t, note(penta[i] - 12, 0.9, 0.42))
         elif kind == "clack":
             if t - last_clack < 0.08 or t - last < 0.03:
                 continue
@@ -870,10 +1064,10 @@ def soundtrack(sim, melody: str, duration: float, seed: int) -> np.ndarray:
         elif kind == "break":
             put(t, _sparkle(rnd, notes[idx % len(notes)] - 12))
         elif kind == "finale":
-            root = notes[0] - 12
+            base = notes[0] - 12
             for k, iv in enumerate([0, 4, 7, 12, 16, 19, 24]):
-                put(t + 0.06 * k, _note(root + iv, dur=2.4, vel=0.55))
-            put(t, _sparkle(rnd, root + 12))
+                put(t + 0.06 * k, note(base + iv, 2.4, 0.55))
+            put(t, _sparkle(rnd, base + 12))
     mix = mix[: int(SR * duration)]
     peak = float(np.abs(mix).max()) or 1.0
     return mix / peak * 0.89
@@ -1046,7 +1240,8 @@ class Painter:
 # ---------------------------------------------------------------- video
 
 
-def render(kind: str, seed: int, out: Path, melody: str | None = None, handle: str = "", **params) -> dict:
+def render(kind: str, seed: int, out: Path, melody: str | None = None, handle: str = "",
+           timbre: str | None = None, **params) -> dict:
     """Render one simulation to an MP4 (1080x1920, 60 fps) with its generated soundtrack."""
     out.parent.mkdir(parents=True, exist_ok=True)
     melody = melody or list(MELODIES)[seed % len(MELODIES)]
@@ -1054,11 +1249,12 @@ def render(kind: str, seed: int, out: Path, melody: str | None = None, handle: s
     if probe.end is None:
         raise RuntimeError(f"{kind} seed {seed} does not finish")
     duration = probe.end + OUTRO
+    timbre = timbre or random.Random(f"tone-{kind}-{seed}").choice(TIMBRES)
     wav = out.with_suffix(".wav")
-    _write_wav(wav, soundtrack(probe, melody, duration, seed))
+    _write_wav(wav, soundtrack(probe, melody, duration, seed, timbre))
 
     sim = KINDS[kind](seed, **params)
-    painter = Painter(sim, MELODIES[melody][0], handle)
+    painter = Painter(sim, sim.credit(MELODIES[melody][0]), handle)
     frames = int(math.ceil(duration * FPS))
     cmd = [
         "ffmpeg", "-y", "-loglevel", "error",
@@ -1080,4 +1276,4 @@ def render(kind: str, seed: int, out: Path, melody: str | None = None, handle: s
         raise RuntimeError("ffmpeg failed")
     wav.unlink(missing_ok=True)
     return {"video": out, "duration": duration, "kind": kind, "seed": seed, "melody": melody,
-            "melody_name": MELODIES[melody][0], "title": " ".join(sim.title())}
+            "melody_name": MELODIES[melody][0], "timbre": timbre, "title": " ".join(sim.title())}

@@ -4,8 +4,10 @@
   "kinds": [
     "escape",
     "battle",
+    "pendulum",
     "grow",
     "plinko",
+    "multiply",
     "polygon",
     "stringart"
   ],
