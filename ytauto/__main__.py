@@ -8,6 +8,7 @@
   python -m ytauto carousel                    post the next Instagram quote carousel
   python -m ytauto story                       daily Instagram story (quote / Sunday recap)
   python -m ytauto highlights                  which recent stories go into which highlight
+  python -m ytauto sim --kind escape           render a satisfying physics simulation Short
 """
 from __future__ import annotations
 
@@ -18,7 +19,7 @@ import sys
 import traceback
 from pathlib import Path
 
-from . import check, generate, instagram, publish, render, social, sync, youtube
+from . import check, generate, instagram, publish, render, sims, social, sync, youtube
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "config" / "channels.json"
@@ -259,6 +260,12 @@ def main(argv: list[str] | None = None) -> int:
     car.add_argument("--render-only", action="store_true")
     sto = sub.add_parser("story", help="daily Instagram story (quote, or Sunday weekly recap)")
     sto.add_argument("--force", action="store_true", help="post even if a fresh story is already up")
+    sm = sub.add_parser("sim", help="render a satisfying physics simulation (vertical, with generated melody)")
+    sm.add_argument("--kind", choices=sorted(sims.KINDS), default="escape")
+    sm.add_argument("--seed", type=int, help="fixed seed; default: first seed after --start with a 35-55 s run")
+    sm.add_argument("--start", type=int, default=0)
+    sm.add_argument("--melody", choices=sorted(sims.MELODIES))
+    sm.add_argument("--handle", default="")
     hl = sub.add_parser("highlights", help="list recent stories by the highlight they belong in")
     hl.add_argument("--days", type=int, default=7)
     args = ap.parse_args(argv)
@@ -279,6 +286,12 @@ def main(argv: list[str] | None = None) -> int:
         for lang, cfg in _load(CONFIG, {}).items():
             if cfg.get("active", True) and (args.render_only or instagram.configured(cfg)):
                 post_carousel(lang, cfg, render_only=args.render_only)
+        return 0
+
+    if args.cmd == "sim":
+        seed = args.seed if args.seed is not None else sims.pick_seed(args.kind, args.start)
+        result = sims.render(args.kind, seed, OUT / "sims" / f"{args.kind}-{seed}.mp4", args.melody, args.handle)
+        print(f"{result['video']}  ({result['duration']:.1f}s, {result['melody_name']})")
         return 0
 
     if args.cmd == "highlights":
