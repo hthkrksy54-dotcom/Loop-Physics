@@ -8,7 +8,7 @@ Thema → Skript → Faktencheck → Sprecherstimme → Musik → Visuals → Un
 
 | Baustein | Lösung | Kosten |
 |---|---|---|
-| Skripte | eigene Skripte im Repo, danach GitHub Models (Reserve: Gemini Free Tier) mit Fakten-Review | 0 € |
+| Skripte | eigene Skripte im Repo, danach Gemini Free Tier (Reserve: Groq) mit Fakten-Review | 0 € |
 | Stimme | Microsoft-Neural-Stimmen über `edge-tts` (DE: Florian, EN: Andrew) | 0 € |
 | Musik | prozedural erzeugte Ambient-Musik, keine Lizenzfragen | 0 € |
 | Visuals | ruhige, langsam fließende Farbfelder, Garamond-Typografie (OFL-Schriften) | 0 € |

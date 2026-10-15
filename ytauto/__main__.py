@@ -34,9 +34,16 @@ def _save(path: Path, data) -> None:
 
 def next_topic(lang: str, state: dict, topics: list[dict]) -> dict:
     done = {e["id"] for e in state.get(lang, [])}
+    can_write = generate.available()
     for t in topics:
-        if t["id"] not in done:
+        if t["id"] in done:
+            continue
+        if can_write or (SCRIPTS / lang / f"{t['id']}.json").exists():
             return t
+    if not can_write:
+        raise RuntimeError(
+            "No finished script left and no LLM key configured. Add the free GEMINI_API_KEY secret (see SETUP.md)."
+        )
     print("Topic backlog empty – asking the LLM for new topics", flush=True)
     new = generate.propose_topics(topics)
     if not new:
@@ -57,7 +64,7 @@ def load_or_write_script(topic: dict, lang: str) -> dict:
     return script
 
 
-def produce(lang: str, topic_id: str | None, upload: bool, with_short: bool) -> dict:
+def produce(lang: str, topic_id: str | None, upload: bool, with_short: bool, keep_record: bool = True) -> dict:
     cfg = _load(CONFIG, {})[lang]
     topics = _load(TOPICS, [])
     state = _load(STATE, {})
@@ -84,9 +91,10 @@ def produce(lang: str, topic_id: str | None, upload: bool, with_short: bool) -> 
         else:
             print("  YouTube not connected yet – publishing as GitHub release instead", flush=True)
             record.update(publish.to_github_release(script, cfg, long, short))
-        state = _load(STATE, {})
-        state.setdefault(lang, []).append(record)
-        _save(STATE, state)
+        if keep_record:
+            state = _load(STATE, {})
+            state.setdefault(lang, []).append(record)
+            _save(STATE, state)
     return record
 
 
@@ -98,6 +106,7 @@ def main(argv: list[str] | None = None) -> int:
     run.add_argument("--topic")
     run.add_argument("--no-upload", action="store_true")
     run.add_argument("--no-short", action="store_true")
+    run.add_argument("--no-record", action="store_true", help="test run: publish but don't mark the topic as done")
     ren = sub.add_parser("render")
     ren.add_argument("--lang", required=True)
     ren.add_argument("--topic", required=True)
@@ -111,7 +120,7 @@ def main(argv: list[str] | None = None) -> int:
     failed = []
     for lang in args.langs:
         try:
-            produce(lang, args.topic, upload=not args.no_upload, with_short=not args.no_short)
+            produce(lang, args.topic, upload=not args.no_upload, with_short=not args.no_short, keep_record=not args.no_record)
         except Exception:
             traceback.print_exc()
             failed.append(lang)

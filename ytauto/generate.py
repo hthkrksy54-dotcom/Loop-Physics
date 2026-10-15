@@ -1,11 +1,12 @@
 """Script generation with free LLM tiers.
 
-Providers (tried in order, whichever is configured):
-  * GitHub Models  – free inside GitHub Actions via GITHUB_TOKEN (permission `models: read`)
-  * Google Gemini  – free tier, needs GEMINI_API_KEY
+Providers (tried in order, whichever has a key; order via LLM_PROVIDERS):
+  * gemini – Google AI Studio free tier, GEMINI_API_KEY (model: GEMINI_MODEL, default gemini-flash-latest)
+  * groq   – Groq free tier, GROQ_API_KEY (model: GROQ_MODEL, default openai/gpt-oss-120b)
+  * openai – any OpenAI-compatible endpoint: LLM_BASE_URL, LLM_API_KEY, LLM_MODEL (e.g. OpenRouter)
 
 Generation runs in small steps (outline, narration in two halves, fact review) so each
-response stays inside free-tier output limits.
+response stays inside free-tier output and rate limits.
 """
 from __future__ import annotations
 
@@ -42,18 +43,7 @@ class NotConfigured(LLMError):
     pass
 
 
-def _github_models(messages: list[dict], max_tokens: int) -> str:
-    token = os.environ.get("GITHUB_MODELS_TOKEN") or os.environ.get("GITHUB_TOKEN")
-    if not token:
-        raise NotConfigured("no GitHub token")
-    model = os.environ.get("GITHUB_MODELS_MODEL") or "openai/gpt-4.1"
-    url = "https://models.github.ai/inference/chat/completions"
-    headers = {
-        "Authorization": f"Bearer {token}",
-        "Accept": "application/vnd.github+json",
-        "X-GitHub-Api-Version": "2022-11-28",
-        "Content-Type": "application/json",
-    }
+def _openai_compatible(base_url: str, key: str, model: str, messages: list[dict], max_tokens: int, label: str) -> str:
     body = {
         "model": model,
         "messages": messages,
@@ -61,31 +51,43 @@ def _github_models(messages: list[dict], max_tokens: int) -> str:
         "max_tokens": max_tokens,
         "response_format": {"type": "json_object"},
     }
-    # Follow redirects manually so the request stays a POST with its body.
-    for _ in range(4):
-        resp = requests.post(url, headers=headers, json=body, timeout=180, allow_redirects=False)
-        if resp.status_code in (301, 302, 303, 307, 308) and resp.headers.get("Location"):
-            url = requests.compat.urljoin(url, resp.headers["Location"])
-            continue
-        break
+    resp = requests.post(
+        base_url.rstrip("/") + "/chat/completions",
+        headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
+        json=body,
+        timeout=240,
+    )
     if resp.status_code != 200:
-        raise LLMError(f"GitHub Models {resp.status_code}: {resp.text[:300]}")
+        raise LLMError(f"{label} {resp.status_code}: {resp.text[:300]}")
     try:
         content = resp.json()["choices"][0]["message"]["content"]
     except (ValueError, KeyError, IndexError, TypeError) as err:
-        raise LLMError(
-            f"GitHub Models unexpected response ({err}; url={resp.url}; type={resp.headers.get('content-type')}): {resp.text[:300]!r}"
-        )
+        raise LLMError(f"{label} unexpected response ({err}): {resp.text[:300]!r}")
     if not content:
-        raise LLMError(f"GitHub Models returned empty content: {resp.text[:300]!r}")
+        raise LLMError(f"{label} returned empty content")
     return content
+
+
+def _groq(messages: list[dict], max_tokens: int) -> str:
+    key = os.environ.get("GROQ_API_KEY")
+    if not key:
+        raise NotConfigured("no GROQ_API_KEY")
+    model = os.environ.get("GROQ_MODEL") or "openai/gpt-oss-120b"
+    return _openai_compatible("https://api.groq.com/openai/v1", key, model, messages, max_tokens, "Groq")
+
+
+def _openai(messages: list[dict], max_tokens: int) -> str:
+    base, key, model = (os.environ.get(k) for k in ("LLM_BASE_URL", "LLM_API_KEY", "LLM_MODEL"))
+    if not (base and key and model):
+        raise NotConfigured("no LLM_BASE_URL/LLM_API_KEY/LLM_MODEL")
+    return _openai_compatible(base, key, model, messages, max_tokens, "LLM")
 
 
 def _gemini(messages: list[dict], max_tokens: int) -> str:
     key = os.environ.get("GEMINI_API_KEY")
     if not key:
         raise NotConfigured("no GEMINI_API_KEY")
-    model = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+    model = os.environ.get("GEMINI_MODEL") or "gemini-flash-latest"
     system = "\n\n".join(m["content"] for m in messages if m["role"] == "system")
     contents = [
         {"role": "model" if m["role"] == "assistant" else "user", "parts": [{"text": m["content"]}]}
@@ -100,7 +102,7 @@ def _gemini(messages: list[dict], max_tokens: int) -> str:
             "contents": contents,
             "generationConfig": {
                 "temperature": 0.7,
-                "maxOutputTokens": max(max_tokens, 8192),
+                "maxOutputTokens": max(max_tokens * 4, 16384),  # leaves room for "thinking" tokens
                 "responseMimeType": "application/json",
             },
         },
@@ -115,7 +117,15 @@ def _gemini(messages: list[dict], max_tokens: int) -> str:
     return "".join(p.get("text", "") for p in parts)
 
 
-PROVIDERS = {"github": _github_models, "gemini": _gemini}
+PROVIDERS = {"gemini": _gemini, "groq": _groq, "openai": _openai}
+
+
+def available() -> bool:
+    return bool(
+        os.environ.get("GEMINI_API_KEY")
+        or os.environ.get("GROQ_API_KEY")
+        or (os.environ.get("LLM_BASE_URL") and os.environ.get("LLM_API_KEY") and os.environ.get("LLM_MODEL"))
+    )
 
 
 def _parse_json(text: str) -> dict:
@@ -131,7 +141,7 @@ def _parse_json(text: str) -> dict:
 
 
 def ask_json(prompt: str, max_tokens: int = 3500) -> dict:
-    order = os.environ.get("LLM_PROVIDERS", "github,gemini").split(",")
+    order = (os.environ.get("LLM_PROVIDERS") or "gemini,groq,openai").split(",")
     messages = [{"role": "system", "content": SYSTEM}, {"role": "user", "content": prompt}]
     errors = []
     for name in order:
@@ -140,6 +150,7 @@ def ask_json(prompt: str, max_tokens: int = 3500) -> dict:
             continue
         for attempt in range(3):
             try:
+                time.sleep(float(os.environ.get("LLM_PAUSE_SECONDS", "8")))  # stay under free-tier RPM limits
                 return _parse_json(fn(messages, max_tokens))
             except NotConfigured as err:
                 errors.append(str(err))
@@ -147,7 +158,7 @@ def ask_json(prompt: str, max_tokens: int = 3500) -> dict:
             except (LLMError, requests.RequestException) as err:
                 errors.append(f"{name}: {err}")
                 print(f"  LLM attempt failed: {name}: {err}", flush=True)
-                time.sleep(10 * (attempt + 1))
+                time.sleep(30 * (attempt + 1))
             except (json.JSONDecodeError, KeyError, IndexError) as err:
                 errors.append(f"{name}: response was not valid JSON ({err})")
                 print(f"  LLM returned invalid JSON: {name}: {err}", flush=True)

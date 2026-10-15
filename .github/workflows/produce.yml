@@ -16,10 +16,13 @@ on:
         description: "Publish (YouTube, or GitHub release if YouTube isn't connected)"
         type: boolean
         default: true
+      record:
+        description: "Mark the topic as done (untick for test runs)"
+        type: boolean
+        default: true
 
 permissions:
   contents: write
-  models: read
 
 concurrency:
   group: produce
@@ -47,7 +50,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GITHUB_MODELS_MODEL: ${{ vars.GITHUB_MODELS_MODEL }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL: ${{ vars.GROQ_MODEL }}
+          LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_MODEL: ${{ vars.LLM_MODEL }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN_DE: ${{ secrets.YT_REFRESH_TOKEN_DE }}
@@ -55,10 +63,12 @@ jobs:
           IN_LANGS: ${{ github.event.inputs.langs || 'de en' }}
           IN_TOPIC: ${{ github.event.inputs.topic }}
           IN_UPLOAD: ${{ github.event.inputs.upload }}
+          IN_RECORD: ${{ github.event.inputs.record }}
         run: |
           ARGS=(--langs $IN_LANGS)
           if [ -n "$IN_TOPIC" ]; then ARGS+=(--topic "$IN_TOPIC"); fi
           if [ "$IN_UPLOAD" = "false" ]; then ARGS+=(--no-upload); fi
+          if [ "$IN_RECORD" = "false" ]; then ARGS+=(--no-record); fi
           python -m ytauto run "${ARGS[@]}"
 
       - name: Save progress (state + generated scripts)
