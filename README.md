@@ -37,6 +37,8 @@ Thema → Skript → Faktencheck → Sprecherstimme → Musik → Visuals → Un
 | Shorts | automatische Hochkant-Version (ca. 50 s) pro Thema | 0 € |
 | Upload | YouTube Data API: Video, Thumbnail, Untertitel, Short | 0 € |
 | Ausführung | GitHub Actions, Mo/Mi/Fr (öffentliches Repo = unbegrenzte Minuten) | 0 € |
+| Instagram | jeder Short als Reel (@quiet_thoughts_yt), Token verschlüsselt, verlängert sich selbst | 0 € |
+| Upload-Wächter | stündlich: erkennt Videos, die du von Hand hochlädst, korrigiert Shorts, postet das passende Reel | 0 € |
 
 **Einrichtung:** siehe [SETUP.md](SETUP.md). Die YouTube-Kanäle musst du einmal selbst anlegen.
 
