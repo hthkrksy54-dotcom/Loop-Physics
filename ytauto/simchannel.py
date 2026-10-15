@@ -346,7 +346,10 @@ def youtube_polish(apply: bool = False) -> None:
             existing[name] = send("POST", "playlists", "snippet,status", {
                 "snippet": {"title": name, "description": f"{about} New simulations every few hours on Loop Physics.",
                             "defaultLanguage": "en"}, "status": {"privacyStatus": "public"}})["id"]
-        if not get("playlistItems", part="id", playlistId=existing[name], videoId=v["id"]).get("items"):
+            time.sleep(8)  # new playlists take a moment before YouTube accepts items
+        have = requests.get(f"{api}/playlistItems", headers=h, timeout=30,
+                            params={"part": "id", "playlistId": existing[name], "videoId": v["id"]})
+        if not (have.ok and have.json().get("items")):
             for attempt in range(5):  # a brand-new playlist often answers 409 ABORTED for a few seconds
                 r = requests.post(f"{api}/playlistItems", params={"part": "snippet"}, timeout=60,
                                   headers={**h, "Content-Type": "application/json"}, data=json.dumps({"snippet": {
