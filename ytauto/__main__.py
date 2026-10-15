@@ -4,6 +4,8 @@
   python -m ytauto run --langs de --no-upload  same, but keep files locally (out/)
   python -m ytauto render --lang en --topic hedonic-treadmill   render only (preview)
   python -m ytauto check                       test voice, script AI and YouTube connection
+  python -m ytauto sync                        match manual YouTube uploads, post Instagram Reels
+  python -m ytauto carousel                    post the next Instagram quote carousel
 """
 from __future__ import annotations
 
@@ -14,7 +16,7 @@ import sys
 import traceback
 from pathlib import Path
 
-from . import check, generate, instagram, publish, render, sync, youtube
+from . import check, generate, instagram, publish, render, social, sync, youtube
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "config" / "channels.json"
@@ -115,6 +117,64 @@ def produce(lang: str, topic_id: str | None, upload: bool, with_short: bool, kee
     return record
 
 
+def post_carousel(lang: str, cfg: dict, render_only: bool = False) -> bool:
+    """Post a quote carousel for the oldest published video that has none yet (live on YouTube first)."""
+    state = _load(STATE, {})
+    now = dt.datetime.now(dt.timezone.utc)
+    last = max((dt.datetime.fromisoformat(r["carousel_date"]) for r in state.get(lang, []) if r.get("carousel_date")), default=None)
+    if last and now - last < dt.timedelta(hours=30) and not render_only:
+        print(f"[{lang}] a carousel already went out at {last:%Y-%m-%d %H:%M} UTC – skipping", flush=True)
+        return False
+    records = [r for r in state.get(lang, []) if not r.get("carousel_id")]
+    records.sort(key=lambda r: not r.get("youtube_id"))  # stable: oldest video with a YouTube link first
+    for rec in records:
+        path = SCRIPTS / lang / f"{rec['id']}.json"
+        script = _load(path, None)
+        if script is None:
+            continue
+        if not script.get("carousel"):
+            if not generate.available():
+                continue
+            try:
+                script.update(generate.social_extras(script))
+                _save(path, script)
+            except Exception as err:
+                print(f"[{lang}] no carousel for '{rec['id']}': {err}", flush=True)
+                continue
+        outdir = OUT / lang / script["id"] / "carousel"
+        slides = social.carousel(script, cfg, outdir)
+        print(f"[{lang}] carousel '{rec['id']}': {len(slides)} slides in {outdir}", flush=True)
+        if render_only:
+            return False
+        images = list(slides)
+        quote = social.best_quote(script)
+        if quote:  # the same day a quote card goes to Stories (feeds the "Quotes" highlight)
+            images.append(social.quote_story(outdir / "story_quote.jpg", quote["text"], quote["author"],
+                                             render.seed_for(script), "@" + cfg["instagram"].get("account", "")))
+        tag = f"carousel-{lang}-{script['id']}"
+        rel = publish.github_release(
+            tag, f"[{lang.upper()}] Carousel – {script['carousel']['cover']}",
+            f"Instagram carousel for “{script['title']}”.",
+            [(p, f"{tag}-{p.stem}.jpg", "image/jpeg") for p in images],
+        )
+        urls = {p: rel.get("assets", {}).get(f"{tag}-{p.stem}.jpg") for p in images}
+        if not all(urls[p] for p in slides):
+            raise RuntimeError("carousel images could not be published as release assets")
+        yt = f"https://youtu.be/{rec['youtube_id']}" if rec.get("youtube_id") else None
+        rec.update(instagram.post_carousel(cfg, [urls[p] for p in slides], instagram.carousel_caption(script, cfg, yt)))
+        rec["carousel_date"] = now.isoformat(timespec="seconds")
+        _save(STATE, state)
+        if quote and urls.get(images[-1]):
+            try:
+                rec["quote_story_id"] = instagram.post_story(cfg, image_url=urls[images[-1]])
+                _save(STATE, state)
+            except Exception as err:
+                print(f"  warning: quote story failed: {err}", flush=True)
+        return True
+    print(f"[{lang}] no video left without a carousel", flush=True)
+    return False
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="ytauto")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -130,6 +190,8 @@ def main(argv: list[str] | None = None) -> int:
     ren.add_argument("--no-short", action="store_true")
     sub.add_parser("check")
     sub.add_parser("sync", help="match manual YouTube uploads, fix Shorts, post Instagram Reels")
+    car = sub.add_parser("carousel", help="post the next Instagram quote carousel")
+    car.add_argument("--render-only", action="store_true")
     args = ap.parse_args(argv)
 
     if args.cmd == "check":
@@ -142,6 +204,12 @@ def main(argv: list[str] | None = None) -> int:
                 changed |= sync.run(lang, cfg, state, lambda tid, lang=lang: _load(SCRIPTS / lang / f"{tid}.json", None))
         if changed:
             _save(STATE, state)
+        return 0
+
+    if args.cmd == "carousel":
+        for lang, cfg in _load(CONFIG, {}).items():
+            if cfg.get("active", True) and (args.render_only or instagram.configured(cfg)):
+                post_carousel(lang, cfg, render_only=args.render_only)
         return 0
 
     if args.cmd == "render":

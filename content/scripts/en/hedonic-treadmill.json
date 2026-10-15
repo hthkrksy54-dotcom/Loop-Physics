@@ -7,7 +7,22 @@
   "title_card": "Why More Is Never Enough",
   "thumbnail_text": "Why more is never enough",
   "description": "Why does the thing we wanted so badly become ordinary so quickly? Psychologists call it the hedonic treadmill. In this calm video essay we look at the famous lottery study, what later research revealed about adaptation, how Seneca and Epicurus described the same pattern two thousand years earlier – and three simple practices, rooted in both philosophy and psychology, that help you appreciate what you already have.",
-  "tags": ["hedonic treadmill", "hedonic adaptation", "psychology", "happiness", "epicurus", "seneca", "stoicism", "gratitude", "philosophy", "contentment", "positive psychology", "minimalism", "well-being", "calm"],
+  "tags": [
+    "hedonic treadmill",
+    "hedonic adaptation",
+    "psychology",
+    "happiness",
+    "epicurus",
+    "seneca",
+    "stoicism",
+    "gratitude",
+    "philosophy",
+    "contentment",
+    "positive psychology",
+    "minimalism",
+    "well-being",
+    "calm"
+  ],
   "hashtags": "#Psychology #Philosophy #Happiness",
   "sections": [
     {
@@ -62,5 +77,31 @@
     "Emmons, R. A. & McCullough, M. E. (2003). Counting blessings versus burdens. Journal of Personality and Social Psychology, 84(2)",
     "Seneca, Letters to Lucilius (Epistulae Morales), Letter 2 – transl. R. M. Gummere",
     "Epicurus, Letter to Menoeceus; Vatican Sayings 35"
-  ]
+  ],
+  "question": "What is one thing you once wished for that you now take for granted?",
+  "carousel": {
+    "cover": "Why more is never enough",
+    "slides": [
+      {
+        "text": "You wanted it badly. You got it. Within weeks, it felt normal.",
+        "sub": "Psychologists call this the hedonic treadmill."
+      },
+      {
+        "text": "Lottery winners were not significantly happier than people who had never won.",
+        "sub": "Brickman, Coates & Janoff-Bulman, 1978"
+      },
+      {
+        "text": "It is not the man who has too little, but the man who craves more, that is poor.",
+        "sub": "Seneca, Letters to Lucilius 2"
+      },
+      {
+        "text": "Remember that what you now have was once among the things you only hoped for.",
+        "sub": "Epicurus, Vatican Sayings 35"
+      },
+      {
+        "text": "Name what you would miss. Imagine losing it. Savor it slowly.",
+        "sub": "Three small ways to step off the treadmill"
+      }
+    ]
+  }
 }

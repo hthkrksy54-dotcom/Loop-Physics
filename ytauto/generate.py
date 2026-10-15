@@ -233,7 +233,9 @@ Return JSON:
    {{"heading": "chapter title (2-5 words)", "points": ["key points with concrete facts"],
      "quote": {{"lead": "one sentence introducing the quote", "text": "quote", "author": "Author, Work chapter"}} or null}}
  ],
- "short": {{"title": "Shorts title, max 70 characters", "text": "a self-contained 100-120 word version for a vertical short"}},
+ "short": {{"title": "Shorts title, max 70 characters", "hook": "on-screen hook for the first 3 seconds, max 8 words",
+            "text": "a self-contained 100-120 word version for a vertical short"}},
+ "question": "one reflective question to the audience that invites a personal answer in the comments",
  "sources": ["full references for every study, book and quote used"]
 }}
 Use 6-7 sections in total (hook + 5-6 chapters). At most 3 quotes. The last chapter offers one practical
@@ -278,6 +280,7 @@ Return JSON: {{"texts": ["narration for each requested section, in order"]}}""",
         "hashtags": outline.get("hashtags", ""),
         "sections": [],
         "short": outline.get("short"),
+        "question": outline.get("question"),
         "sources": outline.get("sources", []),
         "generated": True,
     }
@@ -290,7 +293,41 @@ Return JSON: {{"texts": ["narration for each requested section, in order"]}}""",
 
     review(script, language)
     validate(script)
+    try:  # built from the fact-checked text, so the carousel cannot carry a quote the review removed
+        extras = social_extras(script)
+        script["carousel"] = extras["carousel"]
+        script["question"] = script.get("question") or extras["question"]
+    except (LLMError, KeyError, TypeError) as err:
+        print(f"  carousel not generated: {err}", flush=True)
     return script
+
+
+def social_extras(script: dict) -> dict:
+    """Instagram carousel + audience question for a script that has none, built only from its own content."""
+    language = LANG_NAMES[script["lang"]]
+    body = "\n\n".join(
+        (f'Quote: "{s["quote"]["text"]}" – {s["quote"]["author"]}\n' if s.get("quote") else "") + s["text"]
+        for s in script["sections"]
+    )
+    result = ask_json(
+        f"""Turn this {language} video script into an Instagram carousel and an audience question.
+Use ONLY facts, studies and quotes that appear in the script, word for word for quotes, with their attribution.
+
+Title: {script['title']}
+Script:
+{body[:12000]}
+
+Return JSON:
+{{"question": "one reflective question that invites a personal answer in the comments",
+ "carousel": {{"cover": "3-7 word cover line", "slides": [{{"text": "one idea, fact or quote, max 28 words",
+              "sub": "source or short context"}}]}}}}
+Exactly 5 slides: the core facts and quotes, ending with a practical takeaway.""",
+        max_tokens=1500,
+    )
+    slides = [s for s in result["carousel"]["slides"] if s.get("text")][:8]
+    if not result["carousel"].get("cover") or len(slides) < 3:
+        raise LLMError("carousel incomplete")
+    return {"question": result.get("question"), "carousel": {"cover": result["carousel"]["cover"], "slides": slides}}
 
 
 def review(script: dict, language: str) -> None:

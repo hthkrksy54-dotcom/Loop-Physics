@@ -7,7 +7,22 @@
   "title_card": "What Is Truly in Your Control?",
   "thumbnail_text": "What is truly in your control?",
   "description": "Nearly 2,000 years ago, Epictetus – a former slave who became one of the most influential Stoic teachers – answered one question with a single distinction: what is truly in our control? In this calm, story-driven essay we explore the dichotomy of control, why our judgments shape our emotions, the Stoic image of the archer, and how James Stockdale leaned on these ideas during years of captivity. At the end you'll find a simple exercise you can use today.",
-  "tags": ["stoicism", "epictetus", "dichotomy of control", "philosophy", "enchiridion", "inner peace", "marcus aurelius", "seneca", "stoic philosophy", "self improvement", "cbt", "psychology", "mindset", "calm"],
+  "tags": [
+    "stoicism",
+    "epictetus",
+    "dichotomy of control",
+    "philosophy",
+    "enchiridion",
+    "inner peace",
+    "marcus aurelius",
+    "seneca",
+    "stoic philosophy",
+    "self improvement",
+    "cbt",
+    "psychology",
+    "mindset",
+    "calm"
+  ],
   "hashtags": "#Stoicism #Philosophy #Epictetus",
   "sections": [
     {
@@ -61,5 +76,31 @@
     "William B. Irvine, A Guide to the Good Life: The Ancient Art of Stoic Joy (2009)",
     "Albert Ellis, Reason and Emotion in Psychotherapy (1962)",
     "Aaron T. Beck et al., Cognitive Therapy of Depression (1979)"
-  ]
+  ],
+  "question": "What is one thing you have been trying to control that was never yours to control?",
+  "carousel": {
+    "cover": "What is truly in your control?",
+    "slides": [
+      {
+        "text": "Some things are in our control and others not.",
+        "sub": "Epictetus, Enchiridion 1"
+      },
+      {
+        "text": "Yours: your judgments, your intentions, your next action. Not yours: other people, the past, the outcome.",
+        "sub": "The dichotomy of control"
+      },
+      {
+        "text": "Men are disturbed not by things, but by the views which they take of things.",
+        "sub": "Epictetus, Enchiridion 5"
+      },
+      {
+        "text": "The archer cannot command the wind. Only how well he shoots.",
+        "sub": "The Stoic archer – Cicero, On Ends III"
+      },
+      {
+        "text": "Split your next worry into two columns. Spend your energy only on the second.",
+        "sub": "A practice for today"
+      }
+    ]
+  }
 }

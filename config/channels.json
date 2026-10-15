@@ -54,7 +54,7 @@
       "enabled": true,
       "account": "quiet_thoughts_yt",
       "token_file": "state/instagram_en.token",
-      "hashtags": "#philosophy #psychology #stoicism #wisdom #mindset #selfimprovement #quietthoughts",
+      "hashtags": "#philosophy #psychology #quietthoughts",
       "youtube_channel": "youtube.com/@quietthoughts-20"
     }
   }

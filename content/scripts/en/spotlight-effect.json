@@ -7,7 +7,21 @@
   "title_card": "The Spotlight Effect",
   "thumbnail_text": "Nobody is watching you that closely",
   "description": "Why do we feel so watched, judged and exposed – when most people barely notice us? In this calm video essay we look at the famous Barry Manilow T-shirt study behind the spotlight effect, the illusion of transparency, the surprising 'liking gap' after conversations, and what Marcus Aurelius and Epictetus said about living by other people's opinions. Plus a simple way to step out of the imaginary spotlight.",
-  "tags": ["spotlight effect", "illusion of transparency", "social anxiety", "psychology", "self consciousness", "liking gap", "thomas gilovich", "marcus aurelius", "epictetus", "stoicism", "confidence", "philosophy", "calm"],
+  "tags": [
+    "spotlight effect",
+    "illusion of transparency",
+    "social anxiety",
+    "psychology",
+    "self consciousness",
+    "liking gap",
+    "thomas gilovich",
+    "marcus aurelius",
+    "epictetus",
+    "stoicism",
+    "confidence",
+    "philosophy",
+    "calm"
+  ],
   "hashtags": "#Psychology #SpotlightEffect #Philosophy",
   "sections": [
     {
@@ -55,5 +69,31 @@
     "Boothby, E. J., Cooney, G., Sandstrom, G. M. & Clark, M. S. (2018). The liking gap in conversations. Psychological Science, 29(11)",
     "Marcus Aurelius, Meditations XII.4 – transl. George Long (1862)",
     "Epictetus, Enchiridion 13"
-  ]
+  ],
+  "question": "What is something you were embarrassed about that nobody else seems to remember?",
+  "carousel": {
+    "cover": "Nobody is watching you that closely",
+    "slides": [
+      {
+        "text": "Students in an embarrassing T-shirt guessed half the room noticed. Only about a quarter did.",
+        "sub": "Gilovich, Medvec & Savitsky, 2000"
+      },
+      {
+        "text": "You are the center of your own experience. Everyone else is busy being the center of theirs.",
+        "sub": "The spotlight effect"
+      },
+      {
+        "text": "After a first conversation, people underestimate how much the other person liked them.",
+        "sub": "The liking gap – Boothby et al., 2018"
+      },
+      {
+        "text": "Every man loves himself more than all the rest of men, but yet sets less value on his own opinion of himself than on the opinion of others.",
+        "sub": "Marcus Aurelius, Meditations XII.4"
+      },
+      {
+        "text": "Feeling watched? Name it. Switch perspective. Turn your attention outward.",
+        "sub": "Stepping out of the spotlight"
+      }
+    ]
+  }
 }

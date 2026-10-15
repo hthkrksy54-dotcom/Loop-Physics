@@ -105,10 +105,10 @@ def to_youtube(script: dict, cfg: dict, long: dict, short: dict | None) -> dict:
     return result
 
 
-def to_github_release(script: dict, cfg: dict, long: dict, short: dict | None) -> dict:
-    """Archive of every video as a GitHub release (files + copy-paste metadata).
+def github_release(tag: str, name: str, body: str, files: list[tuple[str | Path, str, str]]) -> dict:
+    """(Re)create a GitHub release with the given files; returns {"release": url, "assets": {name: url}}.
 
-    Also the public source URL Instagram fetches Reels from.
+    Release asset URLs are public, which is what Instagram needs to fetch videos and images.
     """
     token = os.environ.get("GITHUB_TOKEN")
     repo = os.environ.get("GITHUB_REPOSITORY")
@@ -116,6 +116,44 @@ def to_github_release(script: dict, cfg: dict, long: dict, short: dict | None) -
         return {}
     api = f"https://api.github.com/repos/{repo}"
     headers = {"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"}
+    existing = requests.get(f"{api}/releases/tags/{tag}", headers=headers, timeout=30)
+    if existing.status_code == 200:
+        requests.delete(f"{api}/releases/{existing.json()['id']}", headers=headers, timeout=30)
+        requests.delete(f"{api}/git/refs/tags/{tag}", headers=headers, timeout=30)
+    rel = requests.post(
+        f"{api}/releases",
+        headers=headers,
+        json={"tag_name": tag, "name": name[:120], "body": body[:120000]},
+        timeout=30,
+    )
+    if rel.status_code not in (200, 201):
+        print(f"  release failed ({rel.status_code}): {rel.text[:300]}", flush=True)
+        return {}
+    upload_url = rel.json()["upload_url"].split("{")[0]
+    assets = {}
+    for path, asset_name, ctype in files:
+        with Path(path).open("rb") as fh:
+            up = requests.post(
+                upload_url,
+                params={"name": asset_name},
+                headers={**headers, "Content-Type": ctype},
+                data=fh,
+                timeout=900,
+            )
+        if up.status_code in (200, 201):
+            assets[asset_name] = up.json().get("browser_download_url")
+        else:
+            print(f"  asset upload failed for {asset_name} ({up.status_code})", flush=True)
+    url = rel.json()["html_url"]
+    print(f"  release: {url}", flush=True)
+    return {"release": url, "assets": assets}
+
+
+def to_github_release(script: dict, cfg: dict, long: dict, short: dict | None) -> dict:
+    """Archive of every video as a GitHub release (files + copy-paste metadata).
+
+    Also the public source URL Instagram fetches Reels from.
+    """
     tag = f"video-{script['lang']}-{script['id']}"
     body = [
         f"## {script['title']}",
@@ -136,40 +174,15 @@ def to_github_release(script: dict, cfg: dict, long: dict, short: dict | None) -
     if short:
         st, sd = short_metadata(script, cfg, None)
         body += ["### Short", "```", st, "", sd, "```"]
-    existing = requests.get(f"{api}/releases/tags/{tag}", headers=headers, timeout=30)
-    if existing.status_code == 200:
-        requests.delete(f"{api}/releases/{existing.json()['id']}", headers=headers, timeout=30)
-        requests.delete(f"{api}/git/refs/tags/{tag}", headers=headers, timeout=30)
-    rel = requests.post(
-        f"{api}/releases",
-        headers=headers,
-        json={"tag_name": tag, "name": f"[{script['lang'].upper()}] {script['title']}"[:120], "body": "\n".join(body)[:120000]},
-        timeout=30,
-    )
-    if rel.status_code not in (200, 201):
-        print(f"  release failed ({rel.status_code}): {rel.text[:300]}", flush=True)
-        return {}
-    upload_url = rel.json()["upload_url"].split("{")[0]
-    files = [(long["video"], "video.mp4", "video/mp4"), (long["thumbnail"], "thumbnail.jpg", "image/jpeg"), (long["captions"], "captions.srt", "text/plain")]
+    prefix = f"{script['lang']}-{script['id']}"
+    files = [(long["video"], f"{prefix}-video.mp4", "video/mp4"), (long["thumbnail"], f"{prefix}-thumbnail.jpg", "image/jpeg"),
+             (long["captions"], f"{prefix}-captions.srt", "text/plain")]
     if short:
-        files.append((short["video"], "short.mp4", "video/mp4"))
-    assets = {}
-    for path, name, ctype in files:
-        with Path(path).open("rb") as fh:
-            up = requests.post(
-                upload_url,
-                params={"name": f"{script['lang']}-{script['id']}-{name}"},
-                headers={**headers, "Content-Type": ctype},
-                data=fh,
-                timeout=900,
-            )
-        if up.status_code in (200, 201):
-            assets[name] = up.json().get("browser_download_url")
-        else:
-            print(f"  asset upload failed for {name} ({up.status_code})", flush=True)
-    url = rel.json()["html_url"]
-    print(f"  release: {url}", flush=True)
-    result = {"release": url}
-    if assets.get("short.mp4"):
-        result["short_url"] = assets["short.mp4"]
+        files.append((short["video"], f"{prefix}-short.mp4", "video/mp4"))
+    rel = github_release(tag, f"[{script['lang'].upper()}] {script['title']}", "\n".join(body), files)
+    if not rel:
+        return {}
+    result = {"release": rel["release"]}
+    if rel["assets"].get(f"{prefix}-short.mp4"):
+        result["short_url"] = rel["assets"][f"{prefix}-short.mp4"]
     return result

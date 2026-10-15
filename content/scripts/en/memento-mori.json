@@ -7,7 +7,21 @@
   "title_card": "Memento Mori",
   "thumbnail_text": "Remember that you will die",
   "description": "Memento mori – remember that you will die. It sounds dark, but for the Stoics it was one of the most life-affirming ideas there is. In this calm video essay we look at what Marcus Aurelius and Seneca actually wrote about mortality, what modern psychology has found about thinking of death, and a gentle evening practice that turns this old idea into clarity rather than fear.",
-  "tags": ["memento mori", "stoicism", "marcus aurelius", "seneca", "meditations", "on the shortness of life", "philosophy", "death", "meaning of life", "terror management theory", "psychology", "mindfulness", "calm"],
+  "tags": [
+    "memento mori",
+    "stoicism",
+    "marcus aurelius",
+    "seneca",
+    "meditations",
+    "on the shortness of life",
+    "philosophy",
+    "death",
+    "meaning of life",
+    "terror management theory",
+    "psychology",
+    "mindfulness",
+    "calm"
+  ],
   "hashtags": "#Stoicism #MementoMori #Philosophy",
   "sections": [
     {
@@ -60,5 +74,31 @@
     "Greenberg, J., Pyszczynski, T. & Solomon, S. (1986). The causes and consequences of a need for self-esteem: A terror management theory",
     "Cozzolino, P. J., Staples, A. D., Meyers, L. S. & Samboceti, J. (2004). Greed, death, and values: From terror management to transcendence management theory. Personality and Social Psychology Bulletin, 30(3)",
     "Carstensen, L. L. (2006). The influence of a sense of time on human development. Science, 312(5782)"
-  ]
+  ],
+  "question": "If today were your last day, what would you stop postponing?",
+  "carousel": {
+    "cover": "Remember that you will die",
+    "slides": [
+      {
+        "text": "Since it is possible that thou mayest depart from life this very moment, regulate every act and thought accordingly.",
+        "sub": "Marcus Aurelius, Meditations II.11"
+      },
+      {
+        "text": "It is not that we have a short time to live, but that we waste much of it.",
+        "sub": "Seneca, On the Shortness of Life 1"
+      },
+      {
+        "text": "We guard our money carefully. We give away our time without a second thought.",
+        "sub": "Seneca's observation"
+      },
+      {
+        "text": "A calm, concrete reflection on death tends to make people clearer, not more anxious.",
+        "sub": "Cozzolino et al., 2004"
+      },
+      {
+        "text": "Tonight, ask one question: if this had been my last day, would I be at peace with it?",
+        "sub": "An evening practice"
+      }
+    ]
+  }
 }

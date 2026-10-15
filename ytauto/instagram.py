@@ -75,56 +75,116 @@ def fresh_token(cfg: dict) -> str:
     return data["token"]
 
 
-def caption(script: dict, cfg: dict, youtube_url: str | None = None) -> str:
-    short = script["short"]
-    title = short["title"].replace("#Shorts", "").strip()
-    tags = []
-    for t in (cfg["instagram"].get("hashtags", "") + " " + (script.get("hashtags") or "")).split():
+def hashtags(script: dict, cfg: dict, limit: int = 5) -> str:
+    """A few precise hashtags beat long lists; Instagram mostly searches the caption text now."""
+    tags: list[str] = []
+    for t in ((script.get("hashtags") or "") + " " + cfg["instagram"].get("hashtags", "")).split():
         t = t if t.startswith("#") else f"#{t}"
         if t.lower() not in {x.lower() for x in tags} and t.lower() != "#shorts":
             tags.append(t)
-    parts = [
-        title,
-        short["text"].strip(),
-        (f"▶ Full video essay on YouTube: {youtube_url}\n" if youtube_url else "▶ Full video essay on YouTube (link in bio)\n")
-        + f"YouTube: {cfg['instagram'].get('youtube_channel', cfg['channel_name'])}",
-        cfg["words"]["disclosure"],
-        " ".join(tags[:15]),
-    ]
+    return " ".join(tags[:limit])
+
+
+def _youtube_line(cfg: dict, youtube_url: str | None) -> str:
+    channel = cfg["instagram"].get("youtube_channel", cfg["channel_name"])
+    if youtube_url:
+        return f"▶ Full video essay on YouTube: {youtube_url}\nYouTube: {channel}"
+    return f"▶ Full video essay on YouTube (link in bio)\nYouTube: {channel}"
+
+
+def caption(script: dict, cfg: dict, youtube_url: str | None = None) -> str:
+    short = script["short"]
+    title = short["title"].replace("#Shorts", "").strip()
+    parts = [title, short["text"].strip()]
+    if script.get("question"):
+        parts.append(f"💬 {script['question']}")
+    parts += [_youtube_line(cfg, youtube_url), cfg["words"]["disclosure"], hashtags(script, cfg)]
     return "\n\n".join(parts)[:2150]
 
 
-def post_reel(cfg: dict, video_url: str, text: str) -> dict:
-    token = fresh_token(cfg)
+def carousel_caption(script: dict, cfg: dict, youtube_url: str | None = None) -> str:
+    data = script["carousel"]
+    intro = script["description"].split(". ")[0].strip().rstrip(".") + "."
+    parts = [data["cover"], intro, "Save this for a quiet moment, and share it with someone who needs it."]
+    if script.get("question"):
+        parts.append(f"💬 {script['question']}")
+    parts += [_youtube_line(cfg, youtube_url), hashtags(script, cfg)]
+    return "\n\n".join(parts)[:2150]
+
+
+def _user(token: str) -> str:
     me = requests.get(f"{GRAPH}/me", params={"fields": "user_id,username", "access_token": token}, timeout=30)
     if not me.ok:
         raise InstagramError(f"token check failed ({me.status_code}): {me.text[:200]}")
-    uid = me.json()["user_id"]
+    return me.json()["user_id"]
 
-    create = requests.post(
-        f"{GRAPH}/{uid}/media",
-        data={"media_type": "REELS", "video_url": video_url, "caption": text, "share_to_feed": "true",
-              "thumb_offset": "1500", "access_token": token},
-        timeout=60,
-    )
+
+def _container(uid: str, token: str, fields: dict) -> str:
+    create = requests.post(f"{GRAPH}/{uid}/media", data={**fields, "access_token": token}, timeout=60)
     if not create.ok:
         raise InstagramError(f"container failed ({create.status_code}): {create.text[:300]}")
-    container = create.json()["id"]
+    return create.json()["id"]
 
-    for _ in range(60):  # up to ~10 minutes for Instagram to fetch and process the video
+
+def _wait(container: str, token: str, tries: int = 60) -> None:
+    for _ in range(tries):  # Instagram fetches and processes the media asynchronously
         st = requests.get(f"{GRAPH}/{container}", params={"fields": "status_code,status", "access_token": token}, timeout=30).json()
         if st.get("status_code") == "FINISHED":
-            break
+            return
         if st.get("status_code") in ("ERROR", "EXPIRED"):
             raise InstagramError(f"processing failed: {st}")
         time.sleep(10)
-    else:
-        raise InstagramError("processing timed out")
+    raise InstagramError("processing timed out")
 
+
+def _publish(uid: str, token: str, container: str) -> tuple[str, str | None]:
     pub = requests.post(f"{GRAPH}/{uid}/media_publish", data={"creation_id": container, "access_token": token}, timeout=60)
     if not pub.ok:
         raise InstagramError(f"publish failed ({pub.status_code}): {pub.text[:300]}")
     media_id = pub.json()["id"]
     link = requests.get(f"{GRAPH}/{media_id}", params={"fields": "permalink", "access_token": token}, timeout=30).json()
-    print(f"  instagram reel: {link.get('permalink', media_id)}", flush=True)
-    return {"instagram_id": media_id, "instagram_url": link.get("permalink")}
+    return media_id, link.get("permalink")
+
+
+def post_reel(cfg: dict, video_url: str, text: str, story: bool = True) -> dict:
+    token = fresh_token(cfg)
+    uid = _user(token)
+    container = _container(uid, token, {"media_type": "REELS", "video_url": video_url, "caption": text,
+                                        "share_to_feed": "true", "thumb_offset": "1500"})
+    _wait(container, token)
+    media_id, link = _publish(uid, token, container)
+    print(f"  instagram reel: {link or media_id}", flush=True)
+    result = {"instagram_id": media_id, "instagram_url": link}
+    if story:  # the same clip as a Story brings followers back to the new Reel
+        try:
+            result["instagram_story_id"] = post_story(cfg, video_url=video_url)
+        except InstagramError as err:
+            print(f"  warning: story failed: {err}", flush=True)
+    return result
+
+
+def post_story(cfg: dict, video_url: str | None = None, image_url: str | None = None) -> str:
+    token = fresh_token(cfg)
+    uid = _user(token)
+    fields = {"media_type": "STORIES"}
+    fields.update({"video_url": video_url} if video_url else {"image_url": image_url})
+    container = _container(uid, token, fields)
+    _wait(container, token)
+    media_id, _ = _publish(uid, token, container)
+    print(f"  instagram story: {media_id}", flush=True)
+    return media_id
+
+
+def post_carousel(cfg: dict, image_urls: list[str], text: str) -> dict:
+    token = fresh_token(cfg)
+    uid = _user(token)
+    children = []
+    for url in image_urls[:10]:
+        child = _container(uid, token, {"image_url": url, "is_carousel_item": "true"})
+        _wait(child, token, tries=30)
+        children.append(child)
+    container = _container(uid, token, {"media_type": "CAROUSEL", "children": ",".join(children), "caption": text})
+    _wait(container, token, tries=30)
+    media_id, link = _publish(uid, token, container)
+    print(f"  instagram carousel: {link or media_id}", flush=True)
+    return {"carousel_id": media_id, "carousel_url": link}

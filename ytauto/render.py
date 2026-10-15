@@ -169,6 +169,13 @@ class Timeline:
         self._event(self.t + 0.2, self.t + seconds, "Title", f"{{\\pos({cx},{cy + gap // 4})}}{_esc(big)}", fade=(800, 600))
         self.t += seconds
 
+    def hook(self, text: str, seconds: float) -> None:
+        """Large question/statement in the upper third during the first seconds (Shorts)."""
+        cx = self.fmt.width // 2
+        y = int(self.fmt.height * 0.24)
+        size = int(self.fmt.body_size * 1.15)
+        self._event(self.t, self.t + seconds, "Title", f"{{\\pos({cx},{y})\\fs{size}}}{_esc(text)}", fade=(250, 500))
+
     def ass(self) -> str:
         f = self.fmt
         cream = _ass_color((244, 236, 220))
@@ -332,6 +339,8 @@ def render_short(script: dict, lang_cfg: dict, outdir: Path) -> dict | None:
     tl = Timeline(SHORT, palette)
     v, rate, pitch = lang_cfg["voice"], lang_cfg["rate"], lang_cfg["pitch"]
     tl.pause(0.4)
+    hook = short.get("hook") or short["title"].replace("#Shorts", "").strip()
+    tl.hook(hook, 3.2)
     for p in _paragraphs(short["text"]):
         tl.speak(p, v, rate, pitch)
         tl.pause(0.5)
