@@ -1,5 +1,6 @@
 {
   "de": {
+    "active": false,
     "channel_name": "Leise Gedanken",
     "voice": "de-DE-FlorianMultilingualNeural",
     "rate": "-6%",
@@ -25,6 +26,7 @@
     }
   },
   "en": {
+    "active": true,
     "channel_name": "Quiet Thoughts",
     "voice": "en-US-AndrewMultilingualNeural",
     "rate": "-5%",

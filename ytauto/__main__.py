@@ -125,7 +125,11 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     failed = []
+    config = _load(CONFIG, {})
     for lang in args.langs:
+        if not config.get(lang, {}).get("active", True):
+            print(f"[{lang}] paused (\"active\": false in config/channels.json) – skipping", flush=True)
+            continue
         try:
             produce(lang, args.topic, upload=not args.no_upload, with_short=not args.no_short, keep_record=not args.no_record)
         except Exception:
