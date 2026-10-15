@@ -83,38 +83,52 @@ def _openai(messages: list[dict], max_tokens: int) -> str:
     return _openai_compatible(base, key, model, messages, max_tokens, "LLM")
 
 
+_GEMINI_DEFAULT_MODELS = "gemini-flash-latest,gemini-3.6-flash,gemini-3-flash,gemini-2.5-flash"
+
+
 def _gemini(messages: list[dict], max_tokens: int) -> str:
-    key = os.environ.get("GEMINI_API_KEY")
+    key = os.environ.get("GEMINI_API_KEY", "").strip()
     if not key:
         raise NotConfigured("no GEMINI_API_KEY")
-    model = os.environ.get("GEMINI_MODEL") or "gemini-flash-latest"
+    models = [m.strip() for m in (os.environ.get("GEMINI_MODEL") or _GEMINI_DEFAULT_MODELS).split(",") if m.strip()]
     system = "\n\n".join(m["content"] for m in messages if m["role"] == "system")
     contents = [
         {"role": "model" if m["role"] == "assistant" else "user", "parts": [{"text": m["content"]}]}
         for m in messages
         if m["role"] != "system"
     ]
-    resp = requests.post(
-        f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
-        headers={"x-goog-api-key": key, "Content-Type": "application/json"},
-        json={
-            "systemInstruction": {"parts": [{"text": system}]},
-            "contents": contents,
-            "generationConfig": {
-                "temperature": 0.7,
-                "maxOutputTokens": max(max_tokens * 4, 16384),  # leaves room for "thinking" tokens
-                "responseMimeType": "application/json",
-            },
+    body = {
+        "systemInstruction": {"parts": [{"text": system}]},
+        "contents": contents,
+        "generationConfig": {
+            "temperature": 0.7,
+            "maxOutputTokens": max(max_tokens * 4, 16384),  # leaves room for "thinking" tokens
+            "responseMimeType": "application/json",
         },
-        timeout=240,
-    )
-    if resp.status_code != 200:
-        raise LLMError(f"Gemini {resp.status_code}: {resp.text[:300]}")
-    try:
-        parts = resp.json()["candidates"][0]["content"]["parts"]
-    except (ValueError, KeyError, IndexError, TypeError) as err:
-        raise LLMError(f"Gemini unexpected response ({err}): {resp.text[:300]!r}")
-    return "".join(p.get("text", "") for p in parts)
+    }
+    # Newer AI Studio keys ("AQ." prefix) are rejected by some models/auth styles, so try the
+    # header and the ?key= form for each model before giving up.
+    errors = []
+    for model in models:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+        for auth in ("header", "query"):
+            resp = requests.post(
+                url,
+                headers={"Content-Type": "application/json", **({"x-goog-api-key": key} if auth == "header" else {})},
+                params={"key": key} if auth == "query" else None,
+                json=body,
+                timeout=240,
+            )
+            if resp.status_code == 200:
+                try:
+                    parts = resp.json()["candidates"][0]["content"]["parts"]
+                except (ValueError, KeyError, IndexError, TypeError) as err:
+                    raise LLMError(f"Gemini unexpected response ({err}): {resp.text[:300]!r}")
+                return "".join(p.get("text", "") for p in parts)
+            errors.append(f"{model}/{auth} {resp.status_code}")
+            if resp.status_code not in (400, 401, 403, 404):
+                raise LLMError(f"Gemini {resp.status_code}: {resp.text[:300]}")
+    raise LLMError("Gemini rejected every model/auth combination: " + ", ".join(errors) + f" – last: {resp.text[:200]}")
 
 
 PROVIDERS = {"gemini": _gemini, "groq": _groq, "openai": _openai}
