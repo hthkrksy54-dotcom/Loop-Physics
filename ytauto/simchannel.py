@@ -23,7 +23,7 @@ CONFIG = ROOT / "config" / "sims.json"
 STATE = ROOT / "state" / "sims.json"
 TUNING = ROOT / "config" / "sims_tuning.json"  # written daily by trends.py
 OUT = ROOT / "out" / "sims"
-STORY_EVERY = 4  # with hourly Reels, a story for every one would crowd the account's stories
+STORY_EVERY = 2  # a story for every Reel would crowd the account's stories
 
 TITLES = {  # {onscreen} = the question shown in the video, {n} = rings/polygons, {song} = melody
     "escape": [
@@ -151,14 +151,14 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict) -> dict:
     description = "\n\n".join([
         body,
         f"💬 {question}",
-        f"A new simulation every hour on {cfg['channel_name']}.",
+        f"A new simulation every few hours on {cfg['channel_name']}.",
         "#satisfying #physics #simulation #shorts",
     ])
     caption = "\n\n".join([
         title,
         body,
         f"💬 {question}",
-        f"Follow {cfg['handle']} – a new one every hour."
+        f"Follow {cfg['handle']} – a new one every few hours."
         + (f"\n▶ YouTube: {cfg['youtube']['channel_url']}" if cfg["youtube"].get("channel_url") else ""),
         (tags_line + (f" #{composer.lower()}" if composer else "")).strip(),
     ])
