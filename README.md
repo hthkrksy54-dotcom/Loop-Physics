@@ -39,6 +39,8 @@ Thema → Skript → Faktencheck → Sprecherstimme → Musik → Visuals → Un
 | Ausführung | GitHub Actions, Mo/Mi/Fr (öffentliches Repo = unbegrenzte Minuten) | 0 € |
 | Instagram | jeder Short als Reel + Story (@quiet_thoughts_yt), Caption mit Frage + 3–5 Hashtags, Token verschlüsselt, verlängert sich selbst | 0 € |
 | Karussells | Di/Do/Sa: Zitat-Karussell aus einem veröffentlichten Video + Zitat-Story ([Workflow](.github/workflows/carousel.yml)) | 0 € |
+| Stories | täglich eine frische Story (Zitat-Karte, sonntags Wochenrückblick), wenn nicht schon Reel/Karussell eine gepostet hat; jede Story wird mit ihrem Highlight protokolliert ([Workflow](.github/workflows/stories.yml)) | 0 € |
+| Highlights | keine API bei Instagram – sonntags kommt eine Liste, welche Stories in welches Highlight gehören (`python -m ytauto highlights`) | 0 € |
 | Upload-Wächter | stündlich: erkennt Videos, die du von Hand hochlädst, korrigiert Shorts, postet das passende Reel | 0 € |
 
 **Einrichtung:** siehe [SETUP.md](SETUP.md). Die YouTube-Kanäle musst du einmal selbst anlegen.

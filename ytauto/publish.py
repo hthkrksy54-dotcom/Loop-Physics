@@ -186,3 +186,35 @@ def to_github_release(script: dict, cfg: dict, long: dict, short: dict | None) -
     if rel["assets"].get(f"{prefix}-short.mp4"):
         result["short_url"] = rel["assets"][f"{prefix}-short.mp4"]
     return result
+
+
+def release_asset(tag: str, name: str, path: str | Path, asset_name: str, ctype: str) -> str | None:
+    """Add one file to a long-lived release (created on first use); returns its public URL."""
+    token = os.environ.get("GITHUB_TOKEN")
+    repo = os.environ.get("GITHUB_REPOSITORY")
+    if not (token and repo):
+        return None
+    api = f"https://api.github.com/repos/{repo}"
+    headers = {"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"}
+    rel = requests.get(f"{api}/releases/tags/{tag}", headers=headers, timeout=30)
+    if rel.status_code == 404:
+        rel = requests.post(f"{api}/releases", headers=headers, json={"tag_name": tag, "name": name}, timeout=30)
+    if not rel.ok:
+        print(f"  release {tag} unavailable ({rel.status_code}): {rel.text[:200]}", flush=True)
+        return None
+    release = rel.json()
+    for asset in release.get("assets", []):
+        if asset["name"] == asset_name:
+            requests.delete(f"{api}/releases/assets/{asset['id']}", headers=headers, timeout=30)
+    with Path(path).open("rb") as fh:
+        up = requests.post(
+            release["upload_url"].split("{")[0],
+            params={"name": asset_name},
+            headers={**headers, "Content-Type": ctype},
+            data=fh,
+            timeout=300,
+        )
+    if up.status_code not in (200, 201):
+        print(f"  asset upload failed for {asset_name} ({up.status_code})", flush=True)
+        return None
+    return up.json().get("browser_download_url")

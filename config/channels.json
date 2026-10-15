@@ -55,7 +55,8 @@
       "account": "quiet_thoughts_yt",
       "token_file": "state/instagram_en.token",
       "hashtags": "#philosophy #psychology #quietthoughts",
-      "youtube_channel": "youtube.com/@quietthoughts-20"
+      "youtube_channel": "youtube.com/@quietthoughts-20",
+      "story_log": "state/instagram_en_stories.json"
     }
   }
 }

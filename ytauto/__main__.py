@@ -6,6 +6,8 @@
   python -m ytauto check                       test voice, script AI and YouTube connection
   python -m ytauto sync                        match manual YouTube uploads, post Instagram Reels
   python -m ytauto carousel                    post the next Instagram quote carousel
+  python -m ytauto story                       daily Instagram story (quote / Sunday recap)
+  python -m ytauto highlights                  which recent stories go into which highlight
 """
 from __future__ import annotations
 
@@ -106,7 +108,8 @@ def produce(lang: str, topic_id: str | None, upload: bool, with_short: bool, kee
         if short and short_url and record.get("youtube_id") and instagram.configured(cfg):
             try:
                 yt_url = f"https://youtu.be/{record['youtube_id']}"
-                record.update(instagram.post_reel(cfg, short_url, instagram.caption(script, cfg, yt_url)))
+                record.update(instagram.post_reel(cfg, short_url, instagram.caption(script, cfg, yt_url),
+                                                  highlight=social.highlight_for(script), label=script["short"]["title"]))
             except Exception as err:  # Instagram must never block the YouTube side
                 record.setdefault("warnings", []).append(f"instagram: {err}")
                 print(f"  warning: instagram reel failed: {err}", flush=True)
@@ -166,13 +169,75 @@ def post_carousel(lang: str, cfg: dict, render_only: bool = False) -> bool:
         _save(STATE, state)
         if quote and urls.get(images[-1]):
             try:
-                rec["quote_story_id"] = instagram.post_story(cfg, image_url=urls[images[-1]])
+                rec["quote_story_id"] = instagram.post_story(cfg, image_url=urls[images[-1]], kind="quote", highlight="Quotes",
+                                                             label=f"{quote['author']}: {quote['text'][:60]}")
                 _save(STATE, state)
             except Exception as err:
                 print(f"  warning: quote story failed: {err}", flush=True)
         return True
     print(f"[{lang}] no video left without a carousel", flush=True)
     return False
+
+
+def daily_story(lang: str, cfg: dict, force: bool = False) -> bool:
+    """Keep a fresh story up every day: Sunday a weekly recap, otherwise a quote – unless a Reel or
+    carousel story already went out in the last 20 hours."""
+    now = dt.datetime.now(dt.timezone.utc)
+    sunday = now.weekday() == 6
+    if not (force or sunday):
+        fresh = [s for s in instagram.live_stories(cfg)
+                 if now - dt.datetime.strptime(s["timestamp"], "%Y-%m-%dT%H:%M:%S%z") < dt.timedelta(hours=20)]
+        if fresh:
+            print(f"[{lang}] {len(fresh)} fresh stor{'y' if len(fresh) == 1 else 'ies'} already up – nothing to do", flush=True)
+            return False
+    state = _load(STATE, {})
+    records = state.get(lang, [])
+    scripts = {r["id"]: _load(SCRIPTS / lang / f"{r['id']}.json", None) for r in records}
+    live = [r for r in records if r.get("youtube_id") and scripts.get(r["id"])]
+    outdir = OUT / lang / "stories"
+    outdir.mkdir(parents=True, exist_ok=True)
+    stamp = now.strftime("%Y-%m-%d")
+    week = [r for r in live if now - dt.datetime.fromisoformat(r["date"]) < dt.timedelta(days=8)]
+
+    if sunday and week:
+        path = social.story_card(
+            outdir / f"{stamp}-week.jpg", "This week", cfg["channel_name"],
+            [scripts[r["id"]]["title_card"] for r in week] + ["Full video essays on YouTube – link in bio"],
+            seed=now.isocalendar()[1],
+        )
+        kind, highlight, label = "recap", None, f"week {now:%G-W%V}: {len(week)} videos"
+    else:
+        pool = social.quote_pool([scripts[r["id"]] for r in live] or [s for s in scripts.values() if s])
+        if not pool:
+            print(f"[{lang}] no quotes available for a story", flush=True)
+            return False
+        used = {}
+        for i, e in enumerate(instagram.story_log(cfg)):
+            if e.get("kind") == "quote":
+                used[e.get("label", "")] = i
+        key = lambda q: f"{q['author']}: {q['text'][:60]}"
+        quote = min(pool, key=lambda q: used.get(key(q), -1))  # unused first, then the longest-ago one
+        path = social.quote_story(outdir / f"{stamp}-quote.jpg", quote["text"], quote["author"],
+                                  render.seed_for(quote["script"]) + now.toordinal(), "@" + cfg["instagram"].get("account", ""))
+        kind, highlight, label = "quote", "Quotes", key(quote)
+
+    url = publish.release_asset(f"stories-{lang}", f"[{lang.upper()}] Instagram stories", path,
+                                f"story-{lang}-{path.name}", "image/jpeg")
+    if not url:
+        raise RuntimeError("story image could not be published as a release asset")
+    instagram.post_story(cfg, image_url=url, kind=kind, highlight=highlight, label=label)
+    return True
+
+
+def highlight_list(cfg: dict, days: int = 7) -> list[str]:
+    """Stories of the last days, grouped by the highlight they belong in (for the owner to file)."""
+    now = dt.datetime.now(dt.timezone.utc)
+    groups: dict[str, list[str]] = {}
+    for e in instagram.story_log(cfg):
+        if e.get("highlight") and now - dt.datetime.fromisoformat(e["date"]) < dt.timedelta(days=days):
+            day = dt.datetime.fromisoformat(e["date"]).strftime("%a %d.%m.")
+            groups.setdefault(e["highlight"], []).append(f"{day} {e['kind']}: {e.get('label', '')}")
+    return [f"{h}: " + " | ".join(items) for h, items in groups.items()]
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -192,6 +257,10 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("sync", help="match manual YouTube uploads, fix Shorts, post Instagram Reels")
     car = sub.add_parser("carousel", help="post the next Instagram quote carousel")
     car.add_argument("--render-only", action="store_true")
+    sto = sub.add_parser("story", help="daily Instagram story (quote, or Sunday weekly recap)")
+    sto.add_argument("--force", action="store_true", help="post even if a fresh story is already up")
+    hl = sub.add_parser("highlights", help="list recent stories by the highlight they belong in")
+    hl.add_argument("--days", type=int, default=7)
     args = ap.parse_args(argv)
 
     if args.cmd == "check":
@@ -210,6 +279,18 @@ def main(argv: list[str] | None = None) -> int:
         for lang, cfg in _load(CONFIG, {}).items():
             if cfg.get("active", True) and (args.render_only or instagram.configured(cfg)):
                 post_carousel(lang, cfg, render_only=args.render_only)
+        return 0
+
+    if args.cmd == "highlights":
+        for lang, cfg in _load(CONFIG, {}).items():
+            if cfg.get("active", True) and cfg.get("instagram", {}).get("enabled"):
+                print("\n".join(highlight_list(cfg, args.days)) or f"[{lang}] no new stories")
+        return 0
+
+    if args.cmd == "story":
+        for lang, cfg in _load(CONFIG, {}).items():
+            if cfg.get("active", True) and instagram.configured(cfg):
+                daily_story(lang, cfg, force=args.force)
         return 0
 
     if args.cmd == "render":

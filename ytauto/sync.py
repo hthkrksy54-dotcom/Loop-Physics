@@ -13,7 +13,7 @@ import re
 
 import requests
 
-from . import instagram, publish, youtube
+from . import instagram, publish, social, youtube
 
 API = "https://www.googleapis.com/youtube/v3"
 
@@ -120,7 +120,8 @@ def run(lang: str, cfg: dict, state: dict, load_script) -> bool:
                 f"https://github.com/{_repo()}/releases/download/video-{lang}-{rec['id']}/{lang}-{rec['id']}-short.mp4"
             )
             try:
-                rec.update(instagram.post_reel(cfg, short_url, instagram.caption(script, cfg, f"https://youtu.be/{rec['youtube_id']}")))
+                rec.update(instagram.post_reel(cfg, short_url, instagram.caption(script, cfg, f"https://youtu.be/{rec['youtube_id']}"),
+                                               highlight=social.highlight_for(script), label=script["short"]["title"]))
                 changed = True
             except Exception as err:
                 print(f"  warning: instagram reel for '{rec['id']}' failed: {err}", flush=True)

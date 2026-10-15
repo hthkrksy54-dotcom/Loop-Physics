@@ -176,3 +176,22 @@ def best_quote(script: dict) -> dict | None:
     """The shortest quote of the (fact-checked) script reads best on a phone."""
     quotes = [s["quote"] for s in script.get("sections", []) if s.get("quote") and s["quote"].get("text")]
     return min(quotes, key=lambda q: len(q["text"])) if quotes else None
+
+
+HIGHLIGHTS = {"psychology": "Psychology", "philosophy": "Philosophy"}
+
+
+def highlight_for(script: dict) -> str:
+    """Story highlight a video's Reel story belongs in."""
+    return HIGHLIGHTS.get(script.get("category", ""), script.get("label") or "Philosophy")
+
+
+def quote_pool(scripts: list[dict], max_words: int = 40) -> list[dict]:
+    """Fact-checked quotes from the given scripts that fit on a story card."""
+    pool = []
+    for script in scripts:
+        for sec in script.get("sections", []):
+            q = sec.get("quote")
+            if q and q.get("text") and len(q["text"].split()) <= max_words:
+                pool.append({"text": q["text"], "author": q["author"], "script": script})
+    return pool

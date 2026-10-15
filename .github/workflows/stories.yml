@@ -1,0 +1,47 @@
+name: Instagram story
+
+# Daily: keep a fresh story up (quote card, Sunday a weekly recap) unless a Reel/carousel story already went out.
+on:
+  schedule:
+    - cron: "41 18 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: produce
+  cancel-in-progress: false
+
+jobs:
+  story:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install Python packages
+        run: pip install -r requirements.txt
+
+      - name: Post story
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
+        run: python -m ytauto story
+
+      - name: Save progress
+        if: always()
+        run: |
+          git config user.name "ytauto-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A state
+          if ! git diff --cached --quiet; then
+            git commit -m "Instagram story [skip ci]"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi

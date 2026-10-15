@@ -146,7 +146,30 @@ def _publish(uid: str, token: str, container: str) -> tuple[str, str | None]:
     return media_id, link.get("permalink")
 
 
-def post_reel(cfg: dict, video_url: str, text: str, story: bool = True) -> dict:
+def _log_story(cfg: dict, entry: dict) -> None:
+    """Every story we post, with the highlight it belongs in (highlights have no API; the owner files them)."""
+    path = ROOT / cfg["instagram"].get("story_log", "state/instagram_stories.json")
+    log = json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
+    log.append(entry)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(log, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def story_log(cfg: dict) -> list[dict]:
+    path = ROOT / cfg["instagram"].get("story_log", "state/instagram_stories.json")
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
+
+
+def live_stories(cfg: dict) -> list[dict]:
+    """Stories currently visible on the account (last 24 hours)."""
+    token = fresh_token(cfg)
+    r = requests.get(f"{GRAPH}/{_user(token)}/stories", params={"fields": "id,timestamp", "access_token": token}, timeout=30)
+    if not r.ok:
+        raise InstagramError(f"stories lookup failed ({r.status_code}): {r.text[:200]}")
+    return r.json().get("data", [])
+
+
+def post_reel(cfg: dict, video_url: str, text: str, story: bool = True, highlight: str | None = None, label: str = "") -> dict:
     token = fresh_token(cfg)
     uid = _user(token)
     container = _container(uid, token, {"media_type": "REELS", "video_url": video_url, "caption": text,
@@ -157,13 +180,14 @@ def post_reel(cfg: dict, video_url: str, text: str, story: bool = True) -> dict:
     result = {"instagram_id": media_id, "instagram_url": link}
     if story:  # the same clip as a Story brings followers back to the new Reel
         try:
-            result["instagram_story_id"] = post_story(cfg, video_url=video_url)
+            result["instagram_story_id"] = post_story(cfg, video_url=video_url, kind="reel", highlight=highlight, label=label)
         except InstagramError as err:
             print(f"  warning: story failed: {err}", flush=True)
     return result
 
 
-def post_story(cfg: dict, video_url: str | None = None, image_url: str | None = None) -> str:
+def post_story(cfg: dict, video_url: str | None = None, image_url: str | None = None,
+               kind: str = "story", highlight: str | None = None, label: str = "") -> str:
     token = fresh_token(cfg)
     uid = _user(token)
     fields = {"media_type": "STORIES"}
@@ -171,7 +195,9 @@ def post_story(cfg: dict, video_url: str | None = None, image_url: str | None = 
     container = _container(uid, token, fields)
     _wait(container, token)
     media_id, _ = _publish(uid, token, container)
-    print(f"  instagram story: {media_id}", flush=True)
+    print(f"  instagram story: {media_id} ({kind}{' → ' + highlight if highlight else ''})", flush=True)
+    _log_story(cfg, {"id": media_id, "date": _now().isoformat(timespec="seconds"), "kind": kind,
+                     "highlight": highlight, "label": label})
     return media_id
 
 
