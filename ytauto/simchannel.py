@@ -206,6 +206,11 @@ def run(upload: bool = True) -> dict:
             print(f"  warning: youtube failed: {err}", flush=True)
     state.setdefault("videos", []).append(record)
     save(STATE, state)
+    if _youtube_token(cfg):
+        try:  # give videos the owner uploaded by hand our title, description, tags and playlist
+            youtube_polish(apply=True)
+        except (Exception, SystemExit) as err:
+            print(f"  warning: youtube polish failed: {err}", flush=True)
     return record
 
 
@@ -318,7 +323,9 @@ def youtube_polish(apply: bool = False) -> None:
         fname = (v.get("fileDetails", {}).get("fileName") or "").casefold()
         title = _norm(v["snippet"]["title"])
         rec = next((r for r in records if r.get("youtube_id") == v["id"]), None)
-        free = [r for r in records if not r.get("youtube_id") and abs(r.get("duration", 0) - secs) <= 1.5]
+        recent = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=4)
+        free = [r for r in records if not r.get("youtube_id") and abs(r.get("duration", 0) - secs) <= 1.5
+                and dt.datetime.fromisoformat(r["date"]) > recent]
         rec = rec or next((r for r in free if f"{r['kind']}-{r['seed']}" in fname), None) \
             or next((r for r in free if r["kind"] in fname), None) \
             or next((r for r in free if _norm(r["title"]) == title), None) \
