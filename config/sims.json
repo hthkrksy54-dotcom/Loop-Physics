@@ -1,7 +1,14 @@
 {
   "channel_name": "Loop Physics",
   "handle": "@loop_physics",
-  "kinds": ["escape", "grow"],
+  "kinds": [
+    "escape",
+    "battle",
+    "grow",
+    "plinko",
+    "polygon",
+    "stringart"
+  ],
   "instagram": {
     "enabled": true,
     "account": "loop_physics",

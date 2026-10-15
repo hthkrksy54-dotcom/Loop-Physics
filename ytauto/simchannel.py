@@ -22,9 +22,9 @@ CONFIG = ROOT / "config" / "sims.json"
 STATE = ROOT / "state" / "sims.json"
 OUT = ROOT / "out" / "sims"
 
-TITLES = {
+TITLES = {  # {onscreen} = the question shown in the video, {n} = rings/polygons, {song} = melody
     "escape": [
-        "Can the ball escape all {n} rings?",
+        "{onscreen}",
         "{n} rings, one ball – wait for the ending",
         "Will this ball break out of {n} spinning rings?",
         "Every bounce plays {song} – can it escape?",
@@ -35,11 +35,36 @@ TITLES = {
         "Every bounce = bigger ball + one note of {song}",
         "How many bounces until it fills the circle?",
     ],
+    "battle": [
+        "{onscreen}",
+        "Pick a color before it starts",
+        "Four balls, one way out – who wins?",
+        "Every bounce plays {song} – which color wins?",
+    ],
+    "polygon": [
+        "{onscreen}",
+        "One ball vs. {n} spinning polygons",
+        "Every bounce plays {song} – can it break out?",
+    ],
+    "plinko": [
+        "{onscreen}",
+        "Watch randomness turn into a perfect curve",
+        "Hundreds of balls, one bell curve",
+    ],
+    "stringart": [
+        "{onscreen}",
+        "Every bounce draws a line – wait for the pattern",
+        "A bouncing ball draws this – with {song}",
+    ],
 }
 QUESTIONS = {
     "escape": ["How many seconds did you guess?", "Which ring was the hardest one?", "Did you recognise the melody?"],
     "grow": ["At what percent did you start holding your breath?", "Did you recognise the melody?",
              "Should the next one be bigger or faster?"],
+    "battle": ["Which color did you pick?", "Did your color win?", "Which color should race next time?"],
+    "polygon": ["How many seconds did you guess?", "Rings or polygons – which is harder?"],
+    "plinko": ["Did you expect such a clean bell curve?", "Which slot would you bet on?"],
+    "stringart": ["What does the pattern remind you of?", "More bounces next time?"],
 }
 COMPOSERS = {"fur_elise": "Beethoven", "ode_to_joy": "Beethoven", "mountain_king": "Grieg", "twinkle": "Mozart",
              "canon": "Pachelbel"}
@@ -75,8 +100,9 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict) -> dict:
     rnd = random.Random(seed * 31 + len(kind))
     song_full = sims.MELODIES[melody][0]
     song = song_full.split(" – ")[0]
-    params = {"n": getattr(sims.KINDS[kind](seed), "n", ""), "song": song}
-    title = rnd.choice(TITLES.get(kind, ["{song}"])).format(**params)
+    sim = sims.KINDS[kind](seed)
+    params = {"n": getattr(sim, "n", ""), "song": song, "onscreen": " ".join(sim.title())}
+    title = rnd.choice(TITLES.get(kind, ["{onscreen}"])).format(**params)
     question = rnd.choice(QUESTIONS.get(kind, ["Did you recognise the melody?"]))
     composer = COMPOSERS.get(melody, "")
     body = (f"Every bounce plays the next note of {song_full}.\n"
