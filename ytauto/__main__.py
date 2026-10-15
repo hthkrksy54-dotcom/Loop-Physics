@@ -3,6 +3,7 @@
   python -m ytauto run --langs de en           pick next topic, write/load script, render, publish
   python -m ytauto run --langs de --no-upload  same, but keep files locally (out/)
   python -m ytauto render --lang en --topic hedonic-treadmill   render only (preview)
+  python -m ytauto check                       test voice, script AI and YouTube connection
 """
 from __future__ import annotations
 
@@ -13,7 +14,7 @@ import sys
 import traceback
 from pathlib import Path
 
-from . import generate, publish, render, youtube
+from . import check, generate, publish, render, youtube
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "config" / "channels.json"
@@ -111,7 +112,11 @@ def main(argv: list[str] | None = None) -> int:
     ren.add_argument("--lang", required=True)
     ren.add_argument("--topic", required=True)
     ren.add_argument("--no-short", action="store_true")
+    sub.add_parser("check")
     args = ap.parse_args(argv)
+
+    if args.cmd == "check":
+        return check.run(_load(CONFIG, {}))
 
     if args.cmd == "render":
         produce(args.lang, args.topic, upload=False, with_short=not args.no_short)
