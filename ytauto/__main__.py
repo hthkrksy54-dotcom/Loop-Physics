@@ -14,7 +14,7 @@ import sys
 import traceback
 from pathlib import Path
 
-from . import check, generate, instagram, publish, render, youtube
+from . import check, generate, instagram, publish, render, sync, youtube
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "config" / "channels.json"
@@ -97,9 +97,13 @@ def produce(lang: str, topic_id: str | None, upload: bool, with_short: bool, kee
         release = publish.to_github_release(script, cfg, long, short)
         short_url = release.pop("short_url", None)
         record.update(release)
-        if short and short_url and instagram.configured(cfg):
+        if short_url:
+            record["short_url"] = short_url
+        # With automatic YouTube upload the Reel goes out now; otherwise the hourly sync posts it as soon as
+        # the owner's manual upload shows up on the channel, so the caption can link to the video.
+        if short and short_url and record.get("youtube_id") and instagram.configured(cfg):
             try:
-                yt_url = f"https://youtu.be/{record['youtube_id']}" if record.get("youtube_id") else None
+                yt_url = f"https://youtu.be/{record['youtube_id']}"
                 record.update(instagram.post_reel(cfg, short_url, instagram.caption(script, cfg, yt_url)))
             except Exception as err:  # Instagram must never block the YouTube side
                 record.setdefault("warnings", []).append(f"instagram: {err}")
@@ -125,10 +129,20 @@ def main(argv: list[str] | None = None) -> int:
     ren.add_argument("--topic", required=True)
     ren.add_argument("--no-short", action="store_true")
     sub.add_parser("check")
+    sub.add_parser("sync", help="match manual YouTube uploads, fix Shorts, post Instagram Reels")
     args = ap.parse_args(argv)
 
     if args.cmd == "check":
         return check.run(_load(CONFIG, {}))
+    if args.cmd == "sync":
+        config, state = _load(CONFIG, {}), _load(STATE, {})
+        changed = False
+        for lang, cfg in config.items():
+            if cfg.get("active", True):
+                changed |= sync.run(lang, cfg, state, lambda tid, lang=lang: _load(SCRIPTS / lang / f"{tid}.json", None))
+        if changed:
+            _save(STATE, state)
+        return 0
 
     if args.cmd == "render":
         produce(args.lang, args.topic, upload=False, with_short=not args.no_short)
