@@ -99,7 +99,8 @@ def produce(lang: str, topic_id: str | None, upload: bool, with_short: bool, kee
         record.update(release)
         if short and short_url and instagram.configured(cfg):
             try:
-                record.update(instagram.post_reel(cfg, short_url, instagram.caption(script, cfg)))
+                yt_url = f"https://youtu.be/{record['youtube_id']}" if record.get("youtube_id") else None
+                record.update(instagram.post_reel(cfg, short_url, instagram.caption(script, cfg, yt_url)))
             except Exception as err:  # Instagram must never block the YouTube side
                 record.setdefault("warnings", []).append(f"instagram: {err}")
                 print(f"  warning: instagram reel failed: {err}", flush=True)

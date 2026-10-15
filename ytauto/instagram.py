@@ -75,7 +75,7 @@ def fresh_token(cfg: dict) -> str:
     return data["token"]
 
 
-def caption(script: dict, cfg: dict) -> str:
+def caption(script: dict, cfg: dict, youtube_url: str | None = None) -> str:
     short = script["short"]
     title = short["title"].replace("#Shorts", "").strip()
     tags = []
@@ -86,7 +86,8 @@ def caption(script: dict, cfg: dict) -> str:
     parts = [
         title,
         short["text"].strip(),
-        f"Full video essay on YouTube: {cfg['channel_name']} (link in bio)",
+        (f"▶ Full video essay on YouTube: {youtube_url}\n" if youtube_url else "▶ Full video essay on YouTube (link in bio)\n")
+        + f"YouTube: {cfg['instagram'].get('youtube_channel', cfg['channel_name'])}",
         cfg["words"]["disclosure"],
         " ".join(tags[:15]),
     ]
