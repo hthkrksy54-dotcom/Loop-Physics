@@ -20,7 +20,9 @@ from . import instagram, publish, sims, youtube
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "config" / "sims.json"
 STATE = ROOT / "state" / "sims.json"
+TUNING = ROOT / "config" / "sims_tuning.json"  # written daily by trends.py
 OUT = ROOT / "out" / "sims"
+STORY_EVERY = 4  # with hourly Reels, a story for every one would crowd the account's stories
 
 TITLES = {  # {onscreen} = the question shown in the video, {n} = rings/polygons, {song} = melody
     "escape": [
@@ -102,14 +104,19 @@ def save(path: Path, data) -> None:
 
 
 def plan(cfg: dict, state: dict) -> tuple[str, int, str]:
-    """Next format (least used, never twice in a row), a fresh seed for it, and the least used melody."""
+    """Next format (weighted by the daily tuning, never twice in a row, recently used ones less likely),
+    a fresh seed for it, and the least used melody."""
     videos = state.get("videos", [])
+    tuning = load(TUNING, {})
     kinds = [k for k in cfg["kinds"] if k in sims.KINDS]
-    used = Counter(v["kind"] for v in videos)
     last = videos[-1]["kind"] if videos else None
-    kind = min(kinds, key=lambda k: (k == last and len(kinds) > 1, used[k], kinds.index(k)))
+    recent = Counter(v["kind"] for v in videos[-2 * len(kinds):])
+    cands = [k for k in kinds if k != last] or kinds
+    weights = [max(0.05, tuning.get("kind_weights", {}).get(k, 1.0)) / (1 + recent[k]) for k in cands]
+    kind = random.Random(len(videos) * 7919).choices(cands, weights=weights)[0]
     start = max((v["seed"] for v in videos if v["kind"] == kind), default=-1) + 1
-    lo, hi = RANGES[len(videos) % len(RANGES)]
+    ranges = [tuple(r) for r in tuning.get("ranges") or RANGES]
+    lo, hi = ranges[len(videos) % len(ranges)]
     try:
         seed = sims.pick_seed(kind, start, lo, hi, tries=60)
     except RuntimeError:  # some formats can't be that short or long
@@ -126,27 +133,35 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict) -> dict:
     song = song_full.split(" – ")[0]
     sim = sims.KINDS[kind](seed)
     params = {"n": getattr(sim, "n", ""), "song": song, "onscreen": " ".join(sim.title())}
-    title = rnd.choice(TITLES.get(kind, ["{onscreen}"])).format(**params)
-    question = rnd.choice(QUESTIONS.get(kind, ["Did you recognise the melody?"]))
+    tuning = load(TUNING, {})
+    hooks = tuning.get("title_hooks") or []
+    pool = hooks if hooks and rnd.random() < 0.5 else TITLES.get(kind, ["{onscreen}"])  # half the time: trend hooks
+    try:
+        title = rnd.choice(pool).format(**params)
+    except (KeyError, IndexError, ValueError):
+        title = " ".join(sim.title())
+    question = rnd.choice(QUESTIONS.get(kind, ["Did you recognise the melody?"]) + (tuning.get("questions") or [])[:3])
+    tags_line = " ".join(["#satisfying"] + [f"#{t}" for t in (tuning.get("hashtags") or [])[:3]]) \
+        if tuning.get("hashtags") else cfg["instagram"].get("hashtags", "")
     composer = COMPOSERS.get(melody, "")
     body = (BODIES.get(kind, f"Every bounce plays the next note of {song_full}.") + "\n"
             "Physics, picture and sound are all generated in code – no two runs are the same.")
     description = "\n\n".join([
         body,
         f"💬 {question}",
-        f"A new simulation every few hours on {cfg['channel_name']}.",
+        f"A new simulation every hour on {cfg['channel_name']}.",
         "#satisfying #physics #simulation #shorts",
     ])
     caption = "\n\n".join([
         title,
         body,
         f"💬 {question}",
-        f"Follow {cfg['handle']} – a new one every few hours."
+        f"Follow {cfg['handle']} – a new one every hour."
         + (f"\n▶ YouTube: {cfg['youtube']['channel_url']}" if cfg["youtube"].get("channel_url") else ""),
-        (cfg["instagram"].get("hashtags", "") + (f" #{composer.lower()}" if composer else "")).strip(),
+        (tags_line + (f" #{composer.lower()}" if composer else "")).strip(),
     ])
     return {"title": title[:95], "description": description, "caption": caption[:2150],
-            "tags": TAGS + [t for t in (song.lower(), composer.lower()) if t]}
+            "tags": TAGS + [t for t in (song.lower(), composer.lower()) if t] + (tuning.get("hashtags") or [])[:4]}
 
 
 def _youtube_token(cfg: dict) -> str | None:
@@ -165,6 +180,14 @@ def run(upload: bool = True) -> dict:
             instagram._user(instagram.fresh_token(cfg))
         except instagram.InstagramError as err:
             raise SystemExit(f"Instagram access for @{cfg['instagram']['account']} is not working – nothing rendered. {err}")
+        try:
+            used, total = instagram.publishing_quota(cfg)
+        except instagram.InstagramError as err:
+            print(f"  warning: {err}", flush=True)
+            used, total = 0, 100
+        if used >= total - 3:
+            print(f"[sims] Instagram publishing limit nearly used ({used}/{total} in 24 h) – skipping this hour", flush=True)
+            return {}
     kind, seed, melody = plan(cfg, state)
     meta = metadata(kind, seed, melody, cfg)
     stamp = dt.datetime.now(dt.timezone.utc)
@@ -186,7 +209,8 @@ def run(upload: bool = True) -> dict:
         record["release"] = rel["release"]
     if video_url and instagram.configured(cfg):
         try:
-            record.update(instagram.post_reel(cfg, video_url, meta["caption"], story=True, label=meta["title"]))
+            story = len(state.get("videos", [])) % STORY_EVERY == 0
+            record.update(instagram.post_reel(cfg, video_url, meta["caption"], story=story, label=meta["title"]))
         except Exception as err:  # one platform failing must not lose the run
             record.setdefault("warnings", []).append(f"instagram: {err}")
             print(f"  warning: instagram failed: {err}", flush=True)
@@ -206,6 +230,9 @@ def run(upload: bool = True) -> dict:
             print(f"  warning: youtube failed: {err}", flush=True)
     state.setdefault("videos", []).append(record)
     save(STATE, state)
+    removed = publish.cleanup_releases("sims-", keep_days=10)  # Instagram keeps its own copy
+    if removed:
+        print(f"  removed {removed} old releases", flush=True)
     if _youtube_token(cfg):
         try:  # give videos the owner uploaded by hand our title, description, tags and playlist
             youtube_polish(apply=True)

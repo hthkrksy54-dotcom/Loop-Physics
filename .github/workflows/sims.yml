@@ -1,10 +1,10 @@
 name: Loop Physics
 
-# Every 4 hours a new satisfying physics simulation: render, archive as release, Instagram Reel + Story
-# (YouTube once enabled). Own queue, so the long Quiet Thoughts renders never delay or cancel these runs.
+# Every hour a new satisfying physics simulation: render, archive as release, Instagram Reel (+ Story every
+# 4th; YouTube once enabled). Own queue, so the long Quiet Thoughts renders never delay or cancel these runs.
 on:
   schedule:
-    - cron: "17 1,5,9,13,17,21 * * *"
+    - cron: "17 * * * *"
   workflow_dispatch:
     inputs:
       upload:

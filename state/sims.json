@@ -11,7 +11,16 @@
       "instagram_id": "18101455724646658",
       "instagram_url": "https://www.instagram.com/reel/DehqL_wCiN9/",
       "instagram_story_id": "18112955510055438",
-      "youtube_id": "EmiWErRTvyQ"
+      "youtube_id": "EmiWErRTvyQ",
+      "stats": {
+        "views": 147,
+        "reach": 128,
+        "saved": 0,
+        "shares": 0,
+        "likes": 1,
+        "comments": 0,
+        "at": "2026-10-15T20:31+00:00"
+      }
     },
     {
       "date": "2026-10-15T19:11:57+00:00",
@@ -23,7 +32,16 @@
       "instagram_id": "18637230283017199",
       "instagram_url": "https://www.instagram.com/reel/Dehrk58AWOH/",
       "instagram_story_id": "17868888687662804",
-      "youtube_id": "56RF1mR-xd8"
+      "youtube_id": "56RF1mR-xd8",
+      "stats": {
+        "views": 123,
+        "reach": 109,
+        "saved": 0,
+        "shares": 0,
+        "likes": 1,
+        "comments": 0,
+        "at": "2026-10-15T20:31+00:00"
+      }
     },
     {
       "date": "2026-10-15T19:14:13+00:00",
@@ -35,7 +53,16 @@
       "instagram_id": "17865931248680388",
       "instagram_url": "https://www.instagram.com/reel/Dehr064jz3d/",
       "instagram_story_id": "18099217016356014",
-      "youtube_id": "sLRa3fHEX0A"
+      "youtube_id": "sLRa3fHEX0A",
+      "stats": {
+        "views": 383,
+        "reach": 144,
+        "saved": 0,
+        "shares": 0,
+        "likes": 3,
+        "comments": 0,
+        "at": "2026-10-15T20:31+00:00"
+      }
     },
     {
       "date": "2026-10-15T19:16:27+00:00",
@@ -47,7 +74,16 @@
       "instagram_id": "18112075553220163",
       "instagram_url": "https://www.instagram.com/reel/DehsKoEgtrY/",
       "instagram_story_id": "18217634695359031",
-      "youtube_id": "2rPJ96pPw6Q"
+      "youtube_id": "2rPJ96pPw6Q",
+      "stats": {
+        "views": 159,
+        "reach": 129,
+        "saved": 0,
+        "shares": 0,
+        "likes": 1,
+        "comments": 0,
+        "at": "2026-10-15T20:31+00:00"
+      }
     },
     {
       "date": "2026-10-15T19:18:42+00:00",
@@ -59,7 +95,16 @@
       "instagram_id": "18117728911966895",
       "instagram_url": "https://www.instagram.com/reel/DehsU12lamA/",
       "instagram_story_id": "18132493297743573",
-      "youtube_id": "97w9cpMwtCc"
+      "youtube_id": "97w9cpMwtCc",
+      "stats": {
+        "views": 607,
+        "reach": 371,
+        "saved": 0,
+        "shares": 0,
+        "likes": 6,
+        "comments": 0,
+        "at": "2026-10-15T20:31+00:00"
+      }
     }
   ]
 }

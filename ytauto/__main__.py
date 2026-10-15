@@ -10,6 +10,7 @@
   python -m ytauto highlights                  which recent stories go into which highlight
   python -m ytauto sim --kind escape           render a satisfying physics simulation Short
   python -m ytauto sims                        Loop Physics channel: render + publish the next simulation
+  python -m ytauto trends                      Loop Physics: daily trend check and tuning
 """
 from __future__ import annotations
 
@@ -20,7 +21,7 @@ import sys
 import traceback
 from pathlib import Path
 
-from . import check, generate, instagram, publish, render, simchannel, sims, social, sync, youtube
+from . import check, generate, instagram, publish, render, simchannel, sims, social, sync, trends, youtube
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "config" / "channels.json"
@@ -271,6 +272,7 @@ def main(argv: list[str] | None = None) -> int:
     sc.add_argument("--no-upload", action="store_true")
     sc.add_argument("--branding", action="store_true", help="set banner, description and keywords on YouTube")
     sc.add_argument("--youtube", choices=["check", "apply"], help="match manual YouTube uploads and polish them")
+    sub.add_parser("trends", help="Loop Physics: daily trend check, writes config/sims_tuning.json")
     hl = sub.add_parser("highlights", help="list recent stories by the highlight they belong in")
     hl.add_argument("--days", type=int, default=7)
     args = ap.parse_args(argv)
@@ -306,6 +308,10 @@ def main(argv: list[str] | None = None) -> int:
             simchannel.youtube_polish(apply=args.youtube == "apply")
         else:
             simchannel.run(upload=not args.no_upload)
+        return 0
+
+    if args.cmd == "trends":
+        trends.run()
         return 0
 
     if args.cmd == "highlights":

@@ -1,0 +1,60 @@
+name: Loop Physics trends
+
+# Daily: what goes viral in satisfying Shorts + how our own Reels perform -> config/sims_tuning.json
+# (format weights, lengths, title hooks, hashtags) and a readable report in docs/loop-physics-trends.md.
+on:
+  schedule:
+    - cron: "41 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sims
+  cancel-in-progress: false
+
+jobs:
+  trends:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install Python packages
+        run: pip install -r requirements.txt
+
+      - name: Trend check
+        env:
+          IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL: ${{ vars.GROQ_MODEL }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_MODEL: ${{ vars.LLM_MODEL }}
+          LLM_PROVIDERS: groq,gemini,openai
+          LLM_PAUSE_SECONDS: "1"
+        run: python -m ytauto trends
+
+      - name: Save results
+        if: always()
+        run: |
+          git config user.name "ytauto-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A state config/sims_tuning.json docs/loop-physics-trends.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Loop Physics trends [skip ci]"
+            for i in 1 2 3 4 5; do
+              git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break
+              sleep $((i * 10))
+            done
+          fi

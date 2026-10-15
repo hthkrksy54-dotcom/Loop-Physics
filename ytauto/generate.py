@@ -169,9 +169,9 @@ def _parse_json(text: str) -> dict:
         raise
 
 
-def ask_json(prompt: str, max_tokens: int = 3500) -> dict:
+def ask_json(prompt: str, max_tokens: int = 3500, system: str | None = None) -> dict:
     order = (os.environ.get("LLM_PROVIDERS") or "gemini,groq,openai").split(",")
-    messages = [{"role": "system", "content": SYSTEM}, {"role": "user", "content": prompt}]
+    messages = [{"role": "system", "content": system or SYSTEM}, {"role": "user", "content": prompt}]
     errors = []
     for name in order:
         fn = PROVIDERS.get(name.strip())

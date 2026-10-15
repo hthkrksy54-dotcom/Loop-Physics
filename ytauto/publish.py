@@ -218,3 +218,28 @@ def release_asset(tag: str, name: str, path: str | Path, asset_name: str, ctype:
         print(f"  asset upload failed for {asset_name} ({up.status_code})", flush=True)
         return None
     return up.json().get("browser_download_url")
+
+
+def cleanup_releases(prefix: str, keep_days: int) -> int:
+    """Delete releases (and their tags) whose tag starts with prefix and that are older than keep_days."""
+    import datetime as dt
+
+    token = os.environ.get("GITHUB_TOKEN")
+    repo = os.environ.get("GITHUB_REPOSITORY")
+    if not (token and repo):
+        return 0
+    api = f"https://api.github.com/repos/{repo}"
+    headers = {"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"}
+    cutoff = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=keep_days)
+    removed = 0
+    for page in range(1, 11):
+        rels = requests.get(f"{api}/releases", headers=headers, params={"per_page": 100, "page": page}, timeout=30).json()
+        if not isinstance(rels, list) or not rels:
+            break
+        for rel in rels:
+            created = dt.datetime.fromisoformat(rel["created_at"].replace("Z", "+00:00"))
+            if rel["tag_name"].startswith(prefix) and created < cutoff:
+                requests.delete(f"{api}/releases/{rel['id']}", headers=headers, timeout=30)
+                requests.delete(f"{api}/git/refs/tags/{rel['tag_name']}", headers=headers, timeout=30)
+                removed += 1
+    return removed

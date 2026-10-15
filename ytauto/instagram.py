@@ -214,3 +214,14 @@ def post_carousel(cfg: dict, image_urls: list[str], text: str) -> dict:
     media_id, link = _publish(uid, token, container)
     print(f"  instagram carousel: {link or media_id}", flush=True)
     return {"carousel_id": media_id, "carousel_url": link}
+
+
+def publishing_quota(cfg: dict) -> tuple[int, int]:
+    """(posts used in the last 24 h, allowed) – Instagram caps API publishing per account."""
+    token = fresh_token(cfg)
+    r = requests.get(f"{GRAPH}/{_user(token)}/content_publishing_limit", params={"fields": "quota_usage,config",
+                                                                               "access_token": token}, timeout=30)
+    if not r.ok:
+        raise InstagramError(f"quota lookup failed ({r.status_code}): {r.text[:200]}")
+    data = (r.json().get("data") or [{}])[0]
+    return int(data.get("quota_usage", 0)), int((data.get("config") or {}).get("quota_total", 50))
