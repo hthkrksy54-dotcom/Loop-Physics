@@ -106,7 +106,10 @@ def to_youtube(script: dict, cfg: dict, long: dict, short: dict | None) -> dict:
 
 
 def to_github_release(script: dict, cfg: dict, long: dict, short: dict | None) -> dict:
-    """Fallback while YouTube isn't connected: a release with the files and copy-paste metadata."""
+    """Archive of every video as a GitHub release (files + copy-paste metadata).
+
+    Also the public source URL Instagram fetches Reels from.
+    """
     token = os.environ.get("GITHUB_TOKEN")
     repo = os.environ.get("GITHUB_REPOSITORY")
     if not (token and repo):
@@ -150,15 +153,23 @@ def to_github_release(script: dict, cfg: dict, long: dict, short: dict | None) -
     files = [(long["video"], "video.mp4", "video/mp4"), (long["thumbnail"], "thumbnail.jpg", "image/jpeg"), (long["captions"], "captions.srt", "text/plain")]
     if short:
         files.append((short["video"], "short.mp4", "video/mp4"))
+    assets = {}
     for path, name, ctype in files:
         with Path(path).open("rb") as fh:
-            requests.post(
+            up = requests.post(
                 upload_url,
                 params={"name": f"{script['lang']}-{script['id']}-{name}"},
                 headers={**headers, "Content-Type": ctype},
                 data=fh,
                 timeout=900,
             )
+        if up.status_code in (200, 201):
+            assets[name] = up.json().get("browser_download_url")
+        else:
+            print(f"  asset upload failed for {name} ({up.status_code})", flush=True)
     url = rel.json()["html_url"]
     print(f"  release: {url}", flush=True)
-    return {"release": url}
+    result = {"release": url}
+    if assets.get("short.mp4"):
+        result["short_url"] = assets["short.mp4"]
+    return result

@@ -49,6 +49,12 @@
       "not_advice": "Note: This video is for education and is not a substitute for psychological or medical advice.",
       "hashtags": "#Philosophy #Psychology #Stoicism",
       "quote_marks": "“”"
+    },
+    "instagram": {
+      "enabled": true,
+      "account": "quiet_thoughts_yt",
+      "token_file": "state/instagram_en.token",
+      "hashtags": "#philosophy #psychology #stoicism #wisdom #mindset #selfimprovement #quietthoughts"
     }
   }
 }

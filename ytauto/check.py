@@ -5,7 +5,7 @@ import json
 
 import requests
 
-from . import generate, tts, youtube
+from . import generate, instagram, tts, youtube
 
 
 def _llm() -> bool:
@@ -68,6 +68,28 @@ def _youtube(cfg: dict) -> bool:
     return ok
 
 
+def _instagram(cfg: dict) -> bool:
+    ok = True
+    for lang, c in cfg.items():
+        if not (c.get("instagram") or {}).get("enabled"):
+            continue
+        if not instagram.configured(c):
+            print(f"[--]   Instagram {lang}: noch nicht verbunden (Secret IG_TOKEN_KEY oder Token-Datei fehlt)")
+            continue
+        try:
+            token = instagram.fresh_token(c)
+            me = requests.get(f"{instagram.GRAPH}/me", params={"fields": "username,account_type", "access_token": token}, timeout=30)
+            if not me.ok:
+                raise RuntimeError(f"{me.status_code}: {me.text[:150]}")
+            data = instagram.load_token(c)
+            print(f"[OK]   Instagram {lang}: verbunden mit @{me.json()['username']} ({me.json().get('account_type')}), "
+                  f"Token gültig bis {data.get('expires_at', '?')[:10]}")
+        except Exception as err:
+            print(f"[FEHLER] Instagram {lang}: {str(err)[:200]}")
+            ok = False
+    return ok
+
+
 def run(cfg: dict) -> int:
     print("Verbindungstest ytauto\n")
     llm_ok = _llm()
@@ -75,4 +97,5 @@ def run(cfg: dict) -> int:
         print("       (Kein Problem, solange Claude die Skripte wöchentlich schreibt.)")
     voice_ok = _voice(cfg)
     yt_ok = _youtube(cfg)
-    return 0 if (voice_ok and yt_ok) else 1
+    ig_ok = _instagram(cfg)
+    return 0 if (voice_ok and yt_ok and ig_ok) else 1

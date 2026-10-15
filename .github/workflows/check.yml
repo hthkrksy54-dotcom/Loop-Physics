@@ -33,4 +33,5 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN_DE: ${{ secrets.YT_REFRESH_TOKEN_DE }}
           YT_REFRESH_TOKEN_EN: ${{ secrets.YT_REFRESH_TOKEN_EN }}
+          IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
         run: python -m ytauto check | tee -a "$GITHUB_STEP_SUMMARY"

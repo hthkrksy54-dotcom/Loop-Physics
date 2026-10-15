@@ -14,7 +14,7 @@ import sys
 import traceback
 from pathlib import Path
 
-from . import check, generate, publish, render, youtube
+from . import check, generate, instagram, publish, render, youtube
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "config" / "channels.json"
@@ -92,8 +92,17 @@ def produce(lang: str, topic_id: str | None, upload: bool, with_short: bool, kee
             record.update(publish.to_youtube(script, cfg, long, short))
         else:
             reason = "upload paused until the API audit is approved" if connected else "YouTube not connected yet"
-            print(f"  {reason} – publishing as GitHub release instead", flush=True)
-            record.update(publish.to_github_release(script, cfg, long, short))
+            print(f"  YouTube: {reason} – files are in the GitHub release", flush=True)
+        # Every video is archived as a release; its public Short URL also feeds Instagram.
+        release = publish.to_github_release(script, cfg, long, short)
+        short_url = release.pop("short_url", None)
+        record.update(release)
+        if short and short_url and instagram.configured(cfg):
+            try:
+                record.update(instagram.post_reel(cfg, short_url, instagram.caption(script, cfg)))
+            except Exception as err:  # Instagram must never block the YouTube side
+                record.setdefault("warnings", []).append(f"instagram: {err}")
+                print(f"  warning: instagram reel failed: {err}", flush=True)
         if keep_record:
             state = _load(STATE, {})
             state.setdefault(lang, []).append(record)

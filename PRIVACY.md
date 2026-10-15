@@ -46,6 +46,14 @@ users. It does not read analytics, comments or private videos.
 Access can be revoked at any time on the Google security settings page:
 <https://security.google.com/settings/security/permissions>.
 
+## Instagram
+
+ytauto also posts the same short videos as Reels to the owner's own Instagram account
+(@quiet_thoughts_yt) using the Instagram API with Instagram Login (permissions `instagram_business_basic`
+and `instagram_business_content_publish`). The access token is stored encrypted in this repository and can
+only be decrypted with a key kept as a GitHub Actions secret. No data about other Instagram users is
+accessed. Access can be removed at any time in Instagram → Settings → Apps and websites.
+
 ## Contact
 
 <https://github.com/hthkrksy54-dotcom/Yt/issues>

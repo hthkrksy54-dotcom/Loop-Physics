@@ -60,6 +60,7 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN_DE: ${{ secrets.YT_REFRESH_TOKEN_DE }}
           YT_REFRESH_TOKEN_EN: ${{ secrets.YT_REFRESH_TOKEN_EN }}
+          IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
           IN_LANGS: ${{ github.event.inputs.langs || 'de en' }}
           IN_TOPIC: ${{ github.event.inputs.topic }}
           IN_UPLOAD: ${{ github.event.inputs.upload }}
