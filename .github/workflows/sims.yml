@@ -11,6 +11,10 @@ on:
         description: "Publish (untick to only render)"
         type: boolean
         default: true
+      branding:
+        description: "Only update the YouTube channel branding (banner, description)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -44,8 +48,11 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           IN_UPLOAD: ${{ github.event.inputs.upload }}
+          IN_BRANDING: ${{ github.event.inputs.branding }}
         run: |
-          if [ "$IN_UPLOAD" = "false" ]; then python -m ytauto sims --no-upload; else python -m ytauto sims; fi
+          if [ "$IN_BRANDING" = "true" ]; then python -m ytauto sims --branding
+          elif [ "$IN_UPLOAD" = "false" ]; then python -m ytauto sims --no-upload
+          else python -m ytauto sims; fi
 
       - name: Save progress
         if: always()

@@ -141,7 +141,8 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict) -> dict:
         title,
         body,
         f"💬 {question}",
-        f"Follow {cfg['handle']} – a new one every few hours.",
+        f"Follow {cfg['handle']} – a new one every few hours."
+        + (f"\n▶ YouTube: {cfg['youtube']['channel_url']}" if cfg["youtube"].get("channel_url") else ""),
         (cfg["instagram"].get("hashtags", "") + (f" #{composer.lower()}" if composer else "")).strip(),
     ])
     return {"title": title[:95], "description": description, "caption": caption[:2150],
@@ -201,3 +202,49 @@ def run(upload: bool = True) -> dict:
     state.setdefault("videos", []).append(record)
     save(STATE, state)
     return record
+
+
+DESCRIPTION = """Oddly satisfying physics simulations – every bounce plays a melody.
+
+Balls breaking out of spinning rings, colour battles, pendulum waves, plinko bell curves, string art and more. \
+Every video is generated from scratch – the physics, the picture and the sound. Each collision plays the next \
+note of a classical melody (Beethoven, Mozart, Grieg, Bach, Strauss …).
+
+New simulations every few hours. Pick your colour, guess the ending and tell us in the comments.
+
+Instagram: @loop_physics"""
+KEYWORDS = ["satisfying", "oddly satisfying", "physics simulation", "bouncing ball", "satisfying video", "simulation",
+            "relaxing", "asmr", "classical music", "pendulum wave", "plinko", "marble race", "loop physics"]
+
+
+def branding() -> None:
+    """Set banner, description and keywords of the Loop Physics YouTube channel (works before the API audit)."""
+    import requests
+
+    cfg = load(CONFIG, {})
+    token = _youtube_token(cfg)
+    if not token:
+        raise SystemExit("YouTube token or client credentials missing")
+    api, h = "https://www.googleapis.com/youtube/v3", {"Authorization": f"Bearer {token}"}
+    ch = requests.get(f"{api}/channels", params={"part": "snippet,brandingSettings", "mine": "true"}, headers=h,
+                      timeout=30).json()["items"][0]
+    if ch["snippet"]["title"] != cfg["channel_name"]:  # never touch another channel by accident
+        raise SystemExit(f"token belongs to '{ch['snippet']['title']}', not '{cfg['channel_name']}'")
+    banner = requests.post("https://www.googleapis.com/upload/youtube/v3/channelBanners/insert",
+                           headers={**h, "Content-Type": "image/jpeg"},
+                           data=(ROOT / "docs" / "sims" / "banner.jpg").read_bytes(), timeout=120)
+    banner.raise_for_status()
+    branding = {"channel": dict(ch.get("brandingSettings", {}).get("channel", {}))}
+    branding["channel"].update({
+        "description": DESCRIPTION,
+        "keywords": " ".join(f'"{k}"' if " " in k else k for k in KEYWORDS),
+        "defaultLanguage": cfg["youtube"]["default_language"],
+    })
+    branding["channel"].pop("title", None)
+    branding["image"] = {"bannerExternalUrl": banner.json()["url"]}
+    r = requests.put(f"{api}/channels", params={"part": "brandingSettings"},
+                     headers={**h, "Content-Type": "application/json"},
+                     data=json.dumps({"id": ch["id"], "brandingSettings": branding}), timeout=60)
+    if not r.ok:
+        raise SystemExit(f"channel update failed ({r.status_code}): {r.text[:300]}")
+    print(f"branded {ch['snippet']['title']} ({ch['id']}): banner, description, keywords", flush=True)

@@ -269,6 +269,7 @@ def main(argv: list[str] | None = None) -> int:
     sm.add_argument("--handle", default="")
     sc = sub.add_parser("sims", help="Loop Physics channel: render and publish the next simulation Short")
     sc.add_argument("--no-upload", action="store_true")
+    sc.add_argument("--branding", action="store_true", help="set banner, description and keywords on YouTube")
     hl = sub.add_parser("highlights", help="list recent stories by the highlight they belong in")
     hl.add_argument("--days", type=int, default=7)
     args = ap.parse_args(argv)
@@ -298,7 +299,10 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     if args.cmd == "sims":
-        simchannel.run(upload=not args.no_upload)
+        if args.branding:
+            simchannel.branding()
+        else:
+            simchannel.run(upload=not args.no_upload)
         return 0
 
     if args.cmd == "highlights":

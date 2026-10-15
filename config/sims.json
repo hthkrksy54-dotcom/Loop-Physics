@@ -22,6 +22,8 @@
     "upload_enabled": false,
     "token_file": "state/youtube_sims.token",
     "category_id": "28",
-    "default_language": "en"
+    "default_language": "en",
+    "channel": "@LoopPhysics-420",
+    "channel_url": "youtube.com/@LoopPhysics-420"
   }
 }
