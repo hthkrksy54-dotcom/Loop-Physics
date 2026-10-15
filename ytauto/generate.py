@@ -61,7 +61,15 @@ def _github_models(messages: list[dict], max_tokens: int) -> str:
     )
     if resp.status_code != 200:
         raise LLMError(f"GitHub Models {resp.status_code}: {resp.text[:300]}")
-    return resp.json()["choices"][0]["message"]["content"]
+    try:
+        content = resp.json()["choices"][0]["message"]["content"]
+    except (ValueError, KeyError, IndexError, TypeError) as err:
+        raise LLMError(
+            f"GitHub Models unexpected response ({err}; type={resp.headers.get('content-type')}): {resp.text[:300]!r}"
+        )
+    if not content:
+        raise LLMError(f"GitHub Models returned empty content: {resp.text[:300]!r}")
+    return content
 
 
 def _gemini(messages: list[dict], max_tokens: int) -> str:
@@ -91,7 +99,10 @@ def _gemini(messages: list[dict], max_tokens: int) -> str:
     )
     if resp.status_code != 200:
         raise LLMError(f"Gemini {resp.status_code}: {resp.text[:300]}")
-    parts = resp.json()["candidates"][0]["content"]["parts"]
+    try:
+        parts = resp.json()["candidates"][0]["content"]["parts"]
+    except (ValueError, KeyError, IndexError, TypeError) as err:
+        raise LLMError(f"Gemini unexpected response ({err}): {resp.text[:300]!r}")
     return "".join(p.get("text", "") for p in parts)
 
 
@@ -125,10 +136,12 @@ def ask_json(prompt: str, max_tokens: int = 3500) -> dict:
                 errors.append(str(err))
                 break
             except (LLMError, requests.RequestException) as err:
-                errors.append(str(err))
+                errors.append(f"{name}: {err}")
+                print(f"  LLM attempt failed: {name}: {err}", flush=True)
                 time.sleep(10 * (attempt + 1))
             except (json.JSONDecodeError, KeyError, IndexError) as err:
-                errors.append(f"{name}: bad response ({err})")
+                errors.append(f"{name}: response was not valid JSON ({err})")
+                print(f"  LLM returned invalid JSON: {name}: {err}", flush=True)
     raise LLMError("All LLM providers failed: " + " | ".join(errors[-6:]))
 
 
