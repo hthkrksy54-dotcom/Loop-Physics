@@ -1,0 +1,50 @@
+{
+  "de": {
+    "channel_name": "Leise Gedanken",
+    "voice": "de-DE-FlorianMultilingualNeural",
+    "rate": "-6%",
+    "quote_rate": "-12%",
+    "pitch": "-2Hz",
+    "youtube": {
+      "refresh_token_secret": "YT_REFRESH_TOKEN_DE",
+      "privacy": "public",
+      "category_id": "27",
+      "default_language": "de",
+      "upload_short": true
+    },
+    "words": {
+      "intro": "Einleitung",
+      "outro": "Danke fürs Zuhören.",
+      "chapters": "Kapitel",
+      "sources": "Quellen & weiterführende Literatur",
+      "disclosure": "Dieses Video wurde mit KI-Unterstützung erstellt: Sprecherstimme synthetisch, Musik und Bilder generativ. Inhalte wurden auf Quellen geprüft.",
+      "not_advice": "Hinweis: Dieses Video dient der Bildung und ersetzt keine psychologische oder medizinische Beratung.",
+      "hashtags": "#Philosophie #Psychologie #Stoizismus",
+      "quote_marks": "„“"
+    }
+  },
+  "en": {
+    "channel_name": "Quiet Thoughts",
+    "voice": "en-US-AndrewMultilingualNeural",
+    "rate": "-5%",
+    "quote_rate": "-11%",
+    "pitch": "-2Hz",
+    "youtube": {
+      "refresh_token_secret": "YT_REFRESH_TOKEN_EN",
+      "privacy": "public",
+      "category_id": "27",
+      "default_language": "en",
+      "upload_short": true
+    },
+    "words": {
+      "intro": "Introduction",
+      "outro": "Thank you for listening.",
+      "chapters": "Chapters",
+      "sources": "Sources & further reading",
+      "disclosure": "This video was made with AI assistance: synthetic narration voice, generative music and visuals. Content was checked against sources.",
+      "not_advice": "Note: This video is for education and is not a substitute for psychological or medical advice.",
+      "hashtags": "#Philosophy #Psychology #Stoicism",
+      "quote_marks": "“”"
+    }
+  }
+}
