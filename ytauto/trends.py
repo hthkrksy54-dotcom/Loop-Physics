@@ -126,41 +126,40 @@ def run() -> dict:
 
     weights = {k: round(min(3.0, max(0.4, perf[k] * (1 + 2 * share[k]))), 2) for k in kinds}
     keywords = [w for w, _ in words.most_common(25)]
-    hashtags = [t for t, n in tags.most_common(12) if n >= 2][:6] or old.get("hashtags", [])
+    hashtags = [t for t, n in tags.most_common(12) if n >= 2 and t != "satisfying"][:6] or old.get("hashtags", [])
 
     # 3) fresh title hooks and questions from the trend keywords (our own wording)
-    hooks, questions, summary = old.get("title_hooks", []), old.get("questions", []), ""
+    addons, questions, summary = old.get("title_addons", []), old.get("questions", []), ""
     if generate.available() and keywords:
         try:
             best = sorted(aged, key=_views, reverse=True)[:5]
             res = generate.ask_json(
                 "Keywords trending this week in viral satisfying-simulation Shorts (most important first):\n"
-                + ", ".join(keywords) + "\n\nOur formats and how strongly each trends (0-1): "
+                + ", ".join(keywords) + "\n\nHow strongly each of our formats trends (0-1): "
                 + ", ".join(f"{k} {share[k]:.2f}" for k in kinds)
                 + "\nOur best Reels so far: " + "; ".join(f"{r['title']} ({_views(r)} views)" for r in best)
-                + "\n\nWrite 10 new title templates for our videos. Each template must work for any of our formats, "
-                  "so it must not name a specific shape or format (no rings, pendulums, plinko, colours, polygons) – "
-                  "use the placeholder {onscreen} (the question shown in the video) for that – and may use {song} "
-                  "(the melody), "
-                  "max 70 characters. Also write 4 short questions that invite comments, and a 3-sentence summary "
-                  "in German of what is working right now and how we adapt.\n"
-                  'Return JSON: {"title_hooks": [...], "questions": [...], "summary_de": "..."}',
+                + "\n\nOur titles are the question shown in the video, e.g. 'Can the ball escape all 14 rings?' or "
+                  "'Which color escapes first?'. Write 10 short add-ons (2-6 words, max 30 characters) that we append "
+                  "after a dash and that fit ANY such question, inspired by the trend keywords – e.g. 'Wait for the "
+                  "ending', 'Sound on', 'Guess the song'. No hashtags, no specific shapes or colours. "
+                  "Also write 4 short questions that invite comments, and for the channel owner a 3-sentence summary "
+                  "in German of what is trending and how we adapt (plain language, no placeholders).\n"
+                  'Return JSON: {"addons": [...], "questions": [...], "summary_de": "..."}',
                 max_tokens=1500, system=HOOK_SYSTEM)
             ok = []
-            for t in res.get("title_hooks", []):
-                t = str(t).strip()
-                specific = re.search(r"\b(rings?|pendulums?|plinko|colou?rs?|polygons?|hexagons?|string|grows?)\b",
-                                     t.replace("{onscreen}", ""), re.I)
-                if 8 < len(t) <= 80 and "#" not in t and not specific and not re.search(r"\{(?!onscreen\}|song\})", t):
+            for t in res.get("addons", []):
+                t = str(t).strip().strip(".!–- ")
+                specific = re.search(r"\b(rings?|pendulums?|plinko|colou?rs?|polygons?|hexagons?|string|grows?)\b", t, re.I)
+                if 3 < len(t) <= 32 and not re.search(r"[#{}]", t) and not specific:
                     ok.append(t)
-            hooks = ok[:10] or hooks
+            addons = list(dict.fromkeys(ok))[:10] or addons
             questions = [str(q).strip() for q in res.get("questions", []) if 5 < len(str(q)) <= 90][:4] or questions
             summary = str(res.get("summary_de", ""))[:800]
         except Exception as err:
             print(f"  LLM step skipped: {err}", flush=True)
 
     tuning = {"updated": now.isoformat(timespec="minutes"), "kind_weights": weights, "ranges": ranges,
-              "hashtags": hashtags, "title_hooks": hooks, "questions": questions, "trend_keywords": keywords[:15],
+              "hashtags": hashtags, "title_addons": addons, "questions": questions, "trend_keywords": keywords[:15],
               "trend_share": {k: round(share[k], 3) for k in kinds}, "trend_videos": len(trend),
               "trend_median_seconds": median_len, "summary_de": summary}
     simchannel.save(simchannel.TUNING, tuning)
@@ -185,12 +184,12 @@ def report(t: dict, state: dict, own_avg: dict) -> None:
         lines.append(f"| {k} | {w} | {round(100 * t['trend_share'].get(k, 0))} % | {avg if avg is not None else '–'} |")
     lines += ["", "## Angesagte Schlagwörter", "", ", ".join(t.get("trend_keywords") or ["–"]), "",
               "## Hashtags in den Captions", "", " ".join(f"#{h}" for h in ["satisfying"] + t.get("hashtags", [])[:3]), "",
-              "## Neue Titel-Vorlagen", ""] + [f"- {h}" for h in t.get("title_hooks", [])] + [""]
+              "## Titel-Zusätze (werden an die Frage im Video gehängt)", ""] + [f"- … – {h}" for h in t.get("title_addons", [])] + [""]
     if fresh:
         lines += ["## Heute für YouTube empfohlen (beste Reels der letzten 30 Stunden)", ""]
         for v in fresh:
-            lines.append(f"- **{v['title']}** – {_views(v)} Aufrufe auf Instagram · "
-                         f"[Video & Texte]({v.get('release', '')}) · [Reel]({v.get('instagram_url', '')})")
+            links = ([f"[Video & Texte]({v['release']})"] if v.get("release") else []) + [f"[Reel]({v.get('instagram_url', '')})"]
+            lines.append(f"- **{v['title']}** – {_views(v)} Aufrufe auf Instagram · " + " · ".join(links))
         lines.append("")
     top = sorted(vids, key=_views, reverse=True)[:10]
     lines += ["## Unsere Top 10 Reels", "", "| Titel | Format | Aufrufe | Likes | Saves | Shares |", "|---|---|---:|---:|---:|---:|"]

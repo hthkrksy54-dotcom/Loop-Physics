@@ -134,14 +134,13 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict) -> dict:
     sim = sims.KINDS[kind](seed)
     params = {"n": getattr(sim, "n", ""), "song": song, "onscreen": " ".join(sim.title())}
     tuning = load(TUNING, {})
-    hooks = tuning.get("title_hooks") or []
-    pool = hooks if hooks and rnd.random() < 0.5 else TITLES.get(kind, ["{onscreen}"])  # half the time: trend hooks
-    try:
-        title = rnd.choice(pool).format(**params)
-    except (KeyError, IndexError, ValueError):
-        title = " ".join(sim.title())
+    title = rnd.choice(TITLES.get(kind, ["{onscreen}"])).format(**params)
+    addons = tuning.get("title_addons") or []
+    if addons and rnd.random() < 0.5:  # half the time: the on-screen question plus a trending add-on
+        with_addon = f"{params['onscreen']} – {rnd.choice(addons)}"
+        title = with_addon if len(with_addon) <= 95 else title
     question = rnd.choice(QUESTIONS.get(kind, ["Did you recognise the melody?"]) + (tuning.get("questions") or [])[:3])
-    tags_line = " ".join(["#satisfying"] + [f"#{t}" for t in (tuning.get("hashtags") or [])[:3]]) \
+    tags_line = " ".join(["#satisfying"] + [f"#{t}" for t in (tuning.get("hashtags") or []) if t != "satisfying"][:3]) \
         if tuning.get("hashtags") else cfg["instagram"].get("hashtags", "")
     composer = COMPOSERS.get(melody, "")
     body = (BODIES.get(kind, f"Every bounce plays the next note of {song_full}.") + "\n"
