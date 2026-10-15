@@ -16,7 +16,7 @@ def _llm() -> bool:
     ]
     for name, fn in generate.PROVIDERS.items():
         try:
-            answer = generate._parse_json(fn(messages, 50))
+            answer = generate._parse_json(fn(messages, 1000))
             print(f"[OK]   Skript-KI {name}: antwortet ({json.dumps(answer)})")
             ok_any = True
         except generate.NotConfigured:

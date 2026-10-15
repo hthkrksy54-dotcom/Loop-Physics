@@ -43,13 +43,16 @@ class NotConfigured(LLMError):
     pass
 
 
-def _openai_compatible(base_url: str, key: str, model: str, messages: list[dict], max_tokens: int, label: str) -> str:
+def _openai_compatible(
+    base_url: str, key: str, model: str, messages: list[dict], max_tokens: int, label: str, extra: dict | None = None
+) -> str:
     body = {
         "model": model,
         "messages": messages,
         "temperature": 0.7,
         "max_tokens": max_tokens,
         "response_format": {"type": "json_object"},
+        **(extra or {}),
     }
     resp = requests.post(
         base_url.rstrip("/") + "/chat/completions",
@@ -73,7 +76,12 @@ def _groq(messages: list[dict], max_tokens: int) -> str:
     if not key:
         raise NotConfigured("no GROQ_API_KEY")
     model = os.environ.get("GROQ_MODEL") or "openai/gpt-oss-120b"
-    return _openai_compatible("https://api.groq.com/openai/v1", key, model, messages, max_tokens, "Groq")
+    extra = {}
+    if "gpt-oss" in model:
+        # Reasoning tokens count against max_tokens; keep reasoning short and leave room for the JSON.
+        extra["reasoning_effort"] = "low"
+        max_tokens = max(max_tokens * 2, 8192)
+    return _openai_compatible("https://api.groq.com/openai/v1", key, model, messages, max_tokens, "Groq", extra)
 
 
 def _openai(messages: list[dict], max_tokens: int) -> str:
