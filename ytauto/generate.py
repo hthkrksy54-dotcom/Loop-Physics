@@ -43,6 +43,10 @@ class NotConfigured(LLMError):
     pass
 
 
+class AuthRejected(LLMError):
+    """The provider refuses the key outright; retrying won't help."""
+
+
 def _openai_compatible(
     base_url: str, key: str, model: str, messages: list[dict], max_tokens: int, label: str, extra: dict | None = None
 ) -> str:
@@ -136,7 +140,10 @@ def _gemini(messages: list[dict], max_tokens: int) -> str:
             errors.append(f"{model}/{auth} {resp.status_code}")
             if resp.status_code not in (400, 401, 403, 404):
                 raise LLMError(f"Gemini {resp.status_code}: {resp.text[:300]}")
-    raise LLMError("Gemini rejected every model/auth combination: " + ", ".join(errors) + f" – last: {resp.text[:200]}")
+    msg = "Gemini rejected every model/auth combination: " + ", ".join(errors) + f" – last: {resp.text[:200]}"
+    if all(e.endswith((" 401", " 403")) for e in errors):
+        raise AuthRejected(msg)
+    raise LLMError(msg)
 
 
 PROVIDERS = {"gemini": _gemini, "groq": _groq, "openai": _openai}
@@ -174,8 +181,8 @@ def ask_json(prompt: str, max_tokens: int = 3500) -> dict:
             try:
                 time.sleep(float(os.environ.get("LLM_PAUSE_SECONDS", "8")))  # stay under free-tier RPM limits
                 return _parse_json(fn(messages, max_tokens))
-            except NotConfigured as err:
-                errors.append(str(err))
+            except (NotConfigured, AuthRejected) as err:
+                errors.append(f"{name}: {str(err)[:200]}")
                 break
             except (LLMError, requests.RequestException) as err:
                 errors.append(f"{name}: {err}")
