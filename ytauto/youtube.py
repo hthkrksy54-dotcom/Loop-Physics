@@ -39,7 +39,8 @@ def access_token_from(refresh_token: str) -> str:
         timeout=30,
     )
     if resp.status_code != 200:
-        raise YouTubeError(f"token refresh failed ({resp.status_code}): {resp.text[:300]}")
+        client = os.environ["YT_CLIENT_ID"].split("-")[0]  # project number only – not a secret, helps match tokens
+        raise YouTubeError(f"token refresh failed for client {client} ({resp.status_code}): {resp.text[:300]}")
     return resp.json()["access_token"]
 
 
