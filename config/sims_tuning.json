@@ -1,0 +1,83 @@
+{
+  "updated": "2026-10-15T20:33+00:00",
+  "kind_weights": {
+    "escape": 1.01,
+    "battle": 1.59,
+    "pendulum": 1.01,
+    "grow": 1.0,
+    "plinko": 1.0,
+    "multiply": 1.2,
+    "polygon": 1.07,
+    "stringart": 1.0
+  },
+  "ranges": [
+    [
+      22,
+      32
+    ],
+    [
+      28,
+      40
+    ],
+    [
+      35,
+      48
+    ]
+  ],
+  "hashtags": [
+    "satisfying",
+    "asmr",
+    "simulation",
+    "bouncingball",
+    "oddlysatisfying",
+    "physicssimulation"
+  ],
+  "title_hooks": [
+    "Watch {onscreen} sync with the rhythm of {song} 🎶",
+    "When {onscreen} meets physics, the result is oddly satisfying",
+    "Can {onscreen} find the perfect bounce?",
+    "Feel the ASMR of {onscreen} in motion",
+    "What song does {onscreen} echo?",
+    "See {onscreen} glide through a perfect simulation",
+    "Listen to the subtle clicks of {onscreen}",
+    "Guess the melody behind {onscreen}",
+    "How far can {onscreen} travel before stopping?",
+    "Enjoy the calm of {onscreen} bouncing in sync"
+  ],
+  "questions": [
+    "Which part surprised you the most?",
+    "What song would you pair with this simulation?",
+    "Did you notice any hidden patterns?",
+    "How would you change the speed of {onscreen}?"
+  ],
+  "trend_keywords": [
+    "simulation",
+    "ball",
+    "asmr",
+    "marble",
+    "physics",
+    "bouncing",
+    "balls",
+    "run",
+    "marble run",
+    "song",
+    "escape",
+    "physics simulation",
+    "rings",
+    "bouncingball",
+    "guess song"
+  ],
+  "trend_share": {
+    "escape": 0.005,
+    "battle": 0.294,
+    "pendulum": 0.003,
+    "grow": 0.002,
+    "plinko": 0.0,
+    "multiply": 0.098,
+    "polygon": 0.034,
+    "stringart": 0.0
+  },
+  "trend_videos": 131,
+  "trend_median_seconds": 30.0,
+  "summary_de": "Derzeit funktionieren kurze, klare Titel, die das visuelle Element mit einem bekannten Song verbinden, besonders gut. Wir setzen auf ASMR-ähnliche Geräusche und lassen das Publikum das passende Lied raten, um Interaktionen zu steigern. Durch das Einbinden von Platzhaltern wie {onscreen} bleiben die Vorlagen flexibel für alle Formate."
+}
