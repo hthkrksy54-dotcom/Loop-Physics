@@ -10,6 +10,7 @@ import datetime as dt
 import json
 import os
 import random
+import re
 from collections import Counter
 from pathlib import Path
 
@@ -135,11 +136,13 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict) -> dict:
     params = {"n": getattr(sim, "n", ""), "song": song, "onscreen": " ".join(sim.title())}
     tuning = load(TUNING, {})
     title = rnd.choice(TITLES.get(kind, ["{onscreen}"])).format(**params)
-    addons = tuning.get("title_addons") or []
+    addons = [a for a in tuning.get("title_addons") or [] if "?" not in a]
     if addons and rnd.random() < 0.5:  # half the time: the on-screen question plus a trending add-on
         with_addon = f"{params['onscreen']} – {rnd.choice(addons)}"
         title = with_addon if len(with_addon) <= 95 else title
-    question = rnd.choice(QUESTIONS.get(kind, ["Did you recognise the melody?"]) + (tuning.get("questions") or [])[:3])
+    generic = [q for q in tuning.get("questions") or []
+               if not re.search(r"\b(rings?|pendulums?|plinko|colou?rs?|polygons?|balls? wins?|escapes?)\b", q, re.I)]
+    question = rnd.choice(QUESTIONS.get(kind, ["Did you recognise the melody?"]) + generic[:3])
     tags_line = " ".join(["#satisfying"] + [f"#{t}" for t in (tuning.get("hashtags") or []) if t != "satisfying"][:3]) \
         if tuning.get("hashtags") else cfg["instagram"].get("hashtags", "")
     composer = COMPOSERS.get(melody, "")

@@ -33,6 +33,7 @@ STOP = set("the a an and or of to in on at for with is are this that it its you 
            "what why when who which every each one all just new video videos shorts short satisfying oddly".split())
 JUNK_TAGS = {"shorts", "short", "viral", "fyp", "foryou", "foryoupage", "trending", "youtube", "subscribe", "like",
              "tiktok", "reels", "reel", "explore", "youtubeshorts", "shortsfeed", "shortvideo", "trend", "funny"}
+SPECIFIC = r"\b(rings?|pendulums?|plinko|colou?rs?|polygons?|hexagons?|string|grows?|balls? wins?|escapes?)\b"
 HOOK_SYSTEM = ("You write short, honest YouTube Shorts / Instagram Reels titles for an oddly satisfying physics "
                "simulation channel. No clickbait lies, no ALL CAPS, at most one emoji. Return only JSON.")
 
@@ -149,11 +150,12 @@ def run() -> dict:
             ok = []
             for t in res.get("addons", []):
                 t = str(t).strip().strip(".!–- ")
-                specific = re.search(r"\b(rings?|pendulums?|plinko|colou?rs?|polygons?|hexagons?|string|grows?)\b", t, re.I)
-                if 3 < len(t) <= 32 and not re.search(r"[#{}]", t) and not specific:
+                specific = re.search(SPECIFIC, t, re.I)
+                if 3 < len(t) <= 32 and not re.search(r"[#{}?]", t) and not specific:
                     ok.append(t)
             addons = list(dict.fromkeys(ok))[:10] or addons
-            questions = [str(q).strip() for q in res.get("questions", []) if 5 < len(str(q)) <= 90][:4] or questions
+            questions = [q for q in (str(q).strip() for q in res.get("questions", []))
+                         if 5 < len(q) <= 90 and not re.search(SPECIFIC, q, re.I)][:4] or questions
             summary = str(res.get("summary_de", ""))[:800]
         except Exception as err:
             print(f"  LLM step skipped: {err}", flush=True)
