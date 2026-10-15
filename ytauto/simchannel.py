@@ -160,6 +160,11 @@ def _youtube_token(cfg: dict) -> str | None:
 def run(upload: bool = True) -> dict:
     cfg = load(CONFIG, {})
     state = load(STATE, {"videos": []})
+    if upload and instagram.configured(cfg):
+        try:  # a blocked or expired Instagram token must not silently swallow the videos
+            instagram._user(instagram.fresh_token(cfg))
+        except instagram.InstagramError as err:
+            raise SystemExit(f"Instagram access for @{cfg['instagram']['account']} is not working – nothing rendered. {err}")
     kind, seed, melody = plan(cfg, state)
     meta = metadata(kind, seed, melody, cfg)
     stamp = dt.datetime.now(dt.timezone.utc)
