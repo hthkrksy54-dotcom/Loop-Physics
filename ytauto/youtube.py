@@ -24,12 +24,16 @@ def configured(refresh_secret: str) -> bool:
 
 
 def access_token(refresh_secret: str) -> str:
+    return access_token_from(os.environ[refresh_secret])
+
+
+def access_token_from(refresh_token: str) -> str:
     resp = requests.post(
         TOKEN_URL,
         data={
             "client_id": os.environ["YT_CLIENT_ID"],
             "client_secret": os.environ["YT_CLIENT_SECRET"],
-            "refresh_token": os.environ[refresh_secret],
+            "refresh_token": refresh_token,
             "grant_type": "refresh_token",
         },
         timeout=30,

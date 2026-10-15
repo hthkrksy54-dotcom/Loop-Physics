@@ -1,0 +1,18 @@
+{
+  "channel_name": "Loop Physics",
+  "handle": "@loop_physics",
+  "kinds": ["escape", "grow"],
+  "instagram": {
+    "enabled": true,
+    "account": "loop_physics",
+    "token_file": "state/instagram_sims.token",
+    "story_log": "state/instagram_sims_stories.json",
+    "hashtags": "#satisfying #physics #simulation #oddlysatisfying"
+  },
+  "youtube": {
+    "upload_enabled": false,
+    "token_file": "state/youtube_sims.token",
+    "category_id": "28",
+    "default_language": "en"
+  }
+}

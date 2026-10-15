@@ -9,6 +9,7 @@
   python -m ytauto story                       daily Instagram story (quote / Sunday recap)
   python -m ytauto highlights                  which recent stories go into which highlight
   python -m ytauto sim --kind escape           render a satisfying physics simulation Short
+  python -m ytauto sims                        Loop Physics channel: render + publish the next simulation
 """
 from __future__ import annotations
 
@@ -19,7 +20,7 @@ import sys
 import traceback
 from pathlib import Path
 
-from . import check, generate, instagram, publish, render, sims, social, sync, youtube
+from . import check, generate, instagram, publish, render, simchannel, sims, social, sync, youtube
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "config" / "channels.json"
@@ -266,6 +267,8 @@ def main(argv: list[str] | None = None) -> int:
     sm.add_argument("--start", type=int, default=0)
     sm.add_argument("--melody", choices=sorted(sims.MELODIES))
     sm.add_argument("--handle", default="")
+    sc = sub.add_parser("sims", help="Loop Physics channel: render and publish the next simulation Short")
+    sc.add_argument("--no-upload", action="store_true")
     hl = sub.add_parser("highlights", help="list recent stories by the highlight they belong in")
     hl.add_argument("--days", type=int, default=7)
     args = ap.parse_args(argv)
@@ -292,6 +295,10 @@ def main(argv: list[str] | None = None) -> int:
         seed = args.seed if args.seed is not None else sims.pick_seed(args.kind, args.start)
         result = sims.render(args.kind, seed, OUT / "sims" / f"{args.kind}-{seed}.mp4", args.melody, args.handle)
         print(f"{result['video']}  ({result['duration']:.1f}s, {result['melody_name']})")
+        return 0
+
+    if args.cmd == "sims":
+        simchannel.run(upload=not args.no_upload)
         return 0
 
     if args.cmd == "highlights":

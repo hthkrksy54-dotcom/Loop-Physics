@@ -1,0 +1,59 @@
+name: Loop Physics
+
+# Daily satisfying physics simulation: render, archive as release, Instagram Reel + Story (YouTube once enabled).
+on:
+  schedule:
+    - cron: "17 17 * * *"
+  workflow_dispatch:
+    inputs:
+      upload:
+        description: "Publish (untick to only render)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: produce
+  cancel-in-progress: false
+
+jobs:
+  sims:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
+      - name: Install Python packages
+        run: pip install -r requirements.txt
+
+      - name: Render and publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          IN_UPLOAD: ${{ github.event.inputs.upload }}
+        run: |
+          if [ "$IN_UPLOAD" = "false" ]; then python -m ytauto sims --no-upload; else python -m ytauto sims; fi
+
+      - name: Save progress
+        if: always()
+        run: |
+          git config user.name "ytauto-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A state
+          if ! git diff --cached --quiet; then
+            git commit -m "Loop Physics [skip ci]"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
