@@ -331,6 +331,8 @@ def youtube_polish(apply: bool = False) -> None:
             rec["youtube_id"] = v["id"]
             taken.add(v["id"])
     if not apply:
+        for pl in get("playlists", part="snippet,contentDetails", mine="true", maxResults=50).get("items", []):
+            print(f"  playlist {pl['id']} {pl['contentDetails']['itemCount']} videos: {pl['snippet']['title']}", flush=True)
         print(f"dry run: {len(matches)} uploads would be updated", flush=True)
         return
 
