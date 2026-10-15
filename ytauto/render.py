@@ -34,7 +34,7 @@ class Format:
 
 
 LONG = Format(1920, 1080, 384, 216, body_size=78, margin=250, max_chars=80, max_words=14)
-SHORT = Format(1080, 1920, 216, 384, body_size=82, margin=90, max_chars=48, max_words=9)
+SHORT = Format(1080, 1920, 216, 384, body_size=96, margin=80, max_chars=44, max_words=8)
 
 
 def _ass_color(rgb) -> str:
@@ -242,7 +242,7 @@ def encode(tl: Timeline, out: Path, seed: int, workdir: Path) -> float:
     fonts = str(visuals.FONT_DIR)
     vf = (
         f"scale={f.width}:{f.height}:flags=bicubic,"
-        f"noise=alls=5:allf=t,vignette=angle=0.6,"
+        f"noise=alls=3:allf=t,vignette=angle=0.6,"
         f"fade=t=in:st=0:d=1.5,fade=t=out:st={max(0, total - 2.5):.2f}:d=2.5,"
         f"ass=subs.ass:fontsdir={fonts},format=yuv420p"
     )

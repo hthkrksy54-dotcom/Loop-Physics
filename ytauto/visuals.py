@@ -34,19 +34,20 @@ class Background:
         self.w, self.h = width, height
         rng = np.random.default_rng(seed)
         self.base = np.array(palette["base"], dtype=np.float32) / 255
-        aspect = width / height
+        unit = min(width, height)  # blobs scale with the short side, so portrait stays moody
+        ext_x, ext_y = width / unit, height / unit
         ys, xs = np.mgrid[0:height, 0:width].astype(np.float32)
-        self.x = xs / height  # normalised so blobs stay round
-        self.y = ys / height
+        self.x = xs / unit
+        self.y = ys / unit
         self.blobs = []
         for color in palette["glows"]:
             self.blobs.append(
                 {
                     "color": np.array(color, dtype=np.float32) / 255,
-                    "cx": rng.uniform(0.2, 0.8) * aspect,
-                    "cy": rng.uniform(0.2, 0.8),
-                    "ax": rng.uniform(0.15, 0.35) * aspect,
-                    "ay": rng.uniform(0.12, 0.3),
+                    "cx": rng.uniform(0.2, 0.8) * ext_x,
+                    "cy": rng.uniform(0.2, 0.8) * ext_y,
+                    "ax": rng.uniform(0.15, 0.35) * ext_x,
+                    "ay": rng.uniform(0.12, 0.3) * ext_y,
                     "wx": 2 * math.pi / rng.uniform(55, 110),
                     "wy": 2 * math.pi / rng.uniform(60, 120),
                     "px": rng.uniform(0, 2 * math.pi),
