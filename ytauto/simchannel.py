@@ -275,6 +275,7 @@ def youtube_polish(apply: bool = False) -> None:
     """Match the owner's manual uploads to produced simulations, then (apply=True) give them our title,
     description and tags, sort them into one playlist per format and remember their YouTube ids."""
     import re
+    import time
 
     import requests
 
@@ -345,7 +346,17 @@ def youtube_polish(apply: bool = False) -> None:
             existing[name] = send("POST", "playlists", "snippet,status", {
                 "snippet": {"title": name, "description": f"{about} New simulations every few hours on Loop Physics.",
                             "defaultLanguage": "en"}, "status": {"privacyStatus": "public"}})["id"]
-        send("POST", "playlistItems", "snippet", {"snippet": {
-            "playlistId": existing[name], "resourceId": {"kind": "youtube#video", "videoId": v["id"]}}})
+        if not get("playlistItems", part="id", playlistId=existing[name], videoId=v["id"]).get("items"):
+            for attempt in range(5):  # a brand-new playlist often answers 409 ABORTED for a few seconds
+                r = requests.post(f"{api}/playlistItems", params={"part": "snippet"}, timeout=60,
+                                  headers={**h, "Content-Type": "application/json"}, data=json.dumps({"snippet": {
+                                      "playlistId": existing[name],
+                                      "resourceId": {"kind": "youtube#video", "videoId": v["id"]}}}))
+                if r.ok:
+                    break
+                print(f"  playlist add retry {attempt + 1} ({r.status_code})", flush=True)
+                time.sleep(4 * (attempt + 1))
+            else:
+                raise SystemExit(f"playlistItems failed ({r.status_code}): {r.text[:300]}")
         print(f"  updated {v['id']}: {meta['title']!r} -> playlist {name!r}", flush=True)
     save(STATE, state)
