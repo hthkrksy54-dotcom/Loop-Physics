@@ -4,7 +4,7 @@ name: Loop Physics
 # 2nd; YouTube once enabled). Own queue, so the long Quiet Thoughts renders never delay or cancel these runs.
 on:
   schedule:
-    - cron: "17 */2 * * *"
+    - cron: "40 */2 * * *"
   workflow_dispatch:
     inputs:
       upload:
@@ -34,6 +34,8 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main  # the latest state, also when this run waited in the queue
 
       - uses: actions/setup-python@v5
         with:
