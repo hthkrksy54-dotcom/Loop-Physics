@@ -21,7 +21,7 @@ from pathlib import Path
 
 from cryptography.fernet import Fernet
 
-from . import instagram, publish, sims, youtube
+from . import instagram, publish, sims, tiktok, youtube
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "config" / "sims.json"
@@ -33,6 +33,7 @@ SLOTS = [(11, 30), (18, 30)]  # UTC posting times (13:30 / 20:30 Berlin in summe
 SLOT_WINDOW = dt.timedelta(hours=6)  # a missed or failed slot is retried until this long after it
 STANDOUT = 1.6  # a concept may run again only if its views are at least this many times the channel median
 EXPERIMENTS = ("Loop Physics experiments", "A brand-new simulation concept every time.")
+TIKTOK_TAGS = ["satisfying", "oddlysatisfying", "physics", "simulation"]
 COVER_AT = {"stringart": 0.9, "plinko": 0.85, "multiply": 0.85, "grow": 0.75, "pendulum": 0.55,
             "escape": 0.3, "polygon": 0.3, "battle": 0.3, "harmonograph": 0.97, "chaos": 0.7, "territory": 0.6,
             "race": 0.4}  # share of the run that makes the best cover frame
@@ -293,7 +294,7 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict) -> dict:
         + (f"\n▶ YouTube: {cfg['youtube']['channel_url']}" if cfg["youtube"].get("channel_url") else ""),
         (tags_line + (f" #{composer.lower()}" if composer else "")).strip(),
     ])
-    return {"title": title[:95], "description": description, "caption": caption[:2150],
+    return {"title": title[:95], "description": description, "caption": caption[:2150], "question": question,
             "tags": TAGS + [t for t in (song.lower(), composer.lower()) if t] + (tuning.get("hashtags") or [])[:4]}
 
 
@@ -371,6 +372,15 @@ def run(upload: bool = True) -> dict:
         except Exception as err:  # one platform failing must not lose the run
             record.setdefault("warnings", []).append(f"instagram: {err}")
             print(f"  warning: instagram failed: {err}", flush=True)
+    if tiktok.configured(cfg):
+        try:  # a draft in the owner's TikTok inbox: one tap to post (TikTok wants the creator to confirm)
+            extra = [t for t in load(TUNING, {}).get("hashtags") or [] if t not in TIKTOK_TAGS][:2]
+            cap = tiktok.caption(meta["title"], meta["question"], TIKTOK_TAGS + extra)
+            record["tiktok"] = {**tiktok.send_draft(cfg, Path(result["video"])), "caption": cap}
+            print(f"  tiktok: draft {record['tiktok']['status']}", flush=True)
+        except Exception as err:  # noqa: BLE001
+            record.setdefault("warnings", []).append(f"tiktok: {err}")
+            print(f"  warning: tiktok failed: {err}", flush=True)
     if cfg["youtube"].get("upload_enabled"):
         try:
             token = _youtube_token(cfg)
@@ -387,6 +397,8 @@ def run(upload: bool = True) -> dict:
             print(f"  warning: youtube failed: {err}", flush=True)
     state.setdefault("videos", []).append(record)
     save(STATE, state)
+    if record.get("tiktok"):
+        tiktok.write_queue(state["videos"], cfg["channel_name"])
     removed = publish.cleanup_releases("sims-", keep_days=10)  # Instagram keeps its own copy
     if removed:
         print(f"  removed {removed} old releases", flush=True)

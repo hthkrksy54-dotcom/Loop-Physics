@@ -23,7 +23,7 @@ import sys
 import traceback
 from pathlib import Path
 
-from . import check, generate, instagram, publish, render, simchannel, sims, social, sync, trends, watchdog, youtube
+from . import check, generate, instagram, publish, render, simchannel, sims, social, sync, tiktok, trends, watchdog, youtube
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "config" / "channels.json"
@@ -276,6 +276,12 @@ def main(argv: list[str] | None = None) -> int:
     sc.add_argument("--branding", action="store_true", help="set banner, description and keywords on YouTube")
     sc.add_argument("--youtube", choices=["check", "apply"], help="match manual YouTube uploads and polish them")
     sc.add_argument("--due", action="store_true", help="print 'post' if a posting slot is open, else 'idle'")
+    tk = sub.add_parser("tiktok", help="TikTok setup for Loop Physics: url | connect | check | send")
+    tk.add_argument("action", choices=["url", "connect", "check", "send"])
+    tk.add_argument("--key", help="client key of the TikTok developer app")
+    tk.add_argument("--secret", help="client secret of the TikTok developer app")
+    tk.add_argument("--redirect", help="the full address TikTok sent you to after allowing access")
+    tk.add_argument("--video", help="send: this MP4 as a draft")
     sub.add_parser("concepts", help="Loop Physics: every concept with status, queue and performance")
     cc = sub.add_parser("concept-check", help="Loop Physics: quality gate + contact sheet for a concept")
     cc.add_argument("kind", nargs="?")
@@ -311,6 +317,18 @@ def main(argv: list[str] | None = None) -> int:
         print(f"{result['video']}  ({result['duration']:.1f}s, {result['melody_name']})")
         return 0
 
+    if args.cmd == "tiktok":
+        cfg = simchannel.load(simchannel.CONFIG, {})
+        if args.action == "url":
+            print(tiktok.auth_url(args.key))
+        elif args.action == "connect":
+            data = tiktok.connect(cfg, args.key, args.secret, args.redirect)
+            print(f"connected (scopes: {data.get('scope')}), token stored in {cfg['tiktok']['token_file']}")
+        elif args.action == "check":
+            print(tiktok.account(cfg))
+        else:
+            print(tiktok.send_draft(cfg, Path(args.video)))
+        return 0
     if args.cmd == "concepts":
         from . import conceptcheck
         print(conceptcheck.listing(simchannel.load(simchannel.CONFIG, {}), simchannel.load(simchannel.STATE, {})))

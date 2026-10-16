@@ -29,5 +29,10 @@
     "default_language": "en",
     "channel": "@LoopPhysics-420",
     "channel_url": "youtube.com/@LoopPhysics-420"
+  },
+  "tiktok": {
+    "enabled": false,
+    "account": "loop_physics",
+    "token_file": "state/tiktok_sims.token"
   }
 }
