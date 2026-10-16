@@ -14,7 +14,8 @@
       "carousel_id": "18075069674744745",
       "carousel_url": "https://www.instagram.com/p/DehVDayEQih/",
       "carousel_date": "2026-10-15T15:53:46+00:00",
-      "quote_story_id": "18056811212652576"
+      "quote_story_id": "18056811212652576",
+      "thumbnail_set": true
     },
     {
       "id": "dichotomy-of-control",
@@ -25,7 +26,8 @@
       "youtube_id": "bhvD-fbHzIE",
       "youtube_short_id": "JUtNU4dleqA",
       "instagram_id": "18015788657974269",
-      "instagram_url": "https://www.instagram.com/reel/DehTHyyDHYn/"
+      "instagram_url": "https://www.instagram.com/reel/DehTHyyDHYn/",
+      "thumbnail_set": true
     },
     {
       "id": "memento-mori",
@@ -38,7 +40,8 @@
       "instagram_url": "https://www.instagram.com/reel/Dei9OQzETOz/",
       "instagram_story_id": "18114211694588773",
       "youtube_id": "-yc_umZIewQ",
-      "youtube_short_id": "q2pIrhkpDGg"
+      "youtube_short_id": "q2pIrhkpDGg",
+      "thumbnail_set": true
     }
   ]
 }
