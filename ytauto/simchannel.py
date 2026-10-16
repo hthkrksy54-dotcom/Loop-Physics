@@ -272,6 +272,51 @@ def _fmt(template: str, params: dict) -> str:
         return params["onscreen"]
 
 
+def tiktok_backlog(cfg: dict, state: dict, max_pending: int = 3, files: dict[str, Path] | None = None) -> int:
+    """Send earlier videos that are not on TikTok yet as drafts – best performers first – while at most
+    max_pending drafts wait in the owner's inbox. Videos come from `files` ("kind-seed" -> path) or the release."""
+    import time
+
+    import requests
+
+    videos = state.get("videos", [])
+    pending = sum(1 for r in videos if (r.get("tiktok") or {}).get("status") not in (None, "PUBLISH_COMPLETE", "FAILED"))
+    todo = sorted((r for r in videos if not r.get("tiktok") and not r.get("tiktok_skip")), key=lambda r: -score(r))
+    repo = os.environ.get("GITHUB_REPOSITORY", "hthkrksy54-dotcom/Yt")
+    sent = 0
+    for r in todo:
+        if pending >= max_pending:
+            break
+        name = f"{r['kind']}-{r['seed']}"
+        path = (files or {}).get(name)
+        if not path:
+            if not r.get("release"):
+                continue
+            tag = r["release"].rsplit("/", 1)[1]
+            res = requests.get(f"https://github.com/{repo}/releases/download/{tag}/loop-physics-{tag[5:]}.mp4", timeout=300)
+            if res.status_code == 404:
+                r["tiktok_skip"] = "video no longer archived"
+                continue
+            res.raise_for_status()
+            path = OUT / f"tiktok-{name}.mp4"
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(res.content)
+        try:
+            draft = tiktok.send_draft(cfg, Path(path), wait=60)
+        except tiktok.TikTokError as err:
+            print(f"  tiktok: {name} not sent: {err}", flush=True)
+            if re.search(r"spam|pending|rate|too_many|limit", str(err), re.I):
+                break  # TikTok wants fewer drafts at once: the next heartbeat goes on
+            r["tiktok_skip"] = str(err)[:200]
+            continue
+        r["tiktok"] = {**draft, "caption": tiktok_caption(r["kind"], metadata(r["kind"], r["seed"], r["melody"], cfg))}
+        print(f"  tiktok: {name} sent as a draft ({draft['status']})", flush=True)
+        pending += 1
+        sent += 1
+        time.sleep(12)  # TikTok allows 6 upload starts per minute
+    return sent
+
+
 def onscreen(lines: list[str]) -> str:
     """The on-screen title as one line: 'Which color' + 'wins the race?', 'Every hit upgrades it – Who wins…'."""
     out = lines[0] if lines else ""

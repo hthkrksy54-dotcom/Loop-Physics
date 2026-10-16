@@ -200,11 +200,15 @@ def caption(title: str, question: str, tags: list[str]) -> str:
 
 def write_queue(records: list[dict], channel: str) -> None:
     """state/tiktok.md: the latest drafts with their caption to copy – the owner's 15-second checklist."""
-    recent = [r for r in records if r.get("tiktok")][-8:][::-1]
+    sent = [r for r in records if r.get("tiktok")]
+    waiting = sorted((r for r in sent if r["tiktok"].get("status") != "PUBLISH_COMPLETE"), key=lambda r: r["date"], reverse=True)
+    posted = sorted((r for r in sent if r["tiktok"].get("status") == "PUBLISH_COMPLETE"), key=lambda r: r["date"], reverse=True)
+    recent = waiting + posted[:5]
     lines = [f"# TikTok – {channel}: Entwürfe zum Posten", "",
              "1. Beschreibung unten kopieren (Kopier-Symbol rechts im Kasten).",
              "2. In TikTok auf die Benachrichtigung tippen (oder Profil → Posteingang/Entwürfe) → **Weiter**.",
-             "3. Beschreibung einfügen, nach Wunsch einen angesagten Sound wählen → **Posten**.", ""]
+             "3. Beschreibung einfügen, nach Wunsch einen angesagten Sound wählen → **Posten**.", "",
+             "Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist die Frage, die oben im Video steht.", ""]
     for r in recent:
         tt = r["tiktok"]
         when = dt.datetime.fromisoformat(r["date"]).strftime("%d.%m. %H:%M UTC")
