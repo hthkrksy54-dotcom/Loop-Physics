@@ -22,18 +22,22 @@ QUERIES = ["satisfying simulation", "satisfying physics", "bouncing ball simulat
 KIND_WORDS = {
     "escape": ["escape", "ring", "rings", "circle", "break out", "spinning", "gap"],
     "polygon": ["hexagon", "polygon", "square", "triangle", "octagon", "pentagon", "shape"],
-    "battle": ["color", "colour", "race", "battle", "wins", "team", "country", "countries", "vs", "versus"],
+    "battle": ["color", "colour", "battle", "wins", "team", "country", "countries", "vs", "versus"],
     "grow": ["grow", "grows", "bigger", "size", "fills"],
     "multiply": ["multiply", "duplicate", "clone", "adds", "spawn", "1000", "more balls"],
     "plinko": ["plinko", "galton", "bell curve", "pegs", "probability"],
     "stringart": ["string", "pattern", "draw", "draws", "lines", "art"],
     "pendulum": ["pendulum", "pendulums", "wave", "sync"],
+    "territory": ["territory", "pong", "pong wars", "conquer", "conquers", "takes over", "paint", "pixels"],
+    "chaos": ["chaos", "chaotic", "butterfly", "butterfly effect", "double pendulum"],
+    "harmonograph": ["harmonograph", "spirograph", "drawing", "draws", "spiral"],
+    "race": ["race", "marble", "marbles", "marble race", "finish", "track"],
 }
 STOP = set("the a an and or of to in on at for with is are this that it its you your my me i we be will can how "
            "what why when who which every each one all just new video videos shorts short satisfying oddly".split())
 JUNK_TAGS = {"shorts", "short", "viral", "fyp", "foryou", "foryoupage", "trending", "youtube", "subscribe", "like",
              "tiktok", "reels", "reel", "explore", "youtubeshorts", "shortsfeed", "shortvideo", "trend", "funny"}
-SPECIFIC = r"\b(rings?|pendulums?|plinko|colou?rs?|polygons?|hexagons?|string|grows?|balls? wins?|escapes?)\b"
+SPECIFIC = r"\b(rings?|pendulums?|plinko|colou?rs?|polygons?|hexagons?|string|grows?|balls? wins?|escapes?|marbles?|races?)\b"
 HOOK_SYSTEM = ("You write short, honest YouTube Shorts / Instagram Reels titles for an oddly satisfying physics "
                "simulation channel. No clickbait lies, no ALL CAPS, at most one emoji. Return only JSON.")
 

@@ -25,7 +25,9 @@ TUNING = ROOT / "config" / "sims_tuning.json"  # written daily by trends.py
 OUT = ROOT / "out" / "sims"
 STORY_EVERY = 2  # a story for every Reel would crowd the account's stories
 COVER_AT = {"stringart": 0.9, "plinko": 0.85, "multiply": 0.85, "grow": 0.75, "pendulum": 0.55,
-            "escape": 0.3, "polygon": 0.3, "battle": 0.3}  # share of the run that makes the best cover frame
+            "escape": 0.3, "polygon": 0.3, "battle": 0.3, "harmonograph": 0.97, "chaos": 0.7, "territory": 0.6,
+            "race": 0.4}  # share of the run that makes the best cover frame
+NOVELTY = 1.6  # new formats get a boost until they have a few runs (and numbers) of their own
 
 TITLES = {  # {onscreen} = the question shown in the video, {n} = rings/polygons, {song} = melody
     "escape": [
@@ -73,10 +75,43 @@ TITLES = {  # {onscreen} = the question shown in the video, {n} = rings/polygons
         "Pure physics: every pendulum swings a little faster",
         "Wait for the moment they all line up",
     ],
+    "territory": [
+        "{onscreen}",
+        "Pick a color – who owns the board at the end?",
+        "Every bounce steals a square – which color wins?",
+        "Pong wars: which color takes over?",
+    ],
+    "chaos": [
+        "{onscreen}",
+        "They start {delta}° apart – watch what happens",
+        "The butterfly effect in {k} pendulums",
+        "Same start, completely different ending",
+    ],
+    "harmonograph": [
+        "{onscreen}",
+        "Two pendulums and a pen drew this",
+        "A pendulum drew this – with {song}",
+        "Watch a pendulum draw a masterpiece",
+    ],
+    "race": [
+        "{onscreen}",
+        "Pick a color before it starts",
+        "Marble race: who crosses the line first?",
+        "Pegs, spinners, bumpers – which color wins?",
+    ],
 }
-BODIES = {  # what the sound does, per format (default: the melody)
+BODIES = {  # what happens and what the sound does, per format (default: the melody)
     "pendulum": "Each pendulum swings a little faster than the one above it and rings its own note – "
                 "waves and snakes appear, until they all line up again.",
+    "territory": "Every ball flies through its own colour and bounces off the others – and every square it "
+                 "bounces off turns into its colour. Whoever owns most of the board at the end wins. "
+                 "Every bounce plays the next note of {song}.",
+    "chaos": "Double pendulums that start only {delta}° apart. For a while they move as one – then chaos takes "
+             "over. Every pendulum rings its own note when it swings through the middle.",
+    "harmonograph": "A harmonograph: two slowly fading pendulums move the pen left and right, two move it up "
+                    "and down. Every turn of the pen plays the next note of {song}.",
+    "race": "All balls race down the same track of pegs, spinners, funnels and bumpers. The camera follows "
+            "the leader – and every bounce of the leader plays the next note of {song}.",
 }
 RANGES = [(28, 40), (35, 48), (42, 56)]  # alternate short, medium and long runs
 QUESTIONS = {
@@ -89,6 +124,11 @@ QUESTIONS = {
     "stringart": ["What does the pattern remind you of?", "More bounces next time?"],
     "multiply": ["How many balls should the next one have?", "At which number did it get chaotic for you?"],
     "pendulum": ["Which pattern was your favourite?", "Did you see the snake?", "Could you watch this on loop?"],
+    "territory": ["Which color did you pick?", "Did your color win?", "Two colors or four – which is better?"],
+    "chaos": ["When did you first see them split?", "Which pendulum was your favourite?",
+              "Could you watch this on loop?"],
+    "harmonograph": ["What does the drawing remind you of?", "Would you hang this on your wall?"],
+    "race": ["Which color did you pick?", "Did your color win?", "Which obstacle was the craziest?"],
 }
 COMPOSERS = {"fur_elise": "Beethoven", "ode_to_joy": "Beethoven", "mountain_king": "Grieg", "twinkle": "Mozart",
              "canon": "Pachelbel", "nachtmusik": "Mozart", "turkish_march": "Mozart", "minuet": "Bach",
@@ -115,7 +155,9 @@ def plan(cfg: dict, state: dict) -> tuple[str, int, str]:
     last = videos[-1]["kind"] if videos else None
     recent = Counter(v["kind"] for v in videos[-2 * len(kinds):])
     cands = [k for k in kinds if k != last] or kinds
-    weights = [max(0.05, tuning.get("kind_weights", {}).get(k, 1.0)) / (1 + recent[k]) for k in cands]
+    made = Counter(v["kind"] for v in videos)
+    weights = [max(0.05, tuning.get("kind_weights", {}).get(k, 1.0)) / (1 + recent[k]) * (NOVELTY if made[k] < 3 else 1)
+               for k in cands]
     kind = random.Random(len(videos) * 7919).choices(cands, weights=weights)[0]
     start = max((v["seed"] for v in videos if v["kind"] == kind), default=-1) + 1
     ranges = [tuple(r) for r in tuning.get("ranges") or RANGES]
@@ -135,20 +177,24 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict) -> dict:
     song_full = sims.MELODIES[melody][0]
     song = song_full.split(" – ")[0]
     sim = sims.KINDS[kind](seed)
-    params = {"n": getattr(sim, "n", ""), "song": song, "onscreen": " ".join(sim.title())}
+    params = {"n": getattr(sim, "n", ""), "k": getattr(sim, "K", ""), "song": song, "onscreen": " ".join(sim.title()),
+              "delta": sims._decimal(sim.delta) if hasattr(sim, "delta") else ""}
     tuning = load(TUNING, {})
     title = rnd.choice(TITLES.get(kind, ["{onscreen}"])).format(**params)
-    addons = [a for a in tuning.get("title_addons") or [] if "?" not in a]
+    addons = [a for a in tuning.get("title_addons") or []
+              if "?" not in a and not (kind in ("pendulum", "chaos", "harmonograph") and "bounce" in a.lower())]
     if addons and rnd.random() < 0.5:  # half the time: the on-screen question plus a trending add-on
         with_addon = f"{params['onscreen']} – {rnd.choice(addons)}"
         title = with_addon if len(with_addon) <= 95 else title
     generic = [q for q in tuning.get("questions") or []
-               if not re.search(r"\b(rings?|pendulums?|plinko|colou?rs?|polygons?|balls? wins?|escapes?)\b", q, re.I)]
+               if not re.search(r"\b(rings?|pendulums?|plinko|colou?rs?|polygons?|balls? wins?|escapes?|marbles?|races?)\b",
+                                q, re.I)]
     question = rnd.choice(QUESTIONS.get(kind, ["Did you recognise the melody?"]) + generic[:3])
     tags_line = " ".join(["#satisfying"] + [f"#{t}" for t in (tuning.get("hashtags") or []) if t != "satisfying"][:3]) \
         if tuning.get("hashtags") else cfg["instagram"].get("hashtags", "")
     composer = COMPOSERS.get(melody, "")
-    body = (BODIES.get(kind, f"Every bounce plays the next note of {song_full}.") + "\n"
+    body = (BODIES.get(kind, "Every bounce plays the next note of {song}.").format(song=song_full, **{
+        k: v for k, v in params.items() if k != "song"}) + "\n"
             "Physics, picture and sound are all generated in code – no two runs are the same.")
     description = "\n\n".join([
         body,
@@ -308,6 +354,10 @@ PLAYLISTS = {
     "stringart": ("String art – bounces that draw", "Every bounce leaves a line until a pattern appears."),
     "multiply": ("Every bounce adds a ball", "One ball becomes a cloud of colour."),
     "pendulum": ("Pendulum waves", "Pendulums drift into waves and snakes and fall back in sync."),
+    "territory": ("Which color conquers the board?", "Pong-wars style territory battles – pick your colour."),
+    "chaos": ("Chaos – the butterfly effect", "Double pendulums that start a hair apart and end up worlds apart."),
+    "harmonograph": ("Pendulum drawings", "A harmonograph draws a new figure every time."),
+    "race": ("Marble races", "Pick a colour – the first ball over the finish line wins."),
 }
 
 

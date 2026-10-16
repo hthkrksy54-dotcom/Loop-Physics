@@ -3,10 +3,14 @@
   "handle": "@loop_physics",
   "kinds": [
     "escape",
+    "race",
     "battle",
+    "chaos",
     "pendulum",
+    "territory",
     "grow",
     "plinko",
+    "harmonograph",
     "multiply",
     "polygon",
     "stringart"

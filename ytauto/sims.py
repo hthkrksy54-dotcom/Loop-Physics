@@ -11,6 +11,12 @@ public-domain melody) – so each video is original and free of third-party righ
   stringart: every bounce leaves a line between successive contact points and draws a pattern
   multiply:  every bounce of the white ball adds a new ball until the circle is full of colour
   pendulum:  a pendulum wave drifts into snakes and waves and falls back in sync (one note per pendulum)
+  territory: pong wars – every ball paints the enemy squares it bounces off; most of the board wins
+  chaos:     double pendulums start a hair apart and split into chaos (the butterfly effect)
+  harmonograph: damped pendulums move a pen and draw a rosette
+  race:      marble race down a long track of pegs, spinners, funnels and bumpers, the camera follows the leader
+
+Finales of the escape-style kinds and the race are often replayed in slow motion.
 
 Each seed also picks its own look (palette, background) and parameters (rings, gaps, sizes, speeds).
 """
@@ -34,6 +40,7 @@ SR = 48000
 CX, CY = W / 2, H * 0.5
 TAU = 2 * math.pi
 OUTRO = 2.6
+SLOW = (0.9, 0.35, 0.33)  # slow motion: from 0.9 s before the finale moment to 0.35 s after it, at 1/3 speed
 
 # Melody lines (MIDI note numbers) of public-domain compositions.
 MELODIES = {
@@ -196,6 +203,8 @@ class Sim:
     """A simulation kind: physics in step(), picture in draw(), on-screen text in title()/counter()/finale()."""
     kind = ""
     counter_color = (255, 214, 120)
+    note_gap = 0.045  # shortest gap between two melody notes (s)
+    slowmo = False    # the finale moment is worth a slow-motion replay
 
     def __init__(self, seed: int) -> None:
         self.rnd = random.Random(seed)  # physics only
@@ -207,6 +216,10 @@ class Sim:
     def finish(self) -> None:
         self.end = self.t
         self.events.append((self.t, "finale", 0))
+
+    def good(self) -> bool:
+        """Is this run worth a video (beyond its length)?"""
+        return True
 
     def prepare(self, p: Painter) -> None:
         """Draw static scenery into the painter's persistent layers."""
@@ -246,6 +259,7 @@ class Sim:
 
 class Escape(Sim):
     kind = "escape"
+    slowmo = True
     RINGS = (10, 16)
     GAP = (48.0, 62.0)  # gap in degrees for the fewest/most rings, tuned for ~45 s runs
 
@@ -413,6 +427,7 @@ class Battle(Escape):
 class Polygon(Sim):
     """Escape from nested polygons; neighbours turn in opposite directions and are spaced so they never touch."""
     kind = "polygon"
+    slowmo = True
     GAP = {5: 0.36, 6: 0.46, 7: 0.70, 8: 0.90}  # gap as a share of the edge length, tuned for ~45 s runs
 
     def __init__(self, seed: int, sides: int | None = None):
@@ -518,6 +533,7 @@ class Polygon(Sim):
 
 class Grow(Sim):
     kind = "grow"
+    slowmo = True
 
     def __init__(self, seed: int, radius: float | None = None, inc: float | None = None):
         super().__init__(seed)
@@ -959,7 +975,678 @@ class Pendulum(Sim):
         return "Every pendulum plays its own note"
 
 
-KINDS = {k.kind: k for k in (Escape, Grow, Battle, Polygon, Plinko, StringArt, Multiply, Pendulum)}
+class Territory(Sim):
+    """Pong wars: every ball flies freely through its own colour and bounces off enemy cells – painting
+    them in its colour. Whoever owns most of the board when the time is up wins."""
+    kind = "territory"
+    note_gap = 0.11
+    PAIRS = [(0, 1), (5, 7), (4, 2), (6, 3)]
+
+    def __init__(self, seed: int):
+        super().__init__(seed)
+        rnd = self.rnd
+        n = rnd.choice([2, 2, 3, 4])
+        self.teams = list(rnd.choice(self.PAIRS)) if n == 2 else \
+            list(rnd.choice([t for t in LINEUPS if len(t) == n]))
+        self.G = G = rnd.choice([16, 18, 20, 24])
+        self.S = 900.0
+        self.c = self.S / G
+        self.h = self.S / 2
+        self.T = rnd.uniform(22, 56)
+        self.owner = [[self._start_owner(r, c, n) for c in range(G)] for r in range(G)]
+        self.rb = self.c * rnd.uniform(0.26, 0.32)
+        self.speed = rnd.uniform(680, 820)
+        per = rnd.choice([1, 1, 2]) if n == 2 else 1
+        self.balls: list[Ball] = []
+        for k in range(n * per):
+            team = k % n
+            cells = [(r, c) for r in range(1, G - 1) for c in range(1, G - 1) if self.owner[r][c] == team]
+            r, c = rnd.choice(cells)
+            a = rnd.uniform(0, TAU)
+            x, y = -self.h + (c + 0.5) * self.c, -self.h + (r + 0.5) * self.c
+            self.balls.append(Ball(x, y, math.cos(a) * self.speed, math.sin(a) * self.speed, self.rb,
+                                   TEAMS[self.teams[team]][1], TEAMS[self.teams[team]][0]))
+        self.team_of = [k % n for k in range(n * per)]
+        self.flips: dict[tuple[int, int], float] = {}
+        self.count = [sum(row.count(t) for row in self.owner) for t in range(n)]
+
+    def _start_owner(self, r: int, c: int, n: int) -> int:
+        G = self.G
+        if n == 2:
+            return int(c >= G / 2)
+        if n == 4:
+            return int(c >= G / 2) + 2 * int(r >= G / 2)
+        a = (math.atan2(r + 0.5 - G / 2, c + 0.5 - G / 2) + math.pi / 2) % TAU
+        return min(2, int(a / TAU * 3))
+
+    def color(self, team: int) -> tuple[int, int, int]:
+        return TEAMS[self.teams[team]][1]
+
+    def cell_color(self, team: int) -> tuple[int, int, int]:
+        return _mix(self.color(team), 0.58)
+
+    def cell_box(self, r: int, c: int) -> tuple[float, float, float, float]:
+        return -self.h + c * self.c, -self.h + r * self.c, -self.h + (c + 1) * self.c, -self.h + (r + 1) * self.c
+
+    def step(self, dt: float) -> None:
+        self.t += dt
+        if self.end is not None:
+            return
+        h, cs, G = self.h, self.c, self.G
+        for j, b in enumerate(self.balls):
+            team = self.team_of[j]
+            b.x += b.vx * dt
+            b.y += b.vy * dt
+            if b.x - b.rb < -h or b.x + b.rb > h:
+                b.x = max(-h + b.rb, min(h - b.rb, b.x))
+                b.vx = -b.vx
+            if b.y - b.rb < -h or b.y + b.rb > h:
+                b.y = max(-h + b.rb, min(h - b.rb, b.y))
+                b.vy = -b.vy
+            c0, c1 = int((b.x - b.rb + h) // cs), int((b.x + b.rb + h) // cs)
+            r0, r1 = int((b.y - b.rb + h) // cs), int((b.y + b.rb + h) // cs)
+            hit = None
+            for r in range(max(0, r0), min(G - 1, r1) + 1):
+                for c in range(max(0, c0), min(G - 1, c1) + 1):
+                    if self.owner[r][c] == team:
+                        continue
+                    x0, y0, x1, y1 = self.cell_box(r, c)
+                    dx, dy = b.x - min(max(b.x, x0), x1), b.y - min(max(b.y, y0), y1)
+                    if dx * dx + dy * dy >= b.rb * b.rb:
+                        continue
+                    self.count[self.owner[r][c]] -= 1
+                    self.count[team] += 1
+                    self.owner[r][c] = team
+                    self.flips[r, c] = self.t
+                    self.events.append((self.t, "paint", r * G + c))
+                    if hit is None:
+                        hit = (dx, dy)
+            if hit is not None:
+                dx, dy = hit
+                if abs(dx) > abs(dy):
+                    b.vx = math.copysign(abs(b.vx), dx)
+                elif dy:
+                    b.vy = math.copysign(abs(b.vy), dy)
+                else:
+                    b.vx, b.vy = -b.vx, -b.vy
+                a = math.atan2(b.vy, b.vx) + self.rnd.gauss(0, 0.05)
+                q = (a % (math.pi / 2)) / (math.pi / 2)  # keep away from the axes, or a ball runs in a rut
+                if q < 0.12 or q > 0.88:
+                    a += (0.12 - q if q < 0.5 else 0.88 - q) * math.pi / 2
+                b.vx, b.vy = math.cos(a) * self.speed, math.sin(a) * self.speed
+                self.events.append((self.t, "bounce", j))
+        if self.t >= self.T:
+            self.finish()
+
+    def share(self) -> list[float]:
+        return [k / (self.G * self.G) for k in self.count]
+
+    def winner(self) -> int:
+        return max(range(len(self.count)), key=lambda t: self.count[t])
+
+    def prepare(self, p: Painter) -> None:
+        for r in range(self.G):
+            for c in range(self.G):
+                self._cell(p, r, c, self.cell_color(self.owner[r][c]), p.base_d)
+        h = self.h + 7
+        p.line([(-h, -h), (h, -h), (h, h), (-h, h)], (210, 210, 235), 6, glow=None, closed=True, d=p.base_d)
+
+    def _cell(self, p: Painter, r: int, c: int, col, d) -> None:
+        x0, y0, x1, y1 = self.cell_box(r, c)
+        g = 1.2
+        d.rounded_rectangle(((CX + x0 + g) * SS, (CY + y0 + g) * SS, (CX + x1 - g) * SS, (CY + y1 - g) * SS),
+                            radius=int(self.c * 0.18 * SS), fill=col)
+
+    def on_event(self, p: Painter, kind: str, i: int) -> None:
+        if kind == "paint":
+            r, c = divmod(i, self.G)
+            self._cell(p, r, c, self.cell_color(self.owner[r][c]), p.base_d)
+        elif kind == "finale":
+            w = self.winner()
+            for j, b in enumerate(self.balls):
+                if self.team_of[j] == w:
+                    p.parts.burst_point(p.rng, b.x, b.y, self.color(w), 200, 900)
+
+    def draw(self, p: Painter) -> None:
+        for (r, c), th in list(self.flips.items()):
+            k = 1 - (self.t - th) / 0.3
+            if k <= 0:
+                del self.flips[r, c]
+                continue
+            base = self.cell_color(self.owner[r][c])
+            self._cell(p, r, c, tuple(int(x + (255 - x) * 0.55 * k) for x in base), p.d)
+            x0, y0, x1, y1 = self.cell_box(r, c)
+            p.glow_disc((x0 + x1) / 2, (y0 + y1) / 2, self.c * 0.8, _mix(self.color(self.owner[r][c]), k))
+        p.particles()
+        for j, b in enumerate(self.balls):
+            p.trail(j, b.x, b.y, b.rb, b.col, 8)
+            p.ball(b.x, b.y, b.rb, b.col, (255, 255, 255), 3)
+            p.glow_disc(b.x, b.y, b.rb * 1.8, b.col)
+
+    def draw_text(self, p: Painter, d: ImageDraw.ImageDraw) -> None:
+        for i, line in enumerate(self.title()):
+            p.centered(d, 210 + i * 92, line, p.f_title, (255, 255, 255), 3)
+        x0, x1, y0, y1 = 90, W - 90, 408, 466  # share bar
+        x = x0
+        for t, s in enumerate(self.share()):
+            w = (x1 - x0) * s
+            d.rectangle((x, y0, x + w, y1), fill=self.color(t))
+            if w > 90:
+                label = f"{round(100 * s)}%"
+                tw = d.textlength(label, font=p.f_count)
+                d.text((x + w / 2 - tw / 2, y0 + 1), label, font=p.f_count, fill=(255, 255, 255),
+                       stroke_width=3, stroke_fill=(0, 0, 0))
+            x += w
+        d.rectangle((x0, y0, x1, y1), outline=(255, 255, 255), width=3)
+        if self.end is None:
+            p.centered(d, 1422, f"{max(0, math.ceil(self.T - self.t))} s left", p.f_count, (255, 214, 120), 2)
+        else:
+            p.big_text(d, self.finale(), self.t - self.end)
+
+    def title(self) -> list[str]:
+        return ["Which color", "conquers the board?"]
+
+    def finale(self) -> list[tuple[str, tuple]]:
+        w = self.winner()
+        return [(TEAMS[self.teams[w]][0], self.color(w)), ("WINS!", (255, 255, 255)),
+                (f"{round(100 * self.share()[w])}%", self.color(w))]
+
+
+class Chaos(Sim):
+    """Double pendulums that start a hair apart: for a while they move as one, then the butterfly effect
+    tears them apart. Each lower bob rings its own note when it swings through the middle."""
+    kind = "chaos"
+    counter_color = (255, 190, 130)
+
+    def __init__(self, seed: int):
+        super().__init__(seed)
+        rnd = self.rnd
+        self.K = rnd.choice([3, 4, 5, 6, 7])
+        self.delta = rnd.choice([0.01, 0.001, 0.001, 0.0001, 0.0001, 0.00001])  # degrees
+        self.L1, self.L2 = 215.0, rnd.uniform(180, 225)
+        self.m2 = rnd.uniform(0.6, 1.0)
+        self.g = rnd.uniform(900, 1300)
+        a1 = math.radians(rnd.uniform(110, 175)) * rnd.choice([-1, 1])
+        a2 = a1 + math.radians(rnd.uniform(-60, 60))
+        d = math.radians(self.delta)
+        self.s = [[a1 + d * i, a2, 0.0, 0.0] for i in range(self.K)]
+        self.oy = -20.0
+        self.split: float | None = None
+        self.hold = rnd.uniform(14, 26)
+        self.side = [0] * self.K
+        self.hit = [-9.0] * self.K
+        self.spread = self.delta
+
+    def _acc(self, t1: float, t2: float, w1: float, w2: float) -> tuple[float, float]:
+        m1, m2, L1, L2, g = 1.0, self.m2, self.L1, self.L2, self.g
+        d = t1 - t2
+        den = 2 * m1 + m2 - m2 * math.cos(2 * d)
+        a1 = (-g * (2 * m1 + m2) * math.sin(t1) - m2 * g * math.sin(t1 - 2 * t2)
+              - 2 * math.sin(d) * m2 * (w2 * w2 * L2 + w1 * w1 * L1 * math.cos(d))) / (L1 * den)
+        a2 = 2 * math.sin(d) * (w1 * w1 * L1 * (m1 + m2) + g * (m1 + m2) * math.cos(t1)
+                                + w2 * w2 * L2 * m2 * math.cos(d)) / (L2 * den)
+        return a1, a2
+
+    def _rk4(self, s: list[float], h: float) -> None:
+        t1, t2, w1, w2 = s
+        a1, a2 = self._acc(t1, t2, w1, w2)
+        b1, b2 = self._acc(t1 + w1 * h / 2, t2 + w2 * h / 2, w1 + a1 * h / 2, w2 + a2 * h / 2)
+        c1, c2 = self._acc(t1 + (w1 + b1 * h / 2) * h / 2, t2 + (w2 + b2 * h / 2) * h / 2, w1 + b1 * h / 2, w2 + b2 * h / 2)
+        e1, e2 = self._acc(t1 + (w1 + c1 * h / 2) * h, t2 + (w2 + c2 * h / 2) * h, w1 + c1 * h, w2 + c2 * h)
+        s[0] = t1 + h * (w1 + h / 6 * (a1 + b1 + c1))
+        s[1] = t2 + h * (w2 + h / 6 * (a2 + b2 + c2))
+        s[2] = w1 + h / 6 * (a1 + 2 * b1 + 2 * c1 + e1)
+        s[3] = w2 + h / 6 * (a2 + 2 * b2 + 2 * c2 + e2)
+
+    def joints(self, i: int) -> tuple[float, float, float, float]:
+        t1, t2 = self.s[i][0], self.s[i][1]
+        x1, y1 = self.L1 * math.sin(t1), self.oy + self.L1 * math.cos(t1)
+        return x1, y1, x1 + self.L2 * math.sin(t2), y1 + self.L2 * math.cos(t2)
+
+    def step(self, dt: float) -> None:
+        self.t += dt
+        if self.end is not None:
+            return
+        for i, s in enumerate(self.s):
+            self._rk4(s, dt)
+            x2 = self.joints(i)[2]
+            side = 1 if x2 > 25 else -1 if x2 < -25 else 0
+            if side and side != self.side[i]:
+                if self.side[i]:
+                    self.hit[i] = self.t
+                    self.events.append((self.t, "tone", i))
+                self.side[i] = side
+        ref = self.s[0]
+        self.spread = max(self.delta, max(abs(math.degrees(math.remainder(s[1] - ref[1], TAU))) for s in self.s))
+        if self.split is None:
+            x0, y0 = self.joints(0)[2:]
+            if any(math.hypot(x - x0, y - y0) > 30 for x, y in (self.joints(i)[2:] for i in range(1, self.K))):
+                self.split = self.t
+                self.events.append((self.t, "break", 0))
+        elif self.t >= self.split + self.hold:
+            self.finish()
+
+    def color(self, i: int) -> tuple[int, int, int]:
+        return self.look.color(i / max(1, self.K - 1))
+
+    def on_event(self, p: Painter, kind: str, i: int) -> None:
+        if kind == "finale":
+            for j in range(self.K):
+                x, y = self.joints(j)[2:]
+                p.parts.burst_point(p.rng, x, y, self.color(j), 40, 600)
+
+    def draw(self, p: Painter) -> None:
+        if not hasattr(self, "_last"):
+            self._last = [self.joints(i)[2:] for i in range(self.K)]
+        for i in range(self.K):  # the bobs paint a faint permanent picture of the chaos
+            x, y = self.joints(i)[2:]
+            p.line([self._last[i], (x, y)], _mix(self.color(i), 0.42), 1.3, glow=None, d=p.base_d)
+            self._last[i] = (x, y)
+        p.particles()
+        for i in reversed(range(self.K)):  # pendulum 0 on top: before the split you only see one
+            x1, y1, x2, y2 = self.joints(i)
+            col = self.color(i)
+            p.trail(i, x2, y2, 7, col, 26)
+            p.line([(0, self.oy), (x1, y1), (x2, y2)], _mix(col, 0.85, (255, 255, 255)), 5, glow=_mix(col, 0.5))
+            p.ball(x1, y1, 10, col, (255, 255, 255), 2)
+            k = max(0.0, 1 - (self.t - self.hit[i]) / 0.25)
+            p.ball(x2, y2, 17 + 5 * k, col, (255, 255, 255), 3)
+            p.glow_disc(x2, y2, 30 + 20 * k, col)
+        p.ball(0, self.oy, 9, (230, 230, 240))
+
+    def title(self) -> list[str]:
+        return [f"{self.K} pendulums,", f"{_decimal(self.delta)}° apart"]
+
+    def counter(self) -> str:
+        return f"difference: {_decimal(self.spread)}°"
+
+    def finale(self) -> list[tuple[str, tuple]]:
+        return [("BUTTERFLY", self.color(0)), ("EFFECT!", (255, 255, 255))]
+
+    def credit(self, melody_name: str) -> str:
+        return "Every pendulum plays its own note"
+
+
+def _decimal(x: float) -> str:
+    """0.00001 -> '0.00001', 0.0123 -> '0.012', 37.4 -> '37' (no scientific notation on screen)."""
+    if x >= 10:
+        return f"{x:.0f}"
+    digits = max(1, 1 - math.floor(math.log10(x)))
+    return f"{x:.{digits}f}".rstrip("0").rstrip(".") if x < 1 else f"{x:.1f}"
+
+
+class Harmonograph(Sim):
+    """A harmonograph: two damped pendulums move the pen in x, two in y – slightly detuned, so the figure
+    slowly turns while it shrinks into a rosette."""
+    kind = "harmonograph"
+    RATIOS = [(1, 2), (2, 3), (3, 4), (2, 1), (3, 2), (1, 3), (3, 5), (4, 5)]
+
+    def __init__(self, seed: int):
+        super().__init__(seed)
+        rnd = self.rnd
+        p, q = rnd.choice(self.RATIOS)
+        base = rnd.uniform(0.55, 0.85) / max(p, q) * 2
+        self.T = rnd.uniform(22, 56)
+        det = rnd.uniform(0.006, 0.02) * rnd.choice([-1, 1])
+        self.f = [base * p, base * q * (1 + det), base * p * (1 - det / 2), base * q]
+        px, qx = rnd.uniform(0, TAU), rnd.uniform(0, TAU)  # y a quarter turn behind x: round figures, not lines
+        self.ph = [px, qx, px + rnd.choice([-1, 1]) * (math.pi / 2 + rnd.uniform(-0.45, 0.45)),
+                   qx + rnd.choice([-1, 1]) * (math.pi / 2 + rnd.uniform(-0.45, 0.45))]
+        split = rnd.uniform(0.35, 0.65)
+        R = 430
+        self.A = [R * split, R * (1 - split), R * (1 - split), R * split]
+        self.damp = math.log(rnd.uniform(5, 9)) / self.T
+        self.pts = [self.pos(0.0)]
+        self.dy = 0.0
+        self.drawn = 0
+        self.last_hit = -9.0
+
+    def pos(self, t: float) -> tuple[float, float]:
+        e = math.exp(-self.damp * t)
+        f, ph, A = self.f, self.ph, self.A
+        x = (A[0] * math.sin(TAU * f[0] * t + ph[0]) + A[1] * math.sin(TAU * f[1] * t + ph[1])) * e
+        y = (A[2] * math.sin(TAU * f[2] * t + ph[2]) + A[3] * math.sin(TAU * f[3] * t + ph[3])) * e
+        return x, y
+
+    def step(self, dt: float) -> None:
+        self.t += dt
+        if self.end is not None:
+            return
+        x, y = self.pos(self.t)
+        dy = y - self.pts[-1][1]
+        if dy > 0 >= self.dy:  # the pen turns at the top of a swing: next note
+            self.events.append((self.t, "bounce", len(self.pts)))
+            self.last_hit = self.t
+        self.dy = dy
+        self.pts.append((x, y))
+        if self.t >= self.T:
+            self.finish()
+
+    def color(self, u: float) -> tuple[int, int, int]:
+        return self.look.color(u)
+
+    def on_event(self, p: Painter, kind: str, i: int) -> None:
+        if kind == "finale":
+            x, y = self.pts[-1]
+            p.parts.burst_point(p.rng, x, y, self.color(1.0), 220, 900)
+
+    def draw(self, p: Painter) -> None:
+        new = self.pts[max(0, self.drawn - 1):]
+        if len(new) > 1:
+            col = self.color(min(1.0, self.t / self.T))
+            p.line(new, col, 1.7, glow=_mix(col, 0.25), d=p.base_d, g=p.base_g)
+        self.drawn = len(self.pts)
+        p.particles()
+        if self.end is None:
+            x, y = self.pts[-1]
+            col = self.color(min(1.0, self.t / self.T))
+            k = max(0.0, 1 - (self.t - self.last_hit) / 0.2)
+            p.ball(x, y, 9 + 3 * k, (255, 255, 255), col, 3)
+            p.glow_disc(x, y, 30 + 14 * k, col)
+
+    def title(self) -> list[str]:
+        return ["What will this", "pendulum draw?"]
+
+    def counter(self) -> str:
+        return f"{min(100, int(100 * self.t / self.T))}% drawn"
+
+    def finale_text(self) -> str:
+        return "MASTERPIECE!"
+
+
+class Race(Sim):
+    """Marble race down a long track of pegs, zigzag ramps, spinners, funnels and bumpers. The camera
+    follows the leader; the first ball over the finish line wins."""
+    kind = "race"
+    note_gap = 0.09
+    slowmo = True
+    HW = 450.0  # half width of the track
+    BUCKET = 100.0
+
+    def __init__(self, seed: int, length: float | None = None):
+        super().__init__(seed)
+        rnd = self.rnd
+        n = rnd.choice([4, 5, 6, 6, 8])
+        teams = rnd.sample(range(len(TEAMS)), n)
+        self.rb = rnd.uniform(14, 17)
+        span = self.HW * 0.75
+        self.balls = [Ball(-span + 2 * span * i / (n - 1) + rnd.uniform(-6, 6), -40 + rnd.uniform(-8, 8),
+                           rnd.gauss(0, 40), 0.0, self.rb, TEAMS[c][1], TEAMS[c][0]) for i, c in enumerate(teams)]
+        self.pegs: list[tuple[float, float, float, float]] = []   # x, y, r, restitution (> 1: bumper)
+        self.segs: list[tuple[float, float, float, float]] = []   # x1, y1, x2, y2
+        self.spin: list[tuple[float, float, float, float, float]] = []  # cx, cy, half length, omega, phase
+        self.sections: list[tuple[float, float]] = []
+        builders = [self._pegs, self._zigzag, self._spinners, self._funnel, self._bumpers]
+        y, last, target = 160.0, None, length or rnd.uniform(6000, 13000)
+        while y < target:
+            build = rnd.choice([b for b in builders if b is not last])
+            y0, y = y, build(y, rnd) + 110
+            self.sections.append((y0, y))
+            last = build
+        self.finish_y = y + 60
+        self.segs.append((-self.HW, self.finish_y + 260, self.HW, self.finish_y + 260))  # catch basin
+        self.g = 1350.0
+        self.cam, self.zoom = 300.0, 1.0
+        self.lead, self.changes, self.photo = -1, 0, 1e9
+        self.order: list[int] = []
+        self.hit: dict[tuple[str, int], float] = {}
+        self.watch = [(0.0, b.x, b.y) for b in self.balls]
+        self.trails: list[list[tuple[float, float]]] = [[] for _ in self.balls]
+        self.buckets: dict[int, list[tuple[str, int]]] = {}
+        for i, (x, y_, r, _) in enumerate(self.pegs):
+            self._register("p", i, y_ - r, y_ + r)
+        for i, (x1, y1, x2, y2) in enumerate(self.segs):
+            self._register("s", i, min(y1, y2), max(y1, y2))
+        for i, (cx, cy, hl, _, _) in enumerate(self.spin):
+            self._register("w", i, cy - hl, cy + hl)
+
+    def _register(self, kind: str, i: int, y0: float, y1: float) -> None:
+        for k in range(int((y0 - 40) // self.BUCKET), int((y1 + 40) // self.BUCKET) + 1):
+            self.buckets.setdefault(k, []).append((kind, i))
+
+    # track sections: each takes the top y and returns the bottom y
+    def _pegs(self, y: float, rnd: random.Random) -> float:
+        sx, dy = rnd.choice([(80, 62), (90, 66), (100, 70)])
+        rows = rnd.randint(7, 11)
+        for r in range(rows):
+            off = sx / 2 if r % 2 else 0
+            x = -self.HW + 45 + off
+            while x < self.HW - 40:
+                self.pegs.append((x, y + r * dy, 7.0, 0.55))
+                x += sx
+        return y + rows * dy
+
+    def _zigzag(self, y: float, rnd: random.Random) -> float:
+        k, drop, gap = rnd.randint(3, 5), rnd.uniform(110, 150), rnd.uniform(110, 140)
+        side = rnd.choice([-1, 1])
+        for i in range(k):
+            yy = y + i * (drop + 70)
+            self.segs.append((-side * self.HW, yy, side * (self.HW - gap), yy + drop))
+            side = -side
+        return y + k * (drop + 70)
+
+    def _spinners(self, y: float, rnd: random.Random) -> float:
+        rows, w = rnd.randint(2, 3), rnd.uniform(1.3, 2.4) * rnd.choice([-1, 1])
+        for i in range(rows):
+            yy = y + 170 + i * 300
+            for j, cx in enumerate((-self.HW / 2, self.HW / 2)):
+                self.spin.append((cx, yy, 165.0, w * (-1 if (i + j) % 2 else 1), rnd.uniform(0, math.pi)))
+            self.pegs.append((0.0, yy + 150, 9.0, 0.6))
+        return y + 170 + rows * 300
+
+    def _funnel(self, y: float, rnd: random.Random) -> float:
+        gap, depth = rnd.uniform(3.4, 4.2) * self.rb * 2, rnd.uniform(240, 300)
+        self.segs.append((-self.HW, y, -gap / 2, y + depth))
+        self.segs.append((self.HW, y, gap / 2, y + depth))
+        self.pegs.append((rnd.uniform(-20, 20), y + depth + 120, 26.0, 1.05))  # splits the stream again
+        return y + depth + 170
+
+    def _bumpers(self, y: float, rnd: random.Random) -> float:
+        rows = rnd.randint(3, 4)
+        for i in range(rows):
+            xs = (-self.HW / 2, self.HW / 2) if i % 2 == 0 else (-self.HW * 0.78, 0.0, self.HW * 0.78)
+            for x in xs:
+                self.pegs.append((x + rnd.uniform(-25, 25), y + 80 + i * 170, rnd.uniform(34, 46), 1.05))
+        return y + 80 + rows * 170
+
+    def spinner(self, i: int) -> tuple[float, float, float, float]:
+        cx, cy, hl, w, ph = self.spin[i]
+        a = ph + w * self.t
+        return cx - hl * math.cos(a), cy - hl * math.sin(a), cx + hl * math.cos(a), cy + hl * math.sin(a)
+
+    def good(self) -> bool:
+        """Only races with a close finish and a few changes in the lead make it into a video."""
+        return self.photo < 320 and self.changes >= 4
+
+    def leader(self) -> int:
+        if self.order:
+            return self.order[0]
+        return max(range(len(self.balls)), key=lambda j: self.balls[j].y)
+
+    def _contact(self, j: int, b: Ball, key: tuple[str, int], nx: float, ny: float, vn: float) -> None:
+        self.hit[key] = self.t
+        if self.end is None and j == self.leader() and vn < -140:
+            self.events.append((self.t, "bounce", j))
+
+    def step(self, dt: float) -> None:
+        self.t += dt
+        HW = self.HW
+        for j, b in enumerate(self.balls):
+            b.move(dt, self.g)
+            if abs(b.x) > HW - b.rb:
+                b.x = math.copysign(HW - b.rb, b.x)
+                b.vx = -b.vx * 0.6
+            k = int(b.y // self.BUCKET)
+            for kind, i in self.buckets.get(k, ()):
+                if kind == "p":
+                    x, y, r, e = self.pegs[i]
+                    dx, dy, md = b.x - x, b.y - y, r + b.rb
+                    if abs(dx) >= md or abs(dy) >= md:
+                        continue
+                    d = math.hypot(dx, dy)
+                    if d >= md:
+                        continue
+                    nx, ny = (dx / d, dy / d) if d else (0.0, -1.0)
+                    b.x, b.y = x + nx * md, y + ny * md
+                    vn = b.vx * nx + b.vy * ny
+                    if vn < 0:
+                        b.vx, b.vy = b.vx - (1 + e) * vn * nx, b.vy - (1 + e) * vn * ny
+                        if e > 1:  # bumper: always kick hard
+                            out = b.vx * nx + b.vy * ny
+                            if out < 520:
+                                b.vx, b.vy = b.vx + (520 - out) * nx, b.vy + (520 - out) * ny
+                        self._contact(j, b, ("p", i), nx, ny, vn)
+                else:
+                    if kind == "s":
+                        x1, y1, x2, y2 = self.segs[i]
+                        w, cx, cy, e = 0.0, 0.0, 0.0, 0.35
+                    else:
+                        x1, y1, x2, y2 = self.spinner(i)
+                        cx, cy, _, w, _ = self.spin[i]
+                        e = 0.6
+                    ex, ey = x2 - x1, y2 - y1
+                    u = max(0.0, min(1.0, ((b.x - x1) * ex + (b.y - y1) * ey) / (ex * ex + ey * ey)))
+                    qx, qy = x1 + u * ex, y1 + u * ey
+                    dx, dy, md = b.x - qx, b.y - qy, b.rb + 4
+                    if abs(dx) >= md or abs(dy) >= md:
+                        continue
+                    d = math.hypot(dx, dy)
+                    if d >= md:
+                        continue
+                    nx, ny = (dx / d, dy / d) if d else (0.0, -1.0)
+                    b.x, b.y = qx + nx * md, qy + ny * md
+                    wx, wy = -w * (qy - cy), w * (qx - cx)  # the bar's own velocity at the contact point
+                    vn = (b.vx - wx) * nx + (b.vy - wy) * ny
+                    if vn < 0:
+                        b.vx, b.vy = b.vx - (1 + e) * vn * nx, b.vy - (1 + e) * vn * ny
+                        self._contact(j, b, (kind, i), nx, ny, vn)
+            if j not in self.order and b.y >= self.finish_y:
+                self.order.append(j)
+                if self.end is None:
+                    self.photo = self.finish_y - max(o.y for o in self.balls if o is not b)
+                    self.finish()
+            t0, x0, y0 = self.watch[j]  # a ball resting somewhere gets a little shake
+            if self.t - t0 > 2.0:
+                if math.hypot(b.x - x0, b.y - y0) < 12 and b.y < self.finish_y:
+                    b.vx, b.vy = b.vx + self.rnd.gauss(0, 220), b.vy - 380
+                self.watch[j] = (self.t, b.x, b.y)
+        Escape._collide(self)
+        lead = self.leader()
+        if lead != self.lead and self.t > 3 and self.end is None:
+            self.changes += 1
+        self.lead = lead
+        ys = sorted((b.y for b in self.balls), reverse=True)
+        gap = min(1300.0, ys[0] - ys[1]) if self.end is None else 0.0
+        zoom = max(0.55, min(1.0, 900 / (gap + 420)))  # zoom out so the chaser stays in the picture
+        self.zoom += (zoom - self.zoom) * min(1.0, 2.0 * dt)
+        target = max(300.0, min(ys[0] - gap / 2 + 120 / self.zoom, self.finish_y + 160))
+        self.cam += (target - self.cam) * min(1.0, 3.5 * dt)
+
+    def color(self, k: int) -> tuple[int, int, int]:
+        return self.look.color(k / max(1, len(self.sections) - 1), s=0.55, v=0.95)
+
+    def section_of(self, y: float) -> int:
+        for k, (y0, y1) in enumerate(self.sections):
+            if y < y1:
+                return k
+        return len(self.sections) - 1
+
+    def on_event(self, p: Painter, kind: str, i: int) -> None:
+        if kind == "finale":
+            b = self.balls[self.order[0]]
+            p.parts.burst_point(p.rng, b.x * self.zoom, (b.y - self.cam) * self.zoom, b.col, 240, 950)
+
+    def draw(self, p: Painter) -> None:
+        cam, z, HW = self.cam, self.zoom, self.HW
+
+        def at(x: float, y: float) -> tuple[float, float]:  # world -> screen (camera and zoom)
+            return x * z, (y - cam) * z
+        top, bottom = cam - 560 / z, cam + 560 / z
+        wall = (150, 150, 185)
+        y0, y1 = max(-200, top), min(self.finish_y + 260, bottom)
+        for side in (-1, 1):
+            p.line([at(side * (HW + 5), y0), at(side * (HW + 5), y1)], wall, max(2, 6 * z), glow=None)
+        for m in range(int(top // 400) + 1, int(bottom // 400) + 1):  # distance marks scroll past
+            if 0 < m * 400 < self.finish_y:
+                for side in (-1, 1):
+                    p.line([at(side * HW, m * 400), at(side * (HW - 22), m * 400)], (95, 95, 125), max(2, 3 * z), glow=None)
+        if top < self.finish_y + 40 and bottom > self.finish_y - 40:  # chequered finish line
+            sq = 30
+            for r in range(2):
+                for c in range(int(2 * HW // sq)):
+                    col = (240, 240, 240) if (r + c) % 2 else (25, 25, 30)
+                    xa, ya = at(-HW + c * sq, self.finish_y - sq + r * sq)
+                    p.d.rectangle(((CX + xa) * SS, (CY + ya) * SS, (CX + xa + sq * z) * SS, (CY + ya + sq * z) * SS),
+                                  fill=col)
+        seen: set = set()
+        for k in range(int(top // self.BUCKET), int(bottom // self.BUCKET) + 1):
+            for key in self.buckets.get(k, ()):
+                if key in seen:
+                    continue
+                seen.add(key)
+                kind, i = key
+                flash = max(0.0, 1 - (self.t - self.hit.get(key, -9)) / 0.2)
+                if kind == "p":
+                    x, y, r, e = self.pegs[i]
+                    col = self.color(self.section_of(y))
+                    if e > 1:
+                        p.ball(*at(x, y), r * z, _mix(col, 0.25 + 0.5 * flash), col, max(1.5, 5 * z))
+                        p.glow_disc(*at(x, y), r * 1.3 * z, _mix(col, 0.3 + 0.7 * flash))
+                    else:
+                        p.ball(*at(x, y), (r + 2 * flash) * z, _mix(col, 0.75 + 0.25 * flash, (255, 255, 255)))
+                        if flash:
+                            p.glow_disc(*at(x, y), r * 3 * z, _mix(col, flash))
+                else:
+                    x1, y1, x2, y2 = self.segs[i] if kind == "s" else self.spinner(i)
+                    col = self.color(self.section_of((y1 + y2) / 2))
+                    p.line([at(x1, y1), at(x2, y2)], col, max(2, (9 if kind == "s" else 11) * z), flash * 0.7)
+                    if kind == "w":
+                        p.ball(*at(*self.spin[i][:2]), 11 * z, (235, 235, 245), col, max(1, 3 * z))
+        p.particles()
+        for j, b in enumerate(self.balls):
+            tr = self.trails[j]
+            tr.append((b.x, b.y))
+            del tr[:-12]
+            for q, (tx, ty) in enumerate(tr[:-1]):
+                k = (q + 1) / len(tr)
+                p.ball(*at(tx, ty), b.rb * z * (0.4 + 0.5 * k), _mix(b.col, 0.5 * k))
+        lead = self.leader()
+        for j in sorted(range(len(self.balls)), key=lambda j: j == lead):
+            b = self.balls[j]
+            p.ball(*at(b.x, b.y), b.rb * z, b.col, (255, 255, 255), max(1.5, 3 * z))
+            p.glow_disc(*at(b.x, b.y), b.rb * 1.7 * z + (8 if j == lead else 0), b.col)
+        p.clip(-470, 500)
+
+    def draw_text(self, p: Painter, d: ImageDraw.ImageDraw) -> None:
+        super().draw_text(p, d)
+        x, y0, y1 = W - 42, 560, 1400  # progress bar: where every ball is on the track
+        d.line((x, y0, x, y1), fill=(110, 110, 140), width=6)
+        for yy in (y0, y1):
+            d.line((x - 14, yy, x + 14, yy), fill=(200, 200, 220), width=4)
+        lead = self.leader()
+        for j in sorted(range(len(self.balls)), key=lambda j: j == lead):
+            b = self.balls[j]
+            yy = y0 + (y1 - y0) * min(1.0, max(0.0, b.y / self.finish_y))
+            r = 15 if j == lead else 10
+            d.ellipse((x - r, yy - r, x + r, yy + r), fill=b.col, outline=(255, 255, 255), width=3 if j == lead else 2)
+
+    @property
+    def counter_color(self) -> tuple[int, int, int]:
+        return self.balls[self.leader()].col
+
+    def title(self) -> list[str]:
+        return ["Which color", "wins the race?"]
+
+    def counter(self) -> str:
+        return f"{self.balls[self.leader()].name} {'leads' if self.end is None else 'first!'}"
+
+    def finale(self) -> list[tuple[str, tuple]]:
+        b = self.balls[self.order[0]]
+        return [(b.name, b.col), ("WINS!", (255, 255, 255))]
+
+
+KINDS = {k.kind: k for k in (Escape, Grow, Battle, Polygon, Plinko, StringArt, Multiply, Pendulum, Territory, Chaos,
+                             Harmonograph, Race)}
 
 
 def simulate(kind: str, seed: int, **params) -> Sim:
@@ -974,9 +1661,31 @@ def simulate(kind: str, seed: int, **params) -> Sim:
 def pick_seed(kind: str, start: int, lo: float = 35, hi: float = 55, tries: int = 400, **params) -> int:
     for seed in range(start, start + tries):
         sim = simulate(kind, seed, **params)
-        if sim.end is not None and lo <= sim.end <= hi:
+        if sim.end is not None and lo <= sim.end <= hi and sim.good():
             return seed
     raise RuntimeError(f"no {kind} seed with a {lo}-{hi}s run near {start}")
+
+
+class Warp:
+    """Simulation time -> video time, optionally with a slow-motion stretch around the finale moment."""
+
+    def __init__(self, end: float | None = None) -> None:
+        self.a = self.b = None
+        if end is not None:
+            self.a, self.b, self.rate = max(0.0, end - SLOW[0]), end + SLOW[1], SLOW[2]
+
+    def video(self, t: float) -> float:
+        if self.a is None or t <= self.a:
+            return t
+        if t <= self.b:
+            return self.a + (t - self.a) / self.rate
+        return self.a + (self.b - self.a) / self.rate + (t - self.b)
+
+    def sim(self, v: float) -> float:
+        if self.a is None or v <= self.a:
+            return v
+        vb = self.video(self.b)
+        return self.a + (v - self.a) * self.rate if v <= vb else self.b + (v - vb)
 
 
 # ---------------------------------------------------------------- sound
@@ -1028,7 +1737,19 @@ def _clack(rnd: random.Random, dur: float = 0.12) -> np.ndarray:
     return (sig * np.minimum(1.0, t / 0.001) * 0.22).astype(np.float32)
 
 
-def soundtrack(sim, melody: str, duration: float, seed: int, timbre: str = "bell") -> np.ndarray:
+def _swoosh(rnd: random.Random, dur: float = 1.0) -> np.ndarray:
+    """Falling whoosh that marks the start of a slow motion."""
+    t = np.arange(int(SR * dur)) / SR
+    f = 520 * np.exp(-t * 2.2) + 60
+    sweep = np.sin(TAU * np.cumsum(f) / SR) * 0.35
+    noise = np.random.default_rng(rnd.randrange(1 << 30)).standard_normal(len(t))
+    k = 24
+    air = np.convolve(noise, np.ones(k) / k, mode="same") * 1.2
+    env = np.minimum(1.0, t / 0.18) * np.exp(-np.maximum(0, t - 0.18) * 3.2)
+    return ((sweep + air) * env * 0.5).astype(np.float32)
+
+
+def soundtrack(sim, melody: str, duration: float, seed: int, timbre: str = "bell", warp: Warp | None = None) -> np.ndarray:
     notes = MELODIES[melody][1]
     rnd = random.Random(seed)
     root = min(notes) - min(notes) % 12 + (notes[-1] % 12)  # key of the melody, lowest octave it uses
@@ -1042,14 +1763,20 @@ def soundtrack(sim, melody: str, duration: float, seed: int, timbre: str = "bell
     mix = np.zeros(int(SR * (duration + 2)), dtype=np.float32)
     idx, last, last_clack = 0, -1.0, -1.0
 
+    warp = warp or Warp()
+    if warp.a is not None:
+        mix_at = int(warp.a * SR)
+        sw = _swoosh(rnd)
+        mix[mix_at:mix_at + len(sw)] += sw[: len(mix) - mix_at]
+
     def put(t: float, sig: np.ndarray) -> None:
-        i = int(t * SR)
+        i = int(warp.video(t) * SR)
         j = min(len(mix), i + len(sig))
         mix[i:j] += sig[: j - i]
 
     for t, kind, i in sim.events:
         if kind in ("bounce", "land"):
-            if t - last < 0.045:  # very fast bounces: don't turn the melody into noise
+            if t - last < sim.note_gap:  # very fast bounces: don't turn the melody into noise
                 continue
             last = t
             put(t, note(notes[idx % len(notes)]))
@@ -1155,21 +1882,23 @@ class Painter:
         self.rng = np.random.default_rng(12345)
         self.trails: dict[object, list[tuple[float, float, float]]] = {}
         self.seen = 0
+        self._masks: dict[tuple, Image.Image] = {}
         self.f_title = _font("Poppins-ExtraBold.ttf", 76)
         self.f_count = _font("Poppins-SemiBold.ttf", 46)
         self.f_small = _font("Poppins-SemiBold.ttf", 30)
         self.f_big = {s: _font("Poppins-ExtraBold.ttf", s) for s in range(40, 181, 10)}
         sim.prepare(self)
 
-    def frame(self) -> Image.Image:
+    def frame(self, dt: float = 1 / FPS) -> Image.Image:
+        """The picture after the simulation moved on by dt seconds (less than a frame in slow motion)."""
         sim = self.sim
         for _, kind, i in sim.events[self.seen:]:
             sim.on_event(self, kind, i)
         self.seen = len(sim.events)
-        self.parts.update(1 / FPS)
-        img = self.base.copy()
+        self.parts.update(dt)
+        self.img = img = self.base.copy()
         self.d = ImageDraw.Draw(img)
-        glow = self.base_glow.copy()
+        self.glow = glow = self.base_glow.copy()
         self.g = ImageDraw.Draw(glow)
         sim.draw(self)
         img = img.resize((W, H), Image.BOX)
@@ -1219,6 +1948,20 @@ class Painter:
     def particles(self) -> None:
         self.parts.draw(self.d, SS)
 
+    def clip(self, y0: float, y1: float, fade: float = 110) -> None:
+        """Fade out everything drawn above y0 and below y1 so a scrolling scene stays clear of the text."""
+        for img, base, s in ((self.img, self.base, SS), (self.glow, self.base_glow, 0.25)):
+            w, h = img.size
+            for top, bottom, up in ((0, (CY + y0) * s, True), ((CY + y1) * s, h, False)):
+                top, bottom = int(top), int(bottom)
+                key = (w, top, bottom, up, fade * s)
+                if key not in self._masks:
+                    n, f = bottom - top, max(1, int(fade * s))
+                    ramp = np.clip(((np.arange(n) if up else n - 1 - np.arange(n)) - (n - f)) / f, 0, 1)
+                    col = (255 * (1 - ramp)).astype(np.uint8)
+                    self._masks[key] = Image.fromarray(np.repeat(col[:, None], w, 1))
+                img.paste(base.crop((0, top, w, bottom)), (0, top), self._masks[key])
+
     # text
     def centered(self, d, y: float, text: str, font, fill, stroke: int = 0) -> None:
         w = d.textlength(text, font=font)
@@ -1248,10 +1991,12 @@ def render(kind: str, seed: int, out: Path, melody: str | None = None, handle: s
     probe = simulate(kind, seed, **params)
     if probe.end is None:
         raise RuntimeError(f"{kind} seed {seed} does not finish")
-    duration = probe.end + OUTRO
+    slow = probe.slowmo and (getattr(probe, "photo", 1e9) < 150 or random.Random(f"slow-{kind}-{seed}").random() < 0.75)
+    warp = Warp(probe.end if slow else None)
+    duration = warp.video(probe.end) + OUTRO
     timbre = timbre or random.Random(f"tone-{kind}-{seed}").choice(TIMBRES)
     wav = out.with_suffix(".wav")
-    _write_wav(wav, soundtrack(probe, melody, duration, seed, timbre))
+    _write_wav(wav, soundtrack(probe, melody, duration, seed, timbre, warp))
 
     sim = KINDS[kind](seed, **params)
     painter = Painter(sim, sim.credit(MELODIES[melody][0]), handle)
@@ -1266,14 +2011,16 @@ def render(kind: str, seed: int, out: Path, melody: str | None = None, handle: s
         "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-shortest", "-movflags", "+faststart", str(out),
     ]
     proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
-    dt = 1 / (FPS * SUBSTEPS)
-    for _ in range(frames):
-        for _ in range(SUBSTEPS):
+    dt, shown = 1 / (FPS * SUBSTEPS), 0.0
+    for f in range(frames):
+        target = warp.sim((f + 1) / FPS)
+        while sim.t < target - dt / 2:
             sim.step(dt)
-        proc.stdin.write(painter.frame().tobytes())
+        proc.stdin.write(painter.frame(target - shown).tobytes())
+        shown = target
     proc.stdin.close()
     if proc.wait() != 0:
         raise RuntimeError("ffmpeg failed")
     wav.unlink(missing_ok=True)
     return {"video": out, "duration": duration, "kind": kind, "seed": seed, "melody": melody,
-            "melody_name": MELODIES[melody][0], "timbre": timbre, "title": " ".join(sim.title())}
+            "melody_name": MELODIES[melody][0], "timbre": timbre, "title": " ".join(sim.title()), "slowmo": slow}
