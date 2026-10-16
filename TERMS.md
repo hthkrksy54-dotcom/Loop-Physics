@@ -19,5 +19,9 @@ It is not offered, sold or licensed to anyone else.
    visuals. This is disclosed in every video description.
 5. **Revocation.** The owner can revoke ytauto's access at any time at
    <https://security.google.com/settings/security/permissions>.
-6. **No warranty.** ytauto is provided as is, without warranty of any kind.
-7. **Contact.** <https://github.com/hthkrksy54-dotcom/Yt/issues>
+6. **Instagram and TikTok.** ytauto also shares the owner's original videos to the owner's own Instagram and TikTok
+   accounts through their official APIs, in line with the [Instagram Terms of Use](https://help.instagram.com/581066165581870)
+   and the [TikTok Terms of Service](https://www.tiktok.com/legal/terms-of-service). Every TikTok upload goes only
+   to an account the owner connected, and can be revoked in the TikTok app at any time.
+7. **No warranty.** ytauto is provided as is, without warranty of any kind.
+8. **Contact.** <https://github.com/hthkrksy54-dotcom/Yt/issues>

@@ -68,6 +68,16 @@ ytauto also posts short videos as Reels and Stories to the owner's own Instagram
 repository and can only be decrypted with a key kept as a GitHub Actions secret. No data about other Instagram
 users is accessed. Access can be removed at any time in Instagram → Settings → Apps and websites.
 
+## TikTok
+
+ytauto sends the owner's own videos to the owner's own TikTok accounts using TikTok's Login Kit and Content Posting
+API (scopes `user.info.basic`, `video.upload`, `video.publish`): either as a draft in the owner's TikTok inbox, which
+the owner finishes and publishes in the TikTok app, or as a post. It reads only the basic profile of the connected
+account (to confirm the right account is connected) and the processing status of its own uploads. Access and refresh
+tokens are stored encrypted in this repository and can only be decrypted with a key kept as a GitHub Actions secret.
+No data about other TikTok users is accessed, stored or shared. Access can be removed at any time in the TikTok app
+under Settings and privacy → Security & permissions → Apps and services permissions.
+
 ## Contact
 
 <https://github.com/hthkrksy54-dotcom/Yt/issues>
