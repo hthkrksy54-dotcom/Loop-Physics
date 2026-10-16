@@ -48,7 +48,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1082,
+      "yt_views": 1106,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235341996115990",
         "status": "PROCESSING_UPLOAD",
@@ -75,7 +75,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1652,
+      "yt_views": 1721,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PROCESSING_UPLOAD",
@@ -129,7 +129,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 2400,
+      "yt_views": 3000,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PROCESSING_UPLOAD",
@@ -186,7 +186,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1188,
+      "yt_views": 1166,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232916815824918",
         "status": "PROCESSING_UPLOAD",
@@ -214,7 +214,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1220,
+      "yt_views": 1297,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -272,7 +272,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 0,
+      "yt_views": 6,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233859481487382",
         "status": "PROCESSING_UPLOAD",
@@ -298,6 +298,19 @@
         "caption": "Which color wins the race?\nDid your color win?\n#marblerace #satisfying #oddlysatisfying #physics #simulation",
         "url": "https://www.tiktok.com/@loop_physics/video/7697230852018818336"
       }
+    },
+    {
+      "date": "2026-10-16T13:09:34+00:00",
+      "kind": "chaos",
+      "seed": 3,
+      "melody": "moonlight",
+      "timbre": "chip",
+      "title": "The butterfly effect in 4 pendulums",
+      "duration": 42.1,
+      "why": "new",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-chaos-3",
+      "instagram_id": "18176606797452151",
+      "instagram_url": "https://www.instagram.com/reel/DejnaFYAHfq/"
     }
   ]
 }
