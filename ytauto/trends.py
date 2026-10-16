@@ -189,9 +189,9 @@ def report(t: dict, state: dict, own_avg: dict) -> None:
     stars = simchannel.standouts(state)
     queue = simchannel.concept_queue(cfg, state)
     lines += ["## Konzepte", "",
-              f"Jeder Post ist ein neues Konzept. Warteschlange: {', '.join(queue) or 'leer'}. "
-              f"Wiederholt werden dürfen nur Ausreißer nach oben (mind. {simchannel.STANDOUT}× Kanal-Median von "
-              f"{base:.0f} Aufrufen): {', '.join(stars) or 'noch keiner'}.", "",
+              f"Neue Konzepte haben Vorrang. Warteschlange: {', '.join(queue) or 'leer'}. Dazwischen kommen "
+              f"gelaufene Konzepte nach Aufrufen gewichtet zurück; Ausreißer nach oben (mind. {simchannel.STANDOUT}× "
+              f"Kanal-Median von {base:.0f} Aufrufen) deutlich öfter: {', '.join(stars) or 'noch keiner'}.", "",
               "| Konzept | Posts | Aufrufe vs. Median | bestes Video | Trend-Anteil |", "|---|---:|---:|---:|---:|"]
     for k, (r, n, best) in sorted(perf.items(), key=lambda kv: -kv[1][0]):
         lines.append(f"| {k}{' ⭐' if k in stars else ''} | {n} | ×{r} | {best} | "

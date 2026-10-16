@@ -1,12 +1,13 @@
 """Second channel: one satisfying physics simulation Short per run (config/sims.json, state/sims.json).
 
-Two posting slots a day (SLOTS). Every post is a concept that was never posted before: first the built-in kinds
-that are still new, then the concepts the concept designer builds twice a day (ytauto/concepts/, see
-docs/concept-designer.md). Only when no new concept is ready, a concept that performed notably well on the channel
-is run again (with a new seed), and only if there is none, the best performer so far.
+A post every 2 hours (SLOTS). New concepts always go first: the built-in kinds that were never posted, then the
+concepts the concept designer builds twice a day (ytauto/concepts/, see docs/concept-designer.md). In between, the
+concepts that already ran come back in a fresh variant (new seed: other numbers, colours, melody), weighted by how
+well they performed – standouts much more often, weak ones rarely – and never one of the last three again.
 
 Each run renders the video, archives it as a GitHub release (with copy-paste YouTube metadata), posts it as an
-Instagram Reel + Story and – once uploads are enabled – publishes it as a YouTube Short.
+Instagram Reel + Story, sends new concepts and standouts to TikTok as drafts and – once uploads are enabled –
+publishes it as a YouTube Short.
 """
 from __future__ import annotations
 
@@ -28,10 +29,11 @@ CONFIG = ROOT / "config" / "sims.json"
 STATE = ROOT / "state" / "sims.json"
 TUNING = ROOT / "config" / "sims_tuning.json"  # written daily by trends.py
 OUT = ROOT / "out" / "sims"
-STORY_EVERY = 1  # two Reels a day: each one also goes into the story
-SLOTS = [(11, 30), (18, 30)]  # UTC posting times (13:30 / 20:30 Berlin in summer, 12:30 / 19:30 in winter)
-SLOT_WINDOW = dt.timedelta(hours=6)  # a missed or failed slot is retried until this long after it
-STANDOUT = 1.6  # a concept may run again only if its views are at least this many times the channel median
+STORY_EVERY = 2  # a story for every Reel would crowd the account's stories
+SLOTS = [(h, 40) for h in range(0, 24, 2)]  # UTC posting times: every 2 hours
+SLOT_WINDOW = dt.timedelta(minutes=100)  # a missed or failed slot is retried until the next one is near
+STANDOUT = 1.6  # views at least this many times the channel median: a standout, comes back much more often
+TIKTOK_PENDING = 3  # at most this many drafts wait in the TikTok inbox; the heartbeat tops them up
 EXPERIMENTS = ("Loop Physics experiments", "A brand-new simulation concept every time.")
 TIKTOK_TAGS = ["satisfying", "oddlysatisfying", "physics", "simulation"]
 TIKTOK_KIND_TAG = {"race": "marblerace", "battle": "ballbattle", "escape": "ballescape", "polygon": "ballescape",
@@ -209,23 +211,24 @@ def concept_queue(cfg: dict, state: dict) -> list[str]:
 
 
 def plan(cfg: dict, state: dict) -> tuple[str, int, str, str]:
-    """Next kind (a new concept if one is ready, else a standout, else the best performer), a fresh seed with a
-    good length, the least used melody, and why this kind was chosen."""
+    """Next kind (a new concept if one is ready, else a performance-weighted variant of one that already ran),
+    a fresh seed with a good length, the least used melody, and why this kind was chosen."""
     videos = state.get("videos", [])
     tuning = load(TUNING, {})
     broken = set(state.get("broken", {}))
-    last = videos[-1]["kind"] if videos else None
     queue = concept_queue(cfg, state)
     if queue:
         kind, why = queue[0], "new"
     else:
-        stars = [k for k in standouts(state) if k in sims.KINDS and k not in broken]
-        if stars:
-            kind, why = ([k for k in stars if k != last] or stars)[0], "standout"
-        else:
-            _, perf = performance(state)
-            ranked = sorted((k for k in perf if k in sims.KINDS and k not in broken and k != last), key=lambda k: -perf[k][0])
-            kind, why = (ranked or [k for k in cfg["kinds"] if k in sims.KINDS and k != last])[0], "fallback"
+        _, perf = performance(state)
+        stars = set(standouts(state))
+        recent = [v["kind"] for v in videos[-3:]]
+        used = Counter(v["kind"] for v in videos[-12:])
+        pool = [k for k in dict.fromkeys(v["kind"] for v in videos) if k in sims.KINDS and k not in broken]
+        cands = [k for k in pool if k not in recent] or [k for k in pool if k != (recent or [None])[-1]] or pool
+        weights = [max(0.15, perf.get(k, (1.0,))[0]) ** 1.5 * (3 if k in stars else 1) / (1 + used[k]) for k in cands]
+        kind = random.Random(len(videos) * 7919).choices(cands, weights=weights)[0]
+        why = "standout" if kind in stars else "rotation"
     start = max((v["seed"] for v in videos if v["kind"] == kind), default=-1) + 1
     ranges = [tuple(r) for r in tuning.get("ranges") or RANGES]
     lo, hi = ranges[len(videos) % len(ranges)]
@@ -444,7 +447,9 @@ def run(upload: bool = True) -> dict:
         except Exception as err:  # one platform failing must not lose the run
             record.setdefault("warnings", []).append(f"instagram: {err}")
             print(f"  warning: instagram failed: {err}", flush=True)
-    if tiktok.configured(cfg):
+    waiting = sum(1 for r in state.get("videos", []) if (r.get("tiktok") or {}).get("status") not in
+                  (None, "PUBLISH_COMPLETE", "FAILED"))
+    if tiktok.configured(cfg) and why in ("new", "standout") and waiting < TIKTOK_PENDING:
         try:  # a draft in the owner's TikTok inbox: one tap to post (TikTok wants the creator to confirm)
             cap = tiktok_caption(kind, meta)
             record["tiktok"] = {**tiktok.send_draft(cfg, Path(result["video"])), "caption": cap}

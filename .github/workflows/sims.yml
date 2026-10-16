@@ -1,14 +1,14 @@
 name: Loop Physics
 
-# Two posting slots a day (11:30 and 18:30 UTC, see SLOTS in ytauto/simchannel.py): each post is a concept that was
-# never posted before (built twice a day by the concept designer, docs/concept-designer.md). Between the slots the
-# timer starts this workflow about every 2 hours as a heartbeat: it then only polishes manual YouTube uploads and
-# starts overdue workflows. Own queue, so the long Quiet Thoughts renders never delay or cancel these runs.
+# A new simulation every 2 hours (SLOTS in ytauto/simchannel.py): new concepts (built twice a day by the concept
+# designer, docs/concept-designer.md) go first, in between the concepts that performed best come back in a fresh
+# variant. The timer chain starts this workflow for every slot; runs outside a slot only polish manual YouTube
+# uploads, top up the TikTok drafts and start overdue workflows. Own queue, so the long Quiet Thoughts renders
+# never delay or cancel these runs.
 on:
   schedule:
-    - cron: "31 11 * * *"   # posting slots (GitHub sometimes drops scheduled runs – the timer chain and the
-    - cron: "31 18 * * *"   # 6-hour slot window cover that; a slot is only ever posted once)
-    - cron: "17 */4 * * *"  # heartbeat backup in case the timer chain broke
+    - cron: "41 */2 * * *"     # posting slots (GitHub sometimes drops scheduled runs – the timer chain and the
+    - cron: "13 */2 * * *"     # backup inside the slot window cover that; a slot is only ever posted once)
   workflow_dispatch:
     inputs:
       upload:
