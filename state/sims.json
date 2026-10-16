@@ -24,7 +24,7 @@
       "yt_views": 8,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234343969720322",
-        "status": "PROCESSING_UPLOAD",
+        "status": "SEND_TO_USER_INBOX",
         "caption": "Can the ball escape all 16 rings?\nCan you predict the path?\n#ballescape #satisfying #oddlysatisfying #physics #simulation"
       }
     },
@@ -51,8 +51,9 @@
       "yt_views": 1106,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235341996115990",
-        "status": "PROCESSING_UPLOAD",
-        "caption": "Which color escapes first?\nCan you predict the path?\n#ballbattle #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Which color escapes first?\nCan you predict the path?\n#ballbattle #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7697238887634095393"
       }
     },
     {
@@ -78,8 +79,9 @@
       "yt_views": 1721,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
-        "status": "PROCESSING_UPLOAD",
-        "caption": "Will 268 balls make a bell curve?\nWhich bounce is most satisfying?\n#plinko #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Will 268 balls make a bell curve?\nWhich bounce is most satisfying?\n#plinko #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7697241119490460960"
       }
     },
     {
@@ -105,8 +107,9 @@
       "yt_views": 4,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235656464123907",
-        "status": "PROCESSING_UPLOAD",
-        "caption": "Can the ball escape all 10 heptagons?\nWhich bounce is most satisfying?\n#ballescape #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Can the ball escape all 10 heptagons?\nWhich bounce is most satisfying?\n#ballescape #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7697241181276720416"
       }
     },
     {
@@ -132,8 +135,9 @@
       "yt_views": 3000,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
-        "status": "PROCESSING_UPLOAD",
-        "caption": "What will 158 bounces draw?\nWhat would you change?\n#stringart #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "What will 158 bounces draw?\nWhat would you change?\n#stringart #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7697241038733200672"
       }
     },
     {
@@ -160,7 +164,7 @@
       "yt_views": 6,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233117064890390",
-        "status": "PROCESSING_UPLOAD",
+        "status": "SEND_TO_USER_INBOX",
         "caption": "Every bounce makes the ball bigger\nWhat would you change?\n#bouncingball #satisfying #oddlysatisfying #physics #simulation"
       }
     },
@@ -189,8 +193,9 @@
       "yt_views": 1166,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232916815824918",
-        "status": "PROCESSING_UPLOAD",
-        "caption": "Can the ball escape all 12 octagons?\nWhat would you change?\n#ballescape #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Can the ball escape all 12 octagons?\nWhat would you change?\n#ballescape #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7697237765796252961"
       }
     },
     {
@@ -247,7 +252,7 @@
       "yt_views": 4,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233367154608150",
-        "status": "PROCESSING_UPLOAD",
+        "status": "SEND_TO_USER_INBOX",
         "caption": "Every bounce adds a new ball\nCan you predict the path?\n#bouncingball #satisfying #oddlysatisfying #physics #simulation"
       }
     },
@@ -275,7 +280,7 @@
       "yt_views": 6,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233859481487382",
-        "status": "PROCESSING_UPLOAD",
+        "status": "SEND_TO_USER_INBOX",
         "caption": "Will 256 balls make a bell curve?\nCan you predict the path?\n#plinko #satisfying #oddlysatisfying #physics #simulation"
       }
     },
@@ -310,7 +315,12 @@
       "why": "new",
       "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-chaos-3",
       "instagram_id": "18176606797452151",
-      "instagram_url": "https://www.instagram.com/reel/DejnaFYAHfq/"
+      "instagram_url": "https://www.instagram.com/reel/DejnaFYAHfq/",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697255100968175639",
+        "status": "SEND_TO_USER_INBOX",
+        "caption": "4 pendulums, 0.0001° apart\nWhen did you first see them split?\n#doublependulum #satisfying #oddlysatisfying #physics #simulation"
+      }
     }
   ]
 }

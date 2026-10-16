@@ -357,20 +357,21 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict) -> dict:
     description = "\n\n".join([
         body,
         f"💬 {question}",
-        f"A brand-new simulation concept twice a day on {cfg['channel_name']}.",
+        f"A new simulation every 2 hours on {cfg['channel_name']} – and a brand-new concept twice a day.",
         "#satisfying #physics #simulation #shorts",
     ])
     caption = "\n\n".join([
         title,
         body,
         f"💬 {question}",
-        f"Follow {cfg['handle']} – a brand-new concept twice a day."
+        f"Follow {cfg['handle']} – a new simulation every 2 hours."
         + (f"\n▶ YouTube: {cfg['youtube']['channel_url']}" if cfg["youtube"].get("channel_url") else ""),
         (tags_line + (f" #{composer.lower()}" if composer else "")).strip(),
     ])
     return {"title": title[:95], "description": description, "caption": caption[:2150], "question": question,
             "onscreen": params["onscreen"],
-            "tags": TAGS + [t for t in (song.lower(), composer.lower()) if t] + (tuning.get("hashtags") or [])[:4]}
+            "tags": list(dict.fromkeys(TAGS + [t for t in (song.lower(), composer.lower()) if t]
+                                       + (tuning.get("hashtags") or [])[:4]))}
 
 
 def _youtube_token(cfg: dict) -> str | None:
