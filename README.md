@@ -1,21 +1,27 @@
 <p><img src="docs/developed-with-youtube-sentence-case-dark.png" alt="Developed with YouTube" width="210"></p>
 
-# ytauto – Quiet Thoughts
+# ytauto – Quiet Thoughts & Loop Physics
 
-**ytauto** is a private, internal tool that produces calm educational video essays about philosophy and
-psychology and uploads them to the owner's own YouTube channel
-**[Quiet Thoughts](https://www.youtube.com/@quietthoughts-20)** using the YouTube Data API v3
-(`videos.insert`, `thumbnails.set`, `captions.insert`). It has a single user (the channel owner), no public
-sign-in and no viewer data.
+**ytauto** is a private, internal tool of a single channel owner. It produces original videos and publishes them to
+the owner's own YouTube channels using the YouTube Data API v3:
+
+- **[Quiet Thoughts](https://www.youtube.com/@quietthoughts-20)** – calm educational video essays about philosophy
+  and psychology (`videos.insert`, `thumbnails.set`, `captions.insert`).
+- **[Loop Physics](https://www.youtube.com/@LoopPhysics-420)** – generated, oddly satisfying physics simulations
+  (`videos.insert`, `videos.update` and `playlistItems` for the owner's own videos, `channels.update` and
+  `channelBanners.insert` for the owner's own channel, and a daily trend check with `search.list`/`videos.list`
+  whose public data is only aggregated in memory, never stored).
+
+It has a single user (the channel owner), no public sign-in and no viewer data.
 
 **[Privacy Policy](PRIVACY.md)** · **[Terms of Service](TERMS.md)** ·
 [YouTube Terms of Service](https://www.youtube.com/t/terms) ·
 [Google Privacy Policy](https://policies.google.com/privacy) ·
 [Revoke access](https://security.google.com/settings/security/permissions)
 
-**How it works:** a scheduled GitHub Actions workflow (`.github/workflows/produce.yml`) renders a video,
-authenticates with the owner's OAuth refresh token (stored as an encrypted GitHub secret) and uploads the
-video, thumbnail and captions to the owner's channel. See [docs/architecture.png](docs/architecture.png).
+**How it works:** scheduled GitHub Actions workflows (`.github/workflows/produce.yml`, `sims.yml`, `trends.yml`)
+render the videos, authenticate with the owner's OAuth refresh tokens (stored encrypted) and publish to the
+owner's channels. See [docs/architecture.png](docs/architecture.png).
 
 ---
 
