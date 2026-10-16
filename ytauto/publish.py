@@ -179,12 +179,16 @@ def to_github_release(script: dict, cfg: dict, long: dict, short: dict | None) -
              (long["captions"], f"{prefix}-captions.srt", "text/plain")]
     if short:
         files.append((short["video"], f"{prefix}-short.mp4", "video/mp4"))
+    if long.get("cover"):
+        files.append((long["cover"], f"{prefix}-cover.jpg", "image/jpeg"))
     rel = github_release(tag, f"[{script['lang'].upper()}] {script['title']}", "\n".join(body), files)
     if not rel:
         return {}
     result = {"release": rel["release"]}
     if rel["assets"].get(f"{prefix}-short.mp4"):
         result["short_url"] = rel["assets"][f"{prefix}-short.mp4"]
+    if rel["assets"].get(f"{prefix}-cover.jpg"):
+        result["cover_url"] = rel["assets"][f"{prefix}-cover.jpg"]
     return result
 
 

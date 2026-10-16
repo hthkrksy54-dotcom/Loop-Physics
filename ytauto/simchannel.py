@@ -24,6 +24,8 @@ STATE = ROOT / "state" / "sims.json"
 TUNING = ROOT / "config" / "sims_tuning.json"  # written daily by trends.py
 OUT = ROOT / "out" / "sims"
 STORY_EVERY = 2  # a story for every Reel would crowd the account's stories
+COVER_AT = {"stringart": 0.9, "plinko": 0.85, "multiply": 0.85, "grow": 0.75, "pendulum": 0.55,
+            "escape": 0.3, "polygon": 0.3, "battle": 0.3}  # share of the run that makes the best cover frame
 
 TITLES = {  # {onscreen} = the question shown in the video, {n} = rings/polygons, {song} = melody
     "escape": [
@@ -218,7 +220,9 @@ def run(upload: bool = True) -> dict:
     if video_url and instagram.configured(cfg):
         try:
             story = len(state.get("videos", [])) % STORY_EVERY == 0
-            record.update(instagram.post_reel(cfg, video_url, meta["caption"], story=story, label=meta["title"]))
+            cover_ms = int(1000 * (result["duration"] - sims.OUTRO) * COVER_AT.get(kind, 0.5))
+            record.update(instagram.post_reel(cfg, video_url, meta["caption"], story=story, label=meta["title"],
+                                              thumb_offset_ms=cover_ms))
         except Exception as err:  # one platform failing must not lose the run
             record.setdefault("warnings", []).append(f"instagram: {err}")
             print(f"  warning: instagram failed: {err}", flush=True)

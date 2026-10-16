@@ -187,7 +187,8 @@ def run(lang: str, cfg: dict, state: dict, load_script) -> bool:
             )
             try:
                 rec.update(instagram.post_reel(cfg, short_url, instagram.caption(script, cfg, f"https://youtu.be/{rec['youtube_id']}"),
-                                               highlight=social.highlight_for(script), label=script["short"]["title"]))
+                                               highlight=social.highlight_for(script), label=script["short"]["title"],
+                                               cover_url=rec.get("cover_url")))
                 changed = True
             except Exception as err:
                 print(f"  warning: instagram reel for '{rec['id']}' failed: {err}", flush=True)

@@ -195,3 +195,30 @@ def quote_pool(scripts: list[dict], max_words: int = 40) -> list[dict]:
             if q and q.get("text") and len(q["text"].split()) <= max_words:
                 pool.append({"text": q["text"], "author": q["author"], "script": script})
     return pool
+
+
+def reel_cover(path: Path, script: dict, cfg: dict) -> Path:
+    """1080x1920 Reel cover in the YouTube thumbnail's style; text stays inside the 3:4 profile-grid crop."""
+    W, H = 1080, 1920
+    seed = render.seed_for(script)
+    palette = visuals.palette_for(seed)
+    accent = tuple(palette["accent"])
+    im = _field(W, H, palette, seed, t=37.0)
+    d = ImageDraw.Draw(im)
+    font, lines, lh = _block(d, script.get("thumbnail_text") or script["title"], "CormorantGaramond-SemiBold.ttf",
+                             150, W - 170, 620, 70)
+    top = (H - lh * len(lines)) / 2 + 20
+    shadow = Image.new("RGBA", im.size, (0, 0, 0, 0))
+    sd = ImageDraw.Draw(shadow)
+    for i, line in enumerate(lines):
+        w = d.textlength(line, font=font)
+        sd.text(((W - w) / 2 + 3, top + i * lh + 5), line, font=font, fill=(0, 0, 0, 210))
+    im = Image.alpha_composite(im.convert("RGBA"), shadow.filter(ImageFilter.GaussianBlur(9))).convert("RGB")
+    d = ImageDraw.Draw(im)
+    _centered(d, lines, font, lh, W / 2, top, CREAM)
+    _centered(d, [_spaced(script.get("label", ""))], _font("EBGaramond-Medium.ttf", 40), 46, W / 2, top - 110, accent)
+    d.line([(W / 2 - 80, top - 42), (W / 2 + 80, top - 42)], fill=accent, width=3)
+    _centered(d, [cfg.get("channel_name", "")], _font("EBGaramond-Regular.ttf", 40), 46, W / 2,
+              top + lh * len(lines) + 70, (210, 205, 195))
+    im.save(path, "JPEG", quality=92)
+    return path

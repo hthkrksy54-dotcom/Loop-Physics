@@ -86,6 +86,7 @@ def produce(lang: str, topic_id: str | None, upload: bool, with_short: bool, kee
     long = render.render_long(script, cfg, outdir)
     print(f"  long video: {long['duration'] / 60:.1f} min", flush=True)
     short = render.render_short(script, cfg, outdir) if with_short else None
+    long["cover"] = social.reel_cover(outdir / "cover.jpg", script, cfg)  # vertical cover for the Instagram Reel
 
     record = {
         "id": script["id"],
@@ -111,7 +112,8 @@ def produce(lang: str, topic_id: str | None, upload: bool, with_short: bool, kee
             try:
                 yt_url = f"https://youtu.be/{record['youtube_id']}" if record.get("youtube_id") else None
                 record.update(instagram.post_reel(cfg, short_url, instagram.caption(script, cfg, yt_url),
-                                                  highlight=social.highlight_for(script), label=script["short"]["title"]))
+                                                  highlight=social.highlight_for(script), label=script["short"]["title"],
+                                                  cover_url=record.get("cover_url")))
             except Exception as err:  # Instagram must never block the YouTube side
                 record.setdefault("warnings", []).append(f"instagram: {err}")
                 print(f"  warning: instagram reel failed: {err}", flush=True)

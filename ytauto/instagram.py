@@ -169,12 +169,21 @@ def live_stories(cfg: dict) -> list[dict]:
     return r.json().get("data", [])
 
 
-def post_reel(cfg: dict, video_url: str, text: str, story: bool = True, highlight: str | None = None, label: str = "") -> dict:
+def post_reel(cfg: dict, video_url: str, text: str, story: bool = True, highlight: str | None = None, label: str = "",
+              cover_url: str | None = None, thumb_offset_ms: int = 1500) -> dict:
     token = fresh_token(cfg)
     uid = _user(token)
-    container = _container(uid, token, {"media_type": "REELS", "video_url": video_url, "caption": text,
-                                        "share_to_feed": "true", "thumb_offset": "1500"})
-    _wait(container, token)
+    fields = {"media_type": "REELS", "video_url": video_url, "caption": text, "share_to_feed": "true"}
+    try:
+        if not cover_url:
+            raise InstagramError("no cover image")
+        container = _container(uid, token, {**fields, "cover_url": cover_url})
+        _wait(container, token)
+    except InstagramError as err:  # never lose the Reel over its cover: fall back to a frame of the video
+        if cover_url:
+            print(f"  cover image not used ({err}) – using a video frame", flush=True)
+        container = _container(uid, token, {**fields, "thumb_offset": str(int(thumb_offset_ms))})
+        _wait(container, token)
     media_id, link = _publish(uid, token, container)
     print(f"  instagram reel: {link or media_id}", flush=True)
     result = {"instagram_id": media_id, "instagram_url": link}
