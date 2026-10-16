@@ -65,7 +65,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1595
+      "yt_views": 1652
     },
     {
       "date": "2026-10-15T19:16:27+00:00",
@@ -109,7 +109,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 2193
+      "yt_views": 2400
     },
     {
       "date": "2026-10-15T20:40:45+00:00",
@@ -156,7 +156,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1166
+      "yt_views": 1188
     },
     {
       "date": "2026-10-16T04:01:26+00:00",
@@ -179,7 +179,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1164
+      "yt_views": 1220
     },
     {
       "date": "2026-10-16T06:40:20+00:00",
@@ -227,6 +227,20 @@
         "at": "2026-10-16T10:06+00:00"
       },
       "yt_views": 0
+    },
+    {
+      "date": "2026-10-16T11:31:37+00:00",
+      "kind": "race",
+      "seed": 4,
+      "melody": "minuet",
+      "timbre": "chip",
+      "title": "Which color wins the race? – Guess the song",
+      "duration": 38.4,
+      "why": "new",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-race-4",
+      "instagram_id": "18020611064731214",
+      "instagram_url": "https://www.instagram.com/reel/Dejb9TbFSQc/",
+      "instagram_story_id": "17896128567612888"
     }
   ]
 }
