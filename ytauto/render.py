@@ -213,14 +213,24 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         return track
 
 
+def _smooth(x: np.ndarray, win: int) -> np.ndarray:
+    """Moving average, same result as np.convolve(x, ones(win)/win, "same") but O(n) – long videos need it."""
+    n = len(x)
+    if win >= n:
+        return np.convolve(x, np.ones(win, dtype=np.float32) / win, mode="same")
+    c = np.concatenate([[0.0], np.cumsum(x, dtype=np.float64)])
+    idx = np.arange(n) + (win - 1) // 2 + 1
+    return ((c[np.clip(idx, 0, n)] - c[np.clip(idx - win, 0, n)]) / win).astype(np.float32)
+
+
 def _mix(voice: np.ndarray, bgm: np.ndarray) -> np.ndarray:
     n = min(len(voice), len(bgm))
     voice, bgm = voice[:n], bgm[:n]
     # Duck the music under speech, smoothly.
     win = int(0.5 * SAMPLE_RATE)
-    env = np.convolve(np.abs(voice), np.ones(win, dtype=np.float32) / win, mode="same")
+    env = _smooth(np.abs(voice), win)
     active = np.clip(env / (np.percentile(env[env > 0], 60) if np.any(env > 0) else 1), 0, 1)
-    active = np.convolve(active, np.ones(win, dtype=np.float32) / win, mode="same")
+    active = _smooth(active, win)
     gain = 0.30 - 0.15 * active
     peak = float(np.max(np.abs(voice))) or 1.0
     v = voice / peak * 0.8
