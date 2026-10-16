@@ -416,19 +416,23 @@ def planned_run() -> bool:
 def run(upload: bool = True) -> dict:
     cfg = load(CONFIG, {})
     state = load(STATE, {"videos": []})
+    ig_error = None
     if upload and instagram.configured(cfg):
-        try:  # a blocked or expired Instagram token must not silently swallow the videos
+        try:  # a blocked or expired token: the video still goes out everywhere else, the run ends red
             instagram._user(instagram.fresh_token(cfg))
         except instagram.InstagramError as err:
-            raise SystemExit(f"Instagram access for @{cfg['instagram']['account']} is not working – nothing rendered. {err}")
-        try:
-            used, total = instagram.publishing_quota(cfg)
-        except instagram.InstagramError as err:
-            print(f"  warning: {err}", flush=True)
-            used, total = 0, 100
-        if used >= total - 3:
-            print(f"[sims] Instagram publishing limit nearly used ({used}/{total} in 24 h) – skipping this hour", flush=True)
-            return {}
+            ig_error = f"Instagram access for @{cfg['instagram']['account']} is not working: {err}"
+            print(f"  warning: {ig_error}", flush=True)
+        if not ig_error:
+            try:
+                used, total = instagram.publishing_quota(cfg)
+            except instagram.InstagramError as err:
+                print(f"  warning: {err}", flush=True)
+                used, total = 0, 100
+            if used >= total - 3:
+                print(f"[sims] Instagram publishing limit nearly used ({used}/{total} in 24 h) – skipping this hour",
+                      flush=True)
+                return {}
     if planned_run() and not slot_due(state):
         print("[sims] no open posting slot – nothing to post", flush=True)
         return {}
@@ -468,7 +472,9 @@ def run(upload: bool = True) -> dict:
     story_url = rel.get("assets", {}).get(f"loop-physics-{name}-story.mp4")
     if rel:
         record["release"] = rel["release"]
-    if video_url and instagram.configured(cfg):
+    if ig_error:
+        record.setdefault("warnings", []).append(f"instagram: {ig_error}"[:300])
+    elif video_url and instagram.configured(cfg):
         try:
             story = len(state.get("videos", [])) % STORY_EVERY == 0
             share = cls.cover_at if cls.cover_at is not None else COVER_AT.get(kind, 0.5)
@@ -512,6 +518,8 @@ def run(upload: bool = True) -> dict:
             youtube_polish(apply=True)
         except (Exception, SystemExit) as err:
             print(f"  warning: youtube polish failed: {err}", flush=True)
+    if ig_error:  # everything else is done and saved – fail loudly so the problem gets noticed
+        raise SystemExit(f"[sims] posted without Instagram – {ig_error}")
     return record
 
 
