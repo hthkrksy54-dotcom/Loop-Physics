@@ -180,7 +180,7 @@ def glow(w: int, h: int, color: tuple, strength: float) -> Image.Image:
     """A soft coloured light (radial falloff, dithered against banding)."""
     yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
     r2 = ((xx - w / 2) / (w / 2)) ** 2 + ((yy - h / 2) / (h / 2)) ** 2
-    a = strength * np.exp(-r2 * 2.6) * 255
+    a = strength * np.clip((np.exp(-r2 * 2.6) - math.exp(-2.6)) / (1 - math.exp(-2.6)), 0, 1) * 255  # 0 at the edge
     a += np.random.default_rng(w * 7 + h).uniform(-1.2, 1.2, a.shape)
     img = Image.new("RGBA", (w, h), color + (0,))
     img.putalpha(Image.fromarray(np.clip(a, 0, 255).astype(np.uint8), "L"))
