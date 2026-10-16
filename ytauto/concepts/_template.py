@@ -38,7 +38,7 @@ class SpeedDemon(Sim):
         super().__init__(seed)
         rnd = self.rnd
         self.R = rnd.uniform(400, 440)
-        self.acc = rnd.uniform(1.022, 1.032)
+        self.acc = rnd.uniform(1.013, 1.018)
         a, sp = rnd.uniform(0, TAU), rnd.uniform(420, 520)
         self.ball = Ball(0.0, -100.0, math.cos(a) * sp, math.sin(a) * sp, 16.0)
         self.top = rnd.uniform(3600, 4200)  # px/s that shatters the circle

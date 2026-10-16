@@ -142,7 +142,8 @@ BODIES = {  # what happens and what the sound does, per format (default: the mel
     "race": "All balls race down the same track of pegs, spinners, funnels and bumpers. The camera follows "
             "the leader – and every bounce of the leader plays the next note of {song}.",
 }
-RANGES = [(28, 40), (35, 48), (42, 56)]  # alternate short, medium and long runs
+RANGES = [(58, 68), (62, 74), (66, 80)]  # run lengths (s): every video is longer than a minute (TikTok rewards)
+STORY_CLIP = 28  # Instagram stories take at most 60 s: long videos get a teaser cut for the story
 QUESTIONS = {
     "escape": ["How many seconds did you guess?", "Which ring was the hardest one?", "Did you recognise the melody?"],
     "grow": ["At what percent did you start holding your breath?", "Did you recognise the melody?",
@@ -230,9 +231,8 @@ def plan(cfg: dict, state: dict) -> tuple[str, int, str, str]:
         kind = random.Random(len(videos) * 7919).choices(cands, weights=weights)[0]
         why = "standout" if kind in stars else "rotation"
     start = max((v["seed"] for v in videos if v["kind"] == kind), default=-1) + 1
-    ranges = [tuple(r) for r in tuning.get("ranges") or RANGES]
-    lo, hi = ranges[len(videos) % len(ranges)]
-    for args in ((lo, hi, 60), (35, 55, 150), (15, 75, 300)):  # some concepts can't be that short or long
+    lo, hi = RANGES[len(videos) % len(RANGES)]
+    for args in ((lo, hi, 60), (56, 86, 150), (46, 95, 300)):  # some concepts vary a lot; render() stretches short ones
         try:
             seed = sims.pick_seed(kind, start, *args)
             break
@@ -382,6 +382,20 @@ def _youtube_token(cfg: dict) -> str | None:
     return youtube.access_token_from(data["refresh_token"])
 
 
+def story_clip(video: Path) -> Path | None:
+    """The first STORY_CLIP seconds as a teaser for the Instagram story (stories take at most 60 s)."""
+    import subprocess
+
+    out = video.with_name(video.stem + "-story.mp4")
+    cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", str(video), "-t", str(STORY_CLIP), "-c:v", "libx264",
+           "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k",
+           "-af", f"afade=t=out:st={STORY_CLIP - 1.5}:d=1.5", "-movflags", "+faststart", str(out)]
+    if subprocess.run(cmd).returncode != 0:
+        print("  warning: story clip failed – no story this time", flush=True)
+        return None
+    return out
+
+
 def planned_run() -> bool:
     """Started by the schedule or the timer (posts only in an open slot), not by hand."""
     return os.environ.get("GITHUB_EVENT_NAME") == "schedule" or os.environ.get("IN_SOURCE") in ("timer", "watchdog")
@@ -433,9 +447,13 @@ def run(upload: bool = True) -> dict:
 
     body = "\n".join(["### Title", "```", meta["title"], "```", "### Description", "```", meta["description"], "```",
                       "### Tags", "```", ", ".join(meta["tags"]), "```"])
-    rel = publish.github_release(f"sims-{name}", f"[Loop Physics] {meta['title']}", body,
-                                 [(result["video"], f"loop-physics-{name}.mp4", "video/mp4")])
+    files = [(result["video"], f"loop-physics-{name}.mp4", "video/mp4")]
+    clip = story_clip(Path(result["video"])) if result["duration"] > 59.5 else None
+    if clip:
+        files.append((clip, f"loop-physics-{name}-story.mp4", "video/mp4"))
+    rel = publish.github_release(f"sims-{name}", f"[Loop Physics] {meta['title']}", body, files)
     video_url = rel.get("assets", {}).get(f"loop-physics-{name}.mp4")
+    story_url = rel.get("assets", {}).get(f"loop-physics-{name}-story.mp4")
     if rel:
         record["release"] = rel["release"]
     if video_url and instagram.configured(cfg):
@@ -443,8 +461,8 @@ def run(upload: bool = True) -> dict:
             story = len(state.get("videos", [])) % STORY_EVERY == 0
             share = cls.cover_at if cls.cover_at is not None else COVER_AT.get(kind, 0.5)
             cover_ms = int(1000 * (result["duration"] - sims.OUTRO) * share)
-            record.update(instagram.post_reel(cfg, video_url, meta["caption"], story=story, label=meta["title"],
-                                              thumb_offset_ms=cover_ms))
+            record.update(instagram.post_reel(cfg, video_url, meta["caption"], story=story and bool(story_url or not clip),
+                                              label=meta["title"], thumb_offset_ms=cover_ms, story_url=story_url))
         except Exception as err:  # one platform failing must not lose the run
             record.setdefault("warnings", []).append(f"instagram: {err}")
             print(f"  warning: instagram failed: {err}", flush=True)

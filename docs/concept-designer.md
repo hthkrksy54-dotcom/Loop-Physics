@@ -66,7 +66,9 @@ and what the sound does, "{song}" = melody name), `playlist`, `cover_at`, `trend
   bottom – keep the action inside the play area (`p.clip(-470, 500)` fades out anything scrolling beyond it).
 - **Time**: `step(dt)` is called 12× per frame at 60 fps (dt = 1/720 s); always `self.t += dt` first. End the run
   with `self.finish()` (sets `self.end`, triggers the finale chord, shake and finale text); keep stepping visual
-  motion after it for the 2.6 s outro if you like. The run must end between 22 and 56 s for some seeds.
+  motion after it for the 2.6 s outro if you like. **The run must end between 58 and 86 s** for most seeds: every
+  video is longer than a minute (TikTok only rewards videos over 1 min). Build enough content and escalation for
+  that length – more stages, rounds, balls or layers – rather than slowing things down.
 - **Randomness**: physics only with `self.rnd` (seeded), visuals only with `self.look` / `self.look.rnd`. Never
   `random`, `time` or global state – the video is re-simulated and must match the seed search exactly.
 - **Sound** comes from events you append: `self.events.append((self.t, kind, i))` with kind
@@ -88,7 +90,7 @@ and what the sound does, "{song}" = melody name), `playlist`, `cover_at`, `trend
   `_facing` for polygons, `Race` for a scrolling camera with zoom, `Territory` for a cell grid.
 - **On-screen text**: `title()` → 1–2 lines, ≤ 24 characters each; `counter()` → a live number (honest units);
   `finale()` → big text lines `[(text, colour), ...]` or just `finale_text()`.
-- **Speed**: `simulate()` of a 50 s run should take under ~2 s (the seed search runs it dozens of times) – avoid
+- **Speed**: `simulate()` of a 70 s run should take under ~3 s (the seed search runs it dozens of times) – avoid
   O(n²) over hundreds of objects (use a grid or buckets). Painting must stay under 180 ms per frame on average.
 
 ## 3. Test until it is great

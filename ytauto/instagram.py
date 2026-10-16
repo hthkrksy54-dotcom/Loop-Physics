@@ -170,7 +170,8 @@ def live_stories(cfg: dict) -> list[dict]:
 
 
 def post_reel(cfg: dict, video_url: str, text: str, story: bool = True, highlight: str | None = None, label: str = "",
-              cover_url: str | None = None, thumb_offset_ms: int = 1500) -> dict:
+              cover_url: str | None = None, thumb_offset_ms: int = 1500, story_url: str | None = None) -> dict:
+    """Publish a Reel (and the same clip, or `story_url` – stories take at most 60 s – as a Story)."""
     token = fresh_token(cfg)
     uid = _user(token)
     fields = {"media_type": "REELS", "video_url": video_url, "caption": text, "share_to_feed": "true"}
@@ -189,7 +190,8 @@ def post_reel(cfg: dict, video_url: str, text: str, story: bool = True, highligh
     result = {"instagram_id": media_id, "instagram_url": link}
     if story:  # the same clip as a Story brings followers back to the new Reel
         try:
-            result["instagram_story_id"] = post_story(cfg, video_url=video_url, kind="reel", highlight=highlight, label=label)
+            result["instagram_story_id"] = post_story(cfg, video_url=story_url or video_url, kind="reel",
+                                                      highlight=highlight, label=label)
         except InstagramError as err:
             print(f"  warning: story failed: {err}", flush=True)
     return result

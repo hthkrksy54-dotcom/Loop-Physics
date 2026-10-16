@@ -40,6 +40,9 @@ SR = 48000
 CX, CY = W / 2, H * 0.5
 TAU = 2 * math.pi
 OUTRO = 2.6
+MIN_VIDEO = 61.0   # every video runs longer than a minute (TikTok only rewards videos over 1 min)
+STRETCH_MAX = 1.25  # a run that is a bit too short plays slightly slower (at most 1/1.25 speed) ...
+PAD_MAX = 8.0       # ... and the finale holds a little longer before the video ends
 SLOW = (0.9, 0.35, 0.33)  # slow motion: from 0.9 s before the finale moment to 0.35 s after it, at 1/3 speed
 
 # Melody lines (MIDI note numbers) of public-domain compositions.
@@ -270,8 +273,8 @@ class Escape(Sim):
     """A ball bounces inside spinning rings with a gap and breaks out ring by ring."""
     kind = "escape"
     slowmo = True
-    RINGS = (10, 16)
-    GAP = (48.0, 62.0)  # gap in degrees for the fewest/most rings, tuned for ~45 s runs
+    RINGS = (16, 22)
+    GAP = (48.0, 62.0)  # gap in degrees for the fewest/most rings
 
     def __init__(self, seed: int, rings: int | None = None, r0: float = 110, r1: float = 470):
         super().__init__(seed)
@@ -400,7 +403,7 @@ class Escape(Sim):
 class Battle(Escape):
     """Several coloured balls in one ring system; a ring breaks for everyone, the last one decides."""
     kind = "battle"
-    RINGS = (15, 20)
+    RINGS = (22, 28)
     GAP = (27.0, 33.0)
 
     def __init__(self, seed: int, rings: int | None = None, r0: float = 125, r1: float = 470):
@@ -438,7 +441,7 @@ class Polygon(Sim):
     """Escape from nested polygons; neighbours turn in opposite directions and are spaced so they never touch."""
     kind = "polygon"
     slowmo = True
-    GAP = {5: 0.36, 6: 0.46, 7: 0.70, 8: 0.90}  # gap as a share of the edge length, tuned for ~45 s runs
+    GAP = {5: 0.31, 6: 0.39, 7: 0.60, 8: 0.77}  # gap as a share of the edge length, tuned for ~65 s runs
 
     def __init__(self, seed: int, sides: int | None = None):
         super().__init__(seed)
@@ -550,7 +553,7 @@ class Grow(Sim):
         super().__init__(seed)
         rnd = self.rnd
         self.R = radius or rnd.uniform(400, 450)
-        self.inc = inc or rnd.uniform(2.7, 3.7)
+        self.inc = inc or rnd.uniform(1.6, 2.2)
         self.rb = rnd.uniform(12, 20)
         self.x, self.y = rnd.uniform(-60, 60), rnd.uniform(-120, -40)
         a, s = rnd.uniform(0, TAU), rnd.uniform(650, 800)
@@ -622,8 +625,8 @@ class Plinko(Sim):
         super().__init__(seed)
         rnd = self.rnd
         self.rows = R = rnd.choice([10, 12, 14])
-        self.N = rnd.randint(220, 280)
-        self.interval = (rnd.uniform(37, 52) - 3.0) / self.N
+        self.N = rnd.randint(300, 380)
+        self.interval = (rnd.uniform(58, 76) - 3.0) / self.N
         self.sx = 960 / (R + 1)            # peg and bin spacing
         self.rp = 5.0
         self.rb = rnd.uniform(5.5, 6.5)
@@ -774,8 +777,8 @@ class StringArt(Sim):
         self.m = rnd.choice([0, 0, 0, 0, 5, 6])  # 0 = circle, else a regular polygon with a flat bottom
         self.R = 440.0 if not self.m else 435 * math.cos(math.pi / self.m)
         self.phi = math.pi / 2
-        self.N = rnd.randint(110, 160)
-        self.acc = rnd.uniform(1.009, 1.014)
+        self.N = rnd.randint(200, 280)
+        self.acc = rnd.uniform(1.006, 1.009)
         self.noise = rnd.uniform(0.012, 0.04)
         self.g = rnd.choice([0.0, 0.0, 0.0, 300.0])
         # launch along a line that misses the centre: the chords then wrap around an empty inner circle
@@ -854,7 +857,7 @@ class Multiply(Sim):
         super().__init__(seed)
         rnd = self.rnd
         self.R = rnd.uniform(420, 450)
-        self.N = rnd.choice([40, 50, 64, 75])
+        self.N = rnd.choice([90, 110, 128])
         self.g = rnd.uniform(1300, 1700)
         self.rb_new = rnd.uniform(12, 16)
         a, s = rnd.uniform(0, TAU), rnd.uniform(750, 900)
@@ -925,7 +928,7 @@ class Pendulum(Sim):
         super().__init__(seed)
         rnd = self.rnd
         self.K = rnd.choice([12, 13, 15])
-        self.T = rnd.uniform(34, 54)  # everything lines up again at T
+        self.T = rnd.uniform(58, 80)  # everything lines up again at T
         n0 = rnd.choice([10, 12, 14])
         self.f = [(n0 + i) / self.T for i in range(self.K)]  # swings per second, slowest at the top
         self.A = rnd.uniform(330, 380)
@@ -1007,7 +1010,7 @@ class Territory(Sim):
         self.S = 900.0
         self.c = self.S / G
         self.h = self.S / 2
-        self.T = rnd.uniform(22, 56)
+        self.T = rnd.uniform(58, 80)
         self.owner = [[self._start_owner(r, c, n) for c in range(G)] for r in range(G)]
         self.rb = self.c * rnd.uniform(0.26, 0.32)
         self.speed = rnd.uniform(680, 820)
@@ -1195,7 +1198,7 @@ class Chaos(Sim):
         self.s = [[a1 + d * i, a2, 0.0, 0.0] for i in range(self.K)]
         self.oy = -20.0
         self.split: float | None = None
-        self.hold = rnd.uniform(14, 26)
+        self.hold = rnd.uniform(44, 62)
         self.side = [0] * self.K
         self.hit = [-9.0] * self.K
         self.spread = self.delta
@@ -1310,7 +1313,7 @@ class Harmonograph(Sim):
         rnd = self.rnd
         p, q = rnd.choice(self.RATIOS)
         base = rnd.uniform(0.55, 0.85) / max(p, q) * 2
-        self.T = rnd.uniform(22, 56)
+        self.T = rnd.uniform(58, 80)
         det = rnd.uniform(0.006, 0.02) * rnd.choice([-1, 1])
         self.f = [base * p, base * q * (1 + det), base * p * (1 - det / 2), base * q]
         px, qx = rnd.uniform(0, TAU), rnd.uniform(0, TAU)  # y a quarter turn behind x: round figures, not lines
@@ -1401,7 +1404,7 @@ class Race(Sim):
         self.spin: list[tuple[float, float, float, float, float]] = []  # cx, cy, half length, omega, phase
         self.sections: list[tuple[float, float]] = []
         builders = [self._pegs, self._zigzag, self._spinners, self._funnel, self._bumpers]
-        y, last, target = 160.0, None, length or rnd.uniform(6000, 13000)
+        y, last, target = 160.0, None, length or rnd.uniform(14000, 21000)
         while y < target:
             build = rnd.choice([b for b in builders if b is not last])
             y0, y = y, build(y, rnd) + 110
@@ -1691,24 +1694,30 @@ def pick_seed(kind: str, start: int, lo: float = 35, hi: float = 55, tries: int 
 
 
 class Warp:
-    """Simulation time -> video time, optionally with a slow-motion stretch around the finale moment."""
+    """Simulation time -> video time: optionally a slow-motion stretch around the finale moment, and an overall
+    stretch (slightly slower playback) for runs that would otherwise end under MIN_VIDEO."""
 
-    def __init__(self, end: float | None = None) -> None:
+    def __init__(self, end: float | None = None, stretch: float = 1.0) -> None:
         self.a = self.b = None
+        self.stretch = stretch
         if end is not None:
             self.a, self.b, self.rate = max(0.0, end - SLOW[0]), end + SLOW[1], SLOW[2]
 
-    def video(self, t: float) -> float:
+    def _video(self, t: float) -> float:
         if self.a is None or t <= self.a:
             return t
         if t <= self.b:
             return self.a + (t - self.a) / self.rate
         return self.a + (self.b - self.a) / self.rate + (t - self.b)
 
+    def video(self, t: float) -> float:
+        return self._video(t) * self.stretch
+
     def sim(self, v: float) -> float:
+        v /= self.stretch
         if self.a is None or v <= self.a:
             return v
-        vb = self.video(self.b)
+        vb = self._video(self.b)
         return self.a + (v - self.a) * self.rate if v <= vb else self.b + (v - vb)
 
 
@@ -2037,7 +2046,11 @@ def render(kind: str, seed: int, out: Path, melody: str | None = None, handle: s
         raise RuntimeError(f"{kind} seed {seed} does not finish")
     slow = probe.slowmo and (getattr(probe, "photo", 1e9) < 150 or random.Random(f"slow-{kind}-{seed}").random() < 0.75)
     warp = Warp(probe.end if slow else None)
-    duration = warp.video(probe.end) + OUTRO
+    if warp.video(probe.end) + OUTRO < MIN_VIDEO:  # a bit short: play slightly slower ...
+        warp = Warp(probe.end if slow else None, min(STRETCH_MAX, (MIN_VIDEO + 0.2 - OUTRO) / warp.video(probe.end)))
+    duration = max(warp.video(probe.end) + OUTRO, MIN_VIDEO + 0.2)  # ... and hold the finale a little longer
+    if duration - warp.video(probe.end) > OUTRO + PAD_MAX:
+        raise RuntimeError(f"{kind} seed {seed}: run of {probe.end:.0f}s is too short for a {MIN_VIDEO:.0f}s video")
     timbre = timbre or random.Random(f"tone-{kind}-{seed}").choice(TIMBRES)
     wav = out.with_suffix(".wav")
     _write_wav(wav, soundtrack(probe, melody, duration, seed, timbre, warp))
@@ -2067,7 +2080,8 @@ def render(kind: str, seed: int, out: Path, melody: str | None = None, handle: s
         raise RuntimeError("ffmpeg failed")
     wav.unlink(missing_ok=True)
     return {"video": out, "duration": duration, "kind": kind, "seed": seed, "melody": melody,
-            "melody_name": MELODIES[melody][0], "timbre": timbre, "title": " ".join(sim.title()), "slowmo": slow}
+            "melody_name": MELODIES[melody][0], "timbre": timbre, "title": " ".join(sim.title()), "slowmo": slow,
+            "stretch": round(warp.stretch, 3)}
 
 
 # ---------------------------------------------------------------- designed concepts

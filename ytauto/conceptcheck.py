@@ -18,7 +18,7 @@ from PIL import Image, ImageDraw
 from . import concepts, simchannel, sims
 
 OUT = Path(__file__).resolve().parent.parent / "out" / "concepts"
-RANGES = [(22, 32), (28, 40), (35, 48), (42, 56)]
+RANGES = [(58, 66), (62, 72), (66, 78), (72, 86)]  # every video must run longer than a minute (TikTok rewards)
 SOUND = {"bounce", "land", "tone", "clack", "break"}
 
 
@@ -68,7 +68,7 @@ def check(kind: str, full: bool = False, quiet: bool = False) -> bool:
     search = time.time() - t0
     if len(seeds) < 2:
         problems.append(f"only {len(seeds)} of {len(RANGES)} length ranges reachable within 40 seeds "
-                        f"(runs must end between 22 and 56 s)")
+                        f"(runs must end between 58 and 86 s – videos are longer than a minute)")
     if search > 240:
         problems.append(f"seed search too slow ({search:.0f}s) – simulate() must be much faster")
     if not seeds:
@@ -147,6 +147,10 @@ def check(kind: str, full: bool = False, quiet: bool = False) -> bool:
         lufs = float(m[-1]) if m else math.nan
         info.append(f"video: {res['video']} ({res['duration']:.1f}s, {lufs:.1f} LUFS, rendered in {took:.0f}s"
                     f"{', slow motion' if res.get('slowmo') else ''})")
+        if res["duration"] < sims.MIN_VIDEO:
+            problems.append(f"video only {res['duration']:.1f}s – must be at least {sims.MIN_VIDEO:.0f}s")
+        if res.get("stretch", 1) > 1.01:
+            info.append(f"note: played {res['stretch']:.2f}× slower to reach {sims.MIN_VIDEO:.0f}s – aim for longer runs")
         if not -17 <= lufs <= -11:
             problems.append(f"loudness {lufs} LUFS outside -17…-11")
         if took > 1500:

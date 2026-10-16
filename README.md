@@ -57,6 +57,7 @@ Thema → Skript → Faktencheck → Sprecherstimme → Musik → Visuals → Un
 |---|---|
 | Takt | alle 2 Stunden ein Video ([Workflow](.github/workflows/sims.yml)); zwischen den Slots pflegt der Workflow YouTube-Uploads nach, füllt TikTok-Entwürfe auf und startet liegengebliebene Workflows |
 | Neue Konzepte | 2× täglich baut ein automatischer Konzept-Designer (geplante Claude-Session) nach [docs/concept-designer.md](docs/concept-designer.md) ein neues Konzept aus aktuellen viralen Trends – eine Datei in `ytauto/concepts/`, mit Qualitätsprüfung (`python -m ytauto concept-check`) |
+| Länge | jedes Video über 1 Minute (ca. 61–90 s), damit es bei TikTok für Creator Rewards zählt; Instagram-Stories bekommen einen 28-s-Teaser |
 | Auswahl | neue Konzepte haben immer Vorrang; dazwischen kommen bereits gelaufene Konzepte als neue Variante zurück, gewichtet nach Aufrufen (Instagram + YouTube) – Ausreißer nach oben (≥ 1,6× Median) deutlich öfter, nie eins der letzten drei |
 | TikTok | neue Konzepte und Ausreißer als Entwurf in den TikTok-Posteingang (höchstens 3 warten gleichzeitig), Beschreibungen zum Kopieren in [state/tiktok.md](state/tiktok.md) |
 | Robustheit | kaputte Konzepte werden übersprungen und vermerkt; verpasste Slots werden bis 6 h später nachgeholt; Übersicht mit `python -m ytauto concepts` |

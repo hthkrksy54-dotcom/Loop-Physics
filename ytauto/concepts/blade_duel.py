@@ -50,7 +50,7 @@ class BladeDuel(Sim):
             pair = pair[::-1]
         self.up = list(pair)
         self.team = list(rnd.choice([(0, 1), (5, 7), (4, 2), (6, 3), (1, 5)]))
-        self.hp0 = rnd.choice([100, 120, 120, 150])
+        self.hp0 = rnd.choice([180, 200, 240])
         self.hp = [float(self.hp0)] * 2
         self.blade0, self.spin0 = rnd.uniform(100, 120), rnd.uniform(4.6, 5.6)
         self.blade = [self.blade0] * 2  # blade length beyond the ball
@@ -64,7 +64,7 @@ class BladeDuel(Sim):
             a = rnd.uniform(-2.4, -0.8)
             self.balls.append(Ball(sx * 200.0, self.OY + rnd.uniform(-60, 60), math.cos(a) * self.speed * -sx,
                                    math.sin(a) * self.speed, self.RB, TEAMS[self.team[k]][1], TEAMS[self.team[k]][0]))
-        self.sd = rnd.uniform(20, 38)  # sudden death: damage ×2, then ×3, ×4 … every 6 s
+        self.sd = rnd.uniform(40, 56)  # sudden death: damage ×2, then ×3, ×4 … every 6 s
         self.cool = [-9.0, -9.0]
         self._m = 1
         self.parry_t = -9.0
