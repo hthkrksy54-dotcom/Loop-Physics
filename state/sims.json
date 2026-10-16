@@ -48,7 +48,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1107,
+      "yt_views": 1108,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235341996115990",
         "status": "PUBLISH_COMPLETE",
@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1741,
+      "yt_views": 1809,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 3055,
+      "yt_views": 3304,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1327,
+      "yt_views": 1404,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -321,6 +321,20 @@
         "status": "SEND_TO_USER_INBOX",
         "caption": "4 pendulums, 0.0001° apart\nWhen did you first see them split?\n#doublependulum #satisfying #oddlysatisfying #physics #simulation"
       }
+    },
+    {
+      "date": "2026-10-16T14:41:43+00:00",
+      "kind": "pendulum",
+      "seed": 2,
+      "melody": "morning_mood",
+      "timbre": "glass",
+      "title": "12 pendulums, one perfect moment – Try not to blink",
+      "duration": 62.6,
+      "why": "new",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-pendulum-2",
+      "instagram_id": "18081297695371691",
+      "instagram_url": "https://www.instagram.com/reel/DejyJ0NCmfw/",
+      "instagram_story_id": "18646387072033429"
     }
   ]
 }
