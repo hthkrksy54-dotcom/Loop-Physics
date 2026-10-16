@@ -21,7 +21,7 @@ import sys
 import traceback
 from pathlib import Path
 
-from . import check, generate, instagram, publish, render, simchannel, sims, social, sync, trends, youtube
+from . import check, generate, instagram, publish, render, simchannel, sims, social, sync, trends, watchdog, youtube
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "config" / "channels.json"
@@ -273,6 +273,7 @@ def main(argv: list[str] | None = None) -> int:
     sc.add_argument("--branding", action="store_true", help="set banner, description and keywords on YouTube")
     sc.add_argument("--youtube", choices=["check", "apply"], help="match manual YouTube uploads and polish them")
     sub.add_parser("trends", help="Loop Physics: daily trend check, writes config/sims_tuning.json")
+    sub.add_parser("watchdog", help="print overdue workflows as JSON lines (file, inputs)")
     hl = sub.add_parser("highlights", help="list recent stories by the highlight they belong in")
     hl.add_argument("--days", type=int, default=7)
     args = ap.parse_args(argv)
@@ -310,6 +311,11 @@ def main(argv: list[str] | None = None) -> int:
             simchannel.run(upload=not args.no_upload)
         return 0
 
+    if args.cmd == "watchdog":
+        for wf, inputs in watchdog.due():
+            print(json.dumps({"workflow": wf, "inputs": inputs}))
+        return 0
+
     if args.cmd == "trends":
         trends.run()
         return 0
@@ -332,7 +338,13 @@ def main(argv: list[str] | None = None) -> int:
 
     failed = []
     config = _load(CONFIG, {})
+    import os
+    unattended = os.environ.get("GITHUB_EVENT_NAME") == "schedule" or os.environ.get("IN_SOURCE") == "watchdog"
+    today = dt.datetime.now(dt.timezone.utc).date()
     for lang in args.langs:
+        if unattended and any(dt.datetime.fromisoformat(r["date"]).date() == today for r in _load(STATE, {}).get(lang, [])):
+            print(f"[{lang}] today's video is already out – skipping", flush=True)
+            continue
         if not config.get(lang, {}).get("active", True):
             print(f"[{lang}] paused (\"active\": false in config/channels.json) – skipping", flush=True)
             continue

@@ -22,12 +22,16 @@ on:
         type: choice
         options: ["none", "check", "apply"]
         default: "none"
+      source:
+        description: "Who started the run (timer = planned slot)"
+        default: "manual"
 
 permissions:
   contents: write
+  actions: write  # to start the timer and overdue workflows
 
-concurrency:
-  group: sims
+concurrency:  # admin-only runs (branding, YouTube polish) never wait behind or replace video runs
+  group: ${{ (github.event.inputs.branding == 'true' || github.event.inputs.youtube == 'check' || github.event.inputs.youtube == 'apply') && 'sims-admin' || 'sims' }}
   cancel-in-progress: false
 
 jobs:
@@ -59,6 +63,7 @@ jobs:
           IN_UPLOAD: ${{ github.event.inputs.upload }}
           IN_BRANDING: ${{ github.event.inputs.branding }}
           IN_YOUTUBE: ${{ github.event.inputs.youtube }}
+          IN_SOURCE: ${{ github.event.inputs.source }}
         run: |
           if [ "$IN_BRANDING" = "true" ]; then python -m ytauto sims --branding
           elif [ "$IN_YOUTUBE" = "check" ] || [ "$IN_YOUTUBE" = "apply" ]; then python -m ytauto sims --youtube "$IN_YOUTUBE"
@@ -78,3 +83,30 @@ jobs:
               sleep $((i * 10))
             done
           fi
+
+      - name: Plan the next run and start overdue workflows
+        if: always() && github.event.inputs.branding != 'true' && github.event.inputs.youtube != 'check' && github.event.inputs.youtube != 'apply'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          dispatch() {  # workflow file, JSON inputs
+            curl -sS -o /dev/null -w "  $1 -> %{http_code}\n" -X POST -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/$1/dispatches" \
+              -d "{\"ref\":\"main\",\"inputs\":$2}"
+          }
+          AT=$(python -c "
+          import json, os, datetime as dt
+          v = json.load(open('state/sims.json'))['videos']
+          now = dt.datetime.now(dt.timezone.utc)
+          last = dt.datetime.fromisoformat(v[-1]['date']) if v else now
+          gap = 30 if os.environ.get('JOB_STATUS') == 'success' else 90  # after a failure: no retry storm
+          print(max(last + dt.timedelta(minutes=120), now + dt.timedelta(minutes=gap)).isoformat(timespec='seconds'))")
+          echo "next Loop Physics run at $AT"
+          dispatch sims-timer.yml "{\"at\":\"$AT\"}"
+          python -m ytauto watchdog | while read -r line; do
+            wf=$(echo "$line" | python -c "import sys, json; print(json.load(sys.stdin)['workflow'])")
+            inputs=$(echo "$line" | python -c "import sys, json; print(json.dumps(json.load(sys.stdin)['inputs']))")
+            dispatch "$wf" "$inputs"
+          done

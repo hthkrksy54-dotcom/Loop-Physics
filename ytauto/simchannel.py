@@ -191,7 +191,8 @@ def run(upload: bool = True) -> dict:
             print(f"[sims] Instagram publishing limit nearly used ({used}/{total} in 24 h) – skipping this hour", flush=True)
             return {}
     videos = state.get("videos", [])
-    if os.environ.get("GITHUB_EVENT_NAME") == "schedule" and videos and \
+    planned = os.environ.get("GITHUB_EVENT_NAME") == "schedule" or os.environ.get("IN_SOURCE") == "timer"
+    if planned and videos and \
             dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(videos[-1]["date"]) < dt.timedelta(minutes=100):
         print("[sims] last Reel is less than 100 minutes old – skipping this scheduled run", flush=True)
         return {}

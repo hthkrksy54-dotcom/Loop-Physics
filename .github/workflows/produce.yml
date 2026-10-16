@@ -20,6 +20,9 @@ on:
         description: "Mark the topic as done (untick for test runs)"
         type: boolean
         default: true
+      source:
+        description: "Who started the run (watchdog = catching up a dropped schedule)"
+        default: "manual"
 
 permissions:
   contents: write
@@ -65,6 +68,7 @@ jobs:
           IN_TOPIC: ${{ github.event.inputs.topic }}
           IN_UPLOAD: ${{ github.event.inputs.upload }}
           IN_RECORD: ${{ github.event.inputs.record }}
+          IN_SOURCE: ${{ github.event.inputs.source }}
         run: |
           ARGS=(--langs $IN_LANGS)
           if [ -n "$IN_TOPIC" ]; then ARGS+=(--topic "$IN_TOPIC"); fi
