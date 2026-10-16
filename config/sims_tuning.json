@@ -1,14 +1,19 @@
 {
-  "updated": "2026-10-15T20:34+00:00",
+  "updated": "2026-10-16T10:06+00:00",
   "kind_weights": {
-    "escape": 1.01,
-    "battle": 1.59,
-    "pendulum": 1.01,
+    "escape": 1.4,
     "grow": 1.0,
+    "battle": 1.54,
+    "polygon": 1.12,
     "plinko": 1.0,
-    "multiply": 1.2,
-    "polygon": 1.07,
-    "stringart": 1.0
+    "stringart": 1.0,
+    "multiply": 1.21,
+    "pendulum": 1.0,
+    "territory": 1.0,
+    "chaos": 1.0,
+    "harmonograph": 1.02,
+    "race": 1.72,
+    "blade_duel": 1.0
   },
   "ranges": [
     [
@@ -30,25 +35,20 @@
     "bouncingball",
     "oddlysatisfying",
     "physicssimulation",
-    "physics"
+    "marblerun"
   ],
   "title_addons": [
+    "Wait for the ending",
     "Sound on",
     "Guess the song",
-    "Watch till the end",
-    "Can you predict?",
     "Try not to blink",
-    "Listen closely",
-    "Which escapes first?",
-    "Spot the pattern",
-    "Count the bounces",
-    "Feel the ASMR"
+    "Listen to the rhythm"
   ],
   "questions": [
     "What would you change?",
-    "Did you expect that?",
-    "Which ball wins?",
-    "How many rings?"
+    "Which bounce is most satisfying?",
+    "Can you predict the path?",
+    "Which simulation feels best?"
   ],
   "trend_keywords": [
     "simulation",
@@ -60,24 +60,29 @@
     "balls",
     "run",
     "marble run",
-    "song",
-    "escape",
     "physics simulation",
+    "song",
     "rings",
+    "escape",
     "bouncingball",
-    "guess song"
+    "marblerun"
   ],
   "trend_share": {
-    "escape": 0.005,
-    "battle": 0.294,
-    "pendulum": 0.003,
-    "grow": 0.002,
+    "escape": 0.003,
+    "grow": 0.001,
+    "battle": 0.268,
+    "polygon": 0.032,
     "plinko": 0.0,
-    "multiply": 0.098,
-    "polygon": 0.034,
-    "stringart": 0.0
+    "stringart": 0.0,
+    "multiply": 0.103,
+    "pendulum": 0.0,
+    "territory": 0.0,
+    "chaos": 0.001,
+    "harmonograph": 0.011,
+    "race": 0.36,
+    "blade_duel": 0.0
   },
-  "trend_videos": 131,
-  "trend_median_seconds": 30.0,
-  "summary_de": "Diese Woche dominieren Simulationen mit Bällen, Orbs und Marble‑Runs, die mit ASMR‑Klängen kombiniert werden. Wir nutzen kurze Fragen und knackige Add‑Ons, um das Interesse an physikalischen Effekten und Song‑Rätseln zu steigern. So bleibt das Format spannend und lädt zum Kommentieren ein."
+  "trend_videos": 135,
+  "trend_median_seconds": 26.0,
+  "summary_de": "Diese Woche liegen die Trends bei Bällen, Marbles und physikalischen Simulationen, besonders bei Escape‑ und Race‑Elementen. Wir kombinieren kurze Fragen mit Add‑Ons wie „Guess the song“ oder „Try not to blink“, um die Zuschauer zum Mitmachen zu animieren. So nutzen wir aktuelle Keywords, ohne Clickbait zu verwenden."
 }
