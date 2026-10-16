@@ -16,16 +16,6 @@ Two colors or four – which is better?
 #pongwars #satisfying #oddlysatisfying #physics #simulation
 ```
 
-## 16.10. 14:41 UTC – 12 pendulums, one perfect moment
-
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-pendulum-2)
-
-```text
-12 pendulums, one perfect moment
-What would you change?
-#pendulumwave #satisfying #oddlysatisfying #physics #simulation
-```
-
 ## 16.10. 08:41 UTC – Will 256 balls make a bell curve?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-plinko-1)
@@ -66,6 +56,16 @@ Can you predict the path?
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 16.10. 14:41 UTC – 12 pendulums, one perfect moment
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697308158368304416) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-pendulum-2)
+
+```text
+12 pendulums, one perfect moment
+What would you change?
+#pendulumwave #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 16.10. 13:09 UTC – 4 pendulums, 0.0001° apart
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697256019268832544) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-chaos-3)
@@ -104,15 +104,5 @@ Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/
 Can the ball escape all 12 octagons?
 What would you change?
 #ballescape #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 15.10. 19:18 UTC – What will 158 bounces draw?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697241038733200672)
-
-```text
-What will 158 bounces draw?
-What would you change?
-#stringart #satisfying #oddlysatisfying #physics #simulation
 ```
 
