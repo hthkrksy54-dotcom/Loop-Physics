@@ -1,0 +1,1720 @@
+{
+  "id": "why-us-debt-40-trillion",
+  "order": 2,
+  "title": "Why Does the US Have $40 Trillion of Debt? The Interest Bill Now Beats the Military",
+  "title_card": "Why does the US have so much debt?",
+  "description": "The US national debt passed $40 trillion in August 2026 – and the interest on it now costs more than the entire military. With official Treasury, OMB and IMF data we trace 86 years of US debt: what it is, why it keeps growing, how it compares to the economy and to other countries, and why the interest bill is the number that really changed.",
+  "tags": [
+    "national debt",
+    "us debt",
+    "40 trillion",
+    "debt explained",
+    "interest on the debt",
+    "federal deficit",
+    "economics",
+    "economics explained",
+    "treasury",
+    "debt to gdp",
+    "government spending",
+    "data visualization"
+  ],
+  "hashtags": [
+    "#nationaldebt",
+    "#economics",
+    "#money"
+  ],
+  "sources": [
+    "U.S. Treasury, Fiscal Data: Debt to the Penny (daily total public debt outstanding, Aug–Oct 2026) and Historical Debt Outstanding (fiscal years 1940–2026)",
+    "U.S. Treasury, Fiscal Data: Average Interest Rates on U.S. Treasury Securities – Total Marketable, September 2001–2026",
+    "U.S. Treasury: Monthly Treasury Statement, Table 9 – outlays by function, fiscal year 2025 and fiscal year 2026 through August",
+    "Office of Management and Budget via FRED (St. Louis Fed): Federal Debt Held by the Public as % of GDP (FYPUGDA188S), Federal Surplus or Deficit (FYFSD), Federal Receipts (FYFR), Federal Outlays (FYONET), Federal Outlays: Interest (FYOINT)",
+    "World Bank, World Development Indicators: Interest payments (% of revenue), GC.XPN.INTP.RV.ZS – United States, 1972–2024 (CC BY 4.0)",
+    "World Bank, World Development Indicators: Population, total, SP.POP.TOTL – United States, 2025 (CC BY 4.0)",
+    "IMF World Economic Outlook: General government gross debt (% of GDP), GGXWDG_NGDP, 2025"
+  ],
+  "thumbnail": {
+    "big": "$40T",
+    "text": "Interest > military",
+    "color": "red"
+  },
+  "chapters": [
+    {
+      "heading": "Intro",
+      "beats": [
+        {
+          "say": "Every second, the debt of the United States government grows by about eighty thousand dollars.",
+          "show": {
+            "type": "number",
+            "big": "$80,000",
+            "caption": "added to the US debt every second, fiscal 2026",
+            "color": "red"
+          }
+        },
+        {
+          "say": "In the fiscal year that just ended, it grew by two and a half trillion dollars. And on August eighteenth, it passed forty trillion for the first time in history.",
+          "show": {
+            "type": "number",
+            "big": "$37.6T → $40.2T",
+            "caption": "US debt, Sept 2025 → Sept 2026",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Split across everyone who lives in the country, that's about a hundred and eighteen thousand dollars per person.",
+          "show": {
+            "type": "number",
+            "big": "$118,000",
+            "caption": "US debt per person, October 2026",
+            "color": "red"
+          }
+        },
+        {
+          "say": "But the size isn't the most surprising part. The surprising part is the bill that comes with it."
+        },
+        {
+          "say": "Because this year, for the first time, the interest alone has passed a trillion dollars. More than the entire military. Let's see how that happened – with the official numbers.",
+          "show": {
+            "type": "note",
+            "text": "Interest on the debt now costs *more than the military.*",
+            "source": "Monthly Treasury Statement, fiscal year 2026 through August",
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "What the debt is",
+      "beats": [
+        {
+          "say": "First, what is the national debt? It's simply everything the federal government has borrowed and not yet paid back.",
+          "show": {
+            "type": "note",
+            "text": "*Deficit* = one year of spending more than you take in. *Debt* = all the deficits added up.",
+            "source": "US Treasury, Fiscal Data"
+          }
+        },
+        {
+          "say": "The government borrows by selling bonds – Treasury bills, notes and bonds. People, banks, pension funds, foreign governments and the Federal Reserve buy them, and get paid interest."
+        },
+        {
+          "say": "Why does it borrow? Because it spends more than it collects. In fiscal 2025, the government took in about five point two trillion dollars and spent about seven trillion.",
+          "show": {
+            "type": "compare",
+            "heading": "US federal budget, fiscal 2025",
+            "left": [
+              "taken in",
+              "$5.24T"
+            ],
+            "right": [
+              "spent",
+              "$7.01T"
+            ],
+            "color": "red"
+          }
+        },
+        {
+          "say": "That gap – about one point eight trillion dollars – is the deficit. It gets borrowed, and it lands on top of the debt."
+        },
+        {
+          "say": "Put another way: for every dollar that came in, about a dollar thirty-four went out.",
+          "show": {
+            "type": "compare",
+            "heading": "For every dollar in…",
+            "left": [
+              "came in",
+              "$1.00"
+            ],
+            "right": [
+              "went out",
+              "$1.34"
+            ],
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "86 years in one line",
+      "beats": [
+        {
+          "say": "Now let's draw the debt in dollars, year by year, from 1940 to today.",
+          "show": {
+            "type": "line",
+            "heading": "US federal debt, in dollars",
+            "unit": "$",
+            "sub": "Total public debt outstanding, end of fiscal year · US Treasury",
+            "series": [
+              {
+                "label": "",
+                "points": [
+                  [
+                    1940,
+                    42967531037.68
+                  ],
+                  [
+                    1941,
+                    48961443535.71
+                  ],
+                  [
+                    1942,
+                    72422445116.22
+                  ],
+                  [
+                    1943,
+                    136696090329.9
+                  ],
+                  [
+                    1944,
+                    201003387221.13
+                  ],
+                  [
+                    1945,
+                    258682187409.93
+                  ],
+                  [
+                    1946,
+                    269422099173.26
+                  ],
+                  [
+                    1947,
+                    258286383108.67
+                  ],
+                  [
+                    1948,
+                    252292246512.99
+                  ],
+                  [
+                    1949,
+                    252770359860.33
+                  ],
+                  [
+                    1950,
+                    257357352351.04
+                  ],
+                  [
+                    1951,
+                    255221976814.93
+                  ],
+                  [
+                    1952,
+                    259105178785.43
+                  ],
+                  [
+                    1953,
+                    266071061638.57
+                  ],
+                  [
+                    1954,
+                    271259599108.46
+                  ],
+                  [
+                    1955,
+                    274374222802.62
+                  ],
+                  [
+                    1956,
+                    272750813649.32
+                  ],
+                  [
+                    1957,
+                    270527171896.43
+                  ],
+                  [
+                    1958,
+                    276343217745.81
+                  ],
+                  [
+                    1959,
+                    284705907078.22
+                  ],
+                  [
+                    1960,
+                    286330760848.37
+                  ],
+                  [
+                    1961,
+                    288970938610.05
+                  ],
+                  [
+                    1962,
+                    298200822720.87
+                  ],
+                  [
+                    1963,
+                    305859632996.41
+                  ],
+                  [
+                    1964,
+                    311712899257.3
+                  ],
+                  [
+                    1965,
+                    317273898983.64
+                  ],
+                  [
+                    1966,
+                    319907087795.48
+                  ],
+                  [
+                    1967,
+                    326220937794.54
+                  ],
+                  [
+                    1968,
+                    347578406425.88
+                  ],
+                  [
+                    1969,
+                    353720253841.41
+                  ],
+                  [
+                    1970,
+                    370918706949.93
+                  ],
+                  [
+                    1971,
+                    398129744455.54
+                  ],
+                  [
+                    1972,
+                    427260460940.5
+                  ],
+                  [
+                    1973,
+                    458141605312.09
+                  ],
+                  [
+                    1974,
+                    475059815731.55
+                  ],
+                  [
+                    1975,
+                    533189000000.0
+                  ],
+                  [
+                    1976,
+                    620433000000.0
+                  ],
+                  [
+                    1977,
+                    698840000000.0
+                  ],
+                  [
+                    1978,
+                    771544000000.0
+                  ],
+                  [
+                    1979,
+                    826519000000.0
+                  ],
+                  [
+                    1980,
+                    907701000000.0
+                  ],
+                  [
+                    1981,
+                    997855000000.0
+                  ],
+                  [
+                    1982,
+                    1142034000000.0
+                  ],
+                  [
+                    1983,
+                    1377210000000.0
+                  ],
+                  [
+                    1984,
+                    1572266000000.0
+                  ],
+                  [
+                    1985,
+                    1823103000000.0
+                  ],
+                  [
+                    1986,
+                    2125302616658.42
+                  ],
+                  [
+                    1987,
+                    2350276890953.0
+                  ],
+                  [
+                    1988,
+                    2602337712041.16
+                  ],
+                  [
+                    1989,
+                    2857430960187.32
+                  ],
+                  [
+                    1990,
+                    3233313451777.25
+                  ],
+                  [
+                    1991,
+                    3665303351697.03
+                  ],
+                  [
+                    1992,
+                    4064620655521.66
+                  ],
+                  [
+                    1993,
+                    4411488883139.38
+                  ],
+                  [
+                    1994,
+                    4692749910013.32
+                  ],
+                  [
+                    1995,
+                    4973982900709.39
+                  ],
+                  [
+                    1996,
+                    5224810939135.73
+                  ],
+                  [
+                    1997,
+                    5413146011397.34
+                  ],
+                  [
+                    1998,
+                    5526193008897.62
+                  ],
+                  [
+                    1999,
+                    5656270901615.43
+                  ],
+                  [
+                    2000,
+                    5674178209886.86
+                  ],
+                  [
+                    2001,
+                    5807463412200.06
+                  ],
+                  [
+                    2002,
+                    6228235965597.16
+                  ],
+                  [
+                    2003,
+                    6783231062743.62
+                  ],
+                  [
+                    2004,
+                    7379052696330.32
+                  ],
+                  [
+                    2005,
+                    7932709661723.5
+                  ],
+                  [
+                    2006,
+                    8506973899215.23
+                  ],
+                  [
+                    2007,
+                    9007653372262.48
+                  ],
+                  [
+                    2008,
+                    10024724896912.49
+                  ],
+                  [
+                    2009,
+                    11909829003511.75
+                  ],
+                  [
+                    2010,
+                    13561623030891.79
+                  ],
+                  [
+                    2011,
+                    14790340328557.15
+                  ],
+                  [
+                    2012,
+                    16066241407385.89
+                  ],
+                  [
+                    2013,
+                    16738183526697.32
+                  ],
+                  [
+                    2014,
+                    17824071380733.82
+                  ],
+                  [
+                    2015,
+                    18150617666484.33
+                  ],
+                  [
+                    2016,
+                    19573444713936.79
+                  ],
+                  [
+                    2017,
+                    20244900016053.51
+                  ],
+                  [
+                    2018,
+                    21516058183180.23
+                  ],
+                  [
+                    2019,
+                    22719401753433.78
+                  ],
+                  [
+                    2020,
+                    26945391194615.15
+                  ],
+                  [
+                    2021,
+                    28428918570048.68
+                  ],
+                  [
+                    2022,
+                    30928911613306.73
+                  ],
+                  [
+                    2023,
+                    33167334044723.16
+                  ],
+                  [
+                    2024,
+                    35464673929171.69
+                  ],
+                  [
+                    2025,
+                    37637553494935.61
+                  ],
+                  [
+                    2026,
+                    40171825101340.31
+                  ]
+                ],
+                "color": "red"
+              }
+            ]
+          }
+        },
+        {
+          "say": "In 1940 it was about forty-three billion dollars. World War Two multiplied it six times in five years, to about two hundred and sixty billion.",
+          "mark": {
+            "x": 1945
+          }
+        },
+        {
+          "say": "Then it grew slowly for decades. By 1981 it was just under one trillion.",
+          "mark": {
+            "x": 1981
+          }
+        },
+        {
+          "say": "By 2000 it was five point seven trillion. By 2010, thirteen and a half. In 2020, the pandemic year, almost twenty-seven.",
+          "mark": {
+            "x": 2010
+          }
+        },
+        {
+          "say": "And at the end of September 2026: forty point two trillion dollars. Most of this line was drawn in the last twenty years.",
+          "mark": {
+            "x": 2026
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Dollars lie – use GDP",
+      "beats": [
+        {
+          "say": "But a line in dollars exaggerates. Prices rise, the economy grows, and a trillion dollars in 1981 was a much bigger deal than a trillion today.",
+          "show": {
+            "type": "note",
+            "text": "The fair question isn't *how many dollars* – it's *how big compared to the economy.*",
+            "source": "Debt as a share of GDP"
+          }
+        },
+        {
+          "say": "So economists compare the debt to the size of the economy – GDP, everything produced in a year. Here's the debt the government owes to outside lenders, as a share of GDP.",
+          "show": {
+            "type": "line",
+            "heading": "Debt held by the public, % of GDP",
+            "unit": "%",
+            "sub": "United States · 1939–2025 · OMB via FRED (FYPUGDA188S)",
+            "series": [
+              {
+                "label": "",
+                "points": [
+                  [
+                    1939,
+                    44.3
+                  ],
+                  [
+                    1940,
+                    41.6
+                  ],
+                  [
+                    1941,
+                    37.3
+                  ],
+                  [
+                    1942,
+                    40.9
+                  ],
+                  [
+                    1943,
+                    62.9
+                  ],
+                  [
+                    1944,
+                    82.3
+                  ],
+                  [
+                    1945,
+                    103.2
+                  ],
+                  [
+                    1946,
+                    106.3
+                  ],
+                  [
+                    1947,
+                    89.9
+                  ],
+                  [
+                    1948,
+                    78.8
+                  ],
+                  [
+                    1949,
+                    78.6
+                  ],
+                  [
+                    1950,
+                    73.0
+                  ],
+                  [
+                    1951,
+                    61.8
+                  ],
+                  [
+                    1952,
+                    58.5
+                  ],
+                  [
+                    1953,
+                    56.1
+                  ],
+                  [
+                    1954,
+                    57.5
+                  ],
+                  [
+                    1955,
+                    53.3
+                  ],
+                  [
+                    1956,
+                    49.4
+                  ],
+                  [
+                    1957,
+                    46.3
+                  ],
+                  [
+                    1958,
+                    47.0
+                  ],
+                  [
+                    1959,
+                    45.0
+                  ],
+                  [
+                    1960,
+                    43.7
+                  ],
+                  [
+                    1961,
+                    42.4
+                  ],
+                  [
+                    1962,
+                    41.1
+                  ],
+                  [
+                    1963,
+                    39.8
+                  ],
+                  [
+                    1964,
+                    37.5
+                  ],
+                  [
+                    1965,
+                    35.1
+                  ],
+                  [
+                    1966,
+                    32.4
+                  ],
+                  [
+                    1967,
+                    31.0
+                  ],
+                  [
+                    1968,
+                    30.8
+                  ],
+                  [
+                    1969,
+                    27.3
+                  ],
+                  [
+                    1970,
+                    26.4
+                  ],
+                  [
+                    1971,
+                    26.0
+                  ],
+                  [
+                    1972,
+                    25.2
+                  ],
+                  [
+                    1973,
+                    23.9
+                  ],
+                  [
+                    1974,
+                    22.2
+                  ],
+                  [
+                    1975,
+                    23.4
+                  ],
+                  [
+                    1976,
+                    25.5
+                  ],
+                  [
+                    1977,
+                    26.4
+                  ],
+                  [
+                    1978,
+                    25.8
+                  ],
+                  [
+                    1979,
+                    24.4
+                  ],
+                  [
+                    1980,
+                    24.9
+                  ],
+                  [
+                    1981,
+                    24.6
+                  ],
+                  [
+                    1982,
+                    27.7
+                  ],
+                  [
+                    1983,
+                    31.3
+                  ],
+                  [
+                    1984,
+                    32.4
+                  ],
+                  [
+                    1985,
+                    34.7
+                  ],
+                  [
+                    1986,
+                    38.0
+                  ],
+                  [
+                    1987,
+                    38.9
+                  ],
+                  [
+                    1988,
+                    39.2
+                  ],
+                  [
+                    1989,
+                    38.8
+                  ],
+                  [
+                    1990,
+                    40.4
+                  ],
+                  [
+                    1991,
+                    43.7
+                  ],
+                  [
+                    1992,
+                    46.0
+                  ],
+                  [
+                    1993,
+                    47.4
+                  ],
+                  [
+                    1994,
+                    47.1
+                  ],
+                  [
+                    1995,
+                    47.2
+                  ],
+                  [
+                    1996,
+                    46.3
+                  ],
+                  [
+                    1997,
+                    44.0
+                  ],
+                  [
+                    1998,
+                    41.1
+                  ],
+                  [
+                    1999,
+                    37.7
+                  ],
+                  [
+                    2000,
+                    33.3
+                  ],
+                  [
+                    2001,
+                    31.4
+                  ],
+                  [
+                    2002,
+                    32.4
+                  ],
+                  [
+                    2003,
+                    34.2
+                  ],
+                  [
+                    2004,
+                    35.2
+                  ],
+                  [
+                    2005,
+                    35.2
+                  ],
+                  [
+                    2006,
+                    35.0
+                  ],
+                  [
+                    2007,
+                    34.8
+                  ],
+                  [
+                    2008,
+                    39.3
+                  ],
+                  [
+                    2009,
+                    52.1
+                  ],
+                  [
+                    2010,
+                    59.9
+                  ],
+                  [
+                    2011,
+                    64.9
+                  ],
+                  [
+                    2012,
+                    69.4
+                  ],
+                  [
+                    2013,
+                    71.0
+                  ],
+                  [
+                    2014,
+                    72.6
+                  ],
+                  [
+                    2015,
+                    71.7
+                  ],
+                  [
+                    2016,
+                    75.3
+                  ],
+                  [
+                    2017,
+                    74.8
+                  ],
+                  [
+                    2018,
+                    76.2
+                  ],
+                  [
+                    2019,
+                    78.0
+                  ],
+                  [
+                    2020,
+                    98.3
+                  ],
+                  [
+                    2021,
+                    93.9
+                  ],
+                  [
+                    2022,
+                    93.1
+                  ],
+                  [
+                    2023,
+                    94.3
+                  ],
+                  [
+                    2024,
+                    96.2
+                  ],
+                  [
+                    2025,
+                    98.1
+                  ]
+                ],
+                "color": "purple"
+              }
+            ]
+          }
+        },
+        {
+          "say": "At the end of World War Two, in 1946, it hit a hundred and six percent – more than one whole year of the economy.",
+          "mark": {
+            "x": 1946,
+            "label": "WWII peak"
+          }
+        },
+        {
+          "say": "Then something interesting happened. The debt didn't get paid off – but the economy grew so much faster that by 1974 the ratio was down to about twenty-two percent.",
+          "mark": {
+            "x": 1974
+          }
+        },
+        {
+          "say": "It climbed again in the 1980s, fell to thirty-one percent around 2001, when the budget briefly ran surpluses, and then turned up.",
+          "mark": {
+            "x": 2001
+          }
+        },
+        {
+          "say": "The financial crisis pushed it to fifty-two percent in 2009. The pandemic to ninety-eight in 2020.",
+          "mark": {
+            "x": 2009
+          }
+        },
+        {
+          "say": "And in 2025 it stood at ninety-eight percent – close to where it was at the end of World War Two. Except this time, there was no world war.",
+          "mark": {
+            "x": 2025
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Where the borrowing comes from",
+      "beats": [
+        {
+          "say": "So why does the gap never close? The last time the federal budget ran a surplus was in 2001. Every year since, it has borrowed.",
+          "show": {
+            "type": "number",
+            "big": "2001",
+            "caption": "the last year with a federal budget surplus",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "Part of it is shocks. When a recession hits, tax revenue drops and spending on support rises – automatically. The deficit was one point four trillion in 2009, and three point one trillion in 2020.",
+          "show": {
+            "type": "compare",
+            "heading": "Deficits in crisis years",
+            "left": [
+              "2009",
+              "$1.41T"
+            ],
+            "right": [
+              "2020",
+              "$3.10T"
+            ],
+            "color": "red"
+          }
+        },
+        {
+          "say": "Part of it is structure. The two biggest programs, Social Security and Medicare, grow as more people retire. In fiscal 2025 they cost about two point six trillion dollars together."
+        },
+        {
+          "say": "And who is owed the money? Most of it – about thirty-two trillion – is held by the public: investors, banks, funds, foreign governments, the Federal Reserve.",
+          "show": {
+            "type": "compare",
+            "heading": "Who holds the debt, Sept 2026",
+            "left": [
+              "other government accounts",
+              "$7.7T"
+            ],
+            "right": [
+              "the public",
+              "$32.4T"
+            ],
+            "color": "blue"
+          }
+        },
+        {
+          "say": "The other seven point seven trillion the government owes to itself – mostly trust funds like Social Security's, which lent their surpluses to the Treasury."
+        }
+      ]
+    },
+    {
+      "heading": "The interest bill",
+      "beats": [
+        {
+          "say": "Now to the part that changed everything. For years, borrowing was cheap. Here's the average interest rate the Treasury pays on its marketable debt.",
+          "show": {
+            "type": "line",
+            "heading": "Average interest rate on US marketable debt",
+            "unit": "%",
+            "sub": "September of each year, 2001–2026 · US Treasury",
+            "series": [
+              {
+                "label": "",
+                "points": [
+                  [
+                    2001,
+                    5.82
+                  ],
+                  [
+                    2002,
+                    4.629
+                  ],
+                  [
+                    2003,
+                    3.822
+                  ],
+                  [
+                    2004,
+                    3.71
+                  ],
+                  [
+                    2005,
+                    4.239
+                  ],
+                  [
+                    2006,
+                    4.868
+                  ],
+                  [
+                    2007,
+                    4.904
+                  ],
+                  [
+                    2008,
+                    3.665
+                  ],
+                  [
+                    2009,
+                    2.584
+                  ],
+                  [
+                    2010,
+                    2.401
+                  ],
+                  [
+                    2011,
+                    2.326
+                  ],
+                  [
+                    2012,
+                    2.103
+                  ],
+                  [
+                    2013,
+                    1.981
+                  ],
+                  [
+                    2014,
+                    2.037
+                  ],
+                  [
+                    2015,
+                    2.043
+                  ],
+                  [
+                    2016,
+                    1.996
+                  ],
+                  [
+                    2017,
+                    2.094
+                  ],
+                  [
+                    2018,
+                    2.365
+                  ],
+                  [
+                    2019,
+                    2.436
+                  ],
+                  [
+                    2020,
+                    1.635
+                  ],
+                  [
+                    2021,
+                    1.47
+                  ],
+                  [
+                    2022,
+                    1.994
+                  ],
+                  [
+                    2023,
+                    3.016
+                  ],
+                  [
+                    2024,
+                    3.392
+                  ],
+                  [
+                    2025,
+                    3.406
+                  ],
+                  [
+                    2026,
+                    3.518
+                  ]
+                ],
+                "color": "gold"
+              }
+            ]
+          }
+        },
+        {
+          "say": "In September 2021 it was just one point four seven percent – the lowest point on this chart.",
+          "mark": {
+            "x": 2021
+          }
+        },
+        {
+          "say": "Then inflation came, and interest rates jumped. Old cheap bonds expire, and they're replaced with new, expensive ones. By September 2026, the average had climbed to three point five two percent.",
+          "mark": {
+            "x": 2026
+          }
+        },
+        {
+          "say": "More than double the rate on a debt this size, and here's what happens to the yearly interest bill.",
+          "show": {
+            "type": "line",
+            "heading": "Yearly interest bill of the US government",
+            "unit": "$",
+            "sub": "Net interest outlays, fiscal years 1990–2025 · OMB via FRED (FYOINT)",
+            "series": [
+              {
+                "label": "",
+                "points": [
+                  [
+                    1990,
+                    184347000000.0
+                  ],
+                  [
+                    1991,
+                    194448000000.0
+                  ],
+                  [
+                    1992,
+                    199344000000.0
+                  ],
+                  [
+                    1993,
+                    198713000000.0
+                  ],
+                  [
+                    1994,
+                    202932000000.0
+                  ],
+                  [
+                    1995,
+                    232134000000.0
+                  ],
+                  [
+                    1996,
+                    241053000000.0
+                  ],
+                  [
+                    1997,
+                    243984000000.0
+                  ],
+                  [
+                    1998,
+                    241118000000.0
+                  ],
+                  [
+                    1999,
+                    229755000000.0
+                  ],
+                  [
+                    2000,
+                    222949000000.0
+                  ],
+                  [
+                    2001,
+                    206167000000.0
+                  ],
+                  [
+                    2002,
+                    170949000000.0
+                  ],
+                  [
+                    2003,
+                    153073000000.0
+                  ],
+                  [
+                    2004,
+                    160245000000.0
+                  ],
+                  [
+                    2005,
+                    183986000000.0
+                  ],
+                  [
+                    2006,
+                    226603000000.0
+                  ],
+                  [
+                    2007,
+                    237109000000.0
+                  ],
+                  [
+                    2008,
+                    252757000000.0
+                  ],
+                  [
+                    2009,
+                    186902000000.0
+                  ],
+                  [
+                    2010,
+                    196194000000.0
+                  ],
+                  [
+                    2011,
+                    229962000000.0
+                  ],
+                  [
+                    2012,
+                    220408000000.0
+                  ],
+                  [
+                    2013,
+                    220885000000.0
+                  ],
+                  [
+                    2014,
+                    228956000000.0
+                  ],
+                  [
+                    2015,
+                    223181000000.0
+                  ],
+                  [
+                    2016,
+                    240033000000.0
+                  ],
+                  [
+                    2017,
+                    262551000000.0
+                  ],
+                  [
+                    2018,
+                    324975000000.0
+                  ],
+                  [
+                    2019,
+                    375158000000.0
+                  ],
+                  [
+                    2020,
+                    345470000000.0
+                  ],
+                  [
+                    2021,
+                    352338000000.0
+                  ],
+                  [
+                    2022,
+                    475887000000.0
+                  ],
+                  [
+                    2023,
+                    658267000000.0
+                  ],
+                  [
+                    2024,
+                    879879000000.0
+                  ],
+                  [
+                    2025,
+                    970065000000.0
+                  ]
+                ],
+                "color": "red"
+              }
+            ]
+          }
+        },
+        {
+          "say": "In 2020 the government paid about three hundred and forty-five billion dollars in net interest.",
+          "mark": {
+            "x": 2020
+          }
+        },
+        {
+          "say": "In 2025: about nine hundred and seventy billion. Nearly three times as much in five years. That's over two and a half billion dollars a day – just for interest.",
+          "mark": {
+            "x": 2025
+          }
+        },
+        {
+          "say": "And here's where it gets dramatic. In the first eleven months of fiscal 2026 alone, net interest reached one point oh one seven trillion dollars.",
+          "show": {
+            "type": "bars",
+            "heading": "Spending, Oct 2025 – Aug 2026",
+            "unit": "$",
+            "items": [
+              [
+                "National defense",
+                876200000000.0
+              ],
+              [
+                "Medicare",
+                979300000000.0
+              ],
+              [
+                "Net interest",
+                1017000000000.0
+              ]
+            ],
+            "highlight": "Net interest",
+            "source": "Monthly Treasury Statement, August 2026 · US Treasury",
+            "color": "red"
+          }
+        },
+        {
+          "say": "That's more than Medicare. And more than the entire national defense budget.",
+          "mark": {
+            "items": [
+              "Net interest"
+            ]
+          }
+        },
+        {
+          "say": "One more way to see it: interest as a share of what the government collects. In 2024 it reached twenty point three percent – the highest in this World Bank series, which goes back to 1972.",
+          "show": {
+            "type": "line",
+            "heading": "Interest payments, % of government revenue",
+            "unit": "%",
+            "series": [
+              {
+                "label": "",
+                "wb": "GC.XPN.INTP.RV.ZS",
+                "country": "USA",
+                "from": 1972,
+                "to": 2024,
+                "color": "red"
+              }
+            ]
+          }
+        },
+        {
+          "say": "Even above the mid-1980s peak. About one in every five dollars of revenue now goes to interest.",
+          "mark": {
+            "x": 2024
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Around the world",
+      "beats": [
+        {
+          "say": "Is the US unusual? Here's government debt as a share of GDP in nine rich countries, from the IMF. This measure includes states and cities, so the US figure is higher than before.",
+          "show": {
+            "type": "bars",
+            "heading": "Government debt, % of GDP, 2025",
+            "unit": "%",
+            "items": [
+              [
+                "Switzerland",
+                40.1
+              ],
+              [
+                "Australia",
+                51.9
+              ],
+              [
+                "Germany",
+                62.7
+              ],
+              [
+                "UK",
+                102.1
+              ],
+              [
+                "Canada",
+                113.6
+              ],
+              [
+                "France",
+                115.5
+              ],
+              [
+                "USA",
+                124.4
+              ],
+              [
+                "Italy",
+                137.1
+              ],
+              [
+                "Japan",
+                204.8
+              ]
+            ],
+            "highlight": "USA",
+            "source": "General government gross debt · IMF World Economic Outlook"
+          }
+        },
+        {
+          "say": "Switzerland, Australia and Germany are well below a hundred percent.",
+          "mark": {
+            "items": [
+              "Switzerland",
+              "Australia",
+              "Germany"
+            ]
+          }
+        },
+        {
+          "say": "Britain, Canada and France are just above it. The US is at about a hundred and twenty-four.",
+          "mark": {
+            "items": [
+              "UK",
+              "Canada",
+              "France",
+              "USA"
+            ]
+          }
+        },
+        {
+          "say": "And Japan is in a league of its own: over two hundred percent of GDP. Twice the size of its whole economy.",
+          "mark": {
+            "items": [
+              "Japan"
+            ]
+          }
+        },
+        {
+          "say": "Which shows the real point: the level alone doesn't decide what happens. What matters is how much the debt costs, and how fast the economy grows compared to that cost.",
+          "show": {
+            "type": "note",
+            "text": "Debt gets lighter when the economy grows *faster* than the interest rate – and heavier when it doesn't.",
+            "source": "How debt ratios work"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Does it ever get paid back?",
+      "beats": [
+        {
+          "say": "So will the US ever pay it all back? Probably not in the way a family pays off a mortgage. Governments rarely do – and they don't have to.",
+          "show": {
+            "type": "note",
+            "text": "Old bonds are paid back with *new* bonds. The debt is rolled over, not paid off.",
+            "source": "US Treasury, Fiscal Data"
+          }
+        },
+        {
+          "say": "When a bond matures, the Treasury repays it by selling a new one. As long as lenders keep buying, the debt simply rolls on."
+        },
+        {
+          "say": "That's how the US got from a hundred and six percent after the war down to twenty-two – not by paying it off, but by growing the economy around it."
+        },
+        {
+          "say": "The ways to shrink a debt ratio are always the same few: spend less, tax more, grow faster – or let inflation shrink it. Every one of them has costs, and that choice is what the political fight is about.",
+          "show": {
+            "type": "note",
+            "text": "Four ways a debt ratio falls: *spend less*, *tax more*, *grow faster* – or *inflation*.",
+            "source": "Every option has costs – this is how the math works, not a recommendation",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "What the numbers say is simpler: when borrowing was cheap, a big debt was easy to carry. Now that it isn't, the interest bill grows on its own – even if nothing else changes."
+        }
+      ]
+    },
+    {
+      "heading": "The bottom line",
+      "beats": [
+        {
+          "say": "So, why does the US have so much debt? Because it has spent more than it collected every year since 2001, with two giant crises on top.",
+          "show": {
+            "type": "number",
+            "big": "$40.3T",
+            "caption": "US federal debt, October 2026",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Three things to remember. The debt is now about as big as the whole economy – near its World War Two record. The size alone isn't the danger. The price of carrying it is."
+        },
+        {
+          "say": "And that price just passed a trillion dollars a year – more than the military. If you want to understand money and the economy with real numbers, subscribe. Next time we'll take apart another one."
+        }
+      ]
+    }
+  ],
+  "short": {
+    "hook": "The US now pays $1T just in interest",
+    "beats": [
+      {
+        "say": "The US government's debt just passed forty trillion dollars. That's about a hundred and eighteen thousand dollars for every person in the country.",
+        "show": {
+          "type": "number",
+          "big": "$40.3T",
+          "caption": "US federal debt, October 2026",
+          "color": "red"
+        }
+      },
+      {
+        "say": "But the scary number isn't the debt. It's the interest. In 2021, the Treasury paid an average rate of under one and a half percent. Now it's over three and a half.",
+        "show": {
+          "type": "compare",
+          "heading": "Average rate on US debt",
+          "left": [
+            "Sept 2021",
+            "1.47%"
+          ],
+          "right": [
+            "Sept 2026",
+            "3.52%"
+          ],
+          "color": "red"
+        }
+      },
+      {
+        "say": "So the yearly interest bill exploded: from about three hundred and forty-five billion dollars in 2020 to nine hundred and seventy billion in 2025.",
+        "show": {
+          "type": "line",
+          "heading": "Yearly interest bill of the US government",
+          "unit": "$",
+          "sub": "Net interest outlays, fiscal years 1990–2025 · OMB via FRED (FYOINT)",
+          "series": [
+            {
+              "label": "",
+              "points": [
+                [
+                  1990,
+                  184347000000.0
+                ],
+                [
+                  1991,
+                  194448000000.0
+                ],
+                [
+                  1992,
+                  199344000000.0
+                ],
+                [
+                  1993,
+                  198713000000.0
+                ],
+                [
+                  1994,
+                  202932000000.0
+                ],
+                [
+                  1995,
+                  232134000000.0
+                ],
+                [
+                  1996,
+                  241053000000.0
+                ],
+                [
+                  1997,
+                  243984000000.0
+                ],
+                [
+                  1998,
+                  241118000000.0
+                ],
+                [
+                  1999,
+                  229755000000.0
+                ],
+                [
+                  2000,
+                  222949000000.0
+                ],
+                [
+                  2001,
+                  206167000000.0
+                ],
+                [
+                  2002,
+                  170949000000.0
+                ],
+                [
+                  2003,
+                  153073000000.0
+                ],
+                [
+                  2004,
+                  160245000000.0
+                ],
+                [
+                  2005,
+                  183986000000.0
+                ],
+                [
+                  2006,
+                  226603000000.0
+                ],
+                [
+                  2007,
+                  237109000000.0
+                ],
+                [
+                  2008,
+                  252757000000.0
+                ],
+                [
+                  2009,
+                  186902000000.0
+                ],
+                [
+                  2010,
+                  196194000000.0
+                ],
+                [
+                  2011,
+                  229962000000.0
+                ],
+                [
+                  2012,
+                  220408000000.0
+                ],
+                [
+                  2013,
+                  220885000000.0
+                ],
+                [
+                  2014,
+                  228956000000.0
+                ],
+                [
+                  2015,
+                  223181000000.0
+                ],
+                [
+                  2016,
+                  240033000000.0
+                ],
+                [
+                  2017,
+                  262551000000.0
+                ],
+                [
+                  2018,
+                  324975000000.0
+                ],
+                [
+                  2019,
+                  375158000000.0
+                ],
+                [
+                  2020,
+                  345470000000.0
+                ],
+                [
+                  2021,
+                  352338000000.0
+                ],
+                [
+                  2022,
+                  475887000000.0
+                ],
+                [
+                  2023,
+                  658267000000.0
+                ],
+                [
+                  2024,
+                  879879000000.0
+                ],
+                [
+                  2025,
+                  970065000000.0
+                ]
+              ],
+              "color": "red"
+            }
+          ]
+        }
+      },
+      {
+        "say": "And in just the first eleven months of fiscal 2026, it hit one point oh two trillion. That's more than Medicare. More than the entire military.",
+        "show": {
+          "type": "bars",
+          "heading": "Spending, Oct 2025 – Aug 2026",
+          "unit": "$",
+          "items": [
+            [
+              "National defense",
+              876200000000.0
+            ],
+            [
+              "Medicare",
+              979300000000.0
+            ],
+            [
+              "Net interest",
+              1017000000000.0
+            ]
+          ],
+          "highlight": "Net interest",
+          "source": "Monthly Treasury Statement, August 2026 · US Treasury",
+          "color": "red"
+        }
+      },
+      {
+        "say": "About one in five dollars the government collects now goes to interest. Should that worry us – or not? The full story, with all the data, is on the channel."
+      }
+    ]
+  }
+}

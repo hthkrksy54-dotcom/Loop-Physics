@@ -1,0 +1,733 @@
+{
+  "id": "turkey-argentina-high-inflation",
+  "order": 3,
+  "title": "From $257 to 81 Cents: What 200% Inflation Does to a Country (Turkey & Argentina)",
+  "title_card": "What high inflation does to a country",
+  "description": "In 2010, 1,000 Argentine pesos bought $257. In 2025 they bought 81 cents. With World Bank and IMF data we follow Turkey and Argentina through decades of high inflation: the six zeros Turkey deleted, the peso that was once worth a dollar, the 220% peak of 2024 – and what it does to ordinary people's lives and incomes.",
+  "tags": [
+    "inflation",
+    "high inflation",
+    "argentina inflation",
+    "turkey inflation",
+    "argentine peso",
+    "turkish lira",
+    "hyperinflation",
+    "economics explained",
+    "currency crisis",
+    "economics",
+    "money",
+    "data visualization"
+  ],
+  "hashtags": [
+    "#inflation",
+    "#argentina",
+    "#economics"
+  ],
+  "sources": [
+    "World Bank, World Development Indicators: Official exchange rate (LCU per US$), PA.NUS.FCRF – Argentina 1992–2025, Türkiye 2005–2025 (CC BY 4.0)",
+    "World Bank, World Development Indicators: Inflation, consumer prices (annual %), FP.CPI.TOTL.ZG – Türkiye 1970–2025; Consumer price index (2010 = 100), FP.CPI.TOTL – Türkiye 2010–2025 (CC BY 4.0)",
+    "World Bank, World Development Indicators: GDP per capita (constant 2015 US$), NY.GDP.PCAP.KD – Türkiye and Argentina, 2005–2025 (CC BY 4.0)",
+    "IMF World Economic Outlook: Inflation, average consumer prices (PCPIPCH) – Argentina 2017–2025, Venezuela 2018, Zimbabwe 2008",
+    "Central Bank of the Republic of Türkiye: policy rate decisions 2021–2023; 2005 redenomination of the lira (1,000,000 TL = 1 YTL)",
+    "Ministry of Economy of Argentina, announcement of 12 December 2023: official exchange rate moved from 366.5 to 800 pesos per US dollar (as reported by Bloomberg)",
+    "Banco Central de la República Argentina: Convertibility Law 1991–2001 (1 peso = 1 US dollar)"
+  ],
+  "thumbnail": {
+    "big": "$257 → $0.81",
+    "text": "Same 1,000 pesos",
+    "color": "red"
+  },
+  "chapters": [
+    {
+      "heading": "Intro",
+      "beats": [
+        {
+          "say": "In 2010, a thousand Argentine pesos bought about two hundred and fifty-seven US dollars.",
+          "show": {
+            "type": "number",
+            "big": "$257",
+            "caption": "what 1,000 Argentine pesos bought in 2010",
+            "color": "green"
+          }
+        },
+        {
+          "say": "In 2025, the same thousand pesos bought eighty-one cents.",
+          "show": {
+            "type": "number",
+            "big": "$257 → $0.81",
+            "caption": "1,000 pesos in US dollars, 2010 vs 2025",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Not a typo. Less than one dollar. Same banknotes, fifteen years later."
+        },
+        {
+          "say": "Across the border of Europe and Asia, Turkey went through its own version: prices up almost eighteen times in fifteen years.",
+          "show": {
+            "type": "number",
+            "big": "×17.8",
+            "caption": "Turkish consumer prices, 2010 → 2025",
+            "color": "red"
+          }
+        },
+        {
+          "say": "So what does it actually feel like when a country's money melts? And why is it so hard to stop? Let's take it apart with the official data."
+        }
+      ]
+    },
+    {
+      "heading": "When prices double every year",
+      "beats": [
+        {
+          "say": "Start with a rule from the last episode: the rule of seventy-two. Divide seventy-two by the inflation rate, and you get the years it takes for prices to double.",
+          "show": {
+            "type": "bars",
+            "heading": "Years until prices double",
+            "items": [
+              [
+                "3% a year",
+                24
+              ],
+              [
+                "10% a year",
+                7.2
+              ],
+              [
+                "36% a year",
+                2
+              ],
+              [
+                "72% a year",
+                1
+              ]
+            ],
+            "suffix": " years",
+            "color": "red"
+          }
+        },
+        {
+          "say": "At three percent, prices double in about twenty-four years. You barely notice."
+        },
+        {
+          "say": "At seventy-two percent – Turkey in 2022 – they double in about one year. Your rent, your groceries, your bus ticket: twice the price, every year.",
+          "mark": {
+            "items": [
+              "72% a year"
+            ]
+          }
+        },
+        {
+          "say": "That changes how people live. A salary negotiated in January is worth much less by December. Shops reprint price tags again and again. Saving in your own currency feels like holding ice in the sun.",
+          "show": {
+            "type": "note",
+            "text": "At high inflation, money stops being a *store of value* – it becomes something to get rid of *fast*.",
+            "source": "How high inflation works",
+            "color": "red"
+          }
+        },
+        {
+          "say": "So people do the logical thing: they spend fast, they buy dollars, or they buy things that hold value. And every one of those reactions pushes prices up even more."
+        }
+      ]
+    },
+    {
+      "heading": "Turkey: 40 years on a rollercoaster",
+      "beats": [
+        {
+          "say": "Let's look at Turkey first. Here's its inflation rate every year since 1970.",
+          "show": {
+            "type": "line",
+            "heading": "Turkey inflation, % per year",
+            "unit": "%",
+            "series": [
+              {
+                "label": "",
+                "wb": "FP.CPI.TOTL.ZG",
+                "country": "TUR",
+                "from": 1970,
+                "to": 2025,
+                "color": "red"
+              }
+            ]
+          }
+        },
+        {
+          "say": "By 1980, inflation hit ninety-four percent.",
+          "mark": {
+            "x": 1980
+          }
+        },
+        {
+          "say": "And it didn't go away. For most of the next twenty years it stayed between thirty and a hundred percent. In 1994 it peaked at a hundred and five.",
+          "mark": {
+            "x": 1994
+          }
+        },
+        {
+          "say": "Prices rose so much for so long that the Turkish lira collected zeros. In 2005, the country simply deleted six of them: one million old lira became one new lira.",
+          "show": {
+            "type": "compare",
+            "heading": "Turkey's currency reform, 2005",
+            "left": [
+              "old lira",
+              "1,000,000"
+            ],
+            "right": [
+              "new lira",
+              "1"
+            ],
+            "color": "gold"
+          }
+        },
+        {
+          "say": "And something else worked, too. After a banking crisis in 2001, the central bank was made more independent and focused on bringing inflation down. By 2004, inflation was eight point six percent – the lowest in decades.",
+          "show": {
+            "type": "line",
+            "heading": "Turkey inflation, % per year",
+            "unit": "%",
+            "series": [
+              {
+                "label": "",
+                "wb": "FP.CPI.TOTL.ZG",
+                "country": "TUR",
+                "from": 1970,
+                "to": 2025,
+                "color": "red"
+              }
+            ]
+          },
+          "mark": {
+            "x": 2004
+          }
+        },
+        {
+          "say": "For more than a decade, Turkey's inflation stayed mostly in single digits. Then it came back.",
+          "mark": {
+            "x": 2016
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Turkey's relapse",
+      "beats": [
+        {
+          "say": "From 2018, inflation climbed again: sixteen percent that year, nearly twenty in 2021. In 2021, as prices rose, the central bank did the opposite of the textbook – it cut its interest rate, down to fourteen percent by December.",
+          "show": {
+            "type": "note",
+            "text": "Inflation rising, interest rate *cut* – to 14% in December 2021.",
+            "source": "Central Bank of the Republic of Türkiye, rate decisions",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Lower rates make borrowing cheaper and holding lira less attractive. The currency fell, imports got more expensive, and in 2022 inflation reached seventy-two percent.",
+          "show": {
+            "type": "line",
+            "heading": "Turkish lira for one US dollar",
+            "unit": "",
+            "series": [
+              {
+                "label": "",
+                "wb": "PA.NUS.FCRF",
+                "country": "TUR",
+                "from": 2005,
+                "to": 2025,
+                "color": "red"
+              }
+            ]
+          }
+        },
+        {
+          "say": "Look at the lira. In 2010 a dollar cost about one and a half lira. By 2022 it was over sixteen. In 2025: almost forty.",
+          "mark": {
+            "x": 2025
+          }
+        },
+        {
+          "say": "Here's what that does to an ordinary shopping basket. Something that cost a hundred lira in 2010 cost about five hundred and forty in 2022 – and around one thousand seven hundred and eighty in 2025.",
+          "show": {
+            "type": "line",
+            "heading": "What 100 lira of 2010 shopping costs in Turkey",
+            "unit": "",
+            "sub": "Consumer price index, 2010 = 100 · World Bank",
+            "series": [
+              {
+                "label": "",
+                "wb": "FP.CPI.TOTL",
+                "country": "TUR",
+                "from": 2010,
+                "to": 2025,
+                "rebase": [
+                  2010,
+                  100
+                ],
+                "color": "gold"
+              }
+            ]
+          }
+        },
+        {
+          "say": "In 2023, policy flipped. The central bank raised its rate step by step, to forty-two and a half percent by the end of the year. Inflation started to slow: thirty-five percent in 2025. Still painful – but no longer doubling prices every year.",
+          "mark": {
+            "x": 2025
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Argentina: one peso, one dollar",
+      "beats": [
+        {
+          "say": "Now Argentina. Its story has an even stranger twist. From 1991 to 2001, by law, one peso was worth exactly one US dollar.",
+          "show": {
+            "type": "line",
+            "heading": "Argentine pesos for one US dollar",
+            "unit": "",
+            "log": true,
+            "sub": "Official exchange rate, yearly average · log scale · World Bank",
+            "series": [
+              {
+                "label": "",
+                "wb": "PA.NUS.FCRF",
+                "country": "ARG",
+                "from": 1992,
+                "to": 2025,
+                "color": "red"
+              }
+            ]
+          }
+        },
+        {
+          "say": "The idea was to kill the hyperinflation of the late 1980s by tying the peso to the dollar. And for a decade it held: the line is flat at one.",
+          "mark": {
+            "x": 2001
+          }
+        },
+        {
+          "say": "Then, in the crisis of 2002, the link broke. Within a year a dollar cost three pesos.",
+          "mark": {
+            "x": 2002
+          }
+        },
+        {
+          "say": "Why did the peso keep falling? For years, the government spent more than it collected, and a big part of the gap was covered by the central bank creating new pesos. More pesos chasing the same goods means higher prices – and a weaker currency.",
+          "mark": {
+            "x": 2010
+          }
+        },
+        {
+          "say": "By 2015 it was nine. By 2020, seventy. By 2023, about three hundred.",
+          "mark": {
+            "x": 2023
+          }
+        },
+        {
+          "say": "And then the steepest part of the line. In December 2023, the new government moved the official rate from about three hundred and sixty-six pesos per dollar to eight hundred – overnight.",
+          "show": {
+            "type": "compare",
+            "heading": "Official peso rate, 12 December 2023",
+            "left": [
+              "before",
+              "366.5"
+            ],
+            "right": [
+              "after",
+              "800"
+            ],
+            "color": "red"
+          }
+        },
+        {
+          "say": "For 2025 as a whole, the average was about one thousand two hundred and forty pesos for a dollar.",
+          "show": {
+            "type": "line",
+            "heading": "Argentine pesos for one US dollar",
+            "unit": "",
+            "log": true,
+            "sub": "Official exchange rate, yearly average · log scale · World Bank",
+            "series": [
+              {
+                "label": "",
+                "wb": "PA.NUS.FCRF",
+                "country": "ARG",
+                "from": 1992,
+                "to": 2025,
+                "color": "red"
+              }
+            ]
+          },
+          "mark": {
+            "x": 2025
+          }
+        }
+      ]
+    },
+    {
+      "heading": "The peak",
+      "beats": [
+        {
+          "say": "Here's what that did to prices. Argentina's yearly inflation, from the IMF.",
+          "show": {
+            "type": "line",
+            "heading": "Argentina inflation, % per year",
+            "unit": "%",
+            "sub": "Average consumer prices · 2017–2025 · IMF WEO",
+            "series": [
+              {
+                "label": "",
+                "points": [
+                  [
+                    2017,
+                    25.7
+                  ],
+                  [
+                    2018,
+                    34.3
+                  ],
+                  [
+                    2019,
+                    53.5
+                  ],
+                  [
+                    2020,
+                    42.0
+                  ],
+                  [
+                    2021,
+                    48.4
+                  ],
+                  [
+                    2022,
+                    72.4
+                  ],
+                  [
+                    2023,
+                    133.5
+                  ],
+                  [
+                    2024,
+                    219.9
+                  ],
+                  [
+                    2025,
+                    41.9
+                  ]
+                ],
+                "color": "red"
+              }
+            ]
+          }
+        },
+        {
+          "say": "Thirty-four percent in 2018. Fifty-three in 2019. Seventy-two in 2022.",
+          "mark": {
+            "x": 2022
+          }
+        },
+        {
+          "say": "Then a hundred and thirty-three percent in 2023.",
+          "mark": {
+            "x": 2023
+          }
+        },
+        {
+          "say": "And in 2024: two hundred and twenty percent. On average, prices more than tripled in a single year.",
+          "mark": {
+            "x": 2024,
+            "label": "Peak"
+          }
+        },
+        {
+          "say": "Think about what that means. A coffee that cost a thousand pesos at the start of the year cost over three thousand at the end. Your savings, if they were in pesos, lost two thirds of their value in twelve months.",
+          "show": {
+            "type": "number",
+            "big": "219.9%",
+            "caption": "Argentina's inflation in 2024",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Then the drop: the government cut spending sharply and let the shock work through. In 2025, inflation fell to about forty-two percent.",
+          "show": {
+            "type": "line",
+            "heading": "Argentina inflation, % per year",
+            "unit": "%",
+            "sub": "Average consumer prices · 2017–2025 · IMF WEO",
+            "series": [
+              {
+                "label": "",
+                "points": [
+                  [
+                    2017,
+                    25.7
+                  ],
+                  [
+                    2018,
+                    34.3
+                  ],
+                  [
+                    2019,
+                    53.5
+                  ],
+                  [
+                    2020,
+                    42.0
+                  ],
+                  [
+                    2021,
+                    48.4
+                  ],
+                  [
+                    2022,
+                    72.4
+                  ],
+                  [
+                    2023,
+                    133.5
+                  ],
+                  [
+                    2024,
+                    219.9
+                  ],
+                  [
+                    2025,
+                    41.9
+                  ]
+                ],
+                "color": "red"
+              }
+            ]
+          },
+          "mark": {
+            "x": 2025
+          }
+        },
+        {
+          "say": "Still high anywhere else. But in Argentina, it was the lowest since 2018."
+        }
+      ]
+    },
+    {
+      "heading": "The real damage",
+      "beats": [
+        {
+          "say": "So does inflation actually make a country poorer? Here's income per person, after removing inflation, for both countries since 2005.",
+          "show": {
+            "type": "line",
+            "heading": "Income per person after inflation, 2005 = 100",
+            "unit": "",
+            "sub": "GDP per person, constant 2015 US$ · 2005–2025 · World Bank",
+            "series": [
+              {
+                "label": "Turkey",
+                "wb": "NY.GDP.PCAP.KD",
+                "country": "TUR",
+                "from": 2005,
+                "to": 2025,
+                "rebase": [
+                  2005,
+                  100
+                ],
+                "color": "green"
+              },
+              {
+                "label": "Argentina",
+                "wb": "NY.GDP.PCAP.KD",
+                "country": "ARG",
+                "from": 2005,
+                "to": 2025,
+                "rebase": [
+                  2005,
+                  100
+                ],
+                "color": "red"
+              }
+            ]
+          }
+        },
+        {
+          "say": "Turkey's line roughly doubled. Even through its inflation crisis, its economy kept growing.",
+          "mark": {
+            "x": 2025
+          }
+        },
+        {
+          "say": "Argentina's line peaked in 2011 – and in 2024, the average Argentine was about nine percent poorer than in 2011. Thirteen years with no progress.",
+          "mark": {
+            "x": 2011
+          }
+        },
+        {
+          "say": "Who gets hurt most? People whose income is fixed in pesos – pensioners, workers with yearly wage deals, anyone with savings in a bank account that pays less than inflation. Their money shrinks every month."
+        },
+        {
+          "say": "Who suffers less? People who can hold dollars, own property, or borrowed at a fixed rate before prices took off. High inflation quietly moves wealth from the first group to the second."
+        },
+        {
+          "say": "Inflation isn't the only reason. But it makes everything harder: people can't plan, companies can't invest long-term, and lenders charge more to protect themselves.",
+          "show": {
+            "type": "note",
+            "text": "High inflation doesn't just raise prices – it makes the *future* impossible to plan.",
+            "source": "World Bank, GDP per person in constant US$"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "It can get worse",
+      "beats": [
+        {
+          "say": "And as bad as two hundred percent sounds, it can get much, much worse. Economists call it hyperinflation.",
+          "show": {
+            "type": "number",
+            "big": "65,374%",
+            "caption": "Venezuela's inflation in 2018 · IMF",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Venezuela, 2018: sixty-five thousand percent. Prices multiplied by about six hundred and fifty in one year."
+        },
+        {
+          "say": "And Zimbabwe, 2008: two hundred and thirty-one million percent, according to the IMF. At that point, money stops working at all, and people switch to foreign currencies or barter.",
+          "show": {
+            "type": "number",
+            "big": "231,000,000%",
+            "caption": "Zimbabwe's inflation in 2008 · IMF",
+            "color": "red"
+          }
+        },
+        {
+          "say": "At that speed, a price tag is out of date within days. Wages have to be spent the day they arrive, because tomorrow they buy less. Nobody wants to hold the money at all."
+        },
+        {
+          "say": "Compared to that, Turkey and Argentina never crossed the line. But they show how the road starts – a few years of rising prices that nobody manages to stop."
+        }
+      ]
+    },
+    {
+      "heading": "What to remember",
+      "beats": [
+        {
+          "say": "So what does high inflation do to a country? Three things.",
+          "show": {
+            "type": "number",
+            "big": "$257 → $0.81",
+            "caption": "1,000 pesos in US dollars, 2010 vs 2025",
+            "color": "red"
+          }
+        },
+        {
+          "say": "One: it compounds brutally. At seventy-two percent, prices double every year. Two: it feeds itself, because everyone races to get rid of money that's losing value."
+        },
+        {
+          "say": "And three: it can be stopped – Turkey did it once in 2004, and Argentina cut its rate by more than three quarters in a year. But stopping it always hurts first."
+        },
+        {
+          "say": "If you want to understand money with real numbers, subscribe. Next episode, we'll take apart another piece of the economy."
+        }
+      ]
+    }
+  ],
+  "short": {
+    "hook": "1,000 pesos: from $257 to 81 cents",
+    "beats": [
+      {
+        "say": "In 2010, a thousand Argentine pesos bought about two hundred and fifty-seven dollars. In 2025, they bought eighty-one cents.",
+        "show": {
+          "type": "number",
+          "big": "$257 → $0.81",
+          "caption": "1,000 pesos in US dollars, 2010 vs 2025",
+          "color": "red"
+        }
+      },
+      {
+        "say": "From 1991 to 2001, one peso was worth exactly one dollar, by law. Then the link broke. By 2025, a dollar cost about one thousand two hundred and forty pesos.",
+        "show": {
+          "type": "line",
+          "heading": "Argentine pesos for one US dollar",
+          "unit": "",
+          "log": true,
+          "sub": "Official exchange rate, yearly average · log scale · World Bank",
+          "series": [
+            {
+              "label": "",
+              "wb": "PA.NUS.FCRF",
+              "country": "ARG",
+              "from": 1992,
+              "to": 2025,
+              "color": "red"
+            }
+          ]
+        }
+      },
+      {
+        "say": "And prices exploded with it. Inflation hit a hundred and thirty-three percent in 2023 and two hundred and twenty in 2024. Prices more than tripled in a single year.",
+        "show": {
+          "type": "line",
+          "heading": "Argentina inflation, % per year",
+          "unit": "%",
+          "sub": "Average consumer prices · 2017–2025 · IMF WEO",
+          "series": [
+            {
+              "label": "",
+              "points": [
+                [
+                  2017,
+                  25.7
+                ],
+                [
+                  2018,
+                  34.3
+                ],
+                [
+                  2019,
+                  53.5
+                ],
+                [
+                  2020,
+                  42.0
+                ],
+                [
+                  2021,
+                  48.4
+                ],
+                [
+                  2022,
+                  72.4
+                ],
+                [
+                  2023,
+                  133.5
+                ],
+                [
+                  2024,
+                  219.9
+                ],
+                [
+                  2025,
+                  41.9
+                ]
+              ],
+              "color": "red"
+            }
+          ]
+        }
+      },
+      {
+        "say": "Turkey went through its own version: something that cost a hundred lira in 2010 cost almost eighteen hundred in 2025.",
+        "show": {
+          "type": "number",
+          "big": "×17.8",
+          "caption": "Turkish consumer prices, 2010 → 2025",
+          "color": "red"
+        }
+      },
+      {
+        "say": "Turkey had beaten high inflation once before – and it came back. Could it happen anywhere? The whole story of how money melts – and how it stops – is in the full video on the channel."
+      }
+    ]
+  }
+}

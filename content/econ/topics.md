@@ -7,10 +7,10 @@ add new ones at the end. Pick ones the World Bank (or another official source) h
 - [ ] Why do houses cost so much? House prices vs incomes
 - [ ] How rich is the average person in each country? GDP per person, PPP vs dollars
 - [ ] What is GDP – and what it doesn't measure
-- [ ] Why does the US have so much debt? Government debt as % of GDP
+- [x] Why does the US have so much debt? Government debt as % of GDP – `why-us-debt-40-trillion`
 - [ ] Compound interest: why time beats timing (savings at 2%, 5%, 8% – no advice, just the math)
 - [ ] Why Japan's prices barely moved for 30 years
-- [ ] Turkey and Argentina: what high inflation does to a country
+- [x] Turkey and Argentina: what high inflation does to a country – `turkey-argentina-high-inflation`
 - [ ] What are interest rates, and why does everyone watch the Fed?
 - [ ] Why the dollar is the world's money
 - [ ] How unequal is the world? The Gini index explained
@@ -33,3 +33,4 @@ add new ones at the end. Pick ones the World Bank (or another official source) h
 - [ ] Is a college degree still worth it? Earnings by education
 - [ ] Remittances: the money migrants send home
 - [ ] Why gold still matters to central banks
+- [ ] Who owns the US debt? Foreign holders, the Fed and the trust funds
