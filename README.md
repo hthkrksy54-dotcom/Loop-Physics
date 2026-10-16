@@ -51,6 +51,16 @@ Thema → Skript → Faktencheck → Sprecherstimme → Musik → Visuals → Un
 
 **Einrichtung:** siehe [SETUP.md](SETUP.md). Die YouTube-Kanäle musst du einmal selbst anlegen.
 
+## Loop Physics – jeder Post ein neues Konzept
+
+| Baustein | Lösung |
+|---|---|
+| Takt | 2 Posts täglich um 11:30 und 18:30 UTC ([Workflow](.github/workflows/sims.yml)); dazwischen alle ~2 h ein Herzschlag, der YouTube-Uploads nachpflegt und liegengebliebene Workflows startet |
+| Neue Konzepte | 2× täglich baut ein automatischer Konzept-Designer (geplante Claude-Session) nach [docs/concept-designer.md](docs/concept-designer.md) ein neues Konzept aus aktuellen viralen Trends – eine Datei in `ytauto/concepts/`, mit Qualitätsprüfung (`python -m ytauto concept-check`) |
+| Keine Wiederholungen | gepostet wird immer das älteste noch nie gepostete Konzept; nur Ausreißer nach oben (≥ 1,6× Median-Aufrufe aus Instagram + YouTube) dürfen erneut laufen, und nur wenn kein neues bereitliegt |
+| Robustheit | kaputte Konzepte werden übersprungen und vermerkt; verpasste Slots werden bis 6 h später nachgeholt; Übersicht mit `python -m ytauto concepts` |
+| Trends | täglicher Trend-Check ([Bericht](docs/loop-physics-trends.md)) |
+
 ## Lokal ausprobieren
 
 ```bash
