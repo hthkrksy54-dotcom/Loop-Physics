@@ -4,7 +4,9 @@ name: Loop Physics
 # 2nd; YouTube once enabled). Own queue, so the long Quiet Thoughts renders never delay or cancel these runs.
 on:
   schedule:
-    - cron: "40 */2 * * *"
+    - cron: "40 */2 * * *"     # main slot
+    - cron: "7 1-23/2 * * *"   # backups: GitHub sometimes drops scheduled runs; they only post when the
+    - cron: "33 1-23/2 * * *"  # last Reel is older than 100 minutes, i.e. when the main slot was skipped
   workflow_dispatch:
     inputs:
       upload:
