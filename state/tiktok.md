@@ -6,14 +6,14 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist die Frage, die oben im Video steht.
 
-## 16.10. 13:09 UTC – 4 pendulums, 0.0001° apart
+## 16.10. 14:41 UTC – 12 pendulums, one perfect moment
 
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-chaos-3)
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-pendulum-2)
 
 ```text
-4 pendulums, 0.0001° apart
-When did you first see them split?
-#doublependulum #satisfying #oddlysatisfying #physics #simulation
+12 pendulums, one perfect moment
+What would you change?
+#pendulumwave #satisfying #oddlysatisfying #physics #simulation
 ```
 
 ## 16.10. 08:41 UTC – Will 256 balls make a bell curve?
@@ -56,6 +56,16 @@ Can you predict the path?
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 16.10. 13:09 UTC – 4 pendulums, 0.0001° apart
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697256019268832544) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-chaos-3)
+
+```text
+4 pendulums, 0.0001° apart
+When did you first see them split?
+#doublependulum #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 16.10. 11:31 UTC – Which color wins the race?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697230852018818336) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-race-4)
@@ -94,15 +104,5 @@ Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/
 What will 158 bounces draw?
 What would you change?
 #stringart #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 15.10. 19:16 UTC – Can the ball escape all 10 heptagons?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697241181276720416)
-
-```text
-Can the ball escape all 10 heptagons?
-Which bounce is most satisfying?
-#ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 

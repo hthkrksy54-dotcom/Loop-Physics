@@ -275,16 +275,28 @@ def _fmt(template: str, params: dict) -> str:
         return params["onscreen"]
 
 
+def rewards_length(rec: dict) -> bool:
+    """Long enough for TikTok's Creator Rewards (videos over one minute)."""
+    return rec.get("duration", 0) >= sims.MIN_VIDEO - 0.5
+
+
+def tiktok_waiting(state: dict) -> int:
+    """Drafts of over-a-minute videos still waiting in the owner's TikTok inbox (older short ones don't block)."""
+    return sum(1 for r in state.get("videos", []) if rewards_length(r)
+               and (r.get("tiktok") or {}).get("status") not in (None, "PUBLISH_COMPLETE", "FAILED"))
+
+
 def tiktok_backlog(cfg: dict, state: dict, max_pending: int = 3, files: dict[str, Path] | None = None) -> int:
-    """Send earlier videos that are not on TikTok yet as drafts – best performers first – while at most
-    max_pending drafts wait in the owner's inbox. Videos come from `files` ("kind-seed" -> path) or the release."""
+    """Send over-a-minute videos that are not on TikTok yet as drafts – best performers first – while at most
+    max_pending of them wait in the owner's inbox. Videos come from `files` ("kind-seed" -> path) or the release."""
     import time
 
     import requests
 
     videos = state.get("videos", [])
-    pending = sum(1 for r in videos if (r.get("tiktok") or {}).get("status") not in (None, "PUBLISH_COMPLETE", "FAILED"))
-    todo = sorted((r for r in videos if not r.get("tiktok") and not r.get("tiktok_skip")), key=lambda r: -score(r))
+    pending = tiktok_waiting(state)
+    todo = sorted((r for r in videos if not r.get("tiktok") and not r.get("tiktok_skip")
+                   and (rewards_length(r) or files)), key=lambda r: -score(r))
     repo = os.environ.get("GITHUB_REPOSITORY", "hthkrksy54-dotcom/Yt")
     sent = 0
     for r in todo:
@@ -466,9 +478,7 @@ def run(upload: bool = True) -> dict:
         except Exception as err:  # one platform failing must not lose the run
             record.setdefault("warnings", []).append(f"instagram: {err}")
             print(f"  warning: instagram failed: {err}", flush=True)
-    waiting = sum(1 for r in state.get("videos", []) if (r.get("tiktok") or {}).get("status") not in
-                  (None, "PUBLISH_COMPLETE", "FAILED"))
-    if tiktok.configured(cfg) and why in ("new", "standout") and waiting < TIKTOK_PENDING:
+    if tiktok.configured(cfg) and why in ("new", "standout") and tiktok_waiting(state) < TIKTOK_PENDING:
         try:  # a draft in the owner's TikTok inbox: one tap to post (TikTok wants the creator to confirm)
             cap = tiktok_caption(kind, meta)
             record["tiktok"] = {**tiktok.send_draft(cfg, Path(result["video"])), "caption": cap}

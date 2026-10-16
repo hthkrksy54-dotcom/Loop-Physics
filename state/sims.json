@@ -318,8 +318,9 @@
       "instagram_url": "https://www.instagram.com/reel/DejnaFYAHfq/",
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697255100968175639",
-        "status": "SEND_TO_USER_INBOX",
-        "caption": "4 pendulums, 0.0001° apart\nWhen did you first see them split?\n#doublependulum #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "4 pendulums, 0.0001° apart\nWhen did you first see them split?\n#doublependulum #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7697256019268832544"
       }
     },
     {
@@ -334,7 +335,12 @@
       "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-pendulum-2",
       "instagram_id": "18081297695371691",
       "instagram_url": "https://www.instagram.com/reel/DejyJ0NCmfw/",
-      "instagram_story_id": "18646387072033429"
+      "instagram_story_id": "18646387072033429",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697278012576827414",
+        "status": "SEND_TO_USER_INBOX",
+        "caption": "12 pendulums, one perfect moment\nWhat would you change?\n#pendulumwave #satisfying #oddlysatisfying #physics #simulation"
+      }
     }
   ]
 }
