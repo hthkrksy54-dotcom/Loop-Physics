@@ -277,7 +277,7 @@ def main(argv: list[str] | None = None) -> int:
     sc.add_argument("--youtube", choices=["check", "apply"], help="match manual YouTube uploads and polish them")
     sc.add_argument("--due", action="store_true", help="print 'post' if a posting slot is open, else 'idle'")
     tk = sub.add_parser("tiktok", help="TikTok setup for Loop Physics: url | connect | check | send")
-    tk.add_argument("action", choices=["url", "connect", "check", "send"])
+    tk.add_argument("action", choices=["url", "connect", "check", "send", "refresh"])
     tk.add_argument("--key", help="client key of the TikTok developer app")
     tk.add_argument("--secret", help="client secret of the TikTok developer app")
     tk.add_argument("--redirect", help="the full address TikTok sent you to after allowing access")
@@ -326,6 +326,12 @@ def main(argv: list[str] | None = None) -> int:
             print(f"connected (scopes: {data.get('scope')}), token stored in {cfg['tiktok']['token_file']}")
         elif args.action == "check":
             print(tiktok.account(cfg))
+        elif args.action == "refresh":  # which drafts were posted meanwhile (heartbeat)
+            state = simchannel.load(simchannel.STATE, {"videos": []})
+            if tiktok.configured(cfg) and tiktok.refresh(cfg, state["videos"]):
+                simchannel.save(simchannel.STATE, state)
+                tiktok.write_queue(state["videos"], cfg["channel_name"])
+                print("tiktok: statuses updated")
         else:
             print(tiktok.send_draft(cfg, Path(args.video)))
         return 0

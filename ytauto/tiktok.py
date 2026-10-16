@@ -173,6 +173,27 @@ def send_draft(cfg: dict, video: Path, wait: int = 180) -> dict:
     return {"publish_id": init["publish_id"], "status": status}
 
 
+def refresh(cfg: dict, records: list[dict]) -> bool:
+    """Ask TikTok which recent drafts the owner has posted meanwhile; returns True if anything changed."""
+    open_ = [r for r in records[-12:] if r.get("tiktok") and r["tiktok"].get("status") not in ("PUBLISH_COMPLETE", "FAILED")]
+    if not open_:
+        return False
+    token, changed = fresh_token(cfg), False
+    for r in open_:
+        try:
+            res = _call(token, "post/publish/status/fetch/", {"publish_id": r["tiktok"]["publish_id"]})
+        except TikTokError as err:
+            print(f"  tiktok: status of {r['kind']}-{r['seed']} unknown: {err}", flush=True)
+            continue
+        ids = res.get("publicaly_available_post_id") or []
+        if res.get("status") and res["status"] != r["tiktok"].get("status"):
+            r["tiktok"]["status"], changed = res["status"], True
+        if ids and not r["tiktok"].get("url"):
+            handle = (cfg.get("tiktok") or {}).get("account", "")
+            r["tiktok"]["url"], changed = f"https://www.tiktok.com/@{handle}/video/{ids[0]}", True
+    return changed
+
+
 def caption(title: str, question: str, tags: list[str]) -> str:
     return "\n".join([title, question, " ".join(f"#{t}" for t in tags)])
 
@@ -189,9 +210,11 @@ def write_queue(records: list[dict], channel: str) -> None:
         when = dt.datetime.fromisoformat(r["date"]).strftime("%d.%m. %H:%M UTC")
         state = {"SEND_TO_USER_INBOX": "im Posteingang", "PUBLISH_COMPLETE": "gepostet",
                  "FAILED": "fehlgeschlagen"}.get(tt.get("status", ""), "wird verarbeitet")
-        lines += [f"## {when} – {r['title']}", "", f"Status: {state}" +
-                  (f" · [Video]({r['release']})" if r.get("release") else ""), "", "```text", tt.get("caption", ""),
-                  "```", ""]
+        links = ([f"[auf TikTok]({tt['url']})"] if tt.get("url") else []) + \
+                ([f"[Video]({r['release']})"] if r.get("release") else [])
+        title = tt.get("caption", r["title"]).split("\n")[0]
+        lines += [f"## {when} – {title}", "", f"Status: **{state}**" + "".join(f" · {x}" for x in links), "",
+                  "```text", tt.get("caption", ""), "```", ""]
     if not recent:
         lines.append("_Noch keine Entwürfe._")
     QUEUE.parent.mkdir(parents=True, exist_ok=True)

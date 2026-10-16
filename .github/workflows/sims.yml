@@ -88,6 +88,7 @@ jobs:
             if [ "$IN_UPLOAD" = "false" ]; then python -m ytauto sims --no-upload; else python -m ytauto sims; fi
           else  # heartbeat: give manual YouTube uploads our texts and playlists, refresh their view counts
             python -m ytauto sims --youtube apply || echo "YouTube polish skipped"
+            python -m ytauto tiktok refresh || echo "TikTok status check skipped"
           fi
 
       - name: Save progress

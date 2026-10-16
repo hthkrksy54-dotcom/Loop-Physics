@@ -243,8 +243,9 @@
       "instagram_story_id": "17896128567612888",
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697229239351396374",
-        "status": "SEND_TO_USER_INBOX",
-        "caption": "Which color wins the race? – Guess the song\nDid your color win?\n#satisfying #oddlysatisfying #physics #simulation #asmr #bouncingball"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Which color wins the race?\nDid your color win?\n#marblerace #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7697230852018818336"
       }
     }
   ]

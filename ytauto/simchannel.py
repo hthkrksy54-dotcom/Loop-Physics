@@ -34,6 +34,23 @@ SLOT_WINDOW = dt.timedelta(hours=6)  # a missed or failed slot is retried until 
 STANDOUT = 1.6  # a concept may run again only if its views are at least this many times the channel median
 EXPERIMENTS = ("Loop Physics experiments", "A brand-new simulation concept every time.")
 TIKTOK_TAGS = ["satisfying", "oddlysatisfying", "physics", "simulation"]
+TIKTOK_KIND_TAG = {"race": "marblerace", "battle": "ballbattle", "escape": "ballescape", "polygon": "ballescape",
+                   "territory": "pongwars", "chaos": "doublependulum", "pendulum": "pendulumwave",
+                   "harmonograph": "harmonograph", "plinko": "plinko", "stringart": "stringart",
+                   "grow": "bouncingball", "multiply": "bouncingball"}
+
+
+def tiktok_caption(kind: str, meta: dict) -> str:
+    """TikTok text: the on-screen question, a question for the comments and a few tags. No melody references –
+    on TikTok the owner may swap in a trending sound."""
+    cls = sims.KINDS[kind]
+    question = meta["question"]
+    if re.search(r"melod|song|tune", question, re.I):
+        question = "Which moment was the most satisfying?"
+    kind_tag = TIKTOK_KIND_TAG.get(kind) or (cls.trend_words[0].replace(" ", "") if cls.trend_words else "")
+    extra = [t for t in load(TUNING, {}).get("hashtags") or [] if t not in TIKTOK_TAGS and t != kind_tag][:1]
+    tags = [t for t in ([kind_tag] if kind_tag else []) + TIKTOK_TAGS + extra if not re.search(r"asmr|music", t)]
+    return tiktok.caption(meta["onscreen"], question, tags)
 COVER_AT = {"stringart": 0.9, "plinko": 0.85, "multiply": 0.85, "grow": 0.75, "pendulum": 0.55,
             "escape": 0.3, "polygon": 0.3, "battle": 0.3, "harmonograph": 0.97, "chaos": 0.7, "territory": 0.6,
             "race": 0.4}  # share of the run that makes the best cover frame
@@ -255,13 +272,22 @@ def _fmt(template: str, params: dict) -> str:
         return params["onscreen"]
 
 
+def onscreen(lines: list[str]) -> str:
+    """The on-screen title as one line: 'Which color' + 'wins the race?', 'Every hit upgrades it – Who wins…'."""
+    out = lines[0] if lines else ""
+    for line in lines[1:]:
+        sep = " – " if line[:1].isupper() and not re.search(r"[?!.,:;–-]$", out) else " "
+        out += sep + line
+    return out
+
+
 def metadata(kind: str, seed: int, melody: str, cfg: dict) -> dict:
     rnd = random.Random(seed * 31 + len(kind))
     song_full = sims.MELODIES[melody][0]
     song = song_full.split(" – ")[0]
     cls = sims.KINDS[kind]
     sim = cls(seed)
-    params = {"n": getattr(sim, "n", ""), "k": getattr(sim, "K", ""), "song": song, "onscreen": " ".join(sim.title()),
+    params = {"n": getattr(sim, "n", ""), "k": getattr(sim, "K", ""), "song": song, "onscreen": onscreen(sim.title()),
               "delta": sims._decimal(sim.delta) if isinstance(getattr(sim, "delta", None), float) else ""}
     tuning = load(TUNING, {})
     title = _fmt(rnd.choice(cls.titles or TITLES.get(kind, ["{onscreen}"])), params)
@@ -295,6 +321,7 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict) -> dict:
         (tags_line + (f" #{composer.lower()}" if composer else "")).strip(),
     ])
     return {"title": title[:95], "description": description, "caption": caption[:2150], "question": question,
+            "onscreen": params["onscreen"],
             "tags": TAGS + [t for t in (song.lower(), composer.lower()) if t] + (tuning.get("hashtags") or [])[:4]}
 
 
@@ -374,8 +401,7 @@ def run(upload: bool = True) -> dict:
             print(f"  warning: instagram failed: {err}", flush=True)
     if tiktok.configured(cfg):
         try:  # a draft in the owner's TikTok inbox: one tap to post (TikTok wants the creator to confirm)
-            extra = [t for t in load(TUNING, {}).get("hashtags") or [] if t not in TIKTOK_TAGS][:2]
-            cap = tiktok.caption(meta["title"], meta["question"], TIKTOK_TAGS + extra)
+            cap = tiktok_caption(kind, meta)
             record["tiktok"] = {**tiktok.send_draft(cfg, Path(result["video"])), "caption": cap}
             print(f"  tiktok: draft {record['tiktok']['status']}", flush=True)
         except Exception as err:  # noqa: BLE001
