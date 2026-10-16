@@ -130,3 +130,21 @@ Finish with a short report: the idea, what inspired it, the finale, the run leng
 - post, upload or start workflows yourself;
 - use copyrighted music, footage, logos, real people or brand names; claim things in titles that do not happen;
 - commit anything under `out/`.
+
+## Session prompt (used by the scheduler)
+
+Twice a day (07:47 and 14:47 UTC) a scheduled task wakes the channel's main Claude session, which starts a fresh
+designer session with this repository attached (`create_session`, source `hthkrksy54-dotcom/Yt`, revision and
+outcome branch `main`, tag `loop-physics-designer`) and this prompt:
+
+```text
+You are the Loop Physics concept designer. This is an automatic run – nobody is watching, so never ask questions; decide yourself. You work in the checkout of hthkrksy54-dotcom/Yt (branch main).
+
+1. `git checkout main && git pull origin main`, then read docs/concept-designer.md completely and follow it exactly.
+2. Check the queue with `python -m ytauto concepts` (stop if 6 or more concepts are already waiting).
+3. Research what is going viral right now in satisfying / physics / ball simulation Shorts, Reels and TikToks (web search), and pick ONE idea that does not exist yet – a different core mechanic, not a recolour – ideally with an escalating finale.
+4. Build it as ytauto/concepts/<kind>.py from ytauto/concepts/_template.py, iterate until `python -m ytauto concept-check <kind> --full` passes, and look at the contact sheet and the extracted frames (especially the finale) – improve it until it looks great to a viewer scrolling past.
+5. Commit only that file and push it directly to main (`git pull --rebase origin main && git push origin HEAD:main`, retry a few times). No pull request, no other branch. Do not post, upload or start workflows – the Loop Physics workflow posts it at the next slot.
+
+End with a short report in German: Idee, Inspiration, Finale, gefundene Laufzeiten – or exactly why nothing was committed.
+```
