@@ -1,0 +1,607 @@
+{
+  "id": "where-did-100-dollars-go",
+  "order": 1,
+  "title": "Where Did Your $100 Go? 54 Years of Inflation, Explained with Data",
+  "title_card": "Where did your $100 go?",
+  "thumbnail": {
+    "big": "$100 → $12",
+    "text": "Where did it go?",
+    "color": "red"
+  },
+  "description": "In 1970, a hundred-dollar bill bought what you need about $808 for today. Where did the rest go? With 54 years of official US price data, we take inflation apart: what it measures, why it compounds, the shocks of 1980 and 2022, how other countries compare – and who quietly wins and loses when money loses value.",
+  "tags": [
+    "inflation",
+    "inflation explained",
+    "economics",
+    "money",
+    "purchasing power",
+    "consumer price index",
+    "cpi",
+    "rule of 72",
+    "federal reserve",
+    "economics explained",
+    "personal finance basics",
+    "data visualization"
+  ],
+  "hashtags": [
+    "#inflation",
+    "#economics",
+    "#money"
+  ],
+  "sources": [
+    "World Bank, World Development Indicators: Consumer price index (2010 = 100), FP.CPI.TOTL – United States, 1970–2024 (CC BY 4.0)",
+    "World Bank, World Development Indicators: Inflation, consumer prices (annual %), FP.CPI.TOTL.ZG – United States, Switzerland, Japan, Germany, United Kingdom, Brazil, Nigeria, Türkiye (CC BY 4.0)",
+    "U.S. Bureau of Labor Statistics: Consumer Price Index – how the CPI is calculated (bls.gov/cpi)",
+    "Federal Reserve Board: Statement on Longer-Run Goals and Monetary Policy Strategy (January 2012) – the 2 percent inflation goal"
+  ],
+  "chapters": [
+    {
+      "heading": "Intro",
+      "beats": [
+        {
+          "say": "Here's a hundred-dollar bill from 1970. Same paper, same green, same face on the front.",
+          "show": {
+            "type": "number",
+            "big": "$100",
+            "caption": "a hundred-dollar bill, 1970",
+            "color": "green"
+          }
+        },
+        {
+          "say": "But if you wanted to buy today what that bill bought back then, you'd need about eight hundred and eight dollars.",
+          "show": {
+            "type": "number",
+            "big": "$100 → $808",
+            "caption": "same shopping, 1970 vs 2024",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Or, turned around: a hundred dollars today buys roughly what twelve dollars bought in 1970."
+        },
+        {
+          "say": "Nobody stole it. It didn't vanish in one big crash. It leaked away, a few percent a year, for fifty-four years.",
+          "show": {
+            "type": "number",
+            "big": "$100 → $12",
+            "caption": "what today's $100 was worth in 1970 money",
+            "color": "red"
+          }
+        },
+        {
+          "say": "So let's take that leak apart, piece by piece, with the official price data – and see where your hundred dollars actually went."
+        }
+      ]
+    },
+    {
+      "heading": "What inflation measures",
+      "beats": [
+        {
+          "say": "First, what are we even measuring? Inflation is not the price of one thing. It's the price of a whole shopping basket.",
+          "show": {
+            "type": "note",
+            "text": "*Inflation* = how much more the same basket of goods and services costs than a year before.",
+            "source": "U.S. Bureau of Labor Statistics, CPI"
+          }
+        },
+        {
+          "say": "In the United States, the Bureau of Labor Statistics tracks the prices of thousands of items every month: food, rent, fuel, clothes, doctor visits, phone plans."
+        },
+        {
+          "say": "Each item gets a weight, depending on how much of their money households really spend on it. Rent counts a lot. Postage stamps, very little."
+        },
+        {
+          "say": "Put it all together and you get one number: the consumer price index. When it rises by three percent in a year, the typical basket costs three percent more.",
+          "show": {
+            "type": "compare",
+            "left": [
+              "this year",
+              "$100"
+            ],
+            "right": [
+              "next year",
+              "$103"
+            ],
+            "heading": "3% inflation",
+            "color": "red"
+          }
+        },
+        {
+          "say": "That's all inflation is. Not one price going up, but the value of each dollar going down, measured against everything it can buy."
+        }
+      ]
+    },
+    {
+      "heading": "54 years in one line",
+      "beats": [
+        {
+          "say": "Now let's take that index and draw it, year by year, from 1970 to 2024. To keep it simple, we start the line at one hundred dollars.",
+          "show": {
+            "type": "line",
+            "heading": "What $100 of 1970 shopping costs",
+            "unit": "$",
+            "series": [
+              {
+                "label": "",
+                "wb": "FP.CPI.TOTL",
+                "country": "USA",
+                "from": 1970,
+                "to": 2024,
+                "rebase": [
+                  1970,
+                  100
+                ],
+                "color": "green"
+              }
+            ]
+          }
+        },
+        {
+          "say": "Watch the shape. It never really goes down. It just climbs – slowly in some decades, steeply in others."
+        },
+        {
+          "say": "By 1980, the basket that cost a hundred dollars already cost about two hundred and twelve. By 2000, four hundred and forty. And by 2024, about eight hundred and eight.",
+          "mark": {
+            "x": 1980
+          }
+        },
+        {
+          "say": "Spread over fifty-four years, that's an average of just under four percent a year. Four percent sounds harmless. Fifty-four years of it multiplies prices by eight.",
+          "show": {
+            "type": "number",
+            "big": "×8",
+            "caption": "US prices, 1970 → 2024",
+            "color": "red"
+          }
+        },
+        {
+          "say": "And that's the trick of inflation: every year it looks small. It's the stacking that makes it big."
+        }
+      ]
+    },
+    {
+      "heading": "The rule of 72",
+      "beats": [
+        {
+          "say": "Why does a small number stack up so fast? Because inflation compounds. Each year's increase is added on top of last year's higher prices.",
+          "show": {
+            "type": "coins",
+            "heading": "What cost $10 in 1970",
+            "stacks": [
+              [
+                "1970",
+                4,
+                "$10"
+              ],
+              [
+                "1985",
+                11,
+                "$28"
+              ],
+              [
+                "2000",
+                18,
+                "$44"
+              ],
+              [
+                "2024",
+                32,
+                "$81"
+              ]
+            ],
+            "color": "red"
+          }
+        },
+        {
+          "say": "Here's a quick way to feel it. It's called the rule of seventy-two: divide seventy-two by the yearly rate, and you get roughly how many years it takes for prices to double."
+        },
+        {
+          "say": "At two percent a year, prices double in about thirty-six years. At four percent, in about eighteen. At eight percent, in only nine.",
+          "show": {
+            "type": "bars",
+            "heading": "Years until prices double",
+            "items": [
+              [
+                "2% a year",
+                36
+              ],
+              [
+                "4% a year",
+                18
+              ],
+              [
+                "8% a year",
+                9
+              ],
+              [
+                "12% a year",
+                6
+              ]
+            ],
+            "suffix": " years"
+          }
+        },
+        {
+          "say": "Here's what that does over the same fifty-four years. Start with a hundred dollars of prices and let them grow at two, four and eight percent a year.",
+          "show": {
+            "type": "line",
+            "heading": "$100 of prices after 54 years",
+            "unit": "$",
+            "sub": "Compound growth at a fixed yearly rate",
+            "series": [
+              {
+                "label": "2% a year",
+                "compound": {
+                  "start": 100,
+                  "rate": 2,
+                  "years": 54
+                },
+                "color": "green"
+              },
+              {
+                "label": "4% a year",
+                "compound": {
+                  "start": 100,
+                  "rate": 4,
+                  "years": 54
+                },
+                "color": "blue"
+              },
+              {
+                "label": "8% a year",
+                "compound": {
+                  "start": 100,
+                  "rate": 8,
+                  "years": 54
+                },
+                "color": "red"
+              }
+            ]
+          }
+        },
+        {
+          "say": "At two percent, the hundred dollars becomes about two hundred and ninety. At four percent – close to the American path – about eight hundred and thirty."
+        },
+        {
+          "say": "And at eight percent, it ends above six thousand three hundred dollars. Same fifty-four years, just a few more points a year."
+        },
+        {
+          "say": "And that's almost exactly what happened. At just under four percent, US prices doubled about every eighteen years: three doublings in fifty-four years. Two, four, eight.",
+          "show": {
+            "type": "number",
+            "big": "2 → 4 → 8",
+            "caption": "three doublings since 1970",
+            "color": "green"
+          }
+        },
+        {
+          "say": "The rule works the other way round, too. Money that just sits there loses half its buying power in the same number of years."
+        }
+      ]
+    },
+    {
+      "heading": "The shocks",
+      "beats": [
+        {
+          "say": "But the average hides the drama. Let's draw the yearly inflation rate instead – how much prices rose in each single year.",
+          "show": {
+            "type": "line",
+            "heading": "US inflation, % per year",
+            "unit": "%",
+            "series": [
+              {
+                "label": "",
+                "wb": "FP.CPI.TOTL.ZG",
+                "country": "USA",
+                "from": 1970,
+                "to": 2024,
+                "color": "red"
+              }
+            ]
+          }
+        },
+        {
+          "say": "The first big spike: 1974, above eleven percent, after an oil shock pushed energy prices up across the economy.",
+          "mark": {
+            "x": 1974
+          }
+        },
+        {
+          "say": "Then the peak: 1980, thirteen and a half percent. At that pace, prices would double in just over five years.",
+          "mark": {
+            "x": 1980
+          }
+        },
+        {
+          "say": "It took very high interest rates in the early 1980s to bring it down. By 1983, inflation was close to three percent again.",
+          "mark": {
+            "x": 1983
+          }
+        },
+        {
+          "say": "Then came decades of calm. In 2009, after the financial crisis, prices even fell slightly for a year – minus zero point four percent.",
+          "show": {
+            "type": "compare",
+            "left": [
+              "1980",
+              "13.5%"
+            ],
+            "right": [
+              "2009",
+              "-0.4%"
+            ],
+            "heading": "Peak and dip",
+            "color": "green"
+          }
+        },
+        {
+          "say": "And then 2022: eight percent, the highest since 1981. Supply chains, energy, and a lot of spending after the pandemic all pushed in the same direction.",
+          "show": {
+            "type": "number",
+            "big": "8.0%",
+            "caption": "US inflation in 2022 – highest since 1981",
+            "color": "red"
+          }
+        },
+        {
+          "say": "By 2024 it had cooled to about three percent. But notice what didn't happen: prices didn't go back down. Lower inflation means prices rise more slowly – not that they fall."
+        }
+      ]
+    },
+    {
+      "heading": "Around the world",
+      "beats": [
+        {
+          "say": "Is four percent a year normal? It depends a lot on where you live. Here's the average yearly inflation from 2014 to 2024 in eight countries.",
+          "show": {
+            "type": "bars",
+            "heading": "Average inflation per year, 2014–2024",
+            "unit": "%",
+            "highlight": "Turkey",
+            "data": {
+              "wb": "FP.CPI.TOTL.ZG",
+              "countries": {
+                "Switzerland": "CHE",
+                "Japan": "JPN",
+                "Germany": "DEU",
+                "USA": "USA",
+                "UK": "GBR",
+                "Brazil": "BRA",
+                "Nigeria": "NGA",
+                "Turkey": "TUR"
+              },
+              "mean": [
+                2014,
+                2024
+              ]
+            }
+          }
+        },
+        {
+          "say": "Switzerland: about half a percent. Japan: just over one. Germany, the US and Britain: between two and three.",
+          "mark": {
+            "items": [
+              "Switzerland",
+              "Japan",
+              "Germany",
+              "USA",
+              "UK"
+            ]
+          }
+        },
+        {
+          "say": "Brazil: close to six. Nigeria: over sixteen. And Turkey: around twenty-six percent a year on average.",
+          "mark": {
+            "items": [
+              "Brazil",
+              "Nigeria",
+              "Turkey"
+            ]
+          }
+        },
+        {
+          "say": "At twenty-six percent, the rule of seventy-two says prices double in under three years. Planning anything – a salary, a rent contract, a savings goal – becomes a guessing game.",
+          "show": {
+            "type": "number",
+            "big": "< 3 years",
+            "caption": "to double prices at 26% a year",
+            "color": "red"
+          }
+        },
+        {
+          "say": "That's why stable prices are so valuable. Not because low inflation is exciting, but because it lets people plan."
+        }
+      ]
+    },
+    {
+      "heading": "Who wins, who loses",
+      "beats": [
+        {
+          "say": "So who actually loses when money loses value? First, cash that just sits still. A hundred dollars under a mattress in 1970 is still a hundred dollars – it just buys an eighth as much.",
+          "show": {
+            "type": "compare",
+            "left": [
+              "cash in 1970",
+              "$100"
+            ],
+            "right": [
+              "its buying power today",
+              "$12"
+            ],
+            "heading": "Money that sits still",
+            "color": "red"
+          }
+        },
+        {
+          "say": "The same goes for anything paid in fixed dollars: a pension that isn't adjusted for inflation, or a salary that doesn't rise, shrinks a little every year."
+        },
+        {
+          "say": "And who gains? Anyone who owes a fixed amount. A loan with a fixed rate is repaid in dollars that are worth less each year, so the debt gets lighter in real terms.",
+          "show": {
+            "type": "note",
+            "text": "Inflation shrinks what money is worth – *including the money you owe.*",
+            "source": "This is how inflation works, not a tip on what to do."
+          }
+        },
+        {
+          "say": "That's why economists talk about real values: the number on the bill, adjusted for what it can buy. A raise of three percent when prices rise three percent is a raise of zero."
+        }
+      ]
+    },
+    {
+      "heading": "Why not zero?",
+      "beats": [
+        {
+          "say": "If inflation eats money, why don't central banks aim for zero? The Federal Reserve, for example, officially targets two percent a year, and has since 2012.",
+          "show": {
+            "type": "number",
+            "big": "2%",
+            "caption": "the Federal Reserve's inflation goal since 2012",
+            "color": "green"
+          }
+        },
+        {
+          "say": "Part of the reason is a safety margin. When prices fall across the board – deflation – people and companies tend to wait, spend less, and debts become heavier."
+        },
+        {
+          "say": "Japan lived through exactly that. Between 1995 and 2020, its consumer prices rose by about four percent in total – not per year, in twenty-five years.",
+          "show": {
+            "type": "line",
+            "heading": "Japan inflation, % per year",
+            "unit": "%",
+            "series": [
+              {
+                "label": "",
+                "wb": "FP.CPI.TOTL.ZG",
+                "country": "JPN",
+                "from": 1990,
+                "to": 2024,
+                "color": "blue"
+              }
+            ]
+          }
+        },
+        {
+          "say": "In fifteen of the thirty-five years since 1990, prices actually fell. Many companies held wages flat, and the economy grew only slowly for years.",
+          "mark": {
+            "x": 2009
+          }
+        },
+        {
+          "say": "A small, steady, predictable rise in prices is easier to live with than either extreme. The problem is never two percent. It's the surprises: the thirteen percent years, and the ones nobody planned for."
+        }
+      ]
+    },
+    {
+      "heading": "Where it went",
+      "beats": [
+        {
+          "say": "So where did your hundred dollars go? Nowhere dramatic. It leaked away a few percent at a time, and the leak compounded for fifty-four years.",
+          "show": {
+            "type": "number",
+            "big": "$100 → $12",
+            "caption": "1970 buying power, measured in today's dollars",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Three things to remember: inflation is the price of a whole basket. Small yearly rates double prices faster than they feel. And what matters is never the number on the bill – it's what the bill can buy."
+        },
+        {
+          "say": "If this made money a little less mysterious, subscribe – next time we'll take apart another piece of the economy, with real numbers."
+        }
+      ]
+    }
+  ],
+  "short": {
+    "hook": "Your $100 shrank to $12",
+    "beats": [
+      {
+        "say": "Here's a hundred dollars from 1970. To buy the same shopping today, you'd need about eight hundred and eight dollars.",
+        "show": {
+          "type": "number",
+          "big": "$100 → $808",
+          "caption": "same shopping, 1970 vs 2024",
+          "color": "red"
+        }
+      },
+      {
+        "say": "Turned around, today's hundred dollars buys what about twelve dollars bought back then."
+      },
+      {
+        "say": "Here's the line: official US consumer prices, from 1970 to 2024. It never really goes down. It just climbs.",
+        "show": {
+          "type": "line",
+          "heading": "What $100 of 1970 shopping costs",
+          "unit": "$",
+          "series": [
+            {
+              "label": "",
+              "wb": "FP.CPI.TOTL",
+              "country": "USA",
+              "from": 1970,
+              "to": 2024,
+              "rebase": [
+                1970,
+                100
+              ],
+              "color": "green"
+            }
+          ]
+        }
+      },
+      {
+        "say": "The average was just under four percent a year. Sounds small. But inflation compounds, and the rule of seventy-two tells you how fast: seventy-two divided by four is eighteen."
+      },
+      {
+        "say": "So prices doubled about every eighteen years. Three doublings in fifty-four years: two, four, eight.",
+        "show": {
+          "type": "coins",
+          "heading": "What cost $10 in 1970",
+          "stacks": [
+            [
+              "1970",
+              4,
+              "$10"
+            ],
+            [
+              "1985",
+              11,
+              "$28"
+            ],
+            [
+              "2000",
+              18,
+              "$44"
+            ],
+            [
+              "2024",
+              32,
+              "$81"
+            ]
+          ],
+          "color": "red"
+        }
+      },
+      {
+        "say": "The worst single year was 1980, at thirteen and a half percent. The latest spike was 2022, at eight.",
+        "show": {
+          "type": "compare",
+          "left": [
+            "1980",
+            "13.5%"
+          ],
+          "right": [
+            "2022",
+            "8.0%"
+          ],
+          "heading": "The two big spikes",
+          "color": "red"
+        }
+      },
+      {
+        "say": "Nobody stole your money. It just leaked, a few percent a year. How much did your money lose since you were born? Tell me in the comments."
+      }
+    ]
+  }
+}

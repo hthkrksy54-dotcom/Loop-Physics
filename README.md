@@ -1,6 +1,6 @@
 <p><img src="docs/developed-with-youtube-sentence-case-dark.png" alt="Developed with YouTube" width="210"></p>
 
-# ytauto – Quiet Thoughts & Loop Physics
+# ytauto – Quiet Thoughts, Loop Physics & Real Numbers
 
 **ytauto** is a private, internal tool of a single channel owner. It produces original videos and publishes them to
 the owner's own YouTube channels using the YouTube Data API v3:
@@ -62,6 +62,17 @@ Thema → Skript → Faktencheck → Sprecherstimme → Musik → Visuals → Un
 | TikTok | neue Konzepte und Ausreißer als Entwurf in den TikTok-Posteingang (höchstens 3 warten gleichzeitig), Beschreibungen zum Kopieren in [state/tiktok.md](state/tiktok.md) |
 | Robustheit | kaputte Konzepte werden übersprungen und vermerkt; verpasste Slots werden bis 6 h später nachgeholt; Übersicht mit `python -m ytauto concepts` |
 | Trends | täglicher Trend-Check ([Bericht](docs/loop-physics-trends.md)) |
+
+## Real Numbers – Geld & Wirtschaft, erklärt mit echten Daten
+
+| Baustein | Lösung |
+|---|---|
+| Format | täglich ein Video mit 8–15 Minuten (1920x1080) plus ein Short über 1 Minute (Englisch, Zielgruppe USA/UK) ([Workflow](.github/workflows/econ.yml)) |
+| Look | Keynote-Stil, komplett im Code gezeichnet ([studio.py](ytauto/studio.py)): schwarze Bühne, Inter-Typografie (OFL), große Zahlen mit Farbverlauf, die hochzählen, Diagramme, die sich selbst zeichnen, Markierungen im Takt der Sprache, langsame Kamerafahrt |
+| Daten | Weltbank-Indikatoren (CC BY 4.0), im Repo zwischengespeichert, Quellen in jeder Beschreibung |
+| Skripte | ein automatischer Skript-Autor (geplante Claude-Session) nach [docs/econ-writer.md](docs/econ-writer.md), Themen aus [content/econ/topics.md](content/econ/topics.md); Qualitätsprüfung mit Vorschaubildern: `python -m ytauto econ check <id>` |
+| Ton | Sprecherstimme über `edge-tts`, moderne Hintergrundmusik (prozedural, Pads + Arpeggio + Puls), dezente Whoosh-Effekte, −14 LUFS |
+| Veröffentlichung | Release mit Video, Short, Thumbnail und Untertiteln (.srt); Short als Instagram-Reel + Story und TikTok-Entwurf, sobald die Konten verbunden sind; YouTube-Upload nach Freigabe |
 
 ## Lokal ausprobieren
 

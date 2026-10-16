@@ -198,8 +198,8 @@ def caption(title: str, question: str, tags: list[str]) -> str:
     return "\n".join([title, question, " ".join(f"#{t}" for t in tags)])
 
 
-def write_queue(records: list[dict], channel: str) -> None:
-    """state/tiktok.md: the latest drafts with their caption to copy – the owner's 15-second checklist."""
+def write_queue(records: list[dict], channel: str, path: Path | None = None) -> None:
+    """state/tiktok.md (or `path`): the latest drafts with their caption to copy – the owner's 15-second checklist."""
     sent = [r for r in records if r.get("tiktok")]
     waiting = sorted((r for r in sent if r["tiktok"].get("status") != "PUBLISH_COMPLETE"), key=lambda r: r["date"], reverse=True)
     posted = sorted((r for r in sent if r["tiktok"].get("status") == "PUBLISH_COMPLETE"), key=lambda r: r["date"], reverse=True)
@@ -221,5 +221,6 @@ def write_queue(records: list[dict], channel: str) -> None:
                   "```text", tt.get("caption", ""), "```", ""]
     if not recent:
         lines.append("_Noch keine Entwürfe._")
-    QUEUE.parent.mkdir(parents=True, exist_ok=True)
-    QUEUE.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    path = path or QUEUE
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")

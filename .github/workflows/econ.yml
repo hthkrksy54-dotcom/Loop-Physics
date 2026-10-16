@@ -1,0 +1,81 @@
+name: Real Numbers
+
+# One long video a day (8–15 min, money & economy explained with data, stop-motion paper) plus a Short over a
+# minute: archived as a release, the Short as Instagram Reel + story and TikTok draft, YouTube once enabled.
+# Scripts come from the writer (docs/econ-writer.md); the run takes the next one in the queue.
+on:
+  schedule:
+    - cron: "23 15 * * *"   # 15:23 UTC = 11:23 US Eastern
+  workflow_dispatch:
+    inputs:
+      script:
+        description: "Script id (empty = next in the queue)"
+        default: ""
+      upload:
+        description: "Publish (untick to only render)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: econ
+  cancel-in-progress: false
+
+jobs:
+  econ:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
+      - name: Install Python packages
+        run: pip install -r requirements.txt
+
+      - name: Already published today?
+        id: today
+        run: |
+          python -c "
+          import json, datetime as dt, pathlib
+          p = pathlib.Path('state/econ.json')
+          v = json.loads(p.read_text())['videos'] if p.exists() else []
+          today = dt.datetime.now(dt.timezone.utc).date().isoformat()
+          print('done=' + ('yes' if any(r['date'][:10] == today for r in v) else 'no'))" >> "$GITHUB_OUTPUT"
+
+      - name: Render and publish
+        if: github.event_name == 'workflow_dispatch' || steps.today.outputs.done == 'no'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          IN_SCRIPT: ${{ github.event.inputs.script }}
+          IN_UPLOAD: ${{ github.event.inputs.upload }}
+        run: |
+          if [ "$IN_UPLOAD" = "false" ]; then python -m ytauto econ produce $IN_SCRIPT --no-upload
+          else python -m ytauto econ produce $IN_SCRIPT; fi
+
+      - name: Save progress
+        if: always()
+        run: |
+          git config user.name "ytauto-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A state content/econ/data
+          if ! git diff --cached --quiet; then
+            git commit -m "Real Numbers [skip ci]"
+            for i in 1 2 3 4 5; do
+              git pull --rebase origin main && git push origin HEAD:main && break
+              sleep $((i * 10))
+            done
+          fi

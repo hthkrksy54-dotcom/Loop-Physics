@@ -284,6 +284,11 @@ def main(argv: list[str] | None = None) -> int:
     tk.add_argument("--secret", help="client secret of the TikTok developer app")
     tk.add_argument("--redirect", help="the full address TikTok sent you to after allowing access")
     tk.add_argument("--video", help="send: this MP4 as a draft")
+    ec = sub.add_parser("econ", help="Real Numbers: check | render | produce | queue")
+    ec.add_argument("action", choices=["check", "render", "produce", "queue"])
+    ec.add_argument("script", nargs="?", help="script id (default: next in the queue)")
+    ec.add_argument("--no-upload", action="store_true")
+    ec.add_argument("--short-only", action="store_true")
     sub.add_parser("concepts", help="Loop Physics: every concept with status, queue and performance")
     cc = sub.add_parser("concept-check", help="Loop Physics: quality gate + contact sheet for a concept")
     cc.add_argument("kind", nargs="?")
@@ -319,6 +324,20 @@ def main(argv: list[str] | None = None) -> int:
         print(f"{result['video']}  ({result['duration']:.1f}s, {result['melody_name']})")
         return 0
 
+    if args.cmd == "econ":
+        from . import econ
+        if args.action == "check":
+            ids = [args.script] if args.script else [p.stem for p in sorted(econ.SCRIPTS.glob("*.json"))]
+            return 0 if all([econ.check(i) for i in ids]) else 1
+        if args.action == "queue":
+            state = econ.load(econ.STATE, {"videos": []})
+            q = econ.queue(state)
+            print(f"{len(q)} scripts waiting: " + ", ".join(q))
+        elif args.action == "render":
+            print(econ.render_script(args.script or econ.queue(econ.load(econ.STATE, {}))[0], args.short_only))
+        else:
+            econ.produce(upload=not args.no_upload, script_id=args.script)
+        return 0
     if args.cmd == "tiktok":
         cfg = simchannel.load(simchannel.CONFIG, {})
         if args.action == "url":

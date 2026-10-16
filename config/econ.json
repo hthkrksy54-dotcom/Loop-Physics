@@ -1,0 +1,33 @@
+{
+  "channel_name": "Real Numbers",
+  "handle": "",
+  "voice": "en-GB-RyanNeural",
+  "rate": "+0%",
+  "pitch": "+0Hz",
+  "outro": "Thanks for watching",
+  "hashtags": [
+    "#economics",
+    "#money",
+    "#inflation"
+  ],
+  "disclosure": "Made with AI assistance: synthetic narration voice; the animations and charts are generated in code from the public data listed above. Facts were checked against these sources.",
+  "not_advice": "This video is for education only and is not financial advice.",
+  "instagram": {
+    "enabled": false,
+    "account": "",
+    "token_file": "state/instagram_econ.token",
+    "story_log": "state/instagram_econ_stories.json"
+  },
+  "tiktok": {
+    "enabled": false,
+    "account": "",
+    "token_file": "state/tiktok_econ.token"
+  },
+  "youtube": {
+    "upload_enabled": false,
+    "token_file": "state/youtube_econ.token",
+    "category_id": "27",
+    "default_language": "en"
+  },
+  "burn_captions_long": false
+}

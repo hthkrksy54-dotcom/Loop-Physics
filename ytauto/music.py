@@ -107,3 +107,94 @@ def generate(duration: float, seed: int) -> np.ndarray:
     stereo[-fo:] *= np.linspace(1, 0, fo, dtype=np.float32)[:, None]
     peak = float(np.max(np.abs(stereo))) or 1.0
     return (stereo / peak * 0.5).astype(np.float32)
+
+
+def _pluck(f: float, n: int) -> np.ndarray:
+    t = np.arange(n, dtype=np.float32) / SAMPLE_RATE
+    env = np.exp(-t * 7.0) * np.minimum(1, t / 0.004)
+    sig = (np.sin(2 * np.pi * f * t) + 0.35 * np.sin(2 * np.pi * 2 * f * t) * np.exp(-t * 10)
+           + 0.1 * np.sin(2 * np.pi * 3 * f * t) * np.exp(-t * 16))
+    return (sig * env).astype(np.float32)
+
+
+def _kick(n: int) -> np.ndarray:
+    t = np.arange(n, dtype=np.float32) / SAMPLE_RATE
+    f = 46 + 70 * np.exp(-t * 28)
+    phase = 2 * np.pi * np.cumsum(f) / SAMPLE_RATE
+    return (np.sin(phase) * np.exp(-t * 9) * np.minimum(1, t / 0.002)).astype(np.float32)
+
+
+def pulse(duration: float, seed: int) -> np.ndarray:
+    """Modern, minimal underscore for explainers: warm pads, a soft plucked arpeggio and a gentle pulse.
+    Arranged in 8-bar sections (intro with pads only, occasional breakdowns). Stereo float32, peak ~0.5."""
+    rng = np.random.default_rng(seed)
+    sr = SAMPLE_RATE
+    n = int(duration * sr) + sr
+    bpm = float(rng.choice([92, 96, 100]))
+    beat = 60 / bpm
+    bar = 4 * beat
+    root = int(rng.choice([45, 47, 48, 50]))
+    prog = PROGRESSIONS[int(rng.integers(len(PROGRESSIONS)))]
+    patterns = [[0, 1, 2, 3, 2, 1, 2, 3], [0, 2, 1, 3, 0, 2, 1, 3], [0, 1, 2, 1, 3, 2, 1, 2], [3, 2, 1, 0, 1, 2, 1, 3]]
+    left = np.zeros(n, np.float32)
+    right = np.zeros(n, np.float32)
+    pads = np.zeros(n, np.float32)
+    seg = int(2 * bar * sr)
+    fl = int(min(1.2, bar * 0.4) * sr)
+    env = np.ones(seg + fl, np.float32)
+    ramp = (0.5 - 0.5 * np.cos(np.linspace(0, np.pi, fl))).astype(np.float32)
+    env[:fl], env[-fl:] = ramp, ramp[::-1]
+    k = 0
+    while k * seg < n:
+        chord = _pad_chord(prog[k % len(prog)], root, seg + fl, rng) * env
+        i = k * seg
+        pads[i:i + len(chord)] += chord[: n - i]
+        k += 1
+    duck = np.ones(n, np.float32)
+    pl = int(0.9 * sr)
+    kl = int(0.45 * sr)
+    kick = _kick(kl)
+    dl = int(beat * 0.75 * sr)
+    bars = int(duration / bar) + 1
+    for b in range(bars):
+        section = b // 8
+        full = section >= 1 and section % 6 != 5 and b < bars - 2
+        if section == 0 and b < 4:
+            continue
+        notes = prog[(b // 2) % len(prog)]
+        pat = patterns[(b // 8 + seed) % len(patterns)]
+        for s, idx in enumerate(pat):
+            t = b * bar + s * beat / 2
+            i = int(t * sr)
+            if i >= n:
+                break
+            f = _midi_to_hz(root + 24 + notes[idx % len(notes)])
+            vel = (1.0 if s % 4 == 0 else 0.72) * float(rng.uniform(0.85, 1.0)) * (0.55 if not full else 1.0)
+            p = _pluck(f, pl) * vel
+            side = (left, right) if s % 2 == 0 else (right, left)
+            side[0][i:i + pl] += p[: n - i] * 0.8
+            j = i + dl
+            if j < n:
+                side[1][j:j + pl] += p[: n - j] * 0.35
+        if full:
+            for s in (0, 2):
+                i = int((b * bar + s * beat) * sr)
+                if i < n:
+                    left[i:i + kl] += kick[: n - i] * 0.9
+                    right[i:i + kl] += kick[: n - i] * 0.9
+                    w = min(int(0.32 * sr), n - i)
+                    duck[i:i + w] = np.minimum(duck[i:i + w], 0.62 + 0.38 * np.linspace(0, 1, w) ** 0.6)
+    pads *= duck
+    left = _lowpass(left, 3200) + pads * 0.9
+    right = _lowpass(right, 3200) + pads * 0.9
+    for delay, gain in ((0.113, 0.3), (0.271, 0.22), (0.419, 0.15), (0.733, 0.1)):
+        d = int(delay * sr)
+        left[d:] += right[:-d] * gain
+        right[d:] += left[:-d] * gain * 0.9
+    stereo = np.stack([left, right], axis=1)[: int(duration * sr)]
+    fi = min(len(stereo), 2 * sr)
+    stereo[:fi] *= np.linspace(0, 1, fi, dtype=np.float32)[:, None]
+    fo = min(len(stereo), 5 * sr)
+    stereo[-fo:] *= np.linspace(1, 0, fo, dtype=np.float32)[:, None]
+    peak = float(np.max(np.abs(stereo))) or 1.0
+    return (stereo / peak * 0.5).astype(np.float32)
