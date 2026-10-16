@@ -28,7 +28,7 @@ from cryptography.fernet import Fernet, InvalidToken
 API = "https://open.tiktokapis.com/v2"
 AUTH = "https://www.tiktok.com/v2/auth/authorize/"
 REDIRECT = "https://hthkrksy54-dotcom.github.io/Yt/tiktok-callback.html"
-SCOPES = "user.info.basic,video.upload,video.publish"
+SCOPES = "user.info.basic,video.upload"  # drafts only; video.publish would need direct posting
 ROOT = Path(__file__).resolve().parent.parent
 QUEUE = ROOT / "state" / "tiktok.md"
 SINGLE_CHUNK_MAX = 64 * 1024 * 1024   # up to 64 MB a video goes up in one piece
