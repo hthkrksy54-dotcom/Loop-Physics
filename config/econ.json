@@ -13,13 +13,13 @@
   "disclosure": "Made with AI assistance: synthetic narration voice; the animations and charts are generated in code from the public data listed above. Facts were checked against these sources.",
   "not_advice": "This video is for education only and is not financial advice.",
   "instagram": {
-    "enabled": false,
+    "enabled": true,
     "account": "",
     "token_file": "state/instagram_econ.token",
     "story_log": "state/instagram_econ_stories.json"
   },
   "tiktok": {
-    "enabled": false,
+    "enabled": true,
     "account": "",
     "token_file": "state/tiktok_econ.token"
   },

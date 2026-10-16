@@ -19,6 +19,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import os
 import sys
 import traceback
 from pathlib import Path
@@ -276,8 +277,9 @@ def main(argv: list[str] | None = None) -> int:
     sc.add_argument("--branding", action="store_true", help="set banner, description and keywords on YouTube")
     sc.add_argument("--youtube", choices=["check", "apply"], help="match manual YouTube uploads and polish them")
     sc.add_argument("--due", action="store_true", help="print 'post' if a posting slot is open, else 'idle'")
-    tk = sub.add_parser("tiktok", help="TikTok setup for Loop Physics: url | connect | check | send")
+    tk = sub.add_parser("tiktok", help="TikTok setup: url | connect | check | send (--channel econ for Real Numbers)")
     tk.add_argument("action", choices=["url", "connect", "check", "send", "refresh", "backlog"])
+    tk.add_argument("--channel", choices=["sims", "econ"], default="sims")
     tk.add_argument("--max", type=int, default=3, help="backlog: at most this many drafts waiting in the inbox")
     tk.add_argument("--files", help="backlog: folder with <kind>-<seed>.mp4 files to use instead of releases")
     tk.add_argument("--key", help="client key of the TikTok developer app")
@@ -289,6 +291,9 @@ def main(argv: list[str] | None = None) -> int:
     ec.add_argument("script", nargs="?", help="script id (default: next in the queue)")
     ec.add_argument("--no-upload", action="store_true")
     ec.add_argument("--short-only", action="store_true")
+    ic = sub.add_parser("instagram-connect", help="store a new Instagram token for a channel (encrypted)")
+    ic.add_argument("--channel", choices=["quiet", "sims", "econ"], required=True)
+    ic.add_argument("--token", required=True)
     sub.add_parser("concepts", help="Loop Physics: every concept with status, queue and performance")
     cc = sub.add_parser("concept-check", help="Loop Physics: quality gate + contact sheet for a concept")
     cc.add_argument("kind", nargs="?")
@@ -324,6 +329,16 @@ def main(argv: list[str] | None = None) -> int:
         print(f"{result['video']}  ({result['duration']:.1f}s, {result['melody_name']})")
         return 0
 
+    if args.cmd == "instagram-connect":
+        if args.channel == "econ":
+            from . import econ
+            cfg = econ.load(econ.CONFIG, {})
+        elif args.channel == "sims":
+            cfg = simchannel.load(simchannel.CONFIG, {})
+        else:
+            cfg = _load(CONFIG, {})["en"]
+        print(instagram.connect(cfg, args.token))
+        return 0
     if args.cmd == "econ":
         from . import econ
         if args.action == "check":
@@ -340,10 +355,15 @@ def main(argv: list[str] | None = None) -> int:
         return 0
     if args.cmd == "tiktok":
         cfg = simchannel.load(simchannel.CONFIG, {})
+        app = tiktok._load(cfg) if tiktok._path(cfg).exists() and os.environ.get("IG_TOKEN_KEY") else {}
+        key, secret = args.key or app.get("client_key"), args.secret or app.get("client_secret")  # same app
+        if args.channel == "econ":
+            from . import econ
+            cfg = econ.load(econ.CONFIG, {})
         if args.action == "url":
-            print(tiktok.auth_url(args.key))
+            print(tiktok.auth_url(key))
         elif args.action == "connect":
-            data = tiktok.connect(cfg, args.key, args.secret, args.redirect)
+            data = tiktok.connect(cfg, key, secret, args.redirect)
             print(f"connected (scopes: {data.get('scope')}), token stored in {cfg['tiktok']['token_file']}")
         elif args.action == "check":
             print(tiktok.account(cfg))
@@ -412,7 +432,6 @@ def main(argv: list[str] | None = None) -> int:
 
     failed = []
     config = _load(CONFIG, {})
-    import os
     unattended = os.environ.get("GITHUB_EVENT_NAME") == "schedule" or os.environ.get("IN_SOURCE") == "watchdog"
     today = dt.datetime.now(dt.timezone.utc).date()
     for lang in args.langs:

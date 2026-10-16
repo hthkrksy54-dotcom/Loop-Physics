@@ -52,6 +52,20 @@ def load_token(cfg: dict) -> dict:
         raise InstagramError("IG_TOKEN_KEY does not match the stored token") from err
 
 
+def connect(cfg: dict, token: str) -> dict:
+    """Store a new long-lived token (from the Meta app: Instagram API setup → Generate token) for this channel."""
+    token = token.strip()
+    r = requests.get(f"{GRAPH}/me", params={"fields": "user_id,username", "access_token": token}, timeout=30)
+    if not r.ok:
+        raise InstagramError(f"token rejected ({r.status_code}): {r.text[:200]}")
+    me = r.json()
+    data = {"token": token, "user_id": str(me.get("user_id") or me.get("id")), "username": me.get("username", ""),
+            "refreshed_at": "2000-01-01T00:00:00+00:00",  # refresh on first use: starts the 60 days now
+            "expires_at": (_now() + dt.timedelta(days=60)).isoformat(timespec="seconds")}
+    save_token(cfg, data)
+    return {k: v for k, v in data.items() if k != "token"}
+
+
 def fresh_token(cfg: dict) -> str:
     """Return a valid token, refreshing it (60-day validity) once a week."""
     data = load_token(cfg)
