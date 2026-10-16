@@ -8,6 +8,7 @@ manually. This runs hourly and, for every produced video that now appears on the
 """
 from __future__ import annotations
 
+import datetime as dt
 import json
 import re
 
@@ -88,6 +89,39 @@ def _fix_short(token: str, video: dict, script: dict, cfg: dict, long_id: str | 
     return True
 
 
+def _release_texts(lang: str, vid: str) -> tuple[str | None, list[str]]:
+    """Description (with chapters) and tags exactly as prepared in the video's GitHub release."""
+    r = requests.get(f"https://api.github.com/repos/{_repo()}/releases/tags/video-{lang}-{vid}", timeout=30)
+    body = r.json().get("body", "") if r.ok else ""
+    desc = re.search(r"### Beschreibung / Description\n```\n(.*?)\n```", body, re.S)
+    tags = re.search(r"### Tags\n```\n(.*?)\n```", body, re.S)
+    return (desc.group(1) if desc else None), ([t.strip() for t in tags.group(1).split(",")] if tags else [])
+
+
+def _fix_long(token: str, video: dict, script: dict, cfg: dict, lang: str) -> bool:
+    """Give a long video uploaded without our texts its title, description (chapters, sources) and tags."""
+    if _norm(video["snippet"].get("title")) == _norm(script["title"]):
+        return False
+    desc, tags = _release_texts(lang, script["id"])
+    body = {"id": video["id"], "snippet": {
+        "title": script["title"], "description": desc or publish.description(script, cfg, []),
+        "tags": tags or publish.tags(script), "categoryId": video["snippet"].get("categoryId", cfg["youtube"].get("category_id", "27")),
+        "defaultLanguage": cfg["youtube"]["default_language"], "defaultAudioLanguage": cfg["youtube"]["default_language"]}}
+    r = requests.put(f"{API}/videos", params={"part": "snippet"}, data=json.dumps(body), timeout=60,
+                     headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"})
+    if not r.ok:
+        print(f"  could not update video {video['id']} ({r.status_code}): {r.text[:200]}", flush=True)
+        return False
+    print(f"  set title and description: https://youtu.be/{video['id']}", flush=True)
+    return True
+
+
+def _recent(video: dict, rec: dict, days: int = 3) -> bool:
+    made = dt.datetime.fromisoformat(rec["date"])
+    published = dt.datetime.fromisoformat(video["snippet"]["publishedAt"].replace("Z", "+00:00"))
+    return dt.timedelta(hours=-1) <= published - made <= dt.timedelta(days=days)
+
+
 def run(lang: str, cfg: dict, state: dict, load_script) -> bool:
     """Returns True if state changed."""
     secret = cfg["youtube"]["refresh_token_secret"]
@@ -104,10 +138,18 @@ def run(lang: str, cfg: dict, state: dict, load_script) -> bool:
         mine = [v for v in uploads if _matches(v, script)]
         longs = [v for v in mine if v["seconds"] > 180]
         shorts = [v for v in mine if v["seconds"] <= 180]
+        taken = {r.get(k) for r in state.get(lang, []) if r is not rec for k in ("youtube_id", "youtube_short_id")}
+        free = [v for v in uploads if v["id"] not in taken and _recent(v, rec)]
+        if not longs and rec.get("duration_min"):  # uploaded without our texts: recognise it by its length
+            longs = [v for v in free if v["seconds"] > 180 and abs(v["seconds"] - rec["duration_min"] * 60) <= 10][-1:]
+        if not shorts and (longs or rec.get("youtube_id")):
+            shorts = [v for v in free if v["seconds"] <= 180][-1:]
         if longs and rec.get("youtube_id") != longs[-1]["id"]:
             rec["youtube_id"] = longs[-1]["id"]
             changed = True
             print(f"[{lang}] found upload of '{rec['id']}': https://youtu.be/{rec['youtube_id']}", flush=True)
+        if longs and _fix_long(token, longs[-1], script, cfg, lang):
+            changed = True
         for s in shorts:
             if rec.get("youtube_short_id") != s["id"]:
                 rec["youtube_short_id"] = s["id"]
