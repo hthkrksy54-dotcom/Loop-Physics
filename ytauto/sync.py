@@ -13,6 +13,7 @@ import json
 import re
 
 import requests
+from pathlib import Path
 
 from . import instagram, publish, social, youtube
 
@@ -116,6 +117,27 @@ def _fix_long(token: str, video: dict, script: dict, cfg: dict, lang: str) -> bo
     return True
 
 
+def _thumbnail(token: str, rec: dict, lang: str) -> bool:
+    """Set the prepared thumbnail once (custom thumbnails need a phone-verified channel)."""
+    import tempfile
+
+    r = requests.get(f"https://github.com/{_repo()}/releases/download/video-{lang}-{rec['id']}/{lang}-{rec['id']}-thumbnail.jpg",
+                     timeout=60)
+    if not r.ok:
+        return False
+    with tempfile.NamedTemporaryFile(suffix=".jpg") as fh:
+        fh.write(r.content)
+        fh.flush()
+        error = youtube.set_thumbnail(token, rec["youtube_id"], Path(fh.name))
+    if error:
+        rec["thumbnail_error"] = error[:200]
+        print(f"  {error}", flush=True)
+    else:
+        rec["thumbnail_set"] = True
+        print(f"  thumbnail set: https://youtu.be/{rec['youtube_id']}", flush=True)
+    return True
+
+
 def _recent(video: dict, rec: dict, days: int = 3) -> bool:
     made = dt.datetime.fromisoformat(rec["date"])
     published = dt.datetime.fromisoformat(video["snippet"]["publishedAt"].replace("Z", "+00:00"))
@@ -150,6 +172,8 @@ def run(lang: str, cfg: dict, state: dict, load_script) -> bool:
             print(f"[{lang}] found upload of '{rec['id']}': https://youtu.be/{rec['youtube_id']}", flush=True)
         if longs and _fix_long(token, longs[-1], script, cfg, lang):
             changed = True
+        if rec.get("youtube_id") and not rec.get("thumbnail_set") and not rec.get("thumbnail_error"):
+            changed |= _thumbnail(token, rec, lang)
         for s in shorts:
             if rec.get("youtube_short_id") != s["id"]:
                 rec["youtube_short_id"] = s["id"]
