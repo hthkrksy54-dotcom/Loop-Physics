@@ -34,7 +34,7 @@ def due(now: dt.datetime | None = None) -> list[tuple[str, dict]]:
         if not cfg.get("active", True):
             continue
         recs = published.get(lang, [])
-        if now.weekday() in (0, 2, 4) and hm >= 14 * 60 + 47 and not any(_today(r.get("date"), now) for r in recs):
+        if hm >= 14 * 60 + 47 and not any(_today(r.get("date"), now) for r in recs):  # one video every day
             out.append(("produce.yml", {"langs": lang, "source": "watchdog"}))
         ig = cfg.get("instagram") or {}
         if ig.get("enabled"):

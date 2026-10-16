@@ -106,11 +106,10 @@ def produce(lang: str, topic_id: str | None, upload: bool, with_short: bool, kee
         record.update(release)
         if short_url:
             record["short_url"] = short_url
-        # With automatic YouTube upload the Reel goes out now; otherwise the hourly sync posts it as soon as
-        # the owner's manual upload shows up on the channel, so the caption can link to the video.
-        if short and short_url and record.get("youtube_id") and instagram.configured(cfg):
+        # The Reel goes out right away – with a link to the video once it is on YouTube, else "link in bio".
+        if short and short_url and instagram.configured(cfg):
             try:
-                yt_url = f"https://youtu.be/{record['youtube_id']}"
+                yt_url = f"https://youtu.be/{record['youtube_id']}" if record.get("youtube_id") else None
                 record.update(instagram.post_reel(cfg, short_url, instagram.caption(script, cfg, yt_url),
                                                   highlight=social.highlight_for(script), label=script["short"]["title"]))
             except Exception as err:  # Instagram must never block the YouTube side

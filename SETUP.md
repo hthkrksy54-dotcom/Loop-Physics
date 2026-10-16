@@ -1,7 +1,7 @@
 # Einrichtung – einmalig, ca. 30–45 Minuten
 
 Alles hier ist **kostenlos**. Die meisten Schritte gehen auch am Handy im Browser.
-Danach läuft der Kanal ohne dich: Mo/Mi/Fr entsteht automatisch je ein Video auf Deutsch
+Danach läuft der Kanal ohne dich: Jeden Tag entsteht automatisch ein Video auf Deutsch
 und Englisch (plus je ein Short) und wird hochgeladen.
 
 Solange Schritt 2–4 nicht erledigt sind, legt die Pipeline jedes fertige Video als

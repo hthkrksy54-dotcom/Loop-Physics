@@ -42,7 +42,7 @@ Thema → Skript → Faktencheck → Sprecherstimme → Musik → Visuals → Un
 | Schnitt | ffmpeg (1080p, Kapitel, Untertitel, Lautheit −15 LUFS) | 0 € |
 | Shorts | automatische Hochkant-Version (ca. 50 s) pro Thema | 0 € |
 | Upload | YouTube Data API: Video, Thumbnail, Untertitel, Short | 0 € |
-| Ausführung | GitHub Actions, Mo/Mi/Fr (öffentliches Repo = unbegrenzte Minuten) | 0 € |
+| Ausführung | GitHub Actions, täglich ein Video (öffentliches Repo = unbegrenzte Minuten) | 0 € |
 | Instagram | jeder Short als Reel + Story (@quiet_thoughts_yt), Caption mit Frage + 3–5 Hashtags, Token verschlüsselt, verlängert sich selbst | 0 € |
 | Karussells | Di/Do/Sa: Zitat-Karussell aus einem veröffentlichten Video + Zitat-Story ([Workflow](.github/workflows/carousel.yml)) | 0 € |
 | Stories | täglich eine frische Story (Zitat-Karte, sonntags Wochenrückblick), wenn nicht schon Reel/Karussell eine gepostet hat; jede Story wird mit ihrem Highlight protokolliert ([Workflow](.github/workflows/stories.yml)) | 0 € |
