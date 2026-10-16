@@ -140,9 +140,9 @@ def run(lang: str, cfg: dict, state: dict, load_script) -> bool:
         shorts = [v for v in mine if v["seconds"] <= 180]
         taken = {r.get(k) for r in state.get(lang, []) if r is not rec for k in ("youtube_id", "youtube_short_id")}
         free = [v for v in uploads if v["id"] not in taken and _recent(v, rec)]
-        if not longs and rec.get("duration_min"):  # uploaded without our texts: recognise it by its length
+        if not longs and not rec.get("youtube_id") and rec.get("duration_min"):  # uploaded without our texts: by length
             longs = [v for v in free if v["seconds"] > 180 and abs(v["seconds"] - rec["duration_min"] * 60) <= 10][-1:]
-        if not shorts and (longs or rec.get("youtube_id")):
+        if not shorts and not rec.get("youtube_short_id") and (longs or rec.get("youtube_id")):
             shorts = [v for v in free if v["seconds"] <= 180][-1:]
         if longs and rec.get("youtube_id") != longs[-1]["id"]:
             rec["youtube_id"] = longs[-1]["id"]
