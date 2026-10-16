@@ -48,7 +48,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1140,
+      "yt_views": 1168,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235341996115990",
         "status": "PUBLISH_COMPLETE",
@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 2136,
+      "yt_views": 2208,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -104,7 +104,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 6,
+      "yt_views": 10,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235656464123907",
         "status": "PUBLISH_COMPLETE",
@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 4796,
+      "yt_views": 4957,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 2718,
+      "yt_views": 2938,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -360,6 +360,21 @@
         "status": "SEND_TO_USER_INBOX",
         "caption": "Which color conquers the board?\nTwo colors or four – which is better?\n#pongwars #satisfying #oddlysatisfying #physics #simulation"
       }
+    },
+    {
+      "date": "2026-10-16T20:42:02+00:00",
+      "kind": "harmonograph",
+      "seed": 0,
+      "melody": "turkish_march",
+      "timbre": "chip",
+      "title": "What will this pendulum draw? – Listen to the rhythm",
+      "duration": 69.9,
+      "why": "new",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-harmonograph-0",
+      "warnings": [
+        "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"A7JxAauG0eVWQcMBGrmfmhI\"}}",
+        "tiktok: post/publish/inbox/video/init/: spam_risk_too_many_pending_share – spam_risk_too_many_pending_share"
+      ]
     }
   ]
 }
