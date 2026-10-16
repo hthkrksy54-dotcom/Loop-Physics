@@ -14,7 +14,7 @@ from collections import Counter
 
 import requests
 
-from . import generate, instagram, simchannel
+from . import generate, instagram, simchannel, sims
 
 YT = "https://www.googleapis.com/youtube/v3"
 QUERIES = ["satisfying simulation", "satisfying physics", "bouncing ball simulation", "oddly satisfying balls",
@@ -88,13 +88,14 @@ def youtube_trends(token: str, days: int = 7) -> list[dict]:
 
 
 def _classify(text: str) -> list[str]:
-    return [k for k, words in KIND_WORDS.items() if any(re.search(rf"\b{re.escape(w)}\b", text) for w in words)]
+    words = {**{k: c.trend_words for k, c in sims.KINDS.items() if c.trend_words}, **KIND_WORDS}
+    return [k for k, ws in words.items() if any(re.search(rf"\b{re.escape(w)}\b", text) for w in ws)]
 
 
 def run() -> dict:
     cfg, state = simchannel.load(simchannel.CONFIG, {}), simchannel.load(simchannel.STATE, {"videos": []})
     old = simchannel.load(simchannel.TUNING, {})
-    kinds = [k for k in cfg["kinds"]]
+    kinds = list(sims.KINDS)
     now = dt.datetime.now(dt.timezone.utc)
 
     # 1) our own Instagram numbers
@@ -183,11 +184,18 @@ def report(t: dict, state: dict, own_avg: dict) -> None:
              f"typische Länge {round(t['trend_median_seconds'])} s", ""]
     if t.get("summary_de"):
         lines += [t["summary_de"], ""]
-    lines += ["## Formate: Gewichtung für die nächsten 24 Stunden", "",
-              "| Format | Gewicht | Trend-Anteil | Ø Aufrufe bei uns |", "|---|---:|---:|---:|"]
-    for k, w in sorted(t["kind_weights"].items(), key=lambda kv: -kv[1]):
-        avg = own_avg.get(k)
-        lines.append(f"| {k} | {w} | {round(100 * t['trend_share'].get(k, 0))} % | {avg if avg is not None else '–'} |")
+    cfg = simchannel.load(simchannel.CONFIG, {})
+    base, perf = simchannel.performance(state)
+    stars = simchannel.standouts(state)
+    queue = simchannel.concept_queue(cfg, state)
+    lines += ["## Konzepte", "",
+              f"Jeder Post ist ein neues Konzept. Warteschlange: {', '.join(queue) or 'leer'}. "
+              f"Wiederholt werden dürfen nur Ausreißer nach oben (mind. {simchannel.STANDOUT}× Kanal-Median von "
+              f"{base:.0f} Aufrufen): {', '.join(stars) or 'noch keiner'}.", "",
+              "| Konzept | Posts | Aufrufe vs. Median | bestes Video | Trend-Anteil |", "|---|---:|---:|---:|---:|"]
+    for k, (r, n, best) in sorted(perf.items(), key=lambda kv: -kv[1][0]):
+        lines.append(f"| {k}{' ⭐' if k in stars else ''} | {n} | ×{r} | {best} | "
+                     f"{round(100 * t['trend_share'].get(k, 0))} % |")
     lines += ["", "## Angesagte Schlagwörter", "", ", ".join(t.get("trend_keywords") or ["–"]), "",
               "## Hashtags in den Captions", "", " ".join(f"#{h}" for h in ["satisfying"] + t.get("hashtags", [])[:3]), "",
               "## Titel-Zusätze (werden an die Frage im Video gehängt)", ""] + [f"- … – {h}" for h in t.get("title_addons", [])] + [""]

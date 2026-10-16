@@ -1,8 +1,12 @@
 """Second channel: one satisfying physics simulation Short per run (config/sims.json, state/sims.json).
 
-Each run picks the next format and melody, renders the video, archives it as a GitHub release (with
-copy-paste YouTube metadata), posts it as an Instagram Reel + Story and – once uploads are enabled –
-publishes it as a YouTube Short.
+Two posting slots a day (SLOTS). Every post is a concept that was never posted before: first the built-in kinds
+that are still new, then the concepts the concept designer builds twice a day (ytauto/concepts/, see
+docs/concept-designer.md). Only when no new concept is ready, a concept that performed notably well on the channel
+is run again (with a new seed), and only if there is none, the best performer so far.
+
+Each run renders the video, archives it as a GitHub release (with copy-paste YouTube metadata), posts it as an
+Instagram Reel + Story and – once uploads are enabled – publishes it as a YouTube Short.
 """
 from __future__ import annotations
 
@@ -11,6 +15,7 @@ import json
 import os
 import random
 import re
+import statistics
 from collections import Counter
 from pathlib import Path
 
@@ -23,7 +28,11 @@ CONFIG = ROOT / "config" / "sims.json"
 STATE = ROOT / "state" / "sims.json"
 TUNING = ROOT / "config" / "sims_tuning.json"  # written daily by trends.py
 OUT = ROOT / "out" / "sims"
-STORY_EVERY = 2  # a story for every Reel would crowd the account's stories
+STORY_EVERY = 1  # two Reels a day: each one also goes into the story
+SLOTS = [(11, 30), (18, 30)]  # UTC posting times (13:30 / 20:30 Berlin in summer, 12:30 / 19:30 in winter)
+SLOT_WINDOW = dt.timedelta(hours=6)  # a missed or failed slot is retried until this long after it
+STANDOUT = 1.6  # a concept may run again only if its views are at least this many times the channel median
+EXPERIMENTS = ("Loop Physics experiments", "A brand-new simulation concept every time.")
 COVER_AT = {"stringart": 0.9, "plinko": 0.85, "multiply": 0.85, "grow": 0.75, "pendulum": 0.55,
             "escape": 0.3, "polygon": 0.3, "battle": 0.3, "harmonograph": 0.97, "chaos": 0.7, "territory": 0.6,
             "race": 0.4}  # share of the run that makes the best cover frame
@@ -146,41 +155,115 @@ def save(path: Path, data) -> None:
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
-def plan(cfg: dict, state: dict) -> tuple[str, int, str]:
-    """Next format (weighted by the daily tuning, never twice in a row, recently used ones less likely),
-    a fresh seed for it, and the least used melody."""
+def score(rec: dict) -> int:
+    """Views of one post: Instagram + YouTube."""
+    return (rec.get("stats") or {}).get("views", 0) + rec.get("yt_views", 0)
+
+
+def performance(state: dict, now: dt.datetime | None = None) -> tuple[float, dict[str, tuple[float, int, int]]]:
+    """Channel median views (posts older than 12 h, last 40) and per kind: (median / channel median, posts, best)."""
+    now = now or dt.datetime.now(dt.timezone.utc)
+    aged = [v for v in state.get("videos", []) if (v.get("stats") or v.get("yt_views"))
+            and now - dt.datetime.fromisoformat(v["date"]) > dt.timedelta(hours=12)]
+    base = statistics.median([score(v) for v in aged[-40:]]) if aged else 0
+    out = {}
+    for k in {v["kind"] for v in aged}:
+        vs = [score(v) for v in aged if v["kind"] == k]
+        out[k] = (round(statistics.median(vs) / base, 2) if base else 0.0, len(vs), max(vs))
+    return base, out
+
+
+def standouts(state: dict) -> list[str]:
+    """Kinds that performed notably well – the only ones that may be posted again (best first)."""
+    base, perf = performance(state)
+    if not base or sum(n for _, n, _ in perf.values()) < 5:
+        return []
+    return sorted((k for k, (r, _, _) in perf.items() if r >= STANDOUT), key=lambda k: -perf[k][0])
+
+
+def concept_queue(cfg: dict, state: dict) -> list[str]:
+    """Concepts that were never posted: built-in kinds first, then designed concepts, oldest first."""
+    posted = {v["kind"] for v in state.get("videos", [])}
+    broken = set(state.get("broken", {}))
+    builtin = [k for k in cfg["kinds"] if k in sims.KINDS and not sims.KINDS[k].concept]
+    designed = sorted((k for k, c in sims.KINDS.items() if c.concept), key=lambda k: sims.KINDS[k].concept.get("created", ""))
+    return [k for k in builtin + designed if k not in posted and k not in broken]
+
+
+def plan(cfg: dict, state: dict) -> tuple[str, int, str, str]:
+    """Next kind (a new concept if one is ready, else a standout, else the best performer), a fresh seed with a
+    good length, the least used melody, and why this kind was chosen."""
     videos = state.get("videos", [])
     tuning = load(TUNING, {})
-    kinds = [k for k in cfg["kinds"] if k in sims.KINDS]
+    broken = set(state.get("broken", {}))
     last = videos[-1]["kind"] if videos else None
-    recent = Counter(v["kind"] for v in videos[-2 * len(kinds):])
-    cands = [k for k in kinds if k != last] or kinds
-    made = Counter(v["kind"] for v in videos)
-    weights = [max(0.05, tuning.get("kind_weights", {}).get(k, 1.0)) / (1 + recent[k]) * (NOVELTY if made[k] < 3 else 1)
-               for k in cands]
-    kind = random.Random(len(videos) * 7919).choices(cands, weights=weights)[0]
+    queue = concept_queue(cfg, state)
+    if queue:
+        kind, why = queue[0], "new"
+    else:
+        stars = [k for k in standouts(state) if k in sims.KINDS and k not in broken]
+        if stars:
+            kind, why = ([k for k in stars if k != last] or stars)[0], "standout"
+        else:
+            _, perf = performance(state)
+            ranked = sorted((k for k in perf if k in sims.KINDS and k not in broken and k != last), key=lambda k: -perf[k][0])
+            kind, why = (ranked or [k for k in cfg["kinds"] if k in sims.KINDS and k != last])[0], "fallback"
     start = max((v["seed"] for v in videos if v["kind"] == kind), default=-1) + 1
     ranges = [tuple(r) for r in tuning.get("ranges") or RANGES]
     lo, hi = ranges[len(videos) % len(ranges)]
-    try:
-        seed = sims.pick_seed(kind, start, lo, hi, tries=60)
-    except RuntimeError:  # some formats can't be that short or long
-        seed = sims.pick_seed(kind, start)
+    for args in ((lo, hi, 60), (35, 55, 150), (15, 75, 300)):  # some concepts can't be that short or long
+        try:
+            seed = sims.pick_seed(kind, start, *args)
+            break
+        except RuntimeError:
+            continue
+    else:
+        raise RuntimeError(f"{kind}: no seed with a usable length")
     tunes = Counter(v["melody"] for v in videos)
     last_tune = videos[-1]["melody"] if videos else None
     melody = min(sims.MELODIES, key=lambda m: (m == last_tune, tunes[m], m))
-    return kind, seed, melody
+    return kind, seed, melody, why
+
+
+def last_slot(now: dt.datetime) -> dt.datetime:
+    day = now.replace(second=0, microsecond=0)
+    times = [day.replace(hour=h, minute=m) - dt.timedelta(days=d) for d in (0, 1) for h, m in SLOTS]
+    return max(t for t in times if t <= now)
+
+
+def next_slot(now: dt.datetime) -> dt.datetime:
+    day = now.replace(second=0, microsecond=0)
+    times = [day.replace(hour=h, minute=m) + dt.timedelta(days=d) for d in (0, 1) for h, m in SLOTS]
+    return min(t for t in times if t > now)
+
+
+def slot_due(state: dict, now: dt.datetime | None = None) -> bool:
+    """Is a posting slot open that has no post yet?"""
+    now = now or dt.datetime.now(dt.timezone.utc)
+    slot = last_slot(now)
+    if now - slot > SLOT_WINDOW:
+        return False
+    videos = state.get("videos", [])
+    return not videos or dt.datetime.fromisoformat(videos[-1]["date"]) < slot - dt.timedelta(minutes=45)
+
+
+def _fmt(template: str, params: dict) -> str:
+    try:
+        return template.format(**params)
+    except (KeyError, IndexError, ValueError):
+        return params["onscreen"]
 
 
 def metadata(kind: str, seed: int, melody: str, cfg: dict) -> dict:
     rnd = random.Random(seed * 31 + len(kind))
     song_full = sims.MELODIES[melody][0]
     song = song_full.split(" – ")[0]
-    sim = sims.KINDS[kind](seed)
+    cls = sims.KINDS[kind]
+    sim = cls(seed)
     params = {"n": getattr(sim, "n", ""), "k": getattr(sim, "K", ""), "song": song, "onscreen": " ".join(sim.title()),
-              "delta": sims._decimal(sim.delta) if hasattr(sim, "delta") else ""}
+              "delta": sims._decimal(sim.delta) if isinstance(getattr(sim, "delta", None), float) else ""}
     tuning = load(TUNING, {})
-    title = rnd.choice(TITLES.get(kind, ["{onscreen}"])).format(**params)
+    title = _fmt(rnd.choice(cls.titles or TITLES.get(kind, ["{onscreen}"])), params)
     addons = [a for a in tuning.get("title_addons") or []
               if "?" not in a and not (kind in ("pendulum", "chaos", "harmonograph") and "bounce" in a.lower())]
     if addons and rnd.random() < 0.5:  # half the time: the on-screen question plus a trending add-on
@@ -189,24 +272,24 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict) -> dict:
     generic = [q for q in tuning.get("questions") or []
                if not re.search(r"\b(rings?|pendulums?|plinko|colou?rs?|polygons?|balls? wins?|escapes?|marbles?|races?)\b",
                                 q, re.I)]
-    question = rnd.choice(QUESTIONS.get(kind, ["Did you recognise the melody?"]) + generic[:3])
+    question = rnd.choice((cls.questions or QUESTIONS.get(kind, ["Did you recognise the melody?"])) + generic[:3])
     tags_line = " ".join(["#satisfying"] + [f"#{t}" for t in (tuning.get("hashtags") or []) if t != "satisfying"][:3]) \
         if tuning.get("hashtags") else cfg["instagram"].get("hashtags", "")
     composer = COMPOSERS.get(melody, "")
-    body = (BODIES.get(kind, "Every bounce plays the next note of {song}.").format(song=song_full, **{
-        k: v for k, v in params.items() if k != "song"}) + "\n"
+    body = (_fmt(cls.body or BODIES.get(kind, "Every bounce plays the next note of {song}."),
+                 {**params, "song": song_full}) + "\n"
             "Physics, picture and sound are all generated in code – no two runs are the same.")
     description = "\n\n".join([
         body,
         f"💬 {question}",
-        f"A new simulation every few hours on {cfg['channel_name']}.",
+        f"A brand-new simulation concept twice a day on {cfg['channel_name']}.",
         "#satisfying #physics #simulation #shorts",
     ])
     caption = "\n\n".join([
         title,
         body,
         f"💬 {question}",
-        f"Follow {cfg['handle']} – a new one every few hours."
+        f"Follow {cfg['handle']} – a brand-new concept twice a day."
         + (f"\n▶ YouTube: {cfg['youtube']['channel_url']}" if cfg["youtube"].get("channel_url") else ""),
         (tags_line + (f" #{composer.lower()}" if composer else "")).strip(),
     ])
@@ -220,6 +303,11 @@ def _youtube_token(cfg: dict) -> str | None:
         return None
     data = json.loads(Fernet(os.environ["IG_TOKEN_KEY"].strip().encode()).decrypt(path.read_bytes().strip()))
     return youtube.access_token_from(data["refresh_token"])
+
+
+def planned_run() -> bool:
+    """Started by the schedule or the timer (posts only in an open slot), not by hand."""
+    return os.environ.get("GITHUB_EVENT_NAME") == "schedule" or os.environ.get("IN_SOURCE") in ("timer", "watchdog")
 
 
 def run(upload: bool = True) -> dict:
@@ -238,20 +326,30 @@ def run(upload: bool = True) -> dict:
         if used >= total - 3:
             print(f"[sims] Instagram publishing limit nearly used ({used}/{total} in 24 h) – skipping this hour", flush=True)
             return {}
-    videos = state.get("videos", [])
-    planned = os.environ.get("GITHUB_EVENT_NAME") == "schedule" or os.environ.get("IN_SOURCE") == "timer"
-    if planned and videos and \
-            dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(videos[-1]["date"]) < dt.timedelta(minutes=100):
-        print("[sims] last Reel is less than 100 minutes old – skipping this scheduled run", flush=True)
+    if planned_run() and not slot_due(state):
+        print("[sims] no open posting slot – nothing to post", flush=True)
         return {}
-    kind, seed, melody = plan(cfg, state)
-    meta = metadata(kind, seed, melody, cfg)
-    stamp = dt.datetime.now(dt.timezone.utc)
-    name = f"{stamp:%Y%m%d}-{kind}-{seed}"
-    print(f"[sims] {name}: {meta['title']} ({sims.MELODIES[melody][0]})", flush=True)
-    result = sims.render(kind, seed, OUT / f"{name}.mp4", melody, cfg.get("handle", ""))
+    for attempt in range(3):  # a concept that fails is set aside and the next one goes out instead
+        kind, seed, melody, why = plan(cfg, state)
+        stamp = dt.datetime.now(dt.timezone.utc)
+        name = f"{stamp:%Y%m%d}-{kind}-{seed}"
+        try:
+            meta = metadata(kind, seed, melody, cfg)
+            print(f"[sims] {name} ({why}): {meta['title']} ({sims.MELODIES[melody][0]})", flush=True)
+            result = sims.render(kind, seed, OUT / f"{name}.mp4", melody, cfg.get("handle", ""))
+            break
+        except Exception as err:  # noqa: BLE001
+            state.setdefault("broken", {})[kind] = f"{stamp:%Y-%m-%d %H:%M} {type(err).__name__}: {err}"[:300]
+            save(STATE, state)
+            print(f"  warning: {kind} failed and is set aside: {err}", flush=True)
+    else:
+        raise SystemExit("[sims] no concept could be rendered")
+    cls = sims.KINDS[kind]
     record = {"date": stamp.isoformat(timespec="seconds"), "kind": kind, "seed": seed, "melody": melody,
-              "timbre": result.get("timbre"), "title": meta["title"], "duration": round(result["duration"], 1)}
+              "timbre": result.get("timbre"), "title": meta["title"], "duration": round(result["duration"], 1),
+              "why": why}
+    if cls.concept:
+        record["concept"] = cls.concept.get("idea", "")
     if not upload:
         print(f"  rendered {result['video']} ({result['duration']:.1f}s)", flush=True)
         return record
@@ -266,7 +364,8 @@ def run(upload: bool = True) -> dict:
     if video_url and instagram.configured(cfg):
         try:
             story = len(state.get("videos", [])) % STORY_EVERY == 0
-            cover_ms = int(1000 * (result["duration"] - sims.OUTRO) * COVER_AT.get(kind, 0.5))
+            share = cls.cover_at if cls.cover_at is not None else COVER_AT.get(kind, 0.5)
+            cover_ms = int(1000 * (result["duration"] - sims.OUTRO) * share)
             record.update(instagram.post_reel(cfg, video_url, meta["caption"], story=story, label=meta["title"],
                                               thumb_offset_ms=cover_ms))
         except Exception as err:  # one platform failing must not lose the run
@@ -426,6 +525,10 @@ def youtube_polish(apply: bool = False) -> None:
             matches.append((v, rec))
             rec["youtube_id"] = v["id"]
             taken.add(v["id"])
+    views = {v["id"]: int(v["statistics"].get("viewCount", 0)) for v in videos}
+    for r in records:  # own views per post, for spotting standouts
+        if r.get("youtube_id") in views:
+            r["yt_views"] = views[r["youtube_id"]]
     if not apply:
         for pl in get("playlists", part="snippet,contentDetails", mine="true", maxResults=50).get("items", []):
             print(f"  playlist {pl['id']} {pl['contentDetails']['itemCount']} videos: {pl['snippet']['title']}", flush=True)
@@ -439,10 +542,11 @@ def youtube_polish(apply: bool = False) -> None:
         send("PUT", "videos", "snippet", {"id": v["id"], "snippet": {
             "title": meta["title"], "description": meta["description"], "tags": meta["tags"],
             "categoryId": cfg["youtube"]["category_id"], "defaultLanguage": cfg["youtube"]["default_language"]}})
-        name, about = PLAYLISTS.get(rec["kind"], (rec["kind"], ""))
+        cls = sims.KINDS.get(rec["kind"])
+        name, about = PLAYLISTS.get(rec["kind"]) or (cls and cls.playlist) or EXPERIMENTS
         if name not in existing:
             existing[name] = send("POST", "playlists", "snippet,status", {
-                "snippet": {"title": name, "description": f"{about} New simulations every few hours on Loop Physics.",
+                "snippet": {"title": name, "description": f"{about} A brand-new concept twice a day on Loop Physics.",
                             "defaultLanguage": "en"}, "status": {"privacyStatus": "public"}})["id"]
             time.sleep(8)  # new playlists take a moment before YouTube accepts items
         have = requests.get(f"{api}/playlistItems", headers=h, timeout=30,

@@ -10,6 +10,8 @@
   python -m ytauto highlights                  which recent stories go into which highlight
   python -m ytauto sim --kind escape           render a satisfying physics simulation Short
   python -m ytauto sims                        Loop Physics channel: render + publish the next simulation
+  python -m ytauto concepts                    Loop Physics: all concepts, the queue and what performs
+  python -m ytauto concept-check KIND [--full] Loop Physics: quality gate for a (new) concept
   python -m ytauto trends                      Loop Physics: daily trend check and tuning
 """
 from __future__ import annotations
@@ -273,6 +275,12 @@ def main(argv: list[str] | None = None) -> int:
     sc.add_argument("--no-upload", action="store_true")
     sc.add_argument("--branding", action="store_true", help="set banner, description and keywords on YouTube")
     sc.add_argument("--youtube", choices=["check", "apply"], help="match manual YouTube uploads and polish them")
+    sc.add_argument("--due", action="store_true", help="print 'post' if a posting slot is open, else 'idle'")
+    sub.add_parser("concepts", help="Loop Physics: every concept with status, queue and performance")
+    cc = sub.add_parser("concept-check", help="Loop Physics: quality gate + contact sheet for a concept")
+    cc.add_argument("kind", nargs="?")
+    cc.add_argument("--full", action="store_true", help="also render the whole video and check its loudness")
+    cc.add_argument("--all", action="store_true", help="quick check of every kind (after changing shared code)")
     sub.add_parser("trends", help="Loop Physics: daily trend check, writes config/sims_tuning.json")
     sub.add_parser("watchdog", help="print overdue workflows as JSON lines (file, inputs)")
     hl = sub.add_parser("highlights", help="list recent stories by the highlight they belong in")
@@ -303,8 +311,23 @@ def main(argv: list[str] | None = None) -> int:
         print(f"{result['video']}  ({result['duration']:.1f}s, {result['melody_name']})")
         return 0
 
+    if args.cmd == "concepts":
+        from . import conceptcheck
+        print(conceptcheck.listing(simchannel.load(simchannel.CONFIG, {}), simchannel.load(simchannel.STATE, {})))
+        return 0
+    if args.cmd == "concept-check":
+        from . import conceptcheck
+        kinds = list(sims.KINDS) if args.all else [args.kind]
+        if not kinds or not kinds[0]:
+            ap.error("concept-check needs a kind or --all")
+        ok = [conceptcheck.check(k, full=args.full and not args.all) for k in kinds]
+        return 0 if all(ok) else 1
+
     if args.cmd == "sims":
-        if args.branding:
+        if args.due:
+            manual = not simchannel.planned_run()
+            print("post" if manual or simchannel.slot_due(simchannel.load(simchannel.STATE, {})) else "idle")
+        elif args.branding:
             simchannel.branding()
         elif args.youtube:
             simchannel.youtube_polish(apply=args.youtube == "apply")

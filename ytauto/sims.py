@@ -203,8 +203,17 @@ class Sim:
     """A simulation kind: physics in step(), picture in draw(), on-screen text in title()/counter()/finale()."""
     kind = ""
     counter_color = (255, 214, 120)
-    note_gap = 0.045  # shortest gap between two melody notes (s)
-    slowmo = False    # the finale moment is worth a slow-motion replay
+    note_gap = 0.045     # shortest gap between two melody notes (s)
+    slowmo = False       # the finale moment is worth a slow-motion replay
+    finale_punch = 1.0   # screen shake + flash at the finale (0 = none)
+    # designed concepts (ytauto/concepts/) describe themselves; the built-in kinds use the tables in simchannel
+    concept: dict = {}   # {"created": ISO time, "idea": ..., "inspiration": ..., "finale": ...}
+    titles: list[str] | None = None
+    questions: list[str] | None = None
+    body: str | None = None
+    playlist: tuple[str, str] | None = None
+    cover_at: float | None = None
+    trend_words: tuple[str, ...] = ()
 
     def __init__(self, seed: int) -> None:
         self.rnd = random.Random(seed)  # physics only
@@ -258,6 +267,7 @@ class Sim:
 
 
 class Escape(Sim):
+    """A ball bounces inside spinning rings with a gap and breaks out ring by ring."""
     kind = "escape"
     slowmo = True
     RINGS = (10, 16)
@@ -532,6 +542,7 @@ class Polygon(Sim):
 
 
 class Grow(Sim):
+    """A ball grows with every bounce until it fills the circle."""
     kind = "grow"
     slowmo = True
 
@@ -605,6 +616,7 @@ class Grow(Sim):
 class Plinko(Sim):
     """Galton board: balls drop onto a triangle of pegs and settle in bins (each landing plays a note)."""
     kind = "plinko"
+    finale_punch = 0.6
 
     def __init__(self, seed: int):
         super().__init__(seed)
@@ -754,6 +766,7 @@ class Plinko(Sim):
 class StringArt(Sim):
     """A ball speeding up inside a shape; every bounce leaves a line to the previous contact point."""
     kind = "stringart"
+    finale_punch = 0.5
 
     def __init__(self, seed: int):
         super().__init__(seed)
@@ -905,6 +918,7 @@ class Pendulum(Sim):
     """Pendulum wave seen from below: K bobs with slightly different swing rates drift into waves and
     snakes and fall back in line at the end. Each bob rings its own note when it reaches the right side."""
     kind = "pendulum"
+    finale_punch = 0.5
     counter_color = (150, 230, 255)
 
     def __init__(self, seed: int):
@@ -980,6 +994,7 @@ class Territory(Sim):
     them in its colour. Whoever owns most of the board when the time is up wins."""
     kind = "territory"
     note_gap = 0.11
+    OVERTIME = 8.0  # the last seconds: the balls speed up
     PAIRS = [(0, 1), (5, 7), (4, 2), (6, 3)]
 
     def __init__(self, seed: int):
@@ -1033,8 +1048,11 @@ class Territory(Sim):
         if self.end is not None:
             return
         h, cs, G = self.h, self.c, self.G
+        speed = self.speed * (1 + 0.8 * max(0.0, (self.t - self.T + self.OVERTIME) / self.OVERTIME))  # final sprint
         for j, b in enumerate(self.balls):
             team = self.team_of[j]
+            m = math.hypot(b.vx, b.vy)
+            b.vx, b.vy = b.vx * speed / m, b.vy * speed / m
             b.x += b.vx * dt
             b.y += b.vy * dt
             if b.x - b.rb < -h or b.x + b.rb > h:
@@ -1073,7 +1091,7 @@ class Territory(Sim):
                 q = (a % (math.pi / 2)) / (math.pi / 2)  # keep away from the axes, or a ball runs in a rut
                 if q < 0.12 or q > 0.88:
                     a += (0.12 - q if q < 0.5 else 0.88 - q) * math.pi / 2
-                b.vx, b.vy = math.cos(a) * self.speed, math.sin(a) * self.speed
+                b.vx, b.vy = math.cos(a) * speed, math.sin(a) * speed
                 self.events.append((self.t, "bounce", j))
         if self.t >= self.T:
             self.finish()
@@ -1139,7 +1157,12 @@ class Territory(Sim):
             x += w
         d.rectangle((x0, y0, x1, y1), outline=(255, 255, 255), width=3)
         if self.end is None:
-            p.centered(d, 1422, f"{max(0, math.ceil(self.T - self.t))} s left", p.f_count, (255, 214, 120), 2)
+            left = max(0, math.ceil(self.T - self.t))
+            if self.T - self.t < self.OVERTIME:
+                pulse = 0.5 + 0.5 * math.cos(TAU * 2 * self.t)
+                p.centered(d, 1422, f"FINAL SPRINT – {left} s", p.f_count, _mix((255, 70, 70), 0.6 + 0.4 * pulse), 2)
+            else:
+                p.centered(d, 1422, f"{left} s left", p.f_count, (255, 214, 120), 2)
         else:
             p.big_text(d, self.finale(), self.t - self.end)
 
@@ -1279,6 +1302,7 @@ class Harmonograph(Sim):
     """A harmonograph: two damped pendulums move the pen in x, two in y – slightly detuned, so the figure
     slowly turns while it shrinks into a rosette."""
     kind = "harmonograph"
+    finale_punch = 0.4
     RATIOS = [(1, 2), (2, 3), (3, 4), (2, 1), (3, 2), (1, 3), (3, 5), (4, 5)]
 
     def __init__(self, seed: int):
@@ -1883,6 +1907,9 @@ class Painter:
         self.trails: dict[object, list[tuple[float, float, float]]] = {}
         self.seen = 0
         self._masks: dict[tuple, Image.Image] = {}
+        self.kicks: list[tuple[float, float]] = []
+        self._shake_rng = np.random.default_rng(777)
+        self._white = Image.new("RGB", (W, H), (255, 255, 255))
         self.f_title = _font("Poppins-ExtraBold.ttf", 76)
         self.f_count = _font("Poppins-SemiBold.ttf", 46)
         self.f_small = _font("Poppins-SemiBold.ttf", 30)
@@ -1893,6 +1920,8 @@ class Painter:
         """The picture after the simulation moved on by dt seconds (less than a frame in slow motion)."""
         sim = self.sim
         for _, kind, i in sim.events[self.seen:]:
+            if kind == "finale" and sim.finale_punch:
+                self.punch(sim.finale_punch)
             sim.on_event(self, kind, i)
         self.seen = len(sim.events)
         self.parts.update(dt)
@@ -1903,7 +1932,7 @@ class Painter:
         sim.draw(self)
         img = img.resize((W, H), Image.BOX)
         glow = glow.filter(ImageFilter.GaussianBlur(7)).resize((W, H), Image.BILINEAR)
-        img = ImageChops.screen(img, ImageChops.screen(glow, glow))
+        img = self._shake(ImageChops.screen(img, ImageChops.screen(glow, glow)))
         d = ImageDraw.Draw(img)
         self.centered(d, H - 430, self.credit, self.f_small, (170, 170, 200))
         if self.handle:
@@ -1947,6 +1976,21 @@ class Painter:
 
     def particles(self) -> None:
         self.parts.draw(self.d, SS)
+
+    def punch(self, strength: float = 1.0) -> None:
+        """Escalation effect: a short screen shake and white flash (1 = the standard finale; stacks)."""
+        self.kicks.append((self.sim.t, strength))
+
+    def _shake(self, img: Image.Image) -> Image.Image:
+        t = self.sim.t
+        self.kicks = [(t0, s) for t0, s in self.kicks if t - t0 < 0.7]
+        amp = sum(s * max(0.0, 1 - (t - t0) / 0.6) for t0, s in self.kicks)
+        if amp < 0.03:
+            return img
+        dx, dy = (int(v) for v in self._shake_rng.normal(0, 10 * min(amp, 2.5), 2))
+        img = ImageChops.offset(img, dx, dy)
+        flash = min(0.5, 0.35 * sum(s * max(0.0, 1 - (t - t0) / 0.18) for t0, s in self.kicks))
+        return Image.blend(img, self._white, flash) if flash > 0.01 else img
 
     def clip(self, y0: float, y1: float, fade: float = 110) -> None:
         """Fade out everything drawn above y0 and below y1 so a scrolling scene stays clear of the text."""
@@ -2024,3 +2068,10 @@ def render(kind: str, seed: int, out: Path, melody: str | None = None, handle: s
     wav.unlink(missing_ok=True)
     return {"video": out, "duration": duration, "kind": kind, "seed": seed, "melody": melody,
             "melody_name": MELODIES[melody][0], "timbre": timbre, "title": " ".join(sim.title()), "slowmo": slow}
+
+
+# ---------------------------------------------------------------- designed concepts
+
+from . import concepts as _concepts  # noqa: E402  (each concept module builds on the classes above)
+
+KINDS.update({k: v for k, v in _concepts.discover().items() if k not in KINDS})

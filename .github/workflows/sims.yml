@@ -1,12 +1,14 @@
 name: Loop Physics
 
-# Every 2 hours a new satisfying physics simulation: render, archive as release, Instagram Reel (+ Story every
-# 2nd; YouTube once enabled). Own queue, so the long Quiet Thoughts renders never delay or cancel these runs.
+# Two posting slots a day (11:30 and 18:30 UTC, see SLOTS in ytauto/simchannel.py): each post is a concept that was
+# never posted before (built twice a day by the concept designer, docs/concept-designer.md). Between the slots the
+# timer starts this workflow about every 2 hours as a heartbeat: it then only polishes manual YouTube uploads and
+# starts overdue workflows. Own queue, so the long Quiet Thoughts renders never delay or cancel these runs.
 on:
   schedule:
-    - cron: "40 */2 * * *"     # main slot
-    - cron: "7 1-23/2 * * *"   # backups: GitHub sometimes drops scheduled runs; they only post when the
-    - cron: "33 1-23/2 * * *"  # last Reel is older than 100 minutes, i.e. when the main slot was skipped
+    - cron: "31 11 * * *"   # posting slots (GitHub sometimes drops scheduled runs – the timer chain and the
+    - cron: "31 18 * * *"   # 6-hour slot window cover that; a slot is only ever posted once)
+    - cron: "17 */4 * * *"  # heartbeat backup in case the timer chain broke
   workflow_dispatch:
     inputs:
       upload:
@@ -48,11 +50,24 @@ jobs:
           python-version: "3.12"
           cache: pip
 
-      - name: Install ffmpeg
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
-
       - name: Install Python packages
         run: pip install -r requirements.txt
+
+      - name: Post now or just keep things tidy?
+        id: mode
+        env:
+          IN_BRANDING: ${{ github.event.inputs.branding }}
+          IN_YOUTUBE: ${{ github.event.inputs.youtube }}
+          IN_SOURCE: ${{ github.event.inputs.source }}
+        run: |
+          if [ "$IN_BRANDING" = "true" ] || [ "$IN_YOUTUBE" = "check" ] || [ "$IN_YOUTUBE" = "apply" ]; then MODE=admin
+          else MODE=$(python -m ytauto sims --due); fi
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+          echo "mode: $MODE"
+
+      - name: Install ffmpeg
+        if: steps.mode.outputs.mode == 'post'
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
 
       - name: Render and publish
         env:
@@ -60,15 +75,20 @@ jobs:
           IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          MODE: ${{ steps.mode.outputs.mode }}
           IN_UPLOAD: ${{ github.event.inputs.upload }}
           IN_BRANDING: ${{ github.event.inputs.branding }}
           IN_YOUTUBE: ${{ github.event.inputs.youtube }}
           IN_SOURCE: ${{ github.event.inputs.source }}
         run: |
-          if [ "$IN_BRANDING" = "true" ]; then python -m ytauto sims --branding
-          elif [ "$IN_YOUTUBE" = "check" ] || [ "$IN_YOUTUBE" = "apply" ]; then python -m ytauto sims --youtube "$IN_YOUTUBE"
-          elif [ "$IN_UPLOAD" = "false" ]; then python -m ytauto sims --no-upload
-          else python -m ytauto sims; fi
+          if [ "$MODE" = "admin" ]; then
+            if [ "$IN_BRANDING" = "true" ]; then python -m ytauto sims --branding
+            else python -m ytauto sims --youtube "$IN_YOUTUBE"; fi
+          elif [ "$MODE" = "post" ]; then
+            if [ "$IN_UPLOAD" = "false" ]; then python -m ytauto sims --no-upload; else python -m ytauto sims; fi
+          else  # heartbeat: give manual YouTube uploads our texts and playlists, refresh their view counts
+            python -m ytauto sims --youtube apply || echo "YouTube polish skipped"
+          fi
 
       - name: Save progress
         if: always()
@@ -97,12 +117,12 @@ jobs:
               -d "{\"ref\":\"main\",\"inputs\":$2}"
           }
           AT=$(python -c "
-          import json, os, datetime as dt
-          v = json.load(open('state/sims.json'))['videos']
+          import os, datetime as dt
+          from ytauto import simchannel as sc
           now = dt.datetime.now(dt.timezone.utc)
-          last = dt.datetime.fromisoformat(v[-1]['date']) if v else now
-          gap = 30 if os.environ.get('JOB_STATUS') == 'success' else 90  # after a failure: no retry storm
-          print(max(last + dt.timedelta(minutes=120), now + dt.timedelta(minutes=gap)).isoformat(timespec='seconds'))")
+          slot = sc.next_slot(now) + dt.timedelta(minutes=1)
+          later = now + dt.timedelta(minutes=120 if os.environ.get('JOB_STATUS') == 'success' else 60)  # heartbeat / retry
+          print(min(slot, later).isoformat(timespec='seconds'))")
           echo "next Loop Physics run at $AT"
           dispatch sims-timer.yml "{\"at\":\"$AT\"}"
           python -m ytauto watchdog | while read -r line; do
