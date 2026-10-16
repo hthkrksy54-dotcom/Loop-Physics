@@ -31,7 +31,7 @@
     "channel_url": "youtube.com/@LoopPhysics-420"
   },
   "tiktok": {
-    "enabled": false,
+    "enabled": true,
     "account": "loop_physics",
     "token_file": "state/tiktok_sims.token"
   }
