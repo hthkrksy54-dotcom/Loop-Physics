@@ -6,6 +6,16 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist die Frage, die oben im Video steht.
 
+## 16.10. 19:42 UTC – Which color conquers the board?
+
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-territory-0)
+
+```text
+Which color conquers the board?
+Two colors or four – which is better?
+#pongwars #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 16.10. 14:41 UTC – 12 pendulums, one perfect moment
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-pendulum-2)

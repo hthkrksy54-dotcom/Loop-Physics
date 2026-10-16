@@ -21,7 +21,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 9,
+      "yt_views": 12,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234343969720322",
         "status": "SEND_TO_USER_INBOX",
@@ -48,7 +48,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1108,
+      "yt_views": 1140,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235341996115990",
         "status": "PUBLISH_COMPLETE",
@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1809,
+      "yt_views": 2136,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -104,7 +104,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 5,
+      "yt_views": 6,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235656464123907",
         "status": "PUBLISH_COMPLETE",
@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 3304,
+      "yt_views": 4796,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -161,7 +161,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 9,
+      "yt_views": 12,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233117064890390",
         "status": "SEND_TO_USER_INBOX",
@@ -190,7 +190,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1190,
+      "yt_views": 1286,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232916815824918",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1404,
+      "yt_views": 2718,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -249,7 +249,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 5,
+      "yt_views": 9,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233367154608150",
         "status": "SEND_TO_USER_INBOX",
@@ -277,7 +277,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 6,
+      "yt_views": 7,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233859481487382",
         "status": "SEND_TO_USER_INBOX",
@@ -340,6 +340,25 @@
         "publish_id": "v_inbox_file~v2.7697278012576827414",
         "status": "SEND_TO_USER_INBOX",
         "caption": "12 pendulums, one perfect moment\nWhat would you change?\n#pendulumwave #satisfying #oddlysatisfying #physics #simulation"
+      }
+    },
+    {
+      "date": "2026-10-16T19:42:35+00:00",
+      "kind": "territory",
+      "seed": 0,
+      "melody": "nachtmusik",
+      "timbre": "glass",
+      "title": "Pong wars: which color takes over?",
+      "duration": 66.3,
+      "why": "new",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-territory-0",
+      "warnings": [
+        "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"Ag55P4JoebLS-EZMjjuryam\"}}"
+      ],
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697354791248676867",
+        "status": "SEND_TO_USER_INBOX",
+        "caption": "Which color conquers the board?\nTwo colors or four – which is better?\n#pongwars #satisfying #oddlysatisfying #physics #simulation"
       }
     }
   ]
