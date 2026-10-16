@@ -10,7 +10,7 @@ lasts 24 h and is refreshed on every run; the refresh token lasts a year and is 
 
 One-time setup (locally, with IG_TOKEN_KEY set):
   python -m ytauto tiktok url --key CLIENT_KEY            -> open the link, allow, copy the address you land on
-  python -m ytauto tiktok connect --key CLIENT_KEY --secret CLIENT_SECRET --redirect "https://github.com/...?code=..."
+  python -m ytauto tiktok connect --key CLIENT_KEY --secret CLIENT_SECRET --redirect "<address shown on the callback page>"
   python -m ytauto tiktok check                           -> shows the connected account
 """
 from __future__ import annotations
@@ -27,7 +27,7 @@ from cryptography.fernet import Fernet, InvalidToken
 
 API = "https://open.tiktokapis.com/v2"
 AUTH = "https://www.tiktok.com/v2/auth/authorize/"
-REDIRECT = "https://github.com/hthkrksy54-dotcom/Yt"
+REDIRECT = "https://hthkrksy54-dotcom.github.io/Yt/tiktok-callback.html"
 SCOPES = "user.info.basic,video.upload,video.publish"
 ROOT = Path(__file__).resolve().parent.parent
 QUEUE = ROOT / "state" / "tiktok.md"

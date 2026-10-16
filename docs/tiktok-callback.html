@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TikTok – connected</title><style>
+:root{--bg:#0e0f14;--fg:#e8e8ef;--muted:#a3a3b5;--accent:#7cc4ff;--card:#171922}
+@media (prefers-color-scheme: light){:root{--bg:#fafafa;--fg:#16161c;--muted:#55556a;--accent:#1565c0;--card:#ffffff}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:32px 16px 64px}a{color:var(--accent)}h1{line-height:1.25}
+code{background:var(--card);padding:1px 5px;border-radius:4px}img{max-width:100%}
+nav{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:24px;color:var(--muted)}
+</style></head>
+<body><main><nav><a href="./">ytauto</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></nav>
+<h1>TikTok connected – one last step</h1>
+<p id="msg">Copy the code below and send it to Claude in the chat.</p>
+<p><textarea id="code" readonly rows="4" style="width:100%;font:15px monospace;padding:10px;border-radius:8px;background:var(--card);color:var(--fg);border:1px solid var(--muted)"></textarea></p>
+<p><button id="copy" style="font-size:17px;padding:12px 22px;border-radius:10px;border:0;background:var(--accent);color:#000;cursor:pointer">Copy</button> <span id="done"></span></p>
+<script>
+const q = new URLSearchParams(location.search);
+const box = document.getElementById("code");
+if (q.get("error")) {
+  document.getElementById("msg").textContent = "TikTok reported an error: " + (q.get("error_description") || q.get("error"));
+  box.value = location.href;
+} else {
+  box.value = location.href;
+}
+document.getElementById("copy").onclick = async () => {
+  box.select();
+  try { await navigator.clipboard.writeText(box.value); } catch (e) { document.execCommand("copy"); }
+  document.getElementById("done").textContent = "copied ✓";
+};
+</script>
+
+</main></body></html>
