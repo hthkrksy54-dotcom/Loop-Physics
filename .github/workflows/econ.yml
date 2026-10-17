@@ -19,6 +19,10 @@ on:
       source:
         description: "Who started the run (watchdog = catching up a dropped schedule)"
         default: "manual"
+      branding:
+        description: "Only set the channel banner on YouTube (no video)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -47,7 +51,16 @@ jobs:
       - name: Install Python packages
         run: pip install -r requirements.txt
 
+      - name: Channel banner
+        if: github.event.inputs.branding == 'true'
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN_ECON: ${{ secrets.YT_REFRESH_TOKEN_ECON }}
+        run: python -m ytauto econ branding
+
       - name: Due now? (4:00 German time, once a day)
+        if: github.event.inputs.branding != 'true'
         id: today
         run: |
           python -c "
@@ -59,7 +72,7 @@ jobs:
           open('$GITHUB_OUTPUT', 'a').write('done=' + ('yes' if why else 'no') + chr(10))"
 
       - name: Render and publish
-        if: (github.event_name == 'workflow_dispatch' && github.event.inputs.source != 'watchdog') || steps.today.outputs.done == 'no'
+        if: github.event.inputs.branding != 'true' && ((github.event_name == 'workflow_dispatch' && github.event.inputs.source != 'watchdog') || steps.today.outputs.done == 'no')
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}

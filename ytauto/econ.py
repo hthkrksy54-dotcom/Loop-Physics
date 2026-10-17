@@ -902,3 +902,100 @@ def backfill_reel(every_day: bool = True) -> bool:
     save(STATE, state)
     print(f"  reel: {rec.get('instagram_url')} ({len(todo) - 1} still waiting)", flush=True)
     return True
+
+
+# ---------------------------------------------------------------- channel branding
+
+BANNER = ROOT / "assets" / "brand" / "real-numbers-banner.png"
+
+
+def banner(path: Path = BANNER) -> Path:
+    """YouTube channel banner, 2560x1440: everything that matters sits in the 1546x423 strip every device shows."""
+    from PIL import Image, ImageDraw, ImageFilter, ImageFont
+
+    W, H, SX, SY = 2560, 1440, 507, 508  # SX/SY: top left of the safe area (1546x423)
+    font = lambda name, size: ImageFont.truetype(str(ROOT / "assets" / "fonts" / name), size)  # noqa: E731
+    img = Image.new("RGB", (W, H), (0, 0, 0))
+    glow = Image.new("RGB", (W, H))
+    gd = ImageDraw.Draw(glow)
+    gd.ellipse((W / 2 - 1150, H / 2 - 520, W / 2 + 1150, H / 2 + 520), fill=(46, 10, 26))
+    gd.ellipse((1500, 420, 2150, 1020), fill=(70, 18, 34))
+    img = Image.blend(img, glow.filter(ImageFilter.GaussianBlur(260)), 1.0)
+
+    # right: savings that grow – columns rising like compound interest, the brand's glowing line riding on top
+    x0, x1, base, top = 1725, 2005, 905, 548
+    growth = [(1.12 ** (i * 2.4) - 1) / (1.12 ** 24 - 1) for i in range(11)]
+    pts = [(x0 + (x1 - x0) * i / 10, base - 30 - (base - 30 - top) * g) for i, g in enumerate(growth)]
+    cols = Image.new("RGBA", (W, H))
+    cd = ImageDraw.Draw(cols)
+    for (x, y) in pts[1::2]:
+        cd.rounded_rectangle((x - 15, y + 26, x + 15, base), radius=8, fill=(255, 255, 255, 26))
+    img.paste(cols, (0, 0), cols)
+    line = Image.new("RGB", (W, H))
+    ld = ImageDraw.Draw(line)
+    for i in range(len(pts) - 1):
+        k = i / (len(pts) - 2)
+        col = (255, int(150 - 95 * k), int(90 + 25 * k))  # orange to pink, like the profile picture
+        ld.line([pts[i], pts[i + 1]], fill=col, width=15, joint="curve")
+    blur = line.filter(ImageFilter.GaussianBlur(22))
+    img = Image.composite(Image.blend(img, blur, 0.9), img, blur.convert("L").point(lambda v: min(255, v * 3)))
+    img.paste(line, (0, 0), line.convert("L").point(lambda v: 255 if v > 20 else 0))
+    d = ImageDraw.Draw(img)
+    ex, ey = pts[-1]
+    halo = Image.new("RGB", (W, H))
+    ImageDraw.Draw(halo).ellipse((ex - 46, ey - 46, ex + 46, ey + 46), fill=(255, 70, 120))
+    img = Image.blend(img, Image.composite(halo.filter(ImageFilter.GaussianBlur(30)), img,
+                                           halo.filter(ImageFilter.GaussianBlur(30)).convert("L")), 0.8)
+    d = ImageDraw.Draw(img)
+    d.ellipse((ex - 17, ey - 17, ex + 17, ey + 17), fill=(245, 245, 248))
+
+    # left: who we are, in the safe area
+    left = SX + 90
+    kicker = "NEW VIDEO EVERY DAY"
+    kf = font("Inter-SemiBold.ttf", 38)
+    x = left
+    for i, ch in enumerate(kicker):  # letter-spaced, orange to pink
+        k = i / (len(kicker) - 1)
+        d.text((x, SY + 42), ch, font=kf, fill=(255, int(150 - 90 * k), int(90 + 30 * k)))
+        x += kf.getlength(ch) + 5
+    d.text((left - 5, SY + 92), "Real Numbers", font=font("InterDisplay-Bold.ttf", 152), fill=(245, 245, 248))
+    d.text((left, SY + 280), "Money made simple – with real numbers.", font=font("Inter-Medium.ttf", 48),
+           fill=(168, 168, 182))
+    pf, x = font("Inter-SemiBold.ttf", 31), left
+    for label in ("Saving", "Investing", "Debt", "Money habits"):
+        w = pf.getlength(label) + 44
+        d.rounded_rectangle((x, SY + 356, x + w, SY + 408), radius=26, outline=(92, 92, 108), width=2)
+        d.text((x + 22, SY + 382), label, font=pf, fill=(205, 205, 215), anchor="lm")
+        x += w + 16
+    path.parent.mkdir(parents=True, exist_ok=True)
+    img.save(path)
+    return path
+
+
+def branding() -> None:
+    """Upload the banner to the Real Numbers YouTube channel (works before the API audit); nothing else changes."""
+    import requests
+    from PIL import Image
+
+    cfg = load(CONFIG, {})
+    token = _youtube_token(cfg)
+    api, h = "https://www.googleapis.com/youtube/v3", {"Authorization": f"Bearer {token}"}
+    ch = requests.get(f"{api}/channels", params={"part": "snippet,brandingSettings", "mine": "true"}, headers=h,
+                      timeout=30).json()["items"][0]
+    if ch["snippet"]["title"] != cfg["channel_name"]:  # never touch another channel by accident
+        raise SystemExit(f"token belongs to '{ch['snippet']['title']}', not '{cfg['channel_name']}'")
+    jpg = BANNER.with_suffix(".jpg")
+    Image.open(banner()).convert("RGB").save(jpg, quality=92)
+    up = requests.post("https://www.googleapis.com/upload/youtube/v3/channelBanners/insert",
+                       headers={**h, "Content-Type": "image/jpeg"}, data=jpg.read_bytes(), timeout=120)
+    jpg.unlink()
+    if not up.ok:
+        raise SystemExit(f"banner upload failed ({up.status_code}): {up.text[:300]}")
+    settings = {"channel": {k: v for k, v in ch.get("brandingSettings", {}).get("channel", {}).items() if k != "title"},
+                "image": {"bannerExternalUrl": up.json()["url"]}}
+    r = requests.put(f"{api}/channels", params={"part": "brandingSettings"},
+                     headers={**h, "Content-Type": "application/json"},
+                     data=json.dumps({"id": ch["id"], "brandingSettings": settings}), timeout=60)
+    if not r.ok:
+        raise SystemExit(f"channel update failed ({r.status_code}): {r.text[:300]}")
+    print(f"banner set on {ch['snippet']['title']} ({ch['id']})", flush=True)
