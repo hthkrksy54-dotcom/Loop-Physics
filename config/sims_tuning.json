@@ -1,19 +1,21 @@
 {
-  "updated": "2026-10-16T10:06+00:00",
+  "updated": "2026-10-17T09:40+00:00",
   "kind_weights": {
-    "escape": 1.4,
-    "grow": 1.0,
-    "battle": 1.54,
-    "polygon": 1.12,
-    "plinko": 1.0,
+    "escape": 1.5,
+    "grow": 1.01,
+    "battle": 1.51,
+    "polygon": 1.24,
+    "plinko": 0.88,
     "stringart": 1.0,
-    "multiply": 1.21,
+    "multiply": 1.15,
     "pendulum": 1.0,
     "territory": 1.0,
     "chaos": 1.0,
-    "harmonograph": 1.02,
-    "race": 1.72,
-    "blade_duel": 1.0
+    "harmonograph": 1.01,
+    "race": 1.83,
+    "blade_duel": 1.0,
+    "brick_core": 1.01,
+    "domino_scale": 1.01
   },
   "ranges": [
     [
@@ -35,54 +37,59 @@
     "bouncingball",
     "oddlysatisfying",
     "physicssimulation",
-    "marblerun"
+    "satisfyingvideo"
   ],
   "title_addons": [
-    "Wait for the ending",
-    "Sound on",
+    "Watch till the end",
     "Guess the song",
+    "Sound on",
     "Try not to blink",
-    "Listen to the rhythm"
+    "Spot the pattern",
+    "Listen closely",
+    "Count the bounces",
+    "Find the hidden loop",
+    "Feel the rhythm"
   ],
   "questions": [
-    "What would you change?",
-    "Which bounce is most satisfying?",
-    "Can you predict the path?",
-    "Which simulation feels best?"
+    "What’s the fastest bounce?",
+    "Can you guess the next move?",
+    "Which shape will win?"
   ],
   "trend_keywords": [
     "simulation",
     "ball",
-    "asmr",
-    "marble",
     "physics",
+    "marble",
+    "asmr",
     "bouncing",
-    "balls",
-    "run",
     "marble run",
+    "run",
+    "balls",
+    "rings",
+    "bouncingball",
     "physics simulation",
     "song",
-    "rings",
     "escape",
-    "bouncingball",
-    "marblerun"
+    "course"
   ],
   "trend_share": {
-    "escape": 0.003,
-    "grow": 0.001,
-    "battle": 0.268,
-    "polygon": 0.032,
+    "escape": 0.006,
+    "grow": 0.003,
+    "battle": 0.256,
+    "polygon": 0.049,
     "plinko": 0.0,
     "stringart": 0.0,
-    "multiply": 0.103,
+    "multiply": 0.073,
     "pendulum": 0.0,
     "territory": 0.0,
-    "chaos": 0.001,
-    "harmonograph": 0.011,
-    "race": 0.36,
-    "blade_duel": 0.0
+    "chaos": 0.0,
+    "harmonograph": 0.006,
+    "race": 0.413,
+    "blade_duel": 0.0,
+    "brick_core": 0.007,
+    "domino_scale": 0.007
   },
   "trend_videos": 135,
-  "trend_median_seconds": 26.0,
-  "summary_de": "Diese Woche liegen die Trends bei Bällen, Marbles und physikalischen Simulationen, besonders bei Escape‑ und Race‑Elementen. Wir kombinieren kurze Fragen mit Add‑Ons wie „Guess the song“ oder „Try not to blink“, um die Zuschauer zum Mitmachen zu animieren. So nutzen wir aktuelle Keywords, ohne Clickbait zu verwenden."
+  "trend_median_seconds": 29.5,
+  "summary_de": "Diese Woche stehen Simulationen mit Bällen, Marbles und physikalischen Abläufen im Trend. Wir nutzen die beliebten Stichwörter wie \"bouncing\", \"escape\" und \"race\", um kurze, klare Fragen zu stellen und passende Add-ons wie \"Guess the song\" anzuhängen. So bleibt unser Content einfach, ehrlich und fesselnd für die Zuschauer."
 }
