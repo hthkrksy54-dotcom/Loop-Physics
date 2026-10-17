@@ -781,3 +781,35 @@ def youtube_sync() -> bool:
     if changed:
         save(STATE, state)
     return changed
+
+
+def backfill_reel() -> bool:
+    """Post the Short of the oldest episode that has no Reel yet – made before Instagram was connected, or its
+    Reel failed – as Reel + story, at most one a day and only while its release (the video's public URL) exists."""
+    import datetime as dt
+
+    cfg, state = load(CONFIG, {}), load(STATE, {"videos": []})
+    if not instagram.configured(cfg):
+        print("[econ] Instagram not connected – no Reel to catch up", flush=True)
+        return False
+    now = dt.datetime.now(dt.timezone.utc)
+    if any(r.get("reel_backfill") == now.date().isoformat() for r in state["videos"]):
+        print("[econ] already caught up one Reel today", flush=True)
+        return False
+    todo = [r for r in state["videos"] if not r.get("instagram_id") and r.get("release")
+            and now - dt.datetime.fromisoformat(r["date"]) < dt.timedelta(days=20)]  # releases are kept 21 days
+    if not todo:
+        print("[econ] every episode has its Reel", flush=True)
+        return False
+    rec = todo[0]
+    script = load(SCRIPTS / f"{rec['id']}.json", {})
+    slug = re.sub(r"[^a-z0-9]+", "-", cfg["channel_name"].lower()).strip("-")
+    tag = rec["release"].rsplit("/", 1)[1]
+    files = f"{rec['release'].replace('/releases/tag/', '/releases/download/')}/{slug}-{tag.removeprefix('econ-')}"
+    print(f"[econ] catching up the Reel of {rec['id']}", flush=True)
+    rec.update(instagram.post_reel(cfg, f"{files}-short.mp4", _texts(script, cfg, {})["caption"], story=True,
+                                   label=script["title"], thumb_offset_ms=3000, story_url=f"{files}-story.mp4"))
+    rec["reel_backfill"] = now.date().isoformat()
+    save(STATE, state)
+    print(f"  reel: {rec.get('instagram_url')} ({len(todo) - 1} still waiting)", flush=True)
+    return True
