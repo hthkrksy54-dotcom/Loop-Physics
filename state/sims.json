@@ -21,7 +21,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 18,
+      "yt_views": 22,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234343969720322",
         "status": "SEND_TO_USER_INBOX",
@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 2764,
+      "yt_views": 2840,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -104,7 +104,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 17,
+      "yt_views": 19,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235656464123907",
         "status": "PUBLISH_COMPLETE",
@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 5864,
+      "yt_views": 6096,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -161,7 +161,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 17,
+      "yt_views": 21,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233117064890390",
         "status": "SEND_TO_USER_INBOX",
@@ -190,7 +190,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1459,
+      "yt_views": 1486,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232916815824918",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 6853,
+      "yt_views": 7507,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -249,7 +249,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 16,
+      "yt_views": 24,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233367154608150",
         "status": "SEND_TO_USER_INBOX",
@@ -277,7 +277,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 16,
+      "yt_views": 21,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233859481487382",
         "status": "SEND_TO_USER_INBOX",
@@ -436,6 +436,21 @@
       "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-pendulum-4",
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AnXIu3Xze95HmfhjAvHrdaa\"}}"
+      ]
+    },
+    {
+      "date": "2026-10-17T06:41:47+00:00",
+      "kind": "blade_duel",
+      "seed": 4,
+      "melody": "lullaby",
+      "timbre": "pluck",
+      "title": "Every hit makes it stronger – who wins the blade duel?",
+      "duration": 71.2,
+      "why": "rotation",
+      "concept": "Two balls with spinning blades bounce around an arena; every hit cuts the other's HP and upgrades the attacker (longer blade / faster spin / harder hits) – blades that cross parry and flip their spin.",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-blade_duel-4",
+      "warnings": [
+        "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"A4ZIMGjakpbV_mvGerykgUu\"}}"
       ]
     }
   ]
