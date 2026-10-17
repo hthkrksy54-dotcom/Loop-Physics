@@ -1,0 +1,568 @@
+{
+  "id": "why-japan-prices-froze",
+  "order": 5,
+  "title": "¥100 in 1994, ¥104 in 2021: Why Japan's Prices Froze for 27 Years, Explained with Data",
+  "title_card": "Why did Japan's prices freeze?",
+  "description": "From 1994 to 2021, prices in Japan rose about 4% – in total. In the US they rose 83%. With World Bank data we follow the bubble of 1989, three decades of stuck prices, a shrinking population and twenty years of zero interest rates – and why prices in Japan are suddenly moving again.",
+  "tags": [
+    "japan economy",
+    "japan deflation",
+    "lost decades",
+    "japan inflation",
+    "deflation explained",
+    "bank of japan",
+    "yen",
+    "abenomics",
+    "japan bubble 1989",
+    "economics explained",
+    "economics",
+    "money",
+    "data visualization"
+  ],
+  "hashtags": [
+    "#japan",
+    "#economics",
+    "#money"
+  ],
+  "sources": [
+    "World Bank, World Development Indicators: Consumer price index (2010 = 100), FP.CPI.TOTL – Japan, United States, United Kingdom, 1994–2025 (rebased to 1994 = 100) (CC BY 4.0)",
+    "World Bank, World Development Indicators: Inflation, consumer prices (annual %), FP.CPI.TOTL.ZG – Japan 1980–2025 (CC BY 4.0)",
+    "World Bank, World Development Indicators: GDP growth (annual %), NY.GDP.MKTP.KD.ZG – Japan 1961–2025 (averages computed) (CC BY 4.0)",
+    "World Bank, World Development Indicators: GDP per capita (constant 2015 US$), NY.GDP.PCAP.KD – Japan and United States 1991–2025; GDP per capita (current US$), NY.GDP.PCAP.CD – Japan and United States 1995 and 2025 (CC BY 4.0)",
+    "World Bank, World Development Indicators: Population, SP.POP.TOTL – Japan 1960–2025; Population ages 65 and above (% of total), SP.POP.65UP.TO.ZS – Japan 1990–2025, United States and World 2025 (CC BY 4.0)",
+    "World Bank, World Development Indicators: Official exchange rate (yen per US$, period average), PA.NUS.FCRF – Japan 1995, 2012, 2024 (CC BY 4.0)",
+    "Nikkei Inc.: Nikkei 225 record close 38,915.87 on 29 December 1989; first close above it 39,098.68 on 22 February 2024",
+    "Bank of Japan: 2% price stability target (January 2013); negative interest rate of −0.1% (from February 2016, ended March 2024); policy rate raised to 0.75% on 19 December 2025, the highest since 1995; further changes in the guideline for money market operations on 16 June and 18 September 2026",
+    "Ministry of Finance Japan: consumption tax raised from 5% to 8% in April 2014"
+  ],
+  "thumbnail": {
+    "big": "¥100 → ¥104",
+    "text": "Frozen 27 years. Why?",
+    "color": "blue"
+  },
+  "chapters": [
+    {
+      "heading": "Intro",
+      "beats": [
+        {
+          "say": "Something that cost a hundred yen in Japan in 1994 cost about a hundred and four yen in 2021.",
+          "show": {
+            "type": "number",
+            "big": "¥100 → ¥104",
+            "caption": "Japan's prices, 1994 → 2021 – in total",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "Not per year. In total. Twenty-seven years, and prices barely moved."
+        },
+        {
+          "say": "In the same years in America, a hundred dollars of shopping became a hundred and eighty-three.",
+          "show": {
+            "type": "number",
+            "big": "$100 → $183",
+            "caption": "US prices, 1994 → 2021",
+            "color": "red"
+          }
+        },
+        {
+          "say": "That sounds like a dream. No inflation. Prices that stay put for a whole generation."
+        },
+        {
+          "say": "But Japan spent those years trying almost everything to make prices rise. And now, suddenly, they are. Let's take it apart with the official data."
+        }
+      ]
+    },
+    {
+      "heading": "The flat line",
+      "beats": [
+        {
+          "say": "Here are consumer prices in three rich countries. All three start at a hundred in 1994.",
+          "show": {
+            "type": "line",
+            "heading": "Consumer prices, 1994 = 100",
+            "unit": "",
+            "sub": "Consumer price index, rebased · World Bank",
+            "series": [
+              {
+                "label": "Japan",
+                "wb": "FP.CPI.TOTL",
+                "country": "JPN",
+                "from": 1994,
+                "to": 2021,
+                "rebase": [1994, 100],
+                "color": "blue"
+              },
+              {
+                "label": "UK",
+                "wb": "FP.CPI.TOTL",
+                "country": "GBR",
+                "from": 1994,
+                "to": 2021,
+                "rebase": [1994, 100],
+                "color": "purple"
+              },
+              {
+                "label": "US",
+                "wb": "FP.CPI.TOTL",
+                "country": "USA",
+                "from": 1994,
+                "to": 2021,
+                "rebase": [1994, 100],
+                "color": "red"
+              }
+            ]
+          }
+        },
+        {
+          "say": "The United States and Britain climb the way most countries do. A couple of percent a year, every year, adds up to seventy or eighty percent."
+        },
+        {
+          "say": "Japan is the flat line at the bottom. In 2005, prices were actually lower than in 1994.",
+          "mark": {
+            "x": 2005
+          }
+        },
+        {
+          "say": "And in 2021, they were only about four percent higher.",
+          "mark": {
+            "x": 2021
+          }
+        },
+        {
+          "say": "Look at it year by year, and it gets stranger. This is Japan's inflation rate.",
+          "show": {
+            "type": "line",
+            "heading": "Japan's inflation, % per year",
+            "unit": "%",
+            "sub": "Consumer prices, annual change · World Bank",
+            "series": [
+              {
+                "label": "",
+                "wb": "FP.CPI.TOTL.ZG",
+                "country": "JPN",
+                "from": 1980,
+                "to": 2021,
+                "color": "blue"
+              }
+            ]
+          }
+        },
+        {
+          "say": "Around eight percent in 1980. About three percent in 1991.",
+          "mark": {
+            "x": 1991
+          }
+        },
+        {
+          "say": "And then, for most of the next thirty years, it hovers around zero. Between 1995 and 2021, prices actually fell in fifteen different years.",
+          "show": {
+            "type": "number",
+            "big": "15",
+            "caption": "years with falling prices in Japan, 1995–2021",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "Falling prices across a whole economy have a name: deflation. To understand why Japan got stuck in it, we have to go back to a party."
+        }
+      ]
+    },
+    {
+      "heading": "The bubble",
+      "beats": [
+        {
+          "say": "In the nineteen-sixties, Japan's economy grew more than nine percent a year. In the seventies, around four and a half. It was the fastest-rising rich country in the world.",
+          "show": {
+            "type": "columns",
+            "heading": "Japan's average growth per year",
+            "stacks": [
+              ["1960s", 9.4, "9.4%"],
+              ["1970s", 4.5, "4.5%"],
+              ["1986–90", 4.9, "4.9%"],
+              ["1992–2021", 0.8, "0.8%"]
+            ]
+          }
+        },
+        {
+          "say": "By the late eighties, everyone believed it would go on forever. Banks lent freely, companies borrowed to buy land and shares, and prices of both went through the roof."
+        },
+        {
+          "say": "On the twenty-ninth of December 1989, Japan's main stock index, the Nikkei, closed at almost thirty-nine thousand points.",
+          "show": {
+            "type": "number",
+            "big": "38,915",
+            "caption": "Nikkei 225 record close, 29 December 1989",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "Then the bubble burst. Interest rates had gone up, credit got tighter, and shares and land lost much of their value within a few years. The Nikkei would not close above that record again until February 2024.",
+          "show": {
+            "type": "note",
+            "text": "The 1989 record held for *34 years*.",
+            "source": "Nikkei 225: 38,915.87 (29 Dec 1989) → 39,098.68 (22 Feb 2024)",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "Thirty-four years. And look at the last column: from 1992 to 2021, growth averaged less than one percent a year."
+        }
+      ]
+    },
+    {
+      "heading": "Why prices got stuck",
+      "beats": [
+        {
+          "say": "When the bubble burst, companies were left with huge debts and assets worth far less than they had paid. Banks were sitting on loans that would never be repaid.",
+          "show": {
+            "type": "note",
+            "text": "Debts stayed. The *value* behind them was gone.",
+            "source": "Japan after the 1990 crash",
+            "color": "gray"
+          }
+        },
+        {
+          "say": "So everyone did the sensible thing for themselves. Companies paid down debt instead of investing in new factories. Households saved instead of spending. Nobody did anything wrong – and that was the problem."
+        },
+        {
+          "say": "But when everyone saves at the same time, shops sell less. To sell anything, they cut prices. Lower prices mean lower profits, so companies hold back on wages. And lower wages mean people spend even less.",
+          "show": {
+            "type": "note",
+            "text": "Save more → sell less → *cut prices* → hold wages → save more.",
+            "source": "The deflation loop",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "There's a second trap. If you expect a fridge to be cheaper next year, why buy it today? Waiting is rewarded. Spending is not."
+        },
+        {
+          "say": "After a few years of this, it becomes a habit. Shops don't dare raise prices, because customers expect them not to. Workers don't ask for raises, because prices aren't rising. The expectation keeps itself alive."
+        }
+      ]
+    },
+    {
+      "heading": "A shrinking country",
+      "beats": [
+        {
+          "say": "On top of that, Japan was getting older faster than any other big economy. In 1990, about twelve percent of Japanese were sixty-five or older.",
+          "show": {
+            "type": "line",
+            "heading": "Share of Japan aged 65 or older",
+            "unit": "%",
+            "sub": "Population ages 65 and above, % of total · World Bank",
+            "series": [
+              {
+                "label": "",
+                "wb": "SP.POP.65UP.TO.ZS",
+                "country": "JPN",
+                "from": 1990,
+                "to": 2025,
+                "color": "purple"
+              }
+            ]
+          }
+        },
+        {
+          "say": "By 2025, it was thirty percent. Almost one in three. In the United States it's about eighteen percent, and in the world as a whole about ten.",
+          "mark": {
+            "x": 2025
+          }
+        },
+        {
+          "say": "And the population itself started to shrink. It peaked in 2010 at about a hundred and twenty-eight million.",
+          "show": {
+            "type": "number",
+            "big": "128.1M → 123.4M",
+            "caption": "Japan's population, 2010 → 2025",
+            "color": "purple"
+          }
+        },
+        {
+          "say": "By 2025 it had lost nearly five million people. A rich country, getting smaller every single year since."
+        },
+        {
+          "say": "Fewer young families means fewer new homes, cars and furniture. Retirees on fixed pensions are careful with money. Demand stays weak – and weak demand is exactly what keeps prices flat."
+        }
+      ]
+    },
+    {
+      "heading": "Trying everything",
+      "beats": [
+        {
+          "say": "So Japan's central bank, the Bank of Japan, did what central banks do: it cut interest rates. By the late nineties, they were close to zero. And they stayed there for most of the next twenty-five years.",
+          "show": {
+            "type": "number",
+            "big": "~0%",
+            "caption": "Bank of Japan interest rates, most of 1999–2024",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "In 2013, under Prime Minister Shinzo Abe, the government and the central bank set a clear target: two percent inflation. The bank started buying government bonds on a huge scale to push money into the economy.",
+          "show": {
+            "type": "line",
+            "heading": "Japan's inflation, % per year",
+            "unit": "%",
+            "sub": "Consumer prices, annual change · World Bank",
+            "series": [
+              {
+                "label": "",
+                "wb": "FP.CPI.TOTL.ZG",
+                "country": "JPN",
+                "from": 2008,
+                "to": 2021,
+                "color": "blue"
+              }
+            ]
+          }
+        },
+        {
+          "say": "In 2014, inflation jumped to almost three percent. Success? Not really. That year the sales tax rose from five to eight percent, which pushed prices up once.",
+          "mark": {
+            "x": 2014,
+            "label": "Tax hike: 2.8%"
+          }
+        },
+        {
+          "say": "The year after, inflation was below one percent again. In 2016, prices fell.",
+          "mark": {
+            "x": 2016
+          }
+        },
+        {
+          "say": "That same year, the Bank of Japan tried something unusual: a negative interest rate. Minus zero point one percent. Banks paid to park some of their money at the central bank.",
+          "show": {
+            "type": "number",
+            "big": "−0.1%",
+            "caption": "Bank of Japan policy rate, 2016–2024",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "And still, in 2020 and 2021, prices fell again. Eight years after the two percent target, Japan hadn't reached it once without help from a tax hike."
+        }
+      ]
+    },
+    {
+      "heading": "The price of standing still",
+      "beats": [
+        {
+          "say": "Was all of this really so bad? Prices were stable, unemployment stayed low, the streets stayed safe. But compare how much the economy produced per person, after inflation.",
+          "show": {
+            "type": "line",
+            "heading": "Output per person since 1991, constant 2015 US$",
+            "unit": "$",
+            "sub": "GDP per capita, constant 2015 US$ · World Bank",
+            "series": [
+              {
+                "label": "US",
+                "wb": "NY.GDP.PCAP.KD",
+                "country": "USA",
+                "from": 1991,
+                "to": 2025,
+                "color": "red"
+              },
+              {
+                "label": "Japan",
+                "wb": "NY.GDP.PCAP.KD",
+                "country": "JPN",
+                "from": 1991,
+                "to": 2025,
+                "color": "blue"
+              }
+            ]
+          }
+        },
+        {
+          "say": "From 1991 to 2025, the American number rose by about seventy-six percent. Japan's rose by about thirty."
+        },
+        {
+          "say": "And then there's the yen. In 2012, one dollar bought about eighty yen. In 2024, about a hundred and fifty-one.",
+          "show": {
+            "type": "number",
+            "big": "¥80 → ¥151",
+            "caption": "yen per US dollar, 2012 → 2024 (yearly average)",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Put both together and measure in dollars. In 1995, output per person in Japan was about forty-five thousand dollars – more than half as much again as in the United States.",
+          "show": {
+            "type": "bars",
+            "heading": "Output per person, current US$",
+            "unit": "$",
+            "items": [
+              ["Japan 1995", 44947],
+              ["US 1995", 28691],
+              ["Japan 2025", 35951],
+              ["US 2025", 90027]
+            ],
+            "highlight": "Japan 2025"
+          }
+        },
+        {
+          "say": "In 2025, Japan was at about thirty-six thousand. The United States: about ninety thousand. Two and a half times as much.",
+          "mark": {
+            "items": ["Japan 2025", "US 2025"]
+          }
+        },
+        {
+          "say": "Thirty years of stable prices came with thirty years of standing still."
+        }
+      ]
+    },
+    {
+      "heading": "The thaw",
+      "beats": [
+        {
+          "say": "And now, the twist. Here are Japan's prices again, starting at a hundred in 1994 – but this time running to 2025.",
+          "show": {
+            "type": "line",
+            "heading": "Japan's consumer prices, 1994 = 100",
+            "unit": "",
+            "sub": "Consumer price index, rebased · World Bank",
+            "series": [
+              {
+                "label": "Japan",
+                "wb": "FP.CPI.TOTL",
+                "country": "JPN",
+                "from": 1994,
+                "to": 2025,
+                "rebase": [1994, 100],
+                "color": "blue"
+              }
+            ]
+          }
+        },
+        {
+          "say": "For twenty-seven years, the line crawls along. By 2021, it has reached about a hundred and four.",
+          "mark": {
+            "x": 2021
+          }
+        },
+        {
+          "say": "Then it turns upward. Energy and food got expensive worldwide, and the weak yen made every import cost more. By 2025, the index is at about a hundred and seventeen.",
+          "mark": {
+            "x": 2025
+          }
+        },
+        {
+          "say": "From 2021 to 2025, prices in Japan rose about twelve percent. In the twenty-seven years before that: about four.",
+          "show": {
+            "type": "compare",
+            "heading": "How much Japan's prices rose",
+            "left": ["27 years, 1994–2021", "+4%"],
+            "right": ["4 years, 2021–2025", "+12%"],
+            "color": "red"
+          }
+        },
+        {
+          "say": "Four years did three times the work of twenty-seven. Inflation has been above two percent every year since 2022."
+        },
+        {
+          "say": "And the Bank of Japan has turned around. It ended negative rates in March 2024. In December 2025, it raised its rate to zero point seven five percent – the highest since 1995. In 2026 it raised it twice more.",
+          "show": {
+            "type": "note",
+            "text": "Interest rates in Japan: the *highest since 1995*.",
+            "source": "Bank of Japan: −0.1% until March 2024 · 0.75% from December 2025 · raised again June and September 2026",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "After three decades of trying to make prices rise, Japan's problem has flipped. Now the question is whether wages can keep up with them."
+        }
+      ]
+    },
+    {
+      "heading": "What to remember",
+      "beats": [
+        {
+          "say": "So why did Japan's prices freeze? Three things.",
+          "show": {
+            "type": "number",
+            "big": "¥100 → ¥104",
+            "caption": "Japan's prices, 1994 → 2021",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "One: a giant bubble burst in 1990, and companies, banks and families spent years paying off debt instead of spending. Two: once people expect prices not to rise, that expectation is incredibly hard to break – even with zero and negative interest rates."
+        },
+        {
+          "say": "And three: an ageing, shrinking population kept demand weak. Stable prices sound like a gift – but in Japan they came with three decades of almost no growth."
+        },
+        {
+          "say": "If you want to understand money with real numbers, subscribe. Next episode, we'll take apart another piece of the economy."
+        }
+      ]
+    }
+  ],
+  "short": {
+    "hook": "Japan's prices didn't move for 27 years",
+    "beats": [
+      {
+        "say": "Something that cost a hundred yen in Japan in 1994 cost about a hundred and four yen in 2021. Not per year. In total.",
+        "show": {
+          "type": "number",
+          "big": "¥100 → ¥104",
+          "caption": "Japan's prices, 1994 → 2021",
+          "color": "blue"
+        }
+      },
+      {
+        "say": "In the same years in America, a hundred dollars of shopping became a hundred and eighty-three. Japan is the flat line at the bottom. Prices actually fell in fifteen of those years.",
+        "show": {
+          "type": "line",
+          "heading": "Consumer prices, 1994 = 100",
+          "unit": "",
+          "sub": "Consumer price index, rebased · World Bank",
+          "series": [
+            {
+              "label": "Japan",
+              "wb": "FP.CPI.TOTL",
+              "country": "JPN",
+              "from": 1994,
+              "to": 2021,
+              "rebase": [1994, 100],
+              "color": "blue"
+            },
+            {
+              "label": "US",
+              "wb": "FP.CPI.TOTL",
+              "country": "USA",
+              "from": 1994,
+              "to": 2021,
+              "rebase": [1994, 100],
+              "color": "red"
+            }
+          ]
+        }
+      },
+      {
+        "say": "Why? A giant bubble burst in 1990. Everyone paid down debt and saved, shops cut prices to sell anything, and people learned to expect prices never to rise. Zero interest rates didn't fix it. Even negative rates didn't.",
+        "show": {
+          "type": "note",
+          "text": "Save more → sell less → *cut prices* → hold wages → save more.",
+          "source": "The deflation loop",
+          "color": "blue"
+        }
+      },
+      {
+        "say": "And now the twist. From 2021 to 2025, Japan's prices rose about twelve percent. Four years did three times the work of twenty-seven.",
+        "show": {
+          "type": "compare",
+          "heading": "How much Japan's prices rose",
+          "left": ["1994–2021", "+4%"],
+          "right": ["2021–2025", "+12%"],
+          "color": "red"
+        }
+      },
+      {
+        "say": "Interest rates are now the highest since 1995. Why thirty years of stable prices came with thirty years of standing still – that's in the full video on the channel."
+      }
+    ]
+  },
+  "question": "What costs you the same today as it did ten years ago?"
+}
