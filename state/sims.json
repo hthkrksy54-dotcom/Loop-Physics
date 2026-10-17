@@ -21,7 +21,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 24,
+      "yt_views": 26,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234343969720322",
         "status": "SEND_TO_USER_INBOX",
@@ -48,7 +48,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1273,
+      "yt_views": 1321,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235341996115990",
         "status": "PUBLISH_COMPLETE",
@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 2875,
+      "yt_views": 2969,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -104,7 +104,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 20,
+      "yt_views": 22,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235656464123907",
         "status": "PUBLISH_COMPLETE",
@@ -190,7 +190,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1532,
+      "yt_views": 1604,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232916815824918",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 9541,
+      "yt_views": 9696,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -277,7 +277,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 22,
+      "yt_views": 28,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233859481487382",
         "status": "SEND_TO_USER_INBOX",
@@ -444,8 +444,9 @@
       ],
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697571826062526486",
-        "status": "PROCESSING_UPLOAD",
-        "caption": "What will 272 bounces draw?\nWhich shape will win?\n#stringart #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "What will 272 bounces draw?\nWhich shape will win?\n#stringart #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7697577475378859297"
       }
     },
     {
@@ -460,7 +461,12 @@
       "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-pendulum-4",
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AnXIu3Xze95HmfhjAvHrdaa\"}}"
-      ]
+      ],
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697602303943657494",
+        "status": "SEND_TO_USER_INBOX",
+        "caption": "12 pendulums, one perfect moment\nDid you see the snake?\n#pendulumwave #satisfying #oddlysatisfying #physics #simulation"
+      }
     },
     {
       "date": "2026-10-17T06:41:47+00:00",
@@ -508,8 +514,9 @@
       ],
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697586519028484118",
-        "status": "SEND_TO_USER_INBOX",
-        "caption": "What will 234 bounces draw?\nMore bounces next time?\n#stringart #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "What will 234 bounces draw?\nMore bounces next time?\n#stringart #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7697596662633467169"
       }
     }
   ]

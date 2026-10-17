@@ -6,24 +6,14 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist die Frage, die oben im Video steht.
 
-## 17.10. 10:41 UTC – What will 234 bounces draw?
+## 17.10. 04:41 UTC – 12 pendulums, one perfect moment
 
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-stringart-12)
-
-```text
-What will 234 bounces draw?
-More bounces next time?
-#stringart #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 17.10. 02:41 UTC – What will 272 bounces draw?
-
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-stringart-1)
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-pendulum-4)
 
 ```text
-What will 272 bounces draw?
-Which shape will win?
-#stringart #satisfying #oddlysatisfying #physics #simulation
+12 pendulums, one perfect moment
+Did you see the snake?
+#pendulumwave #satisfying #oddlysatisfying #physics #simulation
 ```
 
 ## 16.10. 08:41 UTC – Will 256 balls make a bell curve?
@@ -66,6 +56,26 @@ Can you predict the path?
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 17.10. 10:41 UTC – What will 234 bounces draw?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697596662633467169) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-stringart-12)
+
+```text
+What will 234 bounces draw?
+More bounces next time?
+#stringart #satisfying #oddlysatisfying #physics #simulation
+```
+
+## 17.10. 02:41 UTC – What will 272 bounces draw?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697577475378859297) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-stringart-1)
+
+```text
+What will 272 bounces draw?
+Which shape will win?
+#stringart #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 17.10. 00:41 UTC – Every ring adds a ball – Can they crack the core?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697561406673128737) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-brick_core-3)
@@ -94,25 +104,5 @@ Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/
 What will this pendulum draw?
 What would you change?
 #harmonograph #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 16.10. 19:42 UTC – Which color conquers the board?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697528482338737441) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-territory-0)
-
-```text
-Which color conquers the board?
-Two colors or four – which is better?
-#pongwars #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 16.10. 14:41 UTC – 12 pendulums, one perfect moment
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697308158368304416) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-pendulum-2)
-
-```text
-12 pendulums, one perfect moment
-What would you change?
-#pendulumwave #satisfying #oddlysatisfying #physics #simulation
 ```
 
