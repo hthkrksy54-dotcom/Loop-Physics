@@ -8,7 +8,7 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 ## 17.10. 07:13 UTC – Why you feel watched – and almost nobody is
 
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-spotlight-effect)
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7697642328172924193) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-spotlight-effect)
 
 ```text
 Why you feel watched – and almost nobody is
@@ -20,7 +20,7 @@ Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
 
 ## 16.10. 07:05 UTC – The two words that changed how an emperor lived
 
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-memento-mori)
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7697642387958549792) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-memento-mori)
 
 ```text
 The two words that changed how an emperor lived
@@ -32,7 +32,7 @@ Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
 
 ## 15.10. 13:40 UTC – The one question that freed a slave
 
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-dichotomy-of-control)
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7697642501687069984) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-dichotomy-of-control)
 
 ```text
 The one question that freed a slave
@@ -44,7 +44,7 @@ Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
 
 ## 15.10. 13:22 UTC – Why the things you want stop making you happy
 
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-hedonic-treadmill)
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7697642557894872352) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-hedonic-treadmill)
 
 ```text
 Why the things you want stop making you happy

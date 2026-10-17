@@ -8,7 +8,7 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 ## 17.10. 11:40 UTC – 97% of China was poor. Then this.
 
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261017-why-china-grew-so-fast)
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@realnumbersdaily/video/7697643126982184225) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261017-why-china-grew-so-fast)
 
 ```text
 97% of China was poor. Then this.
@@ -21,7 +21,7 @@ Not financial advice.
 
 ## 17.10. 11:25 UTC – 1,000 pesos: from $257 to 81 cents
 
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261017-turkey-argentina-high-inflation)
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@realnumbersdaily/video/7697642901752384801) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261017-turkey-argentina-high-inflation)
 
 ```text
 1,000 pesos: from $257 to 81 cents
@@ -34,7 +34,7 @@ Not financial advice.
 
 ## 17.10. 11:10 UTC – The US now pays $1T just in interest
 
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261017-why-us-debt-40-trillion)
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@realnumbersdaily/video/7697643009633946912) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261017-why-us-debt-40-trillion)
 
 ```text
 The US now pays $1T just in interest
@@ -47,7 +47,7 @@ Not financial advice.
 
 ## 17.10. 10:56 UTC – Your $100 shrank to $12
 
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261017-where-did-100-dollars-go)
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@realnumbersdaily/video/7697643067888766240) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261017-where-did-100-dollars-go)
 
 ```text
 Your $100 shrank to $12
