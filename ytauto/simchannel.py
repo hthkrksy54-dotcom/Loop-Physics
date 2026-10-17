@@ -42,17 +42,57 @@ TIKTOK_KIND_TAG = {"race": "marblerace", "battle": "ballbattle", "escape": "ball
                    "grow": "bouncingball", "multiply": "bouncingball"}
 
 
-def tiktok_caption(kind: str, meta: dict) -> str:
-    """TikTok text: the on-screen question, a question for the comments and a few tags. No melody references –
-    on TikTok the owner may swap in a trending sound."""
+TIKTOK_WHAT = {  # what happens in the video, in one line – no sound references (the owner may pick a trending sound)
+    "escape": "One ball, {n} spinning rings, one gap in each – it has to find every exit to break free.",
+    "polygon": "One ball, {n} nested polygons turning in opposite directions – and only one gap in each.",
+    "grow": "The ball gets a little bigger with every bounce – until there is no room left in the circle.",
+    "battle": "Coloured balls share one set of spinning rings – every ring that breaks opens the way for all of them.",
+    "plinko": "Balls drop through a triangle of pegs, left or right at every peg – and pile up into a bell curve.",
+    "stringart": "A ball speeds up inside a shape and every bounce leaves a line to the last one – the pattern draws itself.",
+    "multiply": "Every bounce of the white ball adds a new ball – until the circle is a cloud of colour.",
+    "pendulum": "{k} pendulums, each swinging a little faster than the one before – waves and snakes appear, "
+                "until they all line up again.",
+    "territory": "Every ball flies through its own colour and paints every square it bounces off – "
+                 "whoever owns most of the board at the end wins.",
+    "chaos": "{k} double pendulums that start only {delta}° apart. For a while they move as one – then chaos takes over.",
+    "harmonograph": "Four slowly fading pendulums steer one pen, slightly out of tune – so the drawing turns into a rosette.",
+    "race": "All balls race down the same track of pegs, spinners, funnels and bumpers – first over the line wins.",
+    "blade_duel": "Two balls, two spinning blades, one arena. Every hit takes HP from the other ball and upgrades "
+                  "the attacker.",
+    "brick_core": "One ball, one wall of numbered bricks. Green rings add balls, the gold ×2 ring doubles the swarm – "
+                  "and in the middle waits the core.",
+    "domino_scale": "A marble taps one tiny domino. Every domino is a bit bigger than the one before – until the wave "
+                    "reaches the giant at the end.",
+}
+SOUND_WORDS = r"melod|song|tune|note|sound|music|plays|cracks"
+
+
+def _what_happens(kind: str, seed: int) -> str:
+    """One line about this video; new concepts fall back to their own description without the sound sentences."""
     cls = sims.KINDS[kind]
-    question = meta["question"]
-    if re.search(r"melod|song|tune", question, re.I):
-        question = "Which moment was the most satisfying?"
+    sim = cls(seed)
+    params = {"n": getattr(sim, "n", ""), "k": getattr(sim, "K", ""),
+              "delta": sims._decimal(sim.delta) if isinstance(getattr(sim, "delta", None), float) else ""}
+    text = TIKTOK_WHAT.get(kind)
+    if not text:
+        source = cls.body or BODIES.get(kind) or (cls.__doc__ or "").strip().split("\n\n")[0].replace("\n", " ")
+        text = " ".join(x for x in re.split(r"(?<=[.!?])\s+", source) if x and not re.search(SOUND_WORDS, x, re.I))
+    try:
+        return text.format(**params) if text else ""
+    except (KeyError, IndexError, ValueError):  # a placeholder this concept doesn't have
+        return ""
+
+
+def tiktok_caption(kind: str, meta: dict, seed: int = 0) -> str:
+    """TikTok text made for this video: the on-screen question, what happens, a question for the comments that
+    fits this concept, and a few tags. No sound references – on TikTok the owner may swap in a trending sound."""
+    cls = sims.KINDS[kind]
+    own = [q for q in (cls.questions or QUESTIONS.get(kind) or []) if not re.search(SOUND_WORDS, q, re.I)]
+    question = random.Random(seed * 17 + len(kind)).choice(own) if own else "Which moment was the most satisfying?"
     kind_tag = TIKTOK_KIND_TAG.get(kind) or (cls.trend_words[0].replace(" ", "") if cls.trend_words else "")
-    extra = [t for t in load(TUNING, {}).get("hashtags") or [] if t not in TIKTOK_TAGS and t != kind_tag][:1]
-    tags = [t for t in ([kind_tag] if kind_tag else []) + TIKTOK_TAGS + extra if not re.search(r"asmr|music", t)]
-    return tiktok.caption(meta["onscreen"], question, tags)
+    tags = [t for t in ([kind_tag] if kind_tag else []) + TIKTOK_TAGS if not re.search(r"asmr|music", t)]
+    lines = [meta["onscreen"], _what_happens(kind, seed), f"💬 {question}", " ".join(f"#{t}" for t in tags)]
+    return "\n".join(x for x in lines if x)
 COVER_AT = {"stringart": 0.9, "plinko": 0.85, "multiply": 0.85, "grow": 0.75, "pendulum": 0.55,
             "escape": 0.3, "polygon": 0.3, "battle": 0.3, "harmonograph": 0.97, "chaos": 0.7, "territory": 0.6,
             "race": 0.4}  # share of the run that makes the best cover frame
@@ -148,7 +188,7 @@ QUESTIONS = {
     "escape": ["How many seconds did you guess?", "Which ring was the hardest one?", "Did you recognise the melody?"],
     "grow": ["At what percent did you start holding your breath?", "Did you recognise the melody?",
              "Should the next one be bigger or faster?"],
-    "battle": ["Which color did you pick?", "Did your color win?", "Which color should race next time?"],
+    "battle": ["Which color did you pick?", "Did your color win?", "Which color should go first next time?"],
     "polygon": ["How many seconds did you guess?", "Rings or polygons – which is harder?"],
     "plinko": ["Did you expect such a clean bell curve?", "Which slot would you bet on?"],
     "stringart": ["What does the pattern remind you of?", "More bounces next time?"],
@@ -324,7 +364,7 @@ def tiktok_backlog(cfg: dict, state: dict, max_pending: int = 3, files: dict[str
                 break  # TikTok wants fewer drafts at once: the next heartbeat goes on
             r["tiktok_skip"] = str(err)[:200]
             continue
-        r["tiktok"] = {**draft, "caption": tiktok_caption(r["kind"], metadata(r["kind"], r["seed"], r["melody"], cfg))}
+        r["tiktok"] = {**draft, "caption": tiktok_caption(r["kind"], metadata(r["kind"], r["seed"], r["melody"], cfg), r["seed"])}
         print(f"  tiktok: {name} sent as a draft ({draft['status']})", flush=True)
         pending += 1
         sent += 1
@@ -520,7 +560,7 @@ def run(upload: bool = True) -> dict:
             print(f"  warning: instagram failed: {err}", flush=True)
     if tiktok.configured(cfg) and why in ("new", "standout") and tiktok_waiting(state) < TIKTOK_PENDING:
         try:  # a draft in the owner's TikTok inbox: one tap to post (TikTok wants the creator to confirm)
-            cap = tiktok_caption(kind, meta)
+            cap = tiktok_caption(kind, meta, seed)
             record["tiktok"] = {**tiktok.send_draft(cfg, Path(result["video"])), "caption": cap}
             print(f"  tiktok: draft {record['tiktok']['status']}", flush=True)
         except Exception as err:  # noqa: BLE001

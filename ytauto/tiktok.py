@@ -256,6 +256,32 @@ def refresh(cfg: dict, records: list[dict]) -> bool:
     return changed
 
 
+def lead(text: str, sentences: int = 2, limit: int = 240) -> str:
+    """The first sentences of a video description – what this video is about – without the "In this video essay
+    we…" / "With World Bank data we…" sentences that only describe the method."""
+    out: list[str] = []
+    for x in re.split(r"(?<=[.!?])\s+", text.split("\n\n")[0].strip()):
+        if re.match(r"(In this|With |Using |Here we|We )", x):
+            if out:
+                break  # what follows belongs to the method sentence
+            continue
+        if out and len(" ".join(out + [x])) > limit:
+            break
+        out.append(x)
+        if len(out) == sentences:
+            break
+    return " ".join(out)
+
+
+def question_from(*texts: str) -> str | None:
+    """The last question asked in the video's own words (e.g. the closing line of a Short)."""
+    for text in reversed(texts):
+        found = [x for x in re.split(r"(?<=[.!?])\s+", text or "") if x.endswith("?")]
+        if found:
+            return found[-1]
+    return None
+
+
 def caption(title: str, question: str, tags: list[str]) -> str:
     return "\n".join([title, question, " ".join(f"#{t}" for t in tags)])
 

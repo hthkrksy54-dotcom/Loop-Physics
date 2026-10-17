@@ -139,14 +139,16 @@ def produce(lang: str, topic_id: str | None, upload: bool, with_short: bool, kee
 
 
 def tiktok_caption(script: dict, cfg: dict) -> str:
-    """Hook, the question for the comments, where the full essay is, a few tags (no links: TikTok drops them)."""
+    """TikTok text made for this video: the hook on screen, what the essay is about, its question for the
+    comments, where the full essay is, a few tags (no links: TikTok drops them)."""
     short = script["short"]
     tags: dict[str, str] = {}
     for t in f"{script.get('hashtags', '')} {cfg['tiktok'].get('hashtags', '')}".split():
         tags.setdefault(t.lower(), t if t.startswith("#") else f"#{t}")
     where = f"Full video essay on YouTube: {cfg['channel_name']} ({cfg['tiktok'].get('youtube', '')})".replace(" ()", "")
-    lines = [short.get("hook") or short["title"].replace("#Shorts", "").strip(), script.get("question"), where,
-             " ".join(list(tags.values())[:5])]
+    question = script.get("question") or tiktok.question_from(short.get("text", ""))
+    lines = [short.get("hook") or short["title"].replace("#Shorts", "").strip(), tiktok.lead(script["description"]),
+             f"💬 {question}" if question else "", where, " ".join(list(tags.values())[:5])]
     return "\n".join(x for x in lines if x)
 
 

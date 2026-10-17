@@ -83,7 +83,8 @@ EOF
     ]},
     {"heading": "Chapter title", "beats": ["..."]}
   ],
-  "short": {"hook": "Your $100 shrank to $12", "beats": ["..."]}
+  "short": {"hook": "Your $100 shrank to $12", "beats": ["..."]},
+  "question": "How much did your money lose since you were born?"
 }
 ```
 
@@ -94,6 +95,9 @@ EOF
   plays before the title card); the last one sums up three takeaways and asks to subscribe.
 - `short`: a stand-alone version of the best part, **130–170 spoken words** (it must run over a minute), with its
   own hook (≤ 40 characters) and 3–5 scenes. It ends by pointing to the full video on the channel.
+- `question`: one question for the comments that only this episode can ask – concrete, easy to answer in a few
+  words, about the viewer's own life or a prediction (it goes under the Reel and the TikTok). No yes/no filler like
+  "What do you think?".
 - A new `show` every 1–3 beats (a scene of 8–25 seconds); never more than 4 beats on one scene unless it has marks.
 
 ### Scenes (`"show"`)

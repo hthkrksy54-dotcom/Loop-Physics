@@ -12,6 +12,8 @@ Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/
 
 ```text
 97% of China was poor. Then this.
+In 1981, 97% of people in China lived on under $3 a day. By 2019, practically none did.
+💬 Could any country pull off a miracle like this again?
 Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
 Not financial advice.
 #china #economics #money #learnontiktok
@@ -23,6 +25,8 @@ Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/
 
 ```text
 1,000 pesos: from $257 to 81 cents
+In 2010, 1,000 Argentine pesos bought $257. In 2025 they bought 81 cents.
+💬 Could this happen to the dollar or the euro?
 Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
 Not financial advice.
 #inflation #argentina #economics #learnontiktok
@@ -34,6 +38,8 @@ Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/
 
 ```text
 The US now pays $1T just in interest
+The US national debt passed $40 trillion in August 2026 – and the interest on it now costs more than the entire military.
+💬 Should $1 trillion a year in interest worry us – or not?
 Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
 Not financial advice.
 #nationaldebt #economics #money #learnontiktok
@@ -45,6 +51,8 @@ Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/
 
 ```text
 Your $100 shrank to $12
+In 1970, a hundred-dollar bill bought what you need about $808 for today. Where did the rest go?
+💬 How much did your money lose since you were born?
 Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
 Not financial advice.
 #inflation #economics #money #learnontiktok

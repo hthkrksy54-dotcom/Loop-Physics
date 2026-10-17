@@ -12,7 +12,8 @@ Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/
 
 ```text
 Why you feel watched – and almost nobody is
-What is something you were embarrassed about that nobody else seems to remember?
+Why do we feel so watched, judged and exposed – when most people barely notice us?
+💬 What is something you were embarrassed about that nobody else seems to remember?
 Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
 #Psychology #SpotlightEffect #Philosophy #learnontiktok
 ```
@@ -23,7 +24,8 @@ Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/
 
 ```text
 The two words that changed how an emperor lived
-If today were your last day, what would you stop postponing?
+Memento mori – remember that you will die. It sounds dark, but for the Stoics it was one of the most life-affirming ideas there is.
+💬 If today were your last day, what would you stop postponing?
 Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
 #Stoicism #MementoMori #Philosophy #psychology #learnontiktok
 ```
@@ -34,7 +36,8 @@ Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/
 
 ```text
 The one question that freed a slave
-What is one thing you have been trying to control that was never yours to control?
+Nearly 2,000 years ago, Epictetus – a former slave who became one of the most influential Stoic teachers – answered one question with a single distinction: what is truly in our control?
+💬 What is one thing you have been trying to control that was never yours to control?
 Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
 #Stoicism #Philosophy #Epictetus #psychology #learnontiktok
 ```
@@ -45,7 +48,8 @@ Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/
 
 ```text
 Why the things you want stop making you happy
-What is one thing you once wished for that you now take for granted?
+Why does the thing we wanted so badly become ordinary so quickly? Psychologists call it the hedonic treadmill.
+💬 What is one thing you once wished for that you now take for granted?
 Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
 #Psychology #Philosophy #Happiness #learnontiktok
 ```

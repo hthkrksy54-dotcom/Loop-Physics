@@ -563,9 +563,19 @@ def _texts(script: dict, cfg: dict, result: dict) -> dict:
                             NOT_ADVICE, " ".join(dict.fromkeys(f"{hashtags} #economics #finance".split()))])
     return {"title": script["title"][:100], "description": result.get("description", ""), "tags": tags,
             "short_title": short_title, "short_description": short_desc, "caption": caption[:2150],
-            "tiktok": "\n".join([sh.get("hook", script["title_card"]),
-                                 f"Full breakdown on YouTube: {cfg['channel_name']} ({cfg.get('handle', '')})".replace(" ()", ""),
-                                 NOT_ADVICE, " ".join(dict.fromkeys(f"{hashtags} #economics #learnontiktok".split()))])}
+            "tiktok": _tiktok_text(script, cfg, hashtags)}
+
+
+def _tiktok_text(script: dict, cfg: dict, hashtags: str) -> str:
+    """TikTok text made for this video: the hook on screen, the key numbers from this episode, the question the
+    Short ends on (or the script's own), where the full story is, the disclaimer and the episode's tags."""
+    sh = script.get("short", {})
+    question = script.get("question") or tiktok.question_from(*(b.get("say", "") for b in sh.get("beats", [])))
+    lines = [sh.get("hook", script["title_card"]), tiktok.lead(script["description"]),
+             f"💬 {question}" if question else "",
+             f"Full breakdown on YouTube: {cfg['channel_name']} ({cfg.get('handle', '')})".replace(" ()", ""),
+             NOT_ADVICE, " ".join(dict.fromkeys(f"{hashtags} #economics #learnontiktok".split()))]
+    return "\n".join(x for x in lines if x)
 
 
 def produce(upload: bool = True, script_id: str | None = None) -> dict:

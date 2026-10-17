@@ -4,7 +4,7 @@
 2. In TikTok auf die Benachrichtigung tippen (oder Profil → Posteingang/Entwürfe) → **Weiter**.
 3. Beschreibung einfügen, nach Wunsch einen angesagten Sound wählen → **Posten**.
 
-Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist die Frage, die oben im Video steht.
+Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
 ## 17.10. 08:41 UTC – Every domino is bigger than the one before
 
@@ -12,7 +12,8 @@ Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/re
 
 ```text
 Every domino is bigger than the one before
-What’s the fastest bounce?
+A marble taps one tiny domino. Every domino is a bit bigger than the one before – until the wave reaches the giant at the end.
+💬 Would the chain have made it with one domino less?
 #domino #satisfying #oddlysatisfying #physics #simulation
 ```
 
@@ -22,7 +23,8 @@ Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/re
 
 ```text
 Every hit upgrades it – Who wins the duel?
-Which shape will win?
+Two balls, two spinning blades, one arena. Every hit takes HP from the other ball and upgrades the attacker.
+💬 Which upgrade would you pick?
 #ballbattle #satisfying #oddlysatisfying #physics #simulation
 ```
 
@@ -32,17 +34,19 @@ Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/re
 
 ```text
 12 pendulums, one perfect moment
-Did you see the snake?
+12 pendulums, each swinging a little faster than the one before – waves and snakes appear, until they all line up again.
+💬 Did you see the snake?
 #pendulumwave #satisfying #oddlysatisfying #physics #simulation
 ```
 
-## 16.10. 08:41 UTC – Will 256 balls make a bell curve?
+## 16.10. 08:41 UTC – Will 372 balls make a bell curve?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-plinko-1)
 
 ```text
-Will 256 balls make a bell curve?
-Can you predict the path?
+Will 372 balls make a bell curve?
+Balls drop through a triangle of pegs, left or right at every peg – and pile up into a bell curve.
+💬 Which slot would you bet on?
 #plinko #satisfying #oddlysatisfying #physics #simulation
 ```
 
@@ -52,7 +56,8 @@ Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/re
 
 ```text
 Every bounce adds a new ball
-Can you predict the path?
+Every bounce of the white ball adds a new ball – until the circle is a cloud of colour.
+💬 How many balls should the next one have?
 #bouncingball #satisfying #oddlysatisfying #physics #simulation
 ```
 
@@ -62,17 +67,19 @@ Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/re
 
 ```text
 Every bounce makes the ball bigger
-What would you change?
+The ball gets a little bigger with every bounce – until there is no room left in the circle.
+💬 At what percent did you start holding your breath?
 #bouncingball #satisfying #oddlysatisfying #physics #simulation
 ```
 
-## 15.10. 18:56 UTC – Can the ball escape all 16 rings?
+## 15.10. 18:56 UTC – Can the ball escape all 22 rings?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261015-escape-2)
 
 ```text
-Can the ball escape all 16 rings?
-Can you predict the path?
+Can the ball escape all 22 rings?
+One ball, 22 spinning rings, one gap in each – it has to find every exit to break free.
+💬 Which ring was the hardest one?
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
