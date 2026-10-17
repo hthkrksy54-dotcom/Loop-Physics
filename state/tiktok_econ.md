@@ -13,6 +13,7 @@ Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/
 ```text
 97% of China was poor. Then this.
 Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
+Not financial advice.
 #china #economics #money #learnontiktok
 ```
 
@@ -23,6 +24,7 @@ Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/
 ```text
 1,000 pesos: from $257 to 81 cents
 Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
+Not financial advice.
 #inflation #argentina #economics #learnontiktok
 ```
 
@@ -33,6 +35,7 @@ Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/
 ```text
 The US now pays $1T just in interest
 Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
+Not financial advice.
 #nationaldebt #economics #money #learnontiktok
 ```
 

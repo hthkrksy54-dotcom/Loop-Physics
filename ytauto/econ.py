@@ -547,6 +547,9 @@ def queue(state: dict) -> list[str]:
     return [sid for _, sid in sorted(scripts) if sid not in done]
 
 
+NOT_ADVICE = "Not financial advice."  # on every Reel and TikTok; the YouTube descriptions carry the long version
+
+
 def _texts(script: dict, cfg: dict, result: dict) -> dict:
     tags = list(dict.fromkeys(script.get("tags", []) + ["economics", "money", "explained", "data visualization"]))
     hashtags = " ".join(script.get("hashtags", cfg["hashtags"]))
@@ -557,12 +560,12 @@ def _texts(script: dict, cfg: dict, result: dict) -> dict:
     caption = "\n\n".join([sh.get("hook", script["title_card"]), script["description"].split(". ")[0] + ".",
                             "Full video on YouTube – follow for more money, explained with real numbers."
                             + (f"\n▶ {cfg['youtube']['channel_url']}" if cfg["youtube"].get("channel_url") else ""),
-                            " ".join(dict.fromkeys(f"{hashtags} #economics #finance".split()))])
+                            NOT_ADVICE, " ".join(dict.fromkeys(f"{hashtags} #economics #finance".split()))])
     return {"title": script["title"][:100], "description": result.get("description", ""), "tags": tags,
             "short_title": short_title, "short_description": short_desc, "caption": caption[:2150],
             "tiktok": "\n".join([sh.get("hook", script["title_card"]),
                                  f"Full breakdown on YouTube: {cfg['channel_name']} ({cfg.get('handle', '')})".replace(" ()", ""),
-                                 " ".join(dict.fromkeys(f"{hashtags} #economics #learnontiktok".split()))])}
+                                 NOT_ADVICE, " ".join(dict.fromkeys(f"{hashtags} #economics #learnontiktok".split()))])}
 
 
 def produce(upload: bool = True, script_id: str | None = None) -> dict:

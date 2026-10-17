@@ -246,6 +246,7 @@ def refresh(cfg: dict, records: list[dict]) -> bool:
             print(f"  tiktok: status of {name} unknown: {err}", flush=True)
             continue
         ids = res.get("publicaly_available_post_id") or []
+        print(f"  tiktok: {r.get('id') or r.get('kind')}: {res.get('status')}", flush=True)
         if res.get("status") and res["status"] != r["tiktok"].get("status"):
             r["tiktok"]["status"], changed = res["status"], True
         if ids and not r["tiktok"].get("url"):
