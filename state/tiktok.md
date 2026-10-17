@@ -6,15 +6,15 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
-## 17.10. 08:41 UTC – Every domino is bigger than the one before
+## 17.10. 12:49 UTC – Can the ball escape all 17 rings?
 
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-domino_scale-0)
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-escape-18)
 
 ```text
-Every domino is bigger than the one before
-A marble taps one tiny domino. Every domino is a bit bigger than the one before – until the wave reaches the giant at the end.
-💬 Would the chain have made it with one domino less?
-#domino #satisfying #oddlysatisfying #physics #simulation
+Can the ball escape all 17 rings?
+One ball, 17 spinning rings, one gap in each – it has to find every exit to break free.
+💬 How many seconds did you guess?
+#ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
 ## 17.10. 06:41 UTC – Every hit upgrades it – Who wins the duel?
@@ -26,17 +26,6 @@ Every hit upgrades it – Who wins the duel?
 Two balls, two spinning blades, one arena. Every hit takes HP from the other ball and upgrades the attacker.
 💬 Which upgrade would you pick?
 #ballbattle #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 17.10. 04:41 UTC – 12 pendulums, one perfect moment
-
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-pendulum-4)
-
-```text
-12 pendulums, one perfect moment
-12 pendulums, each swinging a little faster than the one before – waves and snakes appear, until they all line up again.
-💬 Did you see the snake?
-#pendulumwave #satisfying #oddlysatisfying #physics #simulation
 ```
 
 ## 16.10. 08:41 UTC – Will 372 balls make a bell curve?
@@ -93,6 +82,28 @@ More bounces next time?
 #stringart #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 17.10. 08:41 UTC – Every domino is bigger than the one before
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697611867027557664) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-domino_scale-0)
+
+```text
+Every domino is bigger than the one before
+A marble taps one tiny domino. Every domino is a bit bigger than the one before – until the wave reaches the giant at the end.
+💬 Would the chain have made it with one domino less?
+#domino #satisfying #oddlysatisfying #physics #simulation
+```
+
+## 17.10. 04:41 UTC – 12 pendulums, one perfect moment
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697611766636891425) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-pendulum-4)
+
+```text
+12 pendulums, one perfect moment
+12 pendulums, each swinging a little faster than the one before – waves and snakes appear, until they all line up again.
+💬 Did you see the snake?
+#pendulumwave #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 17.10. 02:41 UTC – What will 272 bounces draw?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697577475378859297) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-stringart-1)
@@ -111,25 +122,5 @@ Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/
 Every ring adds a ball – Can they crack the core?
 How many balls did it take? Guess before the end!
 #brickbreaker #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 16.10. 22:41 UTC – Every hit upgrades it – Who wins the duel?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697561575934168353) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-blade_duel-3)
-
-```text
-Every hit upgrades it – Who wins the duel?
-Which upgrade would you pick?
-#ballbattle #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 16.10. 20:42 UTC – What will this pendulum draw?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697561255686458657) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-harmonograph-0)
-
-```text
-What will this pendulum draw?
-What would you change?
-#harmonograph #satisfying #oddlysatisfying #physics #simulation
 ```
 

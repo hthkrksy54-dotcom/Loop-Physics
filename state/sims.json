@@ -48,7 +48,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1318,
+      "yt_views": 1335,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235341996115990",
         "status": "PUBLISH_COMPLETE",
@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 3000,
+      "yt_views": 3144,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 6288,
+      "yt_views": 6368,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -161,7 +161,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 27,
+      "yt_views": 31,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233117064890390",
         "status": "SEND_TO_USER_INBOX",
@@ -190,7 +190,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1623,
+      "yt_views": 1692,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232916815824918",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 10042,
+      "yt_views": 10429,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -474,8 +474,9 @@
       ],
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697602303943657494",
-        "status": "SEND_TO_USER_INBOX",
-        "caption": "12 pendulums, one perfect moment\n12 pendulums, each swinging a little faster than the one before – waves and snakes appear, until they all line up again.\n💬 Did you see the snake?\n#pendulumwave #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "12 pendulums, one perfect moment\n12 pendulums, each swinging a little faster than the one before – waves and snakes appear, until they all line up again.\n💬 Did you see the snake?\n#pendulumwave #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7697611766636891425"
       },
       "instagram_id": "18467679280139872",
       "instagram_url": "https://www.instagram.com/reel/DemIukWkgvp/"
@@ -518,8 +519,9 @@
       ],
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697608513085982742",
-        "status": "SEND_TO_USER_INBOX",
-        "caption": "Every domino is bigger than the one before\nA marble taps one tiny domino. Every domino is a bit bigger than the one before – until the wave reaches the giant at the end.\n💬 Would the chain have made it with one domino less?\n#domino #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Every domino is bigger than the one before\nA marble taps one tiny domino. Every domino is a bit bigger than the one before – until the wave reaches the giant at the end.\n💬 Would the chain have made it with one domino less?\n#domino #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7697611867027557664"
       },
       "instagram_id": "18223495675337680",
       "instagram_url": "https://www.instagram.com/reel/DemI81gCh0P/"
@@ -560,7 +562,12 @@
       "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-escape-18",
       "instagram_id": "18117251771514998",
       "instagram_url": "https://www.instagram.com/reel/DemKJqKD7jV/",
-      "instagram_story_id": "18107311100176948"
+      "instagram_story_id": "18107311100176948",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697650860361156630",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "Can the ball escape all 17 rings?\nOne ball, 17 spinning rings, one gap in each – it has to find every exit to break free.\n💬 How many seconds did you guess?\n#ballescape #satisfying #oddlysatisfying #physics #simulation"
+      }
     }
   ]
 }
