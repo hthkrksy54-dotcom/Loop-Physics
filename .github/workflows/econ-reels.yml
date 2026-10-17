@@ -22,7 +22,7 @@ concurrency:
 jobs:
   reel:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30  # each Reel takes Instagram 2–3 minutes to process
     steps:
       - uses: actions/checkout@v4
         with:
