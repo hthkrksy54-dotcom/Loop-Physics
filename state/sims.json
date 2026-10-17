@@ -48,7 +48,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1335,
+      "yt_views": 1356,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235341996115990",
         "status": "PUBLISH_COMPLETE",
@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 3144,
+      "yt_views": 3251,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -190,7 +190,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1692,
+      "yt_views": 1726,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232916815824918",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 10429,
+      "yt_views": 10645,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -547,7 +547,9 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697596662633467169"
       },
       "instagram_id": "18030561041882795",
-      "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/"
+      "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/",
+      "youtube_id": "3Qgx9BMIlXo",
+      "yt_views": 172
     },
     {
       "date": "2026-10-17T12:49:05+00:00",
@@ -565,8 +567,9 @@
       "instagram_story_id": "18107311100176948",
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697650860361156630",
-        "status": "PROCESSING_UPLOAD",
-        "caption": "Can the ball escape all 17 rings?\nOne ball, 17 spinning rings, one gap in each – it has to find every exit to break free.\n💬 How many seconds did you guess?\n#ballescape #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Can the ball escape all 17 rings?\nOne ball, 17 spinning rings, one gap in each – it has to find every exit to break free.\n💬 How many seconds did you guess?\n#ballescape #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7697660867097201952"
       }
     }
   ]

@@ -6,17 +6,6 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
-## 17.10. 12:49 UTC – Can the ball escape all 17 rings?
-
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-escape-18)
-
-```text
-Can the ball escape all 17 rings?
-One ball, 17 spinning rings, one gap in each – it has to find every exit to break free.
-💬 How many seconds did you guess?
-#ballescape #satisfying #oddlysatisfying #physics #simulation
-```
-
 ## 17.10. 06:41 UTC – Every hit upgrades it – Who wins the duel?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-blade_duel-4)
@@ -72,6 +61,17 @@ One ball, 22 spinning rings, one gap in each – it has to find every exit to br
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 17.10. 12:49 UTC – Can the ball escape all 17 rings?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697660867097201952) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-escape-18)
+
+```text
+Can the ball escape all 17 rings?
+One ball, 17 spinning rings, one gap in each – it has to find every exit to break free.
+💬 How many seconds did you guess?
+#ballescape #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 17.10. 10:41 UTC – What will 234 bounces draw?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697596662633467169) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-stringart-12)
@@ -112,15 +112,5 @@ Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/
 What will 272 bounces draw?
 Which shape will win?
 #stringart #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 17.10. 00:41 UTC – Every ring adds a ball – Can they crack the core?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697561406673128737) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-brick_core-3)
-
-```text
-Every ring adds a ball – Can they crack the core?
-How many balls did it take? Guess before the end!
-#brickbreaker #satisfying #oddlysatisfying #physics #simulation
 ```
 
