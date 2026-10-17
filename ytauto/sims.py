@@ -1951,8 +1951,8 @@ class Painter:
         return img
 
     def cta(self, img: Image.Image, k: float) -> Image.Image:
-        """After the finale: the picture dims a little and a red "LIKE & SUBSCRIBE" button pops in at the centre
-        (clear of the platforms' captions and buttons). k runs from 0 to 1 over the pop-in."""
+        """After the finale: the picture dims a little and a red "LIKE & SUBSCRIBE" button pops in below the finale
+        text (inside the frame the platforms keep clear of captions and buttons). k runs 0 -> 1 over the pop-in."""
         e = 1 - (1 - min(1.0, max(0.0, k))) ** 3
         label = "LIKE & SUBSCRIBE"
         w, h = int(self.f_cta.getlength(label) + 120), 124
@@ -1963,8 +1963,8 @@ class Painter:
         scale = 0.82 + 0.18 * e
         pill = pill.resize((int(w * scale), int(h * scale)), Image.LANCZOS)
         pill.putalpha(pill.getchannel("A").point(lambda a: int(a * e)))
-        out = Image.blend(img, Image.new("RGB", img.size), 0.35 * e).convert("RGBA")
-        out.alpha_composite(pill, ((W - pill.width) // 2, int(CY - pill.height / 2)))
+        out = Image.blend(img, Image.new("RGB", img.size), 0.18 * e).convert("RGBA")
+        out.alpha_composite(pill, ((W - pill.width) // 2, int(CY + 290 - pill.height / 2)))
         return out.convert("RGB")
 
     # drawing helpers (simulation coordinates: origin at the centre, 1 unit = 1 output pixel)
@@ -2087,7 +2087,7 @@ def render(kind: str, seed: int, out: Path, melody: str | None = None, handle: s
     ]
     proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     dt, shown = 1 / (FPS * SUBSTEPS), 0.0
-    cta_from = warp.video(probe.end) + 0.3  # the finale has landed: like & subscribe until the end
+    cta_from = warp.video(probe.end) + 0.9  # the finale text stands alone for a moment, then like & subscribe
     for f in range(frames):
         target = warp.sim((f + 1) / FPS)
         while sim.t < target - dt / 2:
