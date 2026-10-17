@@ -20,7 +20,7 @@
   },
   "tiktok": {
     "enabled": true,
-    "account": "",
+    "account": "realnumbersdaily",
     "token_file": "state/tiktok_econ.token"
   },
   "youtube": {
