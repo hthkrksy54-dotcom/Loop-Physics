@@ -1,6 +1,6 @@
 name: Loop Physics
 
-# A new simulation every 2 hours (SLOTS in ytauto/simchannel.py): new concepts (built twice a day by the concept
+# Four simulations a day (SLOTS in ytauto/simchannel.py): new concepts (built twice a day by the concept
 # designer, docs/concept-designer.md) go first, in between the concepts that performed best come back in a fresh
 # variant. The timer chain starts this workflow for every slot; runs outside a slot only polish manual YouTube
 # uploads, top up the TikTok drafts and start overdue workflows. Own queue, so the long Quiet Thoughts renders

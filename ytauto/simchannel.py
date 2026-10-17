@@ -1,6 +1,6 @@
 """Second channel: one satisfying physics simulation Short per run (config/sims.json, state/sims.json).
 
-A post every 2 hours (SLOTS). New concepts always go first: the built-in kinds that were never posted, then the
+Four posts a day (SLOTS). New concepts always go first: the built-in kinds that were never posted, then the
 concepts the concept designer builds twice a day (ytauto/concepts/, see docs/concept-designer.md). In between, the
 concepts that already ran come back in a fresh variant (new seed: other numbers, colours, melody), weighted by how
 well they performed – standouts much more often, weak ones rarely – and never one of the last three again.
@@ -30,7 +30,7 @@ STATE = ROOT / "state" / "sims.json"
 TUNING = ROOT / "config" / "sims_tuning.json"  # written daily by trends.py
 OUT = ROOT / "out" / "sims"
 STORY_EVERY = 2  # a story for every Reel would crowd the account's stories
-SLOTS = [(h, 40) for h in range(0, 24, 2)]  # UTC posting times: every 2 hours
+SLOTS = [(0, 40), (12, 40), (16, 40), (20, 40)]  # UTC posting times, 4 a day: US Eastern 8:40, 12:40, 16:40, 20:40 (summer time)
 SLOT_WINDOW = dt.timedelta(minutes=100)  # a missed or failed slot is retried until the next one is near
 STANDOUT = 1.6  # views at least this many times the channel median: a standout, comes back much more often
 TIKTOK_PENDING = 3  # at most this many drafts wait in the TikTok inbox; the heartbeat tops them up
@@ -369,14 +369,14 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict) -> dict:
     description = "\n\n".join([
         body,
         f"💬 {question}",
-        f"A new simulation every 2 hours on {cfg['channel_name']} – and a brand-new concept twice a day.",
+        f"Four new simulations every day on {cfg['channel_name']} – and a brand-new concept twice a day.",
         "#satisfying #physics #simulation #shorts",
     ])
     caption = "\n\n".join([
         title,
         body,
         f"💬 {question}",
-        f"Follow {cfg['handle']} – a new simulation every 2 hours."
+        f"Follow {cfg['handle']} – four new simulations every day."
         + (f"\n▶ YouTube: {cfg['youtube']['channel_url']}" if cfg["youtube"].get("channel_url") else ""),
         (tags_line + (f" #{composer.lower()}" if composer else "")).strip(),
     ])

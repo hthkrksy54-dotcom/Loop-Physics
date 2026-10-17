@@ -56,7 +56,7 @@ Thema → Skript → Faktencheck → Sprecherstimme → Musik → Visuals → Un
 
 | Baustein | Lösung |
 |---|---|
-| Takt | alle 2 Stunden ein Video ([Workflow](.github/workflows/sims.yml)); zwischen den Slots pflegt der Workflow YouTube-Uploads nach, füllt TikTok-Entwürfe auf und startet liegengebliebene Workflows |
+| Takt | 4 Videos am Tag, 0:40, 12:40, 16:40 und 20:40 UTC (US-Ostküste 20:40, 8:40, 12:40, 16:40 Sommerzeit) ([Workflow](.github/workflows/sims.yml)); zwischen den Slots pflegt der Workflow YouTube-Uploads nach, füllt TikTok-Entwürfe auf und startet liegengebliebene Workflows |
 | Neue Konzepte | 2× täglich baut ein automatischer Konzept-Designer (geplante Claude-Session) nach [docs/concept-designer.md](docs/concept-designer.md) ein neues Konzept aus aktuellen viralen Trends – eine Datei in `ytauto/concepts/`, mit Qualitätsprüfung (`python -m ytauto concept-check`) |
 | Länge | jedes Video über 1 Minute (ca. 61–90 s), damit es bei TikTok für Creator Rewards zählt; Instagram-Stories bekommen einen 28-s-Teaser |
 | Auswahl | neue Konzepte haben immer Vorrang; dazwischen kommen bereits gelaufene Konzepte als neue Variante zurück, gewichtet nach Aufrufen (Instagram + YouTube) – Ausreißer nach oben (≥ 1,6× Median) deutlich öfter, nie eins der letzten drei |
