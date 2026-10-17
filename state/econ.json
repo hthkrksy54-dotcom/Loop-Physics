@@ -7,7 +7,13 @@
       "duration": 532.5,
       "short_duration": 73.3,
       "drive": "https://drive.google.com/drive/folders/11NFejR3u8nzbp5FtU8JNnEDBj68a_pAa",
-      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261017-where-did-100-dollars-go"
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261017-where-did-100-dollars-go",
+      "youtube_id": "2B-RBigF4Qw",
+      "youtube_short_id": "xu_0PaXPf98",
+      "texts_set": true,
+      "short_texts_set": "linked",
+      "thumbnail_error": "thumbnail skipped (403): {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"The authenticated user doesn't have permissions to upload and set custom video thumbnails.\",\n    \"errors\": [\n      {\n        \"m",
+      "captions_set": true
     },
     {
       "id": "why-us-debt-40-trillion",
@@ -16,7 +22,13 @@
       "duration": 538.6,
       "short_duration": 61.5,
       "drive": "https://drive.google.com/drive/folders/12e_XQkq4hZvXiHS1rSccGwlcUBYT5O6w",
-      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261017-why-us-debt-40-trillion"
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261017-why-us-debt-40-trillion",
+      "youtube_id": "dIT76kNXzqQ",
+      "youtube_short_id": "15HEhI3vyxs",
+      "texts_set": true,
+      "short_texts_set": "linked",
+      "thumbnail_error": "thumbnail skipped (403): {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"The authenticated user doesn't have permissions to upload and set custom video thumbnails.\",\n    \"errors\": [\n      {\n        \"m",
+      "captions_set": true
     },
     {
       "id": "turkey-argentina-high-inflation",
