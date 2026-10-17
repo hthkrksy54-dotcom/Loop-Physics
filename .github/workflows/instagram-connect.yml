@@ -37,8 +37,12 @@ jobs:
           IG_NEW_TOKEN: ${{ secrets.IG_NEW_TOKEN }}
           CHANNEL: ${{ github.event.inputs.channel }}
         run: |
+          set -o pipefail
           if [ -z "$IG_NEW_TOKEN" ]; then echo "::error::Secret IG_NEW_TOKEN is missing"; exit 1; fi
-          python -m ytauto instagram-connect --channel "$CHANNEL" --token "$IG_NEW_TOKEN" | tee -a "$GITHUB_STEP_SUMMARY"
+          # Shape only, never the token: Instagram-login tokens start with IGAA and have no spaces or line breaks
+          TOKEN=$(printf '%s' "$IG_NEW_TOKEN" | tr -d '[:space:]"')
+          echo "token: ${#IG_NEW_TOKEN} characters (${#TOKEN} without spaces/quotes), starts with ${TOKEN:0:4}"
+          python -m ytauto instagram-connect --channel "$CHANNEL" --token "$TOKEN" | tee -a "$GITHUB_STEP_SUMMARY"
 
       - name: Save the token file
         run: |
