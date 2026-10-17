@@ -48,7 +48,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1199,
+      "yt_views": 1212,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235341996115990",
         "status": "PUBLISH_COMPLETE",
@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 2573,
+      "yt_views": 2595,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 5518,
+      "yt_views": 5536,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -190,7 +190,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1358,
+      "yt_views": 1355,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232916815824918",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 4490,
+      "yt_views": 4604,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -249,7 +249,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 12,
+      "yt_views": 11,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233367154608150",
         "status": "SEND_TO_USER_INBOX",
@@ -277,7 +277,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 12,
+      "yt_views": 9,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233859481487382",
         "status": "SEND_TO_USER_INBOX",
@@ -390,6 +390,22 @@
       "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-blade_duel-3",
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AkhfXDfGlwDiLPOAsGcAZGD\"}}",
+        "tiktok: post/publish/inbox/video/init/: spam_risk_too_many_pending_share – spam_risk_too_many_pending_share"
+      ]
+    },
+    {
+      "date": "2026-10-17T00:41:38+00:00",
+      "kind": "brick_core",
+      "seed": 3,
+      "melody": "frere_jacques",
+      "timbre": "bell",
+      "title": "Every ring adds a ball – Can they crack the core? – Sound on",
+      "duration": 73.4,
+      "why": "new",
+      "concept": "Ballz-style brick breaker: balls bounce through a wall of numbered bricks (every hit counts one down), green +1 rings add a ball, a hidden ×2 ring doubles the swarm – the target is the core brick in the middle with hundreds of HP.",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-brick_core-3",
+      "warnings": [
+        "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AOPqVUX59jci2y3_SxX7dMW\"}}",
         "tiktok: post/publish/inbox/video/init/: spam_risk_too_many_pending_share – spam_risk_too_many_pending_share"
       ]
     }
