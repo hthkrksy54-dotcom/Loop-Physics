@@ -21,7 +21,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 18,
+      "yt_views": 24,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234343969720322",
         "status": "SEND_TO_USER_INBOX",
@@ -48,7 +48,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1270,
+      "yt_views": 1273,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235341996115990",
         "status": "PUBLISH_COMPLETE",
@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 2849,
+      "yt_views": 2875,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -104,7 +104,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 17,
+      "yt_views": 20,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235656464123907",
         "status": "PUBLISH_COMPLETE",
@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 6125,
+      "yt_views": 6175,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -161,7 +161,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 20,
+      "yt_views": 19,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233117064890390",
         "status": "SEND_TO_USER_INBOX",
@@ -190,7 +190,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1491,
+      "yt_views": 1532,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232916815824918",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 7601,
+      "yt_views": 8586,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -249,7 +249,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 24,
+      "yt_views": 21,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233367154608150",
         "status": "SEND_TO_USER_INBOX",
@@ -277,7 +277,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 16,
+      "yt_views": 22,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233859481487382",
         "status": "SEND_TO_USER_INBOX",
@@ -467,6 +467,21 @@
       "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-blade_duel-4",
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"A4ZIMGjakpbV_mvGerykgUu\"}}"
+      ]
+    },
+    {
+      "date": "2026-10-17T08:41:42+00:00",
+      "kind": "domino_scale",
+      "seed": 0,
+      "melody": "minuet",
+      "timbre": "pluck",
+      "title": "Every domino is bigger than the one before – Listen to the rhythm",
+      "duration": 82.9,
+      "why": "new",
+      "concept": "Domino scaling: a chain of dominoes where each one is ~9% bigger than the one before; a marble taps the first sliver, the wave grows, the camera keeps zooming out and every impact gets heavier.",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-domino_scale-0",
+      "warnings": [
+        "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"A3aNl8dgKvrCATKl1DfZue-\"}}"
       ]
     }
   ]
