@@ -56,7 +56,8 @@
       "token_file": "state/instagram_en.token",
       "hashtags": "#philosophy #psychology #quietthoughts",
       "youtube_channel": "youtube.com/@quietthoughts-20",
-      "story_log": "state/instagram_en_stories.json"
+      "story_log": "state/instagram_en_stories.json",
+      "reel_hour": 10
     },
     "tiktok": {
       "enabled": true,

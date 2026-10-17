@@ -16,7 +16,8 @@
     "enabled": true,
     "account": "realnumbersdaily",
     "token_file": "state/instagram_econ.token",
-    "story_log": "state/instagram_econ_stories.json"
+    "story_log": "state/instagram_econ_stories.json",
+    "reel_hour": 11
   },
   "tiktok": {
     "enabled": true,

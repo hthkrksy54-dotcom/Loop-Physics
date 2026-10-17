@@ -620,7 +620,11 @@ def produce(upload: bool = True, script_id: str | None = None) -> dict:
     if rel:
         record["release"] = rel["release"]
     short_url = assets.get(f"{slug}-{name}-short.mp4")
-    if short_url and instagram.configured(cfg):
+    due = instagram.reel_due(cfg)
+    if short_url and instagram.configured(cfg) and due:  # made at 4:00 in Germany: the Reel waits for the US morning
+        record["reel_due"] = due.isoformat(timespec="seconds")
+        print(f"  instagram: Reel scheduled for {due:%H:%M} UTC", flush=True)
+    elif short_url and instagram.configured(cfg):
         try:
             record.update(instagram.post_reel(cfg, short_url, texts["caption"], story=True, label=script["title"],
                                               thumb_offset_ms=3000,
@@ -831,6 +835,32 @@ def tiktok_backlog(max_pending: int = tiktok.MAX_WAITING) -> bool:
     return changed
 
 
+def post_due_reel() -> bool:
+    """Post the Reels (+ story) whose time has come – episodes are made at 4:00 in Germany, their Reel goes out in
+    the US morning (config instagram.reel_hour). Called by the hourly sync."""
+    cfg, state = load(CONFIG, {}), load(STATE, {"videos": []})
+    if not instagram.configured(cfg):
+        return False
+    changed = False
+    for rec in state["videos"]:
+        if not rec.get("reel_due") or rec.get("instagram_id") or instagram.reel_waiting(rec) \
+                or rec.get("reel_tries", 0) >= 3 or not rec.get("release"):
+            continue
+        script = load(SCRIPTS / f"{rec['id']}.json", {})
+        files = _release_files(cfg, rec)
+        try:
+            rec.update(instagram.post_reel(cfg, f"{files}-short.mp4", _texts(script, cfg, {})["caption"], story=True,
+                                           label=script["title"], thumb_offset_ms=3000, story_url=f"{files}-story.mp4"))
+        except Exception as err:  # noqa: BLE001 – tried again next hour, three times at most
+            rec["reel_tries"] = rec.get("reel_tries", 0) + 1
+            rec.setdefault("warnings", []).append(f"instagram: {err}")
+            print(f"  warning: instagram reel for '{rec['id']}' failed: {err}", flush=True)
+        changed = True
+    if changed:
+        save(STATE, state)
+    return changed
+
+
 def backfill_reel(every_day: bool = True) -> bool:
     """Post the Short of the oldest episode that has no Reel yet – made before Instagram was connected, or its
     Reel failed – as Reel + story, at most one a day and only while its release (the video's public URL) exists."""
@@ -844,7 +874,7 @@ def backfill_reel(every_day: bool = True) -> bool:
     if every_day and any(r.get("reel_backfill") == now.date().isoformat() for r in state["videos"]):
         print("[econ] already caught up one Reel today", flush=True)
         return False
-    todo = [r for r in state["videos"] if not r.get("instagram_id") and r.get("release")
+    todo = [r for r in state["videos"] if not r.get("instagram_id") and r.get("release") and not instagram.reel_waiting(r)
             and now - dt.datetime.fromisoformat(r["date"]) < dt.timedelta(days=20)]  # releases are kept 21 days
     if not todo:
         print("[econ] every episode has its Reel", flush=True)

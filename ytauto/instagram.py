@@ -10,6 +10,7 @@ import json
 import os
 import time
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import requests
 from cryptography.fernet import Fernet, InvalidToken
@@ -17,6 +18,7 @@ from cryptography.fernet import Fernet, InvalidToken
 GRAPH = "https://graph.instagram.com"
 ROOT = Path(__file__).resolve().parent.parent
 REFRESH_AFTER_DAYS = 7
+AUDIENCE_TZ = ZoneInfo("America/New_York")  # the English channels post their Reels in the US morning
 
 
 class InstagramError(RuntimeError):
@@ -38,6 +40,24 @@ def configured(cfg: dict) -> bool:
 
 def _fernet() -> Fernet:
     return Fernet(os.environ["IG_TOKEN_KEY"].strip().encode())
+
+
+def reel_due(cfg: dict, now: dt.datetime | None = None) -> dt.datetime | None:
+    """When the Reel of a video made now should go out: None = right away (US daytime, or no `reel_hour` set),
+    else the next `reel_hour`:00 New York time – videos made at 4:00 in Germany wait for the US morning."""
+    hour = (cfg.get("instagram") or {}).get("reel_hour")
+    ny = (now or _now()).astimezone(AUDIENCE_TZ)
+    if hour is None or hour <= ny.hour < 20:
+        return None
+    due = ny.replace(hour=hour, minute=0, second=0, microsecond=0)
+    if ny.hour >= 20:
+        due += dt.timedelta(days=1)
+    return due.astimezone(dt.timezone.utc)
+
+
+def reel_waiting(rec: dict, now: dt.datetime | None = None) -> bool:
+    """The record's Reel is held back until its time."""
+    return bool(rec.get("reel_due")) and dt.datetime.fromisoformat(rec["reel_due"]) > (now or _now())
 
 
 def save_token(cfg: dict, data: dict) -> None:

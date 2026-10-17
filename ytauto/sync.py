@@ -181,7 +181,8 @@ def run(lang: str, cfg: dict, state: dict, load_script) -> bool:
             if rec.get("youtube_id") and _fix_short(token, s, script, cfg, rec["youtube_id"]):
                 changed = True
         # Post the Reel once the long video is live, so the caption can link to it.
-        if rec.get("youtube_id") and not rec.get("instagram_id") and instagram.configured(cfg) and script.get("short"):
+        if rec.get("youtube_id") and not rec.get("instagram_id") and instagram.configured(cfg) and script.get("short") \
+                and not instagram.reel_waiting(rec):
             short_url = rec.get("short_url") or (
                 f"https://github.com/{_repo()}/releases/download/video-{lang}-{rec['id']}/{lang}-{rec['id']}-short.mp4"
             )

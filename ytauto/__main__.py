@@ -111,8 +111,13 @@ def produce(lang: str, topic_id: str | None, upload: bool, with_short: bool, kee
         record.update(release)
         if short_url:
             record["short_url"] = short_url
-        # The Reel goes out right away – with a link to the video once it is on YouTube, else "link in bio".
-        if short and short_url and instagram.configured(cfg):
+        # The Reel goes out in the US morning (reel_hour) – the hourly sync posts it then, with a link to the
+        # video if it is on YouTube by then; made during US daytime, it goes out right away.
+        due = instagram.reel_due(cfg)
+        if short and short_url and instagram.configured(cfg) and due:
+            record["reel_due"] = due.isoformat(timespec="seconds")
+            print(f"  instagram: Reel scheduled for {due:%H:%M} UTC", flush=True)
+        elif short and short_url and instagram.configured(cfg):
             try:
                 yt_url = f"https://youtu.be/{record['youtube_id']}" if record.get("youtube_id") else None
                 record.update(instagram.post_reel(cfg, short_url, instagram.caption(script, cfg, yt_url),
@@ -136,6 +141,29 @@ def produce(lang: str, topic_id: str | None, upload: bool, with_short: bool, kee
             if record.get("tiktok"):
                 tiktok.write_queue(state[lang], cfg["channel_name"], TIKTOK_QUEUE)
     return record
+
+
+def post_due_reels(lang: str, cfg: dict, state: dict) -> bool:
+    """Post the Reels whose time has come (see instagram.reel_due); returns True if state changed."""
+    changed = False
+    for rec in state.get(lang, []):
+        if not rec.get("reel_due") or rec.get("instagram_id") or instagram.reel_waiting(rec) \
+                or rec.get("reel_tries", 0) >= 3 or not rec.get("short_url"):
+            continue
+        script = _load(SCRIPTS / lang / f"{rec['id']}.json", None)
+        if not script:
+            continue
+        try:
+            yt_url = f"https://youtu.be/{rec['youtube_id']}" if rec.get("youtube_id") else None
+            rec.update(instagram.post_reel(cfg, rec["short_url"], instagram.caption(script, cfg, yt_url),
+                                           highlight=social.highlight_for(script), label=script["short"]["title"],
+                                           cover_url=rec.get("cover_url")))
+        except Exception as err:  # noqa: BLE001 – tried again next hour, three times at most
+            rec["reel_tries"] = rec.get("reel_tries", 0) + 1
+            rec.setdefault("warnings", []).append(f"instagram: {err}")
+            print(f"  warning: instagram reel for '{rec['id']}' failed: {err}", flush=True)
+        changed = True
+    return changed
 
 
 def tiktok_caption(script: dict, cfg: dict) -> str:
@@ -365,10 +393,13 @@ def main(argv: list[str] | None = None) -> int:
         for lang, cfg in config.items():
             if cfg.get("active", True):
                 changed |= sync.run(lang, cfg, state, lambda tid, lang=lang: _load(SCRIPTS / lang / f"{tid}.json", None))
+                if instagram.configured(cfg):
+                    changed |= post_due_reels(lang, cfg, state)
         if changed:
             _save(STATE, state)
         from . import econ
         econ.youtube_sync()  # Real Numbers: finish the episodes the owner uploaded by hand
+        econ.post_due_reel()
         return 0
 
     if args.cmd == "carousel":
