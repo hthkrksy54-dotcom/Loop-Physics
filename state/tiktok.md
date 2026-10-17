@@ -6,17 +6,6 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
-## 17.10. 16:41 UTC – Can the black hole eat all 314 balls?
-
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-black_hole-0)
-
-```text
-Can the black hole eat all 314 balls?
-A few hundred balls orbit a tiny black hole.
-💬 Which colour do you think falls in last?
-#blackhole #satisfying #oddlysatisfying #physics #simulation
-```
-
 ## 17.10. 06:41 UTC – Every hit upgrades it – Who wins the duel?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-blade_duel-4)
@@ -72,6 +61,17 @@ One ball, 22 spinning rings, one gap in each – it has to find every exit to br
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 17.10. 16:41 UTC – Can the black hole eat all 314 balls?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697690989107973409) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-black_hole-0)
+
+```text
+Can the black hole eat all 314 balls?
+A few hundred balls orbit a tiny black hole.
+💬 Which colour do you think falls in last?
+#blackhole #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 17.10. 12:49 UTC – Can the ball escape all 17 rings?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697660867097201952) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-escape-18)
@@ -113,15 +113,5 @@ Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/
 12 pendulums, each swinging a little faster than the one before – waves and snakes appear, until they all line up again.
 💬 Did you see the snake?
 #pendulumwave #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 17.10. 02:41 UTC – What will 272 bounces draw?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697577475378859297) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-stringart-1)
-
-```text
-What will 272 bounces draw?
-Which shape will win?
-#stringart #satisfying #oddlysatisfying #physics #simulation
 ```
 
