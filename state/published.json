@@ -53,7 +53,10 @@
       "short_url": "https://github.com/hthkrksy54-dotcom/Yt/releases/download/video-en-spotlight-effect/en-spotlight-effect-short.mp4",
       "warnings": [
         "instagram: token check failed (400): {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AlF4hSXFZKsXASJoZcqU9F-\"}}"
-      ]
+      ],
+      "youtube_id": "K1XT01xPjEc",
+      "thumbnail_set": true,
+      "youtube_short_id": "bZx-5edPD0A"
     }
   ]
 }
