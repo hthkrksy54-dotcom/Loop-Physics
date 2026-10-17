@@ -6,6 +6,17 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
+## 17.10. 20:41 UTC – Can it smash through all 7 rings?
+
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-ring_breaker-2)
+
+```text
+Can it smash through all 7 rings?
+One ball, seven rings of tiles. The outer rings are tougher – the last one needs the whole swarm.
+💬 Which ring did you think would stop it?
+#escape #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 17.10. 06:41 UTC – Every hit upgrades it – Who wins the duel?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-blade_duel-4)

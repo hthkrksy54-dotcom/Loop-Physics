@@ -21,7 +21,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 30,
+      "yt_views": 32,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234343969720322",
         "status": "SEND_TO_USER_INBOX",
@@ -48,7 +48,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1356,
+      "yt_views": 1379,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235341996115990",
         "status": "PUBLISH_COMPLETE",
@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 3530,
+      "yt_views": 3710,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -104,7 +104,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 25,
+      "yt_views": 24,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235656464123907",
         "status": "PUBLISH_COMPLETE",
@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 6420,
+      "yt_views": 6409,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -161,7 +161,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 32,
+      "yt_views": 284,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233117064890390",
         "status": "SEND_TO_USER_INBOX",
@@ -190,7 +190,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1792,
+      "yt_views": 1855,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232916815824918",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 11829,
+      "yt_views": 12476,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -249,7 +249,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 35,
+      "yt_views": 41,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233367154608150",
         "status": "SEND_TO_USER_INBOX",
@@ -277,7 +277,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 32,
+      "yt_views": 290,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233859481487382",
         "status": "SEND_TO_USER_INBOX",
@@ -549,7 +549,7 @@
       "instagram_id": "18030561041882795",
       "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/",
       "youtube_id": "3Qgx9BMIlXo",
-      "yt_views": 688
+      "yt_views": 1177
     },
     {
       "date": "2026-10-17T12:49:05+00:00",
@@ -593,7 +593,28 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697690989107973409"
       },
       "youtube_id": "I4sGIrwZf6U",
-      "yt_views": 0
+      "yt_views": 62
+    },
+    {
+      "date": "2026-10-17T20:41:42+00:00",
+      "kind": "ring_breaker",
+      "seed": 2,
+      "melody": "nachtmusik",
+      "timbre": "bell",
+      "title": "1 ball vs. 7 rings of tiles – wait for the last one",
+      "duration": 72.1,
+      "why": "new",
+      "concept": "Seven rings built from tiles around one ball: every hit cracks a tile, a hole lets the ball out, the ring shatters and a new ball joins – the outer rings have more HP, so the growing swarm has to hammer its way out.",
+      "drive": "https://drive.google.com/drive/folders/1458c28kI3fjIaQ_k33dT5M0DjzCh3xhz",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-ring_breaker-2",
+      "instagram_id": "17878573863565230",
+      "instagram_url": "https://www.instagram.com/reel/DenAgpjEhnH/",
+      "instagram_story_id": "18416697724087303",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697742261966211094",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "Can it smash through all 7 rings?\nOne ball, seven rings of tiles. The outer rings are tougher – the last one needs the whole swarm.\n💬 Which ring did you think would stop it?\n#escape #satisfying #oddlysatisfying #physics #simulation"
+      }
     }
   ]
 }
