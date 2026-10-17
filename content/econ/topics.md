@@ -5,7 +5,7 @@ add new ones at the end. Pick ones the World Bank (or another official source) h
 
 - [x] Where did your $100 go? Inflation since 1970 – `where-did-100-dollars-go`
 - [ ] Why do houses cost so much? House prices vs incomes
-- [ ] How rich is the average person in each country? GDP per person, PPP vs dollars
+- [x] How rich is the average person in each country? GDP per person, PPP vs dollars – `where-money-goes-furthest`
 - [ ] What is GDP – and what it doesn't measure
 - [x] Why does the US have so much debt? Government debt as % of GDP – `why-us-debt-40-trillion`
 - [x] Compound interest: why time beats timing (savings at 2%, 5%, 8% – no advice, just the math) – `compound-interest-time`

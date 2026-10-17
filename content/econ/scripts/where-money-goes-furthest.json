@@ -1,0 +1,733 @@
+{
+  "id": "where-money-goes-furthest",
+  "order": 7,
+  "title": "Why $100 Buys 6.5× More in Egypt: How Rich Is Each Country Really? Explained with Data",
+  "title_card": "How rich is each country really?",
+  "description": "In US dollars, the average Egyptian produces about $3,000 a year. Adjusted for local prices, it's over $20,000. With World Bank data we compare countries two ways – at market exchange rates and at purchasing power parity – and see which countries jump, which fall, why Nigeria looked half as rich overnight, and why China is already the biggest economy by one measure.",
+  "tags": [
+    "purchasing power parity",
+    "ppp explained",
+    "gdp per capita",
+    "richest countries",
+    "cost of living",
+    "exchange rates",
+    "gdp ppp",
+    "china vs us economy",
+    "nigeria naira",
+    "economics explained",
+    "economics",
+    "money",
+    "data visualization"
+  ],
+  "hashtags": [
+    "#economics",
+    "#money",
+    "#costofliving"
+  ],
+  "sources": [
+    "World Bank, World Development Indicators: GDP per capita (current US$), NY.GDP.PCAP.CD – 2025 for Luxembourg, Ireland, Switzerland, Singapore, United States, Germany, United Kingdom, Japan, China, India, Iceland, Turkey, Egypt, Nigeria, Burundi; Nigeria 2015–2025 (CC BY 4.0)",
+    "World Bank, World Development Indicators: GDP per capita, PPP (current international $), NY.GDP.PCAP.PP.CD – same countries, 2025; Nigeria 2015–2025; Qatar and Norway 2025 (CC BY 4.0)",
+    "Price comparison ('what $100 buys in US prices') computed as GDP per capita PPP ÷ GDP per capita in current US$, 2025, from the two indicators above",
+    "World Bank, World Development Indicators: Official exchange rate (LCU per US$, period average), PA.NUS.FCRF – Nigeria 2023–2024 (CC BY 4.0)",
+    "World Bank, World Development Indicators: GDP, PPP (current international $), NY.GDP.MKTP.PP.CD – China and United States 1990–2025; GDP (current US$), NY.GDP.MKTP.CD – China and United States 2025 (CC BY 4.0)",
+    "World Bank, International Comparison Program (ICP): the price surveys behind purchasing power parities"
+  ],
+  "thumbnail": {
+    "big": "$100 → $655",
+    "text": "Same money. Why?",
+    "color": "green"
+  },
+  "chapters": [
+    {
+      "heading": "Intro",
+      "beats": [
+        {
+          "say": "Take a hundred dollars to Egypt, change it into local money, and spend it there. On average, it buys what about six hundred and fifty-five dollars buys in the United States.",
+          "show": {
+            "type": "number",
+            "big": "$100 → $655",
+            "caption": "what $100 buys in Egypt, measured in US prices",
+            "color": "green"
+          }
+        },
+        {
+          "say": "In Nigeria, it's even more: close to eight hundred dollars' worth.",
+          "show": {
+            "type": "number",
+            "big": "$100 → $779",
+            "caption": "what $100 buys in Nigeria, measured in US prices",
+            "color": "green"
+          }
+        },
+        {
+          "say": "That changes a question people ask all the time: how rich is a country, really?"
+        },
+        {
+          "say": "Because the answer depends on which ruler you use. With one ruler, India is thirty-three times poorer than America. With the other, it's under eight. Let's take it apart with the official data."
+        }
+      ]
+    },
+    {
+      "heading": "Ruler one: dollars",
+      "beats": [
+        {
+          "say": "The usual way to compare countries is simple. Take everything an economy produces in a year, divide by the number of people, and convert it into dollars at the exchange rate.",
+          "show": {
+            "type": "bars",
+            "heading": "Output per person in 2025, in US dollars",
+            "unit": "$",
+            "items": [
+              [
+                "Luxembourg",
+                147252
+              ],
+              [
+                "Ireland",
+                131592
+              ],
+              [
+                "Switzerland",
+                114769
+              ],
+              [
+                "Singapore",
+                98814
+              ],
+              [
+                "United States",
+                90027
+              ],
+              [
+                "Germany",
+                60496
+              ],
+              [
+                "UK",
+                57602
+              ],
+              [
+                "Japan",
+                35951
+              ],
+              [
+                "China",
+                13862
+              ],
+              [
+                "India",
+                2702
+              ]
+            ],
+            "highlight": "United States"
+          }
+        },
+        {
+          "say": "By that measure, the top is Luxembourg: about a hundred and forty-seven thousand dollars per person. Then Ireland and Switzerland.",
+          "mark": {
+            "items": [
+              "Luxembourg",
+              "Ireland",
+              "Switzerland"
+            ]
+          }
+        },
+        {
+          "say": "The United States: about ninety thousand. Germany and Britain around sixty.",
+          "mark": {
+            "items": [
+              "United States",
+              "Germany",
+              "UK"
+            ]
+          }
+        },
+        {
+          "say": "China: almost fourteen thousand. India: about twenty-seven hundred dollars per person, per year.",
+          "mark": {
+            "items": [
+              "China",
+              "India"
+            ]
+          }
+        },
+        {
+          "say": "Divide ninety thousand by twenty-seven hundred, and the average American produces thirty-three times as much as the average Indian.",
+          "show": {
+            "type": "number",
+            "big": "×33",
+            "caption": "US vs India, output per person in dollars, 2025",
+            "color": "red"
+          }
+        },
+        {
+          "say": "But that ruler has a problem. It assumes a dollar buys the same everywhere. It doesn't."
+        },
+        {
+          "say": "Exchange rates are set in currency markets. They move with interest rates, trade and the mood of investors – not with the price of bread or a bus ticket in Mumbai."
+        }
+      ]
+    },
+    {
+      "heading": "Why prices differ",
+      "beats": [
+        {
+          "say": "Think of a haircut. In New York, a barber has to pay New York rent and earn a New York wage. In Delhi, the same haircut is done with the same scissors – for a fraction of the price.",
+          "show": {
+            "type": "note",
+            "text": "Same haircut. Same scissors. *Different price*.",
+            "source": "Services can't be shipped – so their prices stay local",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "Things that can be shipped around the world, like phones or oil, cost roughly the same everywhere. But haircuts, rent, restaurant meals, buses and doctors can't be shipped. Their prices follow local wages."
+        },
+        {
+          "say": "So in poorer countries, a big part of daily life is much cheaper. And in rich countries, it's more expensive. A teacher's salary that looks tiny in dollars can still pay for a decent life at local prices."
+        },
+        {
+          "say": "To measure this, the World Bank runs the International Comparison Program: price surveys of the same basket of goods and services in almost every country on earth.",
+          "show": {
+            "type": "note",
+            "text": "The *same* basket, priced in every country.",
+            "source": "World Bank International Comparison Program",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "The result is called purchasing power parity – PPP for short. It's an exchange rate that makes a dollar buy the same amount of stuff everywhere."
+        }
+      ]
+    },
+    {
+      "heading": "What a dollar really buys",
+      "beats": [
+        {
+          "say": "Compare the two measures, and you get what a hundred dollars buys in each country, measured in American prices.",
+          "show": {
+            "type": "bars",
+            "heading": "What $100 buys, measured in US prices",
+            "unit": "$",
+            "items": [
+              [
+                "Iceland",
+                85
+              ],
+              [
+                "Switzerland",
+                89
+              ],
+              [
+                "United States",
+                100
+              ],
+              [
+                "UK",
+                112
+              ],
+              [
+                "Germany",
+                125
+              ],
+              [
+                "Japan",
+                154
+              ],
+              [
+                "China",
+                212
+              ],
+              [
+                "Turkey",
+                243
+              ],
+              [
+                "India",
+                435
+              ],
+              [
+                "Egypt",
+                655
+              ],
+              [
+                "Nigeria",
+                779
+              ]
+            ],
+            "highlight": "Nigeria"
+          }
+        },
+        {
+          "say": "In Switzerland and Iceland, less than in the US: about eighty-five to eighty-nine dollars' worth. Those are some of the most expensive countries on earth.",
+          "mark": {
+            "items": [
+              "Iceland",
+              "Switzerland"
+            ]
+          }
+        },
+        {
+          "say": "In Britain, about a hundred and twelve. In Japan, a hundred and fifty-four – partly because the yen is so weak.",
+          "mark": {
+            "items": [
+              "UK",
+              "Japan"
+            ]
+          }
+        },
+        {
+          "say": "In China, more than twice as much.",
+          "mark": {
+            "items": [
+              "China"
+            ]
+          }
+        },
+        {
+          "say": "Turkey: about two hundred and forty-three. Its currency has lost a lot of value in recent years, so for anyone holding dollars, the country got cheap.",
+          "mark": {
+            "items": [
+              "Turkey"
+            ]
+          }
+        },
+        {
+          "say": "In India, about four hundred and thirty-five dollars' worth.",
+          "mark": {
+            "items": [
+              "India"
+            ]
+          }
+        },
+        {
+          "say": "And in Egypt and Nigeria, six and a half to almost eight times as much.",
+          "mark": {
+            "items": [
+              "Egypt",
+              "Nigeria"
+            ]
+          }
+        },
+        {
+          "say": "One warning: this is the average across the whole economy – rent, food, transport, healthcare. A tourist buying imported goods won't see anything like these numbers."
+        }
+      ]
+    },
+    {
+      "heading": "Ruler two: purchasing power",
+      "beats": [
+        {
+          "say": "Now redo the ranking with prices adjusted.",
+          "show": {
+            "type": "bars",
+            "heading": "Output per person in 2025, adjusted for prices",
+            "unit": "$",
+            "items": [
+              [
+                "Singapore",
+                163354
+              ],
+              [
+                "Luxembourg",
+                156542
+              ],
+              [
+                "Ireland",
+                155089
+              ],
+              [
+                "Qatar",
+                128883
+              ],
+              [
+                "Norway",
+                104044
+              ],
+              [
+                "Switzerland",
+                102513
+              ],
+              [
+                "United States",
+                90027
+              ],
+              [
+                "Germany",
+                75407
+              ],
+              [
+                "Japan",
+                55422
+              ],
+              [
+                "China",
+                29333
+              ],
+              [
+                "India",
+                11748
+              ]
+            ],
+            "highlight": "United States"
+          }
+        },
+        {
+          "say": "Singapore jumps to the top: over a hundred and sixty thousand dollars per person.",
+          "mark": {
+            "items": [
+              "Singapore"
+            ]
+          }
+        },
+        {
+          "say": "Switzerland falls behind Norway and Qatar, because its high prices eat part of its income.",
+          "mark": {
+            "items": [
+              "Switzerland",
+              "Norway",
+              "Qatar"
+            ]
+          }
+        },
+        {
+          "say": "Germany rises to about seventy-five thousand. Japan from thirty-six to fifty-five thousand.",
+          "mark": {
+            "items": [
+              "Germany",
+              "Japan"
+            ]
+          }
+        },
+        {
+          "say": "And India goes from twenty-seven hundred to almost twelve thousand dollars. The gap with America shrinks from thirty-three times to under eight.",
+          "mark": {
+            "items": [
+              "India",
+              "United States"
+            ]
+          }
+        },
+        {
+          "say": "A word on the leaders. Ireland's number is pushed up by the profits of big international companies booked there. Luxembourg's by thousands of workers who commute in from neighbouring countries but don't live there. Per person numbers can mislead at the very top.",
+          "show": {
+            "type": "note",
+            "text": "Ireland and Luxembourg: *more GDP* than their residents earn.",
+            "source": "Multinational profits and cross-border commuters",
+            "color": "gray"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Half as rich overnight",
+      "beats": [
+        {
+          "say": "Here's why economists trust the second ruler more for living standards. This is Nigeria.",
+          "show": {
+            "type": "line",
+            "heading": "Nigeria: output per person, two ways",
+            "unit": "$",
+            "sub": "GDP per capita, current US$ and PPP · World Bank",
+            "series": [
+              {
+                "label": "In US dollars",
+                "wb": "NY.GDP.PCAP.CD",
+                "country": "NGA",
+                "from": 2015,
+                "to": 2025,
+                "color": "red"
+              },
+              {
+                "label": "Adjusted for prices",
+                "wb": "NY.GDP.PCAP.PP.CD",
+                "country": "NGA",
+                "from": 2015,
+                "to": 2025,
+                "color": "green"
+              }
+            ]
+          }
+        },
+        {
+          "say": "In 2023, output per person was about twenty-one hundred dollars. In 2024: about eleven hundred. Half gone, in one year.",
+          "mark": {
+            "x": 2024,
+            "label": "$1,084"
+          }
+        },
+        {
+          "say": "Did Nigerians suddenly produce half as much? No. The currency collapsed. In 2023 a dollar cost about six hundred and forty-five naira on average. In 2024, about fourteen hundred and seventy-nine.",
+          "show": {
+            "type": "number",
+            "big": "₦645 → ₦1,479",
+            "caption": "naira per US dollar, 2023 → 2024 (yearly average)",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Now look at the green line – adjusted for prices. It barely moved. It actually rose a little, from about eighty-seven hundred to about nine thousand one hundred.",
+          "show": {
+            "type": "line",
+            "heading": "Nigeria: output per person, two ways",
+            "unit": "$",
+            "sub": "GDP per capita, current US$ and PPP · World Bank",
+            "series": [
+              {
+                "label": "In US dollars",
+                "wb": "NY.GDP.PCAP.CD",
+                "country": "NGA",
+                "from": 2015,
+                "to": 2025,
+                "color": "red"
+              },
+              {
+                "label": "Adjusted for prices",
+                "wb": "NY.GDP.PCAP.PP.CD",
+                "country": "NGA",
+                "from": 2015,
+                "to": 2025,
+                "color": "green"
+              }
+            ]
+          }
+        },
+        {
+          "say": "Life in Nigeria got harder in those years – imports became much more expensive. But the dollar number exaggerates how much. That's the danger of measuring a country with an exchange rate."
+        }
+      ]
+    },
+    {
+      "heading": "The biggest economy on earth",
+      "beats": [
+        {
+          "say": "Use the same idea on whole countries, and a headline changes. In dollars, America's economy is about thirty-one trillion, China's about nineteen and a half.",
+          "show": {
+            "type": "compare",
+            "heading": "Whole economy in US dollars, 2025",
+            "left": [
+              "China",
+              "$19.5T"
+            ],
+            "right": [
+              "United States",
+              "$30.8T"
+            ],
+            "color": "blue"
+          }
+        },
+        {
+          "say": "Now adjust for prices.",
+          "show": {
+            "type": "line",
+            "heading": "Whole economy, adjusted for prices, $ trillion",
+            "unit": "$",
+            "sub": "GDP, PPP (current international $) · World Bank",
+            "series": [
+              {
+                "label": "China",
+                "wb": "NY.GDP.MKTP.PP.CD",
+                "country": "CHN",
+                "from": 1990,
+                "to": 2025,
+                "color": "red"
+              },
+              {
+                "label": "US",
+                "wb": "NY.GDP.MKTP.PP.CD",
+                "country": "USA",
+                "from": 1990,
+                "to": 2025,
+                "color": "blue"
+              }
+            ]
+          }
+        },
+        {
+          "say": "Measured in purchasing power, China passed the United States in 2014.",
+          "mark": {
+            "x": 2014,
+            "label": "China passes the US"
+          }
+        },
+        {
+          "say": "By 2025, China's economy was about forty-one trillion international dollars. The US: about thirty-one. A third bigger.",
+          "mark": {
+            "x": 2025
+          }
+        },
+        {
+          "say": "So which is the biggest economy in the world? In dollars, America. In what an economy can actually produce and buy at home, China. Both answers are correct – they measure different things."
+        },
+        {
+          "say": "Roughly: dollars tell you what a country can buy from the rest of the world – oil, chips, aircraft. Purchasing power tells you what it can build and buy at home – roads, factories, food, housing."
+        }
+      ]
+    },
+    {
+      "heading": "The gap that doesn't go away",
+      "beats": [
+        {
+          "say": "Now the hardest number. Burundi, in East Africa, is the poorest country in this data. In dollars, output per person in 2025 was about two hundred and thirty-four dollars. For a whole year.",
+          "show": {
+            "type": "number",
+            "big": "$234",
+            "caption": "output per person in Burundi, 2025, in US dollars",
+            "color": "red"
+          }
+        },
+        {
+          "say": "That's about sixty-four cents a day. Next to America's ninety thousand, it's a gap of three hundred and eighty-five times."
+        },
+        {
+          "say": "Prices in Burundi are much lower – a hundred dollars buys about five hundred and thirty-four dollars' worth. Adjusted for that, output per person is about twelve hundred and fifty dollars.",
+          "show": {
+            "type": "compare",
+            "heading": "US vs Burundi, output per person, 2025",
+            "left": [
+              "In US dollars",
+              "×385"
+            ],
+            "right": [
+              "Adjusted for prices",
+              "×72"
+            ],
+            "color": "red"
+          }
+        },
+        {
+          "say": "So the gap shrinks from three hundred and eighty-five times to seventy-two."
+        },
+        {
+          "say": "Seventy-two times means the average American produces in about five days what the average person in Burundi produces in a whole year – even after prices are taken into account."
+        },
+        {
+          "say": "Prices explain a lot. But they don't explain away seventy-two times. The difference between rich and poor countries is real – it's just smaller than the dollar numbers make it look.",
+          "show": {
+            "type": "note",
+            "text": "Prices shrink the gap. They *don't close it*.",
+            "source": "US vs Burundi: ×385 in dollars, ×72 adjusted for prices",
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "What to remember",
+      "beats": [
+        {
+          "say": "So how rich is each country, really? Three things.",
+          "show": {
+            "type": "number",
+            "big": "$100 → $655",
+            "caption": "what $100 buys in Egypt, in US prices",
+            "color": "green"
+          }
+        },
+        {
+          "say": "One: a dollar doesn't buy the same everywhere. Services follow local wages, so poorer countries are cheaper, and expensive countries like Switzerland are less rich than they look. Two: exchange rates can swing wildly – Nigeria looked half as rich in one year – while prices adjusted numbers move slowly."
+        },
+        {
+          "say": "And three: adjusting for prices shrinks the gap between rich and poor countries a lot. But it doesn't close it."
+        },
+        {
+          "say": "If you want to understand money with real numbers, subscribe. Next episode, we'll take apart another piece of the economy."
+        }
+      ]
+    }
+  ],
+  "short": {
+    "hook": "$100 in Egypt buys $655 of stuff",
+    "beats": [
+      {
+        "say": "Take a hundred dollars to Egypt and spend it there. On average, it buys what six hundred and fifty-five dollars buys in America. In Nigeria, almost eight hundred dollars' worth.",
+        "show": {
+          "type": "number",
+          "big": "$100 → $655",
+          "caption": "what $100 buys in Egypt, measured in US prices",
+          "color": "green"
+        }
+      },
+      {
+        "say": "Why? Things you can ship – phones, oil – cost about the same everywhere. But haircuts, rent and restaurant meals follow local wages. And in Switzerland and Iceland, a hundred dollars buys less than at home.",
+        "show": {
+          "type": "bars",
+          "heading": "What $100 buys, measured in US prices",
+          "unit": "$",
+          "items": [
+            [
+              "Iceland",
+              85
+            ],
+            [
+              "Switzerland",
+              89
+            ],
+            [
+              "United States",
+              100
+            ],
+            [
+              "UK",
+              112
+            ],
+            [
+              "Germany",
+              125
+            ],
+            [
+              "Japan",
+              154
+            ],
+            [
+              "China",
+              212
+            ],
+            [
+              "Turkey",
+              243
+            ],
+            [
+              "India",
+              435
+            ],
+            [
+              "Egypt",
+              655
+            ],
+            [
+              "Nigeria",
+              779
+            ]
+          ],
+          "highlight": "Nigeria"
+        }
+      },
+      {
+        "say": "That changes how rich countries look. In dollars, the average American produces thirty-three times as much as the average Indian. Adjusted for prices: under eight. Same money, same people – a completely different picture.",
+        "show": {
+          "type": "compare",
+          "heading": "US vs India, per person",
+          "left": [
+            "In dollars",
+            "×33"
+          ],
+          "right": [
+            "Adjusted for prices",
+            "×7.7"
+          ],
+          "color": "blue"
+        }
+      },
+      {
+        "say": "And by that measure, China's economy is already a third bigger than America's. Why Nigeria suddenly looked half as rich in a single year is in the full video on the channel.",
+        "show": {
+          "type": "note",
+          "text": "By purchasing power, China passed the US in *2014*.",
+          "source": "World Bank, GDP PPP",
+          "color": "red"
+        }
+      }
+    ]
+  },
+  "question": "What's the cheapest thing where you live that would be expensive somewhere else?"
+}
