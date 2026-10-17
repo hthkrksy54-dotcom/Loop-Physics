@@ -189,13 +189,18 @@ def build_long(script: dict, cfg: dict) -> Timeline:
     chapters = script["chapters"]
     tl.chapters.append((0.0, "Intro"))
     tl.beats(chapters[0]["beats"], CAPTION)  # the hook comes before the title
-    tl.show({"type": "title", "heading": script["title_card"], "kicker": cfg["channel_name"]}, 3.6)
+    tl.show({"type": "title", "heading": script["title_card"], "kicker": _kicker(cfg)}, 3.6)
     for k, ch in enumerate(chapters[1:], 1):
         tl.chapters.append((tl.t, ch["heading"]))
         tl.show({"type": "title", "heading": ch["heading"], "kicker": f"Chapter {k}"}, 2.8)
         tl.beats(ch["beats"], CAPTION)
-    tl.show({"type": "title", "heading": cfg["outro"], "kicker": cfg["channel_name"]}, 5.0)
+    tl.show({"type": "title", "heading": cfg["outro"], "kicker": _kicker(cfg)}, 5.0)
     return tl
+
+
+def _kicker(cfg: dict) -> str:
+    """Title and end cards always show that this is not financial advice."""
+    return f"{cfg['channel_name']} · Not financial advice"
 
 
 def build_short(script: dict, cfg: dict) -> Timeline:
@@ -206,7 +211,7 @@ def build_short(script: dict, cfg: dict) -> Timeline:
         if hasattr(p, "t0"):
             p.t0 -= 1.4
     tl.beats(sh["beats"], CAPTION_V)
-    tl.show({"type": "title", "heading": "Full story on the channel", "kicker": cfg["channel_name"]}, 2.6)
+    tl.show({"type": "title", "heading": "Full story on the channel", "kicker": _kicker(cfg)}, 2.6)
     if tl.t < 61.5:  # TikTok only rewards videos over a minute
         cut = tl.cuts[-1]
         cut.end += 61.5 - tl.t
@@ -370,8 +375,14 @@ def words(script: dict) -> int:
 
 REQUIRED = {"line": ["series"], "bars": [], "coins": ["stacks"], "columns": ["stacks"], "compare": ["left", "right"],
             "number": ["big"], "note": ["text"], "title": ["heading"]}
-WPS = 2.3        # spoken words per second incl. pauses, long video (measured on the first episode)
+WPS = 2.3        # spoken words per second incl. pauses, long video, at rate +0% (measured on the first episode)
 WPS_SHORT = 2.1  # the Short has more, shorter beats
+
+
+def speed(cfg: dict) -> float:
+    """The voice's speaking rate as a factor ("+15%" -> 1.15): word targets scale with it."""
+    m = re.match(r"\s*([+-]\d+)\s*%", str(cfg.get("rate", "")))
+    return 1 + int(m.group(1)) / 100 if m else 1.0
 
 
 def check(script_id: str, preview: bool = True) -> bool:
@@ -402,14 +413,16 @@ def check(script_id: str, preview: bool = True) -> bool:
         problems.append("at least 5 chapters (the first one is the hook before the title card)")
     n_long = words(script)
     n_short = sum(len(b["say"].split()) for b in script["short"].get("beats", []))
-    info.append(f"long: {n_long} words ≈ {n_long / WPS / 60 + 0.6:.1f} min · short: {n_short} words ≈ "
-                f"{n_short / WPS_SHORT + 5:.0f} s")
-    if n_long < 1150:
-        problems.append(f"long script too short ({n_long} words) – needs ≥ 1150 words for 8+ minutes")
-    if n_long > 2100:
-        problems.append(f"long script too long ({n_long} words) – keep it under 2100 words (≤ 15 minutes)")
-    if n_short < 130:
-        problems.append(f"short too short ({n_short} words) – needs ≥ 130 words to run over a minute")
+    k = speed(load(CONFIG, {}))
+    lo, hi, lo_short = (int(round(n * k, -1)) for n in (1150, 2100, 130))
+    info.append(f"long: {n_long} words ≈ {n_long / (WPS * k) / 60 + 0.6:.1f} min · short: {n_short} words ≈ "
+                f"{n_short / (WPS_SHORT * k) + 5:.0f} s")
+    if n_long < lo:
+        problems.append(f"long script too short ({n_long} words) – needs ≥ {lo} words for 8+ minutes")
+    if n_long > hi:
+        problems.append(f"long script too long ({n_long} words) – keep it under {hi} words (≤ 15 minutes)")
+    if n_short < lo_short:
+        problems.append(f"short too short ({n_short} words) – needs ≥ {lo_short} words to run over a minute")
     if len(script["short"].get("hook", "")) > 40:
         problems.append("short hook longer than 40 characters")
     groups = {"long": [ch["beats"] for ch in script["chapters"]], "short": [script["short"].get("beats", [])]}
@@ -551,7 +564,7 @@ NOT_ADVICE = "Not financial advice."  # on every Reel and TikTok; the YouTube de
 
 
 def _texts(script: dict, cfg: dict, result: dict) -> dict:
-    tags = list(dict.fromkeys(script.get("tags", []) + ["economics", "money", "explained", "data visualization"]))
+    tags = list(dict.fromkeys(script.get("tags", []) + ["personal finance", "money tips", "money", "explained"]))
     hashtags = " ".join(script.get("hashtags", cfg["hashtags"]))
     sh = script.get("short", {})
     short_title = f"{sh.get('hook', script['title_card'])} #Shorts"[:95]
@@ -560,7 +573,7 @@ def _texts(script: dict, cfg: dict, result: dict) -> dict:
     caption = "\n\n".join([sh.get("hook", script["title_card"]), script["description"].split(". ")[0] + ".",
                             "Full video on YouTube – follow for more money, explained with real numbers."
                             + (f"\n▶ {cfg['youtube']['channel_url']}" if cfg["youtube"].get("channel_url") else ""),
-                            NOT_ADVICE, " ".join(dict.fromkeys(f"{hashtags} #economics #finance".split()))])
+                            NOT_ADVICE, " ".join(dict.fromkeys(f"{hashtags} #personalfinance #moneytips".split()))])
     return {"title": script["title"][:100], "description": result.get("description", ""), "tags": tags,
             "short_title": short_title, "short_description": short_desc, "caption": caption[:2150],
             "tiktok": _tiktok_text(script, cfg, hashtags)}
@@ -574,7 +587,7 @@ def _tiktok_text(script: dict, cfg: dict, hashtags: str) -> str:
     lines = [sh.get("hook", script["title_card"]), tiktok.lead(script["description"]),
              f"💬 {question}" if question else "",
              f"Full breakdown on YouTube: {cfg['channel_name']} ({cfg.get('handle', '')})".replace(" ()", ""),
-             NOT_ADVICE, " ".join(dict.fromkeys(f"{hashtags} #economics #learnontiktok".split()))]
+             NOT_ADVICE, " ".join(dict.fromkeys(f"{hashtags} #personalfinance #learnontiktok".split()))]
     return "\n".join(x for x in lines if x)
 
 

@@ -2,13 +2,13 @@
   "channel_name": "Real Numbers",
   "handle": "@realnumbersdaily",
   "voice": "en-GB-RyanNeural",
-  "rate": "+0%",
+  "rate": "+15%",
   "pitch": "+0Hz",
-  "outro": "Thanks for watching",
+  "outro": "Like & subscribe for more",
   "hashtags": [
-    "#economics",
     "#money",
-    "#inflation"
+    "#personalfinance",
+    "#moneytips"
   ],
   "disclosure": "Made with AI assistance: synthetic narration voice; the animations and charts are generated in code from the public data listed above. Facts were checked against these sources.",
   "not_advice": "This video is for education only and is not financial advice.",

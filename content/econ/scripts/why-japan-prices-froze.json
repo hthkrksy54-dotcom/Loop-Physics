@@ -1,6 +1,6 @@
 {
   "id": "why-japan-prices-froze",
-  "order": 5,
+  "order": 6,
   "title": "¥100 in 1994, ¥104 in 2021: Why Japan's Prices Froze for 27 Years, Explained with Data",
   "title_card": "Why did Japan's prices freeze?",
   "description": "From 1994 to 2021, prices in Japan rose about 4% – in total. In the US they rose 83%. With World Bank data we follow the bubble of 1989, three decades of stuck prices, a shrinking population and twenty years of zero interest rates – and why prices in Japan are suddenly moving again.",
@@ -70,6 +70,9 @@
         },
         {
           "say": "But Japan spent those years trying almost everything to make prices rise. And now, suddenly, they are. Let's take it apart with the official data."
+        },
+        {
+          "say": "Quick note: this is general information, not financial advice."
         }
       ]
     },
@@ -90,7 +93,10 @@
                 "country": "JPN",
                 "from": 1994,
                 "to": 2021,
-                "rebase": [1994, 100],
+                "rebase": [
+                  1994,
+                  100
+                ],
                 "color": "blue"
               },
               {
@@ -99,7 +105,10 @@
                 "country": "GBR",
                 "from": 1994,
                 "to": 2021,
-                "rebase": [1994, 100],
+                "rebase": [
+                  1994,
+                  100
+                ],
                 "color": "purple"
               },
               {
@@ -108,7 +117,10 @@
                 "country": "USA",
                 "from": 1994,
                 "to": 2021,
-                "rebase": [1994, 100],
+                "rebase": [
+                  1994,
+                  100
+                ],
                 "color": "red"
               }
             ]
@@ -177,10 +189,26 @@
             "type": "columns",
             "heading": "Japan's average growth per year",
             "stacks": [
-              ["1960s", 9.4, "9.4%"],
-              ["1970s", 4.5, "4.5%"],
-              ["1986–90", 4.9, "4.9%"],
-              ["1992–2021", 0.8, "0.8%"]
+              [
+                "1960s",
+                9.4,
+                "9.4%"
+              ],
+              [
+                "1970s",
+                4.5,
+                "4.5%"
+              ],
+              [
+                "1986–90",
+                4.9,
+                "4.9%"
+              ],
+              [
+                "1992–2021",
+                0.8,
+                "0.8%"
+              ]
             ]
           }
         },
@@ -394,10 +422,22 @@
             "heading": "Output per person, current US$",
             "unit": "$",
             "items": [
-              ["Japan 1995", 44947],
-              ["US 1995", 28691],
-              ["Japan 2025", 35951],
-              ["US 2025", 90027]
+              [
+                "Japan 1995",
+                44947
+              ],
+              [
+                "US 1995",
+                28691
+              ],
+              [
+                "Japan 2025",
+                35951
+              ],
+              [
+                "US 2025",
+                90027
+              ]
             ],
             "highlight": "Japan 2025"
           }
@@ -405,7 +445,10 @@
         {
           "say": "In 2025, Japan was at about thirty-six thousand. The United States: about ninety thousand. Two and a half times as much.",
           "mark": {
-            "items": ["Japan 2025", "US 2025"]
+            "items": [
+              "Japan 2025",
+              "US 2025"
+            ]
           }
         },
         {
@@ -430,7 +473,10 @@
                 "country": "JPN",
                 "from": 1994,
                 "to": 2025,
-                "rebase": [1994, 100],
+                "rebase": [
+                  1994,
+                  100
+                ],
                 "color": "blue"
               }
             ]
@@ -453,8 +499,14 @@
           "show": {
             "type": "compare",
             "heading": "How much Japan's prices rose",
-            "left": ["27 years, 1994–2021", "+4%"],
-            "right": ["4 years, 2021–2025", "+12%"],
+            "left": [
+              "27 years, 1994–2021",
+              "+4%"
+            ],
+            "right": [
+              "4 years, 2021–2025",
+              "+12%"
+            ],
             "color": "red"
           }
         },
@@ -525,7 +577,10 @@
               "country": "JPN",
               "from": 1994,
               "to": 2021,
-              "rebase": [1994, 100],
+              "rebase": [
+                1994,
+                100
+              ],
               "color": "blue"
             },
             {
@@ -534,7 +589,10 @@
               "country": "USA",
               "from": 1994,
               "to": 2021,
-              "rebase": [1994, 100],
+              "rebase": [
+                1994,
+                100
+              ],
               "color": "red"
             }
           ]
@@ -554,8 +612,14 @@
         "show": {
           "type": "compare",
           "heading": "How much Japan's prices rose",
-          "left": ["1994–2021", "+4%"],
-          "right": ["2021–2025", "+12%"],
+          "left": [
+            "1994–2021",
+            "+4%"
+          ],
+          "right": [
+            "2021–2025",
+            "+12%"
+          ],
           "color": "red"
         }
       },

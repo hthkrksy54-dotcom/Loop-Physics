@@ -65,21 +65,23 @@ Thema → Skript → Faktencheck → Sprecherstimme → Musik → Visuals → Un
 |---|---|
 | Takt | 4 Videos am Tag, 0:40, 12:40, 16:40 und 20:40 UTC (US-Ostküste 20:40, 8:40, 12:40, 16:40 Sommerzeit) ([Workflow](.github/workflows/sims.yml)); zwischen den Slots pflegt der Workflow YouTube-Uploads nach, füllt TikTok-Entwürfe auf und startet liegengebliebene Workflows |
 | Neue Konzepte | 2× täglich baut ein automatischer Konzept-Designer (geplante Claude-Session) nach [docs/concept-designer.md](docs/concept-designer.md) ein neues Konzept aus aktuellen viralen Trends – eine Datei in `ytauto/concepts/`, mit Qualitätsprüfung (`python -m ytauto concept-check`) |
+| Ende | nach dem Finale wird „LIKE & SUBSCRIBE“ eingeblendet |
 | Länge | jedes Video über 1 Minute (ca. 61–90 s), damit es bei TikTok für Creator Rewards zählt; Instagram-Stories bekommen einen 28-s-Teaser |
 | Auswahl | neue Konzepte haben immer Vorrang; dazwischen kommen bereits gelaufene Konzepte als neue Variante zurück, gewichtet nach Aufrufen (Instagram + YouTube) – Ausreißer nach oben (≥ 1,6× Median) deutlich öfter, nie eins der letzten drei |
 | TikTok | jedes Video zusammen mit dem Reel als Entwurf in den TikTok-Posteingang (höchstens 4 warten gleichzeitig, TikTok hält höchstens 5), Beschreibungen zum Kopieren in [state/tiktok.md](state/tiktok.md) |
 | Robustheit | kaputte Konzepte werden übersprungen und vermerkt; verpasste Slots werden bis 6 h später nachgeholt; Übersicht mit `python -m ytauto concepts` |
 | Trends | täglicher Trend-Check ([Bericht](docs/loop-physics-trends.md)) |
 
-## Real Numbers – Geld & Wirtschaft, erklärt mit echten Daten
+## Real Numbers – Alltagsgeld, erklärt mit echten Zahlen
 
 | Baustein | Lösung |
 |---|---|
+| Ausrichtung | allgemeine Geld-Tipps für die breite Masse nach dem Vorbild von Finanzbär (und Finanzfluss): Meilensteine, Geldfresser, Sparen, Schulden, Rente, Index-Fonds allgemein, Psychologie des Geldes – keine Einzelaktien, keine Produkte; jedes Video sagt nach dem Hook „not financial advice“, Titel- und Endkarten zeigen es, ab und zu ein gesprochenes „Like & Abo“ ([Themen](content/econ/topics.md)) |
 | Format | täglich um 4 Uhr deutscher Zeit ein Video mit 8–15 Minuten (1920x1080) plus ein Short über 1 Minute (Englisch, Zielgruppe USA/UK) ([Workflow](.github/workflows/econ.yml)) |
 | Look | Keynote-Stil, komplett im Code gezeichnet ([studio.py](ytauto/studio.py)): schwarze Bühne, Inter-Typografie (OFL), große Zahlen mit Farbverlauf, die hochzählen, Diagramme, die sich selbst zeichnen, Markierungen im Takt der Sprache, langsame Kamerafahrt |
 | Daten | Weltbank-Indikatoren (CC BY 4.0), im Repo zwischengespeichert, Quellen in jeder Beschreibung |
 | Skripte | ein automatischer Skript-Autor (geplante Claude-Session) nach [docs/econ-writer.md](docs/econ-writer.md), Themen aus [content/econ/topics.md](content/econ/topics.md); Qualitätsprüfung mit Vorschaubildern: `python -m ytauto econ check <id>` |
-| Ton | Sprecherstimme über `edge-tts`, moderne Hintergrundmusik (prozedural, Pads + Arpeggio + Puls), dezente Whoosh-Effekte, −14 LUFS |
+| Ton | Sprecherstimme über `edge-tts` (15 % schneller als normal), moderne Hintergrundmusik (prozedural, Pads + Arpeggio + Puls), dezente Whoosh-Effekte, −14 LUFS |
 | Veröffentlichung | Release mit Video, Short, Thumbnail und Untertiteln (.srt); Short als Instagram-Reel + Story um 11 Uhr New Yorker Zeit und als TikTok-Entwurf gleich morgens, sobald die Konten verbunden sind; YouTube-Upload nach Freigabe |
 | TikTok | jeder Short zusammen mit dem Reel als Entwurf in den TikTok-Posteingang (höchstens 5 warten gleichzeitig – mehr lässt TikTok nicht zu –, stündlich nachgefüllt), Beschreibungen zum Kopieren in [state/tiktok_econ.md](state/tiktok_econ.md); verbinden mit dem Workflow [TikTok verbinden](.github/workflows/tiktok-connect.yml) |
 | Reels nachholen | täglich 0:40 UTC höchstens ein Reel für eine Folge ohne Reel (vor der Instagram-Verbindung entstanden oder fehlgeschlagen) ([Workflow](.github/workflows/econ-reels.yml)) |

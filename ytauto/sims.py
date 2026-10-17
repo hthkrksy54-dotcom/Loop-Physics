@@ -1923,6 +1923,7 @@ class Painter:
         self.f_count = _font("Poppins-SemiBold.ttf", 46)
         self.f_small = _font("Poppins-SemiBold.ttf", 30)
         self.f_big = {s: _font("Poppins-ExtraBold.ttf", s) for s in range(40, 181, 10)}
+        self.f_cta = _font("Poppins-ExtraBold.ttf", 58)
         sim.prepare(self)
 
     def frame(self, dt: float = 1 / FPS) -> Image.Image:
@@ -1948,6 +1949,23 @@ class Painter:
             self.centered(d, H - 385, self.handle, self.f_small, (120, 120, 150))
         sim.draw_text(self, d)
         return img
+
+    def cta(self, img: Image.Image, k: float) -> Image.Image:
+        """After the finale: the picture dims a little and a red "LIKE & SUBSCRIBE" button pops in at the centre
+        (clear of the platforms' captions and buttons). k runs from 0 to 1 over the pop-in."""
+        e = 1 - (1 - min(1.0, max(0.0, k))) ** 3
+        label = "LIKE & SUBSCRIBE"
+        w, h = int(self.f_cta.getlength(label) + 120), 124
+        pill = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+        pd = ImageDraw.Draw(pill)
+        pd.rounded_rectangle((0, 0, w - 1, h - 1), radius=h // 2, fill=(230, 33, 23, 255))
+        pd.text((w / 2, h / 2 + 2), label, font=self.f_cta, fill=(255, 255, 255, 255), anchor="mm")
+        scale = 0.82 + 0.18 * e
+        pill = pill.resize((int(w * scale), int(h * scale)), Image.LANCZOS)
+        pill.putalpha(pill.getchannel("A").point(lambda a: int(a * e)))
+        out = Image.blend(img, Image.new("RGB", img.size), 0.35 * e).convert("RGBA")
+        out.alpha_composite(pill, ((W - pill.width) // 2, int(CY - pill.height / 2)))
+        return out.convert("RGB")
 
     # drawing helpers (simulation coordinates: origin at the centre, 1 unit = 1 output pixel)
     def ring(self, r: float, start_deg: float, span_deg: float, col, width: float, flash: float = 0.0) -> None:
@@ -2069,11 +2087,15 @@ def render(kind: str, seed: int, out: Path, melody: str | None = None, handle: s
     ]
     proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     dt, shown = 1 / (FPS * SUBSTEPS), 0.0
+    cta_from = warp.video(probe.end) + 0.3  # the finale has landed: like & subscribe until the end
     for f in range(frames):
         target = warp.sim((f + 1) / FPS)
         while sim.t < target - dt / 2:
             sim.step(dt)
-        proc.stdin.write(painter.frame(target - shown).tobytes())
+        img = painter.frame(target - shown)
+        if (f + 1) / FPS >= cta_from:
+            img = painter.cta(img, ((f + 1) / FPS - cta_from) / 0.45)
+        proc.stdin.write(img.tobytes())
         shown = target
     proc.stdin.close()
     if proc.wait() != 0:

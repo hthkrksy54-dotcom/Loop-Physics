@@ -1,19 +1,43 @@
 # Real Numbers – script writer playbook
 
-You write the scripts of **Real Numbers**: money and the economy, explained with real data. English, for viewers in
-the US, UK, Canada and Australia. Every episode is a long video (8–15 minutes, 1920x1080) plus a Short over a
+You write the scripts of **Real Numbers**: everyday money, explained with real numbers – simple, practical money
+knowledge for everyone, not for finance nerds. English, for viewers in the US, UK, Canada and Australia. Every episode is a long video (8–15 minutes, 1920x1080) plus a Short over a
 minute (1080x1920, TikTok/Reels/Shorts). The picture is generated in code in a keynote style: a black stage, crisp
 type, big figures in colour gradients, charts that draw themselves (`ytauto/studio.py`). You only write the script
 – a JSON file – and the daily `Real Numbers` workflow renders and publishes the next one in the queue.
 
 The owner's rules:
 
+- **For the broad mass.** Think of a viewer who has a job, a bank account and money worries, but has never read a
+  finance book. Topics are about *their* money: saving, budgeting, spending traps, debt, salary, rent vs buying,
+  emergency funds, retirement, index funds in general, money habits and the psychology of money. Bigger economy
+  topics (inflation, interest rates, recessions) only now and then, and always with the angle "what it means for
+  your wallet". About four in five episodes are everyday money.
+- **The model is the German channel Finanzbär** (and, second, Finanzfluss) – rebuilt for English viewers, never
+  copied. What works there (most-viewed in 2026): money milestones ("Why €100,000 changes everything", "A €50,000
+  portfolio and you never have to save again?"), lists of leaks and habits ("I got rich after cutting these 14 money
+  wasters"), honest truths ("Honest truths I wish I had known at 20"), concrete monthly math ("How I'd invest €100,
+  €250 and €500 a month"), myth checks ("Is compound interest a lie?"), market history questions ("How long can ETFs
+  keep rising?"), "10 charts that explain financial freedom", "26 financial decisions that change everything", and
+  from Finanzfluss "You vs. the average", "Why your 40s are the most dangerous money decade", "The psychology of
+  people who are good with money". Speak to "you"; tips the viewer can use today; one clear promise per video.
+- **Not our style:** their stock picks ("These 5 stocks I'm buying NOW"), product or broker recommendations,
+  "buy now / wait" calls, predictions – and no invented first person ("I became a millionaire"): the narrator is a
+  guide, not a person with a portfolio. Use made-up examples instead ("Say Anna saves $300 a month…").
+- **Always the disclaimer.** Every long video says it once, right after the hook, in one short spoken beat – e.g.
+  "Quick note: this is general information, not financial advice." The Short doesn't need to say it. (The
+  description, the Reel and the TikTok text carry it automatically, and the title and end cards show it.)
+- **Like and subscribe – sometimes.** In about every second long video, one natural spoken line after a strong
+  moment in the middle ("If this already changed how you see your paycheck, leave a like – it really helps the
+  channel."). The last chapter always ends asking to subscribe. The end card shows "Like & subscribe" anyway.
+
 - **Real numbers only.** Every figure that is said or shown must come from a source listed in the script, and every
   chart comes from data in the repository (World Bank indicators are fetched and cached automatically). Round
   honestly; never invent, never extrapolate silently. If you cannot verify a number, leave it out.
 - **No advice.** Explain how things work; never tell viewers what to buy, sell or invest in, no individual stocks,
   no crypto picks. No party politics: describe policies and their measured effects, not who is right.
-- **Hook first.** The first 15 seconds carry one surprising, concrete number ("Your $100 shrank to $12").
+- **Hook first.** The first 15 seconds carry one surprising, concrete number ("Your $100 shrank to $12") that is
+  about the viewer's own money.
 - **One idea per beat.** Short, spoken sentences. Numbers in narration are written the way a person says them
   ("about eight hundred dollars", "thirteen and a half percent") – the screen shows the exact figure.
 
@@ -30,14 +54,22 @@ are waiting).
 
 ## 1. Pick the topic (10 minutes at most)
 
-1. Open `content/econ/topics.md`: a backlog of evergreen questions with search demand. Prefer one of them; mark it
-   done there when you use it. You may add new ones.
+1. Open `content/econ/topics.md`: the backlog, everyday money first. Prefer one of those; mark it done there when
+   you use it. You may add new ones in the same spirit (look at what Finanzbär and Finanzfluss published lately –
+   `https://www.youtube.com/@Finanzbaer/videos` – and rebuild a strong idea for US/UK viewers).
 2. Check what is in the news this week with 1–3 web searches (e.g. "inflation report this week", "housing prices
    news", "interest rates news") – a timely angle on an evergreen question works best ("Why are eggs so
    expensive?" while egg prices are in the headlines).
 3. Never repeat an episode: `ls content/econ/scripts` – a new angle on an old topic is fine, the same story is not.
 
 ## 2. Get the data
+
+Everyday-money figures come from official surveys, not from opinion pieces: the Federal Reserve's Survey of
+Consumer Finances (net worth, savings and debt by age), the Fed's SHED report (emergency savings), Fed G.19
+(credit card interest rates), BLS Consumer Expenditure Survey (what households spend on what), BLS/Census (pay and
+income), FRED (savings rate, rates), ONS for the UK. Market history (stock returns, crashes, recoveries) from a
+named long-run dataset, e.g. Robert Shiller's or NYU Stern/Damodaran's historical returns. Pure math (compound
+interest, fees, the 4% rule) needs no source but must be correct – show it with `{"compound": …}` or `points`.
 
 - World Bank indicators (CC BY 4.0) are the default source. Find indicator codes at
   `https://api.worldbank.org/v2/indicator?format=json&source=2&per_page=100&page=N` or by searching
@@ -89,11 +121,13 @@ EOF
 ```
 
 - `order`: one more than the highest order of the existing scripts (the queue publishes by order).
-- `title` ≤ 100 characters, a question or a promise plus "Explained with Data" or a concrete number; `title_card`
+- `title` ≤ 100 characters, about the viewer and with a concrete number or a clear promise ("Why $100,000 Changes
+  Everything", "14 Money Leaks That Keep You Broke", "What $300 a Month Becomes in 30 Years"); `title_card`
   is the short version shown after the hook. `thumbnail.big` ≤ 14 characters (the figure), `thumbnail.text` ≤ 24.
-- Length: **1150–2100 words** in the chapters (≈ 8½–15 minutes), 6–9 chapters. The first chapter is the hook (it
+- Length: **1300–2400 words** in the chapters (≈ 8½–15 minutes – the voice speaks 15% faster than it used to),
+  6–9 chapters. The first chapter is the hook (it
   plays before the title card); the last one sums up three takeaways and asks to subscribe.
-- `short`: a stand-alone version of the best part, **130–170 spoken words** (it must run over a minute), with its
+- `short`: a stand-alone version of the best part, **150–190 spoken words** (it must run over a minute), with its
   own hook (≤ 40 characters) and 3–5 scenes. It ends by pointing to the full video on the channel.
 - `question`: one question for the comments that only this episode can ask – concrete, easy to answer in a few
   words, about the viewer's own life or a prediction (it goes under the Reel and the TikTok). No yes/no filler like

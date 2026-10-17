@@ -1,6 +1,6 @@
 {
   "id": "compound-interest-time",
-  "order": 6,
+  "order": 5,
   "title": "$24,000 Beats $72,000: How Compound Interest Really Works, Explained with Data",
   "title_card": "How does compound interest work?",
   "description": "Alex saves for 10 years and stops. Sam saves three times as much for 30 years. Who ends up with more? We take compound interest apart with simple math and real data: the rule of 72, why the last ten years matter most, how the same math works against you on a 21% credit card – and what inflation does to the result. No advice, just the numbers.",
@@ -70,6 +70,9 @@
             "source": "Every rate in this video is illustrative",
             "color": "gray"
           }
+        },
+        {
+          "say": "Quick note: this is general information, not financial advice."
         }
       ]
     },

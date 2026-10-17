@@ -1,7 +1,44 @@
 # Real Numbers – topic backlog
 
-Evergreen money and economy questions people search for. Mark a topic `[x]` with the script id when you use it;
-add new ones at the end. Pick ones the World Bank (or another official source) has data for.
+Mark a topic `[x]` with the script id when you use it; add new ones at the end of the matching section. Every
+figure needs an official source or correct math (see docs/econ-writer.md).
+
+## Everyday money (main focus – about four in five episodes)
+
+Formats that work for Finanzbär and Finanzfluss, rebuilt for US/UK viewers. Speak to "you", no product picks.
+
+- [ ] Why $100,000 is the money milestone that changes everything (compound math: the first 100k vs the next)
+- [ ] 14 money leaks that quietly keep you broke (subscriptions, fees, car payments, interest – BLS spending data, Fed G.19)
+- [ ] Money truths most people learn too late – what you wish you knew at 20
+- [ ] What $100, $250 or $500 a month becomes in 10, 20 and 30 years (math + long-run market history, no products)
+- [ ] Is compound interest overrated? The honest math after inflation, fees and taxes
+- [ ] How long can the stock market keep going up? 100 years of history, crashes and recoveries (no predictions)
+- [ ] 10 charts that explain financial freedom
+- [ ] You vs. the average American: pay, savings, debt and net worth (Fed SCF, BLS)
+- [ ] Net worth by age: where do you stand? (Fed Survey of Consumer Finances)
+- [ ] The 50/30/20 rule: does it still work today? (BLS Consumer Expenditure Survey)
+- [ ] Emergency fund: how much do you really need? (Fed SHED: who could cover a $400 surprise)
+- [ ] Credit card debt: what 20%+ interest really costs you (Fed G.19)
+- [ ] Rent or buy? The math nobody shows you
+- [ ] Why your 40s are the most dangerous money decade
+- [ ] The psychology of people who are good with money (what studies show)
+- [ ] Lifestyle creep: why a raise doesn't make you richer
+- [ ] How much do you need to retire? The 4% rule explained
+- [ ] Fees: how 1% a year eats a quarter of your savings
+- [ ] Your savings account vs inflation: is your money shrinking?
+- [ ] The true cost of owning a car (AAA "Your Driving Costs")
+- [ ] What happens to an index fund in the worst crashes – and how long recoveries took
+- [ ] Can you live off dividends? How much you would need (math, no stock names)
+- [ ] Time in the market vs timing the market: what missing the best days costs
+- [ ] 26 money decisions that change everything
+- [ ] Why the rich get richer: owning assets vs earning a salary (Fed SCF wealth shares)
+- [ ] How much should you have saved by 30, 40 and 50?
+- [ ] Buy now, pay later: the hidden cost
+- [ ] Pay off debt or invest? The math behind both (no advice)
+- [ ] The $5 a day question: what small habits really cost over 30 years
+- [ ] What income puts you in the top 10%, 5% and 1%?
+
+## Economy (now and then – always with "what it means for your wallet")
 
 - [x] Where did your $100 go? Inflation since 1970 – `where-did-100-dollars-go`
 - [ ] Why do houses cost so much? House prices vs incomes
