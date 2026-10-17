@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 2979,
+      "yt_views": 3000,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 9869,
+      "yt_views": 10042,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -546,6 +546,21 @@
       },
       "instagram_id": "18030561041882795",
       "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/"
+    },
+    {
+      "date": "2026-10-17T12:49:05+00:00",
+      "kind": "escape",
+      "seed": 18,
+      "melody": "morning_mood",
+      "timbre": "pluck",
+      "title": "Can the ball escape all 17 rings? – Listen closely",
+      "duration": 72.9,
+      "why": "standout",
+      "drive": "https://drive.google.com/drive/folders/1Q6SYvlfIaVaqySg4jPFA5lyLWQ2TlgII",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-escape-18",
+      "instagram_id": "18117251771514998",
+      "instagram_url": "https://www.instagram.com/reel/DemKJqKD7jV/",
+      "instagram_story_id": "18107311100176948"
     }
   ]
 }
