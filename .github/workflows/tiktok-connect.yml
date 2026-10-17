@@ -46,9 +46,11 @@ jobs:
         env:
           IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
           CHANNEL: ${{ github.event.inputs.channel }}
-          ADDRESS: ${{ github.event.inputs.adresse }}
         run: |
           set -o pipefail
+          # Read the address from the event, not from env, so the one-time code never shows in the log
+          ADDRESS=$(jq -r '.inputs.adresse // ""' "$GITHUB_EVENT_PATH")
+          if [ -n "$ADDRESS" ]; then echo "::add-mask::$ADDRESS"; fi
           if [ -z "$ADDRESS" ]; then
             LINK=$(python -m ytauto tiktok url --channel "$CHANNEL")
             {

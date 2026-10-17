@@ -60,7 +60,7 @@
     },
     "tiktok": {
       "enabled": true,
-      "account": "",
+      "account": "quiet_thoughts_yt",
       "token_file": "state/tiktok_en.token",
       "hashtags": "#philosophy #psychology #learnontiktok",
       "youtube": "@quietthoughts-20"
