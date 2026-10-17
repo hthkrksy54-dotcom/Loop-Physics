@@ -157,12 +157,15 @@ def tiktok_backlog(lang: str, cfg: dict, max_pending: int = 3) -> bool:
     now = dt.datetime.now(dt.timezone.utc)
     todo = []
     for rec in sorted(records, key=lambda r: r["date"], reverse=True):
-        if rec.get("tiktok") or rec.get("tiktok_skip") or not rec.get("short_url") \
+        # older records have no short_url, but their release holds the Short under a fixed name
+        url = rec.get("short_url") or (rec.get("release") and f"{rec['release'].replace('/releases/tag/', '/releases/download/')}"
+                                                             f"/{lang}-{rec['id']}-short.mp4")
+        if rec.get("tiktok") or rec.get("tiktok_skip") or not url \
                 or now - dt.datetime.fromisoformat(rec["date"]) > dt.timedelta(days=14):
             continue
         script = _load(SCRIPTS / lang / f"{rec['id']}.json", None)
         if script and script.get("short"):
-            todo.append((rec, rec["short_url"], tiktok_caption(script, cfg)))
+            todo.append((rec, url, tiktok_caption(script, cfg)))
     changed |= tiktok.backlog(cfg, todo, records, max_pending) > 0
     if changed:
         _save(STATE, state)

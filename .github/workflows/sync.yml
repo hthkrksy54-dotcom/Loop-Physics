@@ -6,6 +6,12 @@ on:
   schedule:
     - cron: "23 * * * *"
   workflow_dispatch:
+    inputs:
+      tiktok_max:
+        description: "TikTok: at most this many drafts waiting per channel (TikTok allows 5 a day)"
+        type: choice
+        options: ["3", "4", "5"]
+        default: "3"
 
 permissions:
   contents: write
@@ -43,9 +49,10 @@ jobs:
       - name: TikTok drafts (Real Numbers, Quiet Thoughts)
         env:
           IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
+          TIKTOK_MAX: ${{ github.event.inputs.tiktok_max || '3' }}
         run: |
-          python -m ytauto tiktok backlog --channel econ || echo "Real Numbers: TikTok skipped this hour"
-          python -m ytauto tiktok backlog --channel quiet || echo "Quiet Thoughts: TikTok skipped this hour"
+          python -m ytauto tiktok backlog --channel econ --max "$TIKTOK_MAX" || echo "Real Numbers: TikTok skipped this hour"
+          python -m ytauto tiktok backlog --channel quiet --max "$TIKTOK_MAX" || echo "Quiet Thoughts: TikTok skipped this hour"
 
       - name: Save progress
         if: always()
