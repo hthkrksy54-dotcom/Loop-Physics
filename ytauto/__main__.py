@@ -121,8 +121,9 @@ def produce(lang: str, topic_id: str | None, upload: bool, with_short: bool, kee
             except Exception as err:  # Instagram must never block the YouTube side
                 record.setdefault("warnings", []).append(f"instagram: {err}")
                 print(f"  warning: instagram reel failed: {err}", flush=True)
-        # The Short as a draft in the TikTok inbox (the owner posts it with one tap); a full inbox waits for the sync.
-        if short and tiktok.configured(cfg) and tiktok.waiting(_load(STATE, {}).get(lang, [])) < 3:
+        # Together with the Reel: the Short as a draft in the TikTok inbox (the owner posts it with one tap);
+        # a full inbox waits for the hourly sync.
+        if short and tiktok.configured(cfg) and tiktok.waiting(_load(STATE, {}).get(lang, [])) < tiktok.MAX_WAITING:
             try:
                 record["tiktok"] = {**tiktok.send_draft(cfg, Path(short["video"])), "caption": tiktok_caption(script, cfg)}
             except Exception as err:  # noqa: BLE001
@@ -149,7 +150,7 @@ def tiktok_caption(script: dict, cfg: dict) -> str:
     return "\n".join(x for x in lines if x)
 
 
-def tiktok_backlog(lang: str, cfg: dict, max_pending: int = 3) -> bool:
+def tiktok_backlog(lang: str, cfg: dict, max_pending: int = tiktok.MAX_WAITING) -> bool:
     """Which drafts the owner posted meanwhile, then recent Shorts not on TikTok yet (newest first)."""
     state = _load(STATE, {})
     records = state.get(lang, [])
@@ -327,7 +328,8 @@ def main(argv: list[str] | None = None) -> int:
     tk = sub.add_parser("tiktok", help="TikTok setup: url | connect | check | send | backlog (--channel econ / quiet)")
     tk.add_argument("action", choices=["url", "connect", "check", "send", "refresh", "backlog"])
     tk.add_argument("--channel", choices=["sims", "econ", "quiet"], default="sims")
-    tk.add_argument("--max", type=int, default=3, help="backlog: at most this many drafts waiting in the inbox")
+    tk.add_argument("--max", type=int, help="backlog: at most this many drafts waiting in the inbox "
+                                            "(default: 3 for Loop Physics, 5 for the others)")
     tk.add_argument("--files", help="backlog: folder with <kind>-<seed>.mp4 files to use instead of releases")
     tk.add_argument("--key", help="client key of the TikTok developer app")
     tk.add_argument("--secret", help="client secret of the TikTok developer app")
@@ -423,17 +425,17 @@ def main(argv: list[str] | None = None) -> int:
         elif args.action == "check":
             print(f"TikTok account: {tiktok.account(cfg).get('display_name')}")
         elif args.action in ("refresh", "backlog") and args.channel == "econ":
-            econ.tiktok_backlog(args.max)
+            econ.tiktok_backlog(args.max or tiktok.MAX_WAITING)
         elif args.action in ("refresh", "backlog") and args.channel == "quiet":
             if tiktok.configured(cfg):
-                tiktok_backlog("en", cfg, args.max)
+                tiktok_backlog("en", cfg, args.max or tiktok.MAX_WAITING)
         elif args.action in ("refresh", "backlog"):  # heartbeat: what was posted, then top up the drafts
             state = simchannel.load(simchannel.STATE, {"videos": []})
             if not tiktok.configured(cfg):
                 return 0
             changed = tiktok.refresh(cfg, state["videos"])
             files = {p.stem: p for p in Path(args.files).glob("*.mp4")} if args.files else None
-            changed |= simchannel.tiktok_backlog(cfg, state, args.max, files) > 0
+            changed |= simchannel.tiktok_backlog(cfg, state, args.max or simchannel.TIKTOK_PENDING, files) > 0
             if changed:
                 simchannel.save(simchannel.STATE, state)
                 tiktok.write_queue(state["videos"], cfg["channel_name"])

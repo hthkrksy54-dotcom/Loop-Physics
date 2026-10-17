@@ -618,7 +618,7 @@ def produce(upload: bool = True, script_id: str | None = None) -> dict:
         except Exception as err:  # noqa: BLE001 – one platform failing must not lose the run
             record.setdefault("warnings", []).append(f"instagram: {err}")
             print(f"  warning: instagram failed: {err}", flush=True)
-    if result.get("short") and tiktok.configured(cfg) and tiktok.waiting(state.get("videos", [])) < 3:
+    if result.get("short") and tiktok.configured(cfg) and tiktok.waiting(state.get("videos", [])) < tiktok.MAX_WAITING:
         try:
             record["tiktok"] = {**tiktok.send_draft(cfg, Path(result["short"])), "caption": texts["tiktok"]}
         except Exception as err:  # noqa: BLE001
@@ -795,7 +795,7 @@ def _release_files(cfg: dict, rec: dict) -> str:
     return f"{rec['release'].replace('/releases/tag/', '/releases/download/')}/{slug}-{tag.removeprefix('econ-')}"
 
 
-def tiktok_backlog(max_pending: int = 3) -> bool:
+def tiktok_backlog(max_pending: int = tiktok.MAX_WAITING) -> bool:
     """TikTok: which drafts the owner posted meanwhile, then the recent Shorts that are not on TikTok yet
     (newest first, made before TikTok was connected or held back by a full inbox)."""
     import datetime as dt

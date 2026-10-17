@@ -50,7 +50,7 @@ Thema → Skript → Faktencheck → Sprecherstimme → Musik → Visuals → Un
 | Upload | YouTube Data API: Video, Thumbnail, Untertitel, Short | 0 € |
 | Ausführung | GitHub Actions, täglich ein Video (öffentliches Repo = unbegrenzte Minuten) | 0 € |
 | Instagram | jeder Short als Reel + Story (@quiet_thoughts_yt), Caption mit Frage + 3–5 Hashtags, Token verschlüsselt, verlängert sich selbst | 0 € |
-| TikTok | jeder Short als Entwurf in den TikTok-Posteingang (höchstens 3 warten gleichzeitig, der Upload-Wächter füllt stündlich nach), Beschreibungen zum Kopieren in [state/tiktok_quiet.md](state/tiktok_quiet.md); verbinden mit dem Workflow [TikTok verbinden](.github/workflows/tiktok-connect.yml) | 0 € |
+| TikTok | jeder Short zusammen mit dem Reel als Entwurf in den TikTok-Posteingang (höchstens 5 warten gleichzeitig – mehr lässt TikTok nicht zu –, der Upload-Wächter füllt stündlich nach), Beschreibungen zum Kopieren in [state/tiktok_quiet.md](state/tiktok_quiet.md); verbinden mit dem Workflow [TikTok verbinden](.github/workflows/tiktok-connect.yml) | 0 € |
 | Karussells | Di/Do/Sa: Zitat-Karussell aus einem veröffentlichten Video + Zitat-Story ([Workflow](.github/workflows/carousel.yml)) | 0 € |
 | Stories | täglich eine frische Story (Zitat-Karte, sonntags Wochenrückblick), wenn nicht schon Reel/Karussell eine gepostet hat; jede Story wird mit ihrem Highlight protokolliert ([Workflow](.github/workflows/stories.yml)) | 0 € |
 | Highlights | keine API bei Instagram – sonntags kommt eine Liste, welche Stories in welches Highlight gehören (`python -m ytauto highlights`) | 0 € |
@@ -81,7 +81,7 @@ Thema → Skript → Faktencheck → Sprecherstimme → Musik → Visuals → Un
 | Skripte | ein automatischer Skript-Autor (geplante Claude-Session) nach [docs/econ-writer.md](docs/econ-writer.md), Themen aus [content/econ/topics.md](content/econ/topics.md); Qualitätsprüfung mit Vorschaubildern: `python -m ytauto econ check <id>` |
 | Ton | Sprecherstimme über `edge-tts`, moderne Hintergrundmusik (prozedural, Pads + Arpeggio + Puls), dezente Whoosh-Effekte, −14 LUFS |
 | Veröffentlichung | Release mit Video, Short, Thumbnail und Untertiteln (.srt); Short als Instagram-Reel + Story und TikTok-Entwurf, sobald die Konten verbunden sind; YouTube-Upload nach Freigabe |
-| TikTok | jeder Short als Entwurf in den TikTok-Posteingang (höchstens 3 warten gleichzeitig, stündlich nachgefüllt), Beschreibungen zum Kopieren in [state/tiktok_econ.md](state/tiktok_econ.md); verbinden mit dem Workflow [TikTok verbinden](.github/workflows/tiktok-connect.yml) |
+| TikTok | jeder Short zusammen mit dem Reel als Entwurf in den TikTok-Posteingang (höchstens 5 warten gleichzeitig – mehr lässt TikTok nicht zu –, stündlich nachgefüllt), Beschreibungen zum Kopieren in [state/tiktok_econ.md](state/tiktok_econ.md); verbinden mit dem Workflow [TikTok verbinden](.github/workflows/tiktok-connect.yml) |
 | Reels nachholen | täglich 0:40 UTC höchstens ein Reel für eine Folge ohne Reel (vor der Instagram-Verbindung entstanden oder fehlgeschlagen) ([Workflow](.github/workflows/econ-reels.yml)) |
 | Upload-Wächter | stündlich: erkennt Video und Short, die du von Hand hochlädst (auch privat oder geplant), und setzt Titel, Beschreibung, Tags, Thumbnail und Untertitel; der Short verlinkt das ganze Video |
 

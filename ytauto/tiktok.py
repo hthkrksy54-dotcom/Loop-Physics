@@ -34,6 +34,7 @@ ROOT = Path(__file__).resolve().parent.parent
 QUEUE = ROOT / "state" / "tiktok.md"
 SINGLE_CHUNK_MAX = 64 * 1024 * 1024   # up to 64 MB a video goes up in one piece
 CHUNK = 10 * 1024 * 1024              # bigger files: 10 MB chunks, the last one takes the rest
+MAX_WAITING = 5                       # TikTok holds at most 5 unposted drafts per account a day
 
 
 class TikTokError(RuntimeError):
@@ -211,7 +212,7 @@ def waiting(records: list[dict]) -> int:
     return sum(1 for r in records if (r.get("tiktok") or {}).get("status") not in (None, "PUBLISH_COMPLETE", "FAILED"))
 
 
-def backlog(cfg: dict, todo: list[tuple[dict, str, str]], records: list[dict], max_pending: int = 3) -> int:
+def backlog(cfg: dict, todo: list[tuple[dict, str, str]], records: list[dict], max_pending: int = MAX_WAITING) -> int:
     """Send (record, video URL, caption) items as drafts while fewer than `max_pending` wait in the inbox –
     the owner posts them one tap each, so the inbox never fills up. Returns how many were sent."""
     sent = 0

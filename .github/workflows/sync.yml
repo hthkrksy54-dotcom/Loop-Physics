@@ -1,7 +1,7 @@
 name: Sync uploads
 
 # Hourly: notice videos uploaded by hand on YouTube, fix their Shorts, post the Instagram Reels, and keep the
-# TikTok inboxes of Real Numbers and Quiet Thoughts topped up with drafts (at most 3 waiting each).
+# TikTok inboxes of Real Numbers and Quiet Thoughts topped up with drafts (at most 5 waiting each, TikTok's limit).
 on:
   schedule:
     - cron: "23 * * * *"
@@ -10,8 +10,8 @@ on:
       tiktok_max:
         description: "TikTok: at most this many drafts waiting per channel (TikTok allows 5 a day)"
         type: choice
-        options: ["3", "4", "5"]
-        default: "3"
+        options: ["5", "4", "3"]
+        default: "5"
 
 permissions:
   contents: write
@@ -49,7 +49,7 @@ jobs:
       - name: TikTok drafts (Real Numbers, Quiet Thoughts)
         env:
           IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
-          TIKTOK_MAX: ${{ github.event.inputs.tiktok_max || '3' }}
+          TIKTOK_MAX: ${{ github.event.inputs.tiktok_max || '5' }}
         run: |
           python -m ytauto tiktok backlog --channel econ --max "$TIKTOK_MAX" || echo "Real Numbers: TikTok skipped this hour"
           python -m ytauto tiktok backlog --channel quiet --max "$TIKTOK_MAX" || echo "Quiet Thoughts: TikTok skipped this hour"
