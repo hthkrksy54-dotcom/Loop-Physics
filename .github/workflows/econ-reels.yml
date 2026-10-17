@@ -6,6 +6,11 @@ on:
   schedule:
     - cron: "40 0 * * *"
   workflow_dispatch:
+    inputs:
+      all:
+        description: "Catch up every missing Reel now (not one a day)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -34,7 +39,8 @@ jobs:
       - name: Catch up one Reel
         env:
           IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
-        run: python -m ytauto econ reel
+          IN_ALL: ${{ github.event.inputs.all }}
+        run: if [ "$IN_ALL" = "true" ]; then python -m ytauto econ reel --all; else python -m ytauto econ reel; fi
 
       - name: Save progress
         if: always()

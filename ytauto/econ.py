@@ -783,7 +783,7 @@ def youtube_sync() -> bool:
     return changed
 
 
-def backfill_reel() -> bool:
+def backfill_reel(every_day: bool = True) -> bool:
     """Post the Short of the oldest episode that has no Reel yet – made before Instagram was connected, or its
     Reel failed – as Reel + story, at most one a day and only while its release (the video's public URL) exists."""
     import datetime as dt
@@ -793,7 +793,7 @@ def backfill_reel() -> bool:
         print("[econ] Instagram not connected – no Reel to catch up", flush=True)
         return False
     now = dt.datetime.now(dt.timezone.utc)
-    if any(r.get("reel_backfill") == now.date().isoformat() for r in state["videos"]):
+    if every_day and any(r.get("reel_backfill") == now.date().isoformat() for r in state["videos"]):
         print("[econ] already caught up one Reel today", flush=True)
         return False
     todo = [r for r in state["videos"] if not r.get("instagram_id") and r.get("release")

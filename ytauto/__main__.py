@@ -291,6 +291,7 @@ def main(argv: list[str] | None = None) -> int:
     ec.add_argument("script", nargs="*", help="script ids (default: next in the queue)")
     ec.add_argument("--no-upload", action="store_true")
     ec.add_argument("--short-only", action="store_true")
+    ec.add_argument("--all", action="store_true", help="reel: catch up every missing Reel now, not one a day")
     ic = sub.add_parser("instagram-connect", help="store a new Instagram token for a channel (encrypted)")
     ic.add_argument("--channel", choices=["quiet", "sims", "econ"], required=True)
     ic.add_argument("--token", required=True)
@@ -351,7 +352,8 @@ def main(argv: list[str] | None = None) -> int:
             q = econ.queue(state)
             print(f"{len(q)} scripts waiting: " + ", ".join(q))
         elif args.action == "reel":  # one missing Reel a day (episodes from before Instagram was connected)
-            econ.backfill_reel()
+            while econ.backfill_reel(every_day=not args.all) and args.all:
+                pass
         elif args.action == "render":
             print(econ.render_script((args.script or econ.queue(econ.load(econ.STATE, {})))[0], args.short_only))
         else:
