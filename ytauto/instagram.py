@@ -59,6 +59,9 @@ def connect(cfg: dict, token: str) -> dict:
     if not r.ok:
         raise InstagramError(f"token rejected ({r.status_code}): {r.text[:200]}")
     me = r.json()
+    want = (cfg.get("instagram") or {}).get("account")
+    if want and me.get("username") != want:  # a token of another channel's account must never be stored here
+        raise InstagramError(f"token belongs to @{me.get('username')}, not @{want} – nothing stored")
     data = {"token": token, "user_id": str(me.get("user_id") or me.get("id")), "username": me.get("username", ""),
             "refreshed_at": "2000-01-01T00:00:00+00:00",  # refresh on first use: starts the 60 days now
             "expires_at": (_now() + dt.timedelta(days=60)).isoformat(timespec="seconds")}
