@@ -48,7 +48,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1230,
+      "yt_views": 1244,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235341996115990",
         "status": "PUBLISH_COMPLETE",
@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 2730,
+      "yt_views": 2761,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -104,7 +104,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 15,
+      "yt_views": 17,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235656464123907",
         "status": "PUBLISH_COMPLETE",
@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 5745,
+      "yt_views": 5780,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -161,7 +161,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 16,
+      "yt_views": 17,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233117064890390",
         "status": "SEND_TO_USER_INBOX",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 6103,
+      "yt_views": 6527,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -249,7 +249,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 14,
+      "yt_views": 16,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233367154608150",
         "status": "SEND_TO_USER_INBOX",
@@ -277,7 +277,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 15,
+      "yt_views": 16,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233859481487382",
         "status": "SEND_TO_USER_INBOX",
@@ -422,6 +422,20 @@
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"A7yXVp55-5q6YWJDwnb--uf\"}}",
         "tiktok: post/publish/inbox/video/init/: spam_risk_too_many_pending_share – spam_risk_too_many_pending_share"
+      ]
+    },
+    {
+      "date": "2026-10-17T04:41:34+00:00",
+      "kind": "pendulum",
+      "seed": 4,
+      "melody": "greensleeves",
+      "timbre": "bell",
+      "title": "12 pendulums, one perfect moment – Wait for the ending",
+      "duration": 67.3,
+      "why": "rotation",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-pendulum-4",
+      "warnings": [
+        "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AnXIu3Xze95HmfhjAvHrdaa\"}}"
       ]
     }
   ]
