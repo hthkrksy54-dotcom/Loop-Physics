@@ -6,14 +6,34 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist die Frage, die oben im Video steht.
 
-## 16.10. 19:42 UTC – Which color conquers the board?
+## 17.10. 00:41 UTC – Every ring adds a ball – Can they crack the core?
 
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-territory-0)
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-brick_core-3)
 
 ```text
-Which color conquers the board?
-Two colors or four – which is better?
-#pongwars #satisfying #oddlysatisfying #physics #simulation
+Every ring adds a ball – Can they crack the core?
+How many balls did it take? Guess before the end!
+#brickbreaker #satisfying #oddlysatisfying #physics #simulation
+```
+
+## 16.10. 22:41 UTC – Every hit upgrades it – Who wins the duel?
+
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-blade_duel-3)
+
+```text
+Every hit upgrades it – Who wins the duel?
+Which upgrade would you pick?
+#ballbattle #satisfying #oddlysatisfying #physics #simulation
+```
+
+## 16.10. 20:42 UTC – What will this pendulum draw?
+
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-harmonograph-0)
+
+```text
+What will this pendulum draw?
+What would you change?
+#harmonograph #satisfying #oddlysatisfying #physics #simulation
 ```
 
 ## 16.10. 08:41 UTC – Will 256 balls make a bell curve?
@@ -56,6 +76,16 @@ Can you predict the path?
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 16.10. 19:42 UTC – Which color conquers the board?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697528482338737441) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-territory-0)
+
+```text
+Which color conquers the board?
+Two colors or four – which is better?
+#pongwars #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 16.10. 14:41 UTC – 12 pendulums, one perfect moment
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697308158368304416) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-pendulum-2)
@@ -92,16 +122,6 @@ Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/
 
 ```text
 Can the ball escape all 12 rings?
-What would you change?
-#ballescape #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 16.10. 00:43 UTC – Can the ball escape all 12 octagons?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697237765796252961) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-polygon-6)
-
-```text
-Can the ball escape all 12 octagons?
 What would you change?
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```

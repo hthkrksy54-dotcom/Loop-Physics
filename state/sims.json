@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 2846,
+      "yt_views": 2849,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 6124,
+      "yt_views": 6125,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -190,7 +190,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1488,
+      "yt_views": 1491,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232916815824918",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 7581,
+      "yt_views": 7601,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -249,7 +249,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 16,
+      "yt_views": 24,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233367154608150",
         "status": "SEND_TO_USER_INBOX",
@@ -358,8 +358,9 @@
       ],
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697354791248676867",
-        "status": "SEND_TO_USER_INBOX",
-        "caption": "Which color conquers the board?\nTwo colors or four – which is better?\n#pongwars #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Which color conquers the board?\nTwo colors or four – which is better?\n#pongwars #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7697528482338737441"
       }
     },
     {
@@ -375,7 +376,12 @@
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"A7JxAauG0eVWQcMBGrmfmhI\"}}",
         "tiktok: post/publish/inbox/video/init/: spam_risk_too_many_pending_share – spam_risk_too_many_pending_share"
-      ]
+      ],
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697530674550917142",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "What will this pendulum draw?\nWhat would you change?\n#harmonograph #satisfying #oddlysatisfying #physics #simulation"
+      }
     },
     {
       "date": "2026-10-16T22:41:42+00:00",
@@ -391,7 +397,12 @@
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AkhfXDfGlwDiLPOAsGcAZGD\"}}",
         "tiktok: post/publish/inbox/video/init/: spam_risk_too_many_pending_share – spam_risk_too_many_pending_share"
-      ]
+      ],
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697530833733142550",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "Every hit upgrades it – Who wins the duel?\nWhich upgrade would you pick?\n#ballbattle #satisfying #oddlysatisfying #physics #simulation"
+      }
     },
     {
       "date": "2026-10-17T00:41:38+00:00",
@@ -407,7 +418,12 @@
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AOPqVUX59jci2y3_SxX7dMW\"}}",
         "tiktok: post/publish/inbox/video/init/: spam_risk_too_many_pending_share – spam_risk_too_many_pending_share"
-      ]
+      ],
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697531058464032790",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "Every ring adds a ball – Can they crack the core?\nHow many balls did it take? Guess before the end!\n#brickbreaker #satisfying #oddlysatisfying #physics #simulation"
+      }
     },
     {
       "date": "2026-10-17T02:41:47+00:00",
