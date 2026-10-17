@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 6175,
+      "yt_views": 6288,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -161,7 +161,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 19,
+      "yt_views": 27,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233117064890390",
         "status": "SEND_TO_USER_INBOX",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 9228,
+      "yt_views": 9541,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -249,7 +249,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 21,
+      "yt_views": 31,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233367154608150",
         "status": "SEND_TO_USER_INBOX",
@@ -491,6 +491,26 @@
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"A3aNl8dgKvrCATKl1DfZue-\"}}"
       ]
+    },
+    {
+      "date": "2026-10-17T10:41:40+00:00",
+      "kind": "stringart",
+      "seed": 12,
+      "melody": "moonlight",
+      "timbre": "marimba",
+      "title": "What will 234 bounces draw? – Watch till the end",
+      "duration": 69.1,
+      "why": "standout",
+      "drive": "https://drive.google.com/drive/folders/1EZaTSMyizyhCTwWcg5QLtpzf6QWQuf-V",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-stringart-12",
+      "warnings": [
+        "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"AnEHphGF-DMLRMN8xvV6gYr\"}}"
+      ],
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697586519028484118",
+        "status": "SEND_TO_USER_INBOX",
+        "caption": "What will 234 bounces draw?\nMore bounces next time?\n#stringart #satisfying #oddlysatisfying #physics #simulation"
+      }
     }
   ]
 }
