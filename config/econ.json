@@ -1,6 +1,6 @@
 {
   "channel_name": "Real Numbers",
-  "handle": "",
+  "handle": "@realnumbersdaily",
   "voice": "en-GB-RyanNeural",
   "rate": "+0%",
   "pitch": "+0Hz",
@@ -25,6 +25,7 @@
   },
   "youtube": {
     "upload_enabled": false,
+    "channel_url": "youtube.com/@realnumbersdaily",
     "refresh_token_secret": "YT_REFRESH_TOKEN_ECON",
     "token_file": "state/youtube_econ.token",
     "category_id": "27",

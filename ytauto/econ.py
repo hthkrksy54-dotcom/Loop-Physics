@@ -555,7 +555,8 @@ def _texts(script: dict, cfg: dict, result: dict) -> dict:
     short_desc = "\n\n".join([sh.get("hook", ""), f"The full story: {script['title']}",
                                 cfg["disclosure"], cfg["not_advice"], hashtags + " #Shorts"])
     caption = "\n\n".join([sh.get("hook", script["title_card"]), script["description"].split(". ")[0] + ".",
-                            "Full video on YouTube – follow for more money, explained with real numbers.",
+                            "Full video on YouTube – follow for more money, explained with real numbers."
+                            + (f"\n▶ {cfg['youtube']['channel_url']}" if cfg["youtube"].get("channel_url") else ""),
                             hashtags + " #economics #finance"])
     return {"title": script["title"][:100], "description": result.get("description", ""), "tags": tags,
             "short_title": short_title, "short_description": short_desc, "caption": caption[:2150],
