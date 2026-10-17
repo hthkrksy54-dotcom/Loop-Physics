@@ -375,6 +375,7 @@ def main(argv: list[str] | None = None) -> int:
     ic.add_argument("--channel", choices=["quiet", "sims", "econ"], required=True)
     ic.add_argument("--token", required=True)
     sub.add_parser("concepts", help="Loop Physics: every concept with status, queue and performance")
+    sub.add_parser("melodies", help="Loop Physics: every melody with its views, trend signal, boost and weight")
     cc = sub.add_parser("concept-check", help="Loop Physics: quality gate + contact sheet for a concept")
     cc.add_argument("kind", nargs="?")
     cc.add_argument("--full", action="store_true", help="also render the whole video and check its loudness")
@@ -471,10 +472,18 @@ def main(argv: list[str] | None = None) -> int:
             changed |= simchannel.tiktok_backlog(cfg, state, args.max or simchannel.TIKTOK_PENDING, files) > 0
             if changed:
                 simchannel.save(simchannel.STATE, state)
-                tiktok.write_queue(state["videos"], cfg["channel_name"])
+                tiktok.write_queue(state["videos"], cfg["channel_name"], tips=simchannel.sound_tips())
                 print("tiktok: drafts and statuses updated")
         else:
             print(tiktok.send_draft(cfg, Path(args.video)))
+        return 0
+    if args.cmd == "melodies":
+        mw = simchannel.melody_weights(simchannel.load(simchannel.STATE, {}))
+        total = sum(v["weight"] for v in mw.values()) or 1
+        print(f"{'melody':16} {'posts':>5} {'lift':>5} {'trend':>6} {'boost':>5} {'recent':>6} {'chance':>7}")
+        for m, v in sorted(mw.items(), key=lambda x: -x[1]["weight"]):
+            print(f"{m:16} {v['posts']:>5} {v['lift']:>5} {v['trend']:>6.3f} {v['boost']:>5} {v['recent']:>6} "
+                  f"{100 * v['weight'] / total:>6.1f}%")
         return 0
     if args.cmd == "concepts":
         from . import conceptcheck

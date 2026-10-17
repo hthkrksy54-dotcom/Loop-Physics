@@ -92,6 +92,14 @@ def _classify(text: str) -> list[str]:
     return [k for k, ws in words.items() if any(re.search(rf"\b{re.escape(w)}\b", text) for w in ws)]
 
 
+def _melody_named(melody: str, text: str) -> bool:
+    """Does a trending Short's title/tags name this melody ("für elise", "fur elise", "moonlight sonata" …)?"""
+    name = sims.MELODIES[melody][0].split(" – ")[0].casefold()
+    plain = name.replace("ü", "u").replace("è", "e").replace("é", "e")
+    names = {name, plain, re.sub(r"^in the ", "", plain), melody.replace("_", " ")}
+    return any(re.search(rf"\b{re.escape(n)}\b", text) for n in names)
+
+
 def run() -> dict:
     cfg, state = simchannel.load(simchannel.CONFIG, {}), simchannel.load(simchannel.STATE, {"videos": []})
     old = simchannel.load(simchannel.TUNING, {})
@@ -131,6 +139,8 @@ def run() -> dict:
               [(35, 48), (42, 56)] if median_len > 48 else [(28, 40), (35, 48), (42, 56)])
 
     weights = {k: round(min(3.0, max(0.4, perf[k] * (1 + 2 * share[k]))), 2) for k in kinds}
+    melody_trend = {m: round(sum(v["views"] for v in trend if _melody_named(m, v["text"])) / total, 3)
+                    for m in sims.MELODIES}
     keywords = [w for w, _ in words.most_common(25)]
     hashtags = [t for t, n in tags.most_common(12) if n >= 2 and t != "satisfying"][:6] or old.get("hashtags", [])
 
@@ -168,7 +178,7 @@ def run() -> dict:
     tuning = {"updated": now.isoformat(timespec="minutes"), "kind_weights": weights, "ranges": ranges,
               "hashtags": hashtags, "title_addons": addons, "questions": questions, "trend_keywords": keywords[:15],
               "trend_share": {k: round(share[k], 3) for k in kinds}, "trend_videos": len(trend),
-              "trend_median_seconds": median_len, "summary_de": summary}
+              "trend_median_seconds": median_len, "summary_de": summary, "melody_trend": melody_trend}
     simchannel.save(simchannel.TUNING, tuning)
     report(tuning, state, own_avg)
     print(f"[trends] {len(trend)} trending Shorts, {len(aged)} own Reels; weights {weights}", flush=True)

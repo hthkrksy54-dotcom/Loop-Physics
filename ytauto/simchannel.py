@@ -28,6 +28,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "config" / "sims.json"
 STATE = ROOT / "state" / "sims.json"
 TUNING = ROOT / "config" / "sims_tuning.json"  # written daily by trends.py
+MUSIC = ROOT / "config" / "sims_music.json"  # viral-song research of the concept designer (twice a day)
 OUT = ROOT / "out" / "sims"
 STORY_EVERY = 2  # a story for every Reel would crowd the account's stories
 SLOTS = [(0, 40), (12, 40), (16, 40), (20, 40)]  # UTC posting times, 4 a day: US Eastern 8:40, 12:40, 16:40, 20:40 (summer time)
@@ -81,6 +82,12 @@ def _what_happens(kind: str, seed: int) -> str:
         return text.format(**params) if text else ""
     except (KeyError, IndexError, ValueError):  # a placeholder this concept doesn't have
         return ""
+
+
+def sound_tips() -> list[str]:
+    """Trending TikTok sounds the designer found – for the owner to pick when posting a draft (licensed by TikTok,
+    never mixed into our own videos)."""
+    return [str(t) for t in (load(MUSIC, {}).get("tiktok_sounds") or [])][:6]
 
 
 def tiktok_caption(kind: str, meta: dict, seed: int = 0) -> str:
@@ -202,7 +209,8 @@ QUESTIONS = {
 }
 COMPOSERS = {"fur_elise": "Beethoven", "ode_to_joy": "Beethoven", "mountain_king": "Grieg", "twinkle": "Mozart",
              "canon": "Pachelbel", "nachtmusik": "Mozart", "turkish_march": "Mozart", "minuet": "Bach",
-             "blue_danube": "Strauss", "lullaby": "Brahms", "morning_mood": "Grieg", "moonlight": "Beethoven"}
+             "blue_danube": "Strauss", "lullaby": "Brahms", "morning_mood": "Grieg", "moonlight": "Beethoven",
+             "toccata": "Bach"}
 TAGS = ["satisfying", "oddly satisfying", "physics simulation", "bouncing ball", "satisfying video",
         "simulation", "relaxing", "asmr", "classical music"]
 
@@ -234,6 +242,30 @@ def performance(state: dict, now: dt.datetime | None = None) -> tuple[float, dic
     return base, out
 
 
+def melody_weights(state: dict, now: dt.datetime | None = None) -> dict[str, dict]:
+    """How much each melody is wanted now: our own views with it (lift over the channel median), how often it shows
+    up in viral satisfying Shorts (trends.py, daily), the designer's viral-song research (config/sims_music.json,
+    twice a day) – and a little less if it ran recently. Melodies without data stay neutral, so new ones get tried."""
+    now = now or dt.datetime.now(dt.timezone.utc)
+    videos = state.get("videos", [])
+    aged = [v for v in videos if (v.get("stats") or v.get("yt_views"))
+            and now - dt.datetime.fromisoformat(v["date"]) > dt.timedelta(hours=12)]
+    base = statistics.median([score(v) for v in aged[-40:]]) if aged else 0
+    trend = load(TUNING, {}).get("melody_trend") or {}
+    music = load(MUSIC, {})
+    until = music.get("seasonal_until") or {}
+    boost = {m: f for m, f in (music.get("boost") or {}).items() if until.get(m, "9999") > now.date().isoformat()}
+    recent = Counter(v["melody"] for v in videos[-8:])
+    out = {}
+    for m in sims.MELODIES:
+        mine = [min(4.0, score(v) / base) for v in aged if v["melody"] == m] if base else []
+        lift = statistics.mean(mine) if mine else 1.0
+        w = (max(0.25, lift) ** 0.8) * (1 + 3 * trend.get(m, 0.0)) * float(boost.get(m, 1.0)) / (1 + recent[m])
+        out[m] = {"posts": len(mine), "lift": round(lift, 2), "trend": trend.get(m, 0.0),
+                  "boost": float(boost.get(m, 1.0)), "recent": recent[m], "weight": round(w, 3)}
+    return out
+
+
 def standouts(state: dict) -> list[str]:
     """Kinds that performed notably well – the only ones that may be posted again (best first)."""
     base, perf = performance(state)
@@ -253,7 +285,8 @@ def concept_queue(cfg: dict, state: dict) -> list[str]:
 
 def plan(cfg: dict, state: dict) -> tuple[str, int, str, str]:
     """Next kind (a new concept if one is ready, else a performance-weighted variant of one that already ran),
-    a fresh seed with a good length, the least used melody, and why this kind was chosen."""
+    a fresh seed with a good length, a melody weighted by what goes viral (melody_weights), and why this kind was
+    chosen."""
     videos = state.get("videos", [])
     tuning = load(TUNING, {})
     broken = set(state.get("broken", {}))
@@ -280,9 +313,10 @@ def plan(cfg: dict, state: dict) -> tuple[str, int, str, str]:
             continue
     else:
         raise RuntimeError(f"{kind}: no seed with a usable length")
-    tunes = Counter(v["melody"] for v in videos)
     last_tune = videos[-1]["melody"] if videos else None
-    melody = min(sims.MELODIES, key=lambda m: (m == last_tune, tunes[m], m))
+    mw = melody_weights(state)
+    tunes = [m for m in sims.MELODIES if m != last_tune] or list(sims.MELODIES)
+    melody = random.Random(len(videos) * 104729 + seed).choices(tunes, weights=[mw[m]["weight"] for m in tunes])[0]
     return kind, seed, melody, why
 
 
@@ -583,7 +617,7 @@ def run(upload: bool = True) -> dict:
     state.setdefault("videos", []).append(record)
     save(STATE, state)
     if record.get("tiktok"):
-        tiktok.write_queue(state["videos"], cfg["channel_name"])
+        tiktok.write_queue(state["videos"], cfg["channel_name"], tips=sound_tips())
     removed = publish.cleanup_releases("sims-", keep_days=10)  # Instagram keeps its own copy
     if removed:
         print(f"  removed {removed} old releases", flush=True)

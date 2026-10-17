@@ -286,7 +286,7 @@ def caption(title: str, question: str, tags: list[str]) -> str:
     return "\n".join([title, question, " ".join(f"#{t}" for t in tags)])
 
 
-def write_queue(records: list[dict], channel: str, path: Path | None = None) -> None:
+def write_queue(records: list[dict], channel: str, path: Path | None = None, tips: list[str] | None = None) -> None:
     """state/tiktok.md (or `path`): the latest drafts with their caption to copy – the owner's 15-second checklist."""
     sent = [r for r in records if r.get("tiktok")]
     waiting = sorted((r for r in sent if r["tiktok"].get("status") != "PUBLISH_COMPLETE"), key=lambda r: r["date"], reverse=True)
@@ -297,6 +297,8 @@ def write_queue(records: list[dict], channel: str, path: Path | None = None) -> 
              "2. In TikTok auf die Benachrichtigung tippen (oder Profil → Posteingang/Entwürfe) → **Weiter**.",
              "3. Beschreibung einfügen, nach Wunsch einen angesagten Sound wählen → **Posten**.", "",
              "Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.", ""]
+    if tips:
+        lines += ["**Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): " + " · ".join(tips), ""]
     for r in recent:
         tt = r["tiktok"]
         when = dt.datetime.fromisoformat(r["date"]).strftime("%d.%m. %H:%M UTC")

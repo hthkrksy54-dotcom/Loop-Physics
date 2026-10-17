@@ -89,6 +89,10 @@ MELODIES = {
     "frere_jacques": ("Frère Jacques – traditional", [
         72, 74, 76, 72, 72, 74, 76, 72, 76, 77, 79, 76, 77, 79, 79, 81, 79, 77, 76, 72,
         79, 81, 79, 77, 76, 72, 72, 67, 72, 72, 67, 72]),
+    "toccata": ("Toccata and Fugue in D minor – Bach", [n + 12 for n in [
+        81, 79, 81, 79, 77, 76, 74, 73, 74,
+        69, 67, 69, 64, 65, 61, 62,
+        57, 55, 57, 55, 53, 52, 50, 49, 50]]),
 }
 TIMBRES = ["bell", "marimba", "pluck", "chip", "glass"]
 

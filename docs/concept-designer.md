@@ -135,6 +135,32 @@ Finish with a short report: the idea, what inspired it, the finale, the run leng
 - use copyrighted music, footage, logos, real people or brand names; claim things in titles that do not happen;
 - commit anything under `out/`.
 
+## Viral songs (every run)
+
+Every bounce plays the next note of a melody, and the melody is a big part of why a video takes off – our Für Elise
+escape run reached 16,000 views, many times the channel median. So every designer run also checks which songs
+are viral right now:
+
+1. Research (web search, 3–5 queries): which songs and sounds are trending in satisfying / ball / marble / physics
+   simulation Shorts, Reels and TikToks this week – TikTok Creative Center "Popular songs", "trending sound
+   satisfying simulation", "viral piano song tiktok", seasonal moments (Halloween: Toccata and Fugue, Danse
+   Macabre, In the Hall of the Mountain King; December: Carol of the Bells, the Nutcracker, Jingle Bells).
+2. `python -m ytauto melodies` shows each melody's posts, our own view lift, the daily trend signal and its current
+   chance. Our own numbers beat outside hype: a melody that keeps flopping for us is not boosted.
+3. **Public-domain pieces only go into the videos** (composer died more than 70 years ago and the piece was published
+   before 1930; traditional tunes). If a viral piece qualifies:
+   - already in `sims.MELODIES` → raise its factor in `config/sims_music.json` → `boost` (1.0–3.0; 1.0 = neutral);
+     seasonal ones get an end date in `seasonal_until` (they switch off by themselves);
+   - not in it yet → add its best-known theme to `MELODIES` in `ytauto/sims.py`: MIDI note numbers of the melody
+     line in order (one note per bounce, 18–60 notes, in the range 55–88), transcribed from public-domain sheet music
+     (IMSLP / Mutopia) and checked note by note; add the composer to `COMPOSERS` in `ytauto/simchannel.py`.
+     Render one quick check: `python -m ytauto sim --kind escape --melody <key>`.
+4. **Copyrighted viral songs never go into our videos.** Put the best 3–6 of them into `tiktok_sounds` (name – artist,
+   short reason) – they appear on top of the TikTok checklist (state/tiktok.md) so the owner can pick one in the
+   TikTok app, where the music is licensed.
+5. Lower boosts again when a trend is over; keep `notes` to one or two lines on why the current boosts are set.
+   Commit `config/sims_music.json` (and sims.py/simchannel.py if you added a melody) together with your concept.
+
 ## Session prompt (used by the scheduler)
 
 Twice a day (07:47 and 14:47 UTC) a scheduled task wakes the channel's main Claude session, which starts a fresh
@@ -147,8 +173,9 @@ You are the Loop Physics concept designer. This is an automatic run – nobody i
 1. `git checkout main && git pull origin main`, then read docs/concept-designer.md completely and follow it exactly.
 2. Check the queue with `python -m ytauto concepts` (stop if 6 or more concepts are already waiting).
 3. Research what is going viral right now in satisfying / physics / ball simulation Shorts, Reels and TikToks (web search), and pick ONE idea that does not exist yet – a different core mechanic, not a recolour – ideally with an escalating finale.
+3b. Viral songs: follow the section "Viral songs (every run)" in docs/concept-designer.md – research which songs trend right now, update config/sims_music.json (boosts for public-domain melodies, trending TikTok sounds for the owner) and add a trending public-domain melody if one is missing.
 4. Build it as ytauto/concepts/<kind>.py from ytauto/concepts/_template.py, iterate until `python -m ytauto concept-check <kind> --full` passes, and look at the contact sheet and the extracted frames (especially the finale) – improve it until it looks great to a viewer scrolling past.
-5. Commit only that file and push it directly to main (`git pull --rebase origin main && git push origin HEAD:main`, retry a few times). No pull request, no other branch. Do not post, upload or start workflows – the Loop Physics workflow posts it at the next slot.
+5. Commit that file (plus config/sims_music.json and, if you added a melody, sims.py/simchannel.py) and push it directly to main (`git pull --rebase origin main && git push origin HEAD:main`, retry a few times). No pull request, no other branch. Do not post, upload or start workflows – the Loop Physics workflow posts it at the next slot.
 
-End with a short report in German: Idee, Inspiration, Finale, gefundene Laufzeiten – or exactly why nothing was committed.
+End with a short report in German: Idee, Inspiration, Finale, gefundene Laufzeiten, virale Songs (was geboostet/neu) – or exactly why nothing was committed.
 ```
