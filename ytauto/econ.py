@@ -24,7 +24,7 @@ from pathlib import Path
 import numpy as np
 import requests
 
-from . import instagram, music, publish, render, studio, tiktok, tts, youtube
+from . import gdrive, instagram, music, publish, render, studio, tiktok, tts, youtube
 from .tts import SAMPLE_RATE
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -599,6 +599,8 @@ def produce(upload: bool = True, script_id: str | None = None) -> dict:
         if clip:
             files.append((clip, f"{slug}-{name}-story.mp4", "video/mp4"))
     rel = publish.github_release(f"econ-{name}", f"[{cfg['channel_name']}] {texts['title']}", body, files)
+    if drive := gdrive.save(cfg["channel_name"], texts["title"], files, body):
+        record["drive"] = drive
     assets = rel.get("assets", {})
     if rel:
         record["release"] = rel["release"]

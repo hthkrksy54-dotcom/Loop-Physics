@@ -62,6 +62,7 @@ Repo auf GitHub → **Settings** → **Secrets and variables** → **Actions** �
 | `YT_REFRESH_TOKEN_DE` | Refresh-Token von „Leise Gedanken“ |
 | `YT_REFRESH_TOKEN_EN` | Refresh-Token von „Quiet Thoughts“ |
 | `YT_REFRESH_TOKEN_ECON` | Refresh-Token von „Real Numbers“ |
+| `GDRIVE_REFRESH_TOKEN` *(optional)* | Refresh-Token für Google Drive (Schritt 7) |
 | `GEMINI_API_KEY` *(Reserve)* | **kostenloser** Schlüssel von <https://aistudio.google.com/apikey> (gleiches Google-Konto, keine Kreditkarte). Damit schreibt die Pipeline neue Skripte. |
 | `GROQ_API_KEY` *(optional)* | kostenloser Schlüssel von <https://console.groq.com/keys>, Reserve, falls Gemini mal ausfällt |
 
@@ -89,6 +90,19 @@ Genehmigung `upload_enabled` auf `true` setzen (oder Claude Bescheid geben).
 
 GitHub → **Actions** → **Produce videos** → **Run workflow**.
 Zum Ausprobieren `upload` abhaken. Die Videos liegen dann unter *Artifacts* des Laufs.
+
+## 7. Google Drive: alle Videos zum Wiederfinden (optional)
+
+Jedes fertige Video landet zusätzlich in deinem Google Drive unter **Kanal-Videos → Loop Physics / Quiet Thoughts /
+Real Numbers**, je Video ein Ordner mit Video, Short, Thumbnail und einer Datei „Texte zum Kopieren.txt“
+(Titel, Beschreibung, Tags). Ordner, die älter als 14 Tage sind, werden gelöscht, damit die kostenlosen 15 GB
+nie volllaufen. Die Pipeline sieht nur die Ordner und Dateien, die sie selbst angelegt hat (Bereich `drive.file`).
+
+1. Google Cloud → *APIs & Dienste* → *Bibliothek* → **Google Drive API** → *Aktivieren* (dasselbe Projekt).
+2. OAuth Playground wie in Schritt 3, aber mit dem Bereich `https://www.googleapis.com/auth/drive.file`.
+   Beim Anmelden **dein normales Google-Konto** wählen (das, in dessen Drive die Videos sollen), keinen Kanal.
+3. Den Refresh token als GitHub-Secret **`GDRIVE_REFRESH_TOKEN`** eintragen.
+4. Workflow **Verbindungstest** starten: Er legt die Ordner an und zeigt ihre Links.
 
 ---
 

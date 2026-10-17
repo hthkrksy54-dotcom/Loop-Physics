@@ -7,7 +7,7 @@ from pathlib import Path
 
 import requests
 
-from . import youtube
+from . import gdrive, youtube
 
 
 def _clean(text: str) -> str:
@@ -182,9 +182,12 @@ def to_github_release(script: dict, cfg: dict, long: dict, short: dict | None) -
     if long.get("cover"):
         files.append((long["cover"], f"{prefix}-cover.jpg", "image/jpeg"))
     rel = github_release(tag, f"[{script['lang'].upper()}] {script['title']}", "\n".join(body), files)
+    drive = gdrive.save(cfg["channel_name"], script["title"], files, "\n".join(body))
     if not rel:
-        return {}
+        return {"drive": drive} if drive else {}
     result = {"release": rel["release"]}
+    if drive:
+        result["drive"] = drive
     if rel["assets"].get(f"{prefix}-short.mp4"):
         result["short_url"] = rel["assets"][f"{prefix}-short.mp4"]
     if rel["assets"].get(f"{prefix}-cover.jpg"):

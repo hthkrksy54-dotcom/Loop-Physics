@@ -75,6 +75,7 @@ jobs:
           IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          GDRIVE_REFRESH_TOKEN: ${{ secrets.GDRIVE_REFRESH_TOKEN }}
           MODE: ${{ steps.mode.outputs.mode }}
           IN_UPLOAD: ${{ github.event.inputs.upload }}
           IN_BRANDING: ${{ github.event.inputs.branding }}

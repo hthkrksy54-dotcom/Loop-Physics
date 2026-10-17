@@ -48,6 +48,7 @@ Thema → Skript → Faktencheck → Sprecherstimme → Musik → Visuals → Un
 | Stories | täglich eine frische Story (Zitat-Karte, sonntags Wochenrückblick), wenn nicht schon Reel/Karussell eine gepostet hat; jede Story wird mit ihrem Highlight protokolliert ([Workflow](.github/workflows/stories.yml)) | 0 € |
 | Highlights | keine API bei Instagram – sonntags kommt eine Liste, welche Stories in welches Highlight gehören (`python -m ytauto highlights`) | 0 € |
 | Upload-Wächter | stündlich: erkennt Videos, die du von Hand hochlädst, korrigiert Shorts, postet das passende Reel | 0 € |
+| Google Drive | jedes Video aller drei Kanäle zusätzlich unter „Kanal-Videos/<Kanal>“, mit Texten zum Kopieren, 14 Tage lang ([gdrive.py](ytauto/gdrive.py)) | 0 € |
 
 **Einrichtung:** siehe [SETUP.md](SETUP.md). Die YouTube-Kanäle musst du einmal selbst anlegen.
 

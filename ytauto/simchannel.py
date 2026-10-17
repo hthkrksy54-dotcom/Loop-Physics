@@ -22,7 +22,7 @@ from pathlib import Path
 
 from cryptography.fernet import Fernet
 
-from . import instagram, publish, sims, tiktok, youtube
+from . import gdrive, instagram, publish, sims, tiktok, youtube
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "config" / "sims.json"
@@ -468,6 +468,8 @@ def run(upload: bool = True) -> dict:
     if clip:
         files.append((clip, f"loop-physics-{name}-story.mp4", "video/mp4"))
     rel = publish.github_release(f"sims-{name}", f"[Loop Physics] {meta['title']}", body, files)
+    if drive := gdrive.save(cfg["channel_name"], meta["title"], files, body):
+        record["drive"] = drive
     video_url = rel.get("assets", {}).get(f"loop-physics-{name}.mp4")
     story_url = rel.get("assets", {}).get(f"loop-physics-{name}-story.mp4")
     if rel:

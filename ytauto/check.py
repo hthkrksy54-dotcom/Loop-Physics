@@ -5,7 +5,7 @@ import json
 
 import requests
 
-from . import generate, instagram, tts, youtube
+from . import gdrive, generate, instagram, tts, youtube
 
 
 def _llm() -> bool:
@@ -90,6 +90,20 @@ def _instagram(cfg: dict) -> bool:
     return ok
 
 
+def _drive(channels: list[str]) -> bool:
+    if not gdrive.configured():
+        print(f"[--]   Google Drive: noch nicht verbunden ({gdrive.SECRET} fehlt)")
+        return True
+    try:
+        token = youtube.access_token(gdrive.SECRET)
+        for name in channels:  # creates the folders on the first run, so they show up in Drive right away
+            print(f"[OK]   Google Drive {name}: {gdrive.folder_url(gdrive.channel_folder(token, name))}")
+        return True
+    except Exception as err:
+        print(f"[FEHLER] Google Drive: {str(err)[:200]}")
+        return False
+
+
 def run(cfg: dict) -> int:
     print("Verbindungstest ytauto\n")
     llm_ok = _llm()
@@ -98,6 +112,10 @@ def run(cfg: dict) -> int:
     voice_ok = _voice(cfg)
     yt_ok = _youtube(cfg)
     from . import econ  # Real Numbers keeps its own config file
-    yt_ok = _youtube({"econ": econ.load(econ.CONFIG, {})}) and yt_ok
+    econ_cfg = econ.load(econ.CONFIG, {})
+    yt_ok = _youtube({"econ": econ_cfg}) and yt_ok
     ig_ok = _instagram(cfg)
-    return 0 if (voice_ok and yt_ok and ig_ok) else 1
+    from .simchannel import CONFIG as SIMS_CONFIG, load as load_sims
+    channels = [c["channel_name"] for c in cfg.values() if c.get("active", True)]
+    drive_ok = _drive(channels + [load_sims(SIMS_CONFIG, {})["channel_name"], econ_cfg["channel_name"]])
+    return 0 if (voice_ok and yt_ok and ig_ok and drive_ok) else 1
