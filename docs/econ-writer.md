@@ -49,8 +49,11 @@ pip install -q -r requirements.txt
 python -m ytauto econ queue
 ```
 
-If **6 or more** scripts are waiting, stop and report "queue full". Otherwise write one script (two if fewer than 3
-are waiting).
+This is the **weekly batch** (Mondays, right after the owner's Claude usage resets): write scripts one after
+another until **8** are waiting – one for every day of the coming week plus a spare. Commit and push after each
+script, so a run that stops early still leaves the finished ones on main. If 8 or more are already waiting, stop and
+report "queue full". Vary the formats within the week (a milestone, a list, a myth check, a "you vs average" …) and
+keep at most one economy topic per week.
 
 ## 1. Pick the topic (10 minutes at most)
 
@@ -178,8 +181,8 @@ git pull --rebase origin main && git push origin HEAD:main
 
 Report in one line per script: id, title, word count, and the main data sources.
 
-## Session prompt (for the scheduled writer runs)
+## Session prompt (for the weekly writer run, Mondays ~15:45 German time)
 
 ```
-You are the Real Numbers script writer. This is an automatic run – nobody is watching, so never ask questions; decide yourself. You work in the checkout of hthkrksy54-dotcom/Yt (branch main). Read docs/econ-writer.md and follow it exactly: check the queue, pick a topic, fetch and verify the data, write the script(s), run `python -m ytauto econ check <id>` until it passes and look at the preview images, then commit and push to main.
+You are the Real Numbers script writer. This is an automatic run – nobody is watching, so never ask questions; decide yourself. You work in the checkout of hthkrksy54-dotcom/Yt (branch main). Read docs/econ-writer.md and follow it exactly: check the queue, then for each script until 8 are waiting – pick a topic, fetch and verify the data, write the script, run `python -m ytauto econ check <id>` until it passes and look at the preview images, then commit and push to main before starting the next one.
 ```
