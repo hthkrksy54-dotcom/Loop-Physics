@@ -60,6 +60,7 @@ jobs:
           IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN_ECON: ${{ secrets.YT_REFRESH_TOKEN_ECON }}
           IN_SCRIPT: ${{ github.event.inputs.script }}
           IN_UPLOAD: ${{ github.event.inputs.upload }}
         run: |

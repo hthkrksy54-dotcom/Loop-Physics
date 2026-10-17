@@ -97,5 +97,7 @@ def run(cfg: dict) -> int:
         print("       (Kein Problem, solange Claude die Skripte wöchentlich schreibt.)")
     voice_ok = _voice(cfg)
     yt_ok = _youtube(cfg)
+    from . import econ  # Real Numbers keeps its own config file
+    yt_ok = _youtube({"econ": econ.load(econ.CONFIG, {})}) and yt_ok
     ig_ok = _instagram(cfg)
     return 0 if (voice_ok and yt_ok and ig_ok) else 1

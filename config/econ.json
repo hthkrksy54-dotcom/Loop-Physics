@@ -25,6 +25,7 @@
   },
   "youtube": {
     "upload_enabled": false,
+    "refresh_token_secret": "YT_REFRESH_TOKEN_ECON",
     "token_file": "state/youtube_econ.token",
     "category_id": "27",
     "default_language": "en"

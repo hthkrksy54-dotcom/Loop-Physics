@@ -647,6 +647,9 @@ def _youtube_token(cfg: dict) -> str:
     import os
 
     from cryptography.fernet import Fernet
+    secret = cfg["youtube"].get("refresh_token_secret")
+    if secret and os.environ.get(secret):  # GitHub secret first, else the encrypted token file
+        return youtube.access_token(secret)
     data = json.loads(Fernet(os.environ["IG_TOKEN_KEY"].strip().encode()).decrypt(
         (ROOT / cfg["youtube"]["token_file"]).read_bytes().strip()))
     return youtube.access_token_from(data["refresh_token"])

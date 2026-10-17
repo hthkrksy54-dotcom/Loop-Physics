@@ -61,6 +61,7 @@ Repo auf GitHub → **Settings** → **Secrets and variables** → **Actions** �
 | `YT_CLIENT_SECRET` | Clientschlüssel aus Schritt 2 |
 | `YT_REFRESH_TOKEN_DE` | Refresh-Token von „Leise Gedanken“ |
 | `YT_REFRESH_TOKEN_EN` | Refresh-Token von „Quiet Thoughts“ |
+| `YT_REFRESH_TOKEN_ECON` | Refresh-Token von „Real Numbers“ |
 | `GEMINI_API_KEY` *(Reserve)* | **kostenloser** Schlüssel von <https://aistudio.google.com/apikey> (gleiches Google-Konto, keine Kreditkarte). Damit schreibt die Pipeline neue Skripte. |
 | `GROQ_API_KEY` *(optional)* | kostenloser Schlüssel von <https://console.groq.com/keys>, Reserve, falls Gemini mal ausfällt |
 
