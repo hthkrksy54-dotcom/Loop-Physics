@@ -36,7 +36,12 @@
       "instagram_id": "18136968310639645",
       "instagram_url": "https://www.instagram.com/reel/DemG5VvAH8E/",
       "instagram_story_id": "18073778168758507",
-      "reel_backfill": "2026-10-17"
+      "reel_backfill": "2026-10-17",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697637961076852739",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "The US now pays $1T just in interest\nFull breakdown on YouTube: Real Numbers (@realnumbersdaily)\n#nationaldebt #economics #money #learnontiktok"
+      }
     },
     {
       "id": "turkey-argentina-high-inflation",
@@ -55,7 +60,12 @@
       "instagram_id": "17906984541569814",
       "instagram_url": "https://www.instagram.com/reel/DemHJb-Hwdn/",
       "instagram_story_id": "18106355309369712",
-      "reel_backfill": "2026-10-17"
+      "reel_backfill": "2026-10-17",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697637606019860502",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "1,000 pesos: from $257 to 81 cents\nFull breakdown on YouTube: Real Numbers (@realnumbersdaily)\n#inflation #argentina #economics #learnontiktok"
+      }
     },
     {
       "id": "why-china-grew-so-fast",
@@ -74,7 +84,12 @@
       "instagram_id": "18354581554174195",
       "instagram_url": "https://www.instagram.com/reel/DemHabhinW6/",
       "instagram_story_id": "18104936399634541",
-      "reel_backfill": "2026-10-17"
+      "reel_backfill": "2026-10-17",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697637264435890198",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "97% of China was poor. Then this.\nFull breakdown on YouTube: Real Numbers (@realnumbersdaily)\n#china #economics #money #learnontiktok"
+      }
     }
   ]
 }
