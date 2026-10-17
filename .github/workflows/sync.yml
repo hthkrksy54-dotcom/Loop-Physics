@@ -1,6 +1,7 @@
 name: Sync uploads
 
-# Hourly: notice videos uploaded by hand on YouTube, fix their Shorts, post the Instagram Reels.
+# Hourly: notice videos uploaded by hand on YouTube, fix their Shorts, post the Instagram Reels, and keep the
+# TikTok inboxes of Real Numbers and Quiet Thoughts topped up with drafts (at most 3 waiting each).
 on:
   schedule:
     - cron: "23 * * * *"
@@ -38,6 +39,13 @@ jobs:
           IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python -m ytauto sync
+
+      - name: TikTok drafts (Real Numbers, Quiet Thoughts)
+        env:
+          IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
+        run: |
+          python -m ytauto tiktok backlog --channel econ || echo "Real Numbers: TikTok skipped this hour"
+          python -m ytauto tiktok backlog --channel quiet || echo "Quiet Thoughts: TikTok skipped this hour"
 
       - name: Save progress
         if: always()

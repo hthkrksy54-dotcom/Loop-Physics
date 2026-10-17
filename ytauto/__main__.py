@@ -32,6 +32,7 @@ TOPICS = ROOT / "content" / "topics.json"
 SCRIPTS = ROOT / "content" / "scripts"
 STATE = ROOT / "state" / "published.json"
 OUT = ROOT / "out"
+TIKTOK_QUEUE = ROOT / "state" / "tiktok_quiet.md"
 
 
 def _load(path: Path, default):
@@ -120,11 +121,53 @@ def produce(lang: str, topic_id: str | None, upload: bool, with_short: bool, kee
             except Exception as err:  # Instagram must never block the YouTube side
                 record.setdefault("warnings", []).append(f"instagram: {err}")
                 print(f"  warning: instagram reel failed: {err}", flush=True)
+        # The Short as a draft in the TikTok inbox (the owner posts it with one tap); a full inbox waits for the sync.
+        if short and tiktok.configured(cfg) and tiktok.waiting(_load(STATE, {}).get(lang, [])) < 3:
+            try:
+                record["tiktok"] = {**tiktok.send_draft(cfg, Path(short["video"])), "caption": tiktok_caption(script, cfg)}
+            except Exception as err:  # noqa: BLE001
+                record.setdefault("warnings", []).append(f"tiktok: {err}")
+                print(f"  warning: tiktok failed: {err}", flush=True)
         if keep_record:
             state = _load(STATE, {})
             state.setdefault(lang, []).append(record)
             _save(STATE, state)
+            if record.get("tiktok"):
+                tiktok.write_queue(state[lang], cfg["channel_name"], TIKTOK_QUEUE)
     return record
+
+
+def tiktok_caption(script: dict, cfg: dict) -> str:
+    """Hook, the question for the comments, where the full essay is, a few tags (no links: TikTok drops them)."""
+    short = script["short"]
+    tags: dict[str, str] = {}
+    for t in f"{script.get('hashtags', '')} {cfg['tiktok'].get('hashtags', '')}".split():
+        tags.setdefault(t.lower(), t if t.startswith("#") else f"#{t}")
+    where = f"Full video essay on YouTube: {cfg['channel_name']} ({cfg['tiktok'].get('youtube', '')})".replace(" ()", "")
+    lines = [short.get("hook") or short["title"].replace("#Shorts", "").strip(), script.get("question"), where,
+             " ".join(list(tags.values())[:5])]
+    return "\n".join(x for x in lines if x)
+
+
+def tiktok_backlog(lang: str, cfg: dict, max_pending: int = 3) -> bool:
+    """Which drafts the owner posted meanwhile, then recent Shorts not on TikTok yet (newest first)."""
+    state = _load(STATE, {})
+    records = state.get(lang, [])
+    changed = tiktok.refresh(cfg, records)
+    now = dt.datetime.now(dt.timezone.utc)
+    todo = []
+    for rec in sorted(records, key=lambda r: r["date"], reverse=True):
+        if rec.get("tiktok") or rec.get("tiktok_skip") or not rec.get("short_url") \
+                or now - dt.datetime.fromisoformat(rec["date"]) > dt.timedelta(days=14):
+            continue
+        script = _load(SCRIPTS / lang / f"{rec['id']}.json", None)
+        if script and script.get("short"):
+            todo.append((rec, rec["short_url"], tiktok_caption(script, cfg)))
+    changed |= tiktok.backlog(cfg, todo, records, max_pending) > 0
+    if changed:
+        _save(STATE, state)
+        tiktok.write_queue(records, cfg["channel_name"], TIKTOK_QUEUE)
+    return changed
 
 
 def post_carousel(lang: str, cfg: dict, render_only: bool = False) -> bool:
@@ -278,9 +321,9 @@ def main(argv: list[str] | None = None) -> int:
     sc.add_argument("--youtube", choices=["check", "apply"], help="match manual YouTube uploads and polish them")
     sc.add_argument("--due", action="store_true", help="print 'post' if a posting slot is open, else 'idle'")
     sc.add_argument("--reels", action="store_true", help="post the videos whose Instagram Reel failed, now")
-    tk = sub.add_parser("tiktok", help="TikTok setup: url | connect | check | send (--channel econ for Real Numbers)")
+    tk = sub.add_parser("tiktok", help="TikTok setup: url | connect | check | send | backlog (--channel econ / quiet)")
     tk.add_argument("action", choices=["url", "connect", "check", "send", "refresh", "backlog"])
-    tk.add_argument("--channel", choices=["sims", "econ"], default="sims")
+    tk.add_argument("--channel", choices=["sims", "econ", "quiet"], default="sims")
     tk.add_argument("--max", type=int, default=3, help="backlog: at most this many drafts waiting in the inbox")
     tk.add_argument("--files", help="backlog: folder with <kind>-<seed>.mp4 files to use instead of releases")
     tk.add_argument("--key", help="client key of the TikTok developer app")
@@ -362,19 +405,25 @@ def main(argv: list[str] | None = None) -> int:
                 econ.produce(upload=not args.no_upload, script_id=script_id)
         return 0
     if args.cmd == "tiktok":
+        from . import econ
         cfg = simchannel.load(simchannel.CONFIG, {})
         app = tiktok._load(cfg) if tiktok._path(cfg).exists() and os.environ.get("IG_TOKEN_KEY") else {}
         key, secret = args.key or app.get("client_key"), args.secret or app.get("client_secret")  # same app
-        if args.channel == "econ":
-            from . import econ
-            cfg = econ.load(econ.CONFIG, {})
+        channels = {"sims": cfg, "econ": econ.load(econ.CONFIG, {}), "quiet": _load(CONFIG, {})["en"]}
+        cfg = channels[args.channel]
         if args.action == "url":
-            print(tiktok.auth_url(key))
+            print(tiktok.auth_url(key, state=args.channel))
         elif args.action == "connect":
-            data = tiktok.connect(cfg, key, secret, args.redirect)
+            taken = {tiktok.open_id(c) for name, c in channels.items() if name != args.channel and c.get("tiktok")}
+            data = tiktok.connect(cfg, key, secret, args.redirect, channel=args.channel, taken=taken - {None})
             print(f"connected (scopes: {data.get('scope')}), token stored in {cfg['tiktok']['token_file']}")
         elif args.action == "check":
-            print(tiktok.account(cfg))
+            print(f"TikTok account: {tiktok.account(cfg).get('display_name')}")
+        elif args.action in ("refresh", "backlog") and args.channel == "econ":
+            econ.tiktok_backlog(args.max)
+        elif args.action in ("refresh", "backlog") and args.channel == "quiet":
+            if tiktok.configured(cfg):
+                tiktok_backlog("en", cfg, args.max)
         elif args.action in ("refresh", "backlog"):  # heartbeat: what was posted, then top up the drafts
             state = simchannel.load(simchannel.STATE, {"videos": []})
             if not tiktok.configured(cfg):

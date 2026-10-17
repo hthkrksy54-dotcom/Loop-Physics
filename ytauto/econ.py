@@ -560,8 +560,9 @@ def _texts(script: dict, cfg: dict, result: dict) -> dict:
                             " ".join(dict.fromkeys(f"{hashtags} #economics #finance".split()))])
     return {"title": script["title"][:100], "description": result.get("description", ""), "tags": tags,
             "short_title": short_title, "short_description": short_desc, "caption": caption[:2150],
-            "tiktok": "\n".join([sh.get("hook", script["title_card"]), "Full video on YouTube.",
-                                 hashtags + " #economics #learnontiktok"])}
+            "tiktok": "\n".join([sh.get("hook", script["title_card"]),
+                                 f"Full breakdown on YouTube: {cfg['channel_name']} ({cfg.get('handle', '')})".replace(" ()", ""),
+                                 " ".join(dict.fromkeys(f"{hashtags} #economics #learnontiktok".split()))])}
 
 
 def produce(upload: bool = True, script_id: str | None = None) -> dict:
@@ -614,7 +615,7 @@ def produce(upload: bool = True, script_id: str | None = None) -> dict:
         except Exception as err:  # noqa: BLE001 – one platform failing must not lose the run
             record.setdefault("warnings", []).append(f"instagram: {err}")
             print(f"  warning: instagram failed: {err}", flush=True)
-    if result.get("short") and tiktok.configured(cfg):
+    if result.get("short") and tiktok.configured(cfg) and tiktok.waiting(state.get("videos", [])) < 3:
         try:
             record["tiktok"] = {**tiktok.send_draft(cfg, Path(result["short"])), "caption": texts["tiktok"]}
         except Exception as err:  # noqa: BLE001
@@ -784,6 +785,39 @@ def youtube_sync() -> bool:
     return changed
 
 
+def _release_files(cfg: dict, rec: dict) -> str:
+    """Public download URL of an episode's release files, without the suffix ("-short.mp4", "-story.mp4", …)."""
+    slug = re.sub(r"[^a-z0-9]+", "-", cfg["channel_name"].lower()).strip("-")
+    tag = rec["release"].rsplit("/", 1)[1]
+    return f"{rec['release'].replace('/releases/tag/', '/releases/download/')}/{slug}-{tag.removeprefix('econ-')}"
+
+
+def tiktok_backlog(max_pending: int = 3) -> bool:
+    """TikTok: which drafts the owner posted meanwhile, then the recent Shorts that are not on TikTok yet
+    (newest first, made before TikTok was connected or held back by a full inbox)."""
+    import datetime as dt
+
+    cfg, state = load(CONFIG, {}), load(STATE, {"videos": []})
+    if not tiktok.configured(cfg):
+        return False
+    videos = state["videos"]
+    changed = tiktok.refresh(cfg, videos)
+    now = dt.datetime.now(dt.timezone.utc)
+    todo = []
+    for rec in sorted(videos, key=lambda r: r["date"], reverse=True):
+        if rec.get("tiktok") or rec.get("tiktok_skip") or not rec.get("release") or not rec.get("short_duration") \
+                or now - dt.datetime.fromisoformat(rec["date"]) > dt.timedelta(days=14):
+            continue
+        script = load(SCRIPTS / f"{rec['id']}.json", {})
+        if script:
+            todo.append((rec, f"{_release_files(cfg, rec)}-short.mp4", _texts(script, cfg, {})["tiktok"]))
+    changed |= tiktok.backlog(cfg, todo, videos, max_pending) > 0
+    if changed:
+        save(STATE, state)
+        tiktok.write_queue(videos, cfg["channel_name"], TIKTOK_QUEUE)
+    return changed
+
+
 def backfill_reel(every_day: bool = True) -> bool:
     """Post the Short of the oldest episode that has no Reel yet – made before Instagram was connected, or its
     Reel failed – as Reel + story, at most one a day and only while its release (the video's public URL) exists."""
@@ -804,9 +838,7 @@ def backfill_reel(every_day: bool = True) -> bool:
         return False
     rec = todo[0]
     script = load(SCRIPTS / f"{rec['id']}.json", {})
-    slug = re.sub(r"[^a-z0-9]+", "-", cfg["channel_name"].lower()).strip("-")
-    tag = rec["release"].rsplit("/", 1)[1]
-    files = f"{rec['release'].replace('/releases/tag/', '/releases/download/')}/{slug}-{tag.removeprefix('econ-')}"
+    files = _release_files(cfg, rec)
     print(f"[econ] catching up the Reel of {rec['id']}", flush=True)
     rec.update(instagram.post_reel(cfg, f"{files}-short.mp4", _texts(script, cfg, {})["caption"], story=True,
                                    label=script["title"], thumb_offset_ms=3000, story_url=f"{files}-story.mp4"))

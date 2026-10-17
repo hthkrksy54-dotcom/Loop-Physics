@@ -18,6 +18,7 @@ from __future__ import annotations
 import datetime as dt
 import json
 import os
+import re
 import time
 import urllib.parse
 from pathlib import Path
@@ -93,15 +94,32 @@ def auth_url(client_key: str, state: str = "ytauto") -> str:
                                                 "redirect_uri": REDIRECT, "state": state})
 
 
-def connect(cfg: dict, client_key: str, client_secret: str, redirect: str) -> dict:
-    """Exchange the code from the address the owner landed on for tokens and store everything encrypted."""
+def connect(cfg: dict, client_key: str, client_secret: str, redirect: str, channel: str | None = None,
+            taken: set[str] = frozenset()) -> dict:
+    """Exchange the code from the address the owner landed on for tokens and store everything encrypted.
+    `channel` must match the link's state, and an account already connected to another channel (`taken`
+    open_ids) is refused, so a browser still logged in to the wrong account can't mix the channels up."""
     query = urllib.parse.parse_qs(urllib.parse.urlparse(redirect.strip()).query)
     if "error" in query:
         raise TikTokError(f"TikTok refused: {query.get('error_description', query['error'])}")
+    state = (query.get("state") or [None])[0]
+    if channel and state not in (None, "ytauto", channel):
+        raise TikTokError(f"this address belongs to the link for '{state}', not '{channel}' – nothing stored")
     code = (query.get("code") or [redirect.strip()])[0]
     data = {"client_key": client_key.strip(), "client_secret": client_secret.strip()}
     tok = _oauth(data, code=code, grant_type="authorization_code", redirect_uri=REDIRECT)
+    if tok.get("open_id") in taken:
+        raise TikTokError("this TikTok account is already connected to another channel – log in with the "
+                          "channel's own account (private window) and try again; nothing stored")
     return _store(cfg, data, tok)
+
+
+def open_id(cfg: dict) -> str | None:
+    """The connected account's id (no network), or None."""
+    try:
+        return _load(cfg).get("open_id") if _path(cfg).exists() else None
+    except TikTokError:
+        return None
 
 
 def fresh_token(cfg: dict) -> str:
@@ -173,6 +191,47 @@ def send_draft(cfg: dict, video: Path, wait: int = 180) -> dict:
     return {"publish_id": init["publish_id"], "status": status}
 
 
+def send_url(cfg: dict, url: str, wait: int = 60) -> dict:
+    """send_draft for a video that only exists online (a release asset)."""
+    import tempfile
+
+    with tempfile.TemporaryDirectory() as tmp:
+        path = Path(tmp) / "video.mp4"
+        with requests.get(url, stream=True, timeout=300) as r:
+            if not r.ok:
+                raise TikTokError(f"video download failed ({r.status_code})")
+            with path.open("wb") as f:
+                for part in r.iter_content(1 << 20):
+                    f.write(part)
+        return send_draft(cfg, path, wait=wait)
+
+
+def waiting(records: list[dict]) -> int:
+    """Drafts still waiting in the owner's inbox."""
+    return sum(1 for r in records if (r.get("tiktok") or {}).get("status") not in (None, "PUBLISH_COMPLETE", "FAILED"))
+
+
+def backlog(cfg: dict, todo: list[tuple[dict, str, str]], records: list[dict], max_pending: int = 3) -> int:
+    """Send (record, video URL, caption) items as drafts while fewer than `max_pending` wait in the inbox –
+    the owner posts them one tap each, so the inbox never fills up. Returns how many were sent."""
+    sent = 0
+    for rec, url, text in todo:
+        if waiting(records) >= max_pending:
+            break
+        try:
+            rec["tiktok"] = {**send_url(cfg, url), "caption": text}
+        except (TikTokError, requests.RequestException) as err:
+            print(f"  tiktok: {rec.get('id')} not sent: {err}", flush=True)
+            if re.search(r"spam|pending|rate|too_many|limit", str(err), re.I):
+                break  # TikTok wants fewer drafts at once: the next run goes on
+            rec["tiktok_skip"] = str(err)[:200]
+            continue
+        sent += 1
+        print(f"  tiktok: {rec.get('id')} sent as a draft ({rec['tiktok']['status']})", flush=True)
+        time.sleep(12)  # TikTok allows 6 upload starts per minute
+    return sent
+
+
 def refresh(cfg: dict, records: list[dict]) -> bool:
     """Ask TikTok which recent drafts the owner has posted meanwhile; returns True if anything changed."""
     open_ = [r for r in records[-12:] if r.get("tiktok") and r["tiktok"].get("status") not in ("PUBLISH_COMPLETE", "FAILED")]
@@ -183,7 +242,8 @@ def refresh(cfg: dict, records: list[dict]) -> bool:
         try:
             res = _call(token, "post/publish/status/fetch/", {"publish_id": r["tiktok"]["publish_id"]})
         except TikTokError as err:
-            print(f"  tiktok: status of {r['kind']}-{r['seed']} unknown: {err}", flush=True)
+            name = r.get("id") or f"{r['kind']}-{r['seed']}"
+            print(f"  tiktok: status of {name} unknown: {err}", flush=True)
             continue
         ids = res.get("publicaly_available_post_id") or []
         if res.get("status") and res["status"] != r["tiktok"].get("status"):
@@ -208,7 +268,7 @@ def write_queue(records: list[dict], channel: str, path: Path | None = None) -> 
              "1. Beschreibung unten kopieren (Kopier-Symbol rechts im Kasten).",
              "2. In TikTok auf die Benachrichtigung tippen (oder Profil → Posteingang/Entwürfe) → **Weiter**.",
              "3. Beschreibung einfügen, nach Wunsch einen angesagten Sound wählen → **Posten**.", "",
-             "Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist die Frage, die oben im Video steht.", ""]
+             "Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.", ""]
     for r in recent:
         tt = r["tiktok"]
         when = dt.datetime.fromisoformat(r["date"]).strftime("%d.%m. %H:%M UTC")

@@ -1,0 +1,81 @@
+name: TikTok verbinden
+
+# Connects a channel's own TikTok account, without the code ever being pasted anywhere else.
+# 1. Run without "adresse": the summary shows the link. Open it in a private window, log in with the
+#    channel's TikTok account and allow access.
+# 2. Copy the address of the page you land on and run this workflow again with it as "adresse" (within a few
+#    minutes – the code expires). The token is stored encrypted and renews itself; the latest Shorts go to the
+#    TikTok inbox as drafts right away.
+on:
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: "Channel"
+        type: choice
+        options: ["econ", "quiet", "sims"]
+        default: "econ"
+      adresse:
+        description: "Step 2: the address of the page TikTok sent you to (leave empty for the link)"
+        type: string
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tiktok-connect
+  cancel-in-progress: false
+
+jobs:
+  connect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Link or connect
+        env:
+          IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
+          CHANNEL: ${{ github.event.inputs.channel }}
+          ADDRESS: ${{ github.event.inputs.adresse }}
+        run: |
+          set -o pipefail
+          if [ -z "$ADDRESS" ]; then
+            LINK=$(python -m ytauto tiktok url --channel "$CHANNEL")
+            {
+              echo "### TikTok verbinden – Schritt 1 ($CHANNEL)"
+              echo
+              echo "Link in einem **privaten Fenster** öffnen, mit dem TikTok-Konto dieses Kanals anmelden, **Erlauben**:"
+              echo
+              echo "$LINK"
+              echo
+              echo "Danach die Adresse der Seite, auf der du landest, kopieren und diesen Workflow mit ihr als **adresse** noch einmal starten."
+            } >> "$GITHUB_STEP_SUMMARY"
+            echo "$LINK"
+            exit 0
+          fi
+          python -m ytauto tiktok connect --channel "$CHANNEL" --redirect "$ADDRESS" | tee -a "$GITHUB_STEP_SUMMARY"
+          python -m ytauto tiktok check --channel "$CHANNEL" | tee -a "$GITHUB_STEP_SUMMARY"
+          python -m ytauto tiktok backlog --channel "$CHANNEL" | tee -a "$GITHUB_STEP_SUMMARY" || echo "Drafts follow with the next sync"
+
+      - name: Save the token file
+        run: |
+          git config user.name "ytauto-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A state
+          if ! git diff --cached --quiet; then
+            git commit -m "TikTok connected (${{ github.event.inputs.channel }}) [skip ci]"
+            for i in 1 2 3 4 5; do
+              git pull --rebase origin main && git push origin HEAD:main && break
+              sleep $((i * 10))
+            done
+          fi
