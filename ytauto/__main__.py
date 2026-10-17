@@ -277,6 +277,7 @@ def main(argv: list[str] | None = None) -> int:
     sc.add_argument("--branding", action="store_true", help="set banner, description and keywords on YouTube")
     sc.add_argument("--youtube", choices=["check", "apply"], help="match manual YouTube uploads and polish them")
     sc.add_argument("--due", action="store_true", help="print 'post' if a posting slot is open, else 'idle'")
+    sc.add_argument("--reels", action="store_true", help="post the videos whose Instagram Reel failed, now")
     tk = sub.add_parser("tiktok", help="TikTok setup: url | connect | check | send (--channel econ for Real Numbers)")
     tk.add_argument("action", choices=["url", "connect", "check", "send", "refresh", "backlog"])
     tk.add_argument("--channel", choices=["sims", "econ"], default="sims")
@@ -404,6 +405,8 @@ def main(argv: list[str] | None = None) -> int:
         if args.due:
             manual = not simchannel.planned_run()
             print("post" if manual or simchannel.slot_due(simchannel.load(simchannel.STATE, {})) else "idle")
+        elif args.reels:
+            simchannel.backfill_reels()
         elif args.branding:
             simchannel.branding()
         elif args.youtube:

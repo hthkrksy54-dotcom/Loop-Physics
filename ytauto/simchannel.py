@@ -408,6 +408,38 @@ def story_clip(video: Path) -> Path | None:
     return out
 
 
+def backfill_reels() -> int:
+    """Post the videos whose Reel failed (Instagram not reachable) as Reels now, oldest first, without stories,
+    while their release – the public video URL – still exists. Returns how many went out."""
+    cfg, state = load(CONFIG, {}), load(STATE, {"videos": []})
+    if not instagram.configured(cfg):
+        print("[sims] Instagram not connected – no Reels to catch up", flush=True)
+        return 0
+    repo = os.environ.get("GITHUB_REPOSITORY", "hthkrksy54-dotcom/Yt")
+    now = dt.datetime.now(dt.timezone.utc)
+    todo = [r for r in state["videos"] if not r.get("instagram_id") and r.get("release")
+            and now - dt.datetime.fromisoformat(r["date"]) < dt.timedelta(days=9)]  # releases are kept 10 days
+    posted = 0
+    for rec in todo:
+        tag = rec["release"].rsplit("/", 1)[1]
+        try:
+            meta = metadata(rec["kind"], rec["seed"], rec["melody"], cfg)
+            cls = sims.KINDS.get(rec["kind"])
+            share = cls.cover_at if cls and cls.cover_at is not None else COVER_AT.get(rec["kind"], 0.5)
+            rec.update(instagram.post_reel(
+                cfg, f"https://github.com/{repo}/releases/download/{tag}/loop-physics-{tag[5:]}.mp4",
+                meta["caption"], story=False, label=meta["title"],
+                thumb_offset_ms=int(1000 * (rec["duration"] - sims.OUTRO) * share)))
+        except Exception as err:  # noqa: BLE001 – the next one may still work
+            print(f"  warning: reel for {tag} failed: {err}", flush=True)
+            continue
+        posted += 1
+        save(STATE, state)
+        print(f"  reel {posted}/{len(todo)}: {rec.get('instagram_url')} ({rec['kind']})", flush=True)
+    print(f"[sims] caught up {posted} of {len(todo)} missing Reels", flush=True)
+    return posted
+
+
 def planned_run() -> bool:
     """Started by the schedule or the timer (posts only in an open slot), not by hand."""
     return os.environ.get("GITHUB_EVENT_NAME") == "schedule" or os.environ.get("IN_SOURCE") in ("timer", "watchdog")
