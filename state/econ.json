@@ -13,7 +13,11 @@
       "texts_set": true,
       "short_texts_set": "linked",
       "thumbnail_error": "thumbnail skipped (403): {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"The authenticated user doesn't have permissions to upload and set custom video thumbnails.\",\n    \"errors\": [\n      {\n        \"m",
-      "captions_set": true
+      "captions_set": true,
+      "instagram_id": "18135639853650564",
+      "instagram_url": "https://www.instagram.com/reel/DemGVyXj1bd/",
+      "instagram_story_id": "18345641236271455",
+      "reel_backfill": "2026-10-17"
     },
     {
       "id": "why-us-debt-40-trillion",
