@@ -33,7 +33,7 @@ STORY_EVERY = 2  # a story for every Reel would crowd the account's stories
 SLOTS = [(0, 40), (12, 40), (16, 40), (20, 40)]  # UTC posting times, 4 a day: US Eastern 8:40, 12:40, 16:40, 20:40 (summer time)
 SLOT_WINDOW = dt.timedelta(minutes=100)  # a missed or failed slot is retried until the next one is near
 STANDOUT = 1.6  # views at least this many times the channel median: a standout, comes back much more often
-TIKTOK_PENDING = 3  # at most this many drafts wait in the TikTok inbox; the heartbeat tops them up
+TIKTOK_PENDING = 4  # one day of videos may wait in the TikTok inbox (TikTok holds 5); the heartbeat tops them up
 EXPERIMENTS = ("Loop Physics experiments", "A brand-new simulation concept every time.")
 TIKTOK_TAGS = ["satisfying", "oddlysatisfying", "physics", "simulation"]
 TIKTOK_KIND_TAG = {"race": "marblerace", "battle": "ballbattle", "escape": "ballescape", "polygon": "ballescape",
@@ -326,7 +326,7 @@ def tiktok_waiting(state: dict) -> int:
                and (r.get("tiktok") or {}).get("status") not in (None, "PUBLISH_COMPLETE", "FAILED"))
 
 
-def tiktok_backlog(cfg: dict, state: dict, max_pending: int = 3, files: dict[str, Path] | None = None) -> int:
+def tiktok_backlog(cfg: dict, state: dict, max_pending: int = TIKTOK_PENDING, files: dict[str, Path] | None = None) -> int:
     """Send over-a-minute videos that are not on TikTok yet as drafts – best performers first – while at most
     max_pending of them wait in the owner's inbox. Videos come from `files` ("kind-seed" -> path) or the release."""
     import time
@@ -558,7 +558,7 @@ def run(upload: bool = True) -> dict:
         except Exception as err:  # one platform failing must not lose the run
             record.setdefault("warnings", []).append(f"instagram: {err}")
             print(f"  warning: instagram failed: {err}", flush=True)
-    if tiktok.configured(cfg) and why in ("new", "standout") and tiktok_waiting(state) < TIKTOK_PENDING:
+    if tiktok.configured(cfg) and tiktok_waiting(state) < TIKTOK_PENDING:  # every video, like the Reel
         try:  # a draft in the owner's TikTok inbox: one tap to post (TikTok wants the creator to confirm)
             cap = tiktok_caption(kind, meta, seed)
             record["tiktok"] = {**tiktok.send_draft(cfg, Path(result["video"])), "caption": cap}
