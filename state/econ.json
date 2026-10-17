@@ -32,7 +32,11 @@
       "texts_set": true,
       "short_texts_set": "linked",
       "thumbnail_error": "thumbnail skipped (403): {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"The authenticated user doesn't have permissions to upload and set custom video thumbnails.\",\n    \"errors\": [\n      {\n        \"m",
-      "captions_set": true
+      "captions_set": true,
+      "instagram_id": "18136968310639645",
+      "instagram_url": "https://www.instagram.com/reel/DemG5VvAH8E/",
+      "instagram_story_id": "18073778168758507",
+      "reel_backfill": "2026-10-17"
     },
     {
       "id": "turkey-argentina-high-inflation",
@@ -47,7 +51,11 @@
       "texts_set": true,
       "short_texts_set": "linked",
       "thumbnail_error": "thumbnail skipped (403): {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"The authenticated user doesn't have permissions to upload and set custom video thumbnails.\",\n    \"errors\": [\n      {\n        \"m",
-      "captions_set": true
+      "captions_set": true,
+      "instagram_id": "17906984541569814",
+      "instagram_url": "https://www.instagram.com/reel/DemHJb-Hwdn/",
+      "instagram_story_id": "18106355309369712",
+      "reel_backfill": "2026-10-17"
     },
     {
       "id": "why-china-grew-so-fast",
@@ -62,7 +70,11 @@
       "texts_set": true,
       "short_texts_set": "linked",
       "thumbnail_error": "thumbnail skipped (403): {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"The authenticated user doesn't have permissions to upload and set custom video thumbnails.\",\n    \"errors\": [\n      {\n        \"m",
-      "captions_set": true
+      "captions_set": true,
+      "instagram_id": "18354581554174195",
+      "instagram_url": "https://www.instagram.com/reel/DemHabhinW6/",
+      "instagram_story_id": "18104936399634541",
+      "reel_backfill": "2026-10-17"
     }
   ]
 }
