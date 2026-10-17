@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       script:
-        description: "Script id (empty = next in the queue)"
+        description: "Script id, several separated by spaces (empty = next in the queue)"
         default: ""
       upload:
         description: "Publish (untick to only render)"

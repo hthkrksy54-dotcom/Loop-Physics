@@ -288,7 +288,7 @@ def main(argv: list[str] | None = None) -> int:
     tk.add_argument("--video", help="send: this MP4 as a draft")
     ec = sub.add_parser("econ", help="Real Numbers: check | render | produce | queue")
     ec.add_argument("action", choices=["check", "render", "produce", "queue"])
-    ec.add_argument("script", nargs="?", help="script id (default: next in the queue)")
+    ec.add_argument("script", nargs="*", help="script ids (default: next in the queue)")
     ec.add_argument("--no-upload", action="store_true")
     ec.add_argument("--short-only", action="store_true")
     ic = sub.add_parser("instagram-connect", help="store a new Instagram token for a channel (encrypted)")
@@ -342,16 +342,17 @@ def main(argv: list[str] | None = None) -> int:
     if args.cmd == "econ":
         from . import econ
         if args.action == "check":
-            ids = [args.script] if args.script else [p.stem for p in sorted(econ.SCRIPTS.glob("*.json"))]
+            ids = args.script or [p.stem for p in sorted(econ.SCRIPTS.glob("*.json"))]
             return 0 if all([econ.check(i) for i in ids]) else 1
         if args.action == "queue":
             state = econ.load(econ.STATE, {"videos": []})
             q = econ.queue(state)
             print(f"{len(q)} scripts waiting: " + ", ".join(q))
         elif args.action == "render":
-            print(econ.render_script(args.script or econ.queue(econ.load(econ.STATE, {}))[0], args.short_only))
+            print(econ.render_script((args.script or econ.queue(econ.load(econ.STATE, {})))[0], args.short_only))
         else:
-            econ.produce(upload=not args.no_upload, script_id=args.script)
+            for script_id in args.script or [None]:  # several ids: one after the other in this run
+                econ.produce(upload=not args.no_upload, script_id=script_id)
         return 0
     if args.cmd == "tiktok":
         cfg = simchannel.load(simchannel.CONFIG, {})
