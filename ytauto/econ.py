@@ -655,3 +655,129 @@ def _youtube_token(cfg: dict) -> str:
     data = json.loads(Fernet(os.environ["IG_TOKEN_KEY"].strip().encode()).decrypt(
         (ROOT / cfg["youtube"]["token_file"]).read_bytes().strip()))
     return youtube.access_token_from(data["refresh_token"])
+
+
+YT_API = "https://www.googleapis.com/youtube/v3"
+
+
+def _release_texts(tag: str) -> dict:
+    """Title, description, tags and the Short's texts exactly as prepared in the episode's GitHub release."""
+    import os
+
+    repo = os.environ.get("GITHUB_REPOSITORY", "hthkrksy54-dotcom/Yt")
+    gh = {"Authorization": f"Bearer {os.environ['GITHUB_TOKEN']}"} if os.environ.get("GITHUB_TOKEN") else {}
+    r = requests.get(f"https://api.github.com/repos/{repo}/releases/tags/{tag}", headers=gh, timeout=30)
+    body = r.json().get("body", "") if r.ok else ""
+    keys = {"Title": "title", "Description": "description", "Tags": "tags", "Short – title": "short_title",
+            "Short – description": "short_description"}
+    texts = {keys[k]: v for k, v in re.findall(r"### (.+?)\n```\n(.*?)\n```", body, re.S) if k in keys}
+    if "tags" in texts:
+        texts["tags"] = [t.strip() for t in texts["tags"].split(",") if t.strip()]
+    return texts
+
+
+def youtube_sync() -> bool:
+    """Find the videos and Shorts the owner uploaded by hand (any privacy status, so a private or scheduled
+    upload is finished before it goes live) and give them our title, description, tags, thumbnail and captions,
+    once each. Matched by file name (the files from Drive or the release), else by length. Returns True if the
+    state changed."""
+    import datetime as dt
+    import tempfile
+
+    cfg, state = load(CONFIG, {}), load(STATE, {"videos": []})
+    if not youtube.configured(cfg["youtube"].get("refresh_token_secret", "")):
+        print("[econ] YouTube not connected – nothing to sync", flush=True)
+        return False
+    token = _youtube_token(cfg)
+    h = {"Authorization": f"Bearer {token}"}
+    ch = requests.get(f"{YT_API}/channels", params={"part": "contentDetails", "mine": "true"}, headers=h, timeout=30)
+    uploads_id = ch.json()["items"][0]["contentDetails"]["relatedPlaylists"]["uploads"]
+    items = requests.get(f"{YT_API}/playlistItems", headers=h, timeout=30,
+                         params={"part": "contentDetails", "playlistId": uploads_id, "maxResults": 50}).json()
+    ids = [i["contentDetails"]["videoId"] for i in items.get("items", [])]
+    uploads = requests.get(f"{YT_API}/videos", headers=h, timeout=30, params={
+        "part": "snippet,contentDetails,fileDetails", "id": ",".join(ids)}).json().get("items", []) if ids else []
+    for v in uploads:
+        m = re.fullmatch(r"P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", v["contentDetails"]["duration"])
+        d, hh, mm, ss = (int(x or 0) for x in m.groups()) if m else (0, 0, 0, 0)
+        v["seconds"] = ((d * 24 + hh) * 60 + mm) * 60 + ss
+        v["file"] = (v.get("fileDetails", {}).get("fileName") or "").casefold()
+
+    def put(video_id: str, title: str, description: str, tags: list[str]) -> bool:
+        body = {"id": video_id, "snippet": {"title": title, "description": description, "tags": tags,
+                                            "categoryId": cfg["youtube"]["category_id"],
+                                            "defaultLanguage": cfg["youtube"]["default_language"],
+                                            "defaultAudioLanguage": cfg["youtube"]["default_language"]}}
+        r = requests.put(f"{YT_API}/videos", params={"part": "snippet"}, data=json.dumps(body), timeout=60,
+                         headers={**h, "Content-Type": "application/json"})
+        if not r.ok:
+            print(f"  could not update {video_id} ({r.status_code}): {r.text[:200]}", flush=True)
+        return r.ok
+
+    def asset(name: str, suffix: str) -> Path | None:  # a file of the current episode's release
+        r = requests.get(f"{rec['release'].replace('/releases/tag/', '/releases/download/')}/{name}", timeout=120)
+        if not r.ok:
+            return None
+        fh = tempfile.NamedTemporaryFile(suffix=suffix, delete=False)
+        fh.write(r.content)
+        fh.close()
+        return Path(fh.name)
+
+    slug = re.sub(r"[^a-z0-9]+", "-", cfg["channel_name"].lower()).strip("-")
+    taken = {r.get(k) for r in state["videos"] for k in ("youtube_id", "youtube_short_id")} - {None}
+    changed = False
+    for rec in state["videos"]:
+        if not rec.get("release"):
+            continue
+        tag = rec["release"].rsplit("/", 1)[1]
+        base = f"{slug}-{tag.removeprefix('econ-')}"
+        made = dt.datetime.fromisoformat(rec["date"]) - dt.timedelta(hours=1)
+        for key, short, length in (("youtube_id", False, rec.get("duration")),
+                                   ("youtube_short_id", True, rec.get("short_duration"))):
+            if rec.get(key):
+                continue
+            free = [v for v in uploads if v["id"] not in taken and dt.datetime.fromisoformat(
+                v["snippet"]["publishedAt"].replace("Z", "+00:00")) >= made]
+            by_file = [v for v in free if base in v["file"] and (f"{base}-short" in v["file"]) == short]
+            by_length = [v for v in free if length and abs(v["seconds"] - length) <= 2]
+            pick = by_file[:1] or (by_length if len(by_length) == 1 else [])
+            if pick:
+                rec[key] = pick[0]["id"]
+                taken.add(pick[0]["id"])
+                changed = True
+                print(f"[econ] found upload of {rec['id']} ({'Short' if short else 'video'}): "
+                      f"https://youtu.be/{pick[0]['id']}", flush=True)
+        long_id, short_id = rec.get("youtube_id"), rec.get("youtube_short_id")
+        short_state = "linked" if long_id else "plain"  # the Short links the full video once that is up too
+        if not ((long_id and not rec.get("texts_set")) or (short_id and rec.get("short_texts_set") != short_state)
+                or (long_id and not (rec.get("thumbnail_set") or rec.get("thumbnail_error")))
+                or (long_id and not (rec.get("captions_set") or rec.get("captions_error")))):
+            continue
+        texts = _release_texts(tag)
+        if not texts.get("title"):
+            print(f"  [econ] no texts for {rec['id']} (release {tag} gone?) – left as uploaded", flush=True)
+            continue
+        if long_id and not rec.get("texts_set") and put(long_id, texts["title"], texts["description"], texts["tags"]):
+            rec["texts_set"] = changed = True
+            print(f"  set title, description and tags: https://youtu.be/{long_id}", flush=True)
+        if short_id and rec.get("short_texts_set") != short_state:
+            desc = texts.get("short_description", "")
+            if long_id:
+                desc = desc.replace(f"The full story: {texts['title']}",
+                                    f"The full story: {texts['title']}\n▶ https://youtu.be/{long_id}", 1)
+            if put(short_id, texts.get("short_title", texts["title"]), desc, texts["tags"]):
+                rec["short_texts_set"], changed = short_state, True
+                print(f"  set Short title and description: https://youtube.com/shorts/{short_id}", flush=True)
+        if long_id and not (rec.get("thumbnail_set") or rec.get("thumbnail_error")):
+            path = asset(f"{base}-thumbnail.jpg", ".jpg")
+            error = youtube.set_thumbnail(token, long_id, path) if path else "thumbnail missing in the release"
+            rec["thumbnail_error" if error else "thumbnail_set"], changed = (error[:200] if error else True), True
+            print(f"  {error or 'thumbnail set'}", flush=True)
+        if long_id and not (rec.get("captions_set") or rec.get("captions_error")):
+            path = asset(f"{base}-captions.srt", ".srt")
+            error = youtube.add_captions(token, long_id, path, "en", "English") if path else "captions missing"
+            rec["captions_error" if error else "captions_set"], changed = (error[:200] if error else True), True
+            print(f"  {error or 'captions added'}", flush=True)
+    if changed:
+        save(STATE, state)
+    return changed

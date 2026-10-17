@@ -315,6 +315,8 @@ def main(argv: list[str] | None = None) -> int:
                 changed |= sync.run(lang, cfg, state, lambda tid, lang=lang: _load(SCRIPTS / lang / f"{tid}.json", None))
         if changed:
             _save(STATE, state)
+        from . import econ
+        econ.youtube_sync()  # Real Numbers: finish the episodes the owner uploaded by hand
         return 0
 
     if args.cmd == "carousel":

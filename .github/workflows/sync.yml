@@ -34,7 +34,9 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN_DE: ${{ secrets.YT_REFRESH_TOKEN_DE }}
           YT_REFRESH_TOKEN_EN: ${{ secrets.YT_REFRESH_TOKEN_EN }}
+          YT_REFRESH_TOKEN_ECON: ${{ secrets.YT_REFRESH_TOKEN_ECON }}
           IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python -m ytauto sync
 
       - name: Save progress

@@ -74,6 +74,7 @@ Thema → Skript → Faktencheck → Sprecherstimme → Musik → Visuals → Un
 | Skripte | ein automatischer Skript-Autor (geplante Claude-Session) nach [docs/econ-writer.md](docs/econ-writer.md), Themen aus [content/econ/topics.md](content/econ/topics.md); Qualitätsprüfung mit Vorschaubildern: `python -m ytauto econ check <id>` |
 | Ton | Sprecherstimme über `edge-tts`, moderne Hintergrundmusik (prozedural, Pads + Arpeggio + Puls), dezente Whoosh-Effekte, −14 LUFS |
 | Veröffentlichung | Release mit Video, Short, Thumbnail und Untertiteln (.srt); Short als Instagram-Reel + Story und TikTok-Entwurf, sobald die Konten verbunden sind; YouTube-Upload nach Freigabe |
+| Upload-Wächter | stündlich: erkennt Video und Short, die du von Hand hochlädst (auch privat oder geplant), und setzt Titel, Beschreibung, Tags, Thumbnail und Untertitel; der Short verlinkt das ganze Video |
 
 ## Lokal ausprobieren
 
