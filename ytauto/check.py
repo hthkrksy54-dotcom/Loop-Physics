@@ -114,8 +114,9 @@ def run(cfg: dict) -> int:
     from . import econ  # Real Numbers keeps its own config file
     econ_cfg = econ.load(econ.CONFIG, {})
     yt_ok = _youtube({"econ": econ_cfg}) and yt_ok
-    ig_ok = _instagram(cfg)
     from .simchannel import CONFIG as SIMS_CONFIG, load as load_sims
+    sims_cfg = load_sims(SIMS_CONFIG, {})
+    ig_ok = _instagram({**cfg, "sims": sims_cfg, "econ": econ_cfg})
     channels = [c["channel_name"] for c in cfg.values() if c.get("active", True)]
-    drive_ok = _drive(channels + [load_sims(SIMS_CONFIG, {})["channel_name"], econ_cfg["channel_name"]])
+    drive_ok = _drive(channels + [sims_cfg["channel_name"], econ_cfg["channel_name"]])
     return 0 if (voice_ok and yt_ok and ig_ok and drive_ok) else 1

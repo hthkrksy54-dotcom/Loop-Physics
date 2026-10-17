@@ -14,7 +14,7 @@
   "not_advice": "This video is for education only and is not financial advice.",
   "instagram": {
     "enabled": true,
-    "account": "",
+    "account": "real_nmbers",
     "token_file": "state/instagram_econ.token",
     "story_log": "state/instagram_econ_stories.json"
   },
