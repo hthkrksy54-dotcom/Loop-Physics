@@ -75,7 +75,7 @@ including the Limited Use requirements.
 ## Instagram
 
 ytauto also posts short videos as Reels and Stories to the owner's own Instagram accounts (@quiet_thoughts_yt,
-@loop_physics, @real_nmbers) using the Instagram API with Instagram Login, and reads the statistics of these accounts' own posts
+@loop_physics, @realnumbersdaily) using the Instagram API with Instagram Login, and reads the statistics of these accounts' own posts
 (views, reach, likes, saves, shares) to see which videos work best. Access tokens are stored encrypted in this
 repository and can only be decrypted with a key kept as a GitHub Actions secret. No data about other Instagram
 users is accessed. Access can be removed at any time in Instagram → Settings → Apps and websites.
