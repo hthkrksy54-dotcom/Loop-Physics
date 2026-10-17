@@ -11,6 +11,12 @@ the owner's own YouTube channels using the YouTube Data API v3:
   (`videos.insert`, `videos.update` and `playlistItems` for the owner's own videos, `channels.update` and
   `channelBanners.insert` for the owner's own channel, and a daily trend check with `search.list`/`videos.list`
   whose public data is only aggregated in memory, never stored).
+- **[Real Numbers](https://www.youtube.com/@realnumbersdaily)** – data-driven explainers about money and the economy,
+  charts drawn in code from public World Bank data (`videos.insert`, `thumbnails.set`, `captions.insert`, and
+  `videos.update` to give the owner's own uploads their prepared title, description and tags).
+
+A copy of each video goes to the owner's own Google Drive (Drive API, scope `drive.file`: only files the tool
+created itself).
 
 It has a single user (the channel owner), no public sign-in and no viewer data.
 
@@ -19,7 +25,7 @@ It has a single user (the channel owner), no public sign-in and no viewer data.
 [Google Privacy Policy](https://policies.google.com/privacy) ·
 [Revoke access](https://security.google.com/settings/security/permissions)
 
-**How it works:** scheduled GitHub Actions workflows (`.github/workflows/produce.yml`, `sims.yml`, `trends.yml`)
+**How it works:** scheduled GitHub Actions workflows (`.github/workflows/produce.yml`, `sims.yml`, `econ.yml`, `sync.yml`, `trends.yml`)
 render the videos, authenticate with the owner's OAuth refresh tokens (stored encrypted) and publish to the
 owner's channels. See [docs/architecture.png](docs/architecture.png).
 

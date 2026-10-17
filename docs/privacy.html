@@ -9,16 +9,16 @@ code{background:var(--card);padding:1px 5px;border-radius:4px}img{max-width:100%
 nav{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:24px;color:var(--muted)}
 </style></head>
 <body><main><nav><a href="./">ytauto</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></nav>
-<h1>Privacy Policy – ytauto (Quiet Thoughts, Loop Physics)</h1>
-<p><em>Last updated: 16 October 2026</em></p>
+<h1>Privacy Policy – ytauto (Quiet Thoughts, Loop Physics, Real Numbers)</h1>
+<p><em>Last updated: 17 October 2026</em></p>
 <p>ytauto is a private, internal automation tool operated by one person, the owner of the YouTube channels
-<a href="https://www.youtube.com/@quietthoughts-20">Quiet Thoughts</a> and <a href="https://www.youtube.com/@LoopPhysics-420">Loop Physics</a>.
+<a href="https://www.youtube.com/@quietthoughts-20">Quiet Thoughts</a>, <a href="https://www.youtube.com/@LoopPhysics-420">Loop Physics</a> and <a href="https://www.youtube.com/@realnumbersdaily">Real Numbers</a>.
 It is not offered to the public and has exactly one user: the channel owner.</p>
 <h2>Use of YouTube API Services</h2>
 <p>ytauto uses the <strong>YouTube API Services</strong> to:</p>
 <ul>
 <li>upload the owner's own videos to the owner's own channels and set their thumbnails and captions;</li>
-<li>update the title, description and tags of the owner's own videos and sort them into the owner's own playlists;</li>
+<li>update the title, description and tags of the owner's own videos – including videos the owner uploaded by hand, which ytauto recognises by file name or length – and sort them into the owner's own playlists;</li>
 <li>set the banner, description and keywords of the owner's own channels;</li>
 <li>read public metadata of popular public Shorts (<code>search.list</code>, <code>videos.list</code>) to compute aggregate trend statistics
   for the owner's own content planning (see below).</li>
@@ -31,7 +31,7 @@ It is not offered to the public and has exactly one user: the channel owner.</p>
 <li>The OAuth 2.0 authorization granted by the channel owner for each of the owner's channels
   (scope <code>https://www.googleapis.com/auth/youtube.force-ssl</code>).</li>
 <li>The owner's own channel ID and title (to confirm the correct channel is connected), and the IDs, titles,
-  durations and view counts of the owner's own uploaded videos (to match each produced video to its upload).</li>
+  file names, durations and view counts of the owner's own uploaded videos (to match each produced video to its upload).</li>
 <li>For the daily trend check: public metadata (title, tags, view count, duration) of popular public Shorts returned
   by YouTube search. This data is processed <strong>in memory during a single run</strong> to compute aggregate statistics
   (keyword frequencies, typical length, share of themes). The individual records are <strong>not stored</strong>.</li>
@@ -60,9 +60,18 @@ users. It does not read analytics, comments or private videos of anyone.</p>
 <h2>Revoking access</h2>
 <p>Access can be revoked at any time on the Google security settings page:
 <a href="https://security.google.com/settings/security/permissions">https://security.google.com/settings/security/permissions</a>.</p>
+<h2>Google Drive</h2>
+<p>ytauto keeps a copy of each finished video (video file, Short, thumbnail, captions and a text file with the
+prepared title and description) in the owner's own Google Drive, in a folder "Kanal-Videos" with one subfolder per
+channel. It uses the Google Drive API with the scope <code>https://www.googleapis.com/auth/drive.file</code>, which only gives
+access to the files and folders ytauto created itself – no other file in the owner's Drive is visible to it.
+ytauto deletes its own video folders after 14 days. The refresh token is stored as a GitHub Actions secret.</p>
+<p>ytauto's use and transfer of information received from Google APIs adheres to the
+<a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+including the Limited Use requirements.</p>
 <h2>Instagram</h2>
 <p>ytauto also posts short videos as Reels and Stories to the owner's own Instagram accounts (@quiet_thoughts_yt,
-@loop_physics) using the Instagram API with Instagram Login, and reads the statistics of these accounts' own posts
+@loop_physics, @real_nmbers) using the Instagram API with Instagram Login, and reads the statistics of these accounts' own posts
 (views, reach, likes, saves, shares) to see which videos work best. Access tokens are stored encrypted in this
 repository and can only be decrypted with a key kept as a GitHub Actions secret. No data about other Instagram
 users is accessed. Access can be removed at any time in Instagram → Settings → Apps and websites.</p>

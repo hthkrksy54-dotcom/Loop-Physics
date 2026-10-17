@@ -78,7 +78,7 @@ Die Prüfung (Audit) ist kostenlos, dauert aber einige Tage bis Wochen:
 
 - Formular: <https://support.google.com/youtube/contact/yt_api_form>
   („YouTube API Services – Audit and Quota Extension Form“).
-- Angaben: *Internes Tool, lädt ausschließlich eigene Inhalte auf die eigenen zwei Kanäle hoch;
+- Angaben: *Internes Tool, lädt ausschließlich eigene Inhalte auf die eigenen drei Kanäle (Quiet Thoughts, Loop Physics, Real Numbers) hoch;
   keine Nutzer außer dem Kanalinhaber.* Projekt-ID aus der Cloud Console angeben.
 
 Die `YT_REFRESH_TOKEN_*`-Secrets kannst du **sofort** eintragen: Der Upload ist in `config/channels.json`
