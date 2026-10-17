@@ -6,34 +6,14 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist die Frage, die oben im Video steht.
 
-## 17.10. 00:41 UTC – Every ring adds a ball – Can they crack the core?
+## 17.10. 02:41 UTC – What will 272 bounces draw?
 
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-brick_core-3)
-
-```text
-Every ring adds a ball – Can they crack the core?
-How many balls did it take? Guess before the end!
-#brickbreaker #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 16.10. 22:41 UTC – Every hit upgrades it – Who wins the duel?
-
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-blade_duel-3)
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-stringart-1)
 
 ```text
-Every hit upgrades it – Who wins the duel?
-Which upgrade would you pick?
-#ballbattle #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 16.10. 20:42 UTC – What will this pendulum draw?
-
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-harmonograph-0)
-
-```text
-What will this pendulum draw?
-What would you change?
-#harmonograph #satisfying #oddlysatisfying #physics #simulation
+What will 272 bounces draw?
+Which shape will win?
+#stringart #satisfying #oddlysatisfying #physics #simulation
 ```
 
 ## 16.10. 08:41 UTC – Will 256 balls make a bell curve?
@@ -76,6 +56,36 @@ Can you predict the path?
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 17.10. 00:41 UTC – Every ring adds a ball – Can they crack the core?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697561406673128737) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-brick_core-3)
+
+```text
+Every ring adds a ball – Can they crack the core?
+How many balls did it take? Guess before the end!
+#brickbreaker #satisfying #oddlysatisfying #physics #simulation
+```
+
+## 16.10. 22:41 UTC – Every hit upgrades it – Who wins the duel?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697561575934168353) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-blade_duel-3)
+
+```text
+Every hit upgrades it – Who wins the duel?
+Which upgrade would you pick?
+#ballbattle #satisfying #oddlysatisfying #physics #simulation
+```
+
+## 16.10. 20:42 UTC – What will this pendulum draw?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697561255686458657) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-harmonograph-0)
+
+```text
+What will this pendulum draw?
+What would you change?
+#harmonograph #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 16.10. 19:42 UTC – Which color conquers the board?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697528482338737441) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-territory-0)
@@ -94,35 +104,5 @@ Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/
 12 pendulums, one perfect moment
 What would you change?
 #pendulumwave #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 16.10. 13:09 UTC – 4 pendulums, 0.0001° apart
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697256019268832544) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-chaos-3)
-
-```text
-4 pendulums, 0.0001° apart
-When did you first see them split?
-#doublependulum #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 16.10. 11:31 UTC – Which color wins the race?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697230852018818336) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-race-4)
-
-```text
-Which color wins the race?
-Did your color win?
-#marblerace #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 16.10. 04:01 UTC – Can the ball escape all 12 rings?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697235429422140705) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261016-escape-7)
-
-```text
-Can the ball escape all 12 rings?
-What would you change?
-#ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 

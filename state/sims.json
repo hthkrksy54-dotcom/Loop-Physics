@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 8586,
+      "yt_views": 9228,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -379,8 +379,9 @@
       ],
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697530674550917142",
-        "status": "PROCESSING_UPLOAD",
-        "caption": "What will this pendulum draw?\nWhat would you change?\n#harmonograph #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "What will this pendulum draw?\nWhat would you change?\n#harmonograph #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7697561255686458657"
       }
     },
     {
@@ -400,8 +401,9 @@
       ],
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697530833733142550",
-        "status": "PROCESSING_UPLOAD",
-        "caption": "Every hit upgrades it – Who wins the duel?\nWhich upgrade would you pick?\n#ballbattle #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Every hit upgrades it – Who wins the duel?\nWhich upgrade would you pick?\n#ballbattle #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7697561575934168353"
       }
     },
     {
@@ -421,8 +423,9 @@
       ],
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697531058464032790",
-        "status": "PROCESSING_UPLOAD",
-        "caption": "Every ring adds a ball – Can they crack the core?\nHow many balls did it take? Guess before the end!\n#brickbreaker #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Every ring adds a ball – Can they crack the core?\nHow many balls did it take? Guess before the end!\n#brickbreaker #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7697561406673128737"
       }
     },
     {
@@ -438,7 +441,12 @@
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"A7yXVp55-5q6YWJDwnb--uf\"}}",
         "tiktok: post/publish/inbox/video/init/: spam_risk_too_many_pending_share – spam_risk_too_many_pending_share"
-      ]
+      ],
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697571826062526486",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "What will 272 bounces draw?\nWhich shape will win?\n#stringart #satisfying #oddlysatisfying #physics #simulation"
+      }
     },
     {
       "date": "2026-10-17T04:41:34+00:00",
