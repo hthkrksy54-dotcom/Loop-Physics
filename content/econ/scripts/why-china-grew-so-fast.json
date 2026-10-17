@@ -1,0 +1,792 @@
+{
+  "id": "why-china-grew-so-fast",
+  "order": 4,
+  "title": "From 97% Poor to Almost Zero: Why China Grew So Fast, Explained with Data",
+  "title_card": "Why did China grow so fast?",
+  "description": "In 1981, 97% of people in China lived on under $3 a day. By 2019, practically none did. With World Bank data we follow 45 years of Chinese growth: the 1978 reforms, ten percent a year for three decades, the factory of the world, 700 million new city dwellers – and why the miracle is slowing down now.",
+  "tags": [
+    "china economy",
+    "china growth",
+    "why china grew so fast",
+    "chinese economy explained",
+    "economic miracle",
+    "poverty",
+    "deng xiaoping",
+    "china vs usa",
+    "economics explained",
+    "economics",
+    "money",
+    "data visualization"
+  ],
+  "hashtags": [
+    "#china",
+    "#economics",
+    "#money"
+  ],
+  "sources": [
+    "World Bank, World Development Indicators: GDP per capita (constant 2015 US$), NY.GDP.PCAP.KD – China, India, United States, World, 1978–2025 (CC BY 4.0)",
+    "World Bank, World Development Indicators: GDP growth (annual %), NY.GDP.MKTP.KD.ZG – China 1978–2025 (CC BY 4.0)",
+    "World Bank, Poverty and Inequality Platform via WDI: Poverty headcount ratio at $3.00 a day (2021 PPP), SI.POV.DDAY – China 1981–2022 (CC BY 4.0)",
+    "World Bank, World Development Indicators: Exports of goods and services (% of GDP), NE.EXP.GNFS.ZS – China 1970–2025; Gross capital formation (% of GDP), NE.GDI.TOTL.ZS – China, India, Japan, US, Germany 2024; Households final consumption expenditure (% of GDP), NE.CON.PRVT.ZS – China, US 2024 (CC BY 4.0)",
+    "World Bank, World Development Indicators: Population, SP.POP.TOTL – United States and European Union 2024 (CC BY 4.0)",
+    "World Bank, World Development Indicators: Urban population (% of total and total), SP.URB.TOTL.IN.ZS / SP.URB.TOTL; Population, SP.POP.TOTL; Population ages 65+, SP.POP.65UP.TO.ZS; Fertility rate, SP.DYN.TFRT.IN – China 1960–2025 (CC BY 4.0)",
+    "World Bank, World Development Indicators: GDP (current US$), NY.GDP.MKTP.CD – China and United States 1980–2025 (ratio computed) (CC BY 4.0)",
+    "World Trade Organization: China's accession, 11 December 2001",
+    "Shenzhen Municipal Government / Statistics Bureau: permanent resident population 17.99 million, end of 2024; Shenzhen Special Economic Zone established August 1980"
+  ],
+  "thumbnail": {
+    "big": "97% → 0%",
+    "text": "How did China do it?",
+    "color": "green"
+  },
+  "chapters": [
+    {
+      "heading": "Intro",
+      "beats": [
+        {
+          "say": "In 1981, ninety-seven out of every hundred people in China lived on less than three dollars a day.",
+          "show": {
+            "type": "number",
+            "big": "97%",
+            "caption": "of China lived on under $3 a day in 1981",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Not a poor region. Not the countryside. The whole country – nearly a billion people."
+        },
+        {
+          "say": "By 2019, that number had fallen to practically zero.",
+          "show": {
+            "type": "number",
+            "big": "97% → 0%",
+            "caption": "share of China under $3 a day, 1981 → 2019",
+            "color": "green"
+          }
+        },
+        {
+          "say": "In about one generation, the poorest big country on earth became the second-largest economy in the world."
+        },
+        {
+          "say": "How do you do that? And why is it slowing down now? Let's take it apart with the official data."
+        }
+      ]
+    },
+    {
+      "heading": "Poorer than India",
+      "beats": [
+        {
+          "say": "Start in 1978. Here's income per person, adjusted for inflation, in four places.",
+          "show": {
+            "type": "bars",
+            "heading": "Income per person in 1978, constant 2015 US$",
+            "unit": "$",
+            "items": [
+              [
+                "United States",
+                30835
+              ],
+              [
+                "World average",
+                5843
+              ],
+              [
+                "India",
+                409
+              ],
+              [
+                "China",
+                386
+              ]
+            ],
+            "highlight": "China"
+          }
+        },
+        {
+          "say": "The average American: about thirty-one thousand dollars. The world average: almost six thousand."
+        },
+        {
+          "say": "China: three hundred and eighty-six dollars. Less than India, and roughly one eightieth of the United States.",
+          "mark": {
+            "items": [
+              "China",
+              "India"
+            ]
+          }
+        },
+        {
+          "say": "Most people were farmers. Farms were run as collectives, prices were set by the state, and there was almost no private business and very little trade with the rest of the world.",
+          "show": {
+            "type": "note",
+            "text": "1980: *4 in 5* people in China lived in the *countryside*.",
+            "source": "World Bank, urban population 19.4% of total, 1980",
+            "color": "gray"
+          }
+        },
+        {
+          "say": "Then, in December 1978, the leadership under Deng Xiaoping changed course. Not all at once – step by step."
+        }
+      ]
+    },
+    {
+      "heading": "The switch",
+      "beats": [
+        {
+          "say": "The first step was on the farms. Families could now farm their own plot and sell whatever they grew above a quota.",
+          "show": {
+            "type": "note",
+            "text": "Grow more than the quota – and *keep* the money.",
+            "source": "China's household responsibility system, from 1978",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "That one incentive changed behaviour fast. Farmers worked harder, harvests grew, and suddenly there was food to sell in towns."
+        },
+        {
+          "say": "The second step: special economic zones. In 1980, a fishing town next to Hong Kong called Shenzhen became one of the first places where foreign companies could build factories with low taxes and few rules."
+        },
+        {
+          "say": "It worked so well that the model was copied along the whole coast. Today Shenzhen is a city of almost eighteen million people.",
+          "show": {
+            "type": "number",
+            "big": "17,990,000",
+            "caption": "people living in Shenzhen, end of 2024",
+            "color": "purple"
+          }
+        },
+        {
+          "say": "And here's what the economy did after the switch."
+        }
+      ]
+    },
+    {
+      "heading": "Ten percent, for thirty years",
+      "beats": [
+        {
+          "say": "This is China's growth rate every year since 1978.",
+          "show": {
+            "type": "line",
+            "heading": "China's economic growth, % per year",
+            "unit": "%",
+            "sub": "Real GDP growth · World Bank",
+            "series": [
+              {
+                "label": "",
+                "wb": "NY.GDP.MKTP.KD.ZG",
+                "country": "CHN",
+                "from": 1978,
+                "to": 2025,
+                "color": "gold"
+              }
+            ]
+          }
+        },
+        {
+          "say": "Fifteen percent in 1984.",
+          "mark": {
+            "x": 1984
+          }
+        },
+        {
+          "say": "Fourteen percent in 1992 and again in 2007.",
+          "mark": {
+            "x": 2007,
+            "label": "14.2%"
+          }
+        },
+        {
+          "say": "It wasn't a straight line, though. In 1989 and 1990, in a time of high inflation and political unrest, growth fell to about four percent.",
+          "mark": {
+            "x": 1990
+          }
+        },
+        {
+          "say": "From 1979 to 2010, the economy grew on average about ten percent a year. For thirty-two years in a row."
+        },
+        {
+          "say": "Remember the rule of seventy-two? Divide seventy-two by the growth rate to get the years it takes to double. At ten percent, the economy doubles about every seven years.",
+          "show": {
+            "type": "number",
+            "big": "2 → 4 → 8 → 16",
+            "caption": "doubling every ~7 years at 10% growth",
+            "color": "green"
+          }
+        },
+        {
+          "say": "Over those thirty-two years, that adds up to an economy about twenty-one times bigger.",
+          "show": {
+            "type": "number",
+            "big": "×21",
+            "caption": "China's real economy, 1978 → 2010",
+            "color": "green"
+          }
+        },
+        {
+          "say": "For comparison: a typical rich country growing at two or three percent needs well over a hundred years to do the same."
+        }
+      ]
+    },
+    {
+      "heading": "The factory of the world",
+      "beats": [
+        {
+          "say": "So where did the growth come from? Engine number one: selling to the world.",
+          "show": {
+            "type": "line",
+            "heading": "China's exports, % of its economy",
+            "unit": "%",
+            "sub": "Exports of goods and services, % of GDP · World Bank",
+            "series": [
+              {
+                "label": "",
+                "wb": "NE.EXP.GNFS.ZS",
+                "country": "CHN",
+                "from": 1970,
+                "to": 2025,
+                "color": "blue"
+              }
+            ]
+          }
+        },
+        {
+          "say": "In 1970, exports were just two and a half percent of China's economy.",
+          "mark": {
+            "x": 1970
+          }
+        },
+        {
+          "say": "Then factories moved in – first clothes and toys, later electronics. Labour was cheap, and there were hundreds of millions of workers.",
+          "mark": {
+            "x": 1995
+          }
+        },
+        {
+          "say": "In December 2001, China joined the World Trade Organization. Now its goods faced lower tariffs almost everywhere.",
+          "mark": {
+            "x": 2001,
+            "label": "Joins WTO"
+          }
+        },
+        {
+          "say": "Exports exploded. By 2006, they were more than a third of the entire economy.",
+          "mark": {
+            "x": 2006,
+            "label": "35.5%"
+          }
+        },
+        {
+          "say": "Since then that share has come back down to around a fifth. Not because China sells less – but because the economy at home grew even bigger.",
+          "mark": {
+            "x": 2025
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Building everything",
+      "beats": [
+        {
+          "say": "Engine number two is even bigger: building. Roads, railways, ports, power plants, factories, and apartment blocks by the millions.",
+          "show": {
+            "type": "bars",
+            "heading": "Investment as % of the economy, 2024",
+            "unit": "%",
+            "items": [
+              [
+                "China",
+                40.5
+              ],
+              [
+                "India",
+                34.3
+              ],
+              [
+                "Japan",
+                27.7
+              ],
+              [
+                "United States",
+                21.5
+              ],
+              [
+                "Germany",
+                21.5
+              ]
+            ],
+            "suffix": "%",
+            "highlight": "China"
+          }
+        },
+        {
+          "say": "In 2024, about forty percent of everything China produced went into investment. In the United States and Germany it's about twenty-one percent.",
+          "mark": {
+            "items": [
+              "China",
+              "United States"
+            ]
+          }
+        },
+        {
+          "say": "In 2011 it peaked at forty-six percent. Almost half of the economy, poured into concrete, steel and machines."
+        },
+        {
+          "say": "The flip side: ordinary households get a smaller slice. Household spending is only about forty percent of China's economy. In the US, it's about sixty-eight.",
+          "show": {
+            "type": "compare",
+            "heading": "Household spending, % of the economy, 2024",
+            "left": [
+              "China",
+              "40%"
+            ],
+            "right": [
+              "USA",
+              "68%"
+            ],
+            "color": "blue"
+          }
+        },
+        {
+          "say": "That's the trade-off of the model: save and build today, consume later."
+        },
+        {
+          "say": "And building works brilliantly when a country has few roads, few railways and few factories. It works less well once the obvious things are built – and that is part of today's story."
+        }
+      ]
+    },
+    {
+      "heading": "Seven hundred million new city dwellers",
+      "beats": [
+        {
+          "say": "Engine number three: people moving. In 1980, fewer than one in five Chinese lived in a city.",
+          "show": {
+            "type": "line",
+            "heading": "Share of China living in cities",
+            "unit": "%",
+            "sub": "Urban population, % of total · World Bank",
+            "series": [
+              {
+                "label": "",
+                "wb": "SP.URB.TOTL.IN.ZS",
+                "country": "CHN",
+                "from": 1970,
+                "to": 2025,
+                "color": "purple"
+              }
+            ]
+          }
+        },
+        {
+          "say": "Nineteen percent.",
+          "mark": {
+            "x": 1980
+          }
+        },
+        {
+          "say": "By 2010 it was half.",
+          "mark": {
+            "x": 2010
+          }
+        },
+        {
+          "say": "And in 2025: two thirds.",
+          "mark": {
+            "x": 2025
+          }
+        },
+        {
+          "say": "In people, that's a jump from about a hundred and ninety million city dwellers to more than nine hundred million. Over seven hundred million extra people in cities – more than twice the population of the United States.",
+          "show": {
+            "type": "compare",
+            "heading": "People living in Chinese cities",
+            "left": [
+              "1980",
+              "190 million"
+            ],
+            "right": [
+              "2025",
+              "933 million"
+            ],
+            "color": "purple"
+          }
+        },
+        {
+          "say": "And moving a worker from a small farm to a factory multiplies what that person produces. Millions of times over, every year. That alone pushes growth up."
+        }
+      ]
+    },
+    {
+      "heading": "The great escape",
+      "beats": [
+        {
+          "say": "Put the three engines together, and here's what happened to income per person.",
+          "show": {
+            "type": "line",
+            "heading": "Income per person in China, constant 2015 US$",
+            "unit": "$",
+            "sub": "GDP per person, adjusted for inflation · World Bank",
+            "series": [
+              {
+                "label": "",
+                "wb": "NY.GDP.PCAP.KD",
+                "country": "CHN",
+                "from": 1978,
+                "to": 2025,
+                "color": "green"
+              }
+            ]
+          }
+        },
+        {
+          "say": "Three hundred and eighty-six dollars in 1978.",
+          "mark": {
+            "x": 1978
+          }
+        },
+        {
+          "say": "Over two thousand by 2000.",
+          "mark": {
+            "x": 2000
+          }
+        },
+        {
+          "say": "And almost thirteen thousand eight hundred in 2025, after inflation. About thirty-six times higher.",
+          "mark": {
+            "x": 2025
+          }
+        },
+        {
+          "say": "To feel it: in 1978, the average person produced about one dollar a day. In 2025, about thirty-eight dollars a day."
+        },
+        {
+          "say": "China now sits slightly above the world average – a country that started at one fifteenth of it.",
+          "show": {
+            "type": "bars",
+            "heading": "Income per person in 2025, constant 2015 US$",
+            "unit": "$",
+            "items": [
+              [
+                "United States",
+                67946
+              ],
+              [
+                "China",
+                13793
+              ],
+              [
+                "World average",
+                12131
+              ],
+              [
+                "India",
+                2523
+              ]
+            ],
+            "highlight": "China"
+          }
+        },
+        {
+          "say": "And now back to the number from the start. The share of people living on under three dollars a day.",
+          "show": {
+            "type": "line",
+            "heading": "Share of China living on under $3 a day",
+            "unit": "%",
+            "sub": "Poverty headcount at $3.00 a day (2021 PPP) · World Bank",
+            "series": [
+              {
+                "wb": "SI.POV.DDAY",
+                "country": "CHN",
+                "from": 1981,
+                "to": 2022,
+                "color": "green",
+                "label": ""
+              }
+            ]
+          }
+        },
+        {
+          "say": "Ninety-seven percent in 1981.",
+          "mark": {
+            "x": 1981
+          }
+        },
+        {
+          "say": "Still more than eighty percent in 1990. Then it started to fall – fast.",
+          "mark": {
+            "x": 1990
+          }
+        },
+        {
+          "say": "Thirty-three percent in 2005. Three percent in 2015.",
+          "mark": {
+            "x": 2015
+          }
+        },
+        {
+          "say": "And by 2019: practically zero. Nearly a billion people left that kind of poverty in less than forty years.",
+          "mark": {
+            "x": 2019,
+            "label": "~0%"
+          }
+        },
+        {
+          "say": "To put that in perspective: that's more people than live in the United States and the whole European Union combined.",
+          "show": {
+            "type": "number",
+            "big": "97% → 0%",
+            "caption": "China, under $3 a day · 1981 → 2019",
+            "color": "green"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Why it's slowing down",
+      "beats": [
+        {
+          "say": "But look at the growth line again. The ten percent years are gone.",
+          "show": {
+            "type": "line",
+            "heading": "China's economic growth, % per year",
+            "unit": "%",
+            "sub": "Real GDP growth · World Bank",
+            "series": [
+              {
+                "label": "",
+                "wb": "NY.GDP.MKTP.KD.ZG",
+                "country": "CHN",
+                "from": 1978,
+                "to": 2025,
+                "color": "gold"
+              }
+            ]
+          },
+          "mark": {
+            "x": 2007
+          }
+        },
+        {
+          "say": "About seven percent a year in the 2010s. Under five percent on average since 2020.",
+          "mark": {
+            "x": 2025
+          }
+        },
+        {
+          "say": "Part of that is natural: the easy gains are used up. You can only move people from farms to cities once. And as wages rose, China stopped being the cheapest place on earth to make things."
+        },
+        {
+          "say": "And the biggest change is people. China's population peaked in 2021 at about one point four one billion – and has been shrinking since.",
+          "show": {
+            "type": "number",
+            "big": "1,412,360,000",
+            "caption": "China's population at its peak, 2021",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "Women in China now have about one child each on average. That's half of what keeps a population stable.",
+          "show": {
+            "type": "line",
+            "heading": "Children per woman in China",
+            "unit": "",
+            "sub": "Total fertility rate · World Bank",
+            "series": [
+              {
+                "label": "",
+                "wb": "SP.DYN.TFRT.IN",
+                "country": "CHN",
+                "from": 1960,
+                "to": 2024,
+                "color": "red"
+              }
+            ]
+          }
+        },
+        {
+          "say": "Fewer young workers, more retirees: people over sixty-five went from four percent of the population in 1980 to almost fifteen percent today.",
+          "mark": {
+            "x": 2024,
+            "label": "1.0"
+          }
+        },
+        {
+          "say": "Even the race with the US stalled. In dollars, China's economy reached about seventy-seven percent of America's in 2021 – and has slipped back to around sixty-three.",
+          "show": {
+            "type": "line",
+            "heading": "China's economy as % of the US economy",
+            "unit": "%",
+            "sub": "GDP in current US$ · World Bank",
+            "series": [
+              {
+                "label": "",
+                "points": [
+                  [
+                    1980,
+                    6.7
+                  ],
+                  [
+                    1990,
+                    6.1
+                  ],
+                  [
+                    2000,
+                    11.9
+                  ],
+                  [
+                    2005,
+                    17.8
+                  ],
+                  [
+                    2010,
+                    41.1
+                  ],
+                  [
+                    2015,
+                    61.7
+                  ],
+                  [
+                    2020,
+                    70.2
+                  ],
+                  [
+                    2021,
+                    76.7
+                  ],
+                  [
+                    2022,
+                    70.3
+                  ],
+                  [
+                    2023,
+                    65.7
+                  ],
+                  [
+                    2024,
+                    63.9
+                  ],
+                  [
+                    2025,
+                    63.4
+                  ]
+                ],
+                "color": "gold"
+              }
+            ]
+          },
+          "mark": {
+            "x": 2021,
+            "label": "Peak"
+          }
+        },
+        {
+          "say": "Part of that slide is a weaker yuan against the dollar, part is slower growth. And per person, the average Chinese still produces only about a fifth of the average American."
+        }
+      ]
+    },
+    {
+      "heading": "What to remember",
+      "beats": [
+        {
+          "say": "So why did China grow so fast? Three things.",
+          "show": {
+            "type": "number",
+            "big": "$386 → $13,793",
+            "caption": "income per person in China, 1978 → 2025, after inflation",
+            "color": "green"
+          }
+        },
+        {
+          "say": "One: it started very poor, so every reform had huge room to work. Two: it let people keep what they earned and opened its doors to factories and trade."
+        },
+        {
+          "say": "And three: it built and moved at a scale nobody had seen – forty percent of the economy invested, seven hundred million people into cities. That combination can't be repeated forever, and that's why it's slowing now."
+        },
+        {
+          "say": "If you want to understand money with real numbers, subscribe. Next episode, we'll take apart another piece of the economy."
+        }
+      ]
+    }
+  ],
+  "short": {
+    "hook": "97% of China was poor. Then this.",
+    "beats": [
+      {
+        "say": "In 1981, ninety-seven out of a hundred people in China lived on less than three dollars a day. Nearly a billion people.",
+        "show": {
+          "type": "number",
+          "big": "97%",
+          "caption": "of China lived on under $3 a day in 1981",
+          "color": "red"
+        }
+      },
+      {
+        "say": "In 1978, the average Chinese income was three hundred and eighty-six dollars a year. Less than India.",
+        "show": {
+          "type": "bars",
+          "heading": "Income per person in 1978, constant 2015 US$",
+          "unit": "$",
+          "items": [
+            [
+              "United States",
+              30835
+            ],
+            [
+              "World average",
+              5843
+            ],
+            [
+              "India",
+              409
+            ],
+            [
+              "China",
+              386
+            ]
+          ],
+          "highlight": "China"
+        }
+      },
+      {
+        "say": "Then came reforms: farmers could sell their own harvest, foreign factories moved in, and the economy grew about ten percent a year for thirty years. It doubled every seven years. Exports went from two and a half percent of the economy to more than a third.",
+        "show": {
+          "type": "line",
+          "heading": "China's economic growth, % per year",
+          "unit": "%",
+          "sub": "Real GDP growth · World Bank",
+          "series": [
+            {
+              "label": "",
+              "wb": "NY.GDP.MKTP.KD.ZG",
+              "country": "CHN",
+              "from": 1978,
+              "to": 2025,
+              "color": "gold"
+            }
+          ]
+        }
+      },
+      {
+        "say": "Over seven hundred million people moved into cities. And poverty collapsed: thirty-three percent in 2005, three percent in 2015, practically zero by 2019.",
+        "show": {
+          "type": "line",
+          "heading": "Share of China living on under $3 a day",
+          "unit": "%",
+          "sub": "Poverty headcount at $3.00 a day (2021 PPP) · World Bank",
+          "series": [
+            {
+              "wb": "SI.POV.DDAY",
+              "country": "CHN",
+              "from": 1981,
+              "to": 2022,
+              "color": "green",
+              "label": ""
+            }
+          ]
+        }
+      },
+      {
+        "say": "But now the population is shrinking and growth is slowing. Why – and what made the miracle possible – is in the full video on the channel."
+      }
+    ]
+  }
+}

@@ -15,7 +15,7 @@ add new ones at the end. Pick ones the World Bank (or another official source) h
 - [ ] Why the dollar is the world's money
 - [ ] How unequal is the world? The Gini index explained
 - [ ] Unemployment: how it's measured and what the numbers hide
-- [ ] Why China grew so fast – 40 years in one chart
+- [x] Why China grew so fast – 40 years in one chart – `why-china-grew-so-fast`
 - [ ] Where does money come from? Banks, central banks and the money supply
 - [ ] Minimum wages around the world, adjusted for prices
 - [ ] Why some countries are rich and others are poor
