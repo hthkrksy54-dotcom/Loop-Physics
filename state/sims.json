@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 3287,
+      "yt_views": 3388,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 6341,
+      "yt_views": 6368,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -161,7 +161,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 32,
+      "yt_views": 31,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233117064890390",
         "status": "SEND_TO_USER_INBOX",
@@ -190,7 +190,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1726,
+      "yt_views": 1761,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232916815824918",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 10730,
+      "yt_views": 11027,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -277,7 +277,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 32,
+      "yt_views": 29,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233859481487382",
         "status": "SEND_TO_USER_INBOX",
@@ -549,7 +549,7 @@
       "instagram_id": "18030561041882795",
       "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/",
       "youtube_id": "3Qgx9BMIlXo",
-      "yt_views": 223
+      "yt_views": 258
     },
     {
       "date": "2026-10-17T12:49:05+00:00",
@@ -570,6 +570,26 @@
         "status": "PUBLISH_COMPLETE",
         "caption": "Can the ball escape all 17 rings?\nOne ball, 17 spinning rings, one gap in each – it has to find every exit to break free.\n💬 How many seconds did you guess?\n#ballescape #satisfying #oddlysatisfying #physics #simulation",
         "url": "https://www.tiktok.com/@loop_physics/video/7697660867097201952"
+      }
+    },
+    {
+      "date": "2026-10-17T16:41:44+00:00",
+      "kind": "black_hole",
+      "seed": 0,
+      "melody": "mountain_king",
+      "timbre": "bell",
+      "title": "Can the black hole eat all 314 balls? – Find the hidden loop",
+      "duration": 72.3,
+      "why": "new",
+      "concept": "A galaxy of a few hundred coloured balls orbits a tiny black hole; every ball it swallows makes it bigger and its pull stronger, so the disc spirals in faster and faster until nothing is left.",
+      "drive": "https://drive.google.com/drive/folders/1vZQIOWtdWDh1yRtxefGGzVvF6I8is6Lr",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-black_hole-0",
+      "instagram_id": "18118916806919369",
+      "instagram_url": "https://www.instagram.com/reel/DemkyO-iuh-/",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697679846340380694",
+        "status": "SEND_TO_USER_INBOX",
+        "caption": "Can the black hole eat all 314 balls?\nA few hundred balls orbit a tiny black hole.\n💬 Which colour do you think falls in last?\n#blackhole #satisfying #oddlysatisfying #physics #simulation"
       }
     }
   ]

@@ -6,6 +6,17 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
+## 17.10. 16:41 UTC – Can the black hole eat all 314 balls?
+
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-black_hole-0)
+
+```text
+Can the black hole eat all 314 balls?
+A few hundred balls orbit a tiny black hole.
+💬 Which colour do you think falls in last?
+#blackhole #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 17.10. 06:41 UTC – Every hit upgrades it – Who wins the duel?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-blade_duel-4)
