@@ -52,7 +52,13 @@
       "duration": 572.7,
       "short_duration": 63.3,
       "drive": "https://drive.google.com/drive/folders/1ToNKfQ04yo5BJNIXcbwDeQiMfqJ2FkTN",
-      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261017-why-china-grew-so-fast"
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261017-why-china-grew-so-fast",
+      "youtube_id": "aRTkKyXcdYU",
+      "youtube_short_id": "9FIBf1vAPNo",
+      "texts_set": true,
+      "short_texts_set": "linked",
+      "thumbnail_error": "thumbnail skipped (403): {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"The authenticated user doesn't have permissions to upload and set custom video thumbnails.\",\n    \"errors\": [\n      {\n        \"m",
+      "captions_set": true
     }
   ]
 }
