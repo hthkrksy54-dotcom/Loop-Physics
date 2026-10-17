@@ -41,7 +41,12 @@
       "instagram_story_id": "18114211694588773",
       "youtube_id": "-yc_umZIewQ",
       "youtube_short_id": "q2pIrhkpDGg",
-      "thumbnail_set": true
+      "thumbnail_set": true,
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697636745441216534",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "The two words that changed how an emperor lived\nIf today were your last day, what would you stop postponing?\nFull video essay on YouTube: Quiet Thoughts (@quietthoughts-20)\n#Stoicism #MementoMori #Philosophy #psychology #learnontiktok"
+      }
     },
     {
       "id": "spotlight-effect",
@@ -59,7 +64,12 @@
       "youtube_short_id": "bZx-5edPD0A",
       "instagram_id": "17912254614474340",
       "instagram_url": "https://www.instagram.com/reel/DemFcjLjdvJ/",
-      "instagram_story_id": "18030300113909898"
+      "instagram_story_id": "18030300113909898",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697636429169657878",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "Why you feel watched – and almost nobody is\nWhat is something you were embarrassed about that nobody else seems to remember?\nFull video essay on YouTube: Quiet Thoughts (@quietthoughts-20)\n#Psychology #SpotlightEffect #Philosophy #learnontiktok"
+      }
     }
   ]
 }
