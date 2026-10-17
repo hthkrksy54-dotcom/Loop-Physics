@@ -37,7 +37,13 @@
       "duration": 565.3,
       "short_duration": 65.2,
       "drive": "https://drive.google.com/drive/folders/17GtYHDJipa20VivlGGuPIj03xpbIBEjU",
-      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261017-turkey-argentina-high-inflation"
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261017-turkey-argentina-high-inflation",
+      "youtube_id": "cj8OUo6AT9Q",
+      "youtube_short_id": "uokrjwB46SM",
+      "texts_set": true,
+      "short_texts_set": "linked",
+      "thumbnail_error": "thumbnail skipped (403): {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"The authenticated user doesn't have permissions to upload and set custom video thumbnails.\",\n    \"errors\": [\n      {\n        \"m",
+      "captions_set": true
     },
     {
       "id": "why-china-grew-so-fast",
