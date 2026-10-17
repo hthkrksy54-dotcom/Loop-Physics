@@ -1,0 +1,1420 @@
+{
+  "id": "compound-interest-time",
+  "order": 6,
+  "title": "$24,000 Beats $72,000: How Compound Interest Really Works, Explained with Data",
+  "title_card": "How does compound interest work?",
+  "description": "Alex saves for 10 years and stops. Sam saves three times as much for 30 years. Who ends up with more? We take compound interest apart with simple math and real data: the rule of 72, why the last ten years matter most, how the same math works against you on a 21% credit card – and what inflation does to the result. No advice, just the numbers.",
+  "tags": [
+    "compound interest",
+    "compound interest explained",
+    "rule of 72",
+    "saving money",
+    "interest rates",
+    "inflation",
+    "credit card interest",
+    "personal finance",
+    "money explained",
+    "economics explained",
+    "economics",
+    "money",
+    "data visualization"
+  ],
+  "hashtags": [
+    "#money",
+    "#compoundinterest",
+    "#economics"
+  ],
+  "sources": [
+    "Illustrative calculations: compound growth at fixed example rates of 2%, 5%, 7% and 8% a year, compounded yearly (not forecasts, not recommendations)",
+    "Board of Governors of the Federal Reserve System, G.19 Consumer Credit: commercial bank interest rate on credit card plans, all accounts, 21.19% (August 2026), via FRED series TERMCBCCALLNS",
+    "World Bank, World Development Indicators: Consumer price index (2010 = 100), FP.CPI.TOTL – United States 1984–2024 (rebased to 1984 = 100; average rate computed) (CC BY 4.0)"
+  ],
+  "thumbnail": {
+    "big": "$24K > $72K",
+    "text": "How is that possible?",
+    "color": "green"
+  },
+  "chapters": [
+    {
+      "heading": "Intro",
+      "beats": [
+        {
+          "say": "Two friends. Alex puts away two hundred dollars a month from age twenty-five to thirty-five. Then stops. Never adds another cent.",
+          "show": {
+            "type": "number",
+            "big": "$24,000",
+            "caption": "Alex: $200 a month, age 25 to 35",
+            "color": "green"
+          }
+        },
+        {
+          "say": "Sam starts at thirty-five and puts away the same two hundred dollars a month – for thirty years, all the way to sixty-five.",
+          "show": {
+            "type": "number",
+            "big": "$72,000",
+            "caption": "Sam: $200 a month, age 35 to 65",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "Sam pays in three times as much. Same account, same rate, every single year."
+        },
+        {
+          "say": "At sixty-five, who has more money? The answer is the most important idea in all of personal finance. Let's build it from scratch, with real numbers."
+        },
+        {
+          "say": "One thing first: every rate in this video is an example to show the math. Not a forecast, not a recommendation.",
+          "show": {
+            "type": "note",
+            "text": "Example rates. *Not* forecasts. *Not* advice.",
+            "source": "Every rate in this video is illustrative",
+            "color": "gray"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Interest on interest",
+      "beats": [
+        {
+          "say": "Start with ten thousand dollars, earning seven percent a year.",
+          "show": {
+            "type": "number",
+            "big": "$10,000",
+            "caption": "at 7% a year",
+            "color": "green"
+          }
+        },
+        {
+          "say": "After one year, you earn seven hundred dollars. Now you have ten thousand seven hundred."
+        },
+        {
+          "say": "In year two, you don't earn seven percent of ten thousand. You earn seven percent of ten thousand seven hundred. That's seven hundred and forty-nine dollars.",
+          "show": {
+            "type": "number",
+            "big": "$700 → $749",
+            "caption": "interest in year 1 → year 2",
+            "color": "green"
+          }
+        },
+        {
+          "say": "Forty-nine extra dollars. Your money stops being only what you put in – it becomes a machine that makes more money, and the machine gets bigger every year. It looks like nothing at first. That's interest on interest – and it's the whole trick."
+        },
+        {
+          "say": "But the extra keeps growing. By year ten, a single year's interest is almost thirteen hundred dollars.",
+          "show": {
+            "type": "number",
+            "big": "$700 → $1,287",
+            "caption": "interest in year 1 → year 10",
+            "color": "green"
+          }
+        },
+        {
+          "say": "And in year forty, one single year of interest is almost ten thousand dollars. As much as the whole amount you started with.",
+          "show": {
+            "type": "number",
+            "big": "$9,796",
+            "caption": "interest earned in year 40 alone",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "Here's what it does over forty years. The gray line is simple interest: seven hundred dollars a year, every year, never more.",
+          "show": {
+            "type": "line",
+            "heading": "$10,000 at 7% a year",
+            "unit": "$",
+            "sub": "Compound growth, years 0–40 · example rate, not a forecast",
+            "series": [
+              {
+                "label": "Compound",
+                "compound": {
+                  "start": 10000,
+                  "rate": 7,
+                  "years": 40
+                },
+                "color": "green"
+              },
+              {
+                "label": "Simple",
+                "points": [
+                  [
+                    0,
+                    10000
+                  ],
+                  [
+                    1,
+                    10700
+                  ],
+                  [
+                    2,
+                    11400
+                  ],
+                  [
+                    3,
+                    12100
+                  ],
+                  [
+                    4,
+                    12800
+                  ],
+                  [
+                    5,
+                    13500
+                  ],
+                  [
+                    6,
+                    14200
+                  ],
+                  [
+                    7,
+                    14900
+                  ],
+                  [
+                    8,
+                    15600
+                  ],
+                  [
+                    9,
+                    16300
+                  ],
+                  [
+                    10,
+                    17000
+                  ],
+                  [
+                    11,
+                    17700
+                  ],
+                  [
+                    12,
+                    18400
+                  ],
+                  [
+                    13,
+                    19100
+                  ],
+                  [
+                    14,
+                    19800
+                  ],
+                  [
+                    15,
+                    20500
+                  ],
+                  [
+                    16,
+                    21200
+                  ],
+                  [
+                    17,
+                    21900
+                  ],
+                  [
+                    18,
+                    22600
+                  ],
+                  [
+                    19,
+                    23300
+                  ],
+                  [
+                    20,
+                    24000
+                  ],
+                  [
+                    21,
+                    24700
+                  ],
+                  [
+                    22,
+                    25400
+                  ],
+                  [
+                    23,
+                    26100
+                  ],
+                  [
+                    24,
+                    26800
+                  ],
+                  [
+                    25,
+                    27500
+                  ],
+                  [
+                    26,
+                    28200
+                  ],
+                  [
+                    27,
+                    28900
+                  ],
+                  [
+                    28,
+                    29600
+                  ],
+                  [
+                    29,
+                    30300
+                  ],
+                  [
+                    30,
+                    31000
+                  ],
+                  [
+                    31,
+                    31700
+                  ],
+                  [
+                    32,
+                    32400
+                  ],
+                  [
+                    33,
+                    33100
+                  ],
+                  [
+                    34,
+                    33800
+                  ],
+                  [
+                    35,
+                    34500
+                  ],
+                  [
+                    36,
+                    35200
+                  ],
+                  [
+                    37,
+                    35900
+                  ],
+                  [
+                    38,
+                    36600
+                  ],
+                  [
+                    39,
+                    37300
+                  ],
+                  [
+                    40,
+                    38000
+                  ]
+                ],
+                "color": "gray"
+              }
+            ]
+          }
+        },
+        {
+          "say": "After forty years, simple interest gets you to thirty-eight thousand dollars."
+        },
+        {
+          "say": "The green line is compound interest. Same rate, same start. After forty years: almost a hundred and fifty thousand.",
+          "mark": {
+            "x": 40,
+            "label": "$149,745"
+          }
+        },
+        {
+          "say": "Nearly four times as much – and the only difference is that the interest itself earns interest.",
+          "show": {
+            "type": "compare",
+            "heading": "$10,000 at 7% for 40 years",
+            "left": [
+              "Simple interest",
+              "$38,000"
+            ],
+            "right": [
+              "Compound interest",
+              "$149,745"
+            ],
+            "color": "green"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "The rule of 72",
+      "beats": [
+        {
+          "say": "There's a shortcut to feel this in your head. It's called the rule of seventy-two. Divide seventy-two by the interest rate, and you get roughly how many years it takes for money to double.",
+          "show": {
+            "type": "note",
+            "text": "72 ÷ rate = years to *double*",
+            "source": "The rule of 72 – a close approximation",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "At two percent, doubling takes about thirty-six years. At four percent, about eighteen.",
+          "show": {
+            "type": "columns",
+            "heading": "Years to double, rule of 72",
+            "stacks": [
+              [
+                "2%",
+                36,
+                "36 yrs"
+              ],
+              [
+                "4%",
+                18,
+                "18 yrs"
+              ],
+              [
+                "7%",
+                10.3,
+                "~10 yrs"
+              ],
+              [
+                "10%",
+                7.2,
+                "~7 yrs"
+              ]
+            ]
+          }
+        },
+        {
+          "say": "At seven percent, about ten years. At ten percent, a bit over seven."
+        },
+        {
+          "say": "And here's why that matters. Ten thousand dollars at seven percent doubles to twenty thousand in ten years. Then forty in twenty years. Then about eighty in thirty. And by year forty, close to a hundred and fifty.",
+          "show": {
+            "type": "number",
+            "big": "10 → 20 → 40 → 80",
+            "caption": "$ thousand, roughly every 10 years at 7%",
+            "color": "green"
+          }
+        },
+        {
+          "say": "Each doubling is bigger than all the ones before it put together."
+        },
+        {
+          "say": "The rule also works backwards. If something doubled in about seven years, it grew roughly ten percent a year. If it took thirty-six years, about two percent."
+        }
+      ]
+    },
+    {
+      "heading": "Small rates, giant gaps",
+      "beats": [
+        {
+          "say": "Now change only the rate. Ten thousand dollars, forty years, at two, five and eight percent.",
+          "show": {
+            "type": "line",
+            "heading": "$10,000 after 40 years at 2%, 5% and 8%",
+            "unit": "$",
+            "sub": "Compound growth · example rates, not forecasts",
+            "series": [
+              {
+                "label": "8%",
+                "compound": {
+                  "start": 10000,
+                  "rate": 8,
+                  "years": 40
+                },
+                "color": "gold"
+              },
+              {
+                "label": "5%",
+                "compound": {
+                  "start": 10000,
+                  "rate": 5,
+                  "years": 40
+                },
+                "color": "blue"
+              },
+              {
+                "label": "2%",
+                "compound": {
+                  "start": 10000,
+                  "rate": 2,
+                  "years": 40
+                },
+                "color": "gray"
+              }
+            ]
+          }
+        },
+        {
+          "say": "At two percent, you end with about twenty-two thousand dollars."
+        },
+        {
+          "say": "At five percent, about seventy thousand."
+        },
+        {
+          "say": "At eight percent: about two hundred and seventeen thousand. Four times the result of five percent, from a rate that's only three points higher.",
+          "mark": {
+            "x": 40,
+            "label": "8%: $217,245"
+          }
+        },
+        {
+          "say": "For years the lines stay close. At year ten: about twelve thousand dollars at two percent, about twenty-two thousand at eight. After forty years, the gap is almost two hundred thousand. All the drama happens at the end.",
+          "mark": {
+            "x": 10
+          }
+        },
+        {
+          "say": "That's the pattern of compounding: boring, boring, boring – then enormous."
+        },
+        {
+          "say": "Why don't all savings earn eight percent, then? Because in the real world, a higher return usually comes with more risk – the chance of losing money along the way. A fixed rate for forty years exists only on paper. The math is real; the smooth line is a simplification.",
+          "show": {
+            "type": "note",
+            "text": "Higher return usually means *higher risk*.",
+            "source": "Real returns are never a smooth line",
+            "color": "gray"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "The same math, against you",
+      "beats": [
+        {
+          "say": "Compounding doesn't care whose side it's on. It works exactly the same way on debt.",
+          "show": {
+            "type": "number",
+            "big": "21.19%",
+            "caption": "average US credit card rate, all accounts, Aug 2026",
+            "color": "red"
+          }
+        },
+        {
+          "say": "According to the Federal Reserve, the average interest rate on credit card accounts at US banks is about twenty-one percent."
+        },
+        {
+          "say": "Use the rule of seventy-two: seventy-two divided by twenty-one. A balance that isn't paid down doubles in less than four years.",
+          "show": {
+            "type": "line",
+            "heading": "$5,000 of debt at 21% a year, nothing paid",
+            "unit": "$",
+            "sub": "Compound growth, interest added yearly · example",
+            "series": [
+              {
+                "label": "",
+                "compound": {
+                  "start": 5000,
+                  "rate": 21,
+                  "years": 5
+                },
+                "color": "red"
+              }
+            ]
+          }
+        },
+        {
+          "say": "Five thousand dollars left alone at twenty-one percent becomes about ten thousand seven hundred after four years.",
+          "mark": {
+            "x": 4
+          }
+        },
+        {
+          "say": "And almost thirteen thousand after five. Real cards add interest every month, so it's a little worse still.",
+          "mark": {
+            "x": 5
+          }
+        },
+        {
+          "say": "Same curve as the savings chart. Just pointing the other way. When you borrow, you're on the other side of compounding: the lender earns interest on interest, and you pay it."
+        }
+      ]
+    },
+    {
+      "heading": "The hidden tax: inflation",
+      "beats": [
+        {
+          "say": "There's one more compounding force, and it works on everyone: rising prices.",
+          "show": {
+            "type": "line",
+            "heading": "US consumer prices, 1984 = 100",
+            "unit": "",
+            "sub": "Consumer price index, rebased · World Bank",
+            "series": [
+              {
+                "label": "",
+                "wb": "FP.CPI.TOTL",
+                "country": "USA",
+                "from": 1984,
+                "to": 2024,
+                "rebase": [
+                  1984,
+                  100
+                ],
+                "color": "red"
+              }
+            ]
+          }
+        },
+        {
+          "say": "From 1984 to 2024, US prices rose on average about two point eight percent a year. That sounds small."
+        },
+        {
+          "say": "But compounded over forty years, it tripled prices. What cost a hundred dollars in 1984 cost about three hundred and two in 2024.",
+          "mark": {
+            "x": 2024
+          }
+        },
+        {
+          "say": "So go back to our hundred and fifty thousand dollars after forty years. If prices rose as fast as they did in those forty years, it would buy only what about fifty thousand dollars bought at the start.",
+          "show": {
+            "type": "compare",
+            "heading": "$149,745 after 40 years, in starting-year dollars",
+            "left": [
+              "On paper",
+              "$149,745"
+            ],
+            "right": [
+              "After 1984–2024 US inflation",
+              "$49,600"
+            ],
+            "color": "red"
+          }
+        },
+        {
+          "say": "That's why economists talk about the real rate: what you earn minus inflation. Money that earns less than inflation shrinks – slowly, and then a lot."
+        },
+        {
+          "say": "The rule of seventy-two works here too. At two point eight percent, prices double in about twenty-six years. If they kept rising at that pace, someone retiring at sixty-five would see prices roughly double before turning ninety.",
+          "show": {
+            "type": "number",
+            "big": "72 ÷ 2.8 ≈ 26",
+            "caption": "years for prices to double at 2.8% inflation",
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Alex vs Sam",
+      "beats": [
+        {
+          "say": "Now back to Alex and Sam. Two hundred dollars a month, seven percent a year.",
+          "show": {
+            "type": "line",
+            "heading": "Alex vs Sam at 7% a year",
+            "unit": "$",
+            "sub": "$200 a month · example, not a forecast",
+            "series": [
+              {
+                "label": "Sam",
+                "points": [
+                  [
+                    25,
+                    0
+                  ],
+                  [
+                    26,
+                    0
+                  ],
+                  [
+                    27,
+                    0
+                  ],
+                  [
+                    28,
+                    0
+                  ],
+                  [
+                    29,
+                    0
+                  ],
+                  [
+                    30,
+                    0
+                  ],
+                  [
+                    31,
+                    0
+                  ],
+                  [
+                    32,
+                    0
+                  ],
+                  [
+                    33,
+                    0
+                  ],
+                  [
+                    34,
+                    0
+                  ],
+                  [
+                    35,
+                    0
+                  ],
+                  [
+                    36,
+                    2568
+                  ],
+                  [
+                    37,
+                    5316
+                  ],
+                  [
+                    38,
+                    8256
+                  ],
+                  [
+                    39,
+                    11402
+                  ],
+                  [
+                    40,
+                    14768
+                  ],
+                  [
+                    41,
+                    18370
+                  ],
+                  [
+                    42,
+                    22224
+                  ],
+                  [
+                    43,
+                    26347
+                  ],
+                  [
+                    44,
+                    30759
+                  ],
+                  [
+                    45,
+                    35481
+                  ],
+                  [
+                    46,
+                    40532
+                  ],
+                  [
+                    47,
+                    45938
+                  ],
+                  [
+                    48,
+                    51721
+                  ],
+                  [
+                    49,
+                    57910
+                  ],
+                  [
+                    50,
+                    64531
+                  ],
+                  [
+                    51,
+                    71617
+                  ],
+                  [
+                    52,
+                    79198
+                  ],
+                  [
+                    53,
+                    87310
+                  ],
+                  [
+                    54,
+                    95989
+                  ],
+                  [
+                    55,
+                    105276
+                  ],
+                  [
+                    56,
+                    115214
+                  ],
+                  [
+                    57,
+                    125847
+                  ],
+                  [
+                    58,
+                    137224
+                  ],
+                  [
+                    59,
+                    149398
+                  ],
+                  [
+                    60,
+                    162424
+                  ],
+                  [
+                    61,
+                    176361
+                  ],
+                  [
+                    62,
+                    191274
+                  ],
+                  [
+                    63,
+                    207232
+                  ],
+                  [
+                    64,
+                    224306
+                  ],
+                  [
+                    65,
+                    242575
+                  ]
+                ],
+                "color": "blue"
+              },
+              {
+                "label": "Alex",
+                "points": [
+                  [
+                    25,
+                    0
+                  ],
+                  [
+                    26,
+                    2568
+                  ],
+                  [
+                    27,
+                    5316
+                  ],
+                  [
+                    28,
+                    8256
+                  ],
+                  [
+                    29,
+                    11402
+                  ],
+                  [
+                    30,
+                    14768
+                  ],
+                  [
+                    31,
+                    18370
+                  ],
+                  [
+                    32,
+                    22224
+                  ],
+                  [
+                    33,
+                    26347
+                  ],
+                  [
+                    34,
+                    30759
+                  ],
+                  [
+                    35,
+                    35481
+                  ],
+                  [
+                    36,
+                    37964
+                  ],
+                  [
+                    37,
+                    40622
+                  ],
+                  [
+                    38,
+                    43465
+                  ],
+                  [
+                    39,
+                    46508
+                  ],
+                  [
+                    40,
+                    49763
+                  ],
+                  [
+                    41,
+                    53247
+                  ],
+                  [
+                    42,
+                    56974
+                  ],
+                  [
+                    43,
+                    60962
+                  ],
+                  [
+                    44,
+                    65230
+                  ],
+                  [
+                    45,
+                    69796
+                  ],
+                  [
+                    46,
+                    74681
+                  ],
+                  [
+                    47,
+                    79909
+                  ],
+                  [
+                    48,
+                    85503
+                  ],
+                  [
+                    49,
+                    91488
+                  ],
+                  [
+                    50,
+                    97892
+                  ],
+                  [
+                    51,
+                    104745
+                  ],
+                  [
+                    52,
+                    112077
+                  ],
+                  [
+                    53,
+                    119922
+                  ],
+                  [
+                    54,
+                    128317
+                  ],
+                  [
+                    55,
+                    137299
+                  ],
+                  [
+                    56,
+                    146910
+                  ],
+                  [
+                    57,
+                    157193
+                  ],
+                  [
+                    58,
+                    168197
+                  ],
+                  [
+                    59,
+                    179971
+                  ],
+                  [
+                    60,
+                    192569
+                  ],
+                  [
+                    61,
+                    206049
+                  ],
+                  [
+                    62,
+                    220472
+                  ],
+                  [
+                    63,
+                    235905
+                  ],
+                  [
+                    64,
+                    252418
+                  ],
+                  [
+                    65,
+                    270088
+                  ]
+                ],
+                "color": "green"
+              }
+            ]
+          }
+        },
+        {
+          "say": "Alex saves from twenty-five to thirty-five. By thirty-five, Alex has about thirty-five thousand dollars – and stops paying in.",
+          "mark": {
+            "x": 35
+          }
+        },
+        {
+          "say": "Sam starts at thirty-five, from zero. Sam pays in every month for thirty years. The blue line climbs faster and faster. Every year it gets closer to Alex – but it runs out of time."
+        },
+        {
+          "say": "But Alex's money never stops compounding. By forty-five, Alex's untouched pile is close to seventy thousand.",
+          "mark": {
+            "x": 45
+          }
+        },
+        {
+          "say": "And at sixty-five: Alex, who paid in twenty-four thousand dollars, has about two hundred and seventy thousand."
+        },
+        {
+          "say": "Sam, who paid in seventy-two thousand – three times as much – has about two hundred and forty-three thousand.",
+          "show": {
+            "type": "compare",
+            "heading": "At 65, saving $200 a month at 7%",
+            "left": [
+              "Sam: paid in $72,000",
+              "$242,575"
+            ],
+            "right": [
+              "Alex: paid in $24,000",
+              "$270,088"
+            ],
+            "color": "green"
+          }
+        },
+        {
+          "say": "Alex wins. Not because of a better rate or more money. Only because of ten extra years."
+        },
+        {
+          "say": "And what if Alex had simply kept going – two hundred a month, all the way from twenty-five to sixty-five? About five hundred and thirteen thousand dollars. Starting ten years earlier roughly doubles the result.",
+          "show": {
+            "type": "compare",
+            "heading": "$200 a month at 7% until 65",
+            "left": [
+              "Start at 35",
+              "$242,575"
+            ],
+            "right": [
+              "Start at 25",
+              "$512,663"
+            ],
+            "color": "gold"
+          }
+        },
+        {
+          "say": "Remember the forty-year chart? In the last ten years alone, the ten thousand dollars grew by more than in the first thirty years combined. Time is the ingredient you can't buy back.",
+          "show": {
+            "type": "note",
+            "text": "Years 30–40 added *more* than years 0–30.",
+            "source": "$10,000 at 7%: +$66,123 in 30 years, then +$73,622 in 10",
+            "color": "gold"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "What to remember",
+      "beats": [
+        {
+          "say": "So how does compound interest really work? Three things.",
+          "show": {
+            "type": "number",
+            "big": "$24K > $72K",
+            "caption": "Alex vs Sam at 65, same rate",
+            "color": "green"
+          }
+        },
+        {
+          "say": "One: interest earns interest, so growth is slow at first and enormous at the end. Two: the rule of seventy-two – seventy-two divided by the rate tells you roughly how long it takes to double."
+        },
+        {
+          "say": "And three: the same math runs on debt and on inflation. A twenty-one percent card doubles a balance in under four years, and two point eight percent inflation tripled US prices in forty."
+        },
+        {
+          "say": "If you want to understand money with real numbers, subscribe. Next episode, we'll take apart another piece of the economy."
+        }
+      ]
+    }
+  ],
+  "short": {
+    "hook": "$24,000 beat $72,000. Here's how.",
+    "beats": [
+      {
+        "say": "Alex saves two hundred dollars a month from twenty-five to thirty-five, then stops. Twenty-four thousand dollars in total.",
+        "show": {
+          "type": "number",
+          "big": "$24,000",
+          "caption": "Alex: $200 a month, age 25 to 35",
+          "color": "green"
+        }
+      },
+      {
+        "say": "Sam saves the same two hundred a month from thirty-five to sixty-five. Seventy-two thousand. Three times as much. Same rate for both: seven percent a year, as an example.",
+        "show": {
+          "type": "number",
+          "big": "$72,000",
+          "caption": "Sam: $200 a month, age 35 to 65",
+          "color": "blue"
+        }
+      },
+      {
+        "say": "At sixty-five, Sam has about two hundred and forty-three thousand dollars. Alex has about two hundred and seventy thousand. Alex wins.",
+        "show": {
+          "type": "line",
+          "heading": "Alex vs Sam at 7% a year",
+          "unit": "$",
+          "sub": "$200 a month · example, not a forecast",
+          "series": [
+            {
+              "label": "Sam",
+              "points": [
+                [
+                  25,
+                  0
+                ],
+                [
+                  26,
+                  0
+                ],
+                [
+                  27,
+                  0
+                ],
+                [
+                  28,
+                  0
+                ],
+                [
+                  29,
+                  0
+                ],
+                [
+                  30,
+                  0
+                ],
+                [
+                  31,
+                  0
+                ],
+                [
+                  32,
+                  0
+                ],
+                [
+                  33,
+                  0
+                ],
+                [
+                  34,
+                  0
+                ],
+                [
+                  35,
+                  0
+                ],
+                [
+                  36,
+                  2568
+                ],
+                [
+                  37,
+                  5316
+                ],
+                [
+                  38,
+                  8256
+                ],
+                [
+                  39,
+                  11402
+                ],
+                [
+                  40,
+                  14768
+                ],
+                [
+                  41,
+                  18370
+                ],
+                [
+                  42,
+                  22224
+                ],
+                [
+                  43,
+                  26347
+                ],
+                [
+                  44,
+                  30759
+                ],
+                [
+                  45,
+                  35481
+                ],
+                [
+                  46,
+                  40532
+                ],
+                [
+                  47,
+                  45938
+                ],
+                [
+                  48,
+                  51721
+                ],
+                [
+                  49,
+                  57910
+                ],
+                [
+                  50,
+                  64531
+                ],
+                [
+                  51,
+                  71617
+                ],
+                [
+                  52,
+                  79198
+                ],
+                [
+                  53,
+                  87310
+                ],
+                [
+                  54,
+                  95989
+                ],
+                [
+                  55,
+                  105276
+                ],
+                [
+                  56,
+                  115214
+                ],
+                [
+                  57,
+                  125847
+                ],
+                [
+                  58,
+                  137224
+                ],
+                [
+                  59,
+                  149398
+                ],
+                [
+                  60,
+                  162424
+                ],
+                [
+                  61,
+                  176361
+                ],
+                [
+                  62,
+                  191274
+                ],
+                [
+                  63,
+                  207232
+                ],
+                [
+                  64,
+                  224306
+                ],
+                [
+                  65,
+                  242575
+                ]
+              ],
+              "color": "blue"
+            },
+            {
+              "label": "Alex",
+              "points": [
+                [
+                  25,
+                  0
+                ],
+                [
+                  26,
+                  2568
+                ],
+                [
+                  27,
+                  5316
+                ],
+                [
+                  28,
+                  8256
+                ],
+                [
+                  29,
+                  11402
+                ],
+                [
+                  30,
+                  14768
+                ],
+                [
+                  31,
+                  18370
+                ],
+                [
+                  32,
+                  22224
+                ],
+                [
+                  33,
+                  26347
+                ],
+                [
+                  34,
+                  30759
+                ],
+                [
+                  35,
+                  35481
+                ],
+                [
+                  36,
+                  37964
+                ],
+                [
+                  37,
+                  40622
+                ],
+                [
+                  38,
+                  43465
+                ],
+                [
+                  39,
+                  46508
+                ],
+                [
+                  40,
+                  49763
+                ],
+                [
+                  41,
+                  53247
+                ],
+                [
+                  42,
+                  56974
+                ],
+                [
+                  43,
+                  60962
+                ],
+                [
+                  44,
+                  65230
+                ],
+                [
+                  45,
+                  69796
+                ],
+                [
+                  46,
+                  74681
+                ],
+                [
+                  47,
+                  79909
+                ],
+                [
+                  48,
+                  85503
+                ],
+                [
+                  49,
+                  91488
+                ],
+                [
+                  50,
+                  97892
+                ],
+                [
+                  51,
+                  104745
+                ],
+                [
+                  52,
+                  112077
+                ],
+                [
+                  53,
+                  119922
+                ],
+                [
+                  54,
+                  128317
+                ],
+                [
+                  55,
+                  137299
+                ],
+                [
+                  56,
+                  146910
+                ],
+                [
+                  57,
+                  157193
+                ],
+                [
+                  58,
+                  168197
+                ],
+                [
+                  59,
+                  179971
+                ],
+                [
+                  60,
+                  192569
+                ],
+                [
+                  61,
+                  206049
+                ],
+                [
+                  62,
+                  220472
+                ],
+                [
+                  63,
+                  235905
+                ],
+                [
+                  64,
+                  252418
+                ],
+                [
+                  65,
+                  270088
+                ]
+              ],
+              "color": "green"
+            }
+          ]
+        }
+      },
+      {
+        "say": "Why? Interest earns interest. At seven percent, money doubles roughly every ten years. Alex's money had ten more years to double – and the last doublings are the biggest.",
+        "show": {
+          "type": "note",
+          "text": "72 ÷ rate = years to *double*",
+          "source": "The rule of 72",
+          "color": "gold"
+        }
+      },
+      {
+        "say": "And the same math works against you. On a twenty-one percent credit card, an unpaid balance doubles in under four years. How that works, and what inflation does to all of it, is in the full video on the channel."
+      }
+    ]
+  },
+  "question": "How old were you when you started saving?"
+}

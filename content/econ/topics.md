@@ -8,7 +8,7 @@ add new ones at the end. Pick ones the World Bank (or another official source) h
 - [ ] How rich is the average person in each country? GDP per person, PPP vs dollars
 - [ ] What is GDP – and what it doesn't measure
 - [x] Why does the US have so much debt? Government debt as % of GDP – `why-us-debt-40-trillion`
-- [ ] Compound interest: why time beats timing (savings at 2%, 5%, 8% – no advice, just the math)
+- [x] Compound interest: why time beats timing (savings at 2%, 5%, 8% – no advice, just the math) – `compound-interest-time`
 - [x] Why Japan's prices barely moved for 30 years – `why-japan-prices-froze`
 - [x] Turkey and Argentina: what high inflation does to a country – `turkey-argentina-high-inflation`
 - [ ] What are interest rates, and why does everyone watch the Fed?
