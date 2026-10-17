@@ -48,7 +48,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1321,
+      "yt_views": 1318,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235341996115990",
         "status": "PUBLISH_COMPLETE",
@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 2972,
+      "yt_views": 2979,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -190,7 +190,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1621,
+      "yt_views": 1623,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232916815824918",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 9803,
+      "yt_views": 9869,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -484,7 +484,7 @@
       ],
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697608252602796054",
-        "status": "PROCESSING_UPLOAD",
+        "status": "SEND_TO_USER_INBOX",
         "caption": "Every hit upgrades it – Who wins the duel?\nWhich shape will win?\n#ballbattle #satisfying #oddlysatisfying #physics #simulation"
       }
     },
@@ -504,7 +504,7 @@
       ],
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697608513085982742",
-        "status": "PROCESSING_UPLOAD",
+        "status": "SEND_TO_USER_INBOX",
         "caption": "Every domino is bigger than the one before\nWhat’s the fastest bounce?\n#domino #satisfying #oddlysatisfying #physics #simulation"
       }
     },
