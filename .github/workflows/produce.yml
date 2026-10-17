@@ -2,9 +2,10 @@ name: Produce videos
 
 on:
   schedule:
-    # Every day at 14:47 UTC (16:47 German summer time, 10:47 US Eastern); the Loop Physics watchdog
-    # starts it later if GitHub drops this scheduled run
-    - cron: "47 14 * * *"
+    # Every day at 4:03 German time: 2:03 UTC in summer, 3:03 UTC in winter – the run that is too early stops
+    # itself (watchdog.daily_slot); the Loop Physics watchdog starts it later if GitHub drops both
+    - cron: "3 2 * * *"
+    - cron: "3 3 * * *"
   workflow_dispatch:
     inputs:
       langs:

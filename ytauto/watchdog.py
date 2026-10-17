@@ -5,8 +5,11 @@ from __future__ import annotations
 import datetime as dt
 import json
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent.parent
+BERLIN = ZoneInfo("Europe/Berlin")
+DAILY_HOUR = 4  # Quiet Thoughts and Real Numbers make the day's video from 4:00 German time (summer and winter)
 
 
 def _load(path: str, default):
@@ -16,6 +19,23 @@ def _load(path: str, default):
 
 def _today(iso: str | None, now: dt.datetime) -> bool:
     return bool(iso) and dt.datetime.fromisoformat(iso).astimezone(dt.timezone.utc).date() == now.date()
+
+
+def daily_slot(records: list[dict], now: dt.datetime | None = None) -> str | None:
+    """None when the day's video is due now, else why not. The schedules run at 2:03 and 3:03 UTC, so one of
+    them is 4:03 in Germany in summer and in winter; the other one stops here."""
+    local = (now or dt.datetime.now(dt.timezone.utc)).astimezone(BERLIN)
+    if local.hour < DAILY_HOUR:
+        return f"too early ({local:%H:%M} German time – the day's video starts at {DAILY_HOUR}:00)"
+    if any(dt.datetime.fromisoformat(r["date"]).astimezone(BERLIN).date() == local.date() for r in records if r.get("date")):
+        return "today's video is already out"
+    return None
+
+
+def _overdue(records: list[dict], now: dt.datetime) -> bool:
+    """Due, and the scheduled run had half an hour to start (GitHub delays or drops scheduled runs)."""
+    local = now.astimezone(BERLIN)
+    return daily_slot(records, now) is None and local.hour * 60 + local.minute >= DAILY_HOUR * 60 + 30
 
 
 def due(now: dt.datetime | None = None) -> list[tuple[str, dict]]:
@@ -34,7 +54,7 @@ def due(now: dt.datetime | None = None) -> list[tuple[str, dict]]:
         if not cfg.get("active", True):
             continue
         recs = published.get(lang, [])
-        if hm >= 14 * 60 + 47 and not any(_today(r.get("date"), now) for r in recs):  # one video every day
+        if _overdue(recs, now):  # one video every day
             out.append(("produce.yml", {"langs": lang, "source": "watchdog"}))
         ig = cfg.get("instagram") or {}
         if ig.get("enabled"):
@@ -44,4 +64,8 @@ def due(now: dt.datetime | None = None) -> list[tuple[str, dict]]:
             stories = _load(ig.get("story_log", ""), []) if ig.get("story_log") else []
             if hm >= 18 * 60 + 41 and not any(_today(s.get("date"), now) for s in stories):
                 out.append(("stories.yml", {}))
+    econ = _load("state/econ.json", {}).get("videos", [])
+    waiting = {p.stem for p in (ROOT / "content" / "econ" / "scripts").glob("*.json")} - {r["id"] for r in econ}
+    if waiting and _overdue(econ, now):  # Real Numbers: one episode every day while the writer keeps up
+        out.append(("econ.yml", {"source": "watchdog"}))
     return out

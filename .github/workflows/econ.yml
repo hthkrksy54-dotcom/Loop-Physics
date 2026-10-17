@@ -5,7 +5,8 @@ name: Real Numbers
 # Scripts come from the writer (docs/econ-writer.md); the run takes the next one in the queue.
 on:
   schedule:
-    - cron: "23 15 * * *"   # 15:23 UTC = 11:23 US Eastern
+    - cron: "3 2 * * *"   # 4:03 German time in summer (the other run stops itself: watchdog.daily_slot)
+    - cron: "3 3 * * *"   # 4:03 German time in winter
   workflow_dispatch:
     inputs:
       script:
@@ -15,6 +16,9 @@ on:
         description: "Publish (untick to only render)"
         type: boolean
         default: true
+      source:
+        description: "Who started the run (watchdog = catching up a dropped schedule)"
+        default: "manual"
 
 permissions:
   contents: write
@@ -43,18 +47,19 @@ jobs:
       - name: Install Python packages
         run: pip install -r requirements.txt
 
-      - name: Already published today?
+      - name: Due now? (4:00 German time, once a day)
         id: today
         run: |
           python -c "
-          import json, datetime as dt, pathlib
+          import json, pathlib
+          from ytauto import watchdog
           p = pathlib.Path('state/econ.json')
-          v = json.loads(p.read_text())['videos'] if p.exists() else []
-          today = dt.datetime.now(dt.timezone.utc).date().isoformat()
-          print('done=' + ('yes' if any(r['date'][:10] == today for r in v) else 'no'))" >> "$GITHUB_OUTPUT"
+          why = watchdog.daily_slot(json.loads(p.read_text())['videos'] if p.exists() else [])
+          print(why or 'due')
+          open('$GITHUB_OUTPUT', 'a').write('done=' + ('yes' if why else 'no') + chr(10))"
 
       - name: Render and publish
-        if: github.event_name == 'workflow_dispatch' || steps.today.outputs.done == 'no'
+        if: (github.event_name == 'workflow_dispatch' && github.event.inputs.source != 'watchdog') || steps.today.outputs.done == 'no'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}

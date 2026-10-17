@@ -499,10 +499,10 @@ def main(argv: list[str] | None = None) -> int:
     failed = []
     config = _load(CONFIG, {})
     unattended = os.environ.get("GITHUB_EVENT_NAME") == "schedule" or os.environ.get("IN_SOURCE") == "watchdog"
-    today = dt.datetime.now(dt.timezone.utc).date()
     for lang in args.langs:
-        if unattended and any(dt.datetime.fromisoformat(r["date"]).date() == today for r in _load(STATE, {}).get(lang, [])):
-            print(f"[{lang}] today's video is already out – skipping", flush=True)
+        why_not = watchdog.daily_slot(_load(STATE, {}).get(lang, [])) if unattended else None
+        if why_not:
+            print(f"[{lang}] {why_not} – skipping", flush=True)
             continue
         if not config.get(lang, {}).get("active", True):
             print(f"[{lang}] paused (\"active\": false in config/channels.json) – skipping", flush=True)

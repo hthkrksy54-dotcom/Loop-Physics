@@ -48,7 +48,7 @@ Thema → Skript → Faktencheck → Sprecherstimme → Musik → Visuals → Un
 | Schnitt | ffmpeg (1080p, Kapitel, Untertitel, Lautheit −15 LUFS) | 0 € |
 | Shorts | automatische Hochkant-Version (ca. 50 s) pro Thema | 0 € |
 | Upload | YouTube Data API: Video, Thumbnail, Untertitel, Short | 0 € |
-| Ausführung | GitHub Actions, täglich ein Video (öffentliches Repo = unbegrenzte Minuten) | 0 € |
+| Ausführung | GitHub Actions, täglich ein Video um 4 Uhr deutscher Zeit, Sommer wie Winter (öffentliches Repo = unbegrenzte Minuten) | 0 € |
 | Instagram | jeder Short als Reel + Story (@quiet_thoughts_yt), Caption mit Frage + 3–5 Hashtags, Token verschlüsselt, verlängert sich selbst | 0 € |
 | TikTok | jeder Short zusammen mit dem Reel als Entwurf in den TikTok-Posteingang (höchstens 5 warten gleichzeitig – mehr lässt TikTok nicht zu –, der Upload-Wächter füllt stündlich nach), Beschreibungen zum Kopieren in [state/tiktok_quiet.md](state/tiktok_quiet.md); verbinden mit dem Workflow [TikTok verbinden](.github/workflows/tiktok-connect.yml) | 0 € |
 | Karussells | Di/Do/Sa: Zitat-Karussell aus einem veröffentlichten Video + Zitat-Story ([Workflow](.github/workflows/carousel.yml)) | 0 € |
@@ -75,7 +75,7 @@ Thema → Skript → Faktencheck → Sprecherstimme → Musik → Visuals → Un
 
 | Baustein | Lösung |
 |---|---|
-| Format | täglich ein Video mit 8–15 Minuten (1920x1080) plus ein Short über 1 Minute (Englisch, Zielgruppe USA/UK) ([Workflow](.github/workflows/econ.yml)) |
+| Format | täglich um 4 Uhr deutscher Zeit ein Video mit 8–15 Minuten (1920x1080) plus ein Short über 1 Minute (Englisch, Zielgruppe USA/UK) ([Workflow](.github/workflows/econ.yml)) |
 | Look | Keynote-Stil, komplett im Code gezeichnet ([studio.py](ytauto/studio.py)): schwarze Bühne, Inter-Typografie (OFL), große Zahlen mit Farbverlauf, die hochzählen, Diagramme, die sich selbst zeichnen, Markierungen im Takt der Sprache, langsame Kamerafahrt |
 | Daten | Weltbank-Indikatoren (CC BY 4.0), im Repo zwischengespeichert, Quellen in jeder Beschreibung |
 | Skripte | ein automatischer Skript-Autor (geplante Claude-Session) nach [docs/econ-writer.md](docs/econ-writer.md), Themen aus [content/econ/topics.md](content/econ/topics.md); Qualitätsprüfung mit Vorschaubildern: `python -m ytauto econ check <id>` |
