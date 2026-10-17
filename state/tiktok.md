@@ -6,6 +6,26 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist die Frage, die oben im Video steht.
 
+## 17.10. 08:41 UTC – Every domino is bigger than the one before
+
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-domino_scale-0)
+
+```text
+Every domino is bigger than the one before
+What’s the fastest bounce?
+#domino #satisfying #oddlysatisfying #physics #simulation
+```
+
+## 17.10. 06:41 UTC – Every hit upgrades it – Who wins the duel?
+
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-blade_duel-4)
+
+```text
+Every hit upgrades it – Who wins the duel?
+Which shape will win?
+#ballbattle #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 17.10. 04:41 UTC – 12 pendulums, one perfect moment
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-pendulum-4)

@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 2969,
+      "yt_views": 2972,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -190,7 +190,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1604,
+      "yt_views": 1621,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232916815824918",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 9696,
+      "yt_views": 9803,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -481,7 +481,12 @@
       "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-blade_duel-4",
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"A4ZIMGjakpbV_mvGerykgUu\"}}"
-      ]
+      ],
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697608252602796054",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "Every hit upgrades it – Who wins the duel?\nWhich shape will win?\n#ballbattle #satisfying #oddlysatisfying #physics #simulation"
+      }
     },
     {
       "date": "2026-10-17T08:41:42+00:00",
@@ -496,7 +501,12 @@
       "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-domino_scale-0",
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"fbtrace_id\":\"A3aNl8dgKvrCATKl1DfZue-\"}}"
-      ]
+      ],
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697608513085982742",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "Every domino is bigger than the one before\nWhat’s the fastest bounce?\n#domino #satisfying #oddlysatisfying #physics #simulation"
+      }
     },
     {
       "date": "2026-10-17T10:41:40+00:00",
