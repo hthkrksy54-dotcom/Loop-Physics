@@ -15,7 +15,12 @@
       "carousel_url": "https://www.instagram.com/p/DehVDayEQih/",
       "carousel_date": "2026-10-15T15:53:46+00:00",
       "quote_story_id": "18056811212652576",
-      "thumbnail_set": true
+      "thumbnail_set": true,
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697640982137538582",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "Why the things you want stop making you happy\nWhat is one thing you once wished for that you now take for granted?\nFull video essay on YouTube: Quiet Thoughts (@quietthoughts-20)\n#Psychology #Philosophy #Happiness #learnontiktok"
+      }
     },
     {
       "id": "dichotomy-of-control",
@@ -27,7 +32,12 @@
       "youtube_short_id": "JUtNU4dleqA",
       "instagram_id": "18015788657974269",
       "instagram_url": "https://www.instagram.com/reel/DehTHyyDHYn/",
-      "thumbnail_set": true
+      "thumbnail_set": true,
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697640713873688598",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "The one question that freed a slave\nWhat is one thing you have been trying to control that was never yours to control?\nFull video essay on YouTube: Quiet Thoughts (@quietthoughts-20)\n#Stoicism #Philosophy #Epictetus #psychology #learnontiktok"
+      }
     },
     {
       "id": "memento-mori",

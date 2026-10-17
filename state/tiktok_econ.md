@@ -39,3 +39,14 @@ Not financial advice.
 #nationaldebt #economics #money #learnontiktok
 ```
 
+## 17.10. 10:56 UTC – Your $100 shrank to $12
+
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261017-where-did-100-dollars-go)
+
+```text
+Your $100 shrank to $12
+Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
+Not financial advice.
+#inflation #economics #money #learnontiktok
+```
+

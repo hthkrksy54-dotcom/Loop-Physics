@@ -17,7 +17,12 @@
       "instagram_id": "18135639853650564",
       "instagram_url": "https://www.instagram.com/reel/DemGVyXj1bd/",
       "instagram_story_id": "18345641236271455",
-      "reel_backfill": "2026-10-17"
+      "reel_backfill": "2026-10-17",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697640345538119702",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "Your $100 shrank to $12\nFull breakdown on YouTube: Real Numbers (@realnumbersdaily)\nNot financial advice.\n#inflation #economics #money #learnontiktok"
+      }
     },
     {
       "id": "why-us-debt-40-trillion",

@@ -28,3 +28,25 @@ Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
 #Stoicism #MementoMori #Philosophy #psychology #learnontiktok
 ```
 
+## 15.10. 13:40 UTC – The one question that freed a slave
+
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-dichotomy-of-control)
+
+```text
+The one question that freed a slave
+What is one thing you have been trying to control that was never yours to control?
+Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
+#Stoicism #Philosophy #Epictetus #psychology #learnontiktok
+```
+
+## 15.10. 13:22 UTC – Why the things you want stop making you happy
+
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-hedonic-treadmill)
+
+```text
+Why the things you want stop making you happy
+What is one thing you once wished for that you now take for granted?
+Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
+#Psychology #Philosophy #Happiness #learnontiktok
+```
+
