@@ -6,17 +6,6 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
-## 17.10. 20:41 UTC – Can it smash through all 7 rings?
-
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-ring_breaker-2)
-
-```text
-Can it smash through all 7 rings?
-One ball, seven rings of tiles. The outer rings are tougher – the last one needs the whole swarm.
-💬 Which ring did you think would stop it?
-#escape #satisfying #oddlysatisfying #physics #simulation
-```
-
 ## 17.10. 06:41 UTC – Every hit upgrades it – Who wins the duel?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-blade_duel-4)
@@ -72,6 +61,17 @@ One ball, 22 spinning rings, one gap in each – it has to find every exit to br
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 17.10. 20:41 UTC – Can it smash through all 7 rings?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697763195846479136) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-ring_breaker-2)
+
+```text
+Can it smash through all 7 rings?
+One ball, seven rings of tiles. The outer rings are tougher – the last one needs the whole swarm.
+💬 Which ring did you think would stop it?
+#escape #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 17.10. 16:41 UTC – Can the black hole eat all 314 balls?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697690989107973409) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-black_hole-0)
@@ -113,16 +113,5 @@ Every domino is bigger than the one before
 A marble taps one tiny domino. Every domino is a bit bigger than the one before – until the wave reaches the giant at the end.
 💬 Would the chain have made it with one domino less?
 #domino #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 17.10. 04:41 UTC – 12 pendulums, one perfect moment
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697611766636891425) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-pendulum-4)
-
-```text
-12 pendulums, one perfect moment
-12 pendulums, each swinging a little faster than the one before – waves and snakes appear, until they all line up again.
-💬 Did you see the snake?
-#pendulumwave #satisfying #oddlysatisfying #physics #simulation
 ```
 
