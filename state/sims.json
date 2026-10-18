@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-18T09:53+00:00"
       },
-      "yt_views": 6996,
+      "yt_views": 7020,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-18T09:53+00:00"
       },
-      "yt_views": 12979,
+      "yt_views": 13030,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -774,7 +774,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697901343209573664"
       },
       "youtube_id": "gbOvNfhdn-g",
-      "yt_views": 1457,
+      "yt_views": 1463,
       "stats": {
         "views": 1509,
         "reach": 1238,
@@ -807,7 +807,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697979638068284704"
       },
       "youtube_id": "ZSdNVZtvCYY",
-      "yt_views": 1328
+      "yt_views": 1364
     },
     {
       "date": "2026-10-18T16:41:42+00:00",
@@ -827,6 +827,26 @@
         "status": "PUBLISH_COMPLETE",
         "caption": "4 pendulums, 0.001° apart\n4 double pendulums that start only 0.001° apart. For a while they move as one – then chaos takes over.\n💬 Which pendulum was your favourite?\n#doublependulum #satisfying #oddlysatisfying #physics #simulation",
         "url": "https://www.tiktok.com/@loop_physics/video/7698054550548139296"
+      }
+    },
+    {
+      "date": "2026-10-18T22:41:43+00:00",
+      "kind": "escape",
+      "seed": 25,
+      "melody": "blue_danube",
+      "timbre": "bell",
+      "title": "Can the ball escape all 19 rings? – Guess the song",
+      "duration": 78.0,
+      "why": "standout",
+      "drive": "https://drive.google.com/drive/folders/1AZ3h4qxAVXhI67toPcfhlq97YJ_UfNXo",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261018-escape-25",
+      "instagram_id": "17949609432279795",
+      "instagram_url": "https://www.instagram.com/reel/Depy2ZijbNM/",
+      "instagram_story_id": "18017446115959178",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7698143636768655362",
+        "status": "SEND_TO_USER_INBOX",
+        "caption": "Can the ball escape all 19 rings?\nOne ball, 19 spinning rings, one gap in each – it has to find every exit to break free.\n💬 Which ring was the hardest one?\n#ballescape #satisfying #oddlysatisfying #physics #simulation"
       }
     }
   ]
