@@ -111,9 +111,16 @@
       "reel_due": "2026-10-18T15:00:00+00:00",
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697837976344250390",
-        "status": "SEND_TO_USER_INBOX",
-        "caption": "$24,000 beat $72,000. Here's how.\nAlex saves for 10 years and stops. Sam saves three times as much for 30 years.\n💬 How old were you when you started saving?\nFull breakdown on YouTube: Real Numbers (@realnumbersdaily)\nNot financial advice.\n#money #compoundinterest #economics #personalfinance #learnontiktok"
-      }
+        "status": "PUBLISH_COMPLETE",
+        "caption": "$24,000 beat $72,000. Here's how.\nAlex saves for 10 years and stops. Sam saves three times as much for 30 years.\n💬 How old were you when you started saving?\nFull breakdown on YouTube: Real Numbers (@realnumbersdaily)\nNot financial advice.\n#money #compoundinterest #economics #personalfinance #learnontiktok",
+        "url": "https://www.tiktok.com/@realnumbersdaily/video/7697900855495855393"
+      },
+      "youtube_id": "VAavJZiJATA",
+      "youtube_short_id": "vX94-pIlPKk",
+      "texts_set": true,
+      "short_texts_set": "linked",
+      "thumbnail_error": "thumbnail skipped (403): {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"The authenticated user doesn't have permissions to upload and set custom video thumbnails.\",\n    \"errors\": [\n      {\n        \"m",
+      "captions_set": true
     }
   ]
 }

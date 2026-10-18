@@ -8,7 +8,7 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 ## 18.10. 03:00 UTC – Could you live your life again?
 
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-amor-fati)
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7697901111537044769) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-amor-fati)
 
 ```text
 Could you live your life again?
