@@ -8,6 +8,17 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 **Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: the go-to sound for dramatic Halloween reveals this October – fits finale moments · Experience – Ludovico Einaudi: the biggest classical-piano sound on TikTok, calm build-up that matches slow satisfying runs · Spooky, quiet, scary atmosphere piano – Skittlegirl Sound: millions of uses for creepy piano backdrops – ideal for the zombie outbreak run
 
+## 18.10. 16:41 UTC – 4 pendulums, 0.001° apart
+
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261018-chaos-4)
+
+```text
+4 pendulums, 0.001° apart
+4 double pendulums that start only 0.001° apart. For a while they move as one – then chaos takes over.
+💬 Which pendulum was your favourite?
+#doublependulum #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 17.10. 06:41 UTC – Every hit upgrades it – Who wins the duel?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-blade_duel-4)
