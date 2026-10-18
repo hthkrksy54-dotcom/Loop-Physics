@@ -6,16 +6,7 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
-## 18.10. 00:41 UTC – Will 375 balls make a bell curve?
-
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261018-plinko-3)
-
-```text
-Will 375 balls make a bell curve?
-Balls drop through a triangle of pegs, left or right at every peg – and pile up into a bell curve.
-💬 Did you expect such a clean bell curve?
-#plinko #satisfying #oddlysatisfying #physics #simulation
-```
+**Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: the go-to sound for dramatic Halloween reveals this October – fits finale moments · Experience – Ludovico Einaudi: the biggest classical-piano sound on TikTok, calm build-up that matches slow satisfying runs · Spooky, quiet, scary atmosphere piano – Skittlegirl Sound: millions of uses for creepy piano backdrops – ideal for the zombie outbreak run
 
 ## 17.10. 06:41 UTC – Every hit upgrades it – Who wins the duel?
 
@@ -72,6 +63,17 @@ One ball, 22 spinning rings, one gap in each – it has to find every exit to br
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 18.10. 00:41 UTC – Will 375 balls make a bell curve?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697901343209573664) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261018-plinko-3)
+
+```text
+Will 375 balls make a bell curve?
+Balls drop through a triangle of pegs, left or right at every peg – and pile up into a bell curve.
+💬 Did you expect such a clean bell curve?
+#plinko #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 17.10. 20:41 UTC – Can it smash through all 7 rings?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697763195846479136) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-ring_breaker-2)
@@ -113,16 +115,5 @@ Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/
 What will 234 bounces draw?
 More bounces next time?
 #stringart #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 17.10. 08:41 UTC – Every domino is bigger than the one before
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697611867027557664) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-domino_scale-0)
-
-```text
-Every domino is bigger than the one before
-A marble taps one tiny domino. Every domino is a bit bigger than the one before – until the wave reaches the giant at the end.
-💬 Would the chain have made it with one domino less?
-#domino #satisfying #oddlysatisfying #physics #simulation
 ```
 
