@@ -6,6 +6,19 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
+## 18.10. 03:04 UTC – $24,000 beat $72,000. Here's how.
+
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261018-compound-interest-time)
+
+```text
+$24,000 beat $72,000. Here's how.
+Alex saves for 10 years and stops. Sam saves three times as much for 30 years.
+💬 How old were you when you started saving?
+Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
+Not financial advice.
+#money #compoundinterest #economics #personalfinance #learnontiktok
+```
+
 ## 17.10. 11:40 UTC – 97% of China was poor. Then this.
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@realnumbersdaily/video/7697643126982184225) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261017-why-china-grew-so-fast)
