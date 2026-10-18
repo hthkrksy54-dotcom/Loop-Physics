@@ -8,7 +8,7 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 ## 18.10. 03:04 UTC – $24,000 beat $72,000. Here's how.
 
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261018-compound-interest-time)
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261018-compound-interest-time)
 
 ```text
 $24,000 beat $72,000. Here's how.
