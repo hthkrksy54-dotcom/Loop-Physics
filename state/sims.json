@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-18T09:53+00:00"
       },
-      "yt_views": 4623,
+      "yt_views": 4664,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -104,7 +104,7 @@
         "comments": 0,
         "at": "2026-10-18T09:53+00:00"
       },
-      "yt_views": 33,
+      "yt_views": 34,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235656464123907",
         "status": "PUBLISH_COMPLETE",
@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-18T09:53+00:00"
       },
-      "yt_views": 6857,
+      "yt_views": 6874,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -190,7 +190,7 @@
         "comments": 0,
         "at": "2026-10-18T09:53+00:00"
       },
-      "yt_views": 2452,
+      "yt_views": 2496,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232916815824918",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-18T09:53+00:00"
       },
-      "yt_views": 12922,
+      "yt_views": 12899,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -249,7 +249,7 @@
         "comments": 0,
         "at": "2026-10-18T09:53+00:00"
       },
-      "yt_views": 63,
+      "yt_views": 62,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233367154608150",
         "status": "SEND_TO_USER_INBOX",
@@ -277,7 +277,7 @@
         "comments": 0,
         "at": "2026-10-18T09:53+00:00"
       },
-      "yt_views": 1263,
+      "yt_views": 1267,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233859481487382",
         "status": "SEND_TO_USER_INBOX",
@@ -648,7 +648,7 @@
       "instagram_id": "18030561041882795",
       "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/",
       "youtube_id": "3Qgx9BMIlXo",
-      "yt_views": 6393,
+      "yt_views": 6847,
       "stats": {
         "views": 2020,
         "reach": 1700,
@@ -743,7 +743,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697763195846479136"
       },
       "youtube_id": "ONKevBQHRdk",
-      "yt_views": 1020,
+      "yt_views": 1016,
       "stats": {
         "views": 1292,
         "reach": 1177,
@@ -774,7 +774,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697901343209573664"
       },
       "youtube_id": "gbOvNfhdn-g",
-      "yt_views": 1365,
+      "yt_views": 1401,
       "stats": {
         "views": 1509,
         "reach": 1238,
@@ -807,7 +807,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697979638068284704"
       },
       "youtube_id": "ZSdNVZtvCYY",
-      "yt_views": 1172
+      "yt_views": 1209
     },
     {
       "date": "2026-10-18T16:41:42+00:00",
@@ -824,8 +824,9 @@
       "instagram_url": "https://www.instagram.com/reel/DepJe9wgXaX/",
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7698050720700549142",
-        "status": "SEND_TO_USER_INBOX",
-        "caption": "4 pendulums, 0.001° apart\n4 double pendulums that start only 0.001° apart. For a while they move as one – then chaos takes over.\n💬 Which pendulum was your favourite?\n#doublependulum #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "4 pendulums, 0.001° apart\n4 double pendulums that start only 0.001° apart. For a while they move as one – then chaos takes over.\n💬 Which pendulum was your favourite?\n#doublependulum #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7698054550548139296"
       }
     }
   ]

@@ -8,17 +8,6 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 **Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: the go-to sound for dramatic Halloween reveals this October – fits finale moments · Experience – Ludovico Einaudi: the biggest classical-piano sound on TikTok, calm build-up that matches slow satisfying runs · Spooky, quiet, scary atmosphere piano – Skittlegirl Sound: millions of uses for creepy piano backdrops – ideal for the zombie outbreak run
 
-## 18.10. 16:41 UTC – 4 pendulums, 0.001° apart
-
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261018-chaos-4)
-
-```text
-4 pendulums, 0.001° apart
-4 double pendulums that start only 0.001° apart. For a while they move as one – then chaos takes over.
-💬 Which pendulum was your favourite?
-#doublependulum #satisfying #oddlysatisfying #physics #simulation
-```
-
 ## 17.10. 06:41 UTC – Every hit upgrades it – Who wins the duel?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-blade_duel-4)
@@ -74,6 +63,17 @@ One ball, 22 spinning rings, one gap in each – it has to find every exit to br
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 18.10. 16:41 UTC – 4 pendulums, 0.001° apart
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7698054550548139296) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261018-chaos-4)
+
+```text
+4 pendulums, 0.001° apart
+4 double pendulums that start only 0.001° apart. For a while they move as one – then chaos takes over.
+💬 Which pendulum was your favourite?
+#doublependulum #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 18.10. 10:41 UTC – Can anyone survive 72 seconds?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697979638068284704) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261018-zombie_tag-0)
@@ -116,16 +116,5 @@ Can the black hole eat all 314 balls?
 A few hundred balls orbit a tiny black hole.
 💬 Which colour do you think falls in last?
 #blackhole #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 17.10. 12:49 UTC – Can the ball escape all 17 rings?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697660867097201952) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-escape-18)
-
-```text
-Can the ball escape all 17 rings?
-One ball, 17 spinning rings, one gap in each – it has to find every exit to break free.
-💬 How many seconds did you guess?
-#ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
