@@ -149,10 +149,8 @@ class Timeline:
     audio: list[tuple[float, np.ndarray]] = field(default_factory=list)
     captions: list[tuple[float, float, str]] = field(default_factory=list)
     chapters: list[tuple[float, str]] = field(default_factory=list)
-    foley: list[tuple[float, str]] = field(default_factory=list)
 
     def show(self, show: dict, dur: float, marks: list | None = None) -> None:
-        self.foley.append((self.t, "swell" if show["type"] == "title" else "whoosh"))
         parts = _scene(self.layout, show, dur, marks or [])
         self.cuts.append(Cut(self.t, self.t + dur, studio.scene(self.layout, parts, dur)))
         self.t += dur
@@ -223,21 +221,6 @@ def build_short(script: dict, cfg: dict) -> Timeline:
 # ---------------------------------------------------------------- sound
 
 
-def _sfx(kind: str, rng: np.random.Generator) -> np.ndarray:
-    """A soft air whoosh for a scene change; a slow swell with a low boom for title cards."""
-    peak = 0.95 if kind == "swell" else 0.32
-    n = int(SAMPLE_RATE * (peak + 0.9))
-    t = np.arange(n, dtype=np.float32) / SAMPLE_RATE
-    noise = rng.standard_normal(n).astype(np.float32)
-    body = np.convolve(noise, np.ones(28, np.float32) / 28, mode="same")
-    env = np.where(t < peak, (t / peak) ** 2.2, np.exp(-(t - peak) * 7)).astype(np.float32)
-    sig = body * env * (0.5 if kind == "swell" else 0.32)
-    if kind == "swell":
-        tb = np.clip(t - peak, 0, None)
-        sig += (np.sin(2 * np.pi * 52 * tb) * np.exp(-tb * 3.2) * (t >= peak) * 0.16).astype(np.float32)
-    return sig.astype(np.float32)
-
-
 def _audio(tl: Timeline, seed: int) -> np.ndarray:
     total = tl.t + 0.5
     voice = np.zeros(int(total * SAMPLE_RATE) + 1, np.float32)
@@ -245,12 +228,7 @@ def _audio(tl: Timeline, seed: int) -> np.ndarray:
         i = int(start * SAMPLE_RATE)
         voice[i:i + len(a)] += a[: len(voice) - i]
     bgm = music.pulse(total, seed) * 0.6
-    mix = render._mix(voice, bgm)
-    rng = np.random.default_rng(seed)
-    for t, kind in tl.foley[1:]:
-        s = _sfx(kind, rng)
-        i = max(0, int((t - (0.75 if kind == "swell" else 0.12)) * SAMPLE_RATE))
-        mix[i:i + len(s)] += s[: len(mix) - i, None]
+    mix = render._mix(voice, bgm)  # voice and music only – no whoosh or swell effects on scene changes
     return np.clip(mix, -1, 1)
 
 
