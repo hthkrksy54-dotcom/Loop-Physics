@@ -6,6 +6,18 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
+## 18.10. 03:00 UTC – Could you live your life again?
+
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-amor-fati)
+
+```text
+Could you live your life again?
+Amor fati – the love of fate. Nietzsche wrote it as a New Year's wish in 1882, while illness had already taken his career.
+💬 What is something you once wished had gone differently, but now would not change?
+Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
+#Philosophy #AmorFati #Nietzsche #psychology #learnontiktok
+```
+
 ## 17.10. 07:13 UTC – Why you feel watched – and almost nobody is
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7697642328172924193) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-spotlight-effect)
