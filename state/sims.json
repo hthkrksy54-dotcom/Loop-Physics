@@ -48,7 +48,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1400,
+      "yt_views": 1401,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235341996115990",
         "status": "PUBLISH_COMPLETE",
@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 3840,
+      "yt_views": 3890,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -104,7 +104,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 25,
+      "yt_views": 24,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235656464123907",
         "status": "PUBLISH_COMPLETE",
@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 6471,
+      "yt_views": 6483,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -161,7 +161,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 363,
+      "yt_views": 372,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233117064890390",
         "status": "SEND_TO_USER_INBOX",
@@ -190,7 +190,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 1900,
+      "yt_views": 1902,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232916815824918",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 12334,
+      "yt_views": 12335,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -277,7 +277,7 @@
         "comments": 0,
         "at": "2026-10-16T10:06+00:00"
       },
-      "yt_views": 941,
+      "yt_views": 1125,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233859481487382",
         "status": "SEND_TO_USER_INBOX",
@@ -549,7 +549,7 @@
       "instagram_id": "18030561041882795",
       "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/",
       "youtube_id": "3Qgx9BMIlXo",
-      "yt_views": 1818
+      "yt_views": 2028
     },
     {
       "date": "2026-10-17T12:49:05+00:00",
@@ -617,7 +617,26 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697763195846479136"
       },
       "youtube_id": "ONKevBQHRdk",
-      "yt_views": 60
+      "yt_views": 439
+    },
+    {
+      "date": "2026-10-18T00:41:39+00:00",
+      "kind": "plinko",
+      "seed": 3,
+      "melody": "mountain_king",
+      "timbre": "chip",
+      "title": "Will 375 balls make a bell curve? – Sound on",
+      "duration": 71.7,
+      "why": "standout",
+      "drive": "https://drive.google.com/drive/folders/1jQPSvRuliBkWqhzkBD-3D6bnl04vpXPx",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261018-plinko-3",
+      "instagram_id": "17954530908037819",
+      "instagram_url": "https://www.instagram.com/reel/DenbqfpCpAC/",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7697802800738273302",
+        "status": "SEND_TO_USER_INBOX",
+        "caption": "Will 375 balls make a bell curve?\nBalls drop through a triangle of pegs, left or right at every peg – and pile up into a bell curve.\n💬 Did you expect such a clean bell curve?\n#plinko #satisfying #oddlysatisfying #physics #simulation"
+      }
     }
   ]
 }

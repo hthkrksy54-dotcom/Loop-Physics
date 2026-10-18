@@ -6,6 +6,17 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
+## 18.10. 00:41 UTC – Will 375 balls make a bell curve?
+
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261018-plinko-3)
+
+```text
+Will 375 balls make a bell curve?
+Balls drop through a triangle of pegs, left or right at every peg – and pile up into a bell curve.
+💬 Did you expect such a clean bell curve?
+#plinko #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 17.10. 06:41 UTC – Every hit upgrades it – Who wins the duel?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-blade_duel-4)
