@@ -63,7 +63,7 @@ Thema → Skript → Faktencheck → Sprecherstimme → Musik → Visuals → Un
 
 | Baustein | Lösung |
 |---|---|
-| Takt | 4 Videos am Tag, 0:40, 12:40, 16:40 und 20:40 UTC (US-Ostküste 20:40, 8:40, 12:40, 16:40 Sommerzeit) ([Workflow](.github/workflows/sims.yml)); zwischen den Slots pflegt der Workflow YouTube-Uploads nach, füllt TikTok-Entwürfe auf und startet liegengebliebene Workflows |
+| Takt | 4 Videos am Tag, alle 6 Stunden: 4:40, 10:40, 16:40 und 22:40 UTC (deutsche Sommerzeit 6:40, 12:40, 18:40, 0:40; US-Ostküste 0:40, 6:40, 12:40, 18:40) ([Workflow](.github/workflows/sims.yml)); zwischen den Slots pflegt der Workflow YouTube-Uploads nach, füllt TikTok-Entwürfe auf und startet liegengebliebene Workflows |
 | Neue Konzepte | 2× täglich baut ein automatischer Konzept-Designer (geplante Claude-Session) nach [docs/concept-designer.md](docs/concept-designer.md) ein neues Konzept aus aktuellen viralen Trends – eine Datei in `ytauto/concepts/`, mit Qualitätsprüfung (`python -m ytauto concept-check`) |
 | Melodien | gewählt nach Viralität: eigene Aufrufe pro Melodie (z. B. Für Elise), Melodien in viralen Satisfying-Shorts (täglicher Trend-Check) und die Song-Recherche des Konzept-Designers 2× täglich ([config/sims_music.json](config/sims_music.json): Boosts, saisonale Stücke, neue gemeinfreie Melodien); angesagte, urheberrechtlich geschützte Sounds stehen als Vorschlag oben in [state/tiktok.md](state/tiktok.md) – nur zum Auswählen in TikTok; Übersicht: `python -m ytauto melodies` |
 | Ende | nach dem Finale wird „LIKE & SUBSCRIBE“ eingeblendet |
