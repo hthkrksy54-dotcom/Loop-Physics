@@ -8,6 +8,17 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 **Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: the go-to sound for dramatic Halloween reveals this October – fits finale moments · Experience – Ludovico Einaudi: the biggest classical-piano sound on TikTok, calm build-up that matches slow satisfying runs · Spooky, quiet, scary atmosphere piano – Skittlegirl Sound: millions of uses for creepy piano backdrops – ideal for the zombie outbreak run
 
+## 18.10. 10:41 UTC – Can anyone survive 72 seconds?
+
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261018-zombie_tag-0)
+
+```text
+Can anyone survive 72 seconds?
+One green zombie ball, forty survivors, a shrinking arena. The horde hunts the nearest survivor – can anyone last until the clock runs out?
+💬 How many survive? Guess before the end!
+#zombie #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 17.10. 06:41 UTC – Every hit upgrades it – Who wins the duel?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-blade_duel-4)
