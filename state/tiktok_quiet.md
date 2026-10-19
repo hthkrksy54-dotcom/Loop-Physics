@@ -6,6 +6,18 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
+## 19.10. 04:40 UTC – Doomsday failed. Their faith grew.
+
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-cognitive-dissonance)
+
+```text
+Doomsday failed. Their faith grew.
+What happens when a group's prophecy fails – and they believe even more strongly afterwards?
+💬 What is a belief you defended for a long time before you finally changed your mind?
+Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
+#Psychology #CognitiveDissonance #Philosophy #learnontiktok
+```
+
 ## 18.10. 03:00 UTC – Could you live your life again?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7697901111537044769) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-amor-fati)
