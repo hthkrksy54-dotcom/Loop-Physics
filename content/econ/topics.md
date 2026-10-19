@@ -10,7 +10,7 @@ Formats that work for Finanzbär and Finanzfluss, rebuilt for US/UK viewers. Spe
 - [ ] Why $100,000 is the money milestone that changes everything (compound math: the first 100k vs the next)
 - [ ] 14 money leaks that quietly keep you broke (subscriptions, fees, car payments, interest – BLS spending data, Fed G.19)
 - [ ] Money truths most people learn too late – what you wish you knew at 20
-- [ ] What $100, $250 or $500 a month becomes in 10, 20 and 30 years (math + long-run market history, no products)
+- [x] What $100, $250 or $500 a month becomes in 10, 20 and 30 years (math + long-run market history, no products) – `100-250-500-a-month`
 - [ ] Is compound interest overrated? The honest math after inflation, fees and taxes
 - [x] How long can the stock market keep going up? 100 years of history, crashes and recoveries (no predictions) – `stock-market-crashes-recoveries`
 - [ ] 10 charts that explain financial freedom

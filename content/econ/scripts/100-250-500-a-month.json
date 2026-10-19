@@ -1,0 +1,1653 @@
+{
+  "id": "100-250-500-a-month",
+  "order": 11,
+  "title": "What $100, $250 or $500 a Month Becomes in 10, 20 and 30 Years – With 98 Years of Data",
+  "title_card": "What does $250 a month become?",
+  "description": "How much does $100, $250 or $500 a month really turn into? First the simple math at an example rate – then the reality check: every 10- and 30-year stretch of the US stock market since 1928, after inflation. The best case, the worst case, and why $100 for 30 years beats $500 for 10. No products, no advice – just the numbers.",
+  "tags": [
+    "investing 250 a month",
+    "how much to invest per month",
+    "compound interest",
+    "monthly investing",
+    "saving money",
+    "s&p 500 history",
+    "dollar cost averaging",
+    "investing for beginners",
+    "personal finance",
+    "money",
+    "financial freedom",
+    "real numbers"
+  ],
+  "hashtags": [
+    "#investing",
+    "#compoundinterest",
+    "#money"
+  ],
+  "sources": [
+    "Illustrative calculations: monthly deposits of $100, $250 and $500 at an example rate of 7% a year, compounded monthly (not a forecast, not a recommendation)",
+    "Aswath Damodaran, NYU Stern School of Business, 'Historical Returns on Stocks, Bonds, Bills and Real Estate: 1928–2025' (histretSP.xls): annual real S&P 500 total returns including dividends, 1928–2025",
+    "Illustrative inflation example: 2.5% a year for 30 years (price level ×2.10); long-run real S&P 500 return 1928–2025 of about 6.8% a year computed from the same dataset",
+    "Own calculations from that dataset: $250 deposited every month (held constant in real terms), each year's real return spread evenly over its 12 months; every rolling 10-year (89) and 30-year (69) period from 1928 to 2025"
+  ],
+  "thumbnail": {
+    "big": "$250/month",
+    "text": "becomes how much?",
+    "color": "green"
+  },
+  "chapters": [
+    {
+      "heading": "Intro",
+      "beats": [
+        {
+          "say": "Two hundred and fifty dollars a month. About eight dollars a day. Over thirty years, you'd pay in ninety thousand dollars.",
+          "show": {
+            "type": "number",
+            "big": "$250 a month",
+            "caption": "for 30 years = $90,000 paid in",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "At an example rate of seven percent a year, those ninety thousand become about three hundred and five thousand.",
+          "show": {
+            "type": "number",
+            "big": "$90,000 → $304,993",
+            "caption": "$250 a month for 30 years at 7%",
+            "color": "green"
+          }
+        },
+        {
+          "say": "But that's a formula. Real markets don't pay seven percent every year. So today we do two things: first the clean math for a hundred, two fifty and five hundred dollars a month – then the reality check, with every thirty-year stretch of the US stock market since 1928."
+        },
+        {
+          "say": "Quick note: this is general information, not financial advice. Every rate here is an example, not a forecast.",
+          "show": {
+            "type": "note",
+            "text": "Example rates. *Not* forecasts. *Not* advice.",
+            "source": "History shows what happened – not what will",
+            "color": "gray"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "The clean math",
+      "beats": [
+        {
+          "say": "Start with two hundred and fifty dollars a month at seven percent, added monthly.",
+          "show": {
+            "type": "line",
+            "heading": "$250 a month at 7% a year",
+            "unit": "$",
+            "sub": "Monthly deposits, monthly compounding · example rate, not a forecast",
+            "series": [
+              {
+                "label": "Balance",
+                "points": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    1,
+                    3098
+                  ],
+                  [
+                    2,
+                    6420
+                  ],
+                  [
+                    3,
+                    9983
+                  ],
+                  [
+                    4,
+                    13802
+                  ],
+                  [
+                    5,
+                    17898
+                  ],
+                  [
+                    6,
+                    22290
+                  ],
+                  [
+                    7,
+                    27000
+                  ],
+                  [
+                    8,
+                    32050
+                  ],
+                  [
+                    9,
+                    37465
+                  ],
+                  [
+                    10,
+                    43271
+                  ],
+                  [
+                    11,
+                    49497
+                  ],
+                  [
+                    12,
+                    56174
+                  ],
+                  [
+                    13,
+                    63333
+                  ],
+                  [
+                    14,
+                    71009
+                  ],
+                  [
+                    15,
+                    79241
+                  ],
+                  [
+                    16,
+                    88067
+                  ],
+                  [
+                    17,
+                    97532
+                  ],
+                  [
+                    18,
+                    107680
+                  ],
+                  [
+                    19,
+                    118563
+                  ],
+                  [
+                    20,
+                    130232
+                  ],
+                  [
+                    21,
+                    142744
+                  ],
+                  [
+                    22,
+                    156161
+                  ],
+                  [
+                    23,
+                    170548
+                  ],
+                  [
+                    24,
+                    185976
+                  ],
+                  [
+                    25,
+                    202518
+                  ],
+                  [
+                    26,
+                    220256
+                  ],
+                  [
+                    27,
+                    239277
+                  ],
+                  [
+                    28,
+                    259672
+                  ],
+                  [
+                    29,
+                    281542
+                  ],
+                  [
+                    30,
+                    304993
+                  ]
+                ],
+                "color": "green"
+              },
+              {
+                "label": "Paid in",
+                "points": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    1,
+                    3000
+                  ],
+                  [
+                    2,
+                    6000
+                  ],
+                  [
+                    3,
+                    9000
+                  ],
+                  [
+                    4,
+                    12000
+                  ],
+                  [
+                    5,
+                    15000
+                  ],
+                  [
+                    6,
+                    18000
+                  ],
+                  [
+                    7,
+                    21000
+                  ],
+                  [
+                    8,
+                    24000
+                  ],
+                  [
+                    9,
+                    27000
+                  ],
+                  [
+                    10,
+                    30000
+                  ],
+                  [
+                    11,
+                    33000
+                  ],
+                  [
+                    12,
+                    36000
+                  ],
+                  [
+                    13,
+                    39000
+                  ],
+                  [
+                    14,
+                    42000
+                  ],
+                  [
+                    15,
+                    45000
+                  ],
+                  [
+                    16,
+                    48000
+                  ],
+                  [
+                    17,
+                    51000
+                  ],
+                  [
+                    18,
+                    54000
+                  ],
+                  [
+                    19,
+                    57000
+                  ],
+                  [
+                    20,
+                    60000
+                  ],
+                  [
+                    21,
+                    63000
+                  ],
+                  [
+                    22,
+                    66000
+                  ],
+                  [
+                    23,
+                    69000
+                  ],
+                  [
+                    24,
+                    72000
+                  ],
+                  [
+                    25,
+                    75000
+                  ],
+                  [
+                    26,
+                    78000
+                  ],
+                  [
+                    27,
+                    81000
+                  ],
+                  [
+                    28,
+                    84000
+                  ],
+                  [
+                    29,
+                    87000
+                  ],
+                  [
+                    30,
+                    90000
+                  ]
+                ],
+                "color": "gray"
+              }
+            ]
+          }
+        },
+        {
+          "say": "The gray line is what you pay in: three thousand dollars a year, a straight line."
+        },
+        {
+          "say": "After ten years, you've paid thirty thousand. The balance is about forty-three thousand. Nice – but not life-changing.",
+          "mark": {
+            "x": 10
+          }
+        },
+        {
+          "say": "After twenty years: sixty thousand paid in, about a hundred and thirty thousand in the account. The growth has now overtaken your own deposits.",
+          "mark": {
+            "x": 20
+          }
+        },
+        {
+          "say": "After thirty years: ninety thousand paid in, about three hundred and five thousand dollars.",
+          "mark": {
+            "x": 30,
+            "label": "$304,993"
+          }
+        },
+        {
+          "say": "Look at the shape. In the last ten years alone, the balance grows by about a hundred and seventy-five thousand – more than in the first twenty years combined.",
+          "show": {
+            "type": "compare",
+            "heading": "$250 a month at 7%",
+            "left": [
+              "Years 1–20",
+              "+$130,232"
+            ],
+            "right": [
+              "Years 21–30",
+              "+$174,761"
+            ],
+            "color": "green"
+          }
+        },
+        {
+          "say": "That's compounding: your growth starts to earn growth. And it only shows up late."
+        }
+      ]
+    },
+    {
+      "heading": "$100, $250, $500",
+      "beats": [
+        {
+          "say": "Now the three amounts side by side, all at the same example rate of seven percent, after thirty years.",
+          "show": {
+            "type": "bars",
+            "heading": "Monthly amount at 7% a year – after 30 years",
+            "unit": "$",
+            "items": [
+              [
+                "$100 a month",
+                121997
+              ],
+              [
+                "$250 a month",
+                304993
+              ],
+              [
+                "$500 a month",
+                609985
+              ]
+            ],
+            "source": "Monthly compounding · example rate, not a forecast",
+            "color": "green",
+            "sort": false
+          }
+        },
+        {
+          "say": "A hundred dollars a month – thirty-six thousand paid in – becomes about a hundred and twenty-two thousand.",
+          "mark": {
+            "items": [
+              "$100 a month"
+            ]
+          }
+        },
+        {
+          "say": "Two hundred and fifty becomes about three hundred and five thousand.",
+          "mark": {
+            "items": [
+              "$250 a month"
+            ]
+          }
+        },
+        {
+          "say": "Five hundred becomes about six hundred and ten thousand.",
+          "mark": {
+            "items": [
+              "$500 a month"
+            ]
+          }
+        },
+        {
+          "say": "Notice: double the amount, double the result. That part is simple. The amount scales the outcome in a straight line."
+        },
+        {
+          "say": "But time doesn't work in a straight line. Watch what happens when you change the years instead of the amount.",
+          "show": {
+            "type": "number",
+            "big": "10 → 20 → 30",
+            "caption": "years at $250 a month: $43k → $130k → $305k",
+            "color": "green"
+          }
+        },
+        {
+          "say": "Ten years of two fifty: about forty-three thousand. Twenty years: about a hundred and thirty thousand – three times as much. Thirty years: seven times as much. Same monthly amount."
+        }
+      ]
+    },
+    {
+      "heading": "Time beats amount",
+      "beats": [
+        {
+          "say": "Here's the comparison that surprises most people.",
+          "show": {
+            "type": "compare",
+            "heading": "At 7% a year",
+            "left": [
+              "$500 a month for 10 years",
+              "$86,542"
+            ],
+            "right": [
+              "$100 a month for 30 years",
+              "$121,997"
+            ],
+            "color": "gold"
+          }
+        },
+        {
+          "say": "Five hundred dollars a month for ten years: sixty thousand paid in, about eighty-seven thousand at the end."
+        },
+        {
+          "say": "A hundred dollars a month for thirty years: only thirty-six thousand paid in – and about a hundred and twenty-two thousand at the end."
+        },
+        {
+          "say": "The smaller amount wins. Because it had more time. The person paying a hundred a month paid in less than two thirds as much – and ended up with forty percent more."
+        },
+        {
+          "say": "So if five hundred a month feels impossible right now, the math says: a smaller amount, started earlier, can still do most of the work.",
+          "show": {
+            "type": "note",
+            "text": "The amount matters. *Time* matters more.",
+            "source": "Example rate of 7% a year",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "If this already changed how you think about a small monthly amount, leave a like – it really helps the channel."
+        }
+      ]
+    },
+    {
+      "heading": "The price of waiting",
+      "beats": [
+        {
+          "say": "Now flip it around. What does it cost to wait? Three people, all putting away two hundred and fifty dollars a month until sixty-five, all at the same example seven percent.",
+          "show": {
+            "type": "bars",
+            "heading": "$250 a month at 7% until age 65",
+            "unit": "$",
+            "items": [
+              [
+                "Start at 25",
+                656203
+              ],
+              [
+                "Start at 35",
+                304993
+              ],
+              [
+                "Start at 45",
+                130232
+              ]
+            ],
+            "source": "Monthly compounding · example rate, not a forecast",
+            "color": "green",
+            "sort": false
+          }
+        },
+        {
+          "say": "Start at twenty-five: forty years of deposits. About six hundred and fifty-six thousand dollars at sixty-five.",
+          "mark": {
+            "items": [
+              "Start at 25"
+            ]
+          }
+        },
+        {
+          "say": "Start at thirty-five: about three hundred and five thousand. Ten years later – and less than half the result.",
+          "mark": {
+            "items": [
+              "Start at 35"
+            ]
+          }
+        },
+        {
+          "say": "Start at forty-five: about a hundred and thirty thousand. A fifth of what the twenty-five-year-old ends with.",
+          "mark": {
+            "items": [
+              "Start at 45"
+            ]
+          }
+        },
+        {
+          "say": "So how much would the late starters need to put away each month to catch up with the twenty-five-year-old?",
+          "show": {
+            "type": "number",
+            "big": "$250 → $538 → $1,260",
+            "caption": "monthly amount to reach $656k at 65, starting at 25, 35, 45",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Starting at thirty-five: about five hundred and forty dollars a month – more than twice as much. Starting at forty-five: about twelve hundred and sixty a month. Five times as much, for the same goal."
+        },
+        {
+          "say": "Every ten years of waiting roughly doubles the monthly amount you need. That's the hidden price of 'I'll start next year'."
+        },
+        {
+          "say": "And if you're forty-five and reading this: the math still works for you. It just works with fewer years – so the amount carries more of the load. Starting at forty-five still beats starting at fifty-five."
+        }
+      ]
+    },
+    {
+      "heading": "The reality check",
+      "beats": [
+        {
+          "say": "Now, seven percent every year doesn't exist. So let's use real history. Two hundred and fifty dollars every month into the five hundred biggest US companies – the S&P 500 – with dividends reinvested.",
+          "show": {
+            "type": "number",
+            "big": "$250 a month",
+            "caption": "for 30 years, every start year since 1928",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "And we'll do it honestly: after inflation. The two fifty rises with prices, so it always buys the same – and the result is in today's money."
+        },
+        {
+          "say": "Here's what thirty years of that would have become – for every possible start year. Each point is one thirty-year stretch, by the year it ended.",
+          "show": {
+            "type": "line",
+            "heading": "$250 a month for 30 years in US stocks – every start year",
+            "unit": "$",
+            "sub": "By the year the 30 years ended · after inflation, today's money · S&P 500 incl. dividends, Damodaran (NYU Stern)",
+            "series": [
+              {
+                "label": "",
+                "points": [
+                  [
+                    1957,
+                    364767
+                  ],
+                  [
+                    1958,
+                    497032
+                  ],
+                  [
+                    1959,
+                    531415
+                  ],
+                  [
+                    1960,
+                    505501
+                  ],
+                  [
+                    1961,
+                    597375
+                  ],
+                  [
+                    1962,
+                    492852
+                  ],
+                  [
+                    1963,
+                    549652
+                  ],
+                  [
+                    1964,
+                    590594
+                  ],
+                  [
+                    1965,
+                    611496
+                  ],
+                  [
+                    1966,
+                    508080
+                  ],
+                  [
+                    1967,
+                    576981
+                  ],
+                  [
+                    1968,
+                    571731
+                  ],
+                  [
+                    1969,
+                    466924
+                  ],
+                  [
+                    1970,
+                    428411
+                  ],
+                  [
+                    1971,
+                    434181
+                  ],
+                  [
+                    1972,
+                    448418
+                  ],
+                  [
+                    1973,
+                    318669
+                  ],
+                  [
+                    1974,
+                    192712
+                  ],
+                  [
+                    1975,
+                    228773
+                  ],
+                  [
+                    1976,
+                    249037
+                  ],
+                  [
+                    1977,
+                    195650
+                  ],
+                  [
+                    1978,
+                    170296
+                  ],
+                  [
+                    1979,
+                    158679
+                  ],
+                  [
+                    1980,
+                    167575
+                  ],
+                  [
+                    1981,
+                    133629
+                  ],
+                  [
+                    1982,
+                    142570
+                  ],
+                  [
+                    1983,
+                    154254
+                  ],
+                  [
+                    1984,
+                    145819
+                  ],
+                  [
+                    1985,
+                    174958
+                  ],
+                  [
+                    1986,
+                    195529
+                  ],
+                  [
+                    1987,
+                    187982
+                  ],
+                  [
+                    1988,
+                    199222
+                  ],
+                  [
+                    1989,
+                    240057
+                  ],
+                  [
+                    1990,
+                    209995
+                  ],
+                  [
+                    1991,
+                    255378
+                  ],
+                  [
+                    1992,
+                    256539
+                  ],
+                  [
+                    1993,
+                    263846
+                  ],
+                  [
+                    1994,
+                    252134
+                  ],
+                  [
+                    1995,
+                    327359
+                  ],
+                  [
+                    1996,
+                    375536
+                  ],
+                  [
+                    1997,
+                    473898
+                  ],
+                  [
+                    1998,
+                    578482
+                  ],
+                  [
+                    1999,
+                    655676
+                  ],
+                  [
+                    2000,
+                    551970
+                  ],
+                  [
+                    2001,
+                    458656
+                  ],
+                  [
+                    2002,
+                    336267
+                  ],
+                  [
+                    2003,
+                    406091
+                  ],
+                  [
+                    2004,
+                    408162
+                  ],
+                  [
+                    2005,
+                    383084
+                  ],
+                  [
+                    2006,
+                    404107
+                  ],
+                  [
+                    2007,
+                    381802
+                  ],
+                  [
+                    2008,
+                    223496
+                  ],
+                  [
+                    2009,
+                    251397
+                  ],
+                  [
+                    2010,
+                    261350
+                  ],
+                  [
+                    2011,
+                    236366
+                  ],
+                  [
+                    2012,
+                    243209
+                  ],
+                  [
+                    2013,
+                    287530
+                  ],
+                  [
+                    2014,
+                    294272
+                  ],
+                  [
+                    2015,
+                    269643
+                  ],
+                  [
+                    2016,
+                    271776
+                  ],
+                  [
+                    2017,
+                    297925
+                  ],
+                  [
+                    2018,
+                    256943
+                  ],
+                  [
+                    2019,
+                    304954
+                  ],
+                  [
+                    2020,
+                    328474
+                  ],
+                  [
+                    2021,
+                    362971
+                  ],
+                  [
+                    2022,
+                    259541
+                  ],
+                  [
+                    2023,
+                    294505
+                  ],
+                  [
+                    2024,
+                    330044
+                  ],
+                  [
+                    2025,
+                    350283
+                  ]
+                ],
+                "color": "gold"
+              }
+            ]
+          }
+        },
+        {
+          "say": "The worst thirty years ended in 1981 – after the oil crises and the inflation of the seventies. Ninety thousand paid in, about a hundred and thirty-four thousand at the end.",
+          "mark": {
+            "x": 1981,
+            "label": "Worst: $133,629"
+          }
+        },
+        {
+          "say": "The best ended in 1999, at the top of the dot-com boom: about six hundred and fifty-six thousand dollars.",
+          "mark": {
+            "x": 1999,
+            "label": "Best: $655,676"
+          }
+        },
+        {
+          "say": "The thirty years ending in 2025: about three hundred and fifty thousand.",
+          "mark": {
+            "x": 2025
+          }
+        },
+        {
+          "say": "And the middle of all sixty-nine stretches – the median – was about three hundred and five thousand. Almost exactly what the seven percent formula said – if you read that seven percent as growth above inflation.",
+          "show": {
+            "type": "number",
+            "big": "$304,954",
+            "caption": "median of 69 thirty-year stretches, after inflation",
+            "color": "green"
+          }
+        },
+        {
+          "say": "That's the honest picture: the formula is a fair middle. But the real range ran from about one and a half times what you paid in, to about seven times. And no thirty-year stretch since 1928 ended with less than what was paid in."
+        }
+      ]
+    },
+    {
+      "heading": "Seven percent of what?",
+      "beats": [
+        {
+          "say": "That last point matters, so let's slow down. Is seven percent before or after inflation? It makes a huge difference.",
+          "show": {
+            "type": "note",
+            "text": "A dollar in 30 years ≠ a dollar *today*.",
+            "source": "Example: 2.5% inflation a year",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "If the account grows seven percent a year in dollars, but prices rise, say, two and a half percent a year, then thirty years from now everything costs about twice as much.",
+          "show": {
+            "type": "number",
+            "big": "×2.1",
+            "caption": "price level after 30 years at 2.5% inflation a year",
+            "color": "red"
+          }
+        },
+        {
+          "say": "So the three hundred and five thousand dollars would buy roughly what a hundred and forty-five thousand buys today. Still far more than the ninety thousand paid in – but half the headline.",
+          "show": {
+            "type": "compare",
+            "heading": "$250 a month, 30 years at 7%",
+            "left": [
+              "On paper",
+              "$304,993"
+            ],
+            "right": [
+              "In today's money (2.5% inflation)",
+              "$145,400"
+            ],
+            "color": "red"
+          }
+        },
+        {
+          "say": "That's why the historical numbers in this video are all after inflation, in today's money. US stocks returned about six point eight percent a year above inflation from 1928 to 2025 – which is why that history lines up so well with a seven percent formula."
+        },
+        {
+          "say": "When you see a calculator promising millions, check which kind of dollars it uses. Future dollars always look bigger than they are."
+        }
+      ]
+    },
+    {
+      "heading": "When ten years isn't enough",
+      "beats": [
+        {
+          "say": "Thirty years always ended ahead. Ten years did not.",
+          "show": {
+            "type": "number",
+            "big": "11 of 89",
+            "caption": "10-year stretches that ended below what was paid in, after inflation",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Of eighty-nine ten-year stretches, eleven ended with less buying power than the thirty thousand dollars paid in."
+        },
+        {
+          "say": "The worst: 1965 to 1974. Thirty thousand paid in – about nineteen thousand at the end, after inflation. A third gone after ten years of discipline.",
+          "show": {
+            "type": "compare",
+            "heading": "$250 a month, 1965–1974, after inflation",
+            "left": [
+              "Paid in",
+              "$30,000"
+            ],
+            "right": [
+              "Worth at the end",
+              "$19,150"
+            ],
+            "color": "red"
+          }
+        },
+        {
+          "say": "And it's not just ancient history. Someone who started in 1999 and stopped at the end of 2008 also ended up behind: about twenty-two thousand for thirty thousand paid in.",
+          "show": {
+            "type": "compare",
+            "heading": "$250 a month, 1999–2008, after inflation",
+            "left": [
+              "Paid in",
+              "$30,000"
+            ],
+            "right": [
+              "Worth at the end",
+              "$21,908"
+            ],
+            "color": "red"
+          }
+        },
+        {
+          "say": "That's why the long-run numbers come with a condition: money you might need in a few years is exposed to exactly these stretches. Time is what turns the range from scary to reliable – in the past, at least."
+        }
+      ]
+    },
+    {
+      "heading": "What to remember",
+      "beats": [
+        {
+          "say": "So, what does two hundred and fifty dollars a month become? Three things.",
+          "show": {
+            "type": "line",
+            "heading": "$250 a month for 30 years in US stocks – every start year",
+            "unit": "$",
+            "sub": "By the year the 30 years ended · after inflation, today's money · S&P 500 incl. dividends, Damodaran (NYU Stern)",
+            "series": [
+              {
+                "label": "",
+                "points": [
+                  [
+                    1957,
+                    364767
+                  ],
+                  [
+                    1958,
+                    497032
+                  ],
+                  [
+                    1959,
+                    531415
+                  ],
+                  [
+                    1960,
+                    505501
+                  ],
+                  [
+                    1961,
+                    597375
+                  ],
+                  [
+                    1962,
+                    492852
+                  ],
+                  [
+                    1963,
+                    549652
+                  ],
+                  [
+                    1964,
+                    590594
+                  ],
+                  [
+                    1965,
+                    611496
+                  ],
+                  [
+                    1966,
+                    508080
+                  ],
+                  [
+                    1967,
+                    576981
+                  ],
+                  [
+                    1968,
+                    571731
+                  ],
+                  [
+                    1969,
+                    466924
+                  ],
+                  [
+                    1970,
+                    428411
+                  ],
+                  [
+                    1971,
+                    434181
+                  ],
+                  [
+                    1972,
+                    448418
+                  ],
+                  [
+                    1973,
+                    318669
+                  ],
+                  [
+                    1974,
+                    192712
+                  ],
+                  [
+                    1975,
+                    228773
+                  ],
+                  [
+                    1976,
+                    249037
+                  ],
+                  [
+                    1977,
+                    195650
+                  ],
+                  [
+                    1978,
+                    170296
+                  ],
+                  [
+                    1979,
+                    158679
+                  ],
+                  [
+                    1980,
+                    167575
+                  ],
+                  [
+                    1981,
+                    133629
+                  ],
+                  [
+                    1982,
+                    142570
+                  ],
+                  [
+                    1983,
+                    154254
+                  ],
+                  [
+                    1984,
+                    145819
+                  ],
+                  [
+                    1985,
+                    174958
+                  ],
+                  [
+                    1986,
+                    195529
+                  ],
+                  [
+                    1987,
+                    187982
+                  ],
+                  [
+                    1988,
+                    199222
+                  ],
+                  [
+                    1989,
+                    240057
+                  ],
+                  [
+                    1990,
+                    209995
+                  ],
+                  [
+                    1991,
+                    255378
+                  ],
+                  [
+                    1992,
+                    256539
+                  ],
+                  [
+                    1993,
+                    263846
+                  ],
+                  [
+                    1994,
+                    252134
+                  ],
+                  [
+                    1995,
+                    327359
+                  ],
+                  [
+                    1996,
+                    375536
+                  ],
+                  [
+                    1997,
+                    473898
+                  ],
+                  [
+                    1998,
+                    578482
+                  ],
+                  [
+                    1999,
+                    655676
+                  ],
+                  [
+                    2000,
+                    551970
+                  ],
+                  [
+                    2001,
+                    458656
+                  ],
+                  [
+                    2002,
+                    336267
+                  ],
+                  [
+                    2003,
+                    406091
+                  ],
+                  [
+                    2004,
+                    408162
+                  ],
+                  [
+                    2005,
+                    383084
+                  ],
+                  [
+                    2006,
+                    404107
+                  ],
+                  [
+                    2007,
+                    381802
+                  ],
+                  [
+                    2008,
+                    223496
+                  ],
+                  [
+                    2009,
+                    251397
+                  ],
+                  [
+                    2010,
+                    261350
+                  ],
+                  [
+                    2011,
+                    236366
+                  ],
+                  [
+                    2012,
+                    243209
+                  ],
+                  [
+                    2013,
+                    287530
+                  ],
+                  [
+                    2014,
+                    294272
+                  ],
+                  [
+                    2015,
+                    269643
+                  ],
+                  [
+                    2016,
+                    271776
+                  ],
+                  [
+                    2017,
+                    297925
+                  ],
+                  [
+                    2018,
+                    256943
+                  ],
+                  [
+                    2019,
+                    304954
+                  ],
+                  [
+                    2020,
+                    328474
+                  ],
+                  [
+                    2021,
+                    362971
+                  ],
+                  [
+                    2022,
+                    259541
+                  ],
+                  [
+                    2023,
+                    294505
+                  ],
+                  [
+                    2024,
+                    330044
+                  ],
+                  [
+                    2025,
+                    350283
+                  ]
+                ],
+                "color": "gold"
+              }
+            ]
+          }
+        },
+        {
+          "say": "One: the math is simple. At an example seven percent, a hundred, two fifty and five hundred a month become about a hundred and twenty-two thousand, three hundred and five thousand, and six hundred and ten thousand after thirty years."
+        },
+        {
+          "say": "Two: time beats amount. A hundred a month for thirty years ended with more than five hundred a month for ten."
+        },
+        {
+          "say": "Three: history gives a range, not a number. Over thirty years since 1928, two fifty a month ended between about a hundred and thirty-four thousand and six hundred and fifty-six thousand in today's money – never below what was paid in. Over ten years, it sometimes was."
+        },
+        {
+          "say": "If you want to understand your money with real numbers, subscribe. And tell me in the comments: how much a month could you put aside?"
+        }
+      ]
+    }
+  ],
+  "short": {
+    "hook": "$100 a month beats $500 a month?",
+    "beats": [
+      {
+        "say": "Five hundred dollars a month for ten years. Or a hundred dollars a month for thirty years. Which ends with more?",
+        "show": {
+          "type": "compare",
+          "heading": "At 7% a year",
+          "left": [
+            "$500 a month for 10 years",
+            "$86,542"
+          ],
+          "right": [
+            "$100 a month for 30 years",
+            "$121,997"
+          ],
+          "color": "gold"
+        }
+      },
+      {
+        "say": "At an example rate of seven percent, five hundred a month for ten years becomes about eighty-seven thousand. A hundred a month for thirty years becomes about a hundred and twenty-two thousand. The smaller amount wins – because it had more time."
+      },
+      {
+        "say": "And real history? Two hundred and fifty a month in US stocks, for every thirty-year stretch since 1928, after inflation: the worst ended with about a hundred and thirty-four thousand, the best with about six hundred and fifty-six thousand.",
+        "show": {
+          "type": "line",
+          "heading": "$250 a month for 30 years in US stocks – every start year",
+          "unit": "$",
+          "sub": "By the year the 30 years ended · after inflation, today's money · S&P 500 incl. dividends, Damodaran (NYU Stern)",
+          "series": [
+            {
+              "label": "",
+              "points": [
+                [
+                  1957,
+                  364767
+                ],
+                [
+                  1958,
+                  497032
+                ],
+                [
+                  1959,
+                  531415
+                ],
+                [
+                  1960,
+                  505501
+                ],
+                [
+                  1961,
+                  597375
+                ],
+                [
+                  1962,
+                  492852
+                ],
+                [
+                  1963,
+                  549652
+                ],
+                [
+                  1964,
+                  590594
+                ],
+                [
+                  1965,
+                  611496
+                ],
+                [
+                  1966,
+                  508080
+                ],
+                [
+                  1967,
+                  576981
+                ],
+                [
+                  1968,
+                  571731
+                ],
+                [
+                  1969,
+                  466924
+                ],
+                [
+                  1970,
+                  428411
+                ],
+                [
+                  1971,
+                  434181
+                ],
+                [
+                  1972,
+                  448418
+                ],
+                [
+                  1973,
+                  318669
+                ],
+                [
+                  1974,
+                  192712
+                ],
+                [
+                  1975,
+                  228773
+                ],
+                [
+                  1976,
+                  249037
+                ],
+                [
+                  1977,
+                  195650
+                ],
+                [
+                  1978,
+                  170296
+                ],
+                [
+                  1979,
+                  158679
+                ],
+                [
+                  1980,
+                  167575
+                ],
+                [
+                  1981,
+                  133629
+                ],
+                [
+                  1982,
+                  142570
+                ],
+                [
+                  1983,
+                  154254
+                ],
+                [
+                  1984,
+                  145819
+                ],
+                [
+                  1985,
+                  174958
+                ],
+                [
+                  1986,
+                  195529
+                ],
+                [
+                  1987,
+                  187982
+                ],
+                [
+                  1988,
+                  199222
+                ],
+                [
+                  1989,
+                  240057
+                ],
+                [
+                  1990,
+                  209995
+                ],
+                [
+                  1991,
+                  255378
+                ],
+                [
+                  1992,
+                  256539
+                ],
+                [
+                  1993,
+                  263846
+                ],
+                [
+                  1994,
+                  252134
+                ],
+                [
+                  1995,
+                  327359
+                ],
+                [
+                  1996,
+                  375536
+                ],
+                [
+                  1997,
+                  473898
+                ],
+                [
+                  1998,
+                  578482
+                ],
+                [
+                  1999,
+                  655676
+                ],
+                [
+                  2000,
+                  551970
+                ],
+                [
+                  2001,
+                  458656
+                ],
+                [
+                  2002,
+                  336267
+                ],
+                [
+                  2003,
+                  406091
+                ],
+                [
+                  2004,
+                  408162
+                ],
+                [
+                  2005,
+                  383084
+                ],
+                [
+                  2006,
+                  404107
+                ],
+                [
+                  2007,
+                  381802
+                ],
+                [
+                  2008,
+                  223496
+                ],
+                [
+                  2009,
+                  251397
+                ],
+                [
+                  2010,
+                  261350
+                ],
+                [
+                  2011,
+                  236366
+                ],
+                [
+                  2012,
+                  243209
+                ],
+                [
+                  2013,
+                  287530
+                ],
+                [
+                  2014,
+                  294272
+                ],
+                [
+                  2015,
+                  269643
+                ],
+                [
+                  2016,
+                  271776
+                ],
+                [
+                  2017,
+                  297925
+                ],
+                [
+                  2018,
+                  256943
+                ],
+                [
+                  2019,
+                  304954
+                ],
+                [
+                  2020,
+                  328474
+                ],
+                [
+                  2021,
+                  362971
+                ],
+                [
+                  2022,
+                  259541
+                ],
+                [
+                  2023,
+                  294505
+                ],
+                [
+                  2024,
+                  330044
+                ],
+                [
+                  2025,
+                  350283
+                ]
+              ],
+              "color": "gold"
+            }
+          ]
+        }
+      },
+      {
+        "say": "Ninety thousand dollars paid in every time. Not one of those sixty-nine stretches ended below that.",
+        "show": {
+          "type": "number",
+          "big": "69 of 69",
+          "caption": "30-year stretches that ended above what was paid in",
+          "color": "green"
+        }
+      },
+      {
+        "say": "But over shorter stretches it's different: of eighty-nine ten-year stretches, eleven did lose money after inflation. That part, and the real price of waiting, is all in the full video on the channel."
+      }
+    ]
+  },
+  "question": "At what age did you – or will you – start putting money aside every month?"
+}
