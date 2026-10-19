@@ -8,6 +8,17 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 **Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for dramatic Halloween reveals – fits the 2048 merge and the lava-escape finale · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – funny voice-over hook for the merge run · Experience – Ludovico Einaudi: the biggest classical-piano sound on TikTok, calm build-up for slow satisfying runs · Spooky, quiet, scary atmosphere piano – Skittlegirl Sound: creepy piano backdrop for zombie/Halloween runs
 
+## 19.10. 22:41 UTC – Which ball escapes the rising lava?
+
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261019-lava_climb-3)
+
+```text
+Which ball escapes the rising lava?
+Five balls race up a tower of platforms while the lava rises below them – and it gets faster every second. Only the first one through the golden exit at the top escapes.
+💬 Who got burned first – did you see it coming?
+#lava #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 17.10. 06:41 UTC – Every hit upgrades it – Who wins the duel?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-blade_duel-4)

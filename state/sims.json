@@ -48,7 +48,7 @@
         "comments": 0,
         "at": "2026-10-19T11:15+00:00"
       },
-      "yt_views": 1510,
+      "yt_views": 1514,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235341996115990",
         "status": "PUBLISH_COMPLETE",
@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-19T11:15+00:00"
       },
-      "yt_views": 4828,
+      "yt_views": 4868,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-19T11:15+00:00"
       },
-      "yt_views": 13418,
+      "yt_views": 13573,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -249,7 +249,7 @@
         "comments": 0,
         "at": "2026-10-19T11:15+00:00"
       },
-      "yt_views": 72,
+      "yt_views": 73,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233367154608150",
         "status": "SEND_TO_USER_INBOX",
@@ -277,7 +277,7 @@
         "comments": 0,
         "at": "2026-10-19T11:15+00:00"
       },
-      "yt_views": 1308,
+      "yt_views": 1315,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233859481487382",
         "status": "SEND_TO_USER_INBOX",
@@ -648,7 +648,7 @@
       "instagram_id": "18030561041882795",
       "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/",
       "youtube_id": "3Qgx9BMIlXo",
-      "yt_views": 8077,
+      "yt_views": 8055,
       "stats": {
         "views": 2623,
         "reach": 2298,
@@ -710,7 +710,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697690989107973409"
       },
       "youtube_id": "I4sGIrwZf6U",
-      "yt_views": 441,
+      "yt_views": 443,
       "stats": {
         "views": 1189,
         "reach": 1086,
@@ -868,7 +868,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698238496632212769"
       },
       "youtube_id": "AA8_FfvhJ8M",
-      "yt_views": 1177,
+      "yt_views": 1178,
       "stats": {
         "views": 1405,
         "reach": 1260,
@@ -959,6 +959,27 @@
         "status": "PUBLISH_COMPLETE",
         "caption": "Can they merge into 2048?\nTwo balls with the same number merge into the next one – 16, 32, 64 … all the way to 2048. Then the portal closes and the final merge begins.\n💬 What should merge next – 4096? 👀\n#merge #satisfying #oddlysatisfying #physics #simulation",
         "url": "https://www.tiktok.com/@loop_physics/video/7698475423490903329"
+      }
+    },
+    {
+      "date": "2026-10-19T22:41:47+00:00",
+      "kind": "lava_climb",
+      "seed": 3,
+      "melody": "frere_jacques",
+      "timbre": "pluck",
+      "title": "Which ball escapes the rising lava? – Listen closely",
+      "duration": 75.9,
+      "why": "new",
+      "concept": "Five coloured balls jump from platform to platform up a tall tower while lava rises from below: every landing launches the ball at a platform above, a miss means falling back down, the lava speeds up and swallows whoever falls behind – the first ball through the golden exit escapes.",
+      "drive": "https://drive.google.com/drive/folders/1xW3IVw0o-XdEEk1aZsYQblC0F2QG3Ftn",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261019-lava_climb-3",
+      "instagram_id": "17936769747399808",
+      "instagram_url": "https://www.instagram.com/reel/DesXurWjjiW/",
+      "instagram_story_id": "18639418411032014",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7698514822262147094",
+        "status": "SEND_TO_USER_INBOX",
+        "caption": "Which ball escapes the rising lava?\nFive balls race up a tower of platforms while the lava rises below them – and it gets faster every second. Only the first one through the golden exit at the top escapes.\n💬 Who got burned first – did you see it coming?\n#lava #satisfying #oddlysatisfying #physics #simulation"
       }
     }
   ]
