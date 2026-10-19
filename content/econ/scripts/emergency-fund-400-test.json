@@ -1,0 +1,773 @@
+{
+  "id": "emergency-fund-400-test",
+  "order": 12,
+  "title": "Could You Cover a $400 Surprise? The Emergency Fund Math, with New Fed Data",
+  "title_card": "How big should your emergency fund be?",
+  "description": "Six in ten American adults were hit by a major unexpected expense last year – usually a car, a house repair or a medical bill, typically $1,000 to $2,000. Yet only 63% could cover even $400 with cash. We go through the Federal Reserve's newest data on emergency savings, what a surprise bill costs when it lands on a credit card, how big an emergency fund really needs to be, and how people build one.",
+  "tags": [
+    "emergency fund",
+    "emergency savings",
+    "how much emergency fund",
+    "400 dollar emergency",
+    "federal reserve shed",
+    "saving money",
+    "budgeting",
+    "unexpected expenses",
+    "rainy day fund",
+    "personal finance",
+    "money",
+    "real numbers"
+  ],
+  "hashtags": [
+    "#emergencyfund",
+    "#savingmoney",
+    "#personalfinance"
+  ],
+  "sources": [
+    "Board of Governors of the Federal Reserve System, 'Economic Well-Being of U.S. Households in 2025' (Survey of Household Economics and Decisionmaking, SHED, May 2026): $400 emergency expense (63% cash or equivalent, figure 24, 2013–2025; table 25, other ways to pay), largest emergency expense payable from savings (table 26), major unexpected expenses and their amounts (table 23, figure 23), three-month rainy day fund (55%; figure 25 and table 27)",
+    "U.S. Bureau of Labor Statistics, Consumer Expenditures in 2024 (released December 19, 2025): average annual expenditures per consumer unit $78,535; housing $26,266, transportation $13,318, food $10,169, healthcare $6,197",
+    "Board of Governors of the Federal Reserve System, G.19 Consumer Credit: commercial bank interest rate on credit card plans, all accounts, 21.19% (August 2026)",
+    "Federal Deposit Insurance Corporation (FDIC), National Rates and Rate Caps: national deposit rate for savings accounts, 0.37% (September 2026)",
+    "Illustrative calculations: $1,500 at 21.19% a year, interest added monthly; example minimum payment of 1% of the balance plus interest, at least $25; weekly saving amounts"
+  ],
+  "thumbnail": {
+    "big": "37%",
+    "text": "fail the $400 test",
+    "color": "red"
+  },
+  "chapters": [
+    {
+      "heading": "Intro",
+      "beats": [
+        {
+          "say": "Last year, six in ten American adults got hit by a big bill they didn't see coming. A car repair. A broken boiler. A hospital visit.",
+          "show": {
+            "type": "number",
+            "big": "59%",
+            "caption": "of US adults had a major unexpected expense in the past year",
+            "color": "red"
+          }
+        },
+        {
+          "say": "The typical one cost between one and two thousand dollars."
+        },
+        {
+          "say": "And yet more than a third of adults couldn't cover even four hundred dollars with cash.",
+          "show": {
+            "type": "number",
+            "big": "37%",
+            "caption": "would not cover a $400 surprise with cash or equivalent",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Today: the Federal Reserve's newest data on emergency savings, what a surprise bill really costs when you don't have the cash – and how big your emergency fund actually needs to be."
+        },
+        {
+          "say": "Quick note: this is general information, not financial advice."
+        }
+      ]
+    },
+    {
+      "heading": "The $400 test",
+      "beats": [
+        {
+          "say": "Every year, the Federal Reserve asks about twelve thousand Americans the same question: if you had an unexpected expense of four hundred dollars, how would you pay for it?",
+          "show": {
+            "type": "note",
+            "text": "An unexpected *$400* expense. How would you pay?",
+            "source": "Federal Reserve, Survey of Household Economics and Decisionmaking",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "Cash, savings, or a credit card you pay off in full at the next statement counts as passing. Here's the share who pass, since 2013.",
+          "show": {
+            "type": "line",
+            "heading": "Would cover a $400 surprise with cash or equivalent",
+            "unit": "%",
+            "sub": "Share of US adults, 2013–2025 · Federal Reserve, Survey of Household Economics and Decisionmaking",
+            "series": [
+              {
+                "label": "",
+                "points": [
+                  [
+                    2013,
+                    50
+                  ],
+                  [
+                    2014,
+                    53
+                  ],
+                  [
+                    2015,
+                    54
+                  ],
+                  [
+                    2016,
+                    56
+                  ],
+                  [
+                    2017,
+                    59
+                  ],
+                  [
+                    2018,
+                    61
+                  ],
+                  [
+                    2019,
+                    63
+                  ],
+                  [
+                    2020,
+                    64
+                  ],
+                  [
+                    2021,
+                    68
+                  ],
+                  [
+                    2022,
+                    63
+                  ],
+                  [
+                    2023,
+                    63
+                  ],
+                  [
+                    2024,
+                    63
+                  ],
+                  [
+                    2025,
+                    63
+                  ]
+                ],
+                "color": "blue"
+              }
+            ]
+          }
+        },
+        {
+          "say": "In 2013, only half of adults.",
+          "mark": {
+            "x": 2013
+          }
+        },
+        {
+          "say": "Then it climbed for eight years straight. In 2021, with pandemic support payments in the bank, it peaked at sixty-eight percent.",
+          "mark": {
+            "x": 2021,
+            "label": "Peak: 68%"
+          }
+        },
+        {
+          "say": "Since then it's been stuck. Sixty-three percent in 2022, 2023, 2024 – and again in 2025.",
+          "mark": {
+            "x": 2025
+          }
+        },
+        {
+          "say": "And this isn't about the four hundred dollars getting more expensive. The Fed tested five hundred dollars instead with some people, and the answers barely changed."
+        }
+      ]
+    },
+    {
+      "heading": "What the others do",
+      "beats": [
+        {
+          "say": "So what about the thirty-seven percent who wouldn't pay in cash? Here's what they said they'd do.",
+          "show": {
+            "type": "bars",
+            "heading": "How the others would pay a $400 surprise",
+            "unit": "%",
+            "items": [
+              [
+                "Credit card, paid over time",
+                15
+              ],
+              [
+                "Borrow from friends or family",
+                10
+              ],
+              [
+                "Sell something",
+                7
+              ],
+              [
+                "Bank loan or line of credit",
+                3
+              ],
+              [
+                "Payday loan or overdraft",
+                2
+              ],
+              [
+                "Couldn't pay at all",
+                12
+              ]
+            ],
+            "source": "Share of all US adults, 2025, more than one answer possible · Federal Reserve, SHED 2025",
+            "color": "red",
+            "sort": false
+          }
+        },
+        {
+          "say": "The most common answer: put it on a credit card and pay it off over time. Fifteen percent of all adults.",
+          "mark": {
+            "items": [
+              "Credit card, paid over time"
+            ]
+          }
+        },
+        {
+          "say": "Ten percent would borrow from friends or family. Seven percent would sell something.",
+          "mark": {
+            "items": [
+              "Borrow from friends or family",
+              "Sell something"
+            ]
+          }
+        },
+        {
+          "say": "And twelve percent of all adults – about one in eight – said they could not pay it at all. Not by any means.",
+          "mark": {
+            "items": [
+              "Couldn't pay at all"
+            ]
+          }
+        },
+        {
+          "say": "Ask the question differently – what's the biggest emergency you could pay right now from savings alone? – and eighteen percent said: less than a hundred dollars.",
+          "show": {
+            "type": "number",
+            "big": "18%",
+            "caption": "could cover less than $100 from savings right now",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Among adults earning less than fifty thousand dollars a year, four in ten couldn't cover even a hundred-dollar emergency from savings alone. Six in ten couldn't cover five hundred.",
+          "show": {
+            "type": "number",
+            "big": "4 in 10",
+            "caption": "adults under $50k income who couldn't cover $100 from savings",
+            "color": "red"
+          }
+        },
+        {
+          "say": "That's not a lack of discipline in most cases. When every dollar has a job before it arrives, there's nothing left to put aside. Which is exactly why the first few hundred dollars matter so much."
+        }
+      ]
+    },
+    {
+      "heading": "What surprises cost",
+      "beats": [
+        {
+          "say": "And four hundred dollars is a gentle test. Here's what actually hit people in the past twelve months.",
+          "show": {
+            "type": "bars",
+            "heading": "Major unexpected expenses in the past 12 months",
+            "unit": "%",
+            "items": [
+              [
+                "Car repair or replacement",
+                30
+              ],
+              [
+                "House or appliance repair",
+                22
+              ],
+              [
+                "Major medical bill",
+                21
+              ],
+              [
+                "Phone or computer",
+                18
+              ],
+              [
+                "Legal, taxes or fines",
+                10
+              ]
+            ],
+            "source": "Share of US adults, 2025 · Federal Reserve, SHED 2025",
+            "color": "red",
+            "sort": false
+          }
+        },
+        {
+          "say": "The number one surprise: the car. Thirty percent of adults had a major repair or had to replace a vehicle.",
+          "mark": {
+            "items": [
+              "Car repair or replacement"
+            ]
+          }
+        },
+        {
+          "say": "Then a house or appliance repair, twenty-two percent. A major medical bill, twenty-one percent.",
+          "mark": {
+            "items": [
+              "House or appliance repair",
+              "Major medical bill"
+            ]
+          }
+        },
+        {
+          "say": "For all three of those, the typical bill – the median – was between one thousand and two thousand dollars. Legal bills, taxes and fines ran higher: typically two to five thousand.",
+          "show": {
+            "type": "number",
+            "big": "$1,000–$1,999",
+            "caption": "median cost of a major car, house or medical surprise",
+            "color": "red"
+          }
+        },
+        {
+          "say": "So the realistic test isn't four hundred dollars. It's more like fifteen hundred. And it doesn't come once in a lifetime – for six in ten people, it came last year."
+        }
+      ]
+    },
+    {
+      "heading": "The $1,500 repair on a card",
+      "beats": [
+        {
+          "say": "Now let's see what happens when a fifteen-hundred-dollar car repair lands on a credit card, at the average rate of twenty-one percent.",
+          "show": {
+            "type": "number",
+            "big": "$1,500",
+            "caption": "car repair, on a card at 21.19%",
+            "color": "red"
+          }
+        },
+        {
+          "say": "If you pay only the minimum – with a common formula of one percent plus interest, at least twenty-five dollars – it takes about nine years to clear.",
+          "show": {
+            "type": "number",
+            "big": "9 years",
+            "caption": "to clear $1,500 with minimum payments",
+            "color": "red"
+          }
+        },
+        {
+          "say": "And you pay about sixteen hundred dollars in interest. The repair ends up costing more than twice its price.",
+          "show": {
+            "type": "compare",
+            "heading": "A $1,500 car repair",
+            "left": [
+              "Paid with savings",
+              "$1,500"
+            ],
+            "right": [
+              "On a card, minimum payments",
+              "$3,102"
+            ],
+            "color": "red"
+          }
+        },
+        {
+          "say": "Pay a fixed hundred dollars a month instead, and it's gone in a year and a half with about two hundred and sixty dollars of interest. Better – but still money that buys nothing."
+        },
+        {
+          "say": "And here's the real trap: the next surprise doesn't wait until the last one is paid off. Six in ten people had one last year. Without a cushion, the balances stack."
+        },
+        {
+          "say": "That's the real job of an emergency fund. Not getting rich. Stopping one bad month from turning into nine years of payments.",
+          "show": {
+            "type": "note",
+            "text": "An emergency fund turns a *crisis* into an *inconvenience*.",
+            "source": "",
+            "color": "green"
+          }
+        },
+        {
+          "say": "If this already changed how you see that savings account, leave a like – it really helps the channel."
+        }
+      ]
+    },
+    {
+      "heading": "How big should it be?",
+      "beats": [
+        {
+          "say": "So how much do you actually need? The rule you'll hear most is three months of expenses. Fifty-five percent of adults say they have that.",
+          "show": {
+            "type": "number",
+            "big": "55%",
+            "caption": "have a rainy day fund for 3 months of expenses, 2025",
+            "color": "green"
+          }
+        },
+        {
+          "say": "What is three months, in dollars? The average American household spends about seventy-eight thousand five hundred dollars a year. That's about sixty-five hundred a month.",
+          "show": {
+            "type": "number",
+            "big": "$78,535",
+            "caption": "average yearly spending per US household, 2024",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "Three months of everything: almost twenty thousand dollars. For a lot of people, that number alone is enough to give up before starting."
+        },
+        {
+          "say": "But in an emergency, you don't pay for everything. Take just housing, food, transportation and healthcare: about fifty-six thousand a year on average. Three months of that is about fourteen thousand.",
+          "show": {
+            "type": "compare",
+            "heading": "3 months of spending, average US household",
+            "left": [
+              "Everything",
+              "$19,634"
+            ],
+            "right": [
+              "Housing, food, transport, health",
+              "$13,988"
+            ],
+            "color": "blue"
+          }
+        },
+        {
+          "say": "And you don't need it on day one. Think of it in steps. Step one: enough for the typical surprise – about fifteen hundred to two thousand dollars. That alone covers the car, the boiler, the hospital bill.",
+          "show": {
+            "type": "number",
+            "big": "$400 → $2,000 → 3 months",
+            "caption": "an emergency fund, in steps",
+            "color": "green"
+          }
+        },
+        {
+          "say": "Step two: one month of essentials. Step three: three months. Each step makes the next surprise smaller."
+        },
+        {
+          "say": "Your own number depends on your life: how safe your job is, whether you have kids, a car, a house. Someone with a steady income and no dependants may need less. A freelancer or a single earner with a family, more."
+        }
+      ]
+    },
+    {
+      "heading": "Who has one – and how",
+      "beats": [
+        {
+          "say": "Who actually has three months saved? Income matters a lot.",
+          "show": {
+            "type": "bars",
+            "heading": "Have savings for 3 months of expenses, by income",
+            "unit": "%",
+            "items": [
+              [
+                "Under $25,000",
+                21
+              ],
+              [
+                "$25,000–$49,999",
+                39
+              ],
+              [
+                "$50,000–$99,999",
+                55
+              ],
+              [
+                "$100,000 or more",
+                75
+              ]
+            ],
+            "source": "Share of US adults, 2025 · Federal Reserve, SHED 2025",
+            "color": "green",
+            "sort": false
+          }
+        },
+        {
+          "say": "Under twenty-five thousand dollars a year: twenty-one percent. Over a hundred thousand: seventy-five percent.",
+          "mark": {
+            "items": [
+              "Under $25,000",
+              "$100,000 or more"
+            ]
+          }
+        },
+        {
+          "say": "Age matters too. Among adults under thirty, thirty-seven percent have three months saved. Among those sixty and older, seventy-one percent. Like net worth, the cushion grows with time.",
+          "show": {
+            "type": "number",
+            "big": "37% → 71%",
+            "caption": "3-month emergency fund, age 18–29 vs 60+",
+            "color": "green"
+          }
+        },
+        {
+          "say": "But the Fed found something that matters even more than income: whether you have money left over at the end of the month.",
+          "show": {
+            "type": "bars",
+            "heading": "Have a 3-month emergency fund – by money left over each month",
+            "unit": "%",
+            "items": [
+              [
+                "Never",
+                13
+              ],
+              [
+                "Rarely",
+                26
+              ],
+              [
+                "Sometimes",
+                52
+              ],
+              [
+                "Often",
+                75
+              ],
+              [
+                "Always",
+                86
+              ]
+            ],
+            "source": "Share of US adults, 2025 · Federal Reserve, SHED 2025",
+            "color": "green",
+            "sort": false
+          }
+        },
+        {
+          "say": "Of people who never have money left over, thirteen percent have a three-month fund.",
+          "mark": {
+            "items": [
+              "Never"
+            ]
+          }
+        },
+        {
+          "say": "Of people who always have money left over: eighty-six percent.",
+          "mark": {
+            "items": [
+              "Always"
+            ]
+          }
+        },
+        {
+          "say": "That's the whole mechanism. An emergency fund isn't built from a windfall. It's built from the gap between what comes in and what goes out – every month."
+        },
+        {
+          "say": "Here's what small amounts do. Twenty-five dollars a week is fifteen hundred dollars in sixty weeks. Fifty dollars a week gets there in thirty weeks – about seven months.",
+          "show": {
+            "type": "compare",
+            "heading": "Saving $1,500 for the typical surprise",
+            "left": [
+              "$25 a week",
+              "60 weeks"
+            ],
+            "right": [
+              "$50 a week",
+              "30 weeks"
+            ],
+            "color": "green"
+          }
+        },
+        {
+          "say": "A common trick: make the transfer automatic on payday, into a separate account you don't see every day. Money you never see is money you don't spend."
+        }
+      ]
+    },
+    {
+      "heading": "Where it sits",
+      "beats": [
+        {
+          "say": "One more thing: where the money sits. An emergency fund has a different job from long-term savings, so it follows different rules.",
+          "show": {
+            "type": "note",
+            "text": "Safe. *Quick to reach.* Separate.",
+            "source": "How emergency funds are usually described – not a product recommendation",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "Safe, because the emergency doesn't wait for the market to recover. Remember: the stock market fell in about one year out of four. That's fine for money you need in twenty years – not for the car repair next month."
+        },
+        {
+          "say": "Quick to reach, because a surprise bill is due in days, not months. And separate, so it doesn't quietly turn into next month's spending."
+        },
+        {
+          "say": "But safe doesn't have to mean earning nothing. The FDIC's national average rate on savings accounts is just zero point three seven percent.",
+          "show": {
+            "type": "number",
+            "big": "0.37%",
+            "caption": "US national average savings rate, FDIC, Sept 2026",
+            "color": "red"
+          }
+        },
+        {
+          "say": "On two thousand dollars, that's about seven dollars a year. At an example rate of four percent, it would be eighty. Rates differ a lot between banks and account types – so it's worth checking what yours actually pays.",
+          "show": {
+            "type": "compare",
+            "heading": "$2,000 for one year",
+            "left": [
+              "At 0.37%",
+              "$7"
+            ],
+            "right": [
+              "At an example 4%",
+              "$80"
+            ],
+            "color": "green"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "What to remember",
+      "beats": [
+        {
+          "say": "So, how big should your emergency fund be? Three things from the data.",
+          "show": {
+            "type": "line",
+            "heading": "Would cover a $400 surprise with cash or equivalent",
+            "unit": "%",
+            "sub": "Share of US adults, 2013–2025 · Federal Reserve, Survey of Household Economics and Decisionmaking",
+            "series": [
+              {
+                "label": "",
+                "points": [
+                  [
+                    2013,
+                    50
+                  ],
+                  [
+                    2014,
+                    53
+                  ],
+                  [
+                    2015,
+                    54
+                  ],
+                  [
+                    2016,
+                    56
+                  ],
+                  [
+                    2017,
+                    59
+                  ],
+                  [
+                    2018,
+                    61
+                  ],
+                  [
+                    2019,
+                    63
+                  ],
+                  [
+                    2020,
+                    64
+                  ],
+                  [
+                    2021,
+                    68
+                  ],
+                  [
+                    2022,
+                    63
+                  ],
+                  [
+                    2023,
+                    63
+                  ],
+                  [
+                    2024,
+                    63
+                  ],
+                  [
+                    2025,
+                    63
+                  ]
+                ],
+                "color": "blue"
+              }
+            ]
+          }
+        },
+        {
+          "say": "One: surprises are normal. Six in ten adults had a major one last year, typically one to two thousand dollars – and only sixty-three percent could cover even four hundred in cash."
+        },
+        {
+          "say": "Two: without a cushion, a surprise gets expensive. A fifteen-hundred-dollar repair on a card, paid at the minimum, can take nine years and cost more than twice as much."
+        },
+        {
+          "say": "Three: build it in steps. First the typical surprise – about two thousand dollars. Then one month. Then three. And it's built from the money left over each month, not from luck."
+        },
+        {
+          "say": "If you want to understand your money with real numbers, subscribe. And tell me in the comments: what was your last surprise bill?"
+        }
+      ]
+    }
+  ],
+  "short": {
+    "hook": "Could you pay a $400 surprise in cash?",
+    "beats": [
+      {
+        "say": "Quick question. If you got a surprise bill of four hundred dollars tomorrow, could you pay it in cash, or with a card you pay off right away? According to the Federal Reserve, thirty-seven percent of American adults couldn't.",
+        "show": {
+          "type": "number",
+          "big": "37%",
+          "caption": "would not cover a $400 surprise with cash",
+          "color": "red"
+        }
+      },
+      {
+        "say": "And four hundred is the easy test. Last year, six in ten adults had a major unexpected expense. The most common one was the car. The typical bill for a car, a house repair or a medical bill: one to two thousand dollars.",
+        "show": {
+          "type": "bars",
+          "heading": "Major unexpected expenses in the past 12 months",
+          "unit": "%",
+          "items": [
+            [
+              "Car repair or replacement",
+              30
+            ],
+            [
+              "House or appliance repair",
+              22
+            ],
+            [
+              "Major medical bill",
+              21
+            ],
+            [
+              "Phone or computer",
+              18
+            ],
+            [
+              "Legal, taxes or fines",
+              10
+            ]
+          ],
+          "source": "Share of US adults, 2025 · Federal Reserve, SHED 2025",
+          "color": "red",
+          "sort": false
+        }
+      },
+      {
+        "say": "Put a fifteen-hundred-dollar repair on a credit card at twenty-one percent and pay only the minimum each month, and it can take nine years – and cost about thirty-one hundred in total.",
+        "show": {
+          "type": "compare",
+          "heading": "A $1,500 car repair",
+          "left": [
+            "Paid with savings",
+            "$1,500"
+          ],
+          "right": [
+            "On a card, minimum payments",
+            "$3,102"
+          ],
+          "color": "red"
+        }
+      },
+      {
+        "say": "The good news: you don't need twenty thousand dollars to start. Fifty dollars a week, set aside automatically, covers the typical surprise in about seven months. How big your emergency fund should really be is in the full video on the channel.",
+        "show": {
+          "type": "number",
+          "big": "$50 a week",
+          "caption": "≈ $1,500 in 30 weeks",
+          "color": "green"
+        }
+      }
+    ]
+  },
+  "question": "What was the last surprise bill that hit you – and how much was it?"
+}
