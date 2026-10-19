@@ -1,0 +1,611 @@
+{
+  "id": "net-worth-by-age-2025",
+  "order": 8,
+  "title": "Net Worth by Age: The New 2025 Fed Data Is Out – Where Do You Stand?",
+  "title_card": "Net worth by age: where do you stand?",
+  "description": "The Federal Reserve just released its 2025 Survey of Consumer Finances – the most detailed look at what American families own and owe. The typical family under 35 is now worth $33,000, down 23% in three years, while families over 75 hit a record. We go through net worth by age, why the 'average' of $1.24 million is misleading, the 43x gap between owners and renters, and how to work out your own number.",
+  "tags": [
+    "net worth by age",
+    "net worth",
+    "survey of consumer finances",
+    "scf 2025",
+    "federal reserve",
+    "median net worth",
+    "average net worth",
+    "personal finance",
+    "money",
+    "saving money",
+    "retirement savings",
+    "where do you stand",
+    "real numbers"
+  ],
+  "hashtags": [
+    "#networth",
+    "#personalfinance",
+    "#money"
+  ],
+  "sources": [
+    "Board of Governors of the Federal Reserve System, 'Changes in U.S. Family Finances from 2022 to 2025: Evidence from the Survey of Consumer Finances' (October 2026): Table 2 – median and mean net worth, all families and by age, housing status and income percentile (thousands of 2025 dollars)",
+    "Same report, Table 1 – median family income 2025 ($82,200); Box 2, Table A – mean retirement savings among families with an IRA or defined contribution plan, by age, 2025",
+    "Same report, financial assets and debt tables – transaction accounts (conditional median $8,200), retirement accounts (held by 54.9% of families), credit card balances (44.7% of families, conditional median $3,100), share of families with debt payments above 40% of income (8.6%)",
+    "Board of Governors of the Federal Reserve System, G.19 Consumer Credit: commercial bank interest rate on credit card plans, all accounts, 21.19% (August 2026)",
+    "Federal Reserve press release, 'Federal Reserve Board issues results of the 2025 Survey of Consumer Finances', October 9, 2026"
+  ],
+  "thumbnail": {
+    "big": "$33,000",
+    "text": "Net worth under 35",
+    "color": "red"
+  },
+  "chapters": [
+    {
+      "heading": "Intro",
+      "beats": [
+        {
+          "say": "Thirty-three thousand dollars. That's what the typical American family under thirty-five is worth right now – everything they own, minus everything they owe.",
+          "show": {
+            "type": "number",
+            "big": "$33,000",
+            "caption": "median net worth, families under 35, 2025",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Three years ago, the same number was almost forty-three thousand. In today's dollars, it fell by almost a quarter.",
+          "show": {
+            "type": "number",
+            "big": "$42,700 → $33,000",
+            "caption": "under 35, 2022 → 2025, in 2025 dollars",
+            "color": "red"
+          }
+        },
+        {
+          "say": "This is brand-new data. The Federal Reserve released it on October ninth: the Survey of Consumer Finances – the most detailed picture of American money there is."
+        },
+        {
+          "say": "Today we go through it age by age, so you can see where you stand. And why the number everyone quotes is completely misleading.",
+          "show": {
+            "type": "note",
+            "text": "Where do *you* stand?",
+            "source": "Federal Reserve, Survey of Consumer Finances 2025",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "Quick note: this is general information, not financial advice."
+        }
+      ]
+    },
+    {
+      "heading": "The average is a lie",
+      "beats": [
+        {
+          "say": "First, the headline you'll see in the news. The average American family has a net worth of one point two four million dollars.",
+          "show": {
+            "type": "number",
+            "big": "$1.24M",
+            "caption": "mean family net worth, US, 2025",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "If that number made you feel poor, good news: it's not a typical family. It's an average – and averages lie when a few people are extremely rich."
+        },
+        {
+          "say": "Picture ten people in a bar, each worth fifty thousand dollars. Now a billionaire walks in. The average in the room jumps past ninety million. Nobody else got a cent richer."
+        },
+        {
+          "say": "That's why economists use the median: line everyone up from poorest to richest, and pick the family exactly in the middle.",
+          "show": {
+            "type": "compare",
+            "heading": "US family net worth, 2025",
+            "left": [
+              "Average (mean)",
+              "$1,241,500"
+            ],
+            "right": [
+              "Typical (median)",
+              "$215,900"
+            ],
+            "color": "blue"
+          }
+        },
+        {
+          "say": "The median American family is worth about two hundred and sixteen thousand dollars. Less than a fifth of the average."
+        },
+        {
+          "say": "Same trick with income. The typical family earned about eighty-two thousand dollars in 2025, before tax. The average is a hundred and forty-five thousand – again pulled up by the top.",
+          "show": {
+            "type": "compare",
+            "heading": "US family income before tax, 2025",
+            "left": [
+              "Typical (median)",
+              "$82,200"
+            ],
+            "right": [
+              "Average (mean)",
+              "$145,200"
+            ],
+            "color": "blue"
+          }
+        },
+        {
+          "say": "And even that number hides a huge range. The middle family owns a home, a car and some retirement savings – and still owes on most of it. Keep that in mind for everything that follows: we'll always use the median, the family in the middle."
+        }
+      ]
+    },
+    {
+      "heading": "Net worth by age",
+      "beats": [
+        {
+          "say": "So here's the ladder. Median net worth by the age of the head of the family, in 2025.",
+          "show": {
+            "type": "bars",
+            "heading": "Median family net worth by age, 2025",
+            "unit": "$",
+            "items": [
+              [
+                "Under 35",
+                33000
+              ],
+              [
+                "35–44",
+                155600
+              ],
+              [
+                "45–54",
+                253700
+              ],
+              [
+                "55–64",
+                411900
+              ],
+              [
+                "65–74",
+                431300
+              ],
+              [
+                "75 or older",
+                504900
+              ]
+            ],
+            "source": "Fed Survey of Consumer Finances 2025 · median",
+            "color": "green"
+          }
+        },
+        {
+          "say": "Under thirty-five: thirty-three thousand dollars.",
+          "mark": {
+            "items": [
+              "Under 35"
+            ]
+          }
+        },
+        {
+          "say": "Thirty-five to forty-four: about a hundred and fifty-six thousand. Almost five times as much, just ten years later.",
+          "mark": {
+            "items": [
+              "35–44"
+            ]
+          }
+        },
+        {
+          "say": "Look at that first jump: from thirty-three thousand under thirty-five to a hundred and fifty-six thousand ten years later. That's the decade when many people buy a first home, start a retirement account and pay off student loans – all at once.",
+          "mark": {
+            "items": [
+              "Under 35",
+              "35–44"
+            ]
+          }
+        },
+        {
+          "say": "Forty-five to fifty-four: about two hundred and fifty-four thousand.",
+          "mark": {
+            "items": [
+              "45–54"
+            ]
+          }
+        },
+        {
+          "say": "Fifty-five to sixty-four: around four hundred and twelve thousand. Sixty-five to seventy-four: about four hundred and thirty-one thousand.",
+          "mark": {
+            "items": [
+              "55–64",
+              "65–74"
+            ]
+          }
+        },
+        {
+          "say": "And here is the surprise of this survey. For the first time in years, the richest group is not the people just retiring. It's families seventy-five and older – about five hundred and five thousand dollars, up thirty-seven percent in three years.",
+          "mark": {
+            "items": [
+              "75 or older"
+            ]
+          }
+        },
+        {
+          "say": "The Fed says what drove it: the value of retirement accounts. Money that was put away decades ago and kept growing – through every crash and every recovery since.",
+          "show": {
+            "type": "note",
+            "text": "The oldest families got richest – through *retirement accounts*.",
+            "source": "Fed SCF 2025: median net worth 75+ up 37% since 2022",
+            "color": "green"
+          }
+        },
+        {
+          "say": "That's the shape of every money life: slow at the start, steep in the middle, and the biggest jumps come late. The ladder isn't mostly about income. It's about time."
+        },
+        {
+          "say": "If you're under thirty-five and below the line – you're not behind. You're at the bottom of a ladder everyone climbs."
+        }
+      ]
+    },
+    {
+      "heading": "Why the young fell back",
+      "beats": [
+        {
+          "say": "But why did the youngest group lose almost a quarter in three years, while older families gained?",
+          "show": {
+            "type": "number",
+            "big": "−23%",
+            "caption": "median net worth under 35, 2022 → 2025",
+            "color": "red"
+          }
+        },
+        {
+          "say": "The Fed's answer is less dramatic than it sounds. Between 2019 and 2022, many young families saw their small businesses jump in value. Between 2022 and 2025, much of that gain unwound."
+        },
+        {
+          "say": "Business equity across all families fell too: the typical value of a family business is down twenty-three percent."
+        },
+        {
+          "say": "Add in what you've felt yourself. In three years, prices kept rising, and the typical income of families under thirty-five grew only two percent after inflation, to about sixty-eight thousand dollars.",
+          "show": {
+            "type": "number",
+            "big": "$67,800",
+            "caption": "median income, families under 35, 2025",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "And debt got heavier for many. The share of families paying more than forty percent of their income on debt rose to eight point six percent – the highest since 2010.",
+          "show": {
+            "type": "number",
+            "big": "8.6%",
+            "caption": "families with debt payments over 40% of income",
+            "color": "red"
+          }
+        },
+        {
+          "say": "So if the last three years felt like running on a treadmill, the data agrees with you. That's not a personal failure. It's what the numbers show for a whole generation."
+        }
+      ]
+    },
+    {
+      "heading": "The 43x gap",
+      "beats": [
+        {
+          "say": "Age isn't the biggest divide in this survey, though. This one is.",
+          "show": {
+            "type": "compare",
+            "heading": "Median net worth, 2025",
+            "left": [
+              "Renters",
+              "$10,600"
+            ],
+            "right": [
+              "Homeowners",
+              "$458,900"
+            ],
+            "color": "gold"
+          }
+        },
+        {
+          "say": "The typical family that owns its home is worth about four hundred and fifty-nine thousand dollars. The typical renter: ten thousand six hundred."
+        },
+        {
+          "say": "That's forty-three times as much.",
+          "show": {
+            "type": "number",
+            "big": "43×",
+            "caption": "homeowners vs renters, median net worth",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "Part of it is age – owners are older. Part of it is income. But a big part is how a mortgage works: every payment pays down a loan on something you own. It's a savings plan you can't easily skip."
+        },
+        {
+          "say": "A renter can build wealth too – but only if the money that isn't going into a house goes somewhere else on purpose. Rent just doesn't do it automatically.",
+          "show": {
+            "type": "note",
+            "text": "A mortgage is a *forced* savings plan. Rent isn't.",
+            "source": "This is how it works – not a buy-or-rent recommendation",
+            "color": "gray"
+          }
+        },
+        {
+          "say": "And at the very top, the gap explodes. Families in the top ten percent by income have a median net worth of about three point seven million dollars. Up thirty-one percent in just three years.",
+          "show": {
+            "type": "number",
+            "big": "$3.67M",
+            "caption": "median net worth, top 10% by income, 2025",
+            "color": "purple"
+          }
+        },
+        {
+          "say": "Owning things – homes, businesses, investments – is what pulled those families ahead. Wages alone rarely do."
+        },
+        {
+          "say": "If this already changed how you look at your own balance sheet, leave a like – it really helps the channel."
+        }
+      ]
+    },
+    {
+      "heading": "What's inside the number",
+      "beats": [
+        {
+          "say": "Let's open up the typical family's finances and look inside.",
+          "show": {
+            "type": "number",
+            "big": "$8,200",
+            "caption": "median in checking and savings, 2025",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "Start with cash. The typical family has about eight thousand two hundred dollars in checking and savings accounts. That's down six percent in three years, after inflation."
+        },
+        {
+          "say": "Next, retirement accounts – a 401(k), an IRA. Only about fifty-five percent of families have one at all.",
+          "show": {
+            "type": "number",
+            "big": "54.9%",
+            "caption": "families with a retirement account, 2025",
+            "color": "green"
+          }
+        },
+        {
+          "say": "For those who do, here's the average balance by age.",
+          "show": {
+            "type": "columns",
+            "heading": "Average retirement savings by age, 2025",
+            "stacks": [
+              [
+                "Under 35",
+                48.4,
+                "$48k"
+              ],
+              [
+                "35–44",
+                182.4,
+                "$182k"
+              ],
+              [
+                "45–54",
+                415.8,
+                "$416k"
+              ],
+              [
+                "55–64",
+                670.2,
+                "$670k"
+              ]
+            ],
+            "source": "Fed SCF 2025 · mean, families with an IRA or 401(k)-type plan",
+            "color": "green"
+          }
+        },
+        {
+          "say": "Under thirty-five: about forty-eight thousand. Thirty-five to forty-four: a hundred and eighty-two thousand. Fifty-five to sixty-four: about six hundred and seventy thousand. Same pattern as the ladder: these accounts grow slowly, then fast."
+        },
+        {
+          "say": "And debt. Forty-four point seven percent of families carried a credit card balance after their last payment. The typical balance: three thousand one hundred dollars.",
+          "show": {
+            "type": "number",
+            "big": "$3,100",
+            "caption": "median card balance, families who carry one",
+            "color": "red"
+          }
+        },
+        {
+          "say": "The Fed's own data puts the average card rate at about twenty-one percent. On a balance of three thousand one hundred dollars, that's roughly six hundred and fifty dollars a year in interest – money that works against the ladder instead of up it.",
+          "show": {
+            "type": "number",
+            "big": "21.19%",
+            "caption": "average US credit card rate, all accounts, Aug 2026",
+            "color": "red"
+          }
+        },
+        {
+          "say": "The good news is in the other half: about fifty-six percent of families pay off their card in full every month. Same cards, no interest.",
+          "show": {
+            "type": "number",
+            "big": "55.8%",
+            "caption": "families who don't carry a card balance",
+            "color": "green"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Work out your own number",
+      "beats": [
+        {
+          "say": "Now the useful part: your own net worth. It takes ten minutes and one sheet of paper.",
+          "show": {
+            "type": "note",
+            "text": "Net worth = what you *own* − what you *owe*",
+            "source": "",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "Say Anna is twenty-eight. She has three thousand dollars in checking, twelve thousand in her 401(k), and a car worth about nine thousand. That's twenty-four thousand dollars she owns."
+        },
+        {
+          "say": "She owes eleven thousand on the car loan, eighteen thousand in student loans and two thousand on a credit card. Thirty-one thousand she owes.",
+          "show": {
+            "type": "compare",
+            "heading": "Anna, 28",
+            "left": [
+              "Owns",
+              "$24,000"
+            ],
+            "right": [
+              "Owes",
+              "$31,000"
+            ],
+            "color": "red"
+          }
+        },
+        {
+          "say": "Anna's net worth: minus seven thousand dollars. Below zero – like a lot of people starting out."
+        },
+        {
+          "say": "That number is not a grade. It's a starting point. What matters is the direction: if Anna's number goes from minus seven thousand to zero next year, that's real progress, even though she's still far below the median.",
+          "show": {
+            "type": "number",
+            "big": "−$7,000 → $0",
+            "caption": "Anna's goal for next year",
+            "color": "green"
+          }
+        },
+        {
+          "say": "Two tips. Count your car at what you could sell it for today, not what you paid. And write the number down once a year, on the same date. Comparing yourself to the median is interesting. Comparing yourself to last year is useful."
+        }
+      ]
+    },
+    {
+      "heading": "What to remember",
+      "beats": [
+        {
+          "say": "So, where do you stand? Three things from the new data.",
+          "show": {
+            "type": "bars",
+            "heading": "Median family net worth by age, 2025",
+            "unit": "$",
+            "items": [
+              [
+                "Under 35",
+                33000
+              ],
+              [
+                "35–44",
+                155600
+              ],
+              [
+                "45–54",
+                253700
+              ],
+              [
+                "55–64",
+                411900
+              ],
+              [
+                "65–74",
+                431300
+              ],
+              [
+                "75 or older",
+                504900
+              ]
+            ],
+            "source": "Fed Survey of Consumer Finances 2025 · median",
+            "color": "green"
+          }
+        },
+        {
+          "say": "One: ignore the average. The one point two million headline is pulled up by the very rich. The typical family is worth about two hundred and sixteen thousand – and under thirty-five, thirty-three thousand."
+        },
+        {
+          "say": "Two: the ladder is about time. Net worth grows slowly, then fast – the oldest families are now the richest, thanks to retirement accounts that had decades to grow."
+        },
+        {
+          "say": "Three: owning beats earning. The typical homeowner is worth forty-three times the typical renter. Whatever you own that grows – that's what climbs the ladder."
+        },
+        {
+          "say": "If you want to understand your money with real numbers, subscribe. And tell me in the comments: which step of the ladder are you on?"
+        }
+      ]
+    }
+  ],
+  "short": {
+    "hook": "Under 35? The typical net worth: $33K",
+    "beats": [
+      {
+        "say": "The typical American family under thirty-five is worth thirty-three thousand dollars. That's brand-new data from the Federal Reserve – and it's down almost a quarter in three years.",
+        "show": {
+          "type": "number",
+          "big": "$33,000",
+          "caption": "median net worth, under 35, 2025",
+          "color": "red"
+        }
+      },
+      {
+        "say": "Here's the full ladder. Thirty-five to forty-four: about a hundred and fifty-six thousand. Mid-fifties: around four hundred thousand. And the richest group is now families over seventy-five: about five hundred and five thousand dollars.",
+        "show": {
+          "type": "bars",
+          "heading": "Median family net worth by age, 2025",
+          "unit": "$",
+          "items": [
+            [
+              "Under 35",
+              33000
+            ],
+            [
+              "35–44",
+              155600
+            ],
+            [
+              "45–54",
+              253700
+            ],
+            [
+              "55–64",
+              411900
+            ],
+            [
+              "65–74",
+              431300
+            ],
+            [
+              "75 or older",
+              504900
+            ]
+          ],
+          "source": "Fed Survey of Consumer Finances 2025 · median",
+          "color": "green"
+        }
+      },
+      {
+        "say": "Ignore the headline that the average family is worth one point two million. A few very rich families pull the average up. The family exactly in the middle is worth about two hundred and sixteen thousand.",
+        "show": {
+          "type": "compare",
+          "heading": "US family net worth, 2025",
+          "left": [
+            "Average",
+            "$1,241,500"
+          ],
+          "right": [
+            "Median",
+            "$215,900"
+          ],
+          "color": "blue"
+        }
+      },
+      {
+        "say": "And the biggest gap isn't even age. The typical homeowner is worth about four hundred and fifty-nine thousand dollars. The typical renter: ten thousand six hundred. Forty-three times less.",
+        "show": {
+          "type": "number",
+          "big": "43×",
+          "caption": "homeowners vs renters, median net worth",
+          "color": "gold"
+        }
+      },
+      {
+        "say": "Why that is – and how to work out your own number in ten minutes – is in the full video on the channel."
+      }
+    ]
+  },
+  "question": "Is your net worth above or below the median for your age?"
+}

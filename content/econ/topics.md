@@ -15,7 +15,7 @@ Formats that work for Finanzbär and Finanzfluss, rebuilt for US/UK viewers. Spe
 - [ ] How long can the stock market keep going up? 100 years of history, crashes and recoveries (no predictions)
 - [ ] 10 charts that explain financial freedom
 - [ ] You vs. the average American: pay, savings, debt and net worth (Fed SCF, BLS)
-- [ ] Net worth by age: where do you stand? (Fed Survey of Consumer Finances)
+- [x] Net worth by age: where do you stand? (Fed Survey of Consumer Finances) – `net-worth-by-age-2025`
 - [ ] The 50/30/20 rule: does it still work today? (BLS Consumer Expenditure Survey)
 - [ ] Emergency fund: how much do you really need? (Fed SHED: who could cover a $400 surprise)
 - [ ] Credit card debt: what 20%+ interest really costs you (Fed G.19)
