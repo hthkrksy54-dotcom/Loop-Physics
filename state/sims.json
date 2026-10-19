@@ -190,7 +190,7 @@
         "comments": 0,
         "at": "2026-10-19T11:15+00:00"
       },
-      "yt_views": 2645,
+      "yt_views": 2674,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232916815824918",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-19T11:15+00:00"
       },
-      "yt_views": 13414,
+      "yt_views": 13418,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -648,7 +648,7 @@
       "instagram_id": "18030561041882795",
       "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/",
       "youtube_id": "3Qgx9BMIlXo",
-      "yt_views": 8028,
+      "yt_views": 8077,
       "stats": {
         "views": 2623,
         "reach": 2298,
@@ -743,7 +743,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697763195846479136"
       },
       "youtube_id": "ONKevBQHRdk",
-      "yt_views": 1037,
+      "yt_views": 1039,
       "stats": {
         "views": 1299,
         "reach": 1184,
@@ -774,7 +774,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697901343209573664"
       },
       "youtube_id": "gbOvNfhdn-g",
-      "yt_views": 1658,
+      "yt_views": 1673,
       "stats": {
         "views": 1621,
         "reach": 1352,
@@ -807,7 +807,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697979638068284704"
       },
       "youtube_id": "ZSdNVZtvCYY",
-      "yt_views": 1570,
+      "yt_views": 1575,
       "stats": {
         "views": 1493,
         "reach": 1284,
@@ -899,7 +899,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698238615138209056"
       },
       "youtube_id": "HJWprEDsCPo",
-      "yt_views": 1089,
+      "yt_views": 1094,
       "stats": {
         "views": 1829,
         "reach": 1647,
@@ -956,8 +956,9 @@
       "instagram_url": "https://www.instagram.com/reel/DeruZ6yCuJh/",
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7698422075828635650",
-        "status": "SEND_TO_USER_INBOX",
-        "caption": "Can they merge into 2048?\nTwo balls with the same number merge into the next one – 16, 32, 64 … all the way to 2048. Then the portal closes and the final merge begins.\n💬 What should merge next – 4096? 👀\n#merge #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Can they merge into 2048?\nTwo balls with the same number merge into the next one – 16, 32, 64 … all the way to 2048. Then the portal closes and the final merge begins.\n💬 What should merge next – 4096? 👀\n#merge #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7698475423490903329"
       }
     }
   ]
