@@ -9,6 +9,7 @@ Formats that work for Finanzbär and Finanzfluss, rebuilt for US/UK viewers. Spe
 
 - [ ] Why $100,000 is the money milestone that changes everything (compound math: the first 100k vs the next)
 - [ ] 14 money leaks that quietly keep you broke (subscriptions, fees, car payments, interest – BLS spending data, Fed G.19)
+- [x] Where the average household's $78,535 goes: the 10 biggest budget lines, ranked (BLS Consumer Expenditure Survey) – `where-78535-goes`
 - [ ] Money truths most people learn too late – what you wish you knew at 20
 - [x] What $100, $250 or $500 a month becomes in 10, 20 and 30 years (math + long-run market history, no products) – `100-250-500-a-month`
 - [ ] Is compound interest overrated? The honest math after inflation, fees and taxes

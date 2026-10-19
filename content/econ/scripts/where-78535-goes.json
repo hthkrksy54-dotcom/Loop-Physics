@@ -1,0 +1,890 @@
+{
+  "id": "where-78535-goes",
+  "order": 14,
+  "title": "Where the Average American's $78,535 Goes: 10 Budget Lines Ranked, with Real BLS Data",
+  "title_card": "Where does the average budget go?",
+  "description": "The average US household spent $78,535 in 2024 – about $6,545 a month. We count down the ten biggest lines of the budget with official Bureau of Labor Statistics data: what eating out really costs, the car bill that rose 25% in two years, and why three lines take almost two thirds of everything. Then compare your own budget to the average.",
+  "tags": [
+    "average american budget",
+    "household spending",
+    "where does my money go",
+    "budgeting",
+    "consumer expenditure survey",
+    "bls",
+    "cost of living",
+    "car insurance",
+    "saving money",
+    "money leaks",
+    "personal finance",
+    "real numbers"
+  ],
+  "hashtags": [
+    "#budget",
+    "#personalfinance",
+    "#money"
+  ],
+  "sources": [
+    "U.S. Bureau of Labor Statistics, 'Consumer Expenditures in 2024' (news release, December 19, 2025), Table A: average annual expenditures per consumer unit $78,535 (2023: $77,158) and average income before taxes $104,207; housing $26,266 (owned dwellings $9,310, rented dwellings $5,660), transportation $13,318 (vehicle purchases $5,337, gasoline $2,411, other vehicle expenses $4,206 incl. vehicle insurance $1,993, public and other transportation $1,131), food $10,169 (at home $6,224, away from home $3,945), personal insurance and pensions $9,797, healthcare $6,197 (health insurance $4,055), entertainment $3,609, cash contributions $2,292, apparel and services $2,001, education $1,569, personal care $978; vehicle insurance 2022: $1,592, 2023: $1,775",
+    "Same release, Table C: average annual expenditures by income quintile, 2024 ($35,046; $50,054; $66,900; $89,972; $150,342)",
+    "Own calculations: monthly figures (yearly ÷ 12), shares of total spending; the coffee example ($5 a day, 5 days a week, 52 weeks) is illustrative"
+  ],
+  "thumbnail": {
+    "big": "$78,535",
+    "text": "Where does it all go?",
+    "color": "blue"
+  },
+  "chapters": [
+    {
+      "heading": "Intro",
+      "beats": [
+        {
+          "say": "Seventy-eight thousand five hundred and thirty-five dollars. That's what the average American household spent in 2024.",
+          "show": {
+            "type": "number",
+            "big": "$78,535",
+            "caption": "average yearly spending per US household, 2024",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "About sixty-five hundred dollars a month. Every month.",
+          "show": {
+            "type": "number",
+            "big": "$6,545",
+            "caption": "a month",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "The Bureau of Labor Statistics tracks where every one of those dollars goes. Today we count down the ten biggest lines of the average budget – from the smallest to the one that eats more than everything else."
+        },
+        {
+          "say": "Some of them have been rising fast. And at the end, you'll see why most budgeting advice looks in the wrong place."
+        },
+        {
+          "say": "Quick note: this is general information, not financial advice.",
+          "show": {
+            "type": "note",
+            "text": "Your budget vs *the average*",
+            "source": "BLS Consumer Expenditure Survey, 2024 data",
+            "color": "gold"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Numbers 10 to 6",
+      "beats": [
+        {
+          "say": "Here are all ten. We start at the bottom.",
+          "show": {
+            "type": "bars",
+            "heading": "Where $78,535 a year goes – the 10 biggest lines",
+            "unit": "$",
+            "items": [
+              [
+                "Personal care",
+                978
+              ],
+              [
+                "Education",
+                1569
+              ],
+              [
+                "Clothing & services",
+                2001
+              ],
+              [
+                "Charity & gifts",
+                2292
+              ],
+              [
+                "Entertainment",
+                3609
+              ],
+              [
+                "Healthcare",
+                6197
+              ],
+              [
+                "Insurance & pensions",
+                9797
+              ],
+              [
+                "Food",
+                10169
+              ],
+              [
+                "Transportation",
+                13318
+              ],
+              [
+                "Housing",
+                26266
+              ]
+            ],
+            "source": "BLS Consumer Expenditure Survey 2024 · average per household",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "Number ten: personal care. Haircuts, toiletries, cosmetics. Nine hundred and seventy-eight dollars a year – about eighty dollars a month.",
+          "mark": {
+            "items": [
+              "Personal care"
+            ]
+          }
+        },
+        {
+          "say": "Number nine: education. Fifteen hundred and sixty-nine dollars. It's small on average because most households pay nothing in a given year – and a few pay a lot.",
+          "mark": {
+            "items": [
+              "Education"
+            ]
+          }
+        },
+        {
+          "say": "Number eight: clothing and services – about two thousand dollars a year, roughly a hundred and sixty-seven a month. It's one of the few lines that went down in 2024, by two percent.",
+          "mark": {
+            "items": [
+              "Clothing & services"
+            ]
+          }
+        },
+        {
+          "say": "Number seven: charity and gifts – what the BLS calls cash contributions. About twenty-three hundred dollars. Money given to people outside the household, churches and charities.",
+          "mark": {
+            "items": [
+              "Charity & gifts"
+            ]
+          }
+        },
+        {
+          "say": "Number six: entertainment. Thirty-six hundred dollars a year – about three hundred a month. Tickets and fees, TVs and streaming, pets, toys and hobbies.",
+          "mark": {
+            "items": [
+              "Entertainment"
+            ]
+          }
+        },
+        {
+          "say": "Three hundred a month is the line people feel guilty about. Keep that number in mind – we'll come back to it.",
+          "show": {
+            "type": "number",
+            "big": "$301",
+            "caption": "a month on entertainment, average household",
+            "color": "purple"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Numbers 5 and 4",
+      "beats": [
+        {
+          "say": "Number five: healthcare. Six thousand one hundred and ninety-seven dollars a year.",
+          "show": {
+            "type": "bars",
+            "heading": "Where $78,535 a year goes – the 10 biggest lines",
+            "unit": "$",
+            "items": [
+              [
+                "Personal care",
+                978
+              ],
+              [
+                "Education",
+                1569
+              ],
+              [
+                "Clothing & services",
+                2001
+              ],
+              [
+                "Charity & gifts",
+                2292
+              ],
+              [
+                "Entertainment",
+                3609
+              ],
+              [
+                "Healthcare",
+                6197
+              ],
+              [
+                "Insurance & pensions",
+                9797
+              ],
+              [
+                "Food",
+                10169
+              ],
+              [
+                "Transportation",
+                13318
+              ],
+              [
+                "Housing",
+                26266
+              ]
+            ],
+            "source": "BLS Consumer Expenditure Survey 2024 · average per household",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "Two thirds of that – about four thousand dollars – is health insurance alone. The rest is doctors, medicine and supplies.",
+          "mark": {
+            "items": [
+              "Healthcare"
+            ]
+          }
+        },
+        {
+          "say": "And this is only what households pay themselves. Whatever an employer pays toward insurance doesn't even show up here."
+        },
+        {
+          "say": "Number four is the one most people don't think of as spending at all: personal insurance and pensions. Nine thousand eight hundred dollars.",
+          "mark": {
+            "items": [
+              "Insurance & pensions"
+            ]
+          }
+        },
+        {
+          "say": "That's mostly Social Security contributions and money going into retirement plans, plus life insurance. It leaves your paycheck before you ever see it.",
+          "show": {
+            "type": "number",
+            "big": "$9,797",
+            "caption": "personal insurance and pensions, a year",
+            "color": "green"
+          }
+        },
+        {
+          "say": "It's the only line on this list that partly comes back to you later. In a sense, it's the average household's built-in savings – about eight hundred dollars a month that works for your future self instead of today's bills."
+        }
+      ]
+    },
+    {
+      "heading": "Number 3: Food",
+      "beats": [
+        {
+          "say": "Number three: food. Ten thousand one hundred and sixty-nine dollars a year. About eight hundred and fifty a month.",
+          "show": {
+            "type": "compare",
+            "heading": "Food, average household, 2024",
+            "left": [
+              "Groceries (at home)",
+              "$6,224"
+            ],
+            "right": [
+              "Eating out (away from home)",
+              "$3,945"
+            ],
+            "color": "gold"
+          }
+        },
+        {
+          "say": "Groceries: about sixty-two hundred dollars a year. Eating out – restaurants, takeout, the lunch at work: about thirty-nine hundred."
+        },
+        {
+          "say": "Thirty-nine hundred dollars is about three hundred and thirty a month on food you didn't cook. Almost four out of every ten food dollars.",
+          "show": {
+            "type": "number",
+            "big": "$329",
+            "caption": "a month eating out, average household",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "Here's the classic money tip: skip the five-dollar coffee. Five dollars, five workdays, fifty-two weeks: thirteen hundred dollars a year. That's real money.",
+          "show": {
+            "type": "number",
+            "big": "$5 × 5 × 52 = $1,300",
+            "caption": "a workday coffee, for a year · example",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "But compare it to the lines still coming. Number two and number one are much, much bigger – together, more than thirty-nine thousand dollars a year."
+        }
+      ]
+    },
+    {
+      "heading": "Number 2: The car",
+      "beats": [
+        {
+          "say": "Number two: transportation. Thirteen thousand three hundred and eighteen dollars a year. Eleven hundred a month.",
+          "show": {
+            "type": "bars",
+            "heading": "Transportation: $13,318 a year",
+            "unit": "$",
+            "items": [
+              [
+                "Vehicle purchases",
+                5337
+              ],
+              [
+                "Other vehicle costs",
+                2213
+              ],
+              [
+                "Gasoline",
+                2411
+              ],
+              [
+                "Vehicle insurance",
+                1993
+              ],
+              [
+                "Public & other transport",
+                1131
+              ]
+            ],
+            "source": "BLS Consumer Expenditure Survey 2024 · average per household · other vehicle costs exclude insurance",
+            "color": "red",
+            "sort": false
+          }
+        },
+        {
+          "say": "The biggest part is buying the vehicle itself – about fifty-three hundred a year on average, spread over all households.",
+          "mark": {
+            "items": [
+              "Vehicle purchases"
+            ]
+          }
+        },
+        {
+          "say": "Gasoline: about twenty-four hundred. Finance charges, maintenance, repairs, leases and fees: about twenty-two hundred.",
+          "mark": {
+            "items": [
+              "Gasoline",
+              "Other vehicle costs"
+            ]
+          }
+        },
+        {
+          "say": "And then there's the fastest-rising line in this whole video: vehicle insurance. Almost two thousand dollars a year.",
+          "mark": {
+            "items": [
+              "Vehicle insurance"
+            ]
+          }
+        },
+        {
+          "say": "Look at how fast it climbed.",
+          "show": {
+            "type": "columns",
+            "heading": "Average vehicle insurance per household",
+            "stacks": [
+              [
+                "2022",
+                1592,
+                "$1,592"
+              ],
+              [
+                "2023",
+                1775,
+                "$1,775"
+              ],
+              [
+                "2024",
+                1993,
+                "$1,993"
+              ]
+            ],
+            "source": "BLS Consumer Expenditure Surveys 2022–2024",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Fifteen hundred and ninety-two dollars in 2022. Seventeen seventy-five in 2023. Nineteen ninety-three in 2024. Plus twenty-five percent in two years – while total spending rose less than two percent in the last year.",
+          "show": {
+            "type": "number",
+            "big": "+25%",
+            "caption": "vehicle insurance per household, 2022 → 2024",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Put together, the car side of transportation – buying, fuel, insurance, upkeep – is almost twelve thousand dollars a year. Close to a thousand dollars a month for the average household.",
+          "show": {
+            "type": "number",
+            "big": "$11,954",
+            "caption": "a year on vehicles: purchase, gas, insurance, upkeep",
+            "color": "red"
+          }
+        },
+        {
+          "say": "If this already changed how you see your car, leave a like – it really helps the channel."
+        }
+      ]
+    },
+    {
+      "heading": "Number 1: Housing",
+      "beats": [
+        {
+          "say": "And number one. By far. Housing: twenty-six thousand two hundred and sixty-six dollars a year.",
+          "show": {
+            "type": "bars",
+            "heading": "Where $78,535 a year goes – the 10 biggest lines",
+            "unit": "$",
+            "items": [
+              [
+                "Personal care",
+                978
+              ],
+              [
+                "Education",
+                1569
+              ],
+              [
+                "Clothing & services",
+                2001
+              ],
+              [
+                "Charity & gifts",
+                2292
+              ],
+              [
+                "Entertainment",
+                3609
+              ],
+              [
+                "Healthcare",
+                6197
+              ],
+              [
+                "Insurance & pensions",
+                9797
+              ],
+              [
+                "Food",
+                10169
+              ],
+              [
+                "Transportation",
+                13318
+              ],
+              [
+                "Housing",
+                26266
+              ]
+            ],
+            "source": "BLS Consumer Expenditure Survey 2024 · average per household",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "Almost twenty-two hundred dollars a month. A third of everything the average household spends.",
+          "mark": {
+            "items": [
+              "Housing"
+            ]
+          }
+        },
+        {
+          "say": "That's more than food, healthcare and entertainment combined.",
+          "show": {
+            "type": "compare",
+            "heading": "Average household, 2024",
+            "left": [
+              "Food + healthcare + entertainment",
+              "$19,975"
+            ],
+            "right": [
+              "Housing alone",
+              "$26,266"
+            ],
+            "color": "red"
+          }
+        },
+        {
+          "say": "And it's rising. Housing spending went up three point three percent in 2024 – after four point seven percent the year before. Spending on owned homes rose seven percent in one year, on rent five point four.",
+          "show": {
+            "type": "number",
+            "big": "+7.0%",
+            "caption": "spending on owned dwellings, 2023 → 2024",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Of that, about ninety-three hundred dollars goes to owned homes – mortgage interest, property taxes, insurance, repairs – and about fifty-seven hundred to rent. Those are averages over all households, owners and renters together, so a typical renter's actual rent is much higher than that.",
+          "show": {
+            "type": "compare",
+            "heading": "Housing, average over all households, 2024",
+            "left": [
+              "Rented dwellings",
+              "$5,660"
+            ],
+            "right": [
+              "Owned dwellings",
+              "$9,310"
+            ],
+            "color": "red"
+          }
+        },
+        {
+          "say": "Housing here isn't just rent or a mortgage. In the BLS definition it also includes utilities, furniture, appliances and household supplies – everything it takes to run a home."
+        }
+      ]
+    },
+    {
+      "heading": "What rose in 2024",
+      "beats": [
+        {
+          "say": "Before we put it together: total spending rose one point eight percent in 2024. But not every line moved the same way. Here's what rose fastest.",
+          "show": {
+            "type": "bars",
+            "heading": "Fastest-rising budget lines, 2023 → 2024",
+            "unit": "%",
+            "items": [
+              [
+                "Vehicle insurance",
+                12.3
+              ],
+              [
+                "Medicine (drugs)",
+                11.3
+              ],
+              [
+                "Owned homes",
+                7.0
+              ],
+              [
+                "Rent",
+                5.4
+              ],
+              [
+                "Groceries",
+                2.8
+              ],
+              [
+                "All spending",
+                1.8
+              ]
+            ],
+            "source": "BLS Consumer Expenditure Survey 2024 · average per household · change in average spending",
+            "color": "red",
+            "sort": false
+          }
+        },
+        {
+          "say": "Vehicle insurance: plus twelve point three percent in a single year. Medicine: plus eleven point three.",
+          "mark": {
+            "items": [
+              "Vehicle insurance",
+              "Medicine (drugs)"
+            ]
+          }
+        },
+        {
+          "say": "Spending on owned homes: plus seven percent. Rent: plus five point four. Groceries: plus two point eight.",
+          "mark": {
+            "items": [
+              "Owned homes",
+              "Rent",
+              "Groceries"
+            ]
+          }
+        },
+        {
+          "say": "And some lines fell. Households spent three point six percent less on buying vehicles, one point six percent less on gas, and two percent less on clothes. Eating out was almost flat.",
+          "show": {
+            "type": "note",
+            "text": "Down in 2024: *cars*, *gas*, *clothes*",
+            "source": "BLS Consumer Expenditure Survey 2024",
+            "color": "green"
+          }
+        },
+        {
+          "say": "See the pattern? The lines that rose are the ones that are hard to skip: insurance, medicine, a place to live, groceries. The lines that fell are the ones people can delay: a new car, a new jacket. That's what a squeezed budget looks like from the inside – people cut where they still can."
+        }
+      ]
+    },
+    {
+      "heading": "The big three",
+      "beats": [
+        {
+          "say": "Now put the top three together: housing, transportation, food.",
+          "show": {
+            "type": "note",
+            "text": "Housing + car + food = *63%* of spending",
+            "source": "BLS Consumer Expenditure Survey 2024 · average household",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "Forty-nine thousand seven hundred and fifty-three dollars. Sixty-three percent of everything the average household spends.",
+          "show": {
+            "type": "number",
+            "big": "$49,753",
+            "caption": "housing + transportation + food, a year",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "Here's why that matters for budgeting. Cutting the five-dollar coffee saves thirteen hundred dollars a year. Spending just ten percent less on the big three saves about five thousand.",
+          "show": {
+            "type": "compare",
+            "heading": "What a cut saves in a year",
+            "left": [
+              "Skip a $5 workday coffee",
+              "$1,300"
+            ],
+            "right": [
+              "10% less on the big three",
+              "$4,975"
+            ],
+            "color": "green"
+          }
+        },
+        {
+          "say": "A slightly smaller home, a cheaper car, a different insurance policy, fewer takeout nights – those decisions are rarer and harder. But one of them can be worth more than years of skipped coffees."
+        },
+        {
+          "say": "The small leaks are real. But the big money sits in the big lines – and those are usually decided once, then paid every month for years."
+        }
+      ]
+    },
+    {
+      "heading": "You vs the average",
+      "beats": [
+        {
+          "say": "One last thing: the average is just a middle. Spending depends hugely on income.",
+          "show": {
+            "type": "bars",
+            "heading": "Average yearly spending by income group, 2024",
+            "unit": "$",
+            "items": [
+              [
+                "Lowest fifth",
+                35046
+              ],
+              [
+                "Second fifth",
+                50054
+              ],
+              [
+                "Middle fifth",
+                66900
+              ],
+              [
+                "Fourth fifth",
+                89972
+              ],
+              [
+                "Highest fifth",
+                150342
+              ]
+            ],
+            "source": "BLS Consumer Expenditure Survey 2024 · average per household",
+            "color": "blue",
+            "sort": false
+          }
+        },
+        {
+          "say": "The fifth of households with the lowest incomes spent about thirty-five thousand dollars in 2024.",
+          "mark": {
+            "items": [
+              "Lowest fifth"
+            ]
+          }
+        },
+        {
+          "say": "The middle fifth: about sixty-seven thousand. The top fifth: about a hundred and fifty thousand – more than four times the bottom.",
+          "mark": {
+            "items": [
+              "Middle fifth",
+              "Highest fifth"
+            ]
+          }
+        },
+        {
+          "say": "So don't measure yourself against seventy-eight thousand. Measure your shares. Take one month of your own spending and sort it into these lines. If housing takes far more than a third, or your car costs more than a thousand a month, you know where the big levers are.",
+          "show": {
+            "type": "number",
+            "big": "1/3 · 1/6 · 1/8",
+            "caption": "housing · transportation · food, share of the average budget",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "You don't need an app for this. Your bank statement and a pen are enough. Sort each payment into one of the ten lines, add them up, and divide by your total. Ten minutes, once – and you'll know more about your money than most budgeting tips can tell you."
+        }
+      ]
+    },
+    {
+      "heading": "What to remember",
+      "beats": [
+        {
+          "say": "So where does the average seventy-eight thousand five hundred dollars go? Three things.",
+          "show": {
+            "type": "bars",
+            "heading": "Where $78,535 a year goes – the 10 biggest lines",
+            "unit": "$",
+            "items": [
+              [
+                "Personal care",
+                978
+              ],
+              [
+                "Education",
+                1569
+              ],
+              [
+                "Clothing & services",
+                2001
+              ],
+              [
+                "Charity & gifts",
+                2292
+              ],
+              [
+                "Entertainment",
+                3609
+              ],
+              [
+                "Healthcare",
+                6197
+              ],
+              [
+                "Insurance & pensions",
+                9797
+              ],
+              [
+                "Food",
+                10169
+              ],
+              [
+                "Transportation",
+                13318
+              ],
+              [
+                "Housing",
+                26266
+              ]
+            ],
+            "source": "BLS Consumer Expenditure Survey 2024 · average per household",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "One: housing is number one by far – about twenty-two hundred a month, a third of everything, and rising."
+        },
+        {
+          "say": "Two: the car is number two, and it's sneaky. Almost a thousand a month on vehicles – and insurance alone rose twenty-five percent in two years."
+        },
+        {
+          "say": "Three: three lines – housing, transportation and food – take sixty-three percent. Small leaks matter, but ten percent off the big three is worth almost four times the daily coffee."
+        },
+        {
+          "say": "If you want to understand your money with real numbers, subscribe. And tell me in the comments: which line of your budget surprised you most?"
+        }
+      ]
+    }
+  ],
+  "short": {
+    "hook": "Where $6,545 a month goes",
+    "beats": [
+      {
+        "say": "The average American household spends about seventy-eight and a half thousand dollars a year. That's sixty-five hundred a month. Here's where all of it actually goes.",
+        "show": {
+          "type": "bars",
+          "heading": "Where $78,535 a year goes – the 10 biggest lines",
+          "unit": "$",
+          "items": [
+            [
+              "Personal care",
+              978
+            ],
+            [
+              "Education",
+              1569
+            ],
+            [
+              "Clothing & services",
+              2001
+            ],
+            [
+              "Charity & gifts",
+              2292
+            ],
+            [
+              "Entertainment",
+              3609
+            ],
+            [
+              "Healthcare",
+              6197
+            ],
+            [
+              "Insurance & pensions",
+              9797
+            ],
+            [
+              "Food",
+              10169
+            ],
+            [
+              "Transportation",
+              13318
+            ],
+            [
+              "Housing",
+              26266
+            ]
+          ],
+          "source": "BLS Consumer Expenditure Survey 2024 · average per household",
+          "color": "blue"
+        }
+      },
+      {
+        "say": "Number one, by far: housing. Almost twenty-two hundred dollars a month – a third of everything. Number two: transportation, about eleven hundred dollars a month. And car insurance alone rose twenty-five percent in two years.",
+        "show": {
+          "type": "number",
+          "big": "+25%",
+          "caption": "vehicle insurance per household, 2022 → 2024",
+          "color": "red"
+        }
+      },
+      {
+        "say": "Number three: food. About eight hundred and fifty a month – and almost four in ten of those food dollars are spent eating out, at restaurants or on takeout.",
+        "show": {
+          "type": "compare",
+          "heading": "Food, average household, 2024",
+          "left": [
+            "Groceries (at home)",
+            "$6,224"
+          ],
+          "right": [
+            "Eating out (away from home)",
+            "$3,945"
+          ],
+          "color": "gold"
+        }
+      },
+      {
+        "say": "Together, those three take sixty-three percent of all spending. That's why skipping a five-dollar coffee saves thirteen hundred dollars a year – but ten percent less on the big three saves about five thousand.",
+        "show": {
+          "type": "compare",
+          "heading": "What a cut saves in a year",
+          "left": [
+            "Skip a $5 workday coffee",
+            "$1,300"
+          ],
+          "right": [
+            "10% less on the big three",
+            "$4,975"
+          ],
+          "color": "green"
+        }
+      },
+      {
+        "say": "The full countdown of all ten budget lines – and the budget lines that rose the fastest last year – is in the video on the channel."
+      }
+    ]
+  },
+  "question": "What share of your monthly spending goes to housing?"
+}
