@@ -216,6 +216,7 @@ class Sim:
     note_gap = 0.045     # shortest gap between two melody notes (s)
     slowmo = False       # the finale moment is worth a slow-motion replay
     finale_punch = 1.0   # screen shake + flash at the finale (0 = none)
+    tempo = ""           # "fast" = many/fast balls and several audible hits per second (tempo experiment)
     # designed concepts (ytauto/concepts/) describe themselves; the built-in kinds use the tables in simchannel
     concept: dict = {}   # {"created": ISO time, "idea": ..., "inspiration": ..., "finale": ...}
     titles: list[str] | None = None
@@ -1789,6 +1790,25 @@ def _swoosh(rnd: random.Random, dur: float = 1.0) -> np.ndarray:
     return ((sweep + air) * env * 0.5).astype(np.float32)
 
 
+def audible(sim) -> list[tuple[float, str, int]]:
+    """The events the soundtrack really plays: melody notes at most one per note_gap (very fast bounces would turn the
+    melody into noise), clacks thinned out and never on top of a note."""
+    out, last, last_clack = [], -1.0, -1.0
+    for t, kind, i in sim.events:
+        if kind in ("bounce", "land"):
+            if t - last < sim.note_gap:
+                continue
+            last = t
+        elif kind == "clack":
+            if t - last_clack < 0.08 or t - last < 0.03:
+                continue
+            last_clack = t
+        elif kind not in ("tone", "break", "finale"):
+            continue
+        out.append((t, kind, i))
+    return out
+
+
 def soundtrack(sim, melody: str, duration: float, seed: int, timbre: str = "bell", warp: Warp | None = None) -> np.ndarray:
     notes = MELODIES[melody][1]
     rnd = random.Random(seed)
@@ -1801,7 +1821,7 @@ def soundtrack(sim, melody: str, duration: float, seed: int, timbre: str = "bell
             cache[m, dur, vel] = _note(m, dur, vel, timbre)
         return cache[m, dur, vel]
     mix = np.zeros(int(SR * (duration + 2)), dtype=np.float32)
-    idx, last, last_clack = 0, -1.0, -1.0
+    idx = 0
 
     warp = warp or Warp()
     if warp.a is not None:
@@ -1814,19 +1834,13 @@ def soundtrack(sim, melody: str, duration: float, seed: int, timbre: str = "bell
         j = min(len(mix), i + len(sig))
         mix[i:j] += sig[: j - i]
 
-    for t, kind, i in sim.events:
+    for t, kind, i in audible(sim):
         if kind in ("bounce", "land"):
-            if t - last < sim.note_gap:  # very fast bounces: don't turn the melody into noise
-                continue
-            last = t
             put(t, note(notes[idx % len(notes)]))
             idx += 1
         elif kind == "tone":  # pendulum i: its own note of the scale, low (long) to high (short)
             put(t, note(penta[i] - 12, 0.9, 0.42))
         elif kind == "clack":
-            if t - last_clack < 0.08 or t - last < 0.03:
-                continue
-            last_clack = t
             put(t, _clack(rnd))
         elif kind == "break":
             put(t, _sparkle(rnd, notes[idx % len(notes)] - 12))

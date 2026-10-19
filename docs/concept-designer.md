@@ -20,6 +20,9 @@ The channel owner's rules:
   countdown or final sprint, everything breaking at once, a photo finish – then a big finale moment. A calm reveal
   (a drawing that completes) is fine sometimes, but escalation is the default.
 - Bringing back concepts that performed well is the workflow's job (weighted by views) – not yours.
+- **The music always fits exactly what you see** – every note lands on a visible hit, and the hits the viewer
+  follows are audible (section "Sound = picture").
+- **Test faster concepts**: faster balls, more balls, more hits per second (section "Tempo experiment").
 
 ## 0. Set up
 
@@ -31,6 +34,19 @@ python -m ytauto concepts
 ```
 
 If the queue line shows **6 or more** concepts waiting, stop here – report "queue full" and end the session.
+
+**Sound fixes first.** While the list below is not empty, start every run by fixing the first concept on it (30
+minutes at most): move the melody (`bounce`/`land`) to the hero events and the mass of other collisions to `clack`
+(see "Sound = picture"), make sure something audible happens at least every 3.5 s, then
+`python -m ytauto concept-check <kind>` must pass. Commit the fix together with this list minus that line
+(`git commit -m "Loop Physics sound fix: <kind>"`), push, then build your new concepts.
+
+- `zombie_tag`: the melody plays on wall hits of all 40 balls – 84 % of them fall silent, and there are silences of
+  4–5 s (at the start and around 30 s). Give the melody to the bites (and the zombie's own wall hits), the other balls clack.
+- `brick_core`: 57 % of the brick hits fall silent – melody on the hits that break a brick / the lead ball, the
+  rest clack.
+- `territory` (built in, `sims.Territory`): 51 % of the bounces fall silent – melody only on bounces that paint a
+  cell, wall bounces clack.
 
 ## 1. Find the idea (15 minutes at most)
 
@@ -75,7 +91,8 @@ and what the sound does, "{song}" = melody name), `playlist`, `cover_at`, `trend
 - **Sound** comes from events you append: `self.events.append((self.t, kind, i))` with kind
   `"bounce"`/`"land"` (next note of the public-domain melody, at most one per `note_gap` seconds), `"tone"` (note i of
   a pentatonic scale, low → high: great when every object has its own pitch), `"clack"` (wooden knock),
-  `"break"` (crack + sparkle); `finish()` adds the finale chord. Aim for a steady pulse of notes – 1 to 6 per second.
+  `"break"` (crack + sparkle); `finish()` adds the finale chord. Aim for a steady pulse of 2–10 notes per second, each on
+  a visible hit (see "Sound = picture").
 - **Picture** (`draw(p)` every frame; `prepare(p)` once; `on_event(p, kind, i)` for each event):
   `p.ring(r, start_deg, span_deg, col, width, flash)`, `p.line(points, col, width, flash, glow=True|colour|None,
   closed=False)`, `p.ball(x, y, r, fill, outline, width)`, `p.glow_disc(x, y, r, col)`, `p.trail(key, x, y, r, col,
@@ -93,6 +110,43 @@ and what the sound does, "{song}" = melody name), `playlist`, `cover_at`, `trend
   `finale()` → big text lines `[(text, colour), ...]` or just `finale_text()`.
 - **Speed**: `simulate()` of a 70 s run should take under ~3 s (the seed search runs it dozens of times) – avoid
   O(n²) over hundreds of objects (use a grid or buckets). Painting must stay under 180 ms per frame on average.
+
+### Sound = picture (every concept)
+
+The owner's rule: the music always fits exactly what happens on screen. The soundtrack is generated from your
+events, so it is only as good as the moments you emit them.
+
+- Emit a sound event only in `step()`, at the exact moment of a contact the viewer can see (bounce, landing, merge,
+  hit, break) – never on a timer, never for something off-screen, hidden behind text or not drawn at all.
+- The melody (`bounce`/`land`) belongs to the **hero** – what the viewer follows: the one ball, the leader, the
+  merging pair, the ring that cracks. With many balls give the melody only to those hero events and use `clack` for
+  the mass of other collisions (tiny grazes get no sound). Otherwise `note_gap` has to drop most notes: hits go
+  silent and the melody turns into noise.
+- Pace: **2–10 melody notes per second**, and no silence over 3.5 s while things move. Big moments (a ring breaks, a
+  ball is eliminated, a new stage) get a `break` at the same instant as their flash or `p.punch()`.
+- Never touch `self.rnd` or physics state in `draw`, `prepare` or `on_event`: the soundtrack comes from a separate
+  physics run, so if painting changes the physics, sound and picture drift apart.
+- The gate checks all of this: it re-runs the physics while painting (any drift fails), counts dropped and silent
+  notes and the longest silence, and prints the pace. Fix the events, not the threshold.
+
+### Tempo experiment: faster, more balls (since October 2026)
+
+The owner wants to find out whether faster concepts hold attention better – faster balls, more balls, more hits
+per second.
+
+- Every night **at least one of your two concepts is fast**, marked with `tempo = "fast"` in the class. Fast means:
+  action from the very first frame (no slow start), **4–10 audible hits per second**, and either many balls
+  (30–300) or balls that are fast from the start and keep getting faster. The gate fails a "fast" concept that is
+  not.
+- Fast is not chaos: the viewer must still follow one thing – a leader, a counter racing to a limit, the last
+  survivor, the colour that is winning. Our best performers so far (stringart ×3.9, escape ×2.4) are single balls
+  that get faster with every bounce: speed-up with a clear focus is what holds people.
+- Levers: start fast instead of slow; double the speed or the ball count in stages; split one ball into two on every
+  hit; hundreds of balls racing for one exit; 100-ball elimination battles; a final sprint where everything speeds
+  up. Keep the melody on the hero (see above), the rest clacks.
+- Evaluation: `python -m ytauto concepts` prints "tempo experiment: fast ×… vs normal ×…". Once at least 4 fast
+  concepts have numbers: if fast is ≥ 1.2× normal, make both nightly concepts fast; if fast is ≤ 0.8× normal,
+  build a fast one only every other night; in between keep one fast and one free. Quote the line in your report.
 
 ## 3. Test until it is great
 
@@ -131,7 +185,8 @@ Finish with a short report: the idea, what inspired it, the finale, the run leng
 
 ## Never
 
-- touch `state/`, `config/` tokens or keys, `.github/workflows/`, secrets, or other concepts' files;
+- touch `state/`, `config/` tokens or keys, `.github/workflows/`, secrets, or other concepts' files (except the
+  sound fixes listed in section 0);
 - post, upload or start workflows yourself;
 - use copyrighted music, footage, logos, real people or brand names; claim things in titles that do not happen;
 - commit anything under `out/`.
@@ -173,12 +228,12 @@ outcome branch `main`, tag `loop-physics-designer`) and this prompt:
 You are the Loop Physics concept designer. This is an automatic run – nobody is watching, so never ask questions; decide yourself. You work in the checkout of hthkrksy54-dotcom/Yt (branch main).
 
 1. `git checkout main && git pull origin main`, then read docs/concept-designer.md completely and follow it exactly.
-2. Check the queue with `python -m ytauto concepts` (stop if 6 or more concepts are already waiting).
-3. Research what is going viral right now in satisfying / physics / ball simulation Shorts, Reels and TikToks (web search), and pick TWO ideas that do not exist yet – each a different core mechanic, not a recolour – ideally with an escalating finale.
+2. Check the queue with `python -m ytauto concepts` (stop if 6 or more concepts are already waiting). If the "Sound fixes first" list in section 0 is not empty, fix the first concept on it before anything else.
+3. Research what is going viral right now in satisfying / physics / ball simulation Shorts, Reels and TikToks (web search), and pick TWO ideas that do not exist yet – each a different core mechanic, not a recolour – ideally with an escalating finale; at least one of them fast (section "Tempo experiment"). In both, the music must fit exactly what happens on screen (section "Sound = picture").
 3b. Viral songs: follow the section "Viral songs (every run)" in docs/concept-designer.md – research which songs trend right now, update config/sims_music.json (boosts for public-domain melodies, trending TikTok sounds for the owner) and add a trending public-domain melody if one is missing.
 4. Build the first as ytauto/concepts/<kind>.py from ytauto/concepts/_template.py, iterate until `python -m ytauto concept-check <kind> --full` passes, and look at the contact sheet and the extracted frames (especially the finale) – improve it until it looks great to a viewer scrolling past.
 5. Commit that file (plus config/sims_music.json and, if you added a melody, sims.py/simchannel.py) and push it directly to main (`git pull --rebase origin main && git push origin HEAD:main`, retry a few times). No pull request, no other branch. Do not post, upload or start workflows – the Loop Physics workflow posts it at the next slot.
 6. Then build, check and push the second idea the same way (skip it if 6 or more concepts are waiting by then).
 
-End with a short report in German: pro Konzept Idee, Inspiration, Finale, gefundene Laufzeiten; dazu virale Songs (was geboostet/neu) – or exactly why nothing was committed.
+End with a short report in German: pro Konzept Idee, Inspiration, Finale, Tempo (schnell/normal, Treffer pro Sekunde), gefundene Laufzeiten; die Zeile "tempo experiment"; dazu virale Songs (was geboostet/neu) – or exactly why nothing was committed.
 ```

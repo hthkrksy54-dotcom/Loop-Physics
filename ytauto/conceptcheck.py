@@ -9,6 +9,7 @@ from __future__ import annotations
 import datetime as dt
 import math
 import re
+import statistics
 import subprocess
 import time
 from pathlib import Path
@@ -20,6 +21,9 @@ from . import concepts, simchannel, sims
 OUT = Path(__file__).resolve().parent.parent / "out" / "concepts"
 RANGES = [(58, 66), (62, 72), (66, 78), (72, 86)]  # every video must run longer than a minute (TikTok rewards)
 SOUND = {"bounce", "land", "tone", "clack", "break"}
+SILENCE_MAX = 3.5   # s without any sound while the run is going – the music must follow the action
+DROP_MAX = 0.5      # share of melody hits note_gap has to silence – more means the melody is on the wrong events
+FAST_MIN = 4.0      # audible hits per second a tempo = "fast" concept needs
 
 
 def check(kind: str, full: bool = False, quiet: bool = False) -> bool:
@@ -84,6 +88,23 @@ def check(kind: str, full: bool = False, quiet: bool = False) -> bool:
         problems.append("no finale event (call self.finish())")
     info.append(f"seeds {', '.join(f'{lo}-{hi}s: {s}' for (lo, hi), s in seeds.items())} · "
                 f"{sounds} sound events · run {a.end:.1f}s")
+    if a.end:
+        heard = sims.audible(a)
+        melody = sum(1 for _, k, _ in a.events if k in ("bounce", "land"))
+        notes = sum(1 for _, k, _ in heard if k in ("bounce", "land"))
+        times = [0.0] + [t for t, k, _ in heard if k != "finale"] + [a.end]
+        gap, at = max((t2 - t1, t1) for t1, t2 in zip(times, times[1:]))
+        hits = (len(times) - 2) / a.end
+        info.append(f"sound: {hits:.1f} audible hits/s, {notes / a.end:.1f} melody notes/s, "
+                    f"{melody - notes} of {melody} melody hits silenced by note_gap, longest silence {gap:.1f}s at {at:.0f}s"
+                    + (" · tempo fast" if cls.tempo == "fast" else ""))
+        if gap > SILENCE_MAX:
+            problems.append(f"{gap:.1f}s without any sound from {at:.0f}s – emit events for what happens on screen")
+        if melody and (melody - notes) / melody > DROP_MAX:
+            problems.append(f"{melody - notes} of {melody} melody hits fall silent (note_gap {cls.note_gap}s) – give "
+                            "'bounce'/'land' only to the hero events and use 'clack' for the other collisions")
+        if cls.tempo == "fast" and hits < FAST_MIN:
+            problems.append(f"marked tempo = 'fast' but only {hits:.1f} audible hits/s (needs {FAST_MIN:.0f}+)")
 
     # 3) texts fit, metadata renders
     sim = cls(seed)
@@ -122,6 +143,12 @@ def check(kind: str, full: bool = False, quiet: bool = False) -> bool:
                     shots_at.pop(0)
     except Exception as err:  # noqa: BLE001
         problems.append(f"drawing crashed: {type(err).__name__}: {err}")
+    painted = [e for e in sim.events if e[0] <= a.end + 1e-9]
+    if shots_at == [] and painted != a.events:  # the soundtrack comes from a physics run without painting
+        n = next((i for i, (x, y) in enumerate(zip(a.events, painted)) if x != y), min(len(a.events), len(painted)))
+        at = (a.events[n] if n < len(a.events) else painted[n])[0]
+        problems.append(f"sound would drift from the picture from {at:.1f}s: painting changes the physics – never use "
+                        "self.rnd or change physics state in draw/prepare/on_event")
     if shots:
         OUT.mkdir(parents=True, exist_ok=True)
         sheet = Image.new("RGB", (270 * len(shots), 480))
@@ -186,4 +213,11 @@ def listing(cfg: dict, state: dict) -> str:
                      f"{idea[:110]}")
     for name, err in concepts.BROKEN.items():
         lines.append(f"{name:14} IMPORT ERROR {err.strip().splitlines()[-1][:100]}")
+    groups = {"fast": [], "normal": []}
+    for kind, (r, n, _) in perf.items():
+        if n and kind in sims.KINDS:
+            groups["fast" if sims.KINDS[kind].tempo == "fast" else "normal"].append(r)
+    lines.insert(2, "tempo experiment: " + " vs ".join(
+        f"{g} ×{statistics.median(rs):.2f} ({len(rs)} concepts)" if rs else f"{g} – (0 concepts)"
+        for g, rs in groups.items()))
     return "\n".join(lines)
