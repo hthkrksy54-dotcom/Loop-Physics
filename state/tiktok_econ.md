@@ -6,6 +6,19 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
+## 19.10. 04:36 UTC – Japan's prices didn't move for 27 years
+
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261019-why-japan-prices-froze)
+
+```text
+Japan's prices didn't move for 27 years
+From 1994 to 2021, prices in Japan rose about 4% – in total. In the US they rose 83%.
+💬 What costs you the same today as it did ten years ago?
+Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
+Not financial advice.
+#japan #economics #money #personalfinance #learnontiktok
+```
+
 ## 18.10. 03:04 UTC – $24,000 beat $72,000. Here's how.
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@realnumbersdaily/video/7697900855495855393) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261018-compound-interest-time)
