@@ -3,20 +3,21 @@
   "boost": {
     "fur_elise": 1.5,
     "toccata": 1.6,
-    "mountain_king": 1.1,
+    "mountain_king": 1.0,
     "twinkle": 1.3,
-    "funeral_march": 1.4
+    "funeral_march": 1.4,
+    "moonlight": 1.3
   },
   "seasonal_until": {
     "toccata": "2026-11-01",
-    "mountain_king": "2026-11-01",
-    "funeral_march": "2026-11-01"
+    "funeral_march": "2026-11-01",
+    "moonlight": "2026-11-01"
   },
   "tiktok_sounds": [
-    "Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for dramatic Halloween reveals – fits the 2048 finale moment",
+    "Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for dramatic Halloween reveals – fits the 2048 merge and the lava-escape finale",
     "Two Fishes (Love Island USA clip) – top trending audio of October 2026 – funny voice-over hook for the merge run",
     "Experience – Ludovico Einaudi: the biggest classical-piano sound on TikTok, calm build-up for slow satisfying runs",
     "Spooky, quiet, scary atmosphere piano – Skittlegirl Sound: creepy piano backdrop for zombie/Halloween runs"
   ],
-  "notes": "Für Elise and Twinkle (×2.0 / ×4.0 own lift) boosted. Halloween until Nov 1: Toccata up, new Chopin Funeral March (Halloween staple); Mountain King only mildly (keeps under-performing, ×0.93)."
+  "notes": "Own lift decides: Twinkle ×4.0, Moonlight ×2.6 (dark mood, boosted for Halloween until Nov 1), Für Elise ×2.0. Halloween until Nov 1: Toccata + Chopin Funeral March up; Mountain King back to neutral (×0.93 over 3 posts)."
 }
