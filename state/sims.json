@@ -48,7 +48,7 @@
         "comments": 0,
         "at": "2026-10-18T09:53+00:00"
       },
-      "yt_views": 1489,
+      "yt_views": 1494,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235341996115990",
         "status": "PUBLISH_COMPLETE",
@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-18T09:53+00:00"
       },
-      "yt_views": 7129,
+      "yt_views": 7134,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -190,7 +190,7 @@
         "comments": 0,
         "at": "2026-10-18T09:53+00:00"
       },
-      "yt_views": 2568,
+      "yt_views": 2555,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232916815824918",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-18T09:53+00:00"
       },
-      "yt_views": 13135,
+      "yt_views": 13143,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -277,7 +277,7 @@
         "comments": 0,
         "at": "2026-10-18T09:53+00:00"
       },
-      "yt_views": 1286,
+      "yt_views": 1288,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233859481487382",
         "status": "SEND_TO_USER_INBOX",
@@ -648,7 +648,7 @@
       "instagram_id": "18030561041882795",
       "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/",
       "youtube_id": "3Qgx9BMIlXo",
-      "yt_views": 7417,
+      "yt_views": 7450,
       "stats": {
         "views": 2020,
         "reach": 1700,
@@ -710,7 +710,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697690989107973409"
       },
       "youtube_id": "I4sGIrwZf6U",
-      "yt_views": 409,
+      "yt_views": 410,
       "stats": {
         "views": 1176,
         "reach": 1073,
@@ -774,7 +774,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697901343209573664"
       },
       "youtube_id": "gbOvNfhdn-g",
-      "yt_views": 1537,
+      "yt_views": 1542,
       "stats": {
         "views": 1509,
         "reach": 1238,
@@ -807,7 +807,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697979638068284704"
       },
       "youtube_id": "ZSdNVZtvCYY",
-      "yt_views": 1452
+      "yt_views": 1453
     },
     {
       "date": "2026-10-18T16:41:42+00:00",
@@ -847,6 +847,27 @@
         "publish_id": "v_inbox_file~v2.7698143636768655362",
         "status": "SEND_TO_USER_INBOX",
         "caption": "Can the ball escape all 19 rings?\nOne ball, 19 spinning rings, one gap in each – it has to find every exit to break free.\n💬 Which ring was the hardest one?\n#ballescape #satisfying #oddlysatisfying #physics #simulation"
+      },
+      "youtube_id": "AA8_FfvhJ8M",
+      "yt_views": 0
+    },
+    {
+      "date": "2026-10-19T04:41:29+00:00",
+      "kind": "polygon",
+      "seed": 28,
+      "melody": "twinkle",
+      "timbre": "pluck",
+      "title": "Can the ball escape all 6 pentagons? – Watch till the end",
+      "duration": 80.6,
+      "why": "standout",
+      "drive": "https://drive.google.com/drive/folders/1LiClqOMgRbBVdj7pM9aWVIITVMuUz5GN",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261019-polygon-28",
+      "instagram_id": "18080798693375104",
+      "instagram_url": "https://www.instagram.com/reel/DeqcCRaFfpo/",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7698236255007737878",
+        "status": "SEND_TO_USER_INBOX",
+        "caption": "Can the ball escape all 6 pentagons?\nOne ball, 6 nested polygons turning in opposite directions – and only one gap in each.\n💬 Rings or polygons – which is harder?\n#ballescape #satisfying #oddlysatisfying #physics #simulation"
       }
     }
   ]

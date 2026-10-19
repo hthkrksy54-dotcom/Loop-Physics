@@ -8,6 +8,17 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 **Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: the go-to sound for dramatic Halloween reveals this October – fits finale moments · Experience – Ludovico Einaudi: the biggest classical-piano sound on TikTok, calm build-up that matches slow satisfying runs · Spooky, quiet, scary atmosphere piano – Skittlegirl Sound: millions of uses for creepy piano backdrops – ideal for the zombie outbreak run
 
+## 19.10. 04:41 UTC – Can the ball escape all 6 pentagons?
+
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261019-polygon-28)
+
+```text
+Can the ball escape all 6 pentagons?
+One ball, 6 nested polygons turning in opposite directions – and only one gap in each.
+💬 Rings or polygons – which is harder?
+#ballescape #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 18.10. 22:41 UTC – Can the ball escape all 19 rings?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261018-escape-25)
