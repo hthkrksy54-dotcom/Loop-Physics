@@ -6,18 +6,7 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
-**Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: the go-to sound for dramatic Halloween reveals this October – fits finale moments · Experience – Ludovico Einaudi: the biggest classical-piano sound on TikTok, calm build-up that matches slow satisfying runs · Spooky, quiet, scary atmosphere piano – Skittlegirl Sound: millions of uses for creepy piano backdrops – ideal for the zombie outbreak run
-
-## 19.10. 10:41 UTC – What will 206 bounces draw?
-
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261019-stringart-52)
-
-```text
-What will 206 bounces draw?
-A ball speeds up inside a shape and every bounce leaves a line to the last one – the pattern draws itself.
-💬 More bounces next time?
-#stringart #satisfying #oddlysatisfying #physics #simulation
-```
+**Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for dramatic Halloween reveals – fits the 2048 merge and the lava-escape finale · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – funny voice-over hook for the merge run · Experience – Ludovico Einaudi: the biggest classical-piano sound on TikTok, calm build-up for slow satisfying runs · Spooky, quiet, scary atmosphere piano – Skittlegirl Sound: creepy piano backdrop for zombie/Halloween runs
 
 ## 17.10. 06:41 UTC – Every hit upgrades it – Who wins the duel?
 
@@ -74,6 +63,17 @@ One ball, 22 spinning rings, one gap in each – it has to find every exit to br
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 19.10. 10:41 UTC – What will 206 bounces draw?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7698379551923031328) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261019-stringart-52)
+
+```text
+What will 206 bounces draw?
+A ball speeds up inside a shape and every bounce leaves a line to the last one – the pattern draws itself.
+💬 More bounces next time?
+#stringart #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 19.10. 04:41 UTC – Can the ball escape all 6 pentagons?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7698238615138209056) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261019-polygon-28)
@@ -116,16 +116,5 @@ Can anyone survive 72 seconds?
 One green zombie ball, forty survivors, a shrinking arena. The horde hunts the nearest survivor – can anyone last until the clock runs out?
 💬 How many survive? Guess before the end!
 #zombie #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 18.10. 00:41 UTC – Will 375 balls make a bell curve?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7697901343209573664) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261018-plinko-3)
-
-```text
-Will 375 balls make a bell curve?
-Balls drop through a triangle of pegs, left or right at every peg – and pile up into a bell curve.
-💬 Did you expect such a clean bell curve?
-#plinko #satisfying #oddlysatisfying #physics #simulation
 ```
 
