@@ -190,7 +190,7 @@
         "comments": 0,
         "at": "2026-10-18T09:53+00:00"
       },
-      "yt_views": 2555,
+      "yt_views": 2570,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232916815824918",
         "status": "PUBLISH_COMPLETE",
@@ -648,7 +648,7 @@
       "instagram_id": "18030561041882795",
       "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/",
       "youtube_id": "3Qgx9BMIlXo",
-      "yt_views": 7450,
+      "yt_views": 7463,
       "stats": {
         "views": 2020,
         "reach": 1700,
@@ -743,7 +743,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697763195846479136"
       },
       "youtube_id": "ONKevBQHRdk",
-      "yt_views": 1023,
+      "yt_views": 1025,
       "stats": {
         "views": 1292,
         "reach": 1177,
@@ -774,7 +774,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697901343209573664"
       },
       "youtube_id": "gbOvNfhdn-g",
-      "yt_views": 1542,
+      "yt_views": 1543,
       "stats": {
         "views": 1509,
         "reach": 1238,
@@ -845,11 +845,12 @@
       "instagram_story_id": "18017446115959178",
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7698143636768655362",
-        "status": "SEND_TO_USER_INBOX",
-        "caption": "Can the ball escape all 19 rings?\nOne ball, 19 spinning rings, one gap in each – it has to find every exit to break free.\n💬 Which ring was the hardest one?\n#ballescape #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Can the ball escape all 19 rings?\nOne ball, 19 spinning rings, one gap in each – it has to find every exit to break free.\n💬 Which ring was the hardest one?\n#ballescape #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7698238496632212769"
       },
       "youtube_id": "AA8_FfvhJ8M",
-      "yt_views": 0
+      "yt_views": 70
     },
     {
       "date": "2026-10-19T04:41:29+00:00",
@@ -866,9 +867,12 @@
       "instagram_url": "https://www.instagram.com/reel/DeqcCRaFfpo/",
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7698236255007737878",
-        "status": "SEND_TO_USER_INBOX",
-        "caption": "Can the ball escape all 6 pentagons?\nOne ball, 6 nested polygons turning in opposite directions – and only one gap in each.\n💬 Rings or polygons – which is harder?\n#ballescape #satisfying #oddlysatisfying #physics #simulation"
-      }
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Can the ball escape all 6 pentagons?\nOne ball, 6 nested polygons turning in opposite directions – and only one gap in each.\n💬 Rings or polygons – which is harder?\n#ballescape #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7698238615138209056"
+      },
+      "youtube_id": "HJWprEDsCPo",
+      "yt_views": 47
     }
   ]
 }
