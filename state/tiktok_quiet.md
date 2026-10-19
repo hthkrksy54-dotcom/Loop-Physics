@@ -8,7 +8,7 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 ## 19.10. 04:40 UTC – Doomsday failed. Their faith grew.
 
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-cognitive-dissonance)
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7698238693617847585) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-cognitive-dissonance)
 
 ```text
 Doomsday failed. Their faith grew.
@@ -64,17 +64,5 @@ Nearly 2,000 years ago, Epictetus – a former slave who became one of the most 
 💬 What is one thing you have been trying to control that was never yours to control?
 Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
 #Stoicism #Philosophy #Epictetus #psychology #learnontiktok
-```
-
-## 15.10. 13:22 UTC – Why the things you want stop making you happy
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7697642557894872352) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-hedonic-treadmill)
-
-```text
-Why the things you want stop making you happy
-Why does the thing we wanted so badly become ordinary so quickly? Psychologists call it the hedonic treadmill.
-💬 What is one thing you once wished for that you now take for granted?
-Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
-#Psychology #Philosophy #Happiness #learnontiktok
 ```
 

@@ -8,7 +8,7 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 ## 19.10. 04:36 UTC – Japan's prices didn't move for 27 years
 
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261019-why-japan-prices-froze)
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@realnumbersdaily/video/7698238855387827489) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261019-why-japan-prices-froze)
 
 ```text
 Japan's prices didn't move for 27 years
@@ -69,18 +69,5 @@ The US national debt passed $40 trillion in August 2026 – and the interest on 
 Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
 Not financial advice.
 #nationaldebt #economics #money #learnontiktok
-```
-
-## 17.10. 10:56 UTC – Your $100 shrank to $12
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@realnumbersdaily/video/7697643067888766240) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261017-where-did-100-dollars-go)
-
-```text
-Your $100 shrank to $12
-In 1970, a hundred-dollar bill bought what you need about $808 for today. Where did the rest go?
-💬 How much did your money lose since you were born?
-Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
-Not financial advice.
-#inflation #economics #money #learnontiktok
 ```
 
