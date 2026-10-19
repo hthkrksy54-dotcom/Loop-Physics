@@ -18,7 +18,7 @@ Formats that work for Finanzbär and Finanzfluss, rebuilt for US/UK viewers. Spe
 - [x] Net worth by age: where do you stand? (Fed Survey of Consumer Finances) – `net-worth-by-age-2025`
 - [ ] The 50/30/20 rule: does it still work today? (BLS Consumer Expenditure Survey)
 - [ ] Emergency fund: how much do you really need? (Fed SHED: who could cover a $400 surprise)
-- [ ] Credit card debt: what 20%+ interest really costs you (Fed G.19)
+- [x] Credit card debt: what 20%+ interest really costs you (Fed G.19) – `credit-card-minimum-trap`
 - [ ] Rent or buy? The math nobody shows you
 - [ ] Why your 40s are the most dangerous money decade
 - [ ] The psychology of people who are good with money (what studies show)

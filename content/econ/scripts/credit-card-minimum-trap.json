@@ -1,0 +1,1075 @@
+{
+  "id": "credit-card-minimum-trap",
+  "order": 9,
+  "title": "The $3,100 Credit Card Balance That Takes 15 Years to Pay Off – The 21% Math",
+  "title_card": "What does 21% interest really cost you?",
+  "description": "The typical American who carries a credit card balance owes about $3,100. At today's average rate of 21%, paying only the minimum takes 15 years and costs more in interest than the balance itself. We walk through the real Federal Reserve data on card rates – now near a 30-year record – and the simple math of minimum payments, the interest-only trap and what paying a bit more changes. No advice, just the numbers.",
+  "tags": [
+    "credit card debt",
+    "credit card interest",
+    "minimum payment",
+    "apr explained",
+    "how credit cards work",
+    "debt payoff",
+    "credit card interest rates",
+    "federal reserve",
+    "personal finance",
+    "money",
+    "debt",
+    "real numbers"
+  ],
+  "hashtags": [
+    "#creditcard",
+    "#debt",
+    "#personalfinance"
+  ],
+  "sources": [
+    "Board of Governors of the Federal Reserve System, G.19 Consumer Credit, Terms of Credit: commercial bank interest rate on credit card plans, all accounts and accounts assessed interest, quarterly 1994 Q4–2026 Q3 (yearly averages computed; August 2026: 21.19% all accounts, 22.36% accounts assessed interest)",
+    "Board of Governors of the Federal Reserve System, G.19 Consumer Credit: revolving consumer credit outstanding, not seasonally adjusted, $1,315.2 billion (August 2026)",
+    "Board of Governors of the Federal Reserve System, 'Changes in U.S. Family Finances from 2022 to 2025' (Survey of Consumer Finances, October 2026): 44.7% of families carry a credit card balance; conditional median balance $3,100; 55.8% do not carry a balance",
+    "Illustrative calculations: interest at 21.19% a year added monthly (1/12 per month); example minimum payment of 1% of the balance plus that month's interest, at least $25 (card terms vary – check your own statement)"
+  ],
+  "thumbnail": {
+    "big": "15 YEARS",
+    "text": "to pay off $3,100",
+    "color": "red"
+  },
+  "chapters": [
+    {
+      "heading": "Intro",
+      "beats": [
+        {
+          "say": "Three thousand one hundred dollars. That's what the typical American who carries a credit card balance owes. Not a disaster. A couple of bad months.",
+          "show": {
+            "type": "number",
+            "big": "$3,100",
+            "caption": "median card balance, families who carry one, 2025",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Now pay only the minimum, every month, and never use the card again. How long until it's gone?"
+        },
+        {
+          "say": "Fifteen years. And by the end you've paid about four thousand four hundred dollars in interest – more than the balance itself.",
+          "show": {
+            "type": "number",
+            "big": "15 years",
+            "caption": "to clear $3,100 with minimum payments",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Today: the real numbers behind credit card interest, the trap built into the minimum payment, and the one balance where paying a hundred dollars a month never ends."
+        },
+        {
+          "say": "Quick note: this is general information, not financial advice.",
+          "show": {
+            "type": "note",
+            "text": "Card terms vary. *Check your own statement.*",
+            "source": "Every payoff in this video is an example calculation",
+            "color": "gray"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "21% is a record",
+      "beats": [
+        {
+          "say": "First, the rate. Here's the average interest rate on credit card accounts at US banks, from the Federal Reserve, over thirty years.",
+          "show": {
+            "type": "line",
+            "heading": "Average US credit card interest rate",
+            "unit": "%",
+            "sub": "Commercial banks, all accounts, yearly average 1995–2025 · Federal Reserve G.19",
+            "series": [
+              {
+                "label": "",
+                "points": [
+                  [
+                    1995,
+                    15.99
+                  ],
+                  [
+                    1996,
+                    15.63
+                  ],
+                  [
+                    1997,
+                    15.79
+                  ],
+                  [
+                    1998,
+                    15.71
+                  ],
+                  [
+                    1999,
+                    15.19
+                  ],
+                  [
+                    2000,
+                    15.78
+                  ],
+                  [
+                    2001,
+                    14.87
+                  ],
+                  [
+                    2002,
+                    13.4
+                  ],
+                  [
+                    2003,
+                    12.3
+                  ],
+                  [
+                    2004,
+                    12.72
+                  ],
+                  [
+                    2005,
+                    12.51
+                  ],
+                  [
+                    2006,
+                    13.21
+                  ],
+                  [
+                    2007,
+                    13.3
+                  ],
+                  [
+                    2008,
+                    12.08
+                  ],
+                  [
+                    2009,
+                    13.4
+                  ],
+                  [
+                    2010,
+                    13.78
+                  ],
+                  [
+                    2011,
+                    12.74
+                  ],
+                  [
+                    2012,
+                    12.06
+                  ],
+                  [
+                    2013,
+                    11.9
+                  ],
+                  [
+                    2014,
+                    11.87
+                  ],
+                  [
+                    2015,
+                    12.09
+                  ],
+                  [
+                    2016,
+                    12.35
+                  ],
+                  [
+                    2017,
+                    12.89
+                  ],
+                  [
+                    2018,
+                    14.22
+                  ],
+                  [
+                    2019,
+                    15.05
+                  ],
+                  [
+                    2020,
+                    14.71
+                  ],
+                  [
+                    2021,
+                    14.6
+                  ],
+                  [
+                    2022,
+                    16.26
+                  ],
+                  [
+                    2023,
+                    20.9
+                  ],
+                  [
+                    2024,
+                    21.58
+                  ],
+                  [
+                    2025,
+                    21.22
+                  ]
+                ],
+                "color": "red"
+              }
+            ]
+          }
+        },
+        {
+          "say": "In the late nineties: around sixteen percent.",
+          "mark": {
+            "x": 1995
+          }
+        },
+        {
+          "say": "Then it drifted down for almost twenty years. In 2014, the average was under twelve percent.",
+          "mark": {
+            "x": 2014
+          }
+        },
+        {
+          "say": "Then the Fed raised interest rates fast in 2022 and 2023 to fight inflation – and card rates follow right behind.",
+          "mark": {
+            "x": 2022
+          }
+        },
+        {
+          "say": "In 2024, the yearly average hit twenty-one point six percent. The highest in this whole thirty-year series.",
+          "mark": {
+            "x": 2024,
+            "label": "Record: 21.58%"
+          }
+        },
+        {
+          "say": "And it hasn't come down much. In August 2026: twenty-one point one nine percent across all accounts.",
+          "show": {
+            "type": "number",
+            "big": "21.19%",
+            "caption": "average card rate, all accounts, Aug 2026",
+            "color": "red"
+          }
+        },
+        {
+          "say": "For people who actually pay interest – who carry a balance – it's even higher: twenty-two point three six percent.",
+          "show": {
+            "type": "number",
+            "big": "22.36%",
+            "caption": "accounts assessed interest, Aug 2026",
+            "color": "red"
+          }
+        },
+        {
+          "say": "What does that jump mean for you? On the same three thousand one hundred dollar balance, a year of interest at the 2014 rate was about three hundred and seventy dollars. At today's rate it's about six hundred and fifty-seven. Same debt, almost twice the cost – and you didn't do anything differently.",
+          "show": {
+            "type": "compare",
+            "heading": "A year of interest on $3,100",
+            "left": [
+              "At 2014's 11.87%",
+              "$368"
+            ],
+            "right": [
+              "At Aug 2026's 21.19%",
+              "$657"
+            ],
+            "color": "red"
+          }
+        },
+        {
+          "say": "And Americans owe about one point three trillion dollars in revolving credit – mostly credit cards.",
+          "show": {
+            "type": "number",
+            "big": "$1.32T",
+            "caption": "US revolving credit outstanding, Aug 2026",
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "How the interest works",
+      "beats": [
+        {
+          "say": "So how does twenty-one percent actually hit your balance? It's charged a little every month: twenty-one point one nine divided by twelve.",
+          "show": {
+            "type": "note",
+            "text": "21.19% ÷ 12 = *1.77% a month*",
+            "source": "Most cards actually charge a daily rate – the result is about the same",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "On three thousand one hundred dollars, that's about fifty-five dollars of interest in the first month alone.",
+          "show": {
+            "type": "number",
+            "big": "$55",
+            "caption": "interest in month one on $3,100",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Over a full year, if the balance just sat there, that's about six hundred and fifty-seven dollars. For nothing new. Just for keeping the old stuff."
+        },
+        {
+          "say": "Here's the part almost nobody knows. If you pay your full statement balance by the due date, most cards charge you nothing at all. That's called the grace period."
+        },
+        {
+          "say": "So the same plastic card is two completely different products. Paid in full, it's free. Carried over, it's one of the most expensive loans you can get.",
+          "show": {
+            "type": "compare",
+            "heading": "Same card, same purchases",
+            "left": [
+              "Paid in full",
+              "$0 interest"
+            ],
+            "right": [
+              "Carried over",
+              "$657 a year"
+            ],
+            "color": "red"
+          }
+        },
+        {
+          "say": "And according to the Fed, about fifty-six percent of families never carry a balance. They use exactly the same cards – and pay no interest."
+        }
+      ]
+    },
+    {
+      "heading": "The minimum payment trap",
+      "beats": [
+        {
+          "say": "Now the minimum payment. Card terms vary, but a common formula is: one percent of the balance, plus that month's interest, and at least twenty-five dollars.",
+          "show": {
+            "type": "number",
+            "big": "1% + interest",
+            "caption": "a common minimum payment formula",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "On three thousand one hundred dollars, your first minimum is about eighty-six dollars. Sounds fine. But fifty-five of those dollars are interest. Only thirty-one actually pay down what you owe.",
+          "show": {
+            "type": "compare",
+            "heading": "Your first $86 minimum payment",
+            "left": [
+              "Pays down debt",
+              "$31"
+            ],
+            "right": [
+              "Goes to interest",
+              "$55"
+            ],
+            "color": "red"
+          }
+        },
+        {
+          "say": "And here's the trap. As the balance shrinks, the minimum shrinks with it. The bank keeps asking for less – so it takes longer and longer.",
+          "show": {
+            "type": "line",
+            "heading": "Paying off $3,100 at 21.19%",
+            "unit": "$",
+            "sub": "Balance left, by year · minimum = 1% + interest, at least $25 · example",
+            "series": [
+              {
+                "label": "Minimum",
+                "points": [
+                  [
+                    0,
+                    3100
+                  ],
+                  [
+                    1,
+                    2748
+                  ],
+                  [
+                    2,
+                    2436
+                  ],
+                  [
+                    3,
+                    2159
+                  ],
+                  [
+                    4,
+                    1914
+                  ],
+                  [
+                    5,
+                    1696
+                  ],
+                  [
+                    6,
+                    1503
+                  ],
+                  [
+                    7,
+                    1333
+                  ],
+                  [
+                    8,
+                    1181
+                  ],
+                  [
+                    9,
+                    1047
+                  ],
+                  [
+                    10,
+                    928
+                  ],
+                  [
+                    11,
+                    813
+                  ],
+                  [
+                    12,
+                    672
+                  ],
+                  [
+                    13,
+                    498
+                  ],
+                  [
+                    14,
+                    283
+                  ],
+                  [
+                    15,
+                    0
+                  ]
+                ],
+                "color": "red"
+              },
+              {
+                "label": "$100 a month",
+                "points": [
+                  [
+                    0,
+                    3100
+                  ],
+                  [
+                    1,
+                    2501
+                  ],
+                  [
+                    2,
+                    1762
+                  ],
+                  [
+                    3,
+                    850
+                  ],
+                  [
+                    3.83,
+                    0
+                  ]
+                ],
+                "color": "gold"
+              }
+            ]
+          }
+        },
+        {
+          "say": "The red line is minimum payments only. The gold one we'll come back to. After one year, you still owe about two thousand seven hundred.",
+          "mark": {
+            "x": 1
+          }
+        },
+        {
+          "say": "After five years, you've paid almost three thousand nine hundred dollars – more than you ever borrowed – and you still owe about seventeen hundred.",
+          "mark": {
+            "x": 5
+          }
+        },
+        {
+          "say": "The line only reaches zero after fifteen years.",
+          "mark": {
+            "x": 15
+          }
+        },
+        {
+          "say": "Total interest: about four thousand four hundred dollars. A three-thousand-dollar balance turned into a seventy-five-hundred-dollar bill.",
+          "show": {
+            "type": "number",
+            "big": "$3,100 → $7,527",
+            "caption": "total paid, minimum payments only",
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Pay a little more",
+      "beats": [
+        {
+          "say": "Now look at the gold line. Same balance, same rate. The only change is a fixed payment.",
+          "show": {
+            "type": "line",
+            "heading": "Paying off $3,100 at 21.19%",
+            "unit": "$",
+            "sub": "Balance left, by year · minimum = 1% + interest, at least $25 · example",
+            "series": [
+              {
+                "label": "Minimum",
+                "points": [
+                  [
+                    0,
+                    3100
+                  ],
+                  [
+                    1,
+                    2748
+                  ],
+                  [
+                    2,
+                    2436
+                  ],
+                  [
+                    3,
+                    2159
+                  ],
+                  [
+                    4,
+                    1914
+                  ],
+                  [
+                    5,
+                    1696
+                  ],
+                  [
+                    6,
+                    1503
+                  ],
+                  [
+                    7,
+                    1333
+                  ],
+                  [
+                    8,
+                    1181
+                  ],
+                  [
+                    9,
+                    1047
+                  ],
+                  [
+                    10,
+                    928
+                  ],
+                  [
+                    11,
+                    813
+                  ],
+                  [
+                    12,
+                    672
+                  ],
+                  [
+                    13,
+                    498
+                  ],
+                  [
+                    14,
+                    283
+                  ],
+                  [
+                    15,
+                    0
+                  ]
+                ],
+                "color": "red"
+              },
+              {
+                "label": "$100 a month",
+                "points": [
+                  [
+                    0,
+                    3100
+                  ],
+                  [
+                    1,
+                    2501
+                  ],
+                  [
+                    2,
+                    1762
+                  ],
+                  [
+                    3,
+                    850
+                  ],
+                  [
+                    3.83,
+                    0
+                  ]
+                ],
+                "color": "gold"
+              }
+            ]
+          }
+        },
+        {
+          "say": "A hundred dollars a month – just fourteen dollars more than the first minimum – and the gold line hits zero in under four years."
+        },
+        {
+          "say": "Two hundred dollars a month, and it's gone in nineteen months.",
+          "show": {
+            "type": "number",
+            "big": "19 months",
+            "caption": "to clear $3,100 at $200 a month",
+            "color": "green"
+          }
+        },
+        {
+          "say": "Here's what that does to the interest.",
+          "show": {
+            "type": "bars",
+            "heading": "Total interest on $3,100 at 21.19%",
+            "unit": "$",
+            "items": [
+              [
+                "$300 a month",
+                354
+              ],
+              [
+                "$200 a month",
+                554
+              ],
+              [
+                "$150 a month",
+                791
+              ],
+              [
+                "$100 a month",
+                1429
+              ],
+              [
+                "Minimum only",
+                4427
+              ]
+            ],
+            "source": "Illustrative calculation, interest added monthly",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Minimum only: about four thousand four hundred dollars in interest.",
+          "mark": {
+            "items": [
+              "Minimum only"
+            ]
+          }
+        },
+        {
+          "say": "A hundred a month: about fourteen hundred. You save three thousand dollars just by not letting the payment shrink.",
+          "mark": {
+            "items": [
+              "$100 a month"
+            ]
+          }
+        },
+        {
+          "say": "Two hundred a month: about five hundred and fifty. Three hundred a month: about three hundred and fifty.",
+          "mark": {
+            "items": [
+              "$200 a month",
+              "$300 a month"
+            ]
+          }
+        },
+        {
+          "say": "The most important number on your statement isn't the minimum. It's the amount you choose. Pick a fixed number and keep paying it, even when the minimum drops.",
+          "show": {
+            "type": "note",
+            "text": "Pay a *fixed* amount – not a shrinking minimum.",
+            "source": "How it works – check your own card's terms",
+            "color": "green"
+          }
+        },
+        {
+          "say": "If this already changed how you look at your card statement, leave a like – it really helps the channel."
+        }
+      ]
+    },
+    {
+      "heading": "The balance that never ends",
+      "beats": [
+        {
+          "say": "Now the scariest number in this video. At twenty-one point one nine percent, a hundred dollars a month only covers the interest on about five thousand six hundred and sixty dollars.",
+          "show": {
+            "type": "number",
+            "big": "$5,663",
+            "caption": "where $100 a month only covers the interest",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Owe more than that, and a hundred-dollar payment doesn't even pay the interest. The balance grows while you're paying."
+        },
+        {
+          "say": "Take six thousand dollars, and pay a hundred dollars every single month.",
+          "show": {
+            "type": "line",
+            "heading": "$6,000 at 21.19%, paying $100 a month",
+            "unit": "$",
+            "sub": "Balance left, by year · illustrative calculation",
+            "series": [
+              {
+                "label": "",
+                "points": [
+                  [
+                    0,
+                    6000
+                  ],
+                  [
+                    1,
+                    6079
+                  ],
+                  [
+                    2,
+                    6176
+                  ],
+                  [
+                    3,
+                    6296
+                  ],
+                  [
+                    4,
+                    6444
+                  ],
+                  [
+                    5,
+                    6626
+                  ],
+                  [
+                    6,
+                    6851
+                  ],
+                  [
+                    7,
+                    7129
+                  ],
+                  [
+                    8,
+                    7472
+                  ],
+                  [
+                    9,
+                    7894
+                  ],
+                  [
+                    10,
+                    8416
+                  ]
+                ],
+                "color": "red"
+              }
+            ]
+          }
+        },
+        {
+          "say": "After one year, you've paid twelve hundred dollars – and you owe more than when you started.",
+          "mark": {
+            "x": 1
+          }
+        },
+        {
+          "say": "After five years: six thousand dollars paid. Balance: about sixty-six hundred.",
+          "mark": {
+            "x": 5
+          }
+        },
+        {
+          "say": "After ten years: twelve thousand dollars paid. Twice the original debt. And the balance is now about eight thousand four hundred.",
+          "mark": {
+            "x": 10,
+            "label": "$8,416 owed"
+          }
+        },
+        {
+          "say": "Ten years of payments, and you're deeper in than on day one. That's compounding working against you – the same force that makes savings grow, pointed the other way.",
+          "show": {
+            "type": "compare",
+            "heading": "$6,000 at 21.19%, $100 a month, 10 years",
+            "left": [
+              "Paid in",
+              "$12,000"
+            ],
+            "right": [
+              "Still owed",
+              "$8,416"
+            ],
+            "color": "red"
+          }
+        },
+        {
+          "say": "The way out is simple math: the payment has to be bigger than the interest. Here that means more than about a hundred and six dollars a month just to start shrinking it."
+        }
+      ]
+    },
+    {
+      "heading": "A guaranteed 21%",
+      "beats": [
+        {
+          "say": "Here's a way of seeing card debt that changes how it feels. Every dollar of a twenty-one percent balance you pay off saves you twenty-one cents of interest a year.",
+          "show": {
+            "type": "note",
+            "text": "Paying off 21% debt = a *guaranteed* 21% saved",
+            "source": "Simple math, not an investment recommendation",
+            "color": "green"
+          }
+        },
+        {
+          "say": "That's a sure thing. For comparison, look back at the Fed's own savings data: the typical family has about eight thousand two hundred dollars in checking and savings – and a typical savings account pays far less than twenty-one percent."
+        },
+        {
+          "say": "So a family that holds cash at a low rate and carries a card balance at twenty-one percent at the same time is paying the difference every month. Many families keep some cash for emergencies anyway, and for good reason – but it helps to see the gap."
+        },
+        {
+          "say": "Back to the three thousand one hundred dollars. Interest at the minimum: about four thousand four hundred. That money doesn't buy anything. It's the price of time.",
+          "show": {
+            "type": "number",
+            "big": "$4,427",
+            "caption": "interest paid on $3,100, minimum payments only",
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "How people get out",
+      "beats": [
+        {
+          "say": "So how do people actually get out? There are two well-known methods, and the math of both is simple.",
+          "show": {
+            "type": "note",
+            "text": "Pay more than the interest. *Then choose an order.*",
+            "source": "",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "Method one: the avalanche. You pay the minimum on every card, and put every extra dollar on the card with the highest rate. Mathematically, that saves the most interest."
+        },
+        {
+          "say": "Method two: the snowball. You put the extra dollars on the smallest balance first. It costs a bit more interest, but you see a card hit zero sooner – and for many people, that quick win keeps them going."
+        },
+        {
+          "say": "Both only work if one thing is true: the total you pay each month stays the same as the balances fall. When one card is paid off, its payment rolls onto the next.",
+          "show": {
+            "type": "number",
+            "big": "$100 + $100 → $200",
+            "caption": "a paid-off card's payment rolls to the next",
+            "color": "green"
+          }
+        },
+        {
+          "say": "And the cheapest debt is the one that never starts. Every purchase paid in full by the due date costs zero interest – that's what the majority of card users already do."
+        }
+      ]
+    },
+    {
+      "heading": "What to remember",
+      "beats": [
+        {
+          "say": "So, what does twenty-one percent really cost you? Three things.",
+          "show": {
+            "type": "number",
+            "big": "21.19%",
+            "caption": "average US card rate, Aug 2026",
+            "color": "red"
+          }
+        },
+        {
+          "say": "One: card rates are near a thirty-year record. About twenty-one percent on average – and over twenty-two for people who carry a balance."
+        },
+        {
+          "say": "Two: the minimum payment is designed to shrink. Pay only the minimum on three thousand one hundred dollars, and it takes fifteen years and about four thousand four hundred in interest. A fixed hundred dollars a month cuts that to under four years."
+        },
+        {
+          "say": "Three: if your payment doesn't beat the interest, the balance grows forever. At twenty-one percent, a hundred a month can't win against six thousand dollars."
+        },
+        {
+          "say": "If you want to understand your money with real numbers, subscribe. And pull out your last statement – the interest line is the most honest number on it."
+        }
+      ]
+    }
+  ],
+  "short": {
+    "hook": "Paying the minimum on $3,100? 15 years.",
+    "beats": [
+      {
+        "say": "The typical American who carries a credit card balance owes about three thousand one hundred dollars. The average card rate is now about twenty-one percent – close to a thirty-year record.",
+        "show": {
+          "type": "number",
+          "big": "$3,100",
+          "caption": "median card balance, families who carry one",
+          "color": "red"
+        }
+      },
+      {
+        "say": "Pay only the minimum, and it takes fifteen years to clear. You pay about four thousand four hundred dollars in interest – more than you borrowed.",
+        "show": {
+          "type": "line",
+          "heading": "Paying off $3,100 at 21.19%",
+          "unit": "$",
+          "sub": "Minimum payments only · example",
+          "series": [
+            {
+              "label": "",
+              "points": [
+                [
+                  0,
+                  3100
+                ],
+                [
+                  1,
+                  2748
+                ],
+                [
+                  2,
+                  2436
+                ],
+                [
+                  3,
+                  2159
+                ],
+                [
+                  4,
+                  1914
+                ],
+                [
+                  5,
+                  1696
+                ],
+                [
+                  6,
+                  1503
+                ],
+                [
+                  7,
+                  1333
+                ],
+                [
+                  8,
+                  1181
+                ],
+                [
+                  9,
+                  1047
+                ],
+                [
+                  10,
+                  928
+                ],
+                [
+                  11,
+                  813
+                ],
+                [
+                  12,
+                  672
+                ],
+                [
+                  13,
+                  498
+                ],
+                [
+                  14,
+                  283
+                ],
+                [
+                  15,
+                  0
+                ]
+              ],
+              "color": "red"
+            }
+          ]
+        }
+      },
+      {
+        "say": "Why? The minimum shrinks as the balance shrinks. Your first payment is about eighty-six dollars, and fifty-five of it is just interest.",
+        "show": {
+          "type": "compare",
+          "heading": "Your first $86 minimum",
+          "left": [
+            "Pays down debt",
+            "$31"
+          ],
+          "right": [
+            "Interest",
+            "$55"
+          ],
+          "color": "red"
+        }
+      },
+      {
+        "say": "Pay a fixed hundred dollars a month instead, and it's gone in under four years. But owe six thousand, and a hundred a month doesn't even cover the interest. After ten years of paying, you'd owe more than you started with.",
+        "show": {
+          "type": "line",
+          "heading": "$6,000 at 21.19%, paying $100 a month",
+          "unit": "$",
+          "sub": "Balance left, by year · illustrative calculation",
+          "series": [
+            {
+              "label": "",
+              "points": [
+                [
+                  0,
+                  6000
+                ],
+                [
+                  1,
+                  6079
+                ],
+                [
+                  2,
+                  6176
+                ],
+                [
+                  3,
+                  6296
+                ],
+                [
+                  4,
+                  6444
+                ],
+                [
+                  5,
+                  6626
+                ],
+                [
+                  6,
+                  6851
+                ],
+                [
+                  7,
+                  7129
+                ],
+                [
+                  8,
+                  7472
+                ],
+                [
+                  9,
+                  7894
+                ],
+                [
+                  10,
+                  8416
+                ]
+              ],
+              "color": "red"
+            }
+          ]
+        }
+      },
+      {
+        "say": "The trick is to pay a fixed amount that's bigger than the interest, and keep paying it as the balance falls. The full math, step by step, is in the video on the channel."
+      }
+    ]
+  },
+  "question": "Do you pay your card in full every month – or carry a balance?"
+}

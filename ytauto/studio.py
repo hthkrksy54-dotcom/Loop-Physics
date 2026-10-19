@@ -609,6 +609,7 @@ def fmt(v: float, unit: str = "", dec: int | None = None) -> str:
     s = (f"{a / 1e12:.1f}T" if a >= 1e12 else f"{a / 1e9:.1f}B" if a >= 1e9 else f"{a / 1e6:.1f}M" if a >= 1e6
          else f"{a / 1e3:.1f}k" if a >= 1e4 else f"{a:,.0f}" if a >= 100 or dec == 0
          else f"{a:.{dec if dec is not None else 1}f}" if a < 10 else f"{a:.0f}")
+    s = "0" if a == 0 else s
     s = s.replace(".0T", "T").replace(".0B", "B").replace(".0M", "M").replace(".0k", "k")
     return ("−" if v < 0 else "") + (("$" + s) if unit == "$" else s)
 
