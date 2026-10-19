@@ -12,7 +12,7 @@ Formats that work for Finanzbär and Finanzfluss, rebuilt for US/UK viewers. Spe
 - [ ] Money truths most people learn too late – what you wish you knew at 20
 - [ ] What $100, $250 or $500 a month becomes in 10, 20 and 30 years (math + long-run market history, no products)
 - [ ] Is compound interest overrated? The honest math after inflation, fees and taxes
-- [ ] How long can the stock market keep going up? 100 years of history, crashes and recoveries (no predictions)
+- [x] How long can the stock market keep going up? 100 years of history, crashes and recoveries (no predictions) – `stock-market-crashes-recoveries`
 - [ ] 10 charts that explain financial freedom
 - [ ] You vs. the average American: pay, savings, debt and net worth (Fed SCF, BLS)
 - [x] Net worth by age: where do you stand? (Fed Survey of Consumer Finances) – `net-worth-by-age-2025`

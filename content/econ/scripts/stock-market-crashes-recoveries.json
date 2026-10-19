@@ -1,0 +1,2192 @@
+{
+  "id": "stock-market-crashes-recoveries",
+  "order": 10,
+  "title": "98 Years of the Stock Market: Every Crash, Every Recovery – How Long Can It Keep Going Up?",
+  "title_card": "How long can the stock market keep going up?",
+  "description": "$100 put into the 500 biggest US companies in 1928 grew to about $1.16 million by 2025 – through the Great Depression, 1974, 2008 and 2022. We go through 98 years of real data: how often the market falls, the worst crashes, how long recoveries took once you count inflation, and what history says about 1, 10 and 20-year periods. History, not a prediction, and not advice.",
+  "tags": [
+    "stock market history",
+    "stock market crash",
+    "s&p 500",
+    "how long can the stock market go up",
+    "market recovery",
+    "bear market",
+    "investing for beginners",
+    "index",
+    "inflation",
+    "long term investing",
+    "personal finance",
+    "money",
+    "real numbers"
+  ],
+  "hashtags": [
+    "#stockmarket",
+    "#investing",
+    "#money"
+  ],
+  "sources": [
+    "Aswath Damodaran, NYU Stern School of Business, 'Historical Returns on Stocks, Bonds, Bills and Real Estate: 1928–2025' (histretSP.xls): annual S&P 500 total returns including dividends, nominal and real, and US inflation (CPI-U, from FRED), 1928–2025",
+    "Own calculations from that dataset: value of $100 invested at the start of 1928 (nominal and real), year-end declines from a previous high and the year a new high was reached, share of rolling 1-, 5-, 10-, 15- and 20-year periods with a positive real return, compound annual growth rates",
+    "Past returns do not predict future returns; figures use year-end values, so declines within a year were deeper than shown"
+  ],
+  "thumbnail": {
+    "big": "$1.16M",
+    "text": "from $100 in 1928",
+    "color": "green"
+  },
+  "chapters": [
+    {
+      "heading": "Intro",
+      "beats": [
+        {
+          "say": "A hundred dollars. Put into the five hundred biggest American companies at the start of 1928 – with every dividend reinvested.",
+          "show": {
+            "type": "number",
+            "big": "$100",
+            "caption": "in the S&P 500, start of 1928",
+            "color": "green"
+          }
+        },
+        {
+          "say": "By the end of 2025, it would be worth about one point one six million dollars.",
+          "show": {
+            "type": "number",
+            "big": "$100 → $1.16M",
+            "caption": "1928 to 2025, dividends reinvested, before inflation: $1,157,009",
+            "color": "green"
+          }
+        },
+        {
+          "say": "And in between: the Great Depression, a world war, the oil crisis, the dot-com crash, 2008, a pandemic."
+        },
+        {
+          "say": "So how long can this keep going up? Nobody knows the future. But we do have ninety-eight years of data. Let's look at every crash, and how long it really took to recover – after inflation.",
+          "show": {
+            "type": "note",
+            "text": "History, *not* a prediction.",
+            "source": "S&P 500 total returns 1928–2025 · Damodaran, NYU Stern",
+            "color": "gray"
+          }
+        },
+        {
+          "say": "Quick note: this is general information, not financial advice."
+        }
+      ]
+    },
+    {
+      "heading": "Up most years – not all",
+      "beats": [
+        {
+          "say": "Start with the simplest question: how often does the market go up in a year?",
+          "show": {
+            "type": "number",
+            "big": "72 of 98",
+            "caption": "years with a positive return, 1928–2025",
+            "color": "green"
+          }
+        },
+        {
+          "say": "In seventy-two of ninety-eight years, US stocks ended the year higher. About three years out of four."
+        },
+        {
+          "say": "Which means in about one year out of four, they ended lower. Twenty-six down years. Losing years aren't rare accidents. They're part of the deal."
+        },
+        {
+          "say": "Here's the whole journey, on a special scale where every step up the chart means the money multiplied by ten.",
+          "show": {
+            "type": "line",
+            "heading": "$100 in US stocks in 1928",
+            "unit": "$",
+            "log": true,
+            "sub": "Before inflation, log scale · S&P 500 incl. dividends, year ends · Damodaran, NYU Stern",
+            "series": [
+              {
+                "label": "",
+                "points": [
+                  [
+                    1927,
+                    100
+                  ],
+                  [
+                    1928,
+                    143.8
+                  ],
+                  [
+                    1929,
+                    131.9
+                  ],
+                  [
+                    1930,
+                    98.7
+                  ],
+                  [
+                    1931,
+                    55.5
+                  ],
+                  [
+                    1932,
+                    50.7
+                  ],
+                  [
+                    1933,
+                    76.0
+                  ],
+                  [
+                    1934,
+                    75.1
+                  ],
+                  [
+                    1935,
+                    110.2
+                  ],
+                  [
+                    1936,
+                    145.4
+                  ],
+                  [
+                    1937,
+                    94.0
+                  ],
+                  [
+                    1938,
+                    121.5
+                  ],
+                  [
+                    1939,
+                    120.2
+                  ],
+                  [
+                    1940,
+                    107.4
+                  ],
+                  [
+                    1941,
+                    93.7
+                  ],
+                  [
+                    1942,
+                    111.6
+                  ],
+                  [
+                    1943,
+                    139.6
+                  ],
+                  [
+                    1944,
+                    166.2
+                  ],
+                  [
+                    1945,
+                    225.7
+                  ],
+                  [
+                    1946,
+                    206.6
+                  ],
+                  [
+                    1947,
+                    217.4
+                  ],
+                  [
+                    1948,
+                    229.8
+                  ],
+                  [
+                    1949,
+                    271.9
+                  ],
+                  [
+                    1950,
+                    355.6
+                  ],
+                  [
+                    1951,
+                    439.8
+                  ],
+                  [
+                    1952,
+                    519.6
+                  ],
+                  [
+                    1953,
+                    513.3
+                  ],
+                  [
+                    1954,
+                    783.2
+                  ],
+                  [
+                    1955,
+                    1038.5
+                  ],
+                  [
+                    1956,
+                    1115.7
+                  ],
+                  [
+                    1957,
+                    999.1
+                  ],
+                  [
+                    1958,
+                    1435.8
+                  ],
+                  [
+                    1959,
+                    1609.0
+                  ],
+                  [
+                    1960,
+                    1614.4
+                  ],
+                  [
+                    1961,
+                    2044.4
+                  ],
+                  [
+                    1962,
+                    1864.3
+                  ],
+                  [
+                    1963,
+                    2285.8
+                  ],
+                  [
+                    1964,
+                    2661.0
+                  ],
+                  [
+                    1965,
+                    2991.0
+                  ],
+                  [
+                    1966,
+                    2692.7
+                  ],
+                  [
+                    1967,
+                    3333.7
+                  ],
+                  [
+                    1968,
+                    3694.2
+                  ],
+                  [
+                    1969,
+                    3389.8
+                  ],
+                  [
+                    1970,
+                    3510.5
+                  ],
+                  [
+                    1971,
+                    4009.7
+                  ],
+                  [
+                    1972,
+                    4761.8
+                  ],
+                  [
+                    1973,
+                    4080.4
+                  ],
+                  [
+                    1974,
+                    3023.5
+                  ],
+                  [
+                    1975,
+                    4142.1
+                  ],
+                  [
+                    1976,
+                    5129.2
+                  ],
+                  [
+                    1977,
+                    4771.2
+                  ],
+                  [
+                    1978,
+                    5081.8
+                  ],
+                  [
+                    1979,
+                    6022.9
+                  ],
+                  [
+                    1980,
+                    7934.3
+                  ],
+                  [
+                    1981,
+                    7561.2
+                  ],
+                  [
+                    1982,
+                    9105.1
+                  ],
+                  [
+                    1983,
+                    11138.9
+                  ],
+                  [
+                    1984,
+                    11823.5
+                  ],
+                  [
+                    1985,
+                    15516.6
+                  ],
+                  [
+                    1986,
+                    18386.3
+                  ],
+                  [
+                    1987,
+                    19455.1
+                  ],
+                  [
+                    1988,
+                    22672.4
+                  ],
+                  [
+                    1989,
+                    29808.6
+                  ],
+                  [
+                    1990,
+                    28895.1
+                  ],
+                  [
+                    1991,
+                    37631.5
+                  ],
+                  [
+                    1992,
+                    40451.5
+                  ],
+                  [
+                    1993,
+                    44483.3
+                  ],
+                  [
+                    1994,
+                    45073.1
+                  ],
+                  [
+                    1995,
+                    61838.2
+                  ],
+                  [
+                    1996,
+                    75863.7
+                  ],
+                  [
+                    1997,
+                    100977.3
+                  ],
+                  [
+                    1998,
+                    129592.3
+                  ],
+                  [
+                    1999,
+                    156658.0
+                  ],
+                  [
+                    2000,
+                    142509.0
+                  ],
+                  [
+                    2001,
+                    125622.0
+                  ],
+                  [
+                    2002,
+                    98027.8
+                  ],
+                  [
+                    2003,
+                    125824.4
+                  ],
+                  [
+                    2004,
+                    139341.4
+                  ],
+                  [
+                    2005,
+                    146077.9
+                  ],
+                  [
+                    2006,
+                    168884.3
+                  ],
+                  [
+                    2007,
+                    178147.2
+                  ],
+                  [
+                    2008,
+                    113030.2
+                  ],
+                  [
+                    2009,
+                    142344.9
+                  ],
+                  [
+                    2010,
+                    163441.9
+                  ],
+                  [
+                    2011,
+                    166871.6
+                  ],
+                  [
+                    2012,
+                    193388.4
+                  ],
+                  [
+                    2013,
+                    255553.3
+                  ],
+                  [
+                    2014,
+                    290115.4
+                  ],
+                  [
+                    2015,
+                    294115.8
+                  ],
+                  [
+                    2016,
+                    328742.3
+                  ],
+                  [
+                    2017,
+                    399768.6
+                  ],
+                  [
+                    2018,
+                    382870.9
+                  ],
+                  [
+                    2019,
+                    502371.4
+                  ],
+                  [
+                    2020,
+                    592914.8
+                  ],
+                  [
+                    2021,
+                    761710.8
+                  ],
+                  [
+                    2022,
+                    624317.2
+                  ],
+                  [
+                    2023,
+                    787018.5
+                  ],
+                  [
+                    2024,
+                    982817.8
+                  ],
+                  [
+                    2025,
+                    1157009.1
+                  ]
+                ],
+                "color": "green"
+              }
+            ]
+          }
+        },
+        {
+          "say": "From a hundred dollars to about a thousand by 1955. Past ten thousand in 1983. About a hundred and fifty-seven thousand at the end of 1999.",
+          "mark": {
+            "x": 1999
+          }
+        },
+        {
+          "say": "And past a million in 2025. On average, almost exactly ten percent a year.",
+          "mark": {
+            "x": 2025,
+            "label": "$1.16M"
+          }
+        },
+        {
+          "say": "But ten percent is an average of very different years. The best year was 1954: plus fifty-three percent. The worst: minus forty-four percent. Almost never does a single year look like the average.",
+          "show": {
+            "type": "compare",
+            "heading": "Single years, 1928–2025",
+            "left": [
+              "Worst: 1931",
+              "−43.8%"
+            ],
+            "right": [
+              "Best: 1954",
+              "+52.6%"
+            ],
+            "color": "blue"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "The worst crashes",
+      "beats": [
+        {
+          "say": "Now the painful part. Here are the seven worst years since 1928.",
+          "show": {
+            "type": "bars",
+            "heading": "The worst years for US stocks since 1928: loss in %",
+            "unit": "%",
+            "items": [
+              [
+                "1931",
+                43.8
+              ],
+              [
+                "2008",
+                36.6
+              ],
+              [
+                "1937",
+                35.3
+              ],
+              [
+                "1974",
+                25.9
+              ],
+              [
+                "1930",
+                25.1
+              ],
+              [
+                "2002",
+                22.0
+              ],
+              [
+                "2022",
+                18.0
+              ]
+            ],
+            "source": "S&P 500 incl. dividends, year ends · Damodaran, NYU Stern",
+            "color": "red"
+          }
+        },
+        {
+          "say": "1931, in the middle of the Great Depression: minus forty-four percent in one year. And that was the third losing year in a row.",
+          "mark": {
+            "items": [
+              "1931"
+            ]
+          }
+        },
+        {
+          "say": "2008, the financial crisis: minus thirty-seven percent.",
+          "mark": {
+            "items": [
+              "2008"
+            ]
+          }
+        },
+        {
+          "say": "1974, the oil crisis, with inflation above twelve percent: minus twenty-six.",
+          "mark": {
+            "items": [
+              "1974"
+            ]
+          }
+        },
+        {
+          "say": "2002, the end of the dot-com bubble: minus twenty-two – also the third losing year in a row. And 2022, the most recent one: minus eighteen percent.",
+          "mark": {
+            "items": [
+              "2002",
+              "2022"
+            ]
+          }
+        },
+        {
+          "say": "Notice something else: the worst years cluster. 1930 and 1931 came back to back. So did 1973 and 1974, and 2000 to 2002. When it goes wrong, it often goes wrong for a while.",
+          "mark": {
+            "items": [
+              "1930",
+              "1931"
+            ]
+          }
+        },
+        {
+          "say": "These are year-end numbers. Inside those years, it was often worse. And look at 2020: the pandemic crash came in the spring – and the year still ended up eighteen percent. Crashes and recoveries can happen in the same few months.",
+          "show": {
+            "type": "number",
+            "big": "+18.0%",
+            "caption": "S&P 500 total return in 2020",
+            "color": "green"
+          }
+        },
+        {
+          "say": "Every one of these felt, at the time, like it might be the end. That's what makes them hard: you never see the recovery from inside the crash."
+        }
+      ]
+    },
+    {
+      "heading": "The recovery – after inflation",
+      "beats": [
+        {
+          "say": "Now the question that matters: how long did it take to get back? And here's where most charts lie to you – they ignore inflation.",
+          "show": {
+            "type": "line",
+            "heading": "$100 in US stocks in 1928, after inflation",
+            "unit": "$",
+            "log": true,
+            "sub": "In 1928 dollars, log scale · S&P 500 incl. dividends, year ends · Damodaran, NYU Stern",
+            "series": [
+              {
+                "label": "",
+                "points": [
+                  [
+                    1927,
+                    100
+                  ],
+                  [
+                    1928,
+                    145.5
+                  ],
+                  [
+                    1929,
+                    132.6
+                  ],
+                  [
+                    1930,
+                    106.1
+                  ],
+                  [
+                    1931,
+                    65.7
+                  ],
+                  [
+                    1932,
+                    66.9
+                  ],
+                  [
+                    1933,
+                    99.6
+                  ],
+                  [
+                    1934,
+                    96.9
+                  ],
+                  [
+                    1935,
+                    138.1
+                  ],
+                  [
+                    1936,
+                    179.6
+                  ],
+                  [
+                    1937,
+                    112.9
+                  ],
+                  [
+                    1938,
+                    150.2
+                  ],
+                  [
+                    1939,
+                    148.5
+                  ],
+                  [
+                    1940,
+                    131.7
+                  ],
+                  [
+                    1941,
+                    104.5
+                  ],
+                  [
+                    1942,
+                    114.3
+                  ],
+                  [
+                    1943,
+                    138.8
+                  ],
+                  [
+                    1944,
+                    161.5
+                  ],
+                  [
+                    1945,
+                    214.5
+                  ],
+                  [
+                    1946,
+                    166.3
+                  ],
+                  [
+                    1947,
+                    160.7
+                  ],
+                  [
+                    1948,
+                    165.4
+                  ],
+                  [
+                    1949,
+                    199.3
+                  ],
+                  [
+                    1950,
+                    246.4
+                  ],
+                  [
+                    1951,
+                    287.6
+                  ],
+                  [
+                    1952,
+                    336.7
+                  ],
+                  [
+                    1953,
+                    330.7
+                  ],
+                  [
+                    1954,
+                    506.3
+                  ],
+                  [
+                    1955,
+                    668.9
+                  ],
+                  [
+                    1956,
+                    698.9
+                  ],
+                  [
+                    1957,
+                    607.3
+                  ],
+                  [
+                    1958,
+                    857.8
+                  ],
+                  [
+                    1959,
+                    946.8
+                  ],
+                  [
+                    1960,
+                    937.3
+                  ],
+                  [
+                    1961,
+                    1179.0
+                  ],
+                  [
+                    1962,
+                    1062.1
+                  ],
+                  [
+                    1963,
+                    1281.1
+                  ],
+                  [
+                    1964,
+                    1473.8
+                  ],
+                  [
+                    1965,
+                    1625.3
+                  ],
+                  [
+                    1966,
+                    1415.7
+                  ],
+                  [
+                    1967,
+                    1697.0
+                  ],
+                  [
+                    1968,
+                    1796.0
+                  ],
+                  [
+                    1969,
+                    1556.2
+                  ],
+                  [
+                    1970,
+                    1526.6
+                  ],
+                  [
+                    1971,
+                    1688.5
+                  ],
+                  [
+                    1972,
+                    1939.1
+                  ],
+                  [
+                    1973,
+                    1525.3
+                  ],
+                  [
+                    1974,
+                    1008.3
+                  ],
+                  [
+                    1975,
+                    1289.4
+                  ],
+                  [
+                    1976,
+                    1520.1
+                  ],
+                  [
+                    1977,
+                    1325.5
+                  ],
+                  [
+                    1978,
+                    1295.3
+                  ],
+                  [
+                    1979,
+                    1355.5
+                  ],
+                  [
+                    1980,
+                    1589.4
+                  ],
+                  [
+                    1981,
+                    1390.7
+                  ],
+                  [
+                    1982,
+                    1613.0
+                  ],
+                  [
+                    1983,
+                    1901.2
+                  ],
+                  [
+                    1984,
+                    1939.7
+                  ],
+                  [
+                    1985,
+                    2452.5
+                  ],
+                  [
+                    1986,
+                    2872.0
+                  ],
+                  [
+                    1987,
+                    2912.8
+                  ],
+                  [
+                    1988,
+                    3251.0
+                  ],
+                  [
+                    1989,
+                    4084.8
+                  ],
+                  [
+                    1990,
+                    3726.5
+                  ],
+                  [
+                    1991,
+                    4712.8
+                  ],
+                  [
+                    1992,
+                    4920.0
+                  ],
+                  [
+                    1993,
+                    5262.4
+                  ],
+                  [
+                    1994,
+                    5197.2
+                  ],
+                  [
+                    1995,
+                    6954.2
+                  ],
+                  [
+                    1996,
+                    8252.7
+                  ],
+                  [
+                    1997,
+                    10801.3
+                  ],
+                  [
+                    1998,
+                    13643.0
+                  ],
+                  [
+                    1999,
+                    16062.5
+                  ],
+                  [
+                    2000,
+                    14126.3
+                  ],
+                  [
+                    2001,
+                    12255.9
+                  ],
+                  [
+                    2002,
+                    9332.3
+                  ],
+                  [
+                    2003,
+                    11739.6
+                  ],
+                  [
+                    2004,
+                    12580.3
+                  ],
+                  [
+                    2005,
+                    12762.4
+                  ],
+                  [
+                    2006,
+                    14391.7
+                  ],
+                  [
+                    2007,
+                    14581.9
+                  ],
+                  [
+                    2008,
+                    9253.9
+                  ],
+                  [
+                    2009,
+                    11335.0
+                  ],
+                  [
+                    2010,
+                    12830.4
+                  ],
+                  [
+                    2011,
+                    12710.5
+                  ],
+                  [
+                    2012,
+                    14475.5
+                  ],
+                  [
+                    2013,
+                    18843.6
+                  ],
+                  [
+                    2014,
+                    21253.3
+                  ],
+                  [
+                    2015,
+                    21409.6
+                  ],
+                  [
+                    2016,
+                    23449.3
+                  ],
+                  [
+                    2017,
+                    27921.0
+                  ],
+                  [
+                    2018,
+                    26215.8
+                  ],
+                  [
+                    2019,
+                    33620.3
+                  ],
+                  [
+                    2020,
+                    39162.0
+                  ],
+                  [
+                    2021,
+                    46934.3
+                  ],
+                  [
+                    2022,
+                    36139.3
+                  ],
+                  [
+                    2023,
+                    44179.1
+                  ],
+                  [
+                    2024,
+                    53621.6
+                  ],
+                  [
+                    2025,
+                    61444.8
+                  ]
+                ],
+                "color": "green"
+              }
+            ]
+          }
+        },
+        {
+          "say": "This is the same hundred dollars, but measured in 1928 dollars – what it could actually buy. Prices rose about nineteen-fold since 1928, so this is the honest line."
+        },
+        {
+          "say": "The Great Depression: from the end of 1928 to the end of 1931, real value fell by fifty-five percent. With prices falling too, it was back above the old high at the end of 1936.",
+          "mark": {
+            "x": 1931,
+            "label": "−55% real"
+          }
+        },
+        {
+          "say": "Now the one people forget: the 1970s. From 1972 to 1974, the real value fell forty-eight percent. Not only because stocks fell – inflation ate the rest.",
+          "mark": {
+            "x": 1974,
+            "label": "−48% real"
+          }
+        },
+        {
+          "say": "And it took until 1984 to get back. Ten years of waiting, in real money.",
+          "mark": {
+            "x": 1984
+          }
+        },
+        {
+          "say": "The longest wait of all came recently. The real high at the end of 1999 – then the dot-com crash, then 2008. At the bottom, minus forty-two percent.",
+          "mark": {
+            "x": 2008,
+            "label": "−42% real"
+          }
+        },
+        {
+          "say": "Back above the 1999 high only at the end of 2013. Fourteen years, for someone who put money in at the very top.",
+          "mark": {
+            "x": 2013
+          }
+        },
+        {
+          "say": "And 2022: minus twenty-three percent after inflation, recovered by the end of 2024.",
+          "mark": {
+            "x": 2024
+          }
+        },
+        {
+          "say": "So the honest answer: recoveries have taken anywhere from two years to fourteen. And nobody rang a bell at the bottom.",
+          "show": {
+            "type": "number",
+            "big": "2 → 14 years",
+            "caption": "time to a new real high after big crashes",
+            "color": "gold"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "The worst timing in history",
+      "beats": [
+        {
+          "say": "So let's take the unluckiest person in modern market history. Say Mark puts ten thousand dollars into the S&P 500 on the last day of 1999. The exact top before the dot-com crash.",
+          "show": {
+            "type": "number",
+            "big": "$10,000",
+            "caption": "invested at the end of 1999 – the top",
+            "color": "red"
+          }
+        },
+        {
+          "say": "Three years later, after three losing years in a row, his ten thousand is worth about six thousand two hundred and fifty. He's down more than a third."
+        },
+        {
+          "say": "Then 2008 hits. Nine years in, his ten thousand dollars is worth about seventy-two hundred. Still below where he started. Most people would have sold here – and a lot of people did."
+        },
+        {
+          "say": "But Mark does nothing. By the end of 2025, his ten thousand dollars is worth about seventy-four thousand – before inflation.",
+          "show": {
+            "type": "compare",
+            "heading": "$10,000 invested at the end of 1999",
+            "left": [
+              "Start",
+              "$10,000"
+            ],
+            "right": [
+              "End of 2025",
+              "$73,856"
+            ],
+            "color": "green"
+          }
+        },
+        {
+          "say": "After inflation, it's still about three point eight times the buying power he started with. The worst possible entry point of the last thirty years – and still a multiple, if he waited twenty-six years."
+        },
+        {
+          "say": "Now compare Lisa, who invested the same ten thousand at the end of 2002, near the bottom. She ends with about a hundred and eighteen thousand. Perfect timing beat terrible timing by a lot – but nobody could know in 2002 that it was the bottom.",
+          "show": {
+            "type": "compare",
+            "heading": "$10,000 until the end of 2025",
+            "left": [
+              "Mark: end of 1999",
+              "$73,856"
+            ],
+            "right": [
+              "Lisa: end of 2002",
+              "$118,029"
+            ],
+            "color": "gold"
+          }
+        },
+        {
+          "say": "The real risk for Mark was never the crash itself. It was selling in the middle of it, and missing the way back."
+        }
+      ]
+    },
+    {
+      "heading": "Time changes the odds",
+      "beats": [
+        {
+          "say": "Now the chart that changes how most people see the market. Instead of single years, take every possible period since 1928 – every one-year stretch, every five-year stretch, and so on.",
+          "show": {
+            "type": "columns",
+            "heading": "Share of periods that beat inflation",
+            "stacks": [
+              [
+                "1 year",
+                68.4,
+                "68%"
+              ],
+              [
+                "5 years",
+                76.6,
+                "77%"
+              ],
+              [
+                "10 years",
+                87.6,
+                "88%"
+              ],
+              [
+                "15 years",
+                94.0,
+                "94%"
+              ],
+              [
+                "20 years",
+                100,
+                "100%"
+              ]
+            ],
+            "source": "Every rolling period 1928–2025 · S&P 500 incl. dividends, year ends · Damodaran, NYU Stern",
+            "color": "green"
+          }
+        },
+        {
+          "say": "Over any single year, stocks beat inflation sixty-eight percent of the time. Roughly a coin flip with a bit of luck on your side."
+        },
+        {
+          "say": "Over five years: seventy-seven percent. Over ten years: eighty-eight percent. Over fifteen: ninety-four."
+        },
+        {
+          "say": "And over twenty years? Every single twenty-year period from 1928 to 2025 – seventy-nine of them – ended with more buying power than it started with.",
+          "show": {
+            "type": "number",
+            "big": "79 of 79",
+            "caption": "20-year periods that beat inflation, 1928–2025",
+            "color": "green"
+          }
+        },
+        {
+          "say": "Even the worst one – starting at the end of 1928, right before the Depression – still grew a little faster than prices: about six tenths of a percent a year after inflation."
+        },
+        {
+          "say": "The worst ten-year stretch, though – 1999 to 2008 – lost almost four percent a year after inflation. Ten years is not as long as it sounds."
+        },
+        {
+          "say": "If this already changed how you see a market crash, leave a like – it really helps the channel."
+        }
+      ]
+    },
+    {
+      "heading": "So how long can it go up?",
+      "beats": [
+        {
+          "say": "Back to the question: how long can the stock market keep going up? The honest answer has two halves.",
+          "show": {
+            "type": "note",
+            "text": "Short term: *anything* can happen. Long term: it has always recovered – so far.",
+            "source": "US stocks 1928–2025 · history is not a guarantee",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "Half one: in any given year, the market can fall a lot. Twenty-six times in ninety-eight years it did. And after the crash, the wait can be long – fourteen years, in real terms, after 1999."
+        },
+        {
+          "say": "Half two: over long stretches, it has always come back – because the price of a company follows what it earns. When businesses earn more over time, their value grows with them, and dividends get paid along the way."
+        },
+        {
+          "say": "After inflation, a hundred dollars from 1928 grew to about sixty-one thousand in 1928 dollars. That's about six point eight percent a year, in real buying power.",
+          "show": {
+            "type": "number",
+            "big": "6.8%",
+            "caption": "average real return a year, US stocks 1928–2025",
+            "color": "green"
+          }
+        },
+        {
+          "say": "But that's one country, the US – which had one of the best centuries of any stock market. Other markets did worse. And the next ninety-eight years can look different. History shows what was possible. It doesn't promise it."
+        },
+        {
+          "say": "What history does show clearly: the people who got the average weren't the ones who timed it. They were the ones who were still there when the recovery came."
+        }
+      ]
+    },
+    {
+      "heading": "What to remember",
+      "beats": [
+        {
+          "say": "So, three things from ninety-eight years of data.",
+          "show": {
+            "type": "line",
+            "heading": "$100 in US stocks in 1928, after inflation",
+            "unit": "$",
+            "log": true,
+            "sub": "In 1928 dollars, log scale · S&P 500 incl. dividends, year ends · Damodaran, NYU Stern",
+            "series": [
+              {
+                "label": "",
+                "points": [
+                  [
+                    1927,
+                    100
+                  ],
+                  [
+                    1928,
+                    145.5
+                  ],
+                  [
+                    1929,
+                    132.6
+                  ],
+                  [
+                    1930,
+                    106.1
+                  ],
+                  [
+                    1931,
+                    65.7
+                  ],
+                  [
+                    1932,
+                    66.9
+                  ],
+                  [
+                    1933,
+                    99.6
+                  ],
+                  [
+                    1934,
+                    96.9
+                  ],
+                  [
+                    1935,
+                    138.1
+                  ],
+                  [
+                    1936,
+                    179.6
+                  ],
+                  [
+                    1937,
+                    112.9
+                  ],
+                  [
+                    1938,
+                    150.2
+                  ],
+                  [
+                    1939,
+                    148.5
+                  ],
+                  [
+                    1940,
+                    131.7
+                  ],
+                  [
+                    1941,
+                    104.5
+                  ],
+                  [
+                    1942,
+                    114.3
+                  ],
+                  [
+                    1943,
+                    138.8
+                  ],
+                  [
+                    1944,
+                    161.5
+                  ],
+                  [
+                    1945,
+                    214.5
+                  ],
+                  [
+                    1946,
+                    166.3
+                  ],
+                  [
+                    1947,
+                    160.7
+                  ],
+                  [
+                    1948,
+                    165.4
+                  ],
+                  [
+                    1949,
+                    199.3
+                  ],
+                  [
+                    1950,
+                    246.4
+                  ],
+                  [
+                    1951,
+                    287.6
+                  ],
+                  [
+                    1952,
+                    336.7
+                  ],
+                  [
+                    1953,
+                    330.7
+                  ],
+                  [
+                    1954,
+                    506.3
+                  ],
+                  [
+                    1955,
+                    668.9
+                  ],
+                  [
+                    1956,
+                    698.9
+                  ],
+                  [
+                    1957,
+                    607.3
+                  ],
+                  [
+                    1958,
+                    857.8
+                  ],
+                  [
+                    1959,
+                    946.8
+                  ],
+                  [
+                    1960,
+                    937.3
+                  ],
+                  [
+                    1961,
+                    1179.0
+                  ],
+                  [
+                    1962,
+                    1062.1
+                  ],
+                  [
+                    1963,
+                    1281.1
+                  ],
+                  [
+                    1964,
+                    1473.8
+                  ],
+                  [
+                    1965,
+                    1625.3
+                  ],
+                  [
+                    1966,
+                    1415.7
+                  ],
+                  [
+                    1967,
+                    1697.0
+                  ],
+                  [
+                    1968,
+                    1796.0
+                  ],
+                  [
+                    1969,
+                    1556.2
+                  ],
+                  [
+                    1970,
+                    1526.6
+                  ],
+                  [
+                    1971,
+                    1688.5
+                  ],
+                  [
+                    1972,
+                    1939.1
+                  ],
+                  [
+                    1973,
+                    1525.3
+                  ],
+                  [
+                    1974,
+                    1008.3
+                  ],
+                  [
+                    1975,
+                    1289.4
+                  ],
+                  [
+                    1976,
+                    1520.1
+                  ],
+                  [
+                    1977,
+                    1325.5
+                  ],
+                  [
+                    1978,
+                    1295.3
+                  ],
+                  [
+                    1979,
+                    1355.5
+                  ],
+                  [
+                    1980,
+                    1589.4
+                  ],
+                  [
+                    1981,
+                    1390.7
+                  ],
+                  [
+                    1982,
+                    1613.0
+                  ],
+                  [
+                    1983,
+                    1901.2
+                  ],
+                  [
+                    1984,
+                    1939.7
+                  ],
+                  [
+                    1985,
+                    2452.5
+                  ],
+                  [
+                    1986,
+                    2872.0
+                  ],
+                  [
+                    1987,
+                    2912.8
+                  ],
+                  [
+                    1988,
+                    3251.0
+                  ],
+                  [
+                    1989,
+                    4084.8
+                  ],
+                  [
+                    1990,
+                    3726.5
+                  ],
+                  [
+                    1991,
+                    4712.8
+                  ],
+                  [
+                    1992,
+                    4920.0
+                  ],
+                  [
+                    1993,
+                    5262.4
+                  ],
+                  [
+                    1994,
+                    5197.2
+                  ],
+                  [
+                    1995,
+                    6954.2
+                  ],
+                  [
+                    1996,
+                    8252.7
+                  ],
+                  [
+                    1997,
+                    10801.3
+                  ],
+                  [
+                    1998,
+                    13643.0
+                  ],
+                  [
+                    1999,
+                    16062.5
+                  ],
+                  [
+                    2000,
+                    14126.3
+                  ],
+                  [
+                    2001,
+                    12255.9
+                  ],
+                  [
+                    2002,
+                    9332.3
+                  ],
+                  [
+                    2003,
+                    11739.6
+                  ],
+                  [
+                    2004,
+                    12580.3
+                  ],
+                  [
+                    2005,
+                    12762.4
+                  ],
+                  [
+                    2006,
+                    14391.7
+                  ],
+                  [
+                    2007,
+                    14581.9
+                  ],
+                  [
+                    2008,
+                    9253.9
+                  ],
+                  [
+                    2009,
+                    11335.0
+                  ],
+                  [
+                    2010,
+                    12830.4
+                  ],
+                  [
+                    2011,
+                    12710.5
+                  ],
+                  [
+                    2012,
+                    14475.5
+                  ],
+                  [
+                    2013,
+                    18843.6
+                  ],
+                  [
+                    2014,
+                    21253.3
+                  ],
+                  [
+                    2015,
+                    21409.6
+                  ],
+                  [
+                    2016,
+                    23449.3
+                  ],
+                  [
+                    2017,
+                    27921.0
+                  ],
+                  [
+                    2018,
+                    26215.8
+                  ],
+                  [
+                    2019,
+                    33620.3
+                  ],
+                  [
+                    2020,
+                    39162.0
+                  ],
+                  [
+                    2021,
+                    46934.3
+                  ],
+                  [
+                    2022,
+                    36139.3
+                  ],
+                  [
+                    2023,
+                    44179.1
+                  ],
+                  [
+                    2024,
+                    53621.6
+                  ],
+                  [
+                    2025,
+                    61444.8
+                  ]
+                ],
+                "color": "green"
+              }
+            ]
+          }
+        },
+        {
+          "say": "One: crashes are normal. US stocks fell in about one year out of four, and seven times by eighteen percent or more."
+        },
+        {
+          "say": "Two: count inflation. After the seventies and after 1999, it took ten and fourteen years to get the buying power back – longer than most charts show."
+        },
+        {
+          "say": "Three: time changed the odds. Over one year, stocks beat inflation about two times in three. Over every twenty-year period since 1928, they did every time. History, not a promise."
+        },
+        {
+          "say": "If you want to understand your money with real numbers, subscribe. Next time, we'll do the math on what a few hundred dollars a month can become."
+        }
+      ]
+    }
+  ],
+  "short": {
+    "hook": "$100 in 1928 → $1.16 million",
+    "beats": [
+      {
+        "say": "A hundred dollars in the five hundred biggest US companies in 1928, dividends reinvested, became about one point one six million dollars by 2025.",
+        "show": {
+          "type": "number",
+          "big": "$100 → $1.16M",
+          "caption": "1928 to 2025, before inflation",
+          "color": "green"
+        }
+      },
+      {
+        "say": "But it was never a smooth ride. Stocks fell in twenty-six of those ninety-eight years. Minus forty-four percent in 1931. Minus thirty-seven in 2008.",
+        "show": {
+          "type": "bars",
+          "heading": "The worst years for US stocks since 1928: loss in %",
+          "unit": "%",
+          "items": [
+            [
+              "1931",
+              43.8
+            ],
+            [
+              "2008",
+              36.6
+            ],
+            [
+              "1937",
+              35.3
+            ],
+            [
+              "1974",
+              25.9
+            ],
+            [
+              "1930",
+              25.1
+            ],
+            [
+              "2002",
+              22.0
+            ],
+            [
+              "2022",
+              18.0
+            ]
+          ],
+          "source": "S&P 500 incl. dividends, year ends · Damodaran, NYU Stern",
+          "color": "red"
+        }
+      },
+      {
+        "say": "Count inflation, and the waits get long. After the top at the end of 1999, it took until 2013 to get the buying power back. Fourteen years of waiting.",
+        "show": {
+          "type": "line",
+          "heading": "$100 in US stocks in 1928, after inflation",
+          "unit": "$",
+          "log": true,
+          "sub": "In 1928 dollars, log scale · S&P 500 incl. dividends, year ends · Damodaran, NYU Stern",
+          "series": [
+            {
+              "label": "",
+              "points": [
+                [
+                  1927,
+                  100
+                ],
+                [
+                  1928,
+                  145.5
+                ],
+                [
+                  1929,
+                  132.6
+                ],
+                [
+                  1930,
+                  106.1
+                ],
+                [
+                  1931,
+                  65.7
+                ],
+                [
+                  1932,
+                  66.9
+                ],
+                [
+                  1933,
+                  99.6
+                ],
+                [
+                  1934,
+                  96.9
+                ],
+                [
+                  1935,
+                  138.1
+                ],
+                [
+                  1936,
+                  179.6
+                ],
+                [
+                  1937,
+                  112.9
+                ],
+                [
+                  1938,
+                  150.2
+                ],
+                [
+                  1939,
+                  148.5
+                ],
+                [
+                  1940,
+                  131.7
+                ],
+                [
+                  1941,
+                  104.5
+                ],
+                [
+                  1942,
+                  114.3
+                ],
+                [
+                  1943,
+                  138.8
+                ],
+                [
+                  1944,
+                  161.5
+                ],
+                [
+                  1945,
+                  214.5
+                ],
+                [
+                  1946,
+                  166.3
+                ],
+                [
+                  1947,
+                  160.7
+                ],
+                [
+                  1948,
+                  165.4
+                ],
+                [
+                  1949,
+                  199.3
+                ],
+                [
+                  1950,
+                  246.4
+                ],
+                [
+                  1951,
+                  287.6
+                ],
+                [
+                  1952,
+                  336.7
+                ],
+                [
+                  1953,
+                  330.7
+                ],
+                [
+                  1954,
+                  506.3
+                ],
+                [
+                  1955,
+                  668.9
+                ],
+                [
+                  1956,
+                  698.9
+                ],
+                [
+                  1957,
+                  607.3
+                ],
+                [
+                  1958,
+                  857.8
+                ],
+                [
+                  1959,
+                  946.8
+                ],
+                [
+                  1960,
+                  937.3
+                ],
+                [
+                  1961,
+                  1179.0
+                ],
+                [
+                  1962,
+                  1062.1
+                ],
+                [
+                  1963,
+                  1281.1
+                ],
+                [
+                  1964,
+                  1473.8
+                ],
+                [
+                  1965,
+                  1625.3
+                ],
+                [
+                  1966,
+                  1415.7
+                ],
+                [
+                  1967,
+                  1697.0
+                ],
+                [
+                  1968,
+                  1796.0
+                ],
+                [
+                  1969,
+                  1556.2
+                ],
+                [
+                  1970,
+                  1526.6
+                ],
+                [
+                  1971,
+                  1688.5
+                ],
+                [
+                  1972,
+                  1939.1
+                ],
+                [
+                  1973,
+                  1525.3
+                ],
+                [
+                  1974,
+                  1008.3
+                ],
+                [
+                  1975,
+                  1289.4
+                ],
+                [
+                  1976,
+                  1520.1
+                ],
+                [
+                  1977,
+                  1325.5
+                ],
+                [
+                  1978,
+                  1295.3
+                ],
+                [
+                  1979,
+                  1355.5
+                ],
+                [
+                  1980,
+                  1589.4
+                ],
+                [
+                  1981,
+                  1390.7
+                ],
+                [
+                  1982,
+                  1613.0
+                ],
+                [
+                  1983,
+                  1901.2
+                ],
+                [
+                  1984,
+                  1939.7
+                ],
+                [
+                  1985,
+                  2452.5
+                ],
+                [
+                  1986,
+                  2872.0
+                ],
+                [
+                  1987,
+                  2912.8
+                ],
+                [
+                  1988,
+                  3251.0
+                ],
+                [
+                  1989,
+                  4084.8
+                ],
+                [
+                  1990,
+                  3726.5
+                ],
+                [
+                  1991,
+                  4712.8
+                ],
+                [
+                  1992,
+                  4920.0
+                ],
+                [
+                  1993,
+                  5262.4
+                ],
+                [
+                  1994,
+                  5197.2
+                ],
+                [
+                  1995,
+                  6954.2
+                ],
+                [
+                  1996,
+                  8252.7
+                ],
+                [
+                  1997,
+                  10801.3
+                ],
+                [
+                  1998,
+                  13643.0
+                ],
+                [
+                  1999,
+                  16062.5
+                ],
+                [
+                  2000,
+                  14126.3
+                ],
+                [
+                  2001,
+                  12255.9
+                ],
+                [
+                  2002,
+                  9332.3
+                ],
+                [
+                  2003,
+                  11739.6
+                ],
+                [
+                  2004,
+                  12580.3
+                ],
+                [
+                  2005,
+                  12762.4
+                ],
+                [
+                  2006,
+                  14391.7
+                ],
+                [
+                  2007,
+                  14581.9
+                ],
+                [
+                  2008,
+                  9253.9
+                ],
+                [
+                  2009,
+                  11335.0
+                ],
+                [
+                  2010,
+                  12830.4
+                ],
+                [
+                  2011,
+                  12710.5
+                ],
+                [
+                  2012,
+                  14475.5
+                ],
+                [
+                  2013,
+                  18843.6
+                ],
+                [
+                  2014,
+                  21253.3
+                ],
+                [
+                  2015,
+                  21409.6
+                ],
+                [
+                  2016,
+                  23449.3
+                ],
+                [
+                  2017,
+                  27921.0
+                ],
+                [
+                  2018,
+                  26215.8
+                ],
+                [
+                  2019,
+                  33620.3
+                ],
+                [
+                  2020,
+                  39162.0
+                ],
+                [
+                  2021,
+                  46934.3
+                ],
+                [
+                  2022,
+                  36139.3
+                ],
+                [
+                  2023,
+                  44179.1
+                ],
+                [
+                  2024,
+                  53621.6
+                ],
+                [
+                  2025,
+                  61444.8
+                ]
+              ],
+              "color": "green"
+            }
+          ]
+        }
+      },
+      {
+        "say": "And yet: every single twenty-year period since 1928 ended with more buying power than it started with. Seventy-nine out of seventy-nine. History, not a promise.",
+        "show": {
+          "type": "number",
+          "big": "79 of 79",
+          "caption": "20-year periods that beat inflation",
+          "color": "green"
+        }
+      },
+      {
+        "say": "Someone who put ten thousand dollars in at the very top in 1999 – the worst timing of the last thirty years – still had about seventy-four thousand by the end of 2025, before inflation. Every crash and every recovery is in the full video on the channel.",
+        "show": {
+          "type": "compare",
+          "heading": "$10,000 invested at the end of 1999",
+          "left": [
+            "Start",
+            "$10,000"
+          ],
+          "right": [
+            "End of 2025",
+            "$73,856"
+          ],
+          "color": "green"
+        }
+      }
+    ]
+  },
+  "question": "Which crash have you lived through with money in the market?"
+}

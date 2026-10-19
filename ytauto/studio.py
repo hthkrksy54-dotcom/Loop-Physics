@@ -898,7 +898,7 @@ def line(L: Layout, series: list[dict], heading_text: str = "", unit: str = "", 
         lab = text(fmt(v, unit, 0), "text", lab_size, GRAY, tnum=True)
         grid.alpha_composite(lab, (int(x0 - 26 - lab.width), int(y - lab.height / 2)))
     span = hi - lo
-    step = 10 if span > 30 else 5 if span > 12 else 2 if span > 5 else 1
+    step = 20 if span > 60 and L.vertical else 10 if span > 30 else 5 if span > 12 else 2 if span > 5 else 1
     for xv in range(int(math.ceil(lo / step) * step), int(hi) + 1, step):
         lab = text(str(xv), "text", lab_size, GRAY, tnum=True)
         grid.alpha_composite(lab, (int(X(xv) - lab.width / 2), int(y1 + 22)))
