@@ -1,0 +1,1562 @@
+{
+  "id": "one-percent-fee",
+  "order": 13,
+  "title": "Is a 1% Fee Really Small? How It Can Take a Quarter of Your Savings",
+  "title_card": "Is a 1% fee really small?",
+  "description": "One percent sounds like nothing. But on $250 a month over 40 years, a 1% yearly fee takes about $160,000 – almost a quarter of the final balance. We do the honest math: why a fee grows with your money, why the damage hides for 20 years, what typical fund fees look like today according to ICI, and the questions to ask about any fee. No products, no advice – just the numbers.",
+  "tags": [
+    "investment fees",
+    "expense ratio",
+    "1 percent fee",
+    "hidden fees",
+    "how fees affect returns",
+    "compound interest",
+    "index funds",
+    "mutual fund fees",
+    "retirement savings",
+    "personal finance",
+    "money",
+    "real numbers"
+  ],
+  "hashtags": [
+    "#investing",
+    "#fees",
+    "#personalfinance"
+  ],
+  "sources": [
+    "Illustrative calculations: $250 deposited at the start of each month for 40 years at an example gross return of 7% a year (compounded monthly); fees of 0.14%, 0.40%, 1% and 2% a year deducted monthly from the balance; $100,000 lump sum for 30 years (not forecasts, not recommendations)",
+    "Investment Company Institute (ICI), 'Mutual Fund and ETF Fees Remained Near Historic Lows in 2025' and 'Trends in the Expenses and Fees of Funds, 2025' (March 25, 2026): asset-weighted average expense ratio 0.40% for equity mutual funds and 0.14% for index equity ETFs in 2025; equity mutual fund expense ratios fell 62% from 1996 to 2025 (1996 level ≈ 1.05%, computed)"
+  ],
+  "thumbnail": {
+    "big": "−$160,000",
+    "text": "for a 'small' 1% fee",
+    "color": "red"
+  },
+  "chapters": [
+    {
+      "heading": "Intro",
+      "beats": [
+        {
+          "say": "One percent. It sounds like nothing. One dollar out of every hundred.",
+          "show": {
+            "type": "number",
+            "big": "1%",
+            "caption": "a year",
+            "color": "gray"
+          }
+        },
+        {
+          "say": "But say you put two hundred and fifty dollars a month aside for forty years, and it grows seven percent a year. A one percent yearly fee would take about a hundred and sixty thousand dollars of it.",
+          "show": {
+            "type": "number",
+            "big": "$160,463",
+            "caption": "what a 1% fee takes from $250 a month over 40 years",
+            "color": "red"
+          }
+        },
+        {
+          "say": "That's almost a quarter of everything you would have had. Today we do the honest math: why a small fee does so much damage, why you don't notice it for twenty years, and what typical fees look like right now."
+        },
+        {
+          "say": "Quick note: this is general information, not financial advice. The rates are examples, not forecasts.",
+          "show": {
+            "type": "note",
+            "text": "Example rates. *Not* forecasts. *Not* advice.",
+            "source": "Every fee in this video is shown as an example",
+            "color": "gray"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Why 1% isn't 1%",
+      "beats": [
+        {
+          "say": "Here's the trick in the wording. A fee of one percent sounds like one percent of what you pay in. It isn't. It's one percent of everything in the account – every single year.",
+          "show": {
+            "type": "note",
+            "text": "1% of your *whole balance*. Every *year*.",
+            "source": "",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "And it's taken from your return. If your money grows seven percent and the fee is one, you keep six. So the honest way to say it: the fee takes one seventh of your growth – about fourteen percent of it – every year.",
+          "show": {
+            "type": "compare",
+            "heading": "Each year",
+            "left": [
+              "Return before the fee",
+              "7%"
+            ],
+            "right": [
+              "Return after a 1% fee",
+              "6%"
+            ],
+            "color": "red"
+          }
+        },
+        {
+          "say": "Now add time. The fee comes out of a balance that keeps growing – and the money taken can never compound again."
+        },
+        {
+          "say": "Here's what the one percent costs you in dollars, year by year.",
+          "show": {
+            "type": "columns",
+            "heading": "The 1% fee, in dollars per year",
+            "stacks": [
+              [
+                "Year 1",
+                17,
+                "$17"
+              ],
+              [
+                "Year 10",
+                387,
+                "$387"
+              ],
+              [
+                "Year 20",
+                1116,
+                "$1,116"
+              ],
+              [
+                "Year 30",
+                2442,
+                "$2,442"
+              ],
+              [
+                "Year 40",
+                4852,
+                "$4,852"
+              ]
+            ],
+            "source": "$250 a month at 7%, 1% of the balance a year · example",
+            "color": "red"
+          }
+        },
+        {
+          "say": "In year one: seventeen dollars. You'd never notice."
+        },
+        {
+          "say": "In year twenty: about eleven hundred dollars. In year forty: almost forty-nine hundred dollars – in a single year. Same one percent. The fee grows with your money."
+        }
+      ]
+    },
+    {
+      "heading": "The gap that hides",
+      "beats": [
+        {
+          "say": "Now watch both lines. Two hundred and fifty a month, seven percent a year. Green with no fee, red with one percent.",
+          "show": {
+            "type": "line",
+            "heading": "$250 a month at 7% a year – with and without a 1% fee",
+            "unit": "$",
+            "sub": "Fee taken monthly from the balance · example rates, not forecasts",
+            "series": [
+              {
+                "label": "1% fee",
+                "points": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    1,
+                    3099
+                  ],
+                  [
+                    2,
+                    6389
+                  ],
+                  [
+                    3,
+                    9882
+                  ],
+                  [
+                    4,
+                    13590
+                  ],
+                  [
+                    5,
+                    17527
+                  ],
+                  [
+                    6,
+                    21706
+                  ],
+                  [
+                    7,
+                    26143
+                  ],
+                  [
+                    8,
+                    30853
+                  ],
+                  [
+                    9,
+                    35853
+                  ],
+                  [
+                    10,
+                    41161
+                  ],
+                  [
+                    11,
+                    46797
+                  ],
+                  [
+                    12,
+                    52780
+                  ],
+                  [
+                    13,
+                    59131
+                  ],
+                  [
+                    14,
+                    65873
+                  ],
+                  [
+                    15,
+                    73032
+                  ],
+                  [
+                    16,
+                    80631
+                  ],
+                  [
+                    17,
+                    88698
+                  ],
+                  [
+                    18,
+                    97262
+                  ],
+                  [
+                    19,
+                    106355
+                  ],
+                  [
+                    20,
+                    116007
+                  ],
+                  [
+                    21,
+                    126254
+                  ],
+                  [
+                    22,
+                    137133
+                  ],
+                  [
+                    23,
+                    148681
+                  ],
+                  [
+                    24,
+                    160942
+                  ],
+                  [
+                    25,
+                    173958
+                  ],
+                  [
+                    26,
+                    187776
+                  ],
+                  [
+                    27,
+                    202445
+                  ],
+                  [
+                    28,
+                    218018
+                  ],
+                  [
+                    29,
+                    234550
+                  ],
+                  [
+                    30,
+                    252102
+                  ],
+                  [
+                    31,
+                    270735
+                  ],
+                  [
+                    32,
+                    290515
+                  ],
+                  [
+                    33,
+                    311515
+                  ],
+                  [
+                    34,
+                    333809
+                  ],
+                  [
+                    35,
+                    357476
+                  ],
+                  [
+                    36,
+                    382601
+                  ],
+                  [
+                    37,
+                    409275
+                  ],
+                  [
+                    38,
+                    437592
+                  ],
+                  [
+                    39,
+                    467654
+                  ],
+                  [
+                    40,
+                    499568
+                  ]
+                ],
+                "color": "red"
+              },
+              {
+                "label": "No fee",
+                "points": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    1,
+                    3116
+                  ],
+                  [
+                    2,
+                    6458
+                  ],
+                  [
+                    3,
+                    10041
+                  ],
+                  [
+                    4,
+                    13883
+                  ],
+                  [
+                    5,
+                    18003
+                  ],
+                  [
+                    6,
+                    22420
+                  ],
+                  [
+                    7,
+                    27157
+                  ],
+                  [
+                    8,
+                    32237
+                  ],
+                  [
+                    9,
+                    37683
+                  ],
+                  [
+                    10,
+                    43524
+                  ],
+                  [
+                    11,
+                    49786
+                  ],
+                  [
+                    12,
+                    56501
+                  ],
+                  [
+                    13,
+                    63702
+                  ],
+                  [
+                    14,
+                    71423
+                  ],
+                  [
+                    15,
+                    79703
+                  ],
+                  [
+                    16,
+                    88581
+                  ],
+                  [
+                    17,
+                    98100
+                  ],
+                  [
+                    18,
+                    108308
+                  ],
+                  [
+                    19,
+                    119254
+                  ],
+                  [
+                    20,
+                    130991
+                  ],
+                  [
+                    21,
+                    143577
+                  ],
+                  [
+                    22,
+                    157072
+                  ],
+                  [
+                    23,
+                    171543
+                  ],
+                  [
+                    24,
+                    187060
+                  ],
+                  [
+                    25,
+                    203699
+                  ],
+                  [
+                    26,
+                    221541
+                  ],
+                  [
+                    27,
+                    240672
+                  ],
+                  [
+                    28,
+                    261187
+                  ],
+                  [
+                    29,
+                    283184
+                  ],
+                  [
+                    30,
+                    306772
+                  ],
+                  [
+                    31,
+                    332065
+                  ],
+                  [
+                    32,
+                    359186
+                  ],
+                  [
+                    33,
+                    388268
+                  ],
+                  [
+                    34,
+                    419452
+                  ],
+                  [
+                    35,
+                    452890
+                  ],
+                  [
+                    36,
+                    488746
+                  ],
+                  [
+                    37,
+                    527194
+                  ],
+                  [
+                    38,
+                    568421
+                  ],
+                  [
+                    39,
+                    612628
+                  ],
+                  [
+                    40,
+                    660031
+                  ]
+                ],
+                "color": "green"
+              }
+            ]
+          }
+        },
+        {
+          "say": "After ten years, the difference is about two thousand four hundred dollars. Barely visible.",
+          "mark": {
+            "x": 10,
+            "label": "Gap: $2,363"
+          }
+        },
+        {
+          "say": "After twenty years: about fifteen thousand. Noticeable – but the balance is so much bigger than what you paid in that it still feels like a win.",
+          "mark": {
+            "x": 20,
+            "label": "Gap: $14,984"
+          }
+        },
+        {
+          "say": "Put differently: after ten years, the fee has cost you about five percent of the balance. After twenty years, about eleven percent. After forty, about a quarter. The share keeps climbing, because every year's fee is gone – together with everything it would have earned since."
+        },
+        {
+          "say": "And then compounding kicks in for both lines – but more for the green one. After forty years: about six hundred and sixty thousand without a fee. About five hundred thousand with one percent."
+        },
+        {
+          "say": "A hundred and sixty thousand dollars difference. Most of that gap appears in the last fifteen years – exactly when you're not looking at fees anymore.",
+          "show": {
+            "type": "compare",
+            "heading": "$250 a month for 40 years at 7%",
+            "left": [
+              "With a 1% fee",
+              "$499,568"
+            ],
+            "right": [
+              "No fee",
+              "$660,031"
+            ],
+            "color": "green"
+          }
+        },
+        {
+          "say": "And here's the strange part: the fees you actually paid add up to only about sixty-four thousand dollars. The other ninety-six thousand is the growth those fees would have earned if they'd stayed in your account.",
+          "show": {
+            "type": "number",
+            "big": "$64K + $96K",
+            "caption": "fees paid + growth they never earned",
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Fee by fee",
+      "beats": [
+        {
+          "say": "So how much does each level of fee take? Same two hundred and fifty a month, forty years, seven percent.",
+          "show": {
+            "type": "bars",
+            "heading": "$250 a month for 40 years at 7% – what different fees take",
+            "unit": "$",
+            "items": [
+              [
+                "0.14% a year",
+                25606
+              ],
+              [
+                "0.40% a year",
+                70267
+              ],
+              [
+                "1% a year",
+                160463
+              ],
+              [
+                "2% a year",
+                278105
+              ]
+            ],
+            "source": "Lost compared with no fee · example rates, not forecasts",
+            "color": "red",
+            "sort": false
+          }
+        },
+        {
+          "say": "A fee of zero point one four percent a year takes about twenty-six thousand. About four percent of the result.",
+          "mark": {
+            "items": [
+              "0.14% a year"
+            ]
+          }
+        },
+        {
+          "say": "Zero point four percent: about seventy thousand. Eleven percent.",
+          "mark": {
+            "items": [
+              "0.40% a year"
+            ]
+          }
+        },
+        {
+          "say": "One percent: a hundred and sixty thousand. Twenty-four percent.",
+          "mark": {
+            "items": [
+              "1% a year"
+            ]
+          }
+        },
+        {
+          "say": "And two percent – two percent a year: about two hundred and seventy-eight thousand dollars. Forty-two percent of everything gone.",
+          "mark": {
+            "items": [
+              "2% a year"
+            ]
+          }
+        },
+        {
+          "say": "Going from one percent to two takes the loss from a hundred and sixty thousand to two hundred and seventy-eight thousand. And going from zero point one four to one percent multiplies it by six. Small numbers, enormous differences."
+        },
+        {
+          "say": "If this already changed how you look at a percentage on a statement, leave a like – it really helps the channel."
+        }
+      ]
+    },
+    {
+      "heading": "What fees look like today",
+      "beats": [
+        {
+          "say": "So what do people actually pay? The Investment Company Institute tracks fund fees every year. Its numbers are averages weighted by how much money is in each fund.",
+          "show": {
+            "type": "note",
+            "text": "Fund fees today, US averages",
+            "source": "Investment Company Institute, 2025 data, March 2026",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "In 2025, the average yearly fee – called the expense ratio – on stock mutual funds was zero point four percent.",
+          "show": {
+            "type": "number",
+            "big": "0.40%",
+            "caption": "average expense ratio, equity mutual funds, 2025",
+            "color": "blue"
+          }
+        },
+        {
+          "say": "For stock index ETFs – funds that simply follow a market index – the average was zero point one four percent.",
+          "show": {
+            "type": "number",
+            "big": "0.14%",
+            "caption": "average expense ratio, index equity ETFs, 2025",
+            "color": "green"
+          }
+        },
+        {
+          "say": "Why are index funds so much cheaper? They don't pay a team to pick stocks. They simply hold everything in an index, like the five hundred biggest US companies. Less work, lower cost. Whether that suits you is your decision – but the price difference is real.",
+          "show": {
+            "type": "compare",
+            "heading": "Average yearly fee, 2025",
+            "left": [
+              "Equity mutual funds",
+              "0.40%"
+            ],
+            "right": [
+              "Index equity ETFs",
+              "0.14%"
+            ],
+            "color": "green"
+          }
+        },
+        {
+          "say": "And fees have fallen a lot. Since 1996, the average fee on stock mutual funds dropped by sixty-two percent – from about one percent to zero point four.",
+          "show": {
+            "type": "number",
+            "big": "≈1.05% → 0.40%",
+            "caption": "equity mutual funds, 1996 → 2025",
+            "color": "green"
+          }
+        },
+        {
+          "say": "But a fund's expense ratio isn't the only percentage that can sit on your money. Some advisors charge a yearly share of what they manage. Some accounts and retirement plans have their own fees on top. They stack."
+        },
+        {
+          "say": "Zero point four percent plus one percent is one point four percent a year. On our forty-year example, that takes about a third of the result: the balance ends near four hundred and forty-eight thousand instead of six hundred and sixty thousand.",
+          "show": {
+            "type": "compare",
+            "heading": "$250 a month for 40 years at 7%",
+            "left": [
+              "No fee",
+              "$660,031"
+            ],
+            "right": [
+              "Fees of 1.4% a year",
+              "$448,132"
+            ],
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "What 1% costs in your life",
+      "beats": [
+        {
+          "say": "A hundred and sixty thousand dollars is hard to feel. So let's turn the fee into something you can feel: time and effort.",
+          "show": {
+            "type": "note",
+            "text": "Turn the fee into *time* and *effort*.",
+            "source": "$250 a month at 7% · example",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "Without any fee, the account would reach the same five hundred thousand dollars about three years and eight months earlier. That's how much extra working and saving the one percent costs.",
+          "show": {
+            "type": "number",
+            "big": "3 years 8 months",
+            "caption": "earlier to the same balance without the 1% fee",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "Or look at it from the other side. To end up with the same six hundred and sixty thousand dollars despite the one percent fee, you'd have to put away about three hundred and thirty dollars a month instead of two fifty.",
+          "show": {
+            "type": "compare",
+            "heading": "Monthly saving to reach $660,031 in 40 years",
+            "left": [
+              "No fee",
+              "$250"
+            ],
+            "right": [
+              "With a 1% fee",
+              "$330"
+            ],
+            "color": "red"
+          }
+        },
+        {
+          "say": "Eighty dollars more, every month, for forty years. Almost a third more effort – just to stand still against the fee. Over the whole forty years, that adds up to about thirty-eight and a half thousand dollars of extra saving, straight out of your paychecks."
+        },
+        {
+          "say": "That's the real price of a percentage that sounds tiny. It's not paid once. It's paid every year, on everything, for as long as the money is there."
+        }
+      ]
+    },
+    {
+      "heading": "Questions to ask",
+      "beats": [
+        {
+          "say": "So what do you do with this? Not pick a product – that's your decision. But you can ask the right questions about any fee.",
+          "show": {
+            "type": "note",
+            "text": "What do I pay – *in percent and in dollars*?",
+            "source": "Questions, not recommendations",
+            "color": "gold"
+          }
+        },
+        {
+          "say": "Question one: what's the total? Add every percentage that's charged on the balance – the fund, the account, any advice fee. That one number is what you're really paying."
+        },
+        {
+          "say": "Question two: what is it in dollars – this year, and in twenty years? A percentage hides the size. Seventeen dollars sounds fine. Forty-nine hundred a year doesn't."
+        },
+        {
+          "say": "Question three: what do I get for it? A fee isn't automatically bad. Advice, help with taxes or just a plan you stick to can be worth money. But the fee is certain – the extra benefit isn't. A one percent fee has to earn back one percent, every single year, just to break even."
+        },
+        {
+          "say": "And the bigger the balance and the longer the time, the more those questions are worth. For a lump sum of a hundred thousand dollars over thirty years at seven percent, one percent a year is the difference between about eight hundred and twelve thousand and about six hundred and one thousand.",
+          "show": {
+            "type": "compare",
+            "heading": "$100,000 for 30 years at 7%",
+            "left": [
+              "With a 1% fee",
+              "$601,210"
+            ],
+            "right": [
+              "No fee",
+              "$811,650"
+            ],
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "What to remember",
+      "beats": [
+        {
+          "say": "So, is one percent really small? Three things.",
+          "show": {
+            "type": "line",
+            "heading": "$250 a month at 7% a year – with and without a 1% fee",
+            "unit": "$",
+            "sub": "Fee taken monthly from the balance · example rates, not forecasts",
+            "series": [
+              {
+                "label": "1% fee",
+                "points": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    1,
+                    3099
+                  ],
+                  [
+                    2,
+                    6389
+                  ],
+                  [
+                    3,
+                    9882
+                  ],
+                  [
+                    4,
+                    13590
+                  ],
+                  [
+                    5,
+                    17527
+                  ],
+                  [
+                    6,
+                    21706
+                  ],
+                  [
+                    7,
+                    26143
+                  ],
+                  [
+                    8,
+                    30853
+                  ],
+                  [
+                    9,
+                    35853
+                  ],
+                  [
+                    10,
+                    41161
+                  ],
+                  [
+                    11,
+                    46797
+                  ],
+                  [
+                    12,
+                    52780
+                  ],
+                  [
+                    13,
+                    59131
+                  ],
+                  [
+                    14,
+                    65873
+                  ],
+                  [
+                    15,
+                    73032
+                  ],
+                  [
+                    16,
+                    80631
+                  ],
+                  [
+                    17,
+                    88698
+                  ],
+                  [
+                    18,
+                    97262
+                  ],
+                  [
+                    19,
+                    106355
+                  ],
+                  [
+                    20,
+                    116007
+                  ],
+                  [
+                    21,
+                    126254
+                  ],
+                  [
+                    22,
+                    137133
+                  ],
+                  [
+                    23,
+                    148681
+                  ],
+                  [
+                    24,
+                    160942
+                  ],
+                  [
+                    25,
+                    173958
+                  ],
+                  [
+                    26,
+                    187776
+                  ],
+                  [
+                    27,
+                    202445
+                  ],
+                  [
+                    28,
+                    218018
+                  ],
+                  [
+                    29,
+                    234550
+                  ],
+                  [
+                    30,
+                    252102
+                  ],
+                  [
+                    31,
+                    270735
+                  ],
+                  [
+                    32,
+                    290515
+                  ],
+                  [
+                    33,
+                    311515
+                  ],
+                  [
+                    34,
+                    333809
+                  ],
+                  [
+                    35,
+                    357476
+                  ],
+                  [
+                    36,
+                    382601
+                  ],
+                  [
+                    37,
+                    409275
+                  ],
+                  [
+                    38,
+                    437592
+                  ],
+                  [
+                    39,
+                    467654
+                  ],
+                  [
+                    40,
+                    499568
+                  ]
+                ],
+                "color": "red"
+              },
+              {
+                "label": "No fee",
+                "points": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    1,
+                    3116
+                  ],
+                  [
+                    2,
+                    6458
+                  ],
+                  [
+                    3,
+                    10041
+                  ],
+                  [
+                    4,
+                    13883
+                  ],
+                  [
+                    5,
+                    18003
+                  ],
+                  [
+                    6,
+                    22420
+                  ],
+                  [
+                    7,
+                    27157
+                  ],
+                  [
+                    8,
+                    32237
+                  ],
+                  [
+                    9,
+                    37683
+                  ],
+                  [
+                    10,
+                    43524
+                  ],
+                  [
+                    11,
+                    49786
+                  ],
+                  [
+                    12,
+                    56501
+                  ],
+                  [
+                    13,
+                    63702
+                  ],
+                  [
+                    14,
+                    71423
+                  ],
+                  [
+                    15,
+                    79703
+                  ],
+                  [
+                    16,
+                    88581
+                  ],
+                  [
+                    17,
+                    98100
+                  ],
+                  [
+                    18,
+                    108308
+                  ],
+                  [
+                    19,
+                    119254
+                  ],
+                  [
+                    20,
+                    130991
+                  ],
+                  [
+                    21,
+                    143577
+                  ],
+                  [
+                    22,
+                    157072
+                  ],
+                  [
+                    23,
+                    171543
+                  ],
+                  [
+                    24,
+                    187060
+                  ],
+                  [
+                    25,
+                    203699
+                  ],
+                  [
+                    26,
+                    221541
+                  ],
+                  [
+                    27,
+                    240672
+                  ],
+                  [
+                    28,
+                    261187
+                  ],
+                  [
+                    29,
+                    283184
+                  ],
+                  [
+                    30,
+                    306772
+                  ],
+                  [
+                    31,
+                    332065
+                  ],
+                  [
+                    32,
+                    359186
+                  ],
+                  [
+                    33,
+                    388268
+                  ],
+                  [
+                    34,
+                    419452
+                  ],
+                  [
+                    35,
+                    452890
+                  ],
+                  [
+                    36,
+                    488746
+                  ],
+                  [
+                    37,
+                    527194
+                  ],
+                  [
+                    38,
+                    568421
+                  ],
+                  [
+                    39,
+                    612628
+                  ],
+                  [
+                    40,
+                    660031
+                  ]
+                ],
+                "color": "green"
+              }
+            ]
+          }
+        },
+        {
+          "say": "One: a fee is a percentage of your whole balance, every year – not of what you pay in. On a seven percent return, one percent takes a seventh of your growth."
+        },
+        {
+          "say": "Two: the damage hides. On two hundred and fifty a month, a one percent fee costs about two thousand four hundred dollars in ten years – and about a hundred and sixty thousand in forty. Almost a quarter."
+        },
+        {
+          "say": "And remember what that means in real life: almost four extra years of saving, or eighty dollars more every month, just to make up for one percent."
+        },
+        {
+          "say": "Three: know your total. Fund fees average zero point four percent for stock mutual funds and zero point one four for index ETFs – but fees can stack. Add them up, and turn them into dollars."
+        },
+        {
+          "say": "If you want to understand your money with real numbers, subscribe. And check one statement this week – find the line that says what you pay."
+        }
+      ]
+    }
+  ],
+  "short": {
+    "hook": "This 1% fee costs $160,000",
+    "beats": [
+      {
+        "say": "Say you put two hundred and fifty dollars a month aside for forty years, and it grows seven percent a year. That's about six hundred and sixty thousand dollars. Now add a fee of just one percent a year. Sounds harmless, right?",
+        "show": {
+          "type": "number",
+          "big": "$660,031",
+          "caption": "$250 a month for 40 years at 7%, no fee",
+          "color": "green"
+        }
+      },
+      {
+        "say": "Instead, you end up with about five hundred thousand. The one percent took a hundred and sixty thousand dollars – almost a quarter.",
+        "show": {
+          "type": "line",
+          "heading": "$250 a month at 7% a year – with and without a 1% fee",
+          "unit": "$",
+          "sub": "Fee taken monthly from the balance · example rates, not forecasts",
+          "series": [
+            {
+              "label": "1% fee",
+              "points": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  3099
+                ],
+                [
+                  2,
+                  6389
+                ],
+                [
+                  3,
+                  9882
+                ],
+                [
+                  4,
+                  13590
+                ],
+                [
+                  5,
+                  17527
+                ],
+                [
+                  6,
+                  21706
+                ],
+                [
+                  7,
+                  26143
+                ],
+                [
+                  8,
+                  30853
+                ],
+                [
+                  9,
+                  35853
+                ],
+                [
+                  10,
+                  41161
+                ],
+                [
+                  11,
+                  46797
+                ],
+                [
+                  12,
+                  52780
+                ],
+                [
+                  13,
+                  59131
+                ],
+                [
+                  14,
+                  65873
+                ],
+                [
+                  15,
+                  73032
+                ],
+                [
+                  16,
+                  80631
+                ],
+                [
+                  17,
+                  88698
+                ],
+                [
+                  18,
+                  97262
+                ],
+                [
+                  19,
+                  106355
+                ],
+                [
+                  20,
+                  116007
+                ],
+                [
+                  21,
+                  126254
+                ],
+                [
+                  22,
+                  137133
+                ],
+                [
+                  23,
+                  148681
+                ],
+                [
+                  24,
+                  160942
+                ],
+                [
+                  25,
+                  173958
+                ],
+                [
+                  26,
+                  187776
+                ],
+                [
+                  27,
+                  202445
+                ],
+                [
+                  28,
+                  218018
+                ],
+                [
+                  29,
+                  234550
+                ],
+                [
+                  30,
+                  252102
+                ],
+                [
+                  31,
+                  270735
+                ],
+                [
+                  32,
+                  290515
+                ],
+                [
+                  33,
+                  311515
+                ],
+                [
+                  34,
+                  333809
+                ],
+                [
+                  35,
+                  357476
+                ],
+                [
+                  36,
+                  382601
+                ],
+                [
+                  37,
+                  409275
+                ],
+                [
+                  38,
+                  437592
+                ],
+                [
+                  39,
+                  467654
+                ],
+                [
+                  40,
+                  499568
+                ]
+              ],
+              "color": "red"
+            },
+            {
+              "label": "No fee",
+              "points": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  3116
+                ],
+                [
+                  2,
+                  6458
+                ],
+                [
+                  3,
+                  10041
+                ],
+                [
+                  4,
+                  13883
+                ],
+                [
+                  5,
+                  18003
+                ],
+                [
+                  6,
+                  22420
+                ],
+                [
+                  7,
+                  27157
+                ],
+                [
+                  8,
+                  32237
+                ],
+                [
+                  9,
+                  37683
+                ],
+                [
+                  10,
+                  43524
+                ],
+                [
+                  11,
+                  49786
+                ],
+                [
+                  12,
+                  56501
+                ],
+                [
+                  13,
+                  63702
+                ],
+                [
+                  14,
+                  71423
+                ],
+                [
+                  15,
+                  79703
+                ],
+                [
+                  16,
+                  88581
+                ],
+                [
+                  17,
+                  98100
+                ],
+                [
+                  18,
+                  108308
+                ],
+                [
+                  19,
+                  119254
+                ],
+                [
+                  20,
+                  130991
+                ],
+                [
+                  21,
+                  143577
+                ],
+                [
+                  22,
+                  157072
+                ],
+                [
+                  23,
+                  171543
+                ],
+                [
+                  24,
+                  187060
+                ],
+                [
+                  25,
+                  203699
+                ],
+                [
+                  26,
+                  221541
+                ],
+                [
+                  27,
+                  240672
+                ],
+                [
+                  28,
+                  261187
+                ],
+                [
+                  29,
+                  283184
+                ],
+                [
+                  30,
+                  306772
+                ],
+                [
+                  31,
+                  332065
+                ],
+                [
+                  32,
+                  359186
+                ],
+                [
+                  33,
+                  388268
+                ],
+                [
+                  34,
+                  419452
+                ],
+                [
+                  35,
+                  452890
+                ],
+                [
+                  36,
+                  488746
+                ],
+                [
+                  37,
+                  527194
+                ],
+                [
+                  38,
+                  568421
+                ],
+                [
+                  39,
+                  612628
+                ],
+                [
+                  40,
+                  660031
+                ]
+              ],
+              "color": "green"
+            }
+          ]
+        }
+      },
+      {
+        "say": "Why so much? The fee is one percent of your whole balance, every year. In year one it's seventeen dollars. In year forty, it's almost forty-nine hundred dollars – in one year.",
+        "show": {
+          "type": "columns",
+          "heading": "The 1% fee, in dollars per year",
+          "stacks": [
+            [
+              "Year 1",
+              17,
+              "$17"
+            ],
+            [
+              "Year 10",
+              387,
+              "$387"
+            ],
+            [
+              "Year 20",
+              1116,
+              "$1,116"
+            ],
+            [
+              "Year 30",
+              2442,
+              "$2,442"
+            ],
+            [
+              "Year 40",
+              4852,
+              "$4,852"
+            ]
+          ],
+          "source": "$250 a month at 7%, 1% of the balance a year · example",
+          "color": "red"
+        }
+      },
+      {
+        "say": "And the money taken can never grow again. Over forty years you pay about sixty-four thousand dollars in fees – and lose about ninety-six thousand more in growth that money would have earned. What typical fund fees look like today, and how to check yours, is in the full video on the channel.",
+        "show": {
+          "type": "number",
+          "big": "$64K + $96K",
+          "caption": "fees paid + growth they never earned",
+          "color": "red"
+        }
+      }
+    ]
+  },
+  "question": "Do you know the total yearly fee on your savings – in percent?"
+}

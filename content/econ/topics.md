@@ -24,7 +24,7 @@ Formats that work for Finanzbär and Finanzfluss, rebuilt for US/UK viewers. Spe
 - [ ] The psychology of people who are good with money (what studies show)
 - [ ] Lifestyle creep: why a raise doesn't make you richer
 - [ ] How much do you need to retire? The 4% rule explained
-- [ ] Fees: how 1% a year eats a quarter of your savings
+- [x] Fees: how 1% a year eats a quarter of your savings – `one-percent-fee`
 - [ ] Your savings account vs inflation: is your money shrinking?
 - [ ] The true cost of owning a car (AAA "Your Driving Costs")
 - [ ] What happens to an index fund in the worst crashes – and how long recoveries took
