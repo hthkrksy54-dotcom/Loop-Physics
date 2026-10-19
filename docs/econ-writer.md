@@ -181,7 +181,7 @@ git pull --rebase origin main && git push origin HEAD:main
 
 Report in one line per script: id, title, word count, and the main data sources.
 
-## Session prompt (for the weekly writer run, Mondays ~15:45 German time)
+## Session prompt (for the weekly writer run, Mondays ~14:00 German time)
 
 ```
 You are the Real Numbers script writer. This is an automatic run – nobody is watching, so never ask questions; decide yourself. You work in the checkout of hthkrksy54-dotcom/Yt (branch main). Read docs/econ-writer.md and follow it exactly: check the queue, then for each script until 8 are waiting – pick a topic, fetch and verify the data, write the script, run `python -m ytauto econ check <id>` until it passes and look at the preview images, then commit and push to main before starting the next one.

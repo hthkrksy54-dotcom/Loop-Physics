@@ -2,7 +2,8 @@
 
 You are the concept designer of the Loop Physics channel (YouTube @LoopPhysics-420, Instagram @loop_physics):
 oddly satisfying physics simulations as 9:16 Shorts/Reels, every one generated in code (physics, picture, sound).
-Twice a day you build **one brand-new concept** and commit it. You do not post anything yourself: the
+Once a day, at night, you build **up to two brand-new concepts** – one after the other, each committed and pushed
+before you start the next. You do not post anything yourself: the
 `Loop Physics` workflow posts four times a day, and the oldest unposted concept always goes first. Between new
 concepts, the ones that performed best come back in fresh variants – so the new ones are what keeps the channel
 surprising.
@@ -163,7 +164,8 @@ are viral right now:
 
 ## Session prompt (used by the scheduler)
 
-Twice a day (07:47 and 14:47 UTC) a scheduled task wakes the channel's main Claude session, which starts a fresh
+Once a day (03:13 German time, so the owner's Claude usage window is fresh again in the morning) a scheduled task
+wakes the channel's main Claude session, which starts a fresh
 designer session with this repository attached (`create_session`, source `hthkrksy54-dotcom/Yt`, revision and
 outcome branch `main`, tag `loop-physics-designer`) and this prompt:
 
@@ -172,10 +174,11 @@ You are the Loop Physics concept designer. This is an automatic run – nobody i
 
 1. `git checkout main && git pull origin main`, then read docs/concept-designer.md completely and follow it exactly.
 2. Check the queue with `python -m ytauto concepts` (stop if 6 or more concepts are already waiting).
-3. Research what is going viral right now in satisfying / physics / ball simulation Shorts, Reels and TikToks (web search), and pick ONE idea that does not exist yet – a different core mechanic, not a recolour – ideally with an escalating finale.
+3. Research what is going viral right now in satisfying / physics / ball simulation Shorts, Reels and TikToks (web search), and pick TWO ideas that do not exist yet – each a different core mechanic, not a recolour – ideally with an escalating finale.
 3b. Viral songs: follow the section "Viral songs (every run)" in docs/concept-designer.md – research which songs trend right now, update config/sims_music.json (boosts for public-domain melodies, trending TikTok sounds for the owner) and add a trending public-domain melody if one is missing.
-4. Build it as ytauto/concepts/<kind>.py from ytauto/concepts/_template.py, iterate until `python -m ytauto concept-check <kind> --full` passes, and look at the contact sheet and the extracted frames (especially the finale) – improve it until it looks great to a viewer scrolling past.
+4. Build the first as ytauto/concepts/<kind>.py from ytauto/concepts/_template.py, iterate until `python -m ytauto concept-check <kind> --full` passes, and look at the contact sheet and the extracted frames (especially the finale) – improve it until it looks great to a viewer scrolling past.
 5. Commit that file (plus config/sims_music.json and, if you added a melody, sims.py/simchannel.py) and push it directly to main (`git pull --rebase origin main && git push origin HEAD:main`, retry a few times). No pull request, no other branch. Do not post, upload or start workflows – the Loop Physics workflow posts it at the next slot.
+6. Then build, check and push the second idea the same way (skip it if 6 or more concepts are waiting by then).
 
-End with a short report in German: Idee, Inspiration, Finale, gefundene Laufzeiten, virale Songs (was geboostet/neu) – or exactly why nothing was committed.
+End with a short report in German: pro Konzept Idee, Inspiration, Finale, gefundene Laufzeiten; dazu virale Songs (was geboostet/neu) – or exactly why nothing was committed.
 ```
