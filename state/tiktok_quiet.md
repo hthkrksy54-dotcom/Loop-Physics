@@ -8,7 +8,7 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 ## 20.10. 04:11 UTC – Why did Camus call this man happy?
 
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-myth-of-sisyphus)
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7698684675329363232) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-myth-of-sisyphus)
 
 ```text
 Why did Camus call this man happy?
@@ -64,17 +64,5 @@ Memento mori – remember that you will die. It sounds dark, but for the Stoics 
 💬 If today were your last day, what would you stop postponing?
 Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
 #Stoicism #MementoMori #Philosophy #psychology #learnontiktok
-```
-
-## 15.10. 13:40 UTC – The one question that freed a slave
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7697642501687069984) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-dichotomy-of-control)
-
-```text
-The one question that freed a slave
-Nearly 2,000 years ago, Epictetus – a former slave who became one of the most influential Stoic teachers – answered one question with a single distinction: what is truly in our control?
-💬 What is one thing you have been trying to control that was never yours to control?
-Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
-#Stoicism #Philosophy #Epictetus #psychology #learnontiktok
 ```
 
