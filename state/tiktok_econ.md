@@ -6,6 +6,19 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
+## 20.10. 04:06 UTC – $100 in Egypt buys $655 of stuff
+
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261020-where-money-goes-furthest)
+
+```text
+$100 in Egypt buys $655 of stuff
+In US dollars, the average Egyptian produces about $3,000 a year. Adjusted for local prices, it's over $20,000.
+💬 What's the cheapest thing where you live that would be expensive somewhere else?
+Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
+Not financial advice.
+#economics #money #costofliving #personalfinance #learnontiktok
+```
+
 ## 19.10. 04:36 UTC – Japan's prices didn't move for 27 years
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@realnumbersdaily/video/7698238855387827489) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261019-why-japan-prices-froze)
