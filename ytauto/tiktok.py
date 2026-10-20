@@ -307,8 +307,10 @@ def write_queue(records: list[dict], channel: str, path: Path | None = None, tip
         links = ([f"[auf TikTok]({tt['url']})"] if tt.get("url") else []) + \
                 ([f"[Video]({r['release']})"] if r.get("release") else [])
         title = tt.get("caption", r["title"]).split("\n")[0]
-        lines += [f"## {when} – {title}", "", f"Status: **{state}**" + "".join(f" · {x}" for x in links), "",
-                  "```text", tt.get("caption", ""), "```", ""]
+        lines += [f"## {when} – {title}", "", f"Status: **{state}**" + "".join(f" · {x}" for x in links), ""]
+        if r.get("tiktok_note"):
+            lines += [f"⚠️ {r['tiktok_note']}", ""]
+        lines += ["```text", tt.get("caption", ""), "```", ""]
     if not recent:
         lines.append("_Noch keine Entwürfe._")
     path = path or QUEUE

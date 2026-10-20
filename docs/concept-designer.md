@@ -283,6 +283,14 @@ are viral right now:
    short reason) – they appear on top of the TikTok checklist (state/tiktok.md) so the owner can pick one in the
    TikTok app, where the music is licensed.
 5. Lower boosts again when a trend is over; keep `notes` to one or two lines on why the current boosts are set.
+6. **Song quiz (experiment since 20 Oct 2026).** In a share of the videos (`song_quiz_share` in
+   config/sims_music.json, start 0.5) the melody's name is hidden everywhere – on screen it says "CAN YOU NAME THIS
+   SONG? Write it in the comments", the title ends in "Can you name the song?", caption and description say "a famous
+   melody" – so the answers land in the comments. The line "song quiz" in `python -m ytauto concepts` compares
+   views and comments per post with the videos that show the name. Once both sides have at least 8 videos with
+   numbers: quiz views ≥ 1.2× or comments ≥ 2× (with views not below 0.9×) → raise the share to 0.8; quiz views ≤ 0.8×
+   without more comments → lower it to 0.2; otherwise leave it. Well-known, viral melodies make the best quiz – that
+   is another reason to boost them. Note the result in the learnings.
    Commit `config/sims_music.json` (and sims.py/simchannel.py if you added a melody) together with your concept.
 
 ## Session prompt (used by the scheduler)

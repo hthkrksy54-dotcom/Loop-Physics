@@ -97,6 +97,8 @@ def tiktok_caption(kind: str, meta: dict, seed: int = 0) -> str:
     cls = sims.KINDS[kind]
     own = [q for q in (cls.questions or QUESTIONS.get(kind) or []) if not re.search(SOUND_WORDS, q, re.I)]
     question = random.Random(seed * 17 + len(kind)).choice(own) if own else "Which moment was the most satisfying?"
+    if meta.get("quiz"):  # song quiz: the owner keeps the original sound, so the question may be about it
+        question = QUIZ_QUESTION
     kind_tag = TIKTOK_KIND_TAG.get(kind) or (cls.trend_words[0].replace(" ", "") if cls.trend_words else "")
     tags = [t for t in ([kind_tag] if kind_tag else []) + TIKTOK_TAGS if not re.search(r"asmr|music", t)]
     lines = [meta["onscreen"], _what_happens(kind, seed), f"💬 {question}", " ".join(f"#{t}" for t in tags)]
@@ -406,12 +408,48 @@ def tiktok_backlog(cfg: dict, state: dict, max_pending: int = TIKTOK_PENDING, fi
                 break  # TikTok wants fewer drafts at once: the next heartbeat goes on
             r["tiktok_skip"] = str(err)[:200]
             continue
-        r["tiktok"] = {**draft, "caption": tiktok_caption(r["kind"], metadata(r["kind"], r["seed"], r["melody"], cfg), r["seed"])}
+        r["tiktok"] = {**draft, "caption": tiktok_caption(r["kind"], metadata(r["kind"], r["seed"], r["melody"], cfg,
+                                                                             r.get("quiz", False)), r["seed"])}
         print(f"  tiktok: {name} sent as a draft ({draft['status']})", flush=True)
         pending += 1
         sent += 1
         time.sleep(12)  # TikTok allows 6 upload starts per minute
     return sent
+
+
+QUIZ_QUESTION = "Which song is this? 🎵 Write it in the comments!"
+QUIZ_START = "2026-10-20"
+
+
+def song_quiz(kind: str, state: dict) -> bool:
+    """Song quiz experiment: a share of the videos (config/sims_music.json → song_quiz_share) hides the melody's name
+    and asks the viewers to name the song in the comments. Only kinds whose hits play the melody take part."""
+    if sims.KINDS[kind].credit is not sims.Sim.credit:
+        return False
+    share = load(MUSIC, {}).get("song_quiz_share", 0.5)
+    return random.Random(f"quiz-{len(state.get('videos', []))}").random() < share
+
+
+def quiz_report(state: dict) -> str:
+    """Song quiz vs not (videos with melody since the start of the test): views factor and comments per post."""
+    base, _ = performance(state)
+    now = dt.datetime.now(dt.timezone.utc)
+    rows = {True: [], False: []}
+    for v in state.get("videos", []):
+        cls = sims.KINDS.get(v["kind"])
+        if (v["date"] < QUIZ_START or not cls or cls.credit is not sims.Sim.credit or not base
+                or not (v.get("stats") or v.get("yt_views"))
+                or now - dt.datetime.fromisoformat(v["date"]) < dt.timedelta(hours=12)):
+            continue
+        rows[bool(v.get("quiz"))].append((score(v) / base, (v.get("stats") or {}).get("comments", 0)))
+
+    def side(rs: list) -> str:
+        if not rs:
+            return "– (0)"
+        return (f"×{statistics.median(r for r, _ in rs):.2f} views, "
+                f"{sum(c for _, c in rs) / len(rs):.1f} comments ({len(rs)})")
+    share = load(MUSIC, {}).get("song_quiz_share", 0.5)
+    return f"song quiz    with {side(rows[True])} vs without {side(rows[False])} · share {share:.0%}"
 
 
 def onscreen(lines: list[str]) -> str:
@@ -423,10 +461,12 @@ def onscreen(lines: list[str]) -> str:
     return out
 
 
-def metadata(kind: str, seed: int, melody: str, cfg: dict) -> dict:
+def metadata(kind: str, seed: int, melody: str, cfg: dict, quiz: bool = False) -> dict:
     rnd = random.Random(seed * 31 + len(kind))
     song_full = sims.MELODIES[melody][0]
     song = song_full.split(" – ")[0]
+    if quiz:  # song quiz: the name stays out of every visible text – the comments name it
+        song = song_full = "a famous melody"
     cls = sims.KINDS[kind]
     sim = cls(seed)
     params = {"n": getattr(sim, "n", ""), "k": getattr(sim, "K", ""), "song": song, "onscreen": onscreen(sim.title()),
@@ -434,17 +474,23 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict) -> dict:
     tuning = load(TUNING, {})
     title = _fmt(rnd.choice(cls.titles or TITLES.get(kind, ["{onscreen}"])), params)
     addons = [a for a in tuning.get("title_addons") or []
-              if "?" not in a and not (kind in ("pendulum", "chaos", "harmonograph") and "bounce" in a.lower())]
-    if addons and rnd.random() < 0.5:  # half the time: the on-screen question plus a trending add-on
+              if "?" not in a and not (kind in ("pendulum", "chaos", "harmonograph") and "bounce" in a.lower())
+              and not re.search(r"guess|name|song|melod", a, re.I)]  # the song name is on screen (or it is the quiz)
+    if quiz:
+        title = f"{params['onscreen']} – Can you name the song?"
+        title = title if len(title) <= 95 else "Can you name the song? Watch till the end"
+    elif addons and rnd.random() < 0.5:  # half the time: the on-screen question plus a trending add-on
         with_addon = f"{params['onscreen']} – {rnd.choice(addons)}"
         title = with_addon if len(with_addon) <= 95 else title
     generic = [q for q in tuning.get("questions") or []
                if not re.search(r"\b(rings?|pendulums?|plinko|colou?rs?|polygons?|balls? wins?|escapes?|marbles?|races?)\b",
                                 q, re.I)]
     question = rnd.choice((cls.questions or QUESTIONS.get(kind, ["Did you recognise the melody?"])) + generic[:3])
+    if quiz:
+        question = QUIZ_QUESTION
     tags_line = " ".join(["#satisfying"] + [f"#{t}" for t in (tuning.get("hashtags") or []) if t != "satisfying"][:3]) \
         if tuning.get("hashtags") else cfg["instagram"].get("hashtags", "")
-    composer = COMPOSERS.get(melody, "")
+    composer = "" if quiz else COMPOSERS.get(melody, "")
     body = (_fmt(cls.body or BODIES.get(kind, "Every bounce plays the next note of {song}."),
                  {**params, "song": song_full}) + "\n"
             "Physics, picture and sound are all generated in code – no two runs are the same.")
@@ -463,7 +509,7 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict) -> dict:
         (tags_line + (f" #{composer.lower()}" if composer else "")).strip(),
     ])
     return {"title": title[:95], "description": description, "caption": caption[:2150], "question": question,
-            "onscreen": params["onscreen"],
+            "onscreen": params["onscreen"], "quiz": quiz,
             "tags": list(dict.fromkeys(TAGS + [t for t in (song.lower(), composer.lower()) if t]
                                        + (tuning.get("hashtags") or [])[:4]))}
 
@@ -505,7 +551,7 @@ def backfill_reels() -> int:
     for rec in todo:
         tag = rec["release"].rsplit("/", 1)[1]
         try:
-            meta = metadata(rec["kind"], rec["seed"], rec["melody"], cfg)
+            meta = metadata(rec["kind"], rec["seed"], rec["melody"], cfg, rec.get("quiz", False))
             cls = sims.KINDS.get(rec["kind"])
             share = cls.cover_at if cls and cls.cover_at is not None else COVER_AT.get(rec["kind"], 0.5)
             rec.update(instagram.post_reel(
@@ -554,10 +600,12 @@ def run(upload: bool = True) -> dict:
         kind, seed, melody, why = plan(cfg, state)
         stamp = dt.datetime.now(dt.timezone.utc)
         name = f"{stamp:%Y%m%d}-{kind}-{seed}"
+        quiz = song_quiz(kind, state)
         try:
-            meta = metadata(kind, seed, melody, cfg)
-            print(f"[sims] {name} ({why}): {meta['title']} ({sims.MELODIES[melody][0]})", flush=True)
-            result = sims.render(kind, seed, OUT / f"{name}.mp4", melody, cfg.get("handle", ""))
+            meta = metadata(kind, seed, melody, cfg, quiz)
+            print(f"[sims] {name} ({why}): {meta['title']} ({sims.MELODIES[melody][0]}{', song quiz' if quiz else ''})",
+                  flush=True)
+            result = sims.render(kind, seed, OUT / f"{name}.mp4", melody, cfg.get("handle", ""), quiz=quiz)
             break
         except Exception as err:  # noqa: BLE001
             state.setdefault("broken", {})[kind] = f"{stamp:%Y-%m-%d %H:%M} {type(err).__name__}: {err}"[:300]
@@ -568,7 +616,9 @@ def run(upload: bool = True) -> dict:
     cls = sims.KINDS[kind]
     record = {"date": stamp.isoformat(timespec="seconds"), "kind": kind, "seed": seed, "melody": melody,
               "timbre": result.get("timbre"), "title": meta["title"], "duration": round(result["duration"], 1),
-              "why": why}
+              "why": why, "quiz": quiz}
+    if quiz:
+        record["tiktok_note"] = "Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie."
     if cls.concept:
         record["concept"] = cls.concept.get("idea", "")
     if not upload:
@@ -779,7 +829,7 @@ def youtube_polish(apply: bool = False) -> None:
     existing = {p["snippet"]["title"]: p["id"] for p in get("playlists", part="snippet", mine="true",
                                                             maxResults=50).get("items", [])}
     for v, rec in matches:
-        meta = metadata(rec["kind"], rec["seed"], rec["melody"], cfg)
+        meta = metadata(rec["kind"], rec["seed"], rec["melody"], cfg, rec.get("quiz", False))
         send("PUT", "videos", "snippet", {"id": v["id"], "snippet": {
             "title": meta["title"], "description": meta["description"], "tags": meta["tags"],
             "categoryId": cfg["youtube"]["category_id"], "defaultLanguage": cfg["youtube"]["default_language"]}})

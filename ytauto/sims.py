@@ -1935,9 +1935,10 @@ class Painter:
 
     Kinds draw through the helpers below; `base`/`base_glow` are persistent layers they may stamp onto."""
 
-    def __init__(self, sim: Sim, credit: str, handle: str = "") -> None:
+    def __init__(self, sim: Sim, credit: str, handle: str = "", quiz: bool = False) -> None:
         self.sim = sim
         self.credit = credit
+        self.quiz = quiz
         self.handle = handle
         self.base = sim.look.background().resize((W * SS, H * SS))
         self.base_glow = Image.new("RGB", (W // 4, H // 4))
@@ -1978,9 +1979,15 @@ class Painter:
             glow = glow.filter(ImageFilter.GaussianBlur(7)).resize((W, H), Image.BILINEAR)
             img = self._shake(ImageChops.screen(img, ImageChops.screen(glow, glow)))
         d = ImageDraw.Draw(img)
-        self.centered(d, H - 430, self.credit, self.f_small, (170, 170, 200))
-        if self.handle:
-            self.centered(d, H - 385, self.handle, self.f_small, (120, 120, 150))
+        if self.quiz:  # song quiz: the melody stays a secret, the viewers name it in the comments
+            self.centered(d, H - 448, "CAN YOU NAME THIS SONG?", self.f_count, (255, 214, 120), 2)
+            self.centered(d, H - 392, "Write it in the comments", self.f_small, (215, 215, 235))
+            if self.handle:
+                self.centered(d, H - 350, self.handle, self.f_small, (120, 120, 150))
+        else:
+            self.centered(d, H - 430, self.credit, self.f_small, (170, 170, 200))
+            if self.handle:
+                self.centered(d, H - 385, self.handle, self.f_small, (120, 120, 150))
         sim.draw_text(self, d)
         return img
 
@@ -2090,8 +2097,9 @@ class Painter:
 
 
 def render(kind: str, seed: int, out: Path, melody: str | None = None, handle: str = "",
-           timbre: str | None = None, **params) -> dict:
-    """Render one simulation to an MP4 (1080x1920, 60 fps) with its generated soundtrack."""
+           timbre: str | None = None, quiz: bool = False, **params) -> dict:
+    """Render one simulation to an MP4 (1080x1920, 60 fps) with its generated soundtrack; quiz = the song quiz
+    (the melody's name is hidden, the viewers are asked to name it in the comments)."""
     out.parent.mkdir(parents=True, exist_ok=True)
     melody = melody or list(MELODIES)[seed % len(MELODIES)]
     probe = simulate(kind, seed, **params)
@@ -2110,7 +2118,7 @@ def render(kind: str, seed: int, out: Path, melody: str | None = None, handle: s
     _write_wav(wav, soundtrack(probe, melody, duration, seed, timbre, warp))
 
     sim = KINDS[kind](seed, **params)
-    painter = Painter(sim, sim.credit(MELODIES[melody][0]), handle)
+    painter = Painter(sim, sim.credit(MELODIES[melody][0]), handle, quiz)
     frames = int(math.ceil(duration * FPS))
     cmd = [
         "ffmpeg", "-y", "-loglevel", "error",

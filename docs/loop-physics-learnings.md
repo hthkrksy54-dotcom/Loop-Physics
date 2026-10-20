@@ -3,6 +3,9 @@
 The concept designer reads this before every run and updates it at the end (newest first, at most ~20 points,
 remove what is outdated). Numbers: views factor vs the channel median (`python -m ytauto concepts`).
 
+- 2026-10-20 · **Song quiz started**: half of the videos hide the melody's name and ask "Can you name this song?" –
+  watch the "song quiz" line (views and comments per post). Before this, titles sometimes said "Guess the song"
+  while the name was on screen – fixed.
 - 2026-10-20 · **3D style started** (giant_net, a net of 1,296 spheres in the look of @particlesflow, whose
   reels reach 10–50 M views). Every new concept is 3D from now on – no numbers yet; watch "experiment 3d".
 - 2026-10-20 · **Length is the biggest open question.** Trending satisfying Shorts are ~24 s long

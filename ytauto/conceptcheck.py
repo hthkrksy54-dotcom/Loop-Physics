@@ -214,7 +214,7 @@ def listing(cfg: dict, state: dict) -> str:
                      f"{idea[:110]}")
     for name, err in concepts.BROKEN.items():
         lines.append(f"{name:14} IMPORT ERROR {err.strip().splitlines()[-1][:100]}")
-    lines[2:2] = experiments(perf)
+    lines[2:2] = experiments(perf) + [simchannel.quiz_report(state)]
     return "\n".join(lines)
 
 
