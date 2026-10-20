@@ -6,6 +6,18 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
+## 20.10. 04:11 UTC – Why did Camus call this man happy?
+
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-myth-of-sisyphus)
+
+```text
+Why did Camus call this man happy?
+A man pushes a stone up a hill, watches it roll down, and starts again – forever. In 1942, Albert Camus took this ancient punishment and turned it into one of the most surprising ideas in modern philosophy.
+💬 What is the stone you push every day, and how do you walk back down to it?
+Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
+#Camus #Philosophy #Absurdism #psychology #learnontiktok
+```
+
 ## 19.10. 04:40 UTC – Doomsday failed. Their faith grew.
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7698238693617847585) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-cognitive-dissonance)
