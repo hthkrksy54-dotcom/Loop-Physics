@@ -219,6 +219,8 @@ class Sim:
     slowmo = False       # the finale moment is worth a slow-motion replay
     finale_punch = 1.0   # screen shake + flash at the finale (0 = none)
     tempo = ""           # "fast" = many/fast balls and several audible hits per second (tempo experiment)
+    full_frame = False   # 3D concepts (sim3d) paint the whole picture in render(p) instead of draw(p)
+    cta_y: float | None = None  # screen y of the like & subscribe button (default: below the finale text)
     # designed concepts (ytauto/concepts/) describe themselves; the built-in kinds use the tables in simchannel
     concept: dict = {}   # {"created": ISO time, "idea": ..., "inspiration": ..., "finale": ...}
     titles: list[str] | None = None
@@ -1696,7 +1698,10 @@ def simulate(kind: str, seed: int, **params) -> Sim:
 
 
 def pick_seed(kind: str, start: int, lo: float = 35, hi: float = 55, tries: int = 400, **params) -> int:
+    planned = getattr(KINDS[kind], "planned_end", None)  # concepts that know their length skip the slow physics
     for seed in range(start, start + tries):
+        if planned is not None and not lo - 2 <= planned(seed) <= hi + 2:
+            continue
         sim = simulate(kind, seed, **params)
         if sim.end is not None and lo <= sim.end <= hi and sim.good():
             return seed
@@ -1958,14 +1963,17 @@ class Painter:
             sim.on_event(self, kind, i)
         self.seen = len(sim.events)
         self.parts.update(dt)
-        self.img = img = self.base.copy()
-        self.d = ImageDraw.Draw(img)
-        self.glow = glow = self.base_glow.copy()
-        self.g = ImageDraw.Draw(glow)
-        sim.draw(self)
-        img = img.resize((W, H), Image.BOX)
-        glow = glow.filter(ImageFilter.GaussianBlur(7)).resize((W, H), Image.BILINEAR)
-        img = self._shake(ImageChops.screen(img, ImageChops.screen(glow, glow)))
+        if sim.full_frame:
+            img = self._shake(sim.render(self))
+        else:
+            self.img = img = self.base.copy()
+            self.d = ImageDraw.Draw(img)
+            self.glow = glow = self.base_glow.copy()
+            self.g = ImageDraw.Draw(glow)
+            sim.draw(self)
+            img = img.resize((W, H), Image.BOX)
+            glow = glow.filter(ImageFilter.GaussianBlur(7)).resize((W, H), Image.BILINEAR)
+            img = self._shake(ImageChops.screen(img, ImageChops.screen(glow, glow)))
         d = ImageDraw.Draw(img)
         self.centered(d, H - 430, self.credit, self.f_small, (170, 170, 200))
         if self.handle:
@@ -1987,7 +1995,8 @@ class Painter:
         pill = pill.resize((int(w * scale), int(h * scale)), Image.LANCZOS)
         pill.putalpha(pill.getchannel("A").point(lambda a: int(a * e)))
         out = Image.blend(img, Image.new("RGB", img.size), 0.18 * e).convert("RGBA")
-        out.alpha_composite(pill, ((W - pill.width) // 2, int(CY + 290 - pill.height / 2)))
+        y = self.sim.cta_y or CY + 290
+        out.alpha_composite(pill, ((W - pill.width) // 2, int(y - pill.height / 2)))
         return out.convert("RGB")
 
     # drawing helpers (simulation coordinates: origin at the centre, 1 unit = 1 output pixel)
@@ -2061,7 +2070,7 @@ class Painter:
         w = d.textlength(text, font=font)
         d.text((W / 2 - w / 2, y), text, font=font, fill=fill, stroke_width=stroke, stroke_fill=(0, 0, 0))
 
-    def big_text(self, d, lines: list[tuple[str, tuple]], age: float) -> None:
+    def big_text(self, d, lines: list[tuple[str, tuple]], age: float, cy: float = CY) -> None:
         """Finale text popping up in the centre (lines are stacked; too wide ones shrink to fit)."""
         k = min(1.0, age / 0.25)
         size = int(round((60 + 120 * (1 - (1 - k) ** 3)) / 10) * 10)
@@ -2070,7 +2079,7 @@ class Painter:
         font = self.f_big[size]
         for i, (text, fill) in enumerate(lines):
             w = d.textlength(text, font=font)
-            y = CY - size * 0.7 + (i - (len(lines) - 1) / 2) * size * 1.08
+            y = cy - size * 0.7 + (i - (len(lines) - 1) / 2) * size * 1.08
             d.text((W / 2 - w / 2, y), text, font=font, fill=fill, stroke_width=6, stroke_fill=(0, 0, 0))
 
 

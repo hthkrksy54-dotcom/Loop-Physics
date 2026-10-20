@@ -23,12 +23,14 @@ The channel owner's rules:
 - **The music always fits exactly what you see** – every note lands on a visible hit, and the hits the viewer
   follows are audible (section "Sound = picture").
 - **Test faster concepts**: faster balls, more balls, more hits per second (section "Tempo experiment").
+- **Every new concept is a 3D particle simulation in the style of @particlesflow** – reinterpreted, at the
+  same level (section "Style: 3D particle simulations"). Built with `ytauto/sim3d.py`.
 
 ## 0. Set up
 
 ```bash
 git checkout main && git pull origin main
-pip install -q -r requirements.txt   # if numpy/Pillow are missing
+pip install -q -r requirements.txt   # numpy, Pillow and numba (for the 3D toolkit)
 ffmpeg -version | head -1            # needed for --full
 python -m ytauto concepts
 ```
@@ -108,6 +110,46 @@ and what the sound does, "{song}" = melody name), `playlist`, `cover_at`, `trend
   `finale()` → big text lines `[(text, colour), ...]` or just `finale_text()`.
 - **Speed**: `simulate()` of a 70 s run should take under ~3 s (the seed search runs it dozens of times) – avoid
   O(n²) over hundreds of objects (use a grid or buckets). Painting must stay under 180 ms per frame on average.
+
+### Style: 3D particle simulations (every new concept, since October 2026)
+
+The owner's reference is the Instagram channel @particlesflow ("Everything is simulated, not animated", 136k
+followers, reels with 10–50 million views): thousands of touching glossy spheres that behave like one material – a
+net, a cloth, a membrane – draping over a dome, sagging into a hole, rippling under a heavy ball, on a clean grey
+platform in a dark studio, coloured by depth, seen from a fixed oblique camera. Every new concept you build is a
+**reinterpreted clone** of that style at the same level: their look and their kind of material, but our own setup,
+our own twist and our channel's DNA – a question in the title, the melody on visible hits, an escalating finale.
+Never copy a specific video, their name, their watermark or their exact composition.
+
+Build it with the 3D toolkit `ytauto/sim3d.py`; `ytauto/concepts/giant_net.py` is the worked example (a net of
+1,296 spheres catches a rain of steel balls until a golden giant tears it):
+
+- `Sheet(n, size, y0, iters, compliance, tear)`: an n×n net of spheres (XPBD, compiled with numba, n ≤ 40).
+  `pin_border()` or set `w` (inverse mass, 0 = pinned) for any sphere; `compliance` = stretch (5e-5 is a firm
+  trampoline, 3e-4 a soft cloth); links snap beyond `tear` × rest length – lower `tear` per sphere to make a weak
+  spot. `step(h, balls, floor)` advances everything by h (call it every 6th `step()`: 120 Hz) and returns how many
+  links broke; `lerp(a)` gives in-between positions for smooth frames.
+- `Balls(cap)`: `add(p, v, r, mass, colour)`; `mass=math.inf` makes a fixed obstacle (a dome is a big sphere sunk
+  into the floor, a post is a column of them). `touch` tells per ball whether it touched the sheet (1) or another
+  ball (2) in the last step – a touch that starts with real speed is a visible hit: that is where the melody goes.
+- `Camera(target, dist, yaw, pitch, fov, cy)` and `Studio(cam, floor, slab, posts, frame_y, …)`: background, floor
+  grid, platform and frame are rendered once; per frame `shadows(...)` and `spheres(...)` paint the soft shadows and
+  the depth-sorted shaded spheres. Colour the sheet by depth with `GRADIENTS` / `lerp_col`.
+- The concept sets `full_frame = True` and paints the picture in `render(p)` (return a 1080×1920 RGB image); the
+  Painter adds title, counter, credit and finale on top. Keep the scene between y ≈ 480 and 1460 on screen; put the
+  finale text up top (`p.big_text(..., cy=330)` in `draw_text`) and `cta_y` where the like & subscribe button does
+  not cover the action.
+- If the run length is fixed by the seed (the finale starts at a scheduled time), add `planned_end(seed)` – the
+  seed search then skips the slow physics for seeds that cannot fit.
+- Budget: `simulate()` of a 70 s run ~10 s, painting ~50 ms per frame. If you need a new capability (a hole in the
+  platform, a moving obstacle, a second sheet), extend `sim3d.py` with optional parameters whose defaults keep the
+  old behaviour, and re-run `concept-check` for every concept that uses it.
+
+Ideas in this style (each needs its own twist and a climax): a sheet draped over shape after shape, faster each
+time; a membrane sucked through a hole in the platform that keeps widening; a heavy ball rolling on a membrane
+with small balls orbiting into the well; a cloth held at four corners that lets go one corner at a time; sheets
+stacked in layers that tear one after another; a wrecking ball swinging into a hanging net; a drum skin rippling
+under a drum roll that gets faster; a sheet shrink-wrapping a hidden object until you can guess it.
 
 ### Sound = picture (every concept)
 
@@ -227,7 +269,7 @@ You are the Loop Physics concept designer. This is an automatic run – nobody i
 
 1. `git checkout main && git pull origin main`, then read docs/concept-designer.md completely and follow it exactly.
 2. Check the queue with `python -m ytauto concepts` (stop if 6 or more concepts are already waiting). If the "Sound fixes first" list in section 0 is not empty, fix the first concept on it before anything else.
-3. Research what is going viral right now in satisfying / physics / ball simulation Shorts, Reels and TikToks (web search), and pick TWO ideas that do not exist yet – each a different core mechanic, not a recolour – ideally with an escalating finale; at least one of them fast (section "Tempo experiment"). In both, the music must fit exactly what happens on screen (section "Sound = picture").
+3. Research what is going viral right now in satisfying / physics / ball simulation Shorts, Reels and TikToks (web search), and pick TWO ideas that do not exist yet – each a different core mechanic, not a recolour – ideally with an escalating finale, both 3D particle simulations in the style of @particlesflow built with ytauto/sim3d.py (section "Style: 3D particle simulations"); at least one of them fast (section "Tempo experiment"). In both, the music must fit exactly what happens on screen (section "Sound = picture").
 3b. Viral songs: follow the section "Viral songs (every run)" in docs/concept-designer.md – research which songs trend right now, update config/sims_music.json (boosts for public-domain melodies, trending TikTok sounds for the owner) and add a trending public-domain melody if one is missing.
 4. Build the first as ytauto/concepts/<kind>.py from ytauto/concepts/_template.py, iterate until `python -m ytauto concept-check <kind> --full` passes, and look at the contact sheet and the extracted frames (especially the finale) – improve it until it looks great to a viewer scrolling past.
 5. Commit that file (plus config/sims_music.json and, if you added a melody, sims.py/simchannel.py) and push it directly to main (`git pull --rebase origin main && git push origin HEAD:main`, retry a few times). No pull request, no other branch. Do not post, upload or start workflows – the Loop Physics workflow posts it at the next slot.

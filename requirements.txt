@@ -4,3 +4,4 @@ pillow>=10.0
 requests>=2.31
 cryptography>=42
 opencv-python-headless>=4.8
+numba>=0.60
