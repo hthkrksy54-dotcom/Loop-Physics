@@ -211,7 +211,8 @@ QUESTIONS = {
 COMPOSERS = {"fur_elise": "Beethoven", "ode_to_joy": "Beethoven", "mountain_king": "Grieg", "twinkle": "Mozart",
              "canon": "Pachelbel", "nachtmusik": "Mozart", "turkish_march": "Mozart", "minuet": "Bach",
              "blue_danube": "Strauss", "lullaby": "Brahms", "morning_mood": "Grieg", "moonlight": "Beethoven",
-             "toccata": "Bach", "funeral_march": "Chopin"}
+             "toccata": "Bach", "funeral_march": "Chopin",
+             "carol_bells": "Leontovych"}
 TAGS = ["satisfying", "oddly satisfying", "physics simulation", "bouncing ball", "satisfying video",
         "simulation", "relaxing", "asmr", "classical music"]
 
