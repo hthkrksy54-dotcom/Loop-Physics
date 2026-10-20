@@ -46,7 +46,7 @@ class ZombieTag(Sim):
     questions = ["Team zombie or team survivor? 🧟", "Which colour did you root for – did it make it?",
                  "How many survive? Guess before the end!"]
     body = ("One green zombie ball, forty survivors, a shrinking arena. Every touch turns a survivor into a zombie "
-            "(each one rings a higher note), every bounce off the wall plays the next note of {song}. The horde hunts "
+            "(each bite and every zombie bounce off the wall plays the next note of {song}, survivors knock on the wall). The horde hunts "
             "the nearest survivor – can anyone last until the clock runs out?")
     playlist = ("Zombie outbreak", "One touch and you're one of them.")
     cover_at = 0.8
@@ -91,6 +91,7 @@ class ZombieTag(Sim):
         self.last_bite = -9.0
         self.last_xy = (0.0, 0.0)
         self.won = False
+        self.touch = np.zeros((N + 1, N + 1), bool)
 
     # ------------------------------------------------------------------ physics
     def radius(self, t: float | None = None) -> float:
@@ -189,10 +190,14 @@ class ZombieTag(Sim):
             self.bit_at[j] = self.t
             self.last_bite = self.t
             self.last_xy = (float(x[j]), float(y[j]))
-            self.events.append((self.t, "tone", min(39, 6 + int(z.sum()) // 2)))
+            self.events.append((self.t, "bounce", int(z.sum())))   # the melody belongs to the bites
             self.events.append((self.t, "break", int(j)))
         # same-team balls push each other apart (soft), so the horde stays a crowd of separate balls
         ii, jj = np.nonzero(np.triu(hit & ~bitten[:, None] & ~bitten[None, :], 1))
+        pair = s[:, None] & s[None, :] & hit                 # two survivors bumping into each other knock –
+        if (pair & ~self.touch).any():                       # only when a new contact starts
+            self.events.append((self.t, "clack", 0))
+        self.touch = pair
         if len(ii):
             ddx, ddy = dx[ii, jj], dy[ii, jj]
             dd = np.sqrt(ddx * ddx + ddy * ddy) + 1e-9
@@ -212,9 +217,10 @@ class ZombieTag(Sim):
             back = vn > 0
             self.vx[out] -= np.where(back, 2 * vn * nx, 0)
             self.vy[out] -= np.where(back, 2 * vn * ny, 0)
-            if back.any():
-                self.wall_hits += 1
-                self.events.append((self.t, "bounce", self.wall_hits))
+            if back.any():                                   # zombies hitting the wall carry the melody,
+                self.wall_hits += 1                          # survivors just knock
+                hz = (np.nonzero(out)[0][back] == N).any()
+                self.events.append((self.t, "bounce" if hz else "clack", self.wall_hits))
         left = self.survivors()
         if left == 0:
             self.finish()

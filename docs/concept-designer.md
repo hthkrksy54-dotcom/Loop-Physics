@@ -41,8 +41,6 @@ minutes at most): move the melody (`bounce`/`land`) to the hero events and the m
 `python -m ytauto concept-check <kind>` must pass. Commit the fix together with this list minus that line
 (`git commit -m "Loop Physics sound fix: <kind>"`), push, then build your new concepts.
 
-- `zombie_tag`: the melody plays on wall hits of all 40 balls – 84 % of them fall silent, and there are silences of
-  4–5 s (at the start and around 30 s). Give the melody to the bites (and the zombie's own wall hits), the other balls clack.
 - `brick_core`: 57 % of the brick hits fall silent – melody on the hits that break a brick / the lead ball, the
   rest clack.
 - `territory` (built in, `sims.Territory`): 51 % of the bounces fall silent – melody only on bounces that paint a
