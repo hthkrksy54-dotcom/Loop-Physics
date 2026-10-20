@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-20T10:25+00:00"
       },
-      "yt_views": 4889,
+      "yt_views": 4896,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -277,7 +277,7 @@
         "comments": 0,
         "at": "2026-10-20T10:25+00:00"
       },
-      "yt_views": 1334,
+      "yt_views": 1335,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233859481487382",
         "status": "SEND_TO_USER_INBOX",
@@ -899,7 +899,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698238615138209056"
       },
       "youtube_id": "HJWprEDsCPo",
-      "yt_views": 1160,
+      "yt_views": 1169,
       "stats": {
         "views": 6031,
         "reach": 5552,
@@ -992,7 +992,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698572600271834400"
       },
       "youtube_id": "kXcnFg3p2OQ",
-      "yt_views": 2953,
+      "yt_views": 3027,
       "stats": {
         "views": 1275,
         "reach": 1085,
@@ -1024,7 +1024,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698674089967242529"
       },
       "youtube_id": "ZxqzD9QX9AU",
-      "yt_views": 1082,
+      "yt_views": 1084,
       "stats": {
         "views": 1160,
         "reach": 1074,
@@ -1057,7 +1057,7 @@
         "caption": "Which colour gets 200 hits first?\nFour balls race through a field of bumpers: every hit is a point and paints the bumper.\n💬 Which colour did you pick? 👑\n#whichcolorwins #satisfying #oddlysatisfying #physics #simulation"
       },
       "youtube_id": "28ieR1HFF_s",
-      "yt_views": 1031
+      "yt_views": 1054
     },
     {
       "date": "2026-10-20T16:42:03+00:00",
@@ -1082,7 +1082,28 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698820769953959201"
       },
       "youtube_id": "dzLI0_uSjVI",
-      "yt_views": 740
+      "yt_views": 817
+    },
+    {
+      "date": "2026-10-20T22:41:48+00:00",
+      "kind": "escape",
+      "seed": 30,
+      "melody": "ode_to_joy",
+      "timbre": "chip",
+      "title": "20 rings, one ball – wait for the ending",
+      "duration": 70.6,
+      "why": "standout",
+      "quiz": false,
+      "drive": "https://drive.google.com/drive/folders/1NIxBdXzdJk49qmRH4A8CVjnCGCoGNQ_Z",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-escape-30",
+      "instagram_id": "17907254454597435",
+      "instagram_url": "https://www.instagram.com/reel/Deu8ZwljBwr/",
+      "instagram_story_id": "18119662879758175",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7698886014634297366",
+        "status": "SEND_TO_USER_INBOX",
+        "caption": "Can the ball escape all 20 rings?\nOne ball, 20 spinning rings, one gap in each – it has to find every exit to break free.\n💬 How many seconds did you guess?\n#ballescape #satisfying #oddlysatisfying #physics #simulation"
+      }
     }
   ]
 }

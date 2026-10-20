@@ -8,6 +8,17 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 **Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for dramatic Halloween reveals (New Engen, Oct 14) – fits the floor-smash core explosion · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook for the crown race ('the crown slows you down') · Beat Automotivo Tan Tan Tan Viral – WZ Beat: one of the most-used sounds right now, punchy beat for the fast floor-smash run · Spooky, quiet, scary atmosphere piano – Skittlegirl Sound: creepy piano backdrop for zombie/Halloween runs · Experience – Ludovico Einaudi: the biggest classical-piano sound on TikTok, calm build-up for slow satisfying runs
 
+## 20.10. 22:41 UTC – Can the ball escape all 20 rings?
+
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-escape-30)
+
+```text
+Can the ball escape all 20 rings?
+One ball, 20 spinning rings, one gap in each – it has to find every exit to break free.
+💬 How many seconds did you guess?
+#ballescape #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 20.10. 10:41 UTC – Which colour gets 200 hits first?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-crown_race-0)
