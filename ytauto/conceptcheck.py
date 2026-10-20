@@ -61,7 +61,8 @@ def check(kind: str, full: bool = False, quiet: bool = False) -> bool:
     # 2) seeds with a good length, determinism
     t0 = time.time()
     seeds = {}
-    for lo, hi in RANGES:
+    ranges = cls.run_ranges or RANGES
+    for lo, hi in ranges:
         try:
             seeds[(lo, hi)] = sims.pick_seed(kind, 0, lo, hi, tries=40)
         except RuntimeError:
@@ -71,8 +72,8 @@ def check(kind: str, full: bool = False, quiet: bool = False) -> bool:
             break
     search = time.time() - t0
     if len(seeds) < 2:
-        problems.append(f"only {len(seeds)} of {len(RANGES)} length ranges reachable within 40 seeds "
-                        f"(runs must end between 58 and 86 s – videos are longer than a minute)")
+        problems.append(f"only {len(seeds)} of {len(ranges)} length ranges reachable within 40 seeds (runs must end "
+                        f"between {ranges[0][0]} and {ranges[-1][1]} s – see run_ranges / min_video)")
     if search > 240:
         problems.append(f"seed search too slow ({search:.0f}s) – simulate() must be much faster")
     if not seeds:
@@ -174,10 +175,10 @@ def check(kind: str, full: bool = False, quiet: bool = False) -> bool:
         lufs = float(m[-1]) if m else math.nan
         info.append(f"video: {res['video']} ({res['duration']:.1f}s, {lufs:.1f} LUFS, rendered in {took:.0f}s"
                     f"{', slow motion' if res.get('slowmo') else ''})")
-        if res["duration"] < sims.MIN_VIDEO:
-            problems.append(f"video only {res['duration']:.1f}s – must be at least {sims.MIN_VIDEO:.0f}s")
+        if res["duration"] < cls.min_video:
+            problems.append(f"video only {res['duration']:.1f}s – must be at least {cls.min_video:.0f}s")
         if res.get("stretch", 1) > 1.01:
-            info.append(f"note: played {res['stretch']:.2f}× slower to reach {sims.MIN_VIDEO:.0f}s – aim for longer runs")
+            info.append(f"note: played {res['stretch']:.2f}× slower to reach {cls.min_video:.0f}s – aim for longer runs")
         if not -17 <= lufs <= -11:
             problems.append(f"loudness {lufs} LUFS outside -17…-11")
         if took > 1500:
@@ -213,11 +214,21 @@ def listing(cfg: dict, state: dict) -> str:
                      f"{idea[:110]}")
     for name, err in concepts.BROKEN.items():
         lines.append(f"{name:14} IMPORT ERROR {err.strip().splitlines()[-1][:100]}")
-    groups = {"fast": [], "normal": []}
-    for kind, (r, n, _) in perf.items():
-        if n and kind in sims.KINDS:
-            groups["fast" if sims.KINDS[kind].tempo == "fast" else "normal"].append(r)
-    lines.insert(2, "tempo experiment: " + " vs ".join(
-        f"{g} ×{statistics.median(rs):.2f} ({len(rs)} concepts)" if rs else f"{g} – (0 concepts)"
-        for g, rs in groups.items()))
+    lines[2:2] = experiments(perf)
     return "\n".join(lines)
+
+
+def experiments(perf: dict) -> list[str]:
+    """How each kind of experiment does: median views factor of the concepts with it vs without it."""
+    tests = {"3d": lambda c: c.full_frame, "fast": lambda c: c.tempo == "fast", "short": lambda c: c.min_video < 45}
+    for cls in sims.KINDS.values():
+        if cls.experiment:
+            tests.setdefault(cls.experiment, lambda c, tag=cls.experiment: c.experiment == tag)
+    out = []
+    for tag, has in tests.items():
+        yes = [r for k, (r, n, _) in perf.items() if n and k in sims.KINDS and has(sims.KINDS[k])]
+        no = [r for k, (r, n, _) in perf.items() if n and k in sims.KINDS and not has(sims.KINDS[k])]
+        built = sum(1 for c in sims.KINDS.values() if has(c))
+        med = (lambda rs: f"×{statistics.median(rs):.2f} ({len(rs)})" if rs else "– (0)")
+        out.append(f"experiment {tag:8} with {med(yes)} vs without {med(no)} · {built} built")
+    return out

@@ -221,6 +221,9 @@ class Sim:
     tempo = ""           # "fast" = many/fast balls and several audible hits per second (tempo experiment)
     full_frame = False   # 3D concepts (sim3d) paint the whole picture in render(p) instead of draw(p)
     cta_y: float | None = None  # screen y of the like & subscribe button (default: below the finale text)
+    min_video = MIN_VIDEO        # shortest video; a short-format experiment sets less (and its own run_ranges)
+    run_ranges: list[tuple[float, float]] | None = None  # run lengths (s) the seed search aims for
+    experiment = ""      # short tag of what this concept tries (evaluated in `python -m ytauto concepts`)
     # designed concepts (ytauto/concepts/) describe themselves; the built-in kinds use the tables in simchannel
     concept: dict = {}   # {"created": ISO time, "idea": ..., "inspiration": ..., "finale": ...}
     titles: list[str] | None = None
@@ -2096,11 +2099,12 @@ def render(kind: str, seed: int, out: Path, melody: str | None = None, handle: s
         raise RuntimeError(f"{kind} seed {seed} does not finish")
     slow = probe.slowmo and (getattr(probe, "photo", 1e9) < 150 or random.Random(f"slow-{kind}-{seed}").random() < 0.75)
     warp = Warp(probe.end if slow else None)
-    if warp.video(probe.end) + OUTRO < MIN_VIDEO:  # a bit short: play slightly slower ...
-        warp = Warp(probe.end if slow else None, min(STRETCH_MAX, (MIN_VIDEO + 0.2 - OUTRO) / warp.video(probe.end)))
-    duration = max(warp.video(probe.end) + OUTRO, MIN_VIDEO + 0.2)  # ... and hold the finale a little longer
+    least = probe.min_video
+    if warp.video(probe.end) + OUTRO < least:  # a bit short: play slightly slower ...
+        warp = Warp(probe.end if slow else None, min(STRETCH_MAX, (least + 0.2 - OUTRO) / warp.video(probe.end)))
+    duration = max(warp.video(probe.end) + OUTRO, least + 0.2)  # ... and hold the finale a little longer
     if duration - warp.video(probe.end) > OUTRO + PAD_MAX:
-        raise RuntimeError(f"{kind} seed {seed}: run of {probe.end:.0f}s is too short for a {MIN_VIDEO:.0f}s video")
+        raise RuntimeError(f"{kind} seed {seed}: run of {probe.end:.0f}s is too short for a {least:.0f}s video")
     timbre = timbre or random.Random(f"tone-{kind}-{seed}").choice(TIMBRES)
     wav = out.with_suffix(".wav")
     _write_wav(wav, soundtrack(probe, melody, duration, seed, timbre, warp))

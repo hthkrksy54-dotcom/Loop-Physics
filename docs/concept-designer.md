@@ -8,14 +8,24 @@ before you start the next. You do not post anything yourself: the
 concepts, the ones that performed best come back in fresh variants – so the new ones are what keeps the channel
 surprising.
 
-The channel owner's rules:
+**Creative freedom.** The owner's words: "Nichts ist ein Muss – du darfst aus allen fixen Mustern ausbrechen,
+solange du denkst, du machst es besser bzw. viraler." Everything in this playbook is a default that has worked so far,
+not a law – the length, the melody on every hit, the question title, the counter, the finale text, the escalation,
+colours, camera, sound design. Break any of it when you are convinced the result is more viral, tag such a concept
+with `experiment = "<short tag>"` so `python -m ytauto concepts` measures it, and say in your report what you tried
+and why. Only these stay fixed: the 3D look for every new concept and sound = picture (both the owner's explicit
+wishes), the "Never" list, and the quality gate (it catches broken or out-of-sync videos – if one of its checks
+blocks a better idea, change the check in the same commit and explain why).
+
+The channel owner's rules (defaults):
 
 - **Every concept you build is new.** Never rebuild something that already exists (`python -m ytauto concepts`
   lists everything with a one-line idea). A new colour, count or speed is not a new concept – the core mechanic,
   the goal or the twist has to be different.
 - **Build what goes viral.** Look at what is trending right now in satisfying / physics / ball simulation Shorts,
-  Reels and TikToks and rebuild the mechanic in our own style. Never copy footage, music, names, logos or a channel's
-  signature look – the idea is the inspiration, the video is ours.
+  Reels and TikToks and rebuild the mechanic in our own style. Never copy footage, music, names, logos or
+  watermarks – the idea and the look may inspire us (the owner chose @particlesflow's 3D look as our style), the
+  video is ours.
 - **Work towards an escalating finale** whenever the idea allows it: speed-ups, multiplying, chain reactions, a
   countdown or final sprint, everything breaking at once, a photo finish – then a big finale moment. A calm reveal
   (a drawing that completes) is fine sometimes, but escalation is the default.
@@ -184,9 +194,27 @@ per second.
 - Levers: start fast instead of slow; double the speed or the ball count in stages; split one ball into two on every
   hit; hundreds of balls racing for one exit; 100-ball elimination battles; a final sprint where everything speeds
   up. Keep the melody on the hero (see above), the rest clacks.
-- Evaluation: `python -m ytauto concepts` prints "tempo experiment: fast ×… vs normal ×…". Once at least 4 fast
-  concepts have numbers: if fast is ≥ 1.2× normal, make both nightly concepts fast; if fast is ≤ 0.8× normal,
-  build a fast one only every other night; in between keep one fast and one free. Quote the line in your report.
+- Evaluation: `python -m ytauto concepts` prints "experiment fast with ×… vs without ×…". Once at least 4 fast
+  concepts have numbers: if fast is ≥ 1.2× the rest, make both nightly concepts fast; if fast is ≤ 0.8×, build a
+  fast one only every other night; in between keep one fast and one free. Quote the line in your report.
+
+### Experiments and learnings (every run)
+
+You start every night without memory – `docs/loop-physics-learnings.md` is the channel's memory. Read it before
+you pick ideas, together with the "experiment …" lines at the top of `python -m ytauto concepts` (median views
+factor of the concepts with a property vs without it: 3d, fast, short and every custom `experiment` tag) and the
+trend check in `docs/loop-physics-trends.md`.
+
+- One of the two nightly concepts builds on what works (the learnings), the other may be a bolder experiment: a
+  new format, length, hook, camera move, material, sound design – whatever you believe could go viral.
+- **Short format**: set `min_video` (e.g. 20) and `run_ranges` (e.g. `[(17, 22), (20, 26), (24, 32)]`) on the
+  class. Trending satisfying Shorts are ~24 s long; ours are over a minute because TikTok's Creator Rewards need
+  that. Short ones earn nothing on TikTok but are watched to the end and replayed – make them loop seamlessly
+  (the last frame leads back into the first) so the replay counts. The "experiment short" line decides.
+- Adapt: when an experiment line has at least 4 concepts with numbers, a factor ≥ 1.2× makes it the default (write it
+  into the learnings), ≤ 0.8× drops it (note that too), anything between keeps testing.
+- At the end of the run update `docs/loop-physics-learnings.md` (newest first, at most ~20 points, delete what is
+  outdated or disproven) and commit it with your concept.
 
 ## 3. Test until it is great
 
@@ -267,13 +295,14 @@ outcome branch `main`, tag `loop-physics-designer`) and this prompt:
 ```text
 You are the Loop Physics concept designer. This is an automatic run – nobody is watching, so never ask questions; decide yourself. You work in the checkout of hthkrksy54-dotcom/Yt (branch main).
 
-1. `git checkout main && git pull origin main`, then read docs/concept-designer.md completely and follow it exactly.
+1. `git checkout main && git pull origin main`, `pip install -q -r requirements.txt`, then read docs/concept-designer.md completely and follow it (its defaults may be broken where the section "Creative freedom" allows), and read docs/loop-physics-learnings.md.
 2. Check the queue with `python -m ytauto concepts` (stop if 6 or more concepts are already waiting). If the "Sound fixes first" list in section 0 is not empty, fix the first concept on it before anything else.
-3. Research what is going viral right now in satisfying / physics / ball simulation Shorts, Reels and TikToks (web search), and pick TWO ideas that do not exist yet – each a different core mechanic, not a recolour – ideally with an escalating finale, both 3D particle simulations in the style of @particlesflow built with ytauto/sim3d.py (section "Style: 3D particle simulations"); at least one of them fast (section "Tempo experiment"). In both, the music must fit exactly what happens on screen (section "Sound = picture").
+3. Research what is going viral right now in satisfying / physics / ball simulation Shorts, Reels and TikToks (web search), and pick TWO ideas that do not exist yet – each a different core mechanic, not a recolour – ideally with an escalating finale, both 3D particle simulations in the style of @particlesflow built with ytauto/sim3d.py (section "Style: 3D particle simulations"); at least one of them fast (section "Tempo experiment"); one builds on the learnings, the other may be a bolder experiment (section "Experiments and learnings"). In both, the music must fit exactly what happens on screen (section "Sound = picture").
 3b. Viral songs: follow the section "Viral songs (every run)" in docs/concept-designer.md – research which songs trend right now, update config/sims_music.json (boosts for public-domain melodies, trending TikTok sounds for the owner) and add a trending public-domain melody if one is missing.
 4. Build the first as ytauto/concepts/<kind>.py from ytauto/concepts/_template.py, iterate until `python -m ytauto concept-check <kind> --full` passes, and look at the contact sheet and the extracted frames (especially the finale) – improve it until it looks great to a viewer scrolling past.
 5. Commit that file (plus config/sims_music.json and, if you added a melody, sims.py/simchannel.py) and push it directly to main (`git pull --rebase origin main && git push origin HEAD:main`, retry a few times). No pull request, no other branch. Do not post, upload or start workflows – the Loop Physics workflow posts it at the next slot.
 6. Then build, check and push the second idea the same way (skip it if 6 or more concepts are waiting by then).
+7. Update docs/loop-physics-learnings.md with what the numbers and your research taught you, commit and push it.
 
-End with a short report in German: pro Konzept Idee, Inspiration, Finale, Tempo (schnell/normal, Treffer pro Sekunde), gefundene Laufzeiten; die Zeile "tempo experiment"; dazu virale Songs (was geboostet/neu) – or exactly why nothing was committed.
+End with a short report in German: pro Konzept Idee, Inspiration, Finale, Tempo (schnell/normal, Treffer pro Sekunde), gefundene Laufzeiten; die "experiment …"-Zeilen und was du daraus gelernt bzw. geändert hast (Learnings); dazu virale Songs (was geboostet/neu) – or exactly why nothing was committed.
 ```

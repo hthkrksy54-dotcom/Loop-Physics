@@ -302,12 +302,16 @@ def plan(cfg: dict, state: dict) -> tuple[str, int, str, str]:
         used = Counter(v["kind"] for v in videos[-12:])
         pool = [k for k in dict.fromkeys(v["kind"] for v in videos) if k in sims.KINDS and k not in broken]
         cands = [k for k in pool if k not in recent] or [k for k in pool if k != (recent or [None])[-1]] or pool
-        weights = [max(0.15, perf.get(k, (1.0,))[0]) ** 1.5 * (3 if k in stars else 1) / (1 + used[k]) for k in cands]
+        weights = [max(0.15, perf.get(k, (1.0,))[0]) ** 1.5 * (3 if k in stars else 1) / (1 + used[k])
+                   * (2 if sims.KINDS[k].full_frame and perf.get(k, (1.0, 0))[1] < 4 else 1)  # the owner wants more
+                   for k in cands]                                                            # 3D until views decide
         kind = random.Random(len(videos) * 7919).choices(cands, weights=weights)[0]
         why = "standout" if kind in stars else "rotation"
     start = max((v["seed"] for v in videos if v["kind"] == kind), default=-1) + 1
-    lo, hi = RANGES[len(videos) % len(RANGES)]
-    for args in ((lo, hi, 60), (56, 86, 150), (46, 95, 300)):  # some concepts vary a lot; render() stretches short ones
+    ranges = sims.KINDS[kind].run_ranges or RANGES
+    lo, hi = ranges[len(videos) % len(ranges)]
+    a, b = min(r[0] for r in ranges), max(r[1] for r in ranges)
+    for args in ((lo, hi, 60), (a - 2, b + 6, 150), (a - 12, b + 9, 300)):  # some vary a lot; render() stretches short ones
         try:
             seed = sims.pick_seed(kind, start, *args)
             break
@@ -352,8 +356,10 @@ def _fmt(template: str, params: dict) -> str:
 
 
 def rewards_length(rec: dict) -> bool:
-    """Long enough for TikTok's Creator Rewards (videos over one minute)."""
-    return rec.get("duration", 0) >= sims.MIN_VIDEO - 0.5
+    """A finished video of full length: over a minute (TikTok's Creator Rewards), or as long as its concept wants
+    (short-format experiments are shorter on purpose and go to TikTok too). Old short videos stay out."""
+    cls = sims.KINDS.get(rec.get("kind"))
+    return rec.get("duration", 0) >= (cls.min_video if cls else sims.MIN_VIDEO) - 0.5
 
 
 def tiktok_waiting(state: dict) -> int:
