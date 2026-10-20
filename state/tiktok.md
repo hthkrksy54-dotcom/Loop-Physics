@@ -8,17 +8,6 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 **Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for dramatic Halloween reveals (New Engen, Oct 14) – fits the floor-smash core explosion · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook for the crown race ('the crown slows you down') · Beat Automotivo Tan Tan Tan Viral – WZ Beat: one of the most-used sounds right now, punchy beat for the fast floor-smash run · Spooky, quiet, scary atmosphere piano – Skittlegirl Sound: creepy piano backdrop for zombie/Halloween runs · Experience – Ludovico Einaudi: the biggest classical-piano sound on TikTok, calm build-up for slow satisfying runs
 
-## 20.10. 04:41 UTC – Can 6 balls smash through 9 floors?
-
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-floor_smash-1)
-
-```text
-Can 6 balls smash through 9 floors?
-A few bouncy balls hammer a glass floor. Floor after floor gets stronger – until the whole swarm reaches the golden core.
-💬 Which floor did you think would stop them?
-#smash #satisfying #oddlysatisfying #physics #simulation
-```
-
 ## 17.10. 06:41 UTC – Every hit upgrades it – Who wins the duel?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261017-blade_duel-4)
@@ -74,6 +63,17 @@ One ball, 22 spinning rings, one gap in each – it has to find every exit to br
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 20.10. 04:41 UTC – Can 6 balls smash through 9 floors?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7698674089967242529) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-floor_smash-1)
+
+```text
+Can 6 balls smash through 9 floors?
+A few bouncy balls hammer a glass floor. Floor after floor gets stronger – until the whole swarm reaches the golden core.
+💬 Which floor did you think would stop them?
+#smash #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 19.10. 22:41 UTC – Which ball escapes the rising lava?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7698572600271834400) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261019-lava_climb-3)
@@ -115,17 +115,6 @@ Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/
 Can the ball escape all 6 pentagons?
 One ball, 6 nested polygons turning in opposite directions – and only one gap in each.
 💬 Rings or polygons – which is harder?
-#ballescape #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 18.10. 22:41 UTC – Can the ball escape all 19 rings?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7698238496632212769) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261018-escape-25)
-
-```text
-Can the ball escape all 19 rings?
-One ball, 19 spinning rings, one gap in each – it has to find every exit to break free.
-💬 Which ring was the hardest one?
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 

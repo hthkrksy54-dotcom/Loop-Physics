@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-19T11:15+00:00"
       },
-      "yt_views": 4875,
+      "yt_views": 4878,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-19T11:15+00:00"
       },
-      "yt_views": 7545,
+      "yt_views": 7555,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -190,7 +190,7 @@
         "comments": 0,
         "at": "2026-10-19T11:15+00:00"
       },
-      "yt_views": 2763,
+      "yt_views": 2777,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232916815824918",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-19T11:15+00:00"
       },
-      "yt_views": 13807,
+      "yt_views": 13791,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -277,7 +277,7 @@
         "comments": 0,
         "at": "2026-10-19T11:15+00:00"
       },
-      "yt_views": 1324,
+      "yt_views": 1327,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233859481487382",
         "status": "SEND_TO_USER_INBOX",
@@ -648,7 +648,7 @@
       "instagram_id": "18030561041882795",
       "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/",
       "youtube_id": "3Qgx9BMIlXo",
-      "yt_views": 8197,
+      "yt_views": 8257,
       "stats": {
         "views": 2623,
         "reach": 2298,
@@ -743,7 +743,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697763195846479136"
       },
       "youtube_id": "ONKevBQHRdk",
-      "yt_views": 1039,
+      "yt_views": 1045,
       "stats": {
         "views": 1299,
         "reach": 1184,
@@ -774,7 +774,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697901343209573664"
       },
       "youtube_id": "gbOvNfhdn-g",
-      "yt_views": 1695,
+      "yt_views": 1701,
       "stats": {
         "views": 1621,
         "reach": 1352,
@@ -807,7 +807,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697979638068284704"
       },
       "youtube_id": "ZSdNVZtvCYY",
-      "yt_views": 1627,
+      "yt_views": 1628,
       "stats": {
         "views": 1493,
         "reach": 1284,
@@ -899,7 +899,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698238615138209056"
       },
       "youtube_id": "HJWprEDsCPo",
-      "yt_views": 1104,
+      "yt_views": 1115,
       "stats": {
         "views": 1829,
         "reach": 1647,
@@ -983,7 +983,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698572600271834400"
       },
       "youtube_id": "kXcnFg3p2OQ",
-      "yt_views": 883
+      "yt_views": 1223
     },
     {
       "date": "2026-10-20T04:41:47+00:00",
@@ -1001,9 +1001,12 @@
       "instagram_url": "https://www.instagram.com/reel/DetAyUNFW7R/",
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7698606450943510550",
-        "status": "SEND_TO_USER_INBOX",
-        "caption": "Can 6 balls smash through 9 floors?\nA few bouncy balls hammer a glass floor. Floor after floor gets stronger – until the whole swarm reaches the golden core.\n💬 Which floor did you think would stop them?\n#smash #satisfying #oddlysatisfying #physics #simulation"
-      }
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Can 6 balls smash through 9 floors?\nA few bouncy balls hammer a glass floor. Floor after floor gets stronger – until the whole swarm reaches the golden core.\n💬 Which floor did you think would stop them?\n#smash #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7698674089967242529"
+      },
+      "youtube_id": "ZxqzD9QX9AU",
+      "yt_views": 0
     }
   ]
 }
