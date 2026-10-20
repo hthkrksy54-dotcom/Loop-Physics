@@ -8,7 +8,7 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 ## 20.10. 04:06 UTC – $100 in Egypt buys $655 of stuff
 
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261020-where-money-goes-furthest)
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@realnumbersdaily/video/7698675769354063137) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261020-where-money-goes-furthest)
 
 ```text
 $100 in Egypt buys $655 of stuff
@@ -69,18 +69,5 @@ In 2010, 1,000 Argentine pesos bought $257. In 2025 they bought 81 cents.
 Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
 Not financial advice.
 #inflation #argentina #economics #learnontiktok
-```
-
-## 17.10. 11:10 UTC – The US now pays $1T just in interest
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@realnumbersdaily/video/7697643009633946912) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261017-why-us-debt-40-trillion)
-
-```text
-The US now pays $1T just in interest
-The US national debt passed $40 trillion in August 2026 – and the interest on it now costs more than the entire military.
-💬 Should $1 trillion a year in interest worry us – or not?
-Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
-Not financial advice.
-#nationaldebt #economics #money #learnontiktok
 ```
 
