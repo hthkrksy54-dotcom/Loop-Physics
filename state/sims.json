@@ -161,7 +161,7 @@
         "comments": 0,
         "at": "2026-10-20T10:25+00:00"
       },
-      "yt_views": 453,
+      "yt_views": 456,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233117064890390",
         "status": "SEND_TO_USER_INBOX",
@@ -277,7 +277,7 @@
         "comments": 0,
         "at": "2026-10-20T10:25+00:00"
       },
-      "yt_views": 1327,
+      "yt_views": 1330,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233859481487382",
         "status": "SEND_TO_USER_INBOX",
@@ -774,7 +774,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697901343209573664"
       },
       "youtube_id": "gbOvNfhdn-g",
-      "yt_views": 1701,
+      "yt_views": 1706,
       "stats": {
         "views": 1644,
         "reach": 1373,
@@ -807,7 +807,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697979638068284704"
       },
       "youtube_id": "ZSdNVZtvCYY",
-      "yt_views": 1628,
+      "yt_views": 1642,
       "stats": {
         "views": 1496,
         "reach": 1286,
@@ -868,7 +868,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698238496632212769"
       },
       "youtube_id": "AA8_FfvhJ8M",
-      "yt_views": 1228,
+      "yt_views": 1255,
       "stats": {
         "views": 1545,
         "reach": 1395,
@@ -992,7 +992,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698572600271834400"
       },
       "youtube_id": "kXcnFg3p2OQ",
-      "yt_views": 1223,
+      "yt_views": 1303,
       "stats": {
         "views": 1275,
         "reach": 1085,
@@ -1024,7 +1024,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698674089967242529"
       },
       "youtube_id": "ZxqzD9QX9AU",
-      "yt_views": 0,
+      "yt_views": 182,
       "stats": {
         "views": 1160,
         "reach": 1074,
@@ -1033,6 +1033,28 @@
         "likes": 3,
         "comments": 0,
         "at": "2026-10-20T10:25+00:00"
+      }
+    },
+    {
+      "date": "2026-10-20T10:41:53+00:00",
+      "kind": "crown_race",
+      "seed": 0,
+      "melody": "frere_jacques",
+      "timbre": "marimba",
+      "title": "Which colour gets 200 hits first? – Count the bounces",
+      "duration": 75.3,
+      "why": "new",
+      "quiz": false,
+      "concept": "Four coloured balls race through a field of pinball bumpers; every bumper hit is a point and paints the bumper in that colour. The leader wears the crown – and the crown slows it down – so the lead keeps changing hands.",
+      "drive": "https://drive.google.com/drive/folders/16FKpTxvlp9a8q2MurJRWTmcmPkPdH4Uy",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-crown_race-0",
+      "instagram_id": "18114912077600854",
+      "instagram_url": "https://www.instagram.com/reel/Detp3kYjDl1/",
+      "instagram_story_id": "18128207774477629",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7698700388580870166",
+        "status": "SEND_TO_USER_INBOX",
+        "caption": "Which colour gets 200 hits first?\nFour balls race through a field of bumpers: every hit is a point and paints the bumper.\n💬 Which colour did you pick? 👑\n#whichcolorwins #satisfying #oddlysatisfying #physics #simulation"
       }
     }
   ]
