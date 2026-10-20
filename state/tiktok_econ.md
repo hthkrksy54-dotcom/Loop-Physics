@@ -8,7 +8,7 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 ## 20.10. 04:06 UTC – $100 in Egypt buys $655 of stuff
 
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261020-where-money-goes-furthest)
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261020-where-money-goes-furthest)
 
 ```text
 $100 in Egypt buys $655 of stuff
