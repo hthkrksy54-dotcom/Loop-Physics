@@ -6,18 +6,7 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
-**Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for dramatic Halloween reveals – fits the 2048 merge and the lava-escape finale · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – funny voice-over hook for the merge run · Experience – Ludovico Einaudi: the biggest classical-piano sound on TikTok, calm build-up for slow satisfying runs · Spooky, quiet, scary atmosphere piano – Skittlegirl Sound: creepy piano backdrop for zombie/Halloween runs
-
-## 19.10. 22:41 UTC – Which ball escapes the rising lava?
-
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261019-lava_climb-3)
-
-```text
-Which ball escapes the rising lava?
-Five balls race up a tower of platforms while the lava rises below them – and it gets faster every second. Only the first one through the golden exit at the top escapes.
-💬 Who got burned first – did you see it coming?
-#lava #satisfying #oddlysatisfying #physics #simulation
-```
+**Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for dramatic Halloween reveals (New Engen, Oct 14) – fits the floor-smash core explosion · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook for the crown race ('the crown slows you down') · Beat Automotivo Tan Tan Tan Viral – WZ Beat: one of the most-used sounds right now, punchy beat for the fast floor-smash run · Spooky, quiet, scary atmosphere piano – Skittlegirl Sound: creepy piano backdrop for zombie/Halloween runs · Experience – Ludovico Einaudi: the biggest classical-piano sound on TikTok, calm build-up for slow satisfying runs
 
 ## 17.10. 06:41 UTC – Every hit upgrades it – Who wins the duel?
 
@@ -74,6 +63,17 @@ One ball, 22 spinning rings, one gap in each – it has to find every exit to br
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 19.10. 22:41 UTC – Which ball escapes the rising lava?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7698572600271834400) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261019-lava_climb-3)
+
+```text
+Which ball escapes the rising lava?
+Five balls race up a tower of platforms while the lava rises below them – and it gets faster every second. Only the first one through the golden exit at the top escapes.
+💬 Who got burned first – did you see it coming?
+#lava #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 19.10. 16:41 UTC – Can they merge into 2048?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7698475423490903329) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261019-merge_2048-5)
@@ -116,16 +116,5 @@ Can the ball escape all 19 rings?
 One ball, 19 spinning rings, one gap in each – it has to find every exit to break free.
 💬 Which ring was the hardest one?
 #ballescape #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 18.10. 16:41 UTC – 4 pendulums, 0.001° apart
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7698054550548139296) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261018-chaos-4)
-
-```text
-4 pendulums, 0.001° apart
-4 double pendulums that start only 0.001° apart. For a while they move as one – then chaos takes over.
-💬 Which pendulum was your favourite?
-#doublependulum #satisfying #oddlysatisfying #physics #simulation
 ```
 
