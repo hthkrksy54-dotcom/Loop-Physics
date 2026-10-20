@@ -8,6 +8,19 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 **Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for dramatic Halloween reveals (New Engen, Oct 14) – fits the floor-smash core explosion · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook for the crown race ('the crown slows you down') · Beat Automotivo Tan Tan Tan Viral – WZ Beat: one of the most-used sounds right now, punchy beat for the fast floor-smash run · Spooky, quiet, scary atmosphere piano – Skittlegirl Sound: creepy piano backdrop for zombie/Halloween runs · Experience – Ludovico Einaudi: the biggest classical-piano sound on TikTok, calm build-up for slow satisfying runs
 
+## 20.10. 16:42 UTC – Can the net hold the golden giant?
+
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-giant_net-1)
+
+⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
+
+```text
+Can the net hold the golden giant?
+Everything is simulated in 3D, nothing is animated.
+💬 Which song is this? 🎵 Write it in the comments!
+#3d #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 20.10. 10:41 UTC – Which colour gets 200 hits first?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-crown_race-0)
