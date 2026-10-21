@@ -6,6 +6,18 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
+## 21.10. 03:07 UTC – Why one criticism beats nine compliments
+
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-negativity-bias)
+
+```text
+Why one criticism beats nine compliments
+Ten compliments and one criticism – and you remember the criticism. This is not a personal flaw.
+💬 What is one small good thing from today that almost slipped past you?
+Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
+#Psychology #NegativityBias #Philosophy #learnontiktok
+```
+
 ## 20.10. 04:11 UTC – Why did Camus call this man happy?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7698684675329363232) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-myth-of-sisyphus)
