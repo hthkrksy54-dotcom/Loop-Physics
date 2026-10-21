@@ -6,6 +6,19 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
+## 21.10. 03:09 UTC – Under 35? The typical net worth: $33K
+
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261021-net-worth-by-age-2025)
+
+```text
+Under 35? The typical net worth: $33K
+The Federal Reserve just released its 2025 Survey of Consumer Finances – the most detailed look at what American families own and owe.
+💬 Is your net worth above or below the median for your age?
+Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
+Not financial advice.
+#networth #personalfinance #money #learnontiktok
+```
+
 ## 20.10. 04:06 UTC – $100 in Egypt buys $655 of stuff
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@realnumbersdaily/video/7698675769354063137) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261020-where-money-goes-furthest)
