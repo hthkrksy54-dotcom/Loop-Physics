@@ -21,17 +21,6 @@ A trampoline made of 1,296 touching spheres. Everything is simulated in 3D, noth
 #3d #satisfying #oddlysatisfying #physics #simulation
 ```
 
-## 20.10. 22:41 UTC – Can the ball escape all 20 rings?
-
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-escape-30)
-
-```text
-Can the ball escape all 20 rings?
-One ball, 20 spinning rings, one gap in each – it has to find every exit to break free.
-💬 How many seconds did you guess?
-#ballescape #satisfying #oddlysatisfying #physics #simulation
-```
-
 ## 20.10. 10:41 UTC – Which colour gets 200 hits first?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-crown_race-0)
@@ -98,6 +87,17 @@ One ball, 22 spinning rings, one gap in each – it has to find every exit to br
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 20.10. 22:41 UTC – Can the ball escape all 20 rings?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7698969304812866849) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-escape-30)
+
+```text
+Can the ball escape all 20 rings?
+One ball, 20 spinning rings, one gap in each – it has to find every exit to break free.
+💬 How many seconds did you guess?
+#ballescape #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 20.10. 16:42 UTC – Can the net hold the golden giant?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7698820769953959201) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-giant_net-1)
@@ -142,16 +142,5 @@ Can they merge into 2048?
 Two balls with the same number merge into the next one – 16, 32, 64 … all the way to 2048. Then the portal closes and the final merge begins.
 💬 What should merge next – 4096? 👀
 #merge #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 19.10. 10:41 UTC – What will 206 bounces draw?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7698379551923031328) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261019-stringart-52)
-
-```text
-What will 206 bounces draw?
-A ball speeds up inside a shape and every bounce leaves a line to the last one – the pattern draws itself.
-💬 More bounces next time?
-#stringart #satisfying #oddlysatisfying #physics #simulation
 ```
 
