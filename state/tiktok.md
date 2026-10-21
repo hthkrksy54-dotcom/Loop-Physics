@@ -8,19 +8,6 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 **Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for dramatic Halloween reveals (New Engen, Oct 14) – fits the moment the trampoline frame gives up · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook ('you don't have to put one back') for the split trampoline · Spooky Scary Skeletons – Andrew Gold: the evergreen Halloween meme sound, peaks in the last 10 days of October · Halloween Theme – John Carpenter: the most-used spooky piano sound (209 M-view toddler clip), creepy build-up for dark runs · Spooky, quiet, scary atmosphere piano – Skittlegirl Sound: creepy piano backdrop for zombie/Halloween runs
 
-## 21.10. 16:42 UTC – Every ring adds a ball – Can they crack the core?
-
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261021-brick_core-7)
-
-⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
-
-```text
-Every ring adds a ball – Can they crack the core?
-One ball, one wall of numbered bricks. Green rings add balls, the gold ×2 ring doubles the swarm – and in the middle waits the core.
-💬 Which song is this? 🎵 Write it in the comments!
-#brickbreaker #satisfying #oddlysatisfying #physics #simulation
-```
-
 ## 20.10. 10:41 UTC – Which colour gets 200 hits first?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-crown_race-0)
@@ -87,6 +74,19 @@ One ball, 22 spinning rings, one gap in each – it has to find every exit to br
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 21.10. 16:42 UTC – Every ring adds a ball – Can they crack the core?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7699168124997881120) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261021-brick_core-7)
+
+⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
+
+```text
+Every ring adds a ball – Can they crack the core?
+One ball, one wall of numbered bricks. Green rings add balls, the gold ×2 ring doubles the swarm – and in the middle waits the core.
+💬 Which song is this? 🎵 Write it in the comments!
+#brickbreaker #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 21.10. 10:42 UTC – What's under the sheet?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7699120827538754849) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261021-hidden_shape-3)
@@ -133,16 +133,5 @@ Can the net hold the golden giant?
 Everything is simulated in 3D, nothing is animated.
 💬 Which song is this? 🎵 Write it in the comments!
 #3d #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 20.10. 04:41 UTC – Can 6 balls smash through 9 floors?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7698674089967242529) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-floor_smash-1)
-
-```text
-Can 6 balls smash through 9 floors?
-A few bouncy balls hammer a glass floor. Floor after floor gets stronger – until the whole swarm reaches the golden core.
-💬 Which floor did you think would stop them?
-#smash #satisfying #oddlysatisfying #physics #simulation
 ```
 
