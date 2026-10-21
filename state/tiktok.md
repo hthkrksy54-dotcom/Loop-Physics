@@ -6,7 +6,20 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
-**Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for dramatic Halloween reveals (New Engen, Oct 14) – fits the floor-smash core explosion · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook for the crown race ('the crown slows you down') · Beat Automotivo Tan Tan Tan Viral – WZ Beat: one of the most-used sounds right now, punchy beat for the fast floor-smash run · Spooky, quiet, scary atmosphere piano – Skittlegirl Sound: creepy piano backdrop for zombie/Halloween runs · Experience – Ludovico Einaudi: the biggest classical-piano sound on TikTok, calm build-up for slow satisfying runs
+**Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for dramatic Halloween reveals (New Engen, Oct 14) – fits the moment the trampoline frame gives up · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook ('you don't have to put one back') for the split trampoline · Spooky Scary Skeletons – Andrew Gold: the evergreen Halloween meme sound, peaks in the last 10 days of October · Halloween Theme – John Carpenter: the most-used spooky piano sound (209 M-view toddler clip), creepy build-up for dark runs · Spooky, quiet, scary atmosphere piano – Skittlegirl Sound: creepy piano backdrop for zombie/Halloween runs
+
+## 21.10. 04:42 UTC – Every golden bounce adds a new ball
+
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261021-split_trampoline-1)
+
+⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
+
+```text
+Every golden bounce adds a new ball
+A trampoline made of 1,296 touching spheres. Everything is simulated in 3D, nothing is animated.
+💬 Which song is this? 🎵 Write it in the comments!
+#3d #satisfying #oddlysatisfying #physics #simulation
+```
 
 ## 20.10. 22:41 UTC – Can the ball escape all 20 rings?
 

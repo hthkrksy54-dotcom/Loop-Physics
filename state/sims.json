@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-20T10:25+00:00"
       },
-      "yt_views": 4896,
+      "yt_views": 4898,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -689,7 +689,7 @@
         "at": "2026-10-20T10:25+00:00"
       },
       "youtube_id": "9mtvZsZzC64",
-      "yt_views": 1708
+      "yt_views": 1712
     },
     {
       "date": "2026-10-17T16:41:44+00:00",
@@ -809,7 +809,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697979638068284704"
       },
       "youtube_id": "ZSdNVZtvCYY",
-      "yt_views": 1679,
+      "yt_views": 1697,
       "stats": {
         "views": 1496,
         "reach": 1286,
@@ -994,7 +994,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698572600271834400"
       },
       "youtube_id": "kXcnFg3p2OQ",
-      "yt_views": 3480,
+      "yt_views": 3696,
       "stats": {
         "views": 1275,
         "reach": 1085,
@@ -1059,7 +1059,7 @@
         "caption": "Which colour gets 200 hits first?\nFour balls race through a field of bumpers: every hit is a point and paints the bumper.\n💬 Which colour did you pick? 👑\n#whichcolorwins #satisfying #oddlysatisfying #physics #simulation"
       },
       "youtube_id": "28ieR1HFF_s",
-      "yt_views": 1066
+      "yt_views": 1098
     },
     {
       "date": "2026-10-20T16:42:03+00:00",
@@ -1084,7 +1084,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698820769953959201"
       },
       "youtube_id": "dzLI0_uSjVI",
-      "yt_views": 1179
+      "yt_views": 1244
     },
     {
       "date": "2026-10-20T22:41:48+00:00",
@@ -1105,6 +1105,30 @@
         "publish_id": "v_inbox_file~v2.7698886014634297366",
         "status": "SEND_TO_USER_INBOX",
         "caption": "Can the ball escape all 20 rings?\nOne ball, 20 spinning rings, one gap in each – it has to find every exit to break free.\n💬 How many seconds did you guess?\n#ballescape #satisfying #oddlysatisfying #physics #simulation"
+      },
+      "youtube_id": "9df90hvRwfo",
+      "yt_views": 61
+    },
+    {
+      "date": "2026-10-21T04:42:01+00:00",
+      "kind": "split_trampoline",
+      "seed": 1,
+      "melody": "lullaby",
+      "timbre": "glass",
+      "title": "Every golden bounce adds a new ball – Can you name the song?",
+      "duration": 69.1,
+      "why": "new",
+      "quiz": true,
+      "tiktok_note": "Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.",
+      "concept": "A trampoline made of 1,296 touching spheres (3D): every landing of the golden ball pops out a new ball, the golden ball bounces lower and faster as the net fills, all the others keep bouncing like popcorn – the counter races to the frame's limit.",
+      "drive": "https://drive.google.com/drive/folders/1NdFmOK667sZ-890yX49EM87-siug4Oxs",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261021-split_trampoline-1",
+      "instagram_id": "18104487059015775",
+      "instagram_url": "https://www.instagram.com/reel/Devlb7ClMv7/",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7698977907859032086",
+        "status": "SEND_TO_USER_INBOX",
+        "caption": "Every golden bounce adds a new ball\nA trampoline made of 1,296 touching spheres. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#3d #satisfying #oddlysatisfying #physics #simulation"
       }
     }
   ]
