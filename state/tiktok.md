@@ -8,6 +8,19 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 **Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for dramatic Halloween reveals (New Engen, Oct 14) – fits the moment the trampoline frame gives up · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook ('you don't have to put one back') for the split trampoline · Spooky Scary Skeletons – Andrew Gold: the evergreen Halloween meme sound, peaks in the last 10 days of October · Halloween Theme – John Carpenter: the most-used spooky piano sound (209 M-view toddler clip), creepy build-up for dark runs · Spooky, quiet, scary atmosphere piano – Skittlegirl Sound: creepy piano backdrop for zombie/Halloween runs
 
+## 21.10. 22:41 UTC – Can they merge into 2048?
+
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261021-merge_2048-6)
+
+⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
+
+```text
+Can they merge into 2048?
+Two balls with the same number merge into the next one – 16, 32, 64 … all the way to 2048. Then the portal closes and the final merge begins.
+💬 Which song is this? 🎵 Write it in the comments!
+#merge #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 20.10. 10:41 UTC – Which colour gets 200 hits first?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-crown_race-0)

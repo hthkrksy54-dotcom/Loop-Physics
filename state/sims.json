@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-21T10:34+00:00"
       },
-      "yt_views": 4922,
+      "yt_views": 4928,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-21T10:34+00:00"
       },
-      "yt_views": 7599,
+      "yt_views": 7601,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -648,7 +648,7 @@
       "instagram_id": "18030561041882795",
       "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/",
       "youtube_id": "3Qgx9BMIlXo",
-      "yt_views": 8596,
+      "yt_views": 8605,
       "stats": {
         "views": 2657,
         "reach": 2328,
@@ -689,7 +689,7 @@
         "at": "2026-10-21T10:34+00:00"
       },
       "youtube_id": "9mtvZsZzC64",
-      "yt_views": 1722
+      "yt_views": 1723
     },
     {
       "date": "2026-10-17T16:41:44+00:00",
@@ -776,7 +776,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697901343209573664"
       },
       "youtube_id": "gbOvNfhdn-g",
-      "yt_views": 1780,
+      "yt_views": 1783,
       "stats": {
         "views": 1644,
         "reach": 1373,
@@ -809,7 +809,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697979638068284704"
       },
       "youtube_id": "ZSdNVZtvCYY",
-      "yt_views": 1739,
+      "yt_views": 1755,
       "stats": {
         "views": 1498,
         "reach": 1288,
@@ -870,7 +870,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698238496632212769"
       },
       "youtube_id": "AA8_FfvhJ8M",
-      "yt_views": 1370,
+      "yt_views": 1377,
       "stats": {
         "views": 1564,
         "reach": 1412,
@@ -901,7 +901,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698238615138209056"
       },
       "youtube_id": "HJWprEDsCPo",
-      "yt_views": 1222,
+      "yt_views": 1225,
       "stats": {
         "views": 7647,
         "reach": 7091,
@@ -994,7 +994,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698572600271834400"
       },
       "youtube_id": "kXcnFg3p2OQ",
-      "yt_views": 4572,
+      "yt_views": 4600,
       "stats": {
         "views": 1285,
         "reach": 1093,
@@ -1059,7 +1059,7 @@
         "caption": "Which colour gets 200 hits first?\nFour balls race through a field of bumpers: every hit is a point and paints the bumper.\n💬 Which colour did you pick? 👑\n#whichcolorwins #satisfying #oddlysatisfying #physics #simulation"
       },
       "youtube_id": "28ieR1HFF_s",
-      "yt_views": 1145,
+      "yt_views": 1155,
       "stats": {
         "views": 1245,
         "reach": 1091,
@@ -1093,7 +1093,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698820769953959201"
       },
       "youtube_id": "dzLI0_uSjVI",
-      "yt_views": 1961,
+      "yt_views": 1992,
       "stats": {
         "views": 1259,
         "reach": 1093,
@@ -1126,7 +1126,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698969304812866849"
       },
       "youtube_id": "9df90hvRwfo",
-      "yt_views": 1172,
+      "yt_views": 1217,
       "stats": {
         "views": 2521,
         "reach": 2261,
@@ -1192,7 +1192,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699120827538754849"
       },
       "youtube_id": "k4sUyvitAjk",
-      "yt_views": 1090
+      "yt_views": 1096
     },
     {
       "date": "2026-10-21T16:42:03+00:00",
@@ -1215,6 +1215,29 @@
         "status": "PUBLISH_COMPLETE",
         "caption": "Every ring adds a ball – Can they crack the core?\nOne ball, one wall of numbered bricks. Green rings add balls, the gold ×2 ring doubles the swarm – and in the middle waits the core.\n💬 Which song is this? 🎵 Write it in the comments!\n#brickbreaker #satisfying #oddlysatisfying #physics #simulation",
         "url": "https://www.tiktok.com/@loop_physics/video/7699168124997881120"
+      }
+    },
+    {
+      "date": "2026-10-21T22:41:47+00:00",
+      "kind": "merge_2048",
+      "seed": 6,
+      "melody": "moonlight",
+      "timbre": "bell",
+      "title": "Can they merge into 2048? – Can you name the song?",
+      "duration": 71.8,
+      "why": "rotation",
+      "quiz": true,
+      "tiktok_note": "Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.",
+      "concept": "Numbered balls bounce inside a ring and every two balls with the same number merge into the next one (16+16=32 ... 1024+1024=2048); a portal fires new 16s faster and faster, then the same numbers pull at each other until one 2048 ball is left.",
+      "drive": "https://drive.google.com/drive/folders/1pMDZymHvI1FMZugzUMphTxrpepeu5gp_",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261021-merge_2048-6",
+      "instagram_id": "18134992660663980",
+      "instagram_url": "https://www.instagram.com/reel/Dexg-fYEpKf/",
+      "instagram_story_id": "17952094479301571",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7699256342338586646",
+        "status": "SEND_TO_USER_INBOX",
+        "caption": "Can they merge into 2048?\nTwo balls with the same number merge into the next one – 16, 32, 64 … all the way to 2048. Then the portal closes and the final merge begins.\n💬 Which song is this? 🎵 Write it in the comments!\n#merge #satisfying #oddlysatisfying #physics #simulation"
       }
     }
   ]
