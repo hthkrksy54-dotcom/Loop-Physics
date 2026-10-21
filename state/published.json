@@ -174,9 +174,13 @@
       "reel_due": "2026-10-21T14:00:00+00:00",
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7698951556720478230",
-        "status": "PROCESSING_UPLOAD",
-        "caption": "Why one criticism beats nine compliments\nTen compliments and one criticism – and you remember the criticism. This is not a personal flaw.\n💬 What is one small good thing from today that almost slipped past you?\nFull video essay on YouTube: Quiet Thoughts (@quietthoughts-20)\n#Psychology #NegativityBias #Philosophy #learnontiktok"
-      }
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Why one criticism beats nine compliments\nTen compliments and one criticism – and you remember the criticism. This is not a personal flaw.\n💬 What is one small good thing from today that almost slipped past you?\nFull video essay on YouTube: Quiet Thoughts (@quietthoughts-20)\n#Psychology #NegativityBias #Philosophy #learnontiktok",
+        "url": "https://www.tiktok.com/@quiet_thoughts_yt/video/7698969428767051040"
+      },
+      "youtube_id": "2kHshrAY-DA",
+      "thumbnail_set": true,
+      "youtube_short_id": "bKgJwTxmo9k"
     }
   ]
 }

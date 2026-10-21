@@ -8,7 +8,7 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 ## 21.10. 03:07 UTC – Why one criticism beats nine compliments
 
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-negativity-bias)
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7698969428767051040) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-negativity-bias)
 
 ```text
 Why one criticism beats nine compliments
@@ -64,17 +64,5 @@ Why do we feel so watched, judged and exposed – when most people barely notice
 💬 What is something you were embarrassed about that nobody else seems to remember?
 Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
 #Psychology #SpotlightEffect #Philosophy #learnontiktok
-```
-
-## 16.10. 07:05 UTC – The two words that changed how an emperor lived
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7697642387958549792) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-memento-mori)
-
-```text
-The two words that changed how an emperor lived
-Memento mori – remember that you will die. It sounds dark, but for the Stoics it was one of the most life-affirming ideas there is.
-💬 If today were your last day, what would you stop postponing?
-Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
-#Stoicism #MementoMori #Philosophy #psychology #learnontiktok
 ```
 

@@ -186,9 +186,16 @@
       "reel_due": "2026-10-21T15:00:00+00:00",
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7698951777051510806",
-        "status": "PROCESSING_UPLOAD",
-        "caption": "Under 35? The typical net worth: $33K\nThe Federal Reserve just released its 2025 Survey of Consumer Finances – the most detailed look at what American families own and owe.\n💬 Is your net worth above or below the median for your age?\nFull breakdown on YouTube: Real Numbers (@realnumbersdaily)\nNot financial advice.\n#networth #personalfinance #money #learnontiktok"
-      }
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Under 35? The typical net worth: $33K\nThe Federal Reserve just released its 2025 Survey of Consumer Finances – the most detailed look at what American families own and owe.\n💬 Is your net worth above or below the median for your age?\nFull breakdown on YouTube: Real Numbers (@realnumbersdaily)\nNot financial advice.\n#networth #personalfinance #money #learnontiktok",
+        "url": "https://www.tiktok.com/@realnumbersdaily/video/7698969638889196832"
+      },
+      "youtube_id": "WbZwt3CwlWM",
+      "youtube_short_id": "AWwITGwqQrk",
+      "texts_set": true,
+      "short_texts_set": "linked",
+      "thumbnail_error": "thumbnail skipped (403): {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"The authenticated user doesn't have permissions to upload and set custom video thumbnails.\",\n    \"errors\": [\n      {\n        \"m",
+      "captions_set": true
     }
   ]
 }
