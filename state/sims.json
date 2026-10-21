@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-21T10:34+00:00"
       },
-      "yt_views": 4912,
+      "yt_views": 4913,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-21T10:34+00:00"
       },
-      "yt_views": 13848,
+      "yt_views": 13847,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -277,7 +277,7 @@
         "comments": 0,
         "at": "2026-10-21T10:34+00:00"
       },
-      "yt_views": 1333,
+      "yt_views": 1335,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233859481487382",
         "status": "SEND_TO_USER_INBOX",
@@ -648,7 +648,7 @@
       "instagram_id": "18030561041882795",
       "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/",
       "youtube_id": "3Qgx9BMIlXo",
-      "yt_views": 8555,
+      "yt_views": 8574,
       "stats": {
         "views": 2657,
         "reach": 2328,
@@ -776,7 +776,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697901343209573664"
       },
       "youtube_id": "gbOvNfhdn-g",
-      "yt_views": 1760,
+      "yt_views": 1769,
       "stats": {
         "views": 1644,
         "reach": 1373,
@@ -809,7 +809,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697979638068284704"
       },
       "youtube_id": "ZSdNVZtvCYY",
-      "yt_views": 1715,
+      "yt_views": 1728,
       "stats": {
         "views": 1498,
         "reach": 1288,
@@ -870,7 +870,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698238496632212769"
       },
       "youtube_id": "AA8_FfvhJ8M",
-      "yt_views": 1367,
+      "yt_views": 1366,
       "stats": {
         "views": 1564,
         "reach": 1412,
@@ -901,7 +901,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698238615138209056"
       },
       "youtube_id": "HJWprEDsCPo",
-      "yt_views": 1210,
+      "yt_views": 1209,
       "stats": {
         "views": 7647,
         "reach": 7091,
@@ -994,7 +994,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698572600271834400"
       },
       "youtube_id": "kXcnFg3p2OQ",
-      "yt_views": 4433,
+      "yt_views": 4445,
       "stats": {
         "views": 1285,
         "reach": 1093,
@@ -1059,7 +1059,7 @@
         "caption": "Which colour gets 200 hits first?\nFour balls race through a field of bumpers: every hit is a point and paints the bumper.\n💬 Which colour did you pick? 👑\n#whichcolorwins #satisfying #oddlysatisfying #physics #simulation"
       },
       "youtube_id": "28ieR1HFF_s",
-      "yt_views": 1124,
+      "yt_views": 1129,
       "stats": {
         "views": 1245,
         "reach": 1091,
@@ -1093,7 +1093,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698820769953959201"
       },
       "youtube_id": "dzLI0_uSjVI",
-      "yt_views": 1828,
+      "yt_views": 1856,
       "stats": {
         "views": 1259,
         "reach": 1093,
@@ -1126,7 +1126,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698969304812866849"
       },
       "youtube_id": "9df90hvRwfo",
-      "yt_views": 1133,
+      "yt_views": 1154,
       "stats": {
         "views": 2521,
         "reach": 2261,
@@ -1192,7 +1192,29 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699120827538754849"
       },
       "youtube_id": "k4sUyvitAjk",
-      "yt_views": 346
+      "yt_views": 743
+    },
+    {
+      "date": "2026-10-21T16:42:03+00:00",
+      "kind": "brick_core",
+      "seed": 7,
+      "melody": "toccata",
+      "timbre": "pluck",
+      "title": "Every ring adds a ball – Can they crack the core? – Can you name the song?",
+      "duration": 63.4,
+      "why": "rotation",
+      "quiz": true,
+      "tiktok_note": "Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.",
+      "concept": "Ballz-style brick breaker: balls bounce through a wall of numbered bricks (every hit counts one down), green +1 rings add a ball, a hidden ×2 ring doubles the swarm – the target is the core brick in the middle with hundreds of HP.",
+      "drive": "https://drive.google.com/drive/folders/1NnFoge0d9IKrqQg11M6062bsKk3IlTcM",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261021-brick_core-7",
+      "instagram_id": "18493348888107756",
+      "instagram_url": "https://www.instagram.com/reel/Dew4JTSlevv/",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7699164653443844118",
+        "status": "SEND_TO_USER_INBOX",
+        "caption": "Every ring adds a ball – Can they crack the core?\nOne ball, one wall of numbered bricks. Green rings add balls, the gold ×2 ring doubles the swarm – and in the middle waits the core.\n💬 Which song is this? 🎵 Write it in the comments!\n#brickbreaker #satisfying #oddlysatisfying #physics #simulation"
+      }
     }
   ]
 }
