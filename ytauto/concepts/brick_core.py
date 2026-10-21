@@ -73,6 +73,7 @@ class BrickCore(Sim):
                            RB)]
         self.born = [0.0]
         self.hits = 0
+        self.last_note = -9.0
         self.left = sum(1 for b in self.bricks if b[0] == BRICK)
         self.flash: dict[int, float] = {}
         self.doubled = -9.0
@@ -200,7 +201,11 @@ class BrickCore(Sim):
         br[5] -= 1
         self.hits += 1
         self.flash[i] = self.t
-        self.events.append((self.t, "bounce", j))
+        # melody for the hits the viewer follows: the lead ball and the core; the swarm clacks (breaks crack anyway)
+        hero = (j == 0 or i == self.core) and self.t - self.last_note >= self.note_gap
+        if hero:
+            self.last_note = self.t
+        self.events.append((self.t, "bounce" if hero else "clack", j))
         if br[5] > 0:
             return
         self._clear(i)
