@@ -648,7 +648,7 @@
       "instagram_id": "18030561041882795",
       "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/",
       "youtube_id": "3Qgx9BMIlXo",
-      "yt_views": 8603,
+      "yt_views": 8607,
       "stats": {
         "views": 2657,
         "reach": 2328,
@@ -994,7 +994,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698572600271834400"
       },
       "youtube_id": "kXcnFg3p2OQ",
-      "yt_views": 5131,
+      "yt_views": 5160,
       "stats": {
         "views": 1285,
         "reach": 1093,
@@ -1093,7 +1093,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698820769953959201"
       },
       "youtube_id": "dzLI0_uSjVI",
-      "yt_views": 2697,
+      "yt_views": 2713,
       "stats": {
         "views": 1268,
         "reach": 1102,
@@ -1261,7 +1261,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699385130745449760"
       },
       "youtube_id": "r_9L1c_gQ5w",
-      "yt_views": 37,
+      "yt_views": 47,
       "stats": {
         "views": 1519,
         "reach": 1245,
@@ -1295,7 +1295,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699385206448360737"
       },
       "youtube_id": "Sp_bThOdgcU",
-      "yt_views": 1056,
+      "yt_views": 1071,
       "stats": {
         "views": 1229,
         "reach": 1130,
@@ -1327,6 +1327,26 @@
         "status": "PUBLISH_COMPLETE",
         "caption": "What will the sound draw next?\nEverything is simulated in 3D, nothing is animated.\n💬 Did you see the pattern coming?\n#cymatics #satisfying #oddlysatisfying #physics #simulation",
         "url": "https://www.tiktok.com/@loop_physics/video/7699449713489218849"
+      }
+    },
+    {
+      "date": "2026-10-22T16:42:35+00:00",
+      "kind": "escape",
+      "seed": 31,
+      "melody": "nachtmusik",
+      "timbre": "chip",
+      "title": "Can the ball escape all 16 rings? – Sound on",
+      "duration": 70.5,
+      "why": "standout",
+      "quiz": false,
+      "drive": "https://drive.google.com/drive/folders/1mouXywrUmK2Y9E6j_AEvOSlU8IqkSwgY",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261022-escape-31",
+      "instagram_id": "17934611754406007",
+      "instagram_url": "https://www.instagram.com/reel/Dezc1blCBbo/",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7699535323046610966",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "Can the ball escape all 16 rings?\nOne ball, 16 spinning rings, one gap in each – it has to find every exit to break free.\n💬 Which ring was the hardest one?\n#ballescape #satisfying #oddlysatisfying #physics #simulation"
       }
     }
   ]

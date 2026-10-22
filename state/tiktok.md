@@ -8,6 +8,17 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 **Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for dramatic Halloween reveals (New Engen, Oct) – fits the golden orb shattering in orb_escape · Spooky Scary Skeletons – Andrew Gold: the evergreen Halloween meme sound, peaks in the last 10 days of October · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook · I'll Never Let You Go – Official Sound Studio: most-used TikTok sound overall (106 M videos, Oct 16) – calm piano for the Chladni plate loop · Halloween Theme – John Carpenter: creepy build-up for dark runs until Oct 31
 
+## 22.10. 16:42 UTC – Can the ball escape all 16 rings?
+
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261022-escape-31)
+
+```text
+Can the ball escape all 16 rings?
+One ball, 16 spinning rings, one gap in each – it has to find every exit to break free.
+💬 Which ring was the hardest one?
+#ballescape #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 20.10. 10:41 UTC – Which colour gets 200 hits first?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-crown_race-0)
