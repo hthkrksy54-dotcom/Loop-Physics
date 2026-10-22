@@ -139,7 +139,7 @@ def produce(lang: str, topic_id: str | None, upload: bool, with_short: bool, kee
             state.setdefault(lang, []).append(record)
             _save(STATE, state)
             if record.get("tiktok"):
-                tiktok.write_queue(state[lang], cfg["channel_name"], TIKTOK_QUEUE)
+                tiktok.write_queue(state[lang], cfg["channel_name"], TIKTOK_QUEUE, ai_voice=True)
     return record
 
 
@@ -200,7 +200,7 @@ def tiktok_backlog(lang: str, cfg: dict, max_pending: int = tiktok.MAX_WAITING) 
     changed |= tiktok.backlog(cfg, todo, records, max_pending) > 0
     if changed:
         _save(STATE, state)
-        tiktok.write_queue(records, cfg["channel_name"], TIKTOK_QUEUE)
+        tiktok.write_queue(records, cfg["channel_name"], TIKTOK_QUEUE, ai_voice=True)
     return changed
 
 

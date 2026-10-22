@@ -494,8 +494,12 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict, quiz: bool = False) -
     body = (_fmt(cls.body or BODIES.get(kind, "Every bounce plays the next note of {song}."),
                  {**params, "song": song_full}) + "\n"
             "Physics, picture and sound are all generated in code – no two runs are the same.")
+    music = ("🎵 The melody is a public-domain classic, played note by note by the simulation – no recording is used."
+             if quiz else f"🎵 Music: {song_full} (public domain), played note by note by the simulation – "
+                          "no recording is used.")  # says so up front, for any false copyright claim
     description = "\n\n".join([
         body,
+        music,
         f"💬 {question}",
         f"Four new simulations every day on {cfg['channel_name']} – and a brand-new concept twice a day.",
         "#satisfying #physics #simulation #shorts",

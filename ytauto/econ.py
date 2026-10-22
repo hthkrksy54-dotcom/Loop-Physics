@@ -539,6 +539,7 @@ def queue(state: dict) -> list[str]:
 
 
 NOT_ADVICE = "Not financial advice."  # on every Reel and TikTok; the YouTube descriptions carry the long version
+AI_VOICE = "Narrated by a synthetic AI voice."  # Reels can't carry Meta's AI label via the API, so the caption says it
 
 
 def _texts(script: dict, cfg: dict, result: dict) -> dict:
@@ -551,7 +552,8 @@ def _texts(script: dict, cfg: dict, result: dict) -> dict:
     caption = "\n\n".join([sh.get("hook", script["title_card"]), script["description"].split(". ")[0] + ".",
                             "Full video on YouTube – follow for more money, explained with real numbers."
                             + (f"\n▶ {cfg['youtube']['channel_url']}" if cfg["youtube"].get("channel_url") else ""),
-                            NOT_ADVICE, " ".join(dict.fromkeys(f"{hashtags} #personalfinance #moneytips".split()))])
+                            AI_VOICE + " " + NOT_ADVICE,
+                            " ".join(dict.fromkeys(f"{hashtags} #personalfinance #moneytips".split()))])
     return {"title": script["title"][:100], "description": result.get("description", ""), "tags": tags,
             "short_title": short_title, "short_description": short_desc, "caption": caption[:2150],
             "tiktok": _tiktok_text(script, cfg, hashtags)}
@@ -649,7 +651,7 @@ def produce(upload: bool = True, script_id: str | None = None) -> dict:
     state.setdefault("videos", []).append(record)
     save(STATE, state)
     if record.get("tiktok"):
-        tiktok.write_queue(state["videos"], cfg["channel_name"], TIKTOK_QUEUE)
+        tiktok.write_queue(state["videos"], cfg["channel_name"], TIKTOK_QUEUE, ai_voice=True)
     publish.cleanup_releases("econ-", keep_days=21)
     print(f"[econ] published {script_id}", flush=True)
     return record
@@ -822,7 +824,7 @@ def tiktok_backlog(max_pending: int = tiktok.MAX_WAITING) -> bool:
     changed |= tiktok.backlog(cfg, todo, videos, max_pending) > 0
     if changed:
         save(STATE, state)
-        tiktok.write_queue(videos, cfg["channel_name"], TIKTOK_QUEUE)
+        tiktok.write_queue(videos, cfg["channel_name"], TIKTOK_QUEUE, ai_voice=True)
     return changed
 
 
