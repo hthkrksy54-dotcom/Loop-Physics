@@ -1042,6 +1042,7 @@ class Territory(Sim):
         self.team_of = [k % n for k in range(n * per)]
         self.flips: dict[tuple[int, int], float] = {}
         self.count = [sum(row.count(t) for row in self.owner) for t in range(n)]
+        self.last_note = -1.0
 
     def _start_owner(self, r: int, c: int, n: int) -> int:
         G = self.G
@@ -1073,12 +1074,15 @@ class Territory(Sim):
             b.vx, b.vy = b.vx * speed / m, b.vy * speed / m
             b.x += b.vx * dt
             b.y += b.vy * dt
+            wall = False
             if b.x - b.rb < -h or b.x + b.rb > h:
                 b.x = max(-h + b.rb, min(h - b.rb, b.x))
                 b.vx = -b.vx
+                wall = True
             if b.y - b.rb < -h or b.y + b.rb > h:
                 b.y = max(-h + b.rb, min(h - b.rb, b.y))
                 b.vy = -b.vy
+                wall = True
             c0, c1 = int((b.x - b.rb + h) // cs), int((b.x + b.rb + h) // cs)
             r0, r1 = int((b.y - b.rb + h) // cs), int((b.y + b.rb + h) // cs)
             hit = None
@@ -1110,7 +1114,14 @@ class Territory(Sim):
                 if q < 0.12 or q > 0.88:
                     a += (0.12 - q if q < 0.5 else 0.88 - q) * math.pi / 2
                 b.vx, b.vy = math.cos(a) * speed, math.sin(a) * speed
-                self.events.append((self.t, "bounce", j))
+                # melody on a paint bounce only when it can sound; the rest (and the walls) clack
+                if self.t - self.last_note >= self.note_gap:
+                    self.last_note = self.t
+                    self.events.append((self.t, "bounce", j))
+                else:
+                    self.events.append((self.t, "clack", j))
+            elif wall:
+                self.events.append((self.t, "clack", j))
         if self.t >= self.T:
             self.finish()
 

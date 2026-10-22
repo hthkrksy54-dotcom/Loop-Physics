@@ -53,8 +53,7 @@ minutes at most): move the melody (`bounce`/`land`) to the hero events and the m
 `python -m ytauto concept-check <kind>` must pass. Commit the fix together with this list minus that line
 (`git commit -m "Loop Physics sound fix: <kind>"`), push, then build your new concepts.
 
-- `territory` (built in, `sims.Territory`): 51 % of the bounces fall silent – melody only on bounces that paint a
-  cell, wall bounces clack.
+(empty – all known sound fixes are done)
 
 ## 1. Find the idea (15 minutes at most)
 
