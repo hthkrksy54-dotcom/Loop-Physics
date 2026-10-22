@@ -8,7 +8,7 @@ Robert-Koch-Straße 9\
 Deutschland
 
 **Kontakt**\
-E-Mail: _folgt_
+E-Mail: samuel.moedl@gmx.de
 
 **Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV**\
 Samuel Mödl, Anschrift wie oben
