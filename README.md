@@ -29,6 +29,8 @@ It has a single user (the channel owner), no public sign-in and no viewer data.
 render the videos, authenticate with the owner's OAuth refresh tokens (stored encrypted) and publish to the
 owner's channels. See [docs/architecture.png](docs/architecture.png).
 
+**Impressum:** [IMPRESSUM.md](IMPRESSUM.md) – the hourly sync keeps its link at the end of every YouTube channel description (`ytauto/imprint.py`); Instagram and TikTok bios link to it by hand.
+
 ---
 
 # ytauto – autonome YouTube-Videos über Philosophie & Psychologie

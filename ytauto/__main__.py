@@ -401,6 +401,8 @@ def main(argv: list[str] | None = None) -> int:
         from . import econ
         econ.youtube_sync()  # Real Numbers: finish the episodes the owner uploaded by hand
         econ.post_due_reel()
+        from . import imprint
+        imprint.run()  # the Impressum link stays in every channel description
         return 0
 
     if args.cmd == "carousel":
