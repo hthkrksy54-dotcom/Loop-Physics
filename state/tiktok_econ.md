@@ -6,6 +6,19 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
+## 22.10. 03:52 UTC – Paying the minimum on $3,100? 15 years.
+
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261022-credit-card-minimum-trap)
+
+```text
+Paying the minimum on $3,100? 15 years.
+The typical American who carries a credit card balance owes about $3,100. At today's average rate of 21%, paying only the minimum takes 15 years and costs more in interest than the balance itself.
+💬 Do you pay your card in full every month – or carry a balance?
+Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
+Not financial advice.
+#creditcard #debt #personalfinance #learnontiktok
+```
+
 ## 21.10. 03:09 UTC – Under 35? The typical net worth: $33K
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@realnumbersdaily/video/7698969638889196832) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261021-net-worth-by-age-2025)
