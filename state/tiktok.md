@@ -8,17 +8,6 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 **Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for dramatic Halloween reveals (New Engen, Oct) – fits the golden orb shattering in orb_escape · Spooky Scary Skeletons – Andrew Gold: the evergreen Halloween meme sound, peaks in the last 10 days of October · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook · I'll Never Let You Go – Official Sound Studio: most-used TikTok sound overall (106 M videos, Oct 16) – calm piano for the Chladni plate loop · Halloween Theme – John Carpenter: creepy build-up for dark runs until Oct 31
 
-## 22.10. 10:41 UTC – What will the sound draw next?
-
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261022-chladni_plate-0)
-
-```text
-What will the sound draw next?
-Everything is simulated in 3D, nothing is animated.
-💬 Did you see the pattern coming?
-#cymatics #satisfying #oddlysatisfying #physics #simulation
-```
-
 ## 20.10. 10:41 UTC – Which colour gets 200 hits first?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-crown_race-0)
@@ -85,6 +74,17 @@ One ball, 22 spinning rings, one gap in each – it has to find every exit to br
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 22.10. 10:41 UTC – What will the sound draw next?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7699449713489218849) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261022-chladni_plate-0)
+
+```text
+What will the sound draw next?
+Everything is simulated in 3D, nothing is animated.
+💬 Did you see the pattern coming?
+#cymatics #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 22.10. 04:41 UTC – Can the ball escape 5 orbs of glass?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7699385206448360737) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261022-orb_escape-3)
@@ -132,19 +132,6 @@ Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/
 What's under the sheet?
 Guess each shape before its name appears; the last one rips the sheet. Everything is simulated in 3D, nothing is animated.
 💬 What did you think the last one was?
-#3d #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 21.10. 04:42 UTC – Every golden bounce adds a new ball
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7699056147138907425) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261021-split_trampoline-1)
-
-⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
-
-```text
-Every golden bounce adds a new ball
-A trampoline made of 1,296 touching spheres. Everything is simulated in 3D, nothing is animated.
-💬 Which song is this? 🎵 Write it in the comments!
 #3d #satisfying #oddlysatisfying #physics #simulation
 ```
 
