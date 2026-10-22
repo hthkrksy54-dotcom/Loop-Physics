@@ -76,7 +76,7 @@
         "comments": 0,
         "at": "2026-10-21T10:34+00:00"
       },
-      "yt_views": 4934,
+      "yt_views": 4940,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697235079638386710",
         "status": "PUBLISH_COMPLETE",
@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-21T10:34+00:00"
       },
-      "yt_views": 7628,
+      "yt_views": 7623,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-21T10:34+00:00"
       },
-      "yt_views": 13859,
+      "yt_views": 13861,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -648,7 +648,7 @@
       "instagram_id": "18030561041882795",
       "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/",
       "youtube_id": "3Qgx9BMIlXo",
-      "yt_views": 8614,
+      "yt_views": 8615,
       "stats": {
         "views": 2657,
         "reach": 2328,
@@ -776,7 +776,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697901343209573664"
       },
       "youtube_id": "gbOvNfhdn-g",
-      "yt_views": 1792,
+      "yt_views": 1798,
       "stats": {
         "views": 1644,
         "reach": 1373,
@@ -809,7 +809,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697979638068284704"
       },
       "youtube_id": "ZSdNVZtvCYY",
-      "yt_views": 1767,
+      "yt_views": 1774,
       "stats": {
         "views": 1498,
         "reach": 1288,
@@ -870,7 +870,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698238496632212769"
       },
       "youtube_id": "AA8_FfvhJ8M",
-      "yt_views": 1396,
+      "yt_views": 1401,
       "stats": {
         "views": 1564,
         "reach": 1412,
@@ -901,7 +901,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698238615138209056"
       },
       "youtube_id": "HJWprEDsCPo",
-      "yt_views": 1242,
+      "yt_views": 1248,
       "stats": {
         "views": 7647,
         "reach": 7091,
@@ -994,7 +994,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698572600271834400"
       },
       "youtube_id": "kXcnFg3p2OQ",
-      "yt_views": 4932,
+      "yt_views": 4982,
       "stats": {
         "views": 1285,
         "reach": 1093,
@@ -1059,7 +1059,7 @@
         "caption": "Which colour gets 200 hits first?\nFour balls race through a field of bumpers: every hit is a point and paints the bumper.\n💬 Which colour did you pick? 👑\n#whichcolorwins #satisfying #oddlysatisfying #physics #simulation"
       },
       "youtube_id": "28ieR1HFF_s",
-      "yt_views": 1161,
+      "yt_views": 1175,
       "stats": {
         "views": 1245,
         "reach": 1091,
@@ -1093,7 +1093,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698820769953959201"
       },
       "youtube_id": "dzLI0_uSjVI",
-      "yt_views": 2182,
+      "yt_views": 2227,
       "stats": {
         "views": 1259,
         "reach": 1093,
@@ -1126,7 +1126,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698969304812866849"
       },
       "youtube_id": "9df90hvRwfo",
-      "yt_views": 1284,
+      "yt_views": 1312,
       "stats": {
         "views": 2521,
         "reach": 2261,
@@ -1238,6 +1238,28 @@
         "publish_id": "v_inbox_file~v2.7699256342338586646",
         "status": "SEND_TO_USER_INBOX",
         "caption": "Can they merge into 2048?\nTwo balls with the same number merge into the next one – 16, 32, 64 … all the way to 2048. Then the portal closes and the final merge begins.\n💬 Which song is this? 🎵 Write it in the comments!\n#merge #satisfying #oddlysatisfying #physics #simulation"
+      }
+    },
+    {
+      "date": "2026-10-22T04:41:41+00:00",
+      "kind": "orb_escape",
+      "seed": 3,
+      "melody": "fur_elise",
+      "timbre": "pluck",
+      "title": "Can the ball escape 5 orbs of glass? – Can you name the song?",
+      "duration": 79.5,
+      "why": "new",
+      "quiz": true,
+      "tiktok_note": "Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.",
+      "concept": "A ball is trapped inside 5–6 nested glass orbs, each made of hundreds of touching spheres (3D). Every hit makes it faster, dents the orb and knocks beads out, which rain onto the platform – after enough hits (or through a hole) the orb shatters and the next, bigger one begins.",
+      "drive": "https://drive.google.com/drive/folders/1v5XTYTPJ5DaJD4L_YYAvFuGZ-dMv6Lpy",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261022-orb_escape-3",
+      "instagram_id": "18447623743130630",
+      "instagram_url": "https://www.instagram.com/reel/DeyKEYaFCnR/",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7699348448201934871",
+        "status": "SEND_TO_USER_INBOX",
+        "caption": "Can the ball escape 5 orbs of glass?\nA ball trapped inside nested orbs made of glossy beads. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#escape #satisfying #oddlysatisfying #physics #simulation"
       }
     }
   ]

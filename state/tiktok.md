@@ -6,7 +6,20 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
-**Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for dramatic Halloween reveals (New Engen, Oct 14) – fits the moment the trampoline frame gives up · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook ('you don't have to put one back') for the split trampoline · Spooky Scary Skeletons – Andrew Gold: the evergreen Halloween meme sound, peaks in the last 10 days of October · Halloween Theme – John Carpenter: the most-used spooky piano sound (209 M-view toddler clip), creepy build-up for dark runs · Spooky, quiet, scary atmosphere piano – Skittlegirl Sound: creepy piano backdrop for zombie/Halloween runs
+**Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for dramatic Halloween reveals (New Engen, Oct) – fits the golden orb shattering in orb_escape · Spooky Scary Skeletons – Andrew Gold: the evergreen Halloween meme sound, peaks in the last 10 days of October · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook · I'll Never Let You Go – Official Sound Studio: most-used TikTok sound overall (106 M videos, Oct 16) – calm piano for the Chladni plate loop · Halloween Theme – John Carpenter: creepy build-up for dark runs until Oct 31
+
+## 22.10. 04:41 UTC – Can the ball escape 5 orbs of glass?
+
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261022-orb_escape-3)
+
+⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
+
+```text
+Can the ball escape 5 orbs of glass?
+A ball trapped inside nested orbs made of glossy beads. Everything is simulated in 3D, nothing is animated.
+💬 Which song is this? 🎵 Write it in the comments!
+#escape #satisfying #oddlysatisfying #physics #simulation
+```
 
 ## 21.10. 22:41 UTC – Can they merge into 2048?
 
