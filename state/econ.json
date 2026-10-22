@@ -220,7 +220,10 @@
       "texts_set": true,
       "short_texts_set": "linked",
       "thumbnail_error": "thumbnail skipped (403): {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"The authenticated user doesn't have permissions to upload and set custom video thumbnails.\",\n    \"errors\": [\n      {\n        \"m",
-      "captions_set": true
+      "captions_set": true,
+      "instagram_id": "17951022567057149",
+      "instagram_url": "https://www.instagram.com/reel/DezZxgKAklf/",
+      "instagram_story_id": "17988436572075805"
     }
   ]
 }
