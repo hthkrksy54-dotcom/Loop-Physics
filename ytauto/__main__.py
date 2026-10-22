@@ -338,6 +338,7 @@ def main(argv: list[str] | None = None) -> int:
     ren.add_argument("--topic", required=True)
     ren.add_argument("--no-short", action="store_true")
     sub.add_parser("check")
+    sub.add_parser("stats", help="views, followers, likes and comments of all channels, per account and in total")
     sub.add_parser("sync", help="match manual YouTube uploads, fix Shorts, post Instagram Reels")
     car = sub.add_parser("carousel", help="post the next Instagram quote carousel")
     car.add_argument("--render-only", action="store_true")
@@ -388,6 +389,9 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.cmd == "check":
         return check.run(_load(CONFIG, {}))
+    if args.cmd == "stats":
+        from . import stats
+        return stats.run()
     if args.cmd == "sync":
         config, state = _load(CONFIG, {}), _load(STATE, {})
         changed = False

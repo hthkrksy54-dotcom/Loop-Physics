@@ -1,0 +1,29 @@
+name: Statistik
+
+# On demand: views, subscribers/followers, likes and comments of all YouTube and Instagram accounts, per account and
+# in total (job summary). Reads only – nothing is changed or stored.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Count
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN_EN: ${{ secrets.YT_REFRESH_TOKEN_EN }}
+          YT_REFRESH_TOKEN_ECON: ${{ secrets.YT_REFRESH_TOKEN_ECON }}
+          IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
+        run: python -m ytauto stats
