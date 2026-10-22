@@ -98,6 +98,9 @@ MELODIES = {
     "funeral_march": ("Funeral March – Chopin", [
         70, 70, 70, 70, 73, 72, 72, 70, 70, 69, 70,
         70, 70, 70, 70, 73, 72, 72, 70, 70, 69, 70]),
+    "sugar_plum": ("Dance of the Sugar Plum Fairy – Tchaikovsky", [
+        79, 76, 79, 78, 75, 76, 74, 74, 74, 73, 73, 73, 72, 72, 72, 71, 76, 72, 76, 71,
+        67, 64, 67, 66, 72, 71, 79, 79, 79, 78, 78, 78, 76, 76, 76, 75, 78, 76, 78, 75]),
 }
 TIMBRES = ["bell", "marimba", "pluck", "chip", "glass"]
 
