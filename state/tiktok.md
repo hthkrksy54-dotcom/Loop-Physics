@@ -8,32 +8,6 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 **Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for dramatic Halloween reveals (New Engen, Oct) – fits the golden orb shattering in orb_escape · Spooky Scary Skeletons – Andrew Gold: the evergreen Halloween meme sound, peaks in the last 10 days of October · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook · I'll Never Let You Go – Official Sound Studio: most-used TikTok sound overall (106 M videos, Oct 16) – calm piano for the Chladni plate loop · Halloween Theme – John Carpenter: creepy build-up for dark runs until Oct 31
 
-## 22.10. 04:41 UTC – Can the ball escape 5 orbs of glass?
-
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261022-orb_escape-3)
-
-⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
-
-```text
-Can the ball escape 5 orbs of glass?
-A ball trapped inside nested orbs made of glossy beads. Everything is simulated in 3D, nothing is animated.
-💬 Which song is this? 🎵 Write it in the comments!
-#escape #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 21.10. 22:41 UTC – Can they merge into 2048?
-
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261021-merge_2048-6)
-
-⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
-
-```text
-Can they merge into 2048?
-Two balls with the same number merge into the next one – 16, 32, 64 … all the way to 2048. Then the portal closes and the final merge begins.
-💬 Which song is this? 🎵 Write it in the comments!
-#merge #satisfying #oddlysatisfying #physics #simulation
-```
-
 ## 20.10. 10:41 UTC – Which colour gets 200 hits first?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-crown_race-0)
@@ -100,6 +74,32 @@ One ball, 22 spinning rings, one gap in each – it has to find every exit to br
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 22.10. 04:41 UTC – Can the ball escape 5 orbs of glass?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7699385206448360737) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261022-orb_escape-3)
+
+⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
+
+```text
+Can the ball escape 5 orbs of glass?
+A ball trapped inside nested orbs made of glossy beads. Everything is simulated in 3D, nothing is animated.
+💬 Which song is this? 🎵 Write it in the comments!
+#escape #satisfying #oddlysatisfying #physics #simulation
+```
+
+## 21.10. 22:41 UTC – Can they merge into 2048?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7699385130745449760) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261021-merge_2048-6)
+
+⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
+
+```text
+Can they merge into 2048?
+Two balls with the same number merge into the next one – 16, 32, 64 … all the way to 2048. Then the portal closes and the final merge begins.
+💬 Which song is this? 🎵 Write it in the comments!
+#merge #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 21.10. 16:42 UTC – Every ring adds a ball – Can they crack the core?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7699168124997881120) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261021-brick_core-7)
@@ -133,30 +133,6 @@ Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/
 ```text
 Every golden bounce adds a new ball
 A trampoline made of 1,296 touching spheres. Everything is simulated in 3D, nothing is animated.
-💬 Which song is this? 🎵 Write it in the comments!
-#3d #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 20.10. 22:41 UTC – Can the ball escape all 20 rings?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7698969304812866849) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-escape-30)
-
-```text
-Can the ball escape all 20 rings?
-One ball, 20 spinning rings, one gap in each – it has to find every exit to break free.
-💬 How many seconds did you guess?
-#ballescape #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 20.10. 16:42 UTC – Can the net hold the golden giant?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7698820769953959201) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-giant_net-1)
-
-⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
-
-```text
-Can the net hold the golden giant?
-Everything is simulated in 3D, nothing is animated.
 💬 Which song is this? 🎵 Write it in the comments!
 #3d #satisfying #oddlysatisfying #physics #simulation
 ```
