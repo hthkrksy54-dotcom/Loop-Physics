@@ -6,6 +6,18 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
+## 22.10. 03:51 UTC – What if everything you see is shadows?
+
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-allegory-of-the-cave)
+
+```text
+What if everything you see is shadows?
+Prisoners chained in a cave, watching shadows on a wall, convinced that the shadows are the whole of reality. Plato's allegory of the cave is almost 2,400 years old, and it may be more relevant today than ever.
+💬 What is one belief you held for years before you realised it was only a shadow?
+Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
+#Plato #Philosophy #AllegoryOfTheCave #psychology #learnontiktok
+```
+
 ## 21.10. 03:07 UTC – Why one criticism beats nine compliments
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7698969428767051040) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-negativity-bias)
