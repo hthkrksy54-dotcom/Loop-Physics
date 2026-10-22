@@ -62,6 +62,26 @@ def own_stats(cfg: dict, state: dict, limit: int = 72) -> list[dict]:
     return recs
 
 
+def followers(cfg: dict, state: dict, yt_token: str | None) -> None:
+    """Today's follower counts (Instagram, YouTube) in state["followers"] – which weeks win followers."""
+    snap = {"date": dt.datetime.now(dt.timezone.utc).date().isoformat()}
+    try:
+        if instagram.configured(cfg):
+            r = requests.get(f"{instagram.GRAPH}/me", timeout=30,
+                             params={"fields": "followers_count", "access_token": instagram.fresh_token(cfg)})
+            if r.ok and "followers_count" in r.json():
+                snap["instagram"] = int(r.json()["followers_count"])
+        if yt_token:
+            r = requests.get("https://www.googleapis.com/youtube/v3/channels", timeout=30,
+                             params={"part": "statistics", "mine": "true"}, headers={"Authorization": f"Bearer {yt_token}"})
+            if r.ok and r.json().get("items"):
+                snap["youtube"] = int(r.json()["items"][0]["statistics"].get("subscriberCount", 0))
+    except requests.RequestException as err:
+        print(f"  followers: {err}", flush=True)
+    if len(snap) > 1:
+        state["followers"] = [h for h in state.get("followers", []) if h["date"] != snap["date"]][-179:] + [snap]
+
+
 def youtube_trends(token: str, days: int = 7) -> list[dict]:
     """Most viewed satisfying Shorts of the last days (kept in memory only)."""
     h = {"Authorization": f"Bearer {token}"}
@@ -119,6 +139,8 @@ def run() -> dict:
 
     # 2) what goes viral on YouTube right now (aggregated only)
     token = simchannel._youtube_token(cfg)
+    followers(cfg, state, token)
+    simchannel.save(simchannel.STATE, state)
     trend = youtube_trends(token) if token else []
     total = sum(v["views"] for v in trend) or 1
     share = {k: sum(v["views"] for v in trend if k in _classify(v["text"])) / total for k in kinds}

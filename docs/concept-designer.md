@@ -144,7 +144,7 @@ Build it with the 3D toolkit `ytauto/sim3d.py`; `ytauto/concepts/giant_net.py` i
   the depth-sorted shaded spheres. Colour the sheet by depth with `GRADIENTS` / `lerp_col`.
 - The concept sets `full_frame = True` and paints the picture in `render(p)` (return a 1080×1920 RGB image); the
   Painter adds title, counter, credit and finale on top. Keep the scene between y ≈ 480 and 1460 on screen; put the
-  finale text up top (`p.big_text(..., cy=330)` in `draw_text`) and `cta_y` where the like & subscribe button does
+  finale text up top (`p.big_text(..., cy=330)` in `draw_text`) and `cta_y` where the follow button does
   not cover the action.
 - If the run length is fixed by the seed (the finale starts at a scheduled time), add `planned_end(seed)` – the
   seed search then skips the slow physics for seeds that cannot fit.
@@ -194,6 +194,27 @@ per second.
 - Evaluation: `python -m ytauto concepts` prints "experiment fast with ×… vs without ×…". Once at least 4 fast
   concepts have numbers: if fast is ≥ 1.2× the rest, make both nightly concepts fast; if fast is ≤ 0.8×, build a
   fast one only every other night; in between keep one fast and one free. Quote the line in your report.
+
+### Follow reasons: turn viewers into followers (since 22 October 2026)
+
+The bottleneck is no longer views: on 22 Oct Instagram had 125,000 views on 42 Reels but only 13 followers,
+12 shares and 2 comments (likes 0.46 % of views). People watch a satisfying clip and scroll on – nothing gives them a
+reason to follow. Every night, one of the two concepts tries a reason to follow (tag it with `experiment`):
+
+- **`series` (start with this):** a numbered format that continues, with a difficulty that rises every episode
+  and an on-screen teaser of the next one – e.g. built on escape, our best format: "ATTEMPT #7", one more ring or a
+  faster ball every episode, and after the finale "NEXT: 14 RINGS" above the follow button. The episode number is
+  the number of posts of that kind so far + 1 (from state), so it counts up by itself. A series is something people
+  follow; a single clip is not.
+- **`join` (later, bigger):** viewers comment a name and it rides on a ball in the next race. YouTube comments can
+  be read with the Loop Physics token in the workflows (`commentThreads.list`); Instagram comments need the
+  `instagram_business_manage_comments` permission – check it works before building on it. Only letters/digits,
+  at most 12 characters, filter offensive words, never show anything else from a comment.
+- The on-screen button says "FOLLOW FOR MORE" (Instagram and TikTok bring most views, and "follow" is their word);
+  Instagram captions carry a send prompt (sends per reach is what Instagram's reach to new people rides on).
+
+Measure with the "followers" line of `python -m ytauto concepts` (daily counts from the trend check: followers now
+and gained in the last 7 days) next to the experiment lines, and quote both in your report.
 
 ### Experiments and learnings (every run)
 

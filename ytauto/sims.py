@@ -223,7 +223,7 @@ class Sim:
     finale_punch = 1.0   # screen shake + flash at the finale (0 = none)
     tempo = ""           # "fast" = many/fast balls and several audible hits per second (tempo experiment)
     full_frame = False   # 3D concepts (sim3d) paint the whole picture in render(p) instead of draw(p)
-    cta_y: float | None = None  # screen y of the like & subscribe button (default: below the finale text)
+    cta_y: float | None = None  # screen y of the follow button (default: below the finale text)
     min_video = MIN_VIDEO        # shortest video; a short-format experiment sets less (and its own run_ranges)
     run_ranges: list[tuple[float, float]] | None = None  # run lengths (s) the seed search aims for
     experiment = ""      # short tag of what this concept tries (evaluated in `python -m ytauto concepts`)
@@ -2006,10 +2006,10 @@ class Painter:
         return img
 
     def cta(self, img: Image.Image, k: float) -> Image.Image:
-        """After the finale: the picture dims a little and a red "LIKE & SUBSCRIBE" button pops in below the finale
+        """After the finale: the picture dims a little and a red "FOLLOW FOR MORE" button pops in below the finale
         text (inside the frame the platforms keep clear of captions and buttons). k runs 0 -> 1 over the pop-in."""
         e = 1 - (1 - min(1.0, max(0.0, k))) ** 3
-        label = "LIKE & SUBSCRIBE"
+        label = "FOLLOW FOR MORE"  # Instagram and TikTok bring most views, and "follow" is their word
         w, h = int(self.f_cta.getlength(label) + 120), 124
         pill = Image.new("RGBA", (w, h), (0, 0, 0, 0))
         pd = ImageDraw.Draw(pill)
@@ -2145,7 +2145,7 @@ def render(kind: str, seed: int, out: Path, melody: str | None = None, handle: s
     ]
     proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     dt, shown = 1 / (FPS * SUBSTEPS), 0.0
-    cta_from = warp.video(probe.end) + 0.9  # the finale text stands alone for a moment, then like & subscribe
+    cta_from = warp.video(probe.end) + 0.9  # the finale text stands alone for a moment, then the follow button
     for f in range(frames):
         target = warp.sim((f + 1) / FPS)
         while sim.t < target - dt / 2:

@@ -430,6 +430,20 @@ def song_quiz(kind: str, state: dict) -> bool:
     return random.Random(f"quiz-{len(state.get('videos', []))}").random() < share
 
 
+def follower_report(state: dict) -> str:
+    """Followers now and gained over the last 7 days (daily counts from the trend check)."""
+    hist = state.get("followers") or []
+    parts = []
+    for key, name in (("instagram", "Instagram"), ("youtube", "YouTube")):
+        pts = [h for h in hist if h.get(key) is not None]
+        if not pts:
+            continue
+        week = [h for h in pts if h["date"] >= (dt.date.fromisoformat(pts[-1]["date"]) - dt.timedelta(days=7)).isoformat()]
+        days = (dt.date.fromisoformat(week[-1]["date"]) - dt.date.fromisoformat(week[0]["date"])).days
+        parts.append(f"{name} {pts[-1][key]} ({week[-1][key] - week[0][key]:+d} in {days} d)")
+    return "followers    " + (" · ".join(parts) if parts else "– (daily counts start with the next trend check)")
+
+
 def quiz_report(state: dict) -> str:
     """Song quiz vs not (videos with melody since the start of the test): views factor and comments per post."""
     base, _ = performance(state)
@@ -508,7 +522,9 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict, quiz: bool = False) -
         title,
         body,
         f"💬 {question}",
-        f"Follow {cfg['handle']} – four new simulations every day."
+        ("📩 Send this to someone who'll know the song." if quiz
+         else "📩 Send this to someone who can't stop watching these."),
+        f"Follow {cfg['handle']} – a new simulation every few hours."
         + (f"\n▶ YouTube: {cfg['youtube']['channel_url']}" if cfg["youtube"].get("channel_url") else ""),
         (tags_line + (f" #{composer.lower()}" if composer else "")).strip(),
     ])

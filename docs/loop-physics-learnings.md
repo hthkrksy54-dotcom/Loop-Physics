@@ -3,6 +3,10 @@
 The concept designer reads this before every run and updates it at the end (newest first, at most ~20 points,
 remove what is outdated). Numbers: views factor vs the channel median (`python -m ytauto concepts`).
 
+- 2026-10-22 · **Followers are the bottleneck, not views**: Instagram 125,000 views → 13 followers, 12 shares,
+  2 comments. Changed: the end button says "FOLLOW FOR MORE" (was "LIKE & SUBSCRIBE"), Instagram captions ask to
+  send the clip on, daily follower counts in the "followers" line. Next: the `series` experiment (numbered episodes
+  that get harder, teaser of the next one) – section "Follow reasons" in the designer brief.
 - 2026-10-22 · **3D lags so far (×0.50 over 3 posts; fast ×0.73 over 2)** – but those three were busy net/sheet
   scenes without our winning formula. Tonight's answer: put the proven formula *into* 3D instead of new mechanics
   only – orb_escape is escape/stringart (one ball, faster every hit, breaks out layer by layer) as nested bead orbs.
