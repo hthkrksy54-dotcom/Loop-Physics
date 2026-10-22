@@ -805,10 +805,13 @@ def youtube_polish(apply: bool = False) -> None:
         recent = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=4)
         free = [r for r in records if not r.get("youtube_id") and abs(r.get("duration", 0) - secs) <= 1.5
                 and dt.datetime.fromisoformat(r["date"]) > recent]
+        near = sorted(free, key=lambda r: abs(r.get("duration", 0) - secs))
         rec = rec or next((r for r in free if f"{r['kind']}-{r['seed']}" in fname), None) \
             or next((r for r in free if r["kind"] in fname), None) \
             or next((r for r in free if _norm(r["title"]) == title), None) \
-            or (free[0] if len(free) == 1 else None)
+            or (free[0] if len(free) == 1 else None) \
+            or (near[0] if len(near) > 1 and abs(near[0]["duration"] - secs) < 0.8  # clearly the closest length
+                and abs(near[1]["duration"] - secs) - abs(near[0]["duration"] - secs) >= 0.5 else None)
         print(f"  {v['id']} {secs:3d}s views={v['statistics'].get('viewCount', 0):>5} file={fname[:38]!r:40} "
               f"title={v['snippet']['title'][:45]!r} -> {rec['kind'] + '-' + str(rec['seed']) if rec else 'NO MATCH'}",
               flush=True)
