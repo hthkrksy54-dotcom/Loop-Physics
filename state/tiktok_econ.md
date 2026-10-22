@@ -3,12 +3,13 @@
 1. Beschreibung unten kopieren (Kopier-Symbol rechts im Kasten).
 2. In TikTok auf die Benachrichtigung tippen (oder Profil → Posteingang/Entwürfe) → **Weiter**.
 3. Beschreibung einfügen, nach Wunsch einen angesagten Sound wählen → **Posten**.
+   Vorher unter **Mehr Optionen** „KI-generierte Inhalte“ einschalten – die Erzählstimme ist synthetisch.
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
 ## 22.10. 03:52 UTC – Paying the minimum on $3,100? 15 years.
 
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261022-credit-card-minimum-trap)
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@realnumbersdaily/video/7699482090894609696) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261022-credit-card-minimum-trap)
 
 ```text
 Paying the minimum on $3,100? 15 years.
@@ -69,18 +70,5 @@ Alex saves for 10 years and stops. Sam saves three times as much for 30 years.
 Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
 Not financial advice.
 #money #compoundinterest #economics #personalfinance #learnontiktok
-```
-
-## 17.10. 11:40 UTC – 97% of China was poor. Then this.
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@realnumbersdaily/video/7697643126982184225) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261017-why-china-grew-so-fast)
-
-```text
-97% of China was poor. Then this.
-In 1981, 97% of people in China lived on under $3 a day. By 2019, practically none did.
-💬 Could any country pull off a miracle like this again?
-Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
-Not financial advice.
-#china #economics #money #learnontiktok
 ```
 
