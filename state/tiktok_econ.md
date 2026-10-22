@@ -8,7 +8,7 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 ## 22.10. 03:52 UTC – Paying the minimum on $3,100? 15 years.
 
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261022-credit-card-minimum-trap)
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261022-credit-card-minimum-trap)
 
 ```text
 Paying the minimum on $3,100? 15 years.
