@@ -8,7 +8,7 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 ## 22.10. 03:51 UTC – What if everything you see is shadows?
 
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-allegory-of-the-cave)
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7699385518861176097) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-allegory-of-the-cave)
 
 ```text
 What if everything you see is shadows?
@@ -64,17 +64,5 @@ Amor fati – the love of fate. Nietzsche wrote it as a New Year's wish in 1882,
 💬 What is something you once wished had gone differently, but now would not change?
 Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
 #Philosophy #AmorFati #Nietzsche #psychology #learnontiktok
-```
-
-## 17.10. 07:13 UTC – Why you feel watched – and almost nobody is
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7697642328172924193) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-spotlight-effect)
-
-```text
-Why you feel watched – and almost nobody is
-Why do we feel so watched, judged and exposed – when most people barely notice us?
-💬 What is something you were embarrassed about that nobody else seems to remember?
-Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
-#Psychology #SpotlightEffect #Philosophy #learnontiktok
 ```
 

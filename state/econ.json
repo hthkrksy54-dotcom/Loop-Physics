@@ -213,7 +213,13 @@
         "publish_id": "v_inbox_file~v2.7699334508096702486",
         "status": "SEND_TO_USER_INBOX",
         "caption": "Paying the minimum on $3,100? 15 years.\nThe typical American who carries a credit card balance owes about $3,100. At today's average rate of 21%, paying only the minimum takes 15 years and costs more in interest than the balance itself.\n💬 Do you pay your card in full every month – or carry a balance?\nFull breakdown on YouTube: Real Numbers (@realnumbersdaily)\nNot financial advice.\n#creditcard #debt #personalfinance #learnontiktok"
-      }
+      },
+      "youtube_id": "vt-JEISF5s8",
+      "youtube_short_id": "34g6pipGLr4",
+      "texts_set": true,
+      "short_texts_set": "linked",
+      "thumbnail_error": "thumbnail skipped (403): {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"The authenticated user doesn't have permissions to upload and set custom video thumbnails.\",\n    \"errors\": [\n      {\n        \"m",
+      "captions_set": true
     }
   ]
 }
