@@ -7,6 +7,19 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
+## 23.10. 03:05 UTC – $100 in 1928 → $1.16 million
+
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261023-stock-market-crashes-recoveries)
+
+```text
+$100 in 1928 → $1.16 million
+$100 put into the 500 biggest US companies in 1928 grew to about $1.16 million by 2025 – through the Great Depression, 1974, 2008 and 2022.
+💬 Which crash have you lived through with money in the market?
+Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
+Not financial advice.
+#stockmarket #investing #money #personalfinance #learnontiktok
+```
+
 ## 22.10. 03:52 UTC – Paying the minimum on $3,100? 15 years.
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@realnumbersdaily/video/7699482090894609696) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261022-credit-card-minimum-trap)
