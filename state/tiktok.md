@@ -8,17 +8,6 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 **Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for Halloween reveals (New Engen, Oct) – perfect for the pumpkin_carve light-up · Spooky Scary Skeletons – Andrew Gold: evergreen Halloween meme sound, peaks the last week of October · Halloween Theme – John Carpenter: creepy build-up for dark runs until Oct 31 · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook · Welcome to the Black Parade – My Chemical Romance: 20th anniversary on Oct 23, a nostalgia wave is likely – fits tower_drop's fire mode
 
-## 23.10. 17:01 UTC – 15 pendulums, one perfect moment
-
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261023-pendulum-6)
-
-```text
-15 pendulums, one perfect moment
-15 pendulums, each swinging a little faster than the one before – waves and snakes appear, until they all line up again.
-💬 Did you see the snake?
-#pendulumwave #satisfying #oddlysatisfying #physics #simulation
-```
-
 ## 20.10. 10:41 UTC – Which colour gets 200 hits first?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-crown_race-0)
@@ -85,6 +74,17 @@ One ball, 22 spinning rings, one gap in each – it has to find every exit to br
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 23.10. 17:01 UTC – 15 pendulums, one perfect moment
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7699936272621653280) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261023-pendulum-6)
+
+```text
+15 pendulums, one perfect moment
+15 pendulums, each swinging a little faster than the one before – waves and snakes appear, until they all line up again.
+💬 Did you see the snake?
+#pendulumwave #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 23.10. 10:41 UTC – What will the hits carve into it?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7699841381614767393) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261023-pumpkin_carve-0)
@@ -129,16 +129,5 @@ Can the ball escape all 16 rings?
 One ball, 16 spinning rings, one gap in each – it has to find every exit to break free.
 💬 Which ring was the hardest one?
 #ballescape #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 22.10. 10:41 UTC – What will the sound draw next?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7699449713489218849) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261022-chladni_plate-0)
-
-```text
-What will the sound draw next?
-Everything is simulated in 3D, nothing is animated.
-💬 Did you see the pattern coming?
-#cymatics #satisfying #oddlysatisfying #physics #simulation
 ```
 
