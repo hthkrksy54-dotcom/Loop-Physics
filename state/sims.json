@@ -996,7 +996,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698572600271834400"
       },
       "youtube_id": "kXcnFg3p2OQ",
-      "yt_views": 5254,
+      "yt_views": 5258,
       "stats": {
         "views": 1286,
         "reach": 1095,
@@ -1095,7 +1095,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698820769953959201"
       },
       "youtube_id": "dzLI0_uSjVI",
-      "yt_views": 3047,
+      "yt_views": 3064,
       "stats": {
         "views": 1270,
         "reach": 1102,
@@ -1128,7 +1128,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698969304812866849"
       },
       "youtube_id": "9df90hvRwfo",
-      "yt_views": 1700,
+      "yt_views": 1792,
       "stats": {
         "views": 7030,
         "reach": 6578,
@@ -1228,7 +1228,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699168124997881120"
       },
       "youtube_id": "CwQDDCxYlNI",
-      "yt_views": 1174,
+      "yt_views": 1179,
       "stats": {
         "views": 1559,
         "reach": 1382,
@@ -1361,7 +1361,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699539842287389985"
       },
       "youtube_id": "k9fsayyKbKE",
-      "yt_views": 1235,
+      "yt_views": 1275,
       "stats": {
         "views": 1347,
         "reach": 1220,
@@ -1435,6 +1435,28 @@
         "likes": 13,
         "comments": 0,
         "at": "2026-10-23T10:30+00:00"
+      }
+    },
+    {
+      "date": "2026-10-23T10:41:56+00:00",
+      "kind": "pumpkin_carve",
+      "seed": 0,
+      "melody": "morning_mood",
+      "timbre": "chip",
+      "title": "What will the hits carve into it? – Feel the bounce",
+      "duration": 68.3,
+      "why": "new",
+      "quiz": false,
+      "concept": "A giant pumpkin made of 4,000 glossy orange beads (3D) is carved by steel balls: every hit knocks a few beads out of its face – left eye, right eye, nose, then the mouth, faster and faster – the beads tumble onto the platform and a warm light inside grows with every hole.",
+      "drive": "https://drive.google.com/drive/folders/1Oimzmo8ntvm8_bnUYbspFVaCDIgfw1nf",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261023-pumpkin_carve-0",
+      "instagram_id": "17997507122993243",
+      "instagram_url": "https://www.instagram.com/reel/De1YCvPDsrg/",
+      "instagram_story_id": "18121409335946411",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7699812965579032599",
+        "status": "SEND_TO_USER_INBOX",
+        "caption": "What will the hits carve into it?\nA pumpkin made of 4,000 glossy beads. Everything is simulated in 3D, nothing is animated.\n💬 Should the next pumpkin be scary or cute?\n#halloween #satisfying #oddlysatisfying #physics #simulation"
       }
     }
   ],

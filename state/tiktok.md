@@ -8,6 +8,17 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 **Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for Halloween reveals (New Engen, Oct) – perfect for the pumpkin_carve light-up · Spooky Scary Skeletons – Andrew Gold: evergreen Halloween meme sound, peaks the last week of October · Halloween Theme – John Carpenter: creepy build-up for dark runs until Oct 31 · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook · Welcome to the Black Parade – My Chemical Romance: 20th anniversary on Oct 23, a nostalgia wave is likely – fits tower_drop's fire mode
 
+## 23.10. 10:41 UTC – What will the hits carve into it?
+
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261023-pumpkin_carve-0)
+
+```text
+What will the hits carve into it?
+A pumpkin made of 4,000 glossy beads. Everything is simulated in 3D, nothing is animated.
+💬 Should the next pumpkin be scary or cute?
+#halloween #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 20.10. 10:41 UTC – Which colour gets 200 hits first?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-crown_race-0)
