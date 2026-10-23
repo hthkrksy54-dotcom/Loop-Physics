@@ -3,8 +3,21 @@
 1. Beschreibung unten kopieren (Kopier-Symbol rechts im Kasten).
 2. In TikTok auf die Benachrichtigung tippen (oder Profil → Posteingang/Entwürfe) → **Weiter**.
 3. Beschreibung einfügen, nach Wunsch einen angesagten Sound wählen → **Posten**.
+   Vorher unter **Mehr Optionen** „KI-generierte Inhalte“ einschalten – die Erzählstimme ist synthetisch.
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
+
+## 23.10. 03:09 UTC – Why do some hours vanish in minutes?
+
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-flow)
+
+```text
+Why do some hours vanish in minutes?
+Some hours vanish in what feels like minutes. You are absorbed, focused, and strangely calm.
+💬 When was the last time you completely lost track of time, and what were you doing?
+Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
+#Psychology #Flow #Philosophy #learnontiktok
+```
 
 ## 22.10. 03:51 UTC – What if everything you see is shadows?
 
