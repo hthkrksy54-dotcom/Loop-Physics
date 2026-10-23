@@ -942,7 +942,7 @@
         "at": "2026-10-23T10:30+00:00"
       },
       "youtube_id": "ZfGqvbJNXiM",
-      "yt_views": 513
+      "yt_views": 533
     },
     {
       "date": "2026-10-19T16:41:42+00:00",
@@ -996,7 +996,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698572600271834400"
       },
       "youtube_id": "kXcnFg3p2OQ",
-      "yt_views": 5271,
+      "yt_views": 5272,
       "stats": {
         "views": 1286,
         "reach": 1095,
@@ -1095,7 +1095,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698820769953959201"
       },
       "youtube_id": "dzLI0_uSjVI",
-      "yt_views": 3200,
+      "yt_views": 3246,
       "stats": {
         "views": 1270,
         "reach": 1102,
@@ -1171,7 +1171,7 @@
         "at": "2026-10-23T10:30+00:00"
       },
       "youtube_id": "p-QSX4ORvRM",
-      "yt_views": 896
+      "yt_views": 911
     },
     {
       "date": "2026-10-21T10:42:07+00:00",
@@ -1230,7 +1230,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699168124997881120"
       },
       "youtube_id": "CwQDDCxYlNI",
-      "yt_views": 1239,
+      "yt_views": 1244,
       "stats": {
         "views": 1559,
         "reach": 1382,
@@ -1265,7 +1265,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699385130745449760"
       },
       "youtube_id": "r_9L1c_gQ5w",
-      "yt_views": 118,
+      "yt_views": 132,
       "stats": {
         "views": 1561,
         "reach": 1277,
@@ -1363,7 +1363,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699539842287389985"
       },
       "youtube_id": "k9fsayyKbKE",
-      "yt_views": 1451,
+      "yt_views": 1469,
       "stats": {
         "views": 1347,
         "reach": 1220,
@@ -1428,7 +1428,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699744856498801952"
       },
       "youtube_id": "kpj9MC6F2n0",
-      "yt_views": 1026,
+      "yt_views": 1047,
       "stats": {
         "views": 4968,
         "reach": 4110,
@@ -1460,6 +1460,26 @@
         "status": "PUBLISH_COMPLETE",
         "caption": "What will the hits carve into it?\nA pumpkin made of 4,000 glossy beads. Everything is simulated in 3D, nothing is animated.\n💬 Should the next pumpkin be scary or cute?\n#halloween #satisfying #oddlysatisfying #physics #simulation",
         "url": "https://www.tiktok.com/@loop_physics/video/7699841381614767393"
+      }
+    },
+    {
+      "date": "2026-10-23T17:01:11+00:00",
+      "kind": "pendulum",
+      "seed": 6,
+      "melody": "canon",
+      "timbre": "marimba",
+      "title": "15 pendulums, one perfect moment",
+      "duration": 78.7,
+      "why": "rotation",
+      "quiz": false,
+      "drive": "https://drive.google.com/drive/folders/1XFSqqMaRVBtIwrtYFkikdDu4XdNwZ8vO",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261023-pendulum-6",
+      "instagram_id": "18132771250821999",
+      "instagram_url": "https://www.instagram.com/reel/De2D41aE9Fb/",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7699911736321837078",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "15 pendulums, one perfect moment\n15 pendulums, each swinging a little faster than the one before – waves and snakes appear, until they all line up again.\n💬 Did you see the snake?\n#pendulumwave #satisfying #oddlysatisfying #physics #simulation"
       }
     }
   ],
