@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-22T10:38+00:00"
       },
-      "yt_views": 7684,
+      "yt_views": 7685,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -249,7 +249,7 @@
         "comments": 0,
         "at": "2026-10-22T10:38+00:00"
       },
-      "yt_views": 64,
+      "yt_views": 65,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233367154608150",
         "status": "SEND_TO_USER_INBOX",
@@ -277,7 +277,7 @@
         "comments": 0,
         "at": "2026-10-22T10:38+00:00"
       },
-      "yt_views": 1350,
+      "yt_views": 1351,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697233859481487382",
         "status": "SEND_TO_USER_INBOX",
@@ -776,7 +776,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697901343209573664"
       },
       "youtube_id": "gbOvNfhdn-g",
-      "yt_views": 1807,
+      "yt_views": 1809,
       "stats": {
         "views": 1644,
         "reach": 1373,
@@ -809,7 +809,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697979638068284704"
       },
       "youtube_id": "ZSdNVZtvCYY",
-      "yt_views": 1795,
+      "yt_views": 1798,
       "stats": {
         "views": 1498,
         "reach": 1288,
@@ -870,7 +870,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698238496632212769"
       },
       "youtube_id": "AA8_FfvhJ8M",
-      "yt_views": 1467,
+      "yt_views": 1477,
       "stats": {
         "views": 1567,
         "reach": 1415,
@@ -901,7 +901,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698238615138209056"
       },
       "youtube_id": "HJWprEDsCPo",
-      "yt_views": 1299,
+      "yt_views": 1301,
       "stats": {
         "views": 7692,
         "reach": 7168,
@@ -994,7 +994,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698572600271834400"
       },
       "youtube_id": "kXcnFg3p2OQ",
-      "yt_views": 5252,
+      "yt_views": 5251,
       "stats": {
         "views": 1285,
         "reach": 1093,
@@ -1059,7 +1059,7 @@
         "caption": "Which colour gets 200 hits first?\nFour balls race through a field of bumpers: every hit is a point and paints the bumper.\n💬 Which colour did you pick? 👑\n#whichcolorwins #satisfying #oddlysatisfying #physics #simulation"
       },
       "youtube_id": "28ieR1HFF_s",
-      "yt_views": 1244,
+      "yt_views": 1249,
       "stats": {
         "views": 1250,
         "reach": 1098,
@@ -1093,7 +1093,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698820769953959201"
       },
       "youtube_id": "dzLI0_uSjVI",
-      "yt_views": 2912,
+      "yt_views": 2933,
       "stats": {
         "views": 1268,
         "reach": 1102,
@@ -1126,7 +1126,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698969304812866849"
       },
       "youtube_id": "9df90hvRwfo",
-      "yt_views": 1612,
+      "yt_views": 1646,
       "stats": {
         "views": 5836,
         "reach": 5443,
@@ -1192,7 +1192,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699120827538754849"
       },
       "youtube_id": "k4sUyvitAjk",
-      "yt_views": 1116,
+      "yt_views": 1118,
       "stats": {
         "views": 1499,
         "reach": 1380,
@@ -1261,7 +1261,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699385130745449760"
       },
       "youtube_id": "r_9L1c_gQ5w",
-      "yt_views": 58,
+      "yt_views": 69,
       "stats": {
         "views": 1519,
         "reach": 1245,
@@ -1295,7 +1295,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699385206448360737"
       },
       "youtube_id": "Sp_bThOdgcU",
-      "yt_views": 1341,
+      "yt_views": 1342,
       "stats": {
         "views": 1229,
         "reach": 1130,
@@ -1350,7 +1350,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699539842287389985"
       },
       "youtube_id": "k9fsayyKbKE",
-      "yt_views": 997
+      "yt_views": 1048
     },
     {
       "date": "2026-10-22T22:41:50+00:00",
@@ -1371,6 +1371,28 @@
         "publish_id": "v_inbox_file~v2.7699627490179876886",
         "status": "SEND_TO_USER_INBOX",
         "caption": "Every bounce makes the ball bigger\nThe ball gets a little bigger with every bounce – until there is no room left in the circle.\n💬 At what percent did you start holding your breath?\n#bouncingball #satisfying #oddlysatisfying #physics #simulation"
+      }
+    },
+    {
+      "date": "2026-10-23T04:52:45+00:00",
+      "kind": "tower_drop",
+      "seed": 0,
+      "melody": "carol_bells",
+      "timbre": "bell",
+      "title": "Can the ball fall through 100 floors? – Can you name the song?",
+      "duration": 71.4,
+      "why": "new",
+      "quiz": true,
+      "tiktok_note": "Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.",
+      "concept": "A ball bounces down a spinning tower of 100+ floors, each a disc of hundreds of glossy beads (3D) with one gap: it drops through when the gap spins under it and the floor bursts into beads. Every ten floors it gets faster; the last 12 floors are smashed in FIRE MODE. A numbered series: TOWER #N, five floors more every episode, the finale teases the next tower.",
+      "drive": "https://drive.google.com/drive/folders/1Av5P66KKB14aMrGuU4RKm30ieGtmYQkT",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261023-tower_drop-0",
+      "instagram_id": "18066814532783743",
+      "instagram_url": "https://www.instagram.com/reel/De0wUSgHLDk/",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7699723597580961814",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "Can the ball fall through 100 floors?\nTower #1: a ball bounces down a spinning tower of 100 floors made of glossy beads. Every episode the tower gets five floors taller. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#ball #satisfying #oddlysatisfying #physics #simulation"
       }
     }
   ]

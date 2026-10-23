@@ -6,7 +6,20 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
-**Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for dramatic Halloween reveals (New Engen, Oct) – fits the golden orb shattering in orb_escape · Spooky Scary Skeletons – Andrew Gold: the evergreen Halloween meme sound, peaks in the last 10 days of October · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook · I'll Never Let You Go – Official Sound Studio: most-used TikTok sound overall (106 M videos, Oct 16) – calm piano for the Chladni plate loop · Halloween Theme – John Carpenter: creepy build-up for dark runs until Oct 31
+**Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for Halloween reveals (New Engen, Oct) – perfect for the pumpkin_carve light-up · Spooky Scary Skeletons – Andrew Gold: evergreen Halloween meme sound, peaks the last week of October · Halloween Theme – John Carpenter: creepy build-up for dark runs until Oct 31 · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook · Welcome to the Black Parade – My Chemical Romance: 20th anniversary on Oct 23, a nostalgia wave is likely – fits tower_drop's fire mode
+
+## 23.10. 04:52 UTC – Can the ball fall through 100 floors?
+
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261023-tower_drop-0)
+
+⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
+
+```text
+Can the ball fall through 100 floors?
+Tower #1: a ball bounces down a spinning tower of 100 floors made of glossy beads. Every episode the tower gets five floors taller. Everything is simulated in 3D, nothing is animated.
+💬 Which song is this? 🎵 Write it in the comments!
+#ball #satisfying #oddlysatisfying #physics #simulation
+```
 
 ## 22.10. 22:41 UTC – Every bounce makes the ball bigger
 
