@@ -9,7 +9,7 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 ## 23.10. 03:05 UTC – $100 in 1928 → $1.16 million
 
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261023-stock-market-crashes-recoveries)
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261023-stock-market-crashes-recoveries)
 
 ```text
 $100 in 1928 → $1.16 million
