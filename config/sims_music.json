@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22",
+  "updated": "2026-10-23",
   "boost": {
     "fur_elise": 1.5,
     "toccata": 1.8,
@@ -18,12 +18,12 @@
     "sugar_plum": "2027-01-06"
   },
   "tiktok_sounds": [
-    "Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for dramatic Halloween reveals (New Engen, Oct) – fits the golden orb shattering in orb_escape",
-    "Spooky Scary Skeletons – Andrew Gold: the evergreen Halloween meme sound, peaks in the last 10 days of October",
+    "Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for Halloween reveals (New Engen, Oct) – perfect for the pumpkin_carve light-up",
+    "Spooky Scary Skeletons – Andrew Gold: evergreen Halloween meme sound, peaks the last week of October",
+    "Halloween Theme – John Carpenter: creepy build-up for dark runs until Oct 31",
     "Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook",
-    "I'll Never Let You Go – Official Sound Studio: most-used TikTok sound overall (106 M videos, Oct 16) – calm piano for the Chladni plate loop",
-    "Halloween Theme – John Carpenter: creepy build-up for dark runs until Oct 31"
+    "Welcome to the Black Parade – My Chemical Romance: 20th anniversary on Oct 23, a nostalgia wave is likely – fits tower_drop's fire mode"
   ],
-  "notes": "Own lift decides: Twinkle ×3.8 (boost 1.6), Morning Mood ×2.3 (1.3), Moonlight ×2.1, Für Elise ×1.7. Halloween until Nov 1: Toccata 1.8 + Funeral March 1.4; Mountain King neutral (own lift ×0.9). New 22 Oct: Sugar Plum Fairy (Tchaikovsky, viral every Nov–Dec, great for the song quiz) at 1.5 until Jan 6; Carol of the Bells neutral – raise from mid-November.",
+  "notes": "Own lift decides: Twinkle ×3.8 (1.6), Morning Mood ×2.3 (1.3), Moonlight ×1.7, Für Elise ×1.5. Halloween until Nov 1: Toccata 1.8 + Funeral March 1.4 (pumpkin_carve week); Mountain King neutral (own lift ×1.0). Sugar Plum 1.5 until Jan 6. Danse Macabre wanted but not added: no note-by-note public-domain source could be verified (23 Oct).",
   "song_quiz_share": 0.5
 }
