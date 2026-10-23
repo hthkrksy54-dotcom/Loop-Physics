@@ -8,30 +8,6 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 **Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for Halloween reveals (New Engen, Oct) – perfect for the pumpkin_carve light-up · Spooky Scary Skeletons – Andrew Gold: evergreen Halloween meme sound, peaks the last week of October · Halloween Theme – John Carpenter: creepy build-up for dark runs until Oct 31 · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook · Welcome to the Black Parade – My Chemical Romance: 20th anniversary on Oct 23, a nostalgia wave is likely – fits tower_drop's fire mode
 
-## 23.10. 04:52 UTC – Can the ball fall through 100 floors?
-
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261023-tower_drop-0)
-
-⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
-
-```text
-Can the ball fall through 100 floors?
-Tower #1: a ball bounces down a spinning tower of 100 floors made of glossy beads. Every episode the tower gets five floors taller. Everything is simulated in 3D, nothing is animated.
-💬 Which song is this? 🎵 Write it in the comments!
-#ball #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 22.10. 22:41 UTC – Every bounce makes the ball bigger
-
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261022-grow-1)
-
-```text
-Every bounce makes the ball bigger
-The ball gets a little bigger with every bounce – until there is no room left in the circle.
-💬 At what percent did you start holding your breath?
-#bouncingball #satisfying #oddlysatisfying #physics #simulation
-```
-
 ## 20.10. 10:41 UTC – Which colour gets 200 hits first?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-crown_race-0)
@@ -98,6 +74,30 @@ One ball, 22 spinning rings, one gap in each – it has to find every exit to br
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 23.10. 04:52 UTC – Can the ball fall through 100 floors?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7699744856498801952) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261023-tower_drop-0)
+
+⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
+
+```text
+Can the ball fall through 100 floors?
+Tower #1: a ball bounces down a spinning tower of 100 floors made of glossy beads. Every episode the tower gets five floors taller. Everything is simulated in 3D, nothing is animated.
+💬 Which song is this? 🎵 Write it in the comments!
+#ball #satisfying #oddlysatisfying #physics #simulation
+```
+
+## 22.10. 22:41 UTC – Every bounce makes the ball bigger
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7699744160617631009) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261022-grow-1)
+
+```text
+Every bounce makes the ball bigger
+The ball gets a little bigger with every bounce – until there is no room left in the circle.
+💬 At what percent did you start holding your breath?
+#bouncingball #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 22.10. 16:42 UTC – Can the ball escape all 16 rings?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7699539842287389985) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261022-escape-31)
@@ -131,31 +131,5 @@ Can the ball escape 5 orbs of glass?
 A ball trapped inside nested orbs made of glossy beads. Everything is simulated in 3D, nothing is animated.
 💬 Which song is this? 🎵 Write it in the comments!
 #escape #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 21.10. 22:41 UTC – Can they merge into 2048?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7699385130745449760) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261021-merge_2048-6)
-
-⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
-
-```text
-Can they merge into 2048?
-Two balls with the same number merge into the next one – 16, 32, 64 … all the way to 2048. Then the portal closes and the final merge begins.
-💬 Which song is this? 🎵 Write it in the comments!
-#merge #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 21.10. 16:42 UTC – Every ring adds a ball – Can they crack the core?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7699168124997881120) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261021-brick_core-7)
-
-⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
-
-```text
-Every ring adds a ball – Can they crack the core?
-One ball, one wall of numbered bricks. Green rings add balls, the gold ×2 ring doubles the swarm – and in the middle waits the core.
-💬 Which song is this? 🎵 Write it in the comments!
-#brickbreaker #satisfying #oddlysatisfying #physics #simulation
 ```
 
