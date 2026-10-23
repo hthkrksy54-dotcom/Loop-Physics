@@ -3,15 +3,28 @@
 The concept designer reads this before every run and updates it at the end (newest first, at most ~20 points,
 remove what is outdated). Numbers: views factor vs the channel median (`python -m ytauto concepts`).
 
+- 2026-10-23 · **3D catches up: ×1.02 over 4 posts vs ×0.92 without** (fast ×0.91 over 3 – still neutral, keep one
+  fast + one free). Standouts unchanged: escape ×2.9, stringart ×2.9, polygon ×2.7, lava_climb ×2.6 – all "one hero
+  that speeds up and breaks through". Tonight's fast concept (tower_drop) is exactly that formula as a vertical fall.
+- 2026-10-23 · **Experiment "series" started** (tower_drop): TOWER #N, five floors more per episode, "NEXT: TOWER #N+1"
+  above the follow button. No shared-code change needed: the run length is planned exactly and fits every seed, so the
+  seed search always takes the next free seed and episode = seed + 1. Reusable trick for any future series.
+- 2026-10-23 · **Experiment "halloween" started** (pumpkin_carve): seasonal hook – steel balls carve a jack-o'-lantern
+  out of 4,000 beads, the candle lights the face at the end. Posts right before Oct 31; compare views, and expect it
+  to drop after Halloween in rotation.
+- 2026-10-23 · **3D build tricks**: planned (analytic) kinematics instead of XPBD for scripted mechanics (tower fall,
+  shot schedule) make length, sound and visuals exact and simulate in milliseconds; set `planned_end`. A moving
+  camera works with a static gradient background (no studio slab). Cull debris flying at the lens (big projected
+  radius / close depth) – otherwise blobs cover the title. A light "inside" a shell: paste far beads, add the glow,
+  then paste near beads – it only shows through holes.
+- 2026-10-23 · **Songs**: no outside chart for sim songs again; trends are Halloween reveal sounds (Ramalama, Spooky
+  Scary Skeletons) and the Black Parade 20th anniversary (TikTok list only). Danse Macabre would be the ideal
+  Halloween PD melody but no verifiable note-by-note source was found – not added (add it once a PD score/MIDI can
+  be checked).
 - 2026-10-22 · **Followers are the bottleneck, not views**: Instagram 125,000 views → 13 followers, 12 shares,
   2 comments. Changed: the end button says "FOLLOW FOR MORE" (was "LIKE & SUBSCRIBE"), Instagram captions ask to
   send the clip on, daily follower counts in the "followers" line. Next: the `series` experiment (numbered episodes
   that get harder, teaser of the next one) – section "Follow reasons" in the designer brief.
-- 2026-10-22 · **3D lags so far (×0.50 over 3 posts; fast ×0.73 over 2)** – but those three were busy net/sheet
-  scenes without our winning formula. Tonight's answer: put the proven formula *into* 3D instead of new mechanics
-  only – orb_escape is escape/stringart (one ball, faster every hit, breaks out layer by layer) as nested bead orbs.
-  If orb_escape lands ≥ ×1.2 while the other 3D concepts stay low, the lesson is "3D look + proven hook", not
-  "3D material for its own sake".
 - 2026-10-22 · **Experiments "short" + "loop" started** (chladni_plate, ~22 s): cymatics figures – every note thumps
   a plate, beads gather on the silent lines; one big thump scatters them back to the first frame (seamless loop).
   First short-format concept; watch "experiment short" and "experiment loop".
