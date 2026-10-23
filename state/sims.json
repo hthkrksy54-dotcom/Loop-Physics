@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-23T10:30+00:00"
       },
-      "yt_views": 7689,
+      "yt_views": 7690,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-23T10:30+00:00"
       },
-      "yt_views": 13887,
+      "yt_views": 13889,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -689,7 +689,7 @@
         "at": "2026-10-23T10:30+00:00"
       },
       "youtube_id": "9mtvZsZzC64",
-      "yt_views": 1721
+      "yt_views": 1720
     },
     {
       "date": "2026-10-17T16:41:44+00:00",
@@ -776,7 +776,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7697901343209573664"
       },
       "youtube_id": "gbOvNfhdn-g",
-      "yt_views": 1807,
+      "yt_views": 1806,
       "stats": {
         "views": 1644,
         "reach": 1373,
@@ -901,7 +901,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698238615138209056"
       },
       "youtube_id": "HJWprEDsCPo",
-      "yt_views": 1311,
+      "yt_views": 1310,
       "stats": {
         "views": 7727,
         "reach": 7190,
@@ -942,7 +942,7 @@
         "at": "2026-10-23T10:30+00:00"
       },
       "youtube_id": "ZfGqvbJNXiM",
-      "yt_views": 563
+      "yt_views": 569
     },
     {
       "date": "2026-10-19T16:41:42+00:00",
@@ -1061,7 +1061,7 @@
         "caption": "Which colour gets 200 hits first?\nFour balls race through a field of bumpers: every hit is a point and paints the bumper.\n💬 Which colour did you pick? 👑\n#whichcolorwins #satisfying #oddlysatisfying #physics #simulation"
       },
       "youtube_id": "28ieR1HFF_s",
-      "yt_views": 1292,
+      "yt_views": 1294,
       "stats": {
         "views": 1251,
         "reach": 1100,
@@ -1095,7 +1095,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698820769953959201"
       },
       "youtube_id": "dzLI0_uSjVI",
-      "yt_views": 3324,
+      "yt_views": 3354,
       "stats": {
         "views": 1270,
         "reach": 1102,
@@ -1128,7 +1128,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698969304812866849"
       },
       "youtube_id": "9df90hvRwfo",
-      "yt_views": 2046,
+      "yt_views": 2075,
       "stats": {
         "views": 7030,
         "reach": 6578,
@@ -1171,7 +1171,7 @@
         "at": "2026-10-23T10:30+00:00"
       },
       "youtube_id": "p-QSX4ORvRM",
-      "yt_views": 1334
+      "yt_views": 1407
     },
     {
       "date": "2026-10-21T10:42:07+00:00",
@@ -1196,7 +1196,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699120827538754849"
       },
       "youtube_id": "k4sUyvitAjk",
-      "yt_views": 1104,
+      "yt_views": 1103,
       "stats": {
         "views": 1546,
         "reach": 1428,
@@ -1230,7 +1230,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699168124997881120"
       },
       "youtube_id": "CwQDDCxYlNI",
-      "yt_views": 1259,
+      "yt_views": 1271,
       "stats": {
         "views": 1559,
         "reach": 1382,
@@ -1265,7 +1265,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699385130745449760"
       },
       "youtube_id": "r_9L1c_gQ5w",
-      "yt_views": 138,
+      "yt_views": 135,
       "stats": {
         "views": 1561,
         "reach": 1277,
@@ -1363,7 +1363,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699539842287389985"
       },
       "youtube_id": "k9fsayyKbKE",
-      "yt_views": 1556,
+      "yt_views": 1603,
       "stats": {
         "views": 1347,
         "reach": 1220,
@@ -1428,7 +1428,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699744856498801952"
       },
       "youtube_id": "kpj9MC6F2n0",
-      "yt_views": 1067,
+      "yt_views": 1144,
       "stats": {
         "views": 4968,
         "reach": 4110,
@@ -1481,6 +1481,28 @@
         "status": "PUBLISH_COMPLETE",
         "caption": "15 pendulums, one perfect moment\n15 pendulums, each swinging a little faster than the one before – waves and snakes appear, until they all line up again.\n💬 Did you see the snake?\n#pendulumwave #satisfying #oddlysatisfying #physics #simulation",
         "url": "https://www.tiktok.com/@loop_physics/video/7699936272621653280"
+      }
+    },
+    {
+      "date": "2026-10-23T22:41:53+00:00",
+      "kind": "giant_net",
+      "seed": 2,
+      "melody": "fur_elise",
+      "timbre": "marimba",
+      "title": "1,296 balls make a net – then the golden giant drops",
+      "duration": 68.2,
+      "why": "standout",
+      "quiz": false,
+      "concept": "A net of 1,296 touching spheres (3D, simulated like cloth) catches a rain of steel balls that gets faster and faster – the net sags deeper with every ball, coloured by depth – until a golden giant drops onto the pile.",
+      "drive": "https://drive.google.com/drive/folders/1Yq4sMQVTblg6YvtWKYGewMUS65LScd7t",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261023-giant_net-2",
+      "instagram_id": "17996377860023662",
+      "instagram_url": "https://www.instagram.com/reel/De2qYfPgoyb/",
+      "instagram_story_id": "18068729942784202",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7699998246403344406",
+        "status": "SEND_TO_USER_INBOX",
+        "caption": "Can the net hold the golden giant?\nEverything is simulated in 3D, nothing is animated.\n💬 How many balls did you think it would hold?\n#3d #satisfying #oddlysatisfying #physics #simulation"
       }
     }
   ],
