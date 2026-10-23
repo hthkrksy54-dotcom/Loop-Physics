@@ -9,7 +9,7 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 ## 23.10. 03:09 UTC – Why do some hours vanish in minutes?
 
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-flow)
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7699747821880085793) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-flow)
 
 ```text
 Why do some hours vanish in minutes?
@@ -65,17 +65,5 @@ What happens when a group's prophecy fails – and they believe even more strong
 💬 What is a belief you defended for a long time before you finally changed your mind?
 Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
 #Psychology #CognitiveDissonance #Philosophy #learnontiktok
-```
-
-## 18.10. 03:00 UTC – Could you live your life again?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7697901111537044769) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-amor-fati)
-
-```text
-Could you live your life again?
-Amor fati – the love of fate. Nietzsche wrote it as a New Year's wish in 1882, while illness had already taken his career.
-💬 What is something you once wished had gone differently, but now would not change?
-Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
-#Philosophy #AmorFati #Nietzsche #psychology #learnontiktok
 ```
 

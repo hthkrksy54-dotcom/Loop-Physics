@@ -9,7 +9,7 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 ## 23.10. 03:05 UTC – $100 in 1928 → $1.16 million
 
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261023-stock-market-crashes-recoveries)
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@realnumbersdaily/video/7699747921599663393) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261023-stock-market-crashes-recoveries)
 
 ```text
 $100 in 1928 → $1.16 million
@@ -70,18 +70,5 @@ From 1994 to 2021, prices in Japan rose about 4% – in total. In the US they ro
 Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
 Not financial advice.
 #japan #economics #money #personalfinance #learnontiktok
-```
-
-## 18.10. 03:04 UTC – $24,000 beat $72,000. Here's how.
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@realnumbersdaily/video/7697900855495855393) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261018-compound-interest-time)
-
-```text
-$24,000 beat $72,000. Here's how.
-Alex saves for 10 years and stops. Sam saves three times as much for 30 years.
-💬 How old were you when you started saving?
-Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
-Not financial advice.
-#money #compoundinterest #economics #personalfinance #learnontiktok
 ```
 
