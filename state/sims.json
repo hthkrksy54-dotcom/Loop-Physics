@@ -648,7 +648,7 @@
       "instagram_id": "18030561041882795",
       "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/",
       "youtube_id": "3Qgx9BMIlXo",
-      "yt_views": 8642,
+      "yt_views": 8636,
       "stats": {
         "views": 2663,
         "reach": 2328,
@@ -1095,7 +1095,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698820769953959201"
       },
       "youtube_id": "dzLI0_uSjVI",
-      "yt_views": 3607,
+      "yt_views": 3605,
       "stats": {
         "views": 1272,
         "reach": 1103,
@@ -1171,7 +1171,7 @@
         "at": "2026-10-24T09:47+00:00"
       },
       "youtube_id": "p-QSX4ORvRM",
-      "yt_views": 2317
+      "yt_views": 2344
     },
     {
       "date": "2026-10-21T10:42:07+00:00",
@@ -1196,7 +1196,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699120827538754849"
       },
       "youtube_id": "k4sUyvitAjk",
-      "yt_views": 1112,
+      "yt_views": 1110,
       "stats": {
         "views": 1548,
         "reach": 1430,
@@ -1363,7 +1363,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699539842287389985"
       },
       "youtube_id": "k9fsayyKbKE",
-      "yt_views": 1726,
+      "yt_views": 1749,
       "stats": {
         "views": 1408,
         "reach": 1273,
@@ -1583,8 +1583,9 @@
       "instagram_story_id": "18109659461189962",
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7700183784603322390",
-        "status": "SEND_TO_USER_INBOX",
-        "caption": "Same net, same balls 0% to 100% softness\nThe same net of 1,024 spheres, softer every round from 0% to 100% – and every round the same steel balls and the golden ball drop on it. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#softness #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Same net, same balls 0% to 100% softness\nThe same net of 1,024 spheres, softer every round from 0% to 100% – and every round the same steel balls and the golden ball drop on it. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#softness #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7700186572179688737"
       }
     }
   ],
