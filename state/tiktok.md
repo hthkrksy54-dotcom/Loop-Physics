@@ -8,6 +8,19 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 **Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: the Halloween costume-reveal sound of the week (New Engen) – fits hole_eater's golden-tower drop · Spooky Scary Skeletons – Andrew Gold: evergreen Halloween meme sound, peaks right before Oct 31 (Saturday this year) · Halloween Theme – John Carpenter: creepy build-up for dark runs until Oct 31 · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook · All I Want for Christmas Is You – Mariah Carey: the yearly 'it's time' wave starts Nov 1 – queue it for the first November posts
 
+## 24.10. 10:41 UTC – Same net, same balls 0% to 100% softness
+
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261024-softness_scale-0)
+
+⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
+
+```text
+Same net, same balls 0% to 100% softness
+The same net of 1,024 spheres, softer every round from 0% to 100% – and every round the same steel balls and the golden ball drop on it. Everything is simulated in 3D, nothing is animated.
+💬 Which song is this? 🎵 Write it in the comments!
+#softness #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 24.10. 04:41 UTC – Can the hole eat the golden tower?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261024-hole_eater-1)
