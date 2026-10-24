@@ -3,6 +3,22 @@
 The concept designer reads this before every run and updates it at the end (newest first, at most ~20 points,
 remove what is outdated). Numbers: views factor vs the channel median (`python -m ytauto concepts`).
 
+- 2026-10-24 · **Series looks strongest (×2.23, tower_drop, 1 post)** – 3d ×0.97 vs ×0.85, fast ×0.96 vs ×0.90 (4) –
+  still neutral, keep one fast + one free. Second series started: hole_eater (LEVEL #N, hole.io formula: one hero that
+  grows and speeds up, ends on a golden tower). With two series we can tell format from luck once both have 4 posts.
+- 2026-10-24 · **Experiment "softness" started** (softness_scale): the viral "0% vs 100% softness" format – the same net
+  in 11 rounds, only XPBD compliance changes, 100% tears. Watch whether a comparison format pulls comments ("which % was
+  best?").
+- 2026-10-24 · **3D build tricks**: XPBD stiffness is capped by iterations (12 iters: anything under ~1e-5.3
+  compliance sags the same) – map softness on a log scale from ~10^-5.25 upwards so every round looks different;
+  above ~10^-3.3 links open gaps and balls slip through. Hole/clipping look: draw beads below the floor onto a copy and
+  composite it through the projected hole ellipse. Big sprites in ~6 % radius steps cut paint time from ~200 to
+  ~140 ms/frame with many beads near the camera. A city of ~190 objects along an inward spiral gives ~3 melody
+  notes/s by construction (planned swallow times).
+- 2026-10-24 · **Songs**: still no ranking for sim songs; Halloween reveal sounds (Ramalama, Spooky Scary Skeletons)
+  peak before Sat 31 Oct, Christmas wave from Nov 1. Own lift raised Ode to Joy and Frère Jacques to 1.2, Carol of the
+  Bells 1.2 ahead of December; Turkish March / Greensleeves lowered to 0.8. Song quiz 6 vs 7 posts, views ×1.00 vs
+  ×0.93, 0 comments – keep 0.5.
 - 2026-10-23 · **3D catches up: ×1.02 over 4 posts vs ×0.92 without** (fast ×0.91 over 3 – still neutral, keep one
   fast + one free). Standouts unchanged: escape ×2.9, stringart ×2.9, polygon ×2.7, lava_climb ×2.6 – all "one hero
   that speeds up and breaks through". Tonight's fast concept (tower_drop) is exactly that formula as a vertical fall.
@@ -50,9 +66,6 @@ remove what is outdated). Numbers: views factor vs the channel median (`python -
 - 2026-10-21 · **Song numbers** (22 Oct): Twinkle ×3.8 and Morning Mood ×2.3 are our best lifts (boosted 1.6 / 1.3);
   Mountain King stays neutral (own lift ×0.9) despite Halloween; Toccata 1.8 until Nov 1. Song quiz: 2 vs 4 posts
   (views ×0.93 vs ×0.98, no comments either side) – too early to judge.
-- 2026-10-20 · **Song quiz started**: half of the videos hide the melody's name and ask "Can you name this song?" –
-  watch the "song quiz" line (views and comments per post). Before this, titles sometimes said "Guess the song"
-  while the name was on screen – fixed.
 - 2026-10-20 · **Length is the biggest open question.** Trending satisfying Shorts are ~24 s long
   (trend check, 133 videos); ours run 61–86 s because TikTok's Creator Rewards need over a minute. Short videos
   earn nothing on TikTok but get watched to the end and replayed – test short-format concepts (min_video ~20 s,
