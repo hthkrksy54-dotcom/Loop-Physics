@@ -996,7 +996,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698572600271834400"
       },
       "youtube_id": "kXcnFg3p2OQ",
-      "yt_views": 5345,
+      "yt_views": 5349,
       "stats": {
         "views": 1289,
         "reach": 1095,
@@ -1128,7 +1128,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698969304812866849"
       },
       "youtube_id": "9df90hvRwfo",
-      "yt_views": 2371,
+      "yt_views": 2355,
       "stats": {
         "views": 7115,
         "reach": 6662,
@@ -1171,7 +1171,7 @@
         "at": "2026-10-24T09:47+00:00"
       },
       "youtube_id": "p-QSX4ORvRM",
-      "yt_views": 2720
+      "yt_views": 2761
     },
     {
       "date": "2026-10-21T10:42:07+00:00",
@@ -1586,6 +1586,27 @@
         "status": "PUBLISH_COMPLETE",
         "caption": "Same net, same balls 0% to 100% softness\nThe same net of 1,024 spheres, softer every round from 0% to 100% – and every round the same steel balls and the golden ball drop on it. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#softness #satisfying #oddlysatisfying #physics #simulation",
         "url": "https://www.tiktok.com/@loop_physics/video/7700186572179688737"
+      }
+    },
+    {
+      "date": "2026-10-24T16:41:43+00:00",
+      "kind": "tower_drop",
+      "seed": 1,
+      "melody": "toccata",
+      "timbre": "marimba",
+      "title": "Can the ball fall through 105 floors? – Sound on",
+      "duration": 68.8,
+      "why": "standout",
+      "quiz": false,
+      "concept": "A ball bounces down a spinning tower of 100+ floors, each a disc of hundreds of glossy beads (3D) with one gap: it drops through when the gap spins under it and the floor bursts into beads. Every ten floors it gets faster; the last 12 floors are smashed in FIRE MODE. A numbered series: TOWER #N, five floors more every episode, the finale teases the next tower.",
+      "drive": "https://drive.google.com/drive/folders/1uc-K8krS_z98BprqkqUn-Ts3sBHsTYhf",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261024-tower_drop-1",
+      "instagram_id": "17927634969222389",
+      "instagram_url": "https://www.instagram.com/reel/De4mUBMitZo/",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7700277279200839703",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "Can the ball fall through 105 floors?\nTower #2: a ball bounces down a spinning tower of 105 floors made of glossy beads. Every episode the tower gets five floors taller. Everything is simulated in 3D, nothing is animated.\n💬 Should the next tower spin faster?\n#ball #satisfying #oddlysatisfying #physics #simulation"
       }
     }
   ],
