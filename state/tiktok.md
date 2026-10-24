@@ -6,7 +6,20 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
-**Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the go-to sound for Halloween reveals (New Engen, Oct) – perfect for the pumpkin_carve light-up · Spooky Scary Skeletons – Andrew Gold: evergreen Halloween meme sound, peaks the last week of October · Halloween Theme – John Carpenter: creepy build-up for dark runs until Oct 31 · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook · Welcome to the Black Parade – My Chemical Romance: 20th anniversary on Oct 23, a nostalgia wave is likely – fits tower_drop's fire mode
+**Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: the Halloween costume-reveal sound of the week (New Engen) – fits hole_eater's golden-tower drop · Spooky Scary Skeletons – Andrew Gold: evergreen Halloween meme sound, peaks right before Oct 31 (Saturday this year) · Halloween Theme – John Carpenter: creepy build-up for dark runs until Oct 31 · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook · All I Want for Christmas Is You – Mariah Carey: the yearly 'it's time' wave starts Nov 1 – queue it for the first November posts
+
+## 24.10. 04:41 UTC – Can the hole eat the golden tower?
+
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261024-hole_eater-1)
+
+⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
+
+```text
+Can the hole eat the golden tower?
+Every level the tower is two floors taller. Everything is simulated in 3D, nothing is animated.
+💬 Which song is this? 🎵 Write it in the comments!
+#hole #satisfying #oddlysatisfying #physics #simulation
+```
 
 ## 23.10. 22:41 UTC – Can the net hold the golden giant?
 
