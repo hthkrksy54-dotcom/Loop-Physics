@@ -7,6 +7,19 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
+## 24.10. 03:40 UTC – $100 a month beats $500 a month?
+
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261024-100-250-500-a-month)
+
+```text
+$100 a month beats $500 a month?
+How much does $100, $250 or $500 a month really turn into? First the simple math at an example rate – then the reality check: every 10- and 30-year stretch of the US stock market since 1928, after inflation.
+💬 At what age did you – or will you – start putting money aside every month?
+Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
+Not financial advice.
+#investing #compoundinterest #money #personalfinance #learnontiktok
+```
+
 ## 23.10. 03:05 UTC – $100 in 1928 → $1.16 million
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@realnumbersdaily/video/7699747921599663393) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261023-stock-market-crashes-recoveries)
