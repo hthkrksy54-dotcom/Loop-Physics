@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-24T09:47+00:00"
       },
-      "yt_views": 7707,
+      "yt_views": 7709,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-24T09:47+00:00"
       },
-      "yt_views": 13902,
+      "yt_views": 13909,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -648,7 +648,7 @@
       "instagram_id": "18030561041882795",
       "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/",
       "youtube_id": "3Qgx9BMIlXo",
-      "yt_views": 8644,
+      "yt_views": 8648,
       "stats": {
         "views": 2663,
         "reach": 2328,
@@ -1095,7 +1095,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698820769953959201"
       },
       "youtube_id": "dzLI0_uSjVI",
-      "yt_views": 3703,
+      "yt_views": 3700,
       "stats": {
         "views": 1272,
         "reach": 1103,
@@ -1128,7 +1128,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698969304812866849"
       },
       "youtube_id": "9df90hvRwfo",
-      "yt_views": 2355,
+      "yt_views": 2414,
       "stats": {
         "views": 7115,
         "reach": 6662,
@@ -1171,7 +1171,7 @@
         "at": "2026-10-24T09:47+00:00"
       },
       "youtube_id": "p-QSX4ORvRM",
-      "yt_views": 2761
+      "yt_views": 2835
     },
     {
       "date": "2026-10-21T10:42:07+00:00",
@@ -1230,7 +1230,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699168124997881120"
       },
       "youtube_id": "CwQDDCxYlNI",
-      "yt_views": 1412,
+      "yt_views": 1431,
       "stats": {
         "views": 1591,
         "reach": 1410,
@@ -1363,7 +1363,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699539842287389985"
       },
       "youtube_id": "k9fsayyKbKE",
-      "yt_views": 1785,
+      "yt_views": 1824,
       "stats": {
         "views": 1408,
         "reach": 1273,
@@ -1605,7 +1605,7 @@
       "instagram_url": "https://www.instagram.com/reel/De4mUBMitZo/",
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7700277279200839703",
-        "status": "PROCESSING_UPLOAD",
+        "status": "SEND_TO_USER_INBOX",
         "caption": "Can the ball fall through 105 floors?\nTower #2: a ball bounces down a spinning tower of 105 floors made of glossy beads. Every episode the tower gets five floors taller. Everything is simulated in 3D, nothing is animated.\n💬 Should the next tower spin faster?\n#ball #satisfying #oddlysatisfying #physics #simulation"
       }
     }
