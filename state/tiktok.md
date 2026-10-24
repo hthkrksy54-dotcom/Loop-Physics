@@ -21,17 +21,6 @@ Every level the tower is two floors taller. Everything is simulated in 3D, nothi
 #hole #satisfying #oddlysatisfying #physics #simulation
 ```
 
-## 23.10. 22:41 UTC – Can the net hold the golden giant?
-
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261023-giant_net-2)
-
-```text
-Can the net hold the golden giant?
-Everything is simulated in 3D, nothing is animated.
-💬 How many balls did you think it would hold?
-#3d #satisfying #oddlysatisfying #physics #simulation
-```
-
 ## 20.10. 10:41 UTC – Which colour gets 200 hits first?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261020-crown_race-0)
@@ -98,6 +87,17 @@ One ball, 22 spinning rings, one gap in each – it has to find every exit to br
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 23.10. 22:41 UTC – Can the net hold the golden giant?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7700099489083772193) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261023-giant_net-2)
+
+```text
+Can the net hold the golden giant?
+Everything is simulated in 3D, nothing is animated.
+💬 How many balls did you think it would hold?
+#3d #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 23.10. 17:01 UTC – 15 pendulums, one perfect moment
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7699936272621653280) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261023-pendulum-6)
@@ -142,16 +142,5 @@ Every bounce makes the ball bigger
 The ball gets a little bigger with every bounce – until there is no room left in the circle.
 💬 At what percent did you start holding your breath?
 #bouncingball #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 22.10. 16:42 UTC – Can the ball escape all 16 rings?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7699539842287389985) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261022-escape-31)
-
-```text
-Can the ball escape all 16 rings?
-One ball, 16 spinning rings, one gap in each – it has to find every exit to break free.
-💬 Which ring was the hardest one?
-#ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
