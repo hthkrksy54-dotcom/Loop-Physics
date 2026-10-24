@@ -247,9 +247,12 @@
       "reel_due": "2026-10-24T14:00:00+00:00",
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7700072993376077846",
-        "status": "SEND_TO_USER_INBOX",
-        "caption": "Seneca's answer to 'life is too short'\nAlmost two thousand years ago, Seneca argued the opposite: life is long enough – if you know how to use it.\n💬 What is one thing you keep postponing to 'later', and what small step could you take this week?\nFull video essay on YouTube: Quiet Thoughts (@quietthoughts-20)\n#Stoicism #Seneca #Philosophy #psychology #learnontiktok"
-      }
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Seneca's answer to 'life is too short'\nAlmost two thousand years ago, Seneca argued the opposite: life is long enough – if you know how to use it.\n💬 What is one thing you keep postponing to 'later', and what small step could you take this week?\nFull video essay on YouTube: Quiet Thoughts (@quietthoughts-20)\n#Stoicism #Seneca #Philosophy #psychology #learnontiktok",
+        "url": "https://www.tiktok.com/@quiet_thoughts_yt/video/7700186711866772769"
+      },
+      "youtube_id": "0x59hidf7vE",
+      "thumbnail_set": true
     }
   ]
 }

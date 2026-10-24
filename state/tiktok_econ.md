@@ -9,7 +9,7 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 ## 24.10. 03:40 UTC – $100 a month beats $500 a month?
 
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261024-100-250-500-a-month)
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@realnumbersdaily/video/7700186828443323681) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261024-100-250-500-a-month)
 
 ```text
 $100 a month beats $500 a month?
@@ -70,18 +70,5 @@ In US dollars, the average Egyptian produces about $3,000 a year. Adjusted for l
 Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
 Not financial advice.
 #economics #money #costofliving #personalfinance #learnontiktok
-```
-
-## 19.10. 04:36 UTC – Japan's prices didn't move for 27 years
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@realnumbersdaily/video/7698238855387827489) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/econ-20261019-why-japan-prices-froze)
-
-```text
-Japan's prices didn't move for 27 years
-From 1994 to 2021, prices in Japan rose about 4% – in total. In the US they rose 83%.
-💬 What costs you the same today as it did ten years ago?
-Full breakdown on YouTube: Real Numbers (@realnumbersdaily)
-Not financial advice.
-#japan #economics #money #personalfinance #learnontiktok
 ```
 

@@ -9,7 +9,7 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 ## 24.10. 03:40 UTC – Seneca's answer to 'life is too short'
 
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-shortness-of-life)
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7700186711866772769) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-shortness-of-life)
 
 ```text
 Seneca's answer to 'life is too short'
@@ -65,17 +65,5 @@ A man pushes a stone up a hill, watches it roll down, and starts again – forev
 💬 What is the stone you push every day, and how do you walk back down to it?
 Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
 #Camus #Philosophy #Absurdism #psychology #learnontiktok
-```
-
-## 19.10. 04:40 UTC – Doomsday failed. Their faith grew.
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7698238693617847585) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-cognitive-dissonance)
-
-```text
-Doomsday failed. Their faith grew.
-What happens when a group's prophecy fails – and they believe even more strongly afterwards?
-💬 What is a belief you defended for a long time before you finally changed your mind?
-Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
-#Psychology #CognitiveDissonance #Philosophy #learnontiktok
 ```
 
