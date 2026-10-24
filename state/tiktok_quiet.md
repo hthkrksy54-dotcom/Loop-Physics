@@ -7,6 +7,18 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
+## 24.10. 03:40 UTC – Seneca's answer to 'life is too short'
+
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-shortness-of-life)
+
+```text
+Seneca's answer to 'life is too short'
+Almost two thousand years ago, Seneca argued the opposite: life is long enough – if you know how to use it.
+💬 What is one thing you keep postponing to 'later', and what small step could you take this week?
+Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
+#Stoicism #Seneca #Philosophy #psychology #learnontiktok
+```
+
 ## 23.10. 03:09 UTC – Why do some hours vanish in minutes?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7699747821880085793) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-flow)
