@@ -4,9 +4,11 @@ name: Real Numbers
 # minute: archived as a release, the Short as Instagram Reel + story and TikTok draft, YouTube once enabled.
 # Scripts come from the writer (docs/econ-writer.md); the run takes the next one in the queue.
 on:
-  schedule:
-    - cron: "3 2 * * *"   # 4:03 German time in summer (the other run stops itself: watchdog.daily_slot)
-    - cron: "3 3 * * *"   # 4:03 German time in winter
+  # Paused since 24 Oct 2026 ("active": false in config/econ.json). To resume: set it to true and
+  # restore the schedule below.
+  # schedule:
+  #   - cron: "3 2 * * *"   # 4:03 German time in summer (the other run stops itself: watchdog.daily_slot)
+  #   - cron: "3 3 * * *"   # 4:03 German time in winter
   workflow_dispatch:
     inputs:
       script:

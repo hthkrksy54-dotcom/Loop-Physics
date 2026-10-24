@@ -66,6 +66,6 @@ def due(now: dt.datetime | None = None) -> list[tuple[str, dict]]:
                 out.append(("stories.yml", {}))
     econ = _load("state/econ.json", {}).get("videos", [])
     waiting = {p.stem for p in (ROOT / "content" / "econ" / "scripts").glob("*.json")} - {r["id"] for r in econ}
-    if waiting and _overdue(econ, now):  # Real Numbers: one episode every day while the writer keeps up
+    if waiting and _overdue(econ, now) and _load("config/econ.json", {}).get("active", True):  # Real Numbers: one episode every day while the writer keeps up
         out.append(("econ.yml", {"source": "watchdog"}))
     return out

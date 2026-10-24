@@ -1,6 +1,7 @@
 {
   "channel_name": "Real Numbers",
   "handle": "@realnumbersdaily",
+  "active": false,
   "voice": "en-GB-RyanNeural",
   "rate": "+15%",
   "pitch": "+0Hz",

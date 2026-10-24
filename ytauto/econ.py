@@ -41,6 +41,11 @@ def load(path: Path, default):
     return json.loads(path.read_text(encoding="utf-8")) if path.exists() else default
 
 
+def paused(cfg: dict) -> bool:
+    """Real Numbers is switched off ("active": false in config/econ.json): no episodes, Reels, drafts or syncs."""
+    return not cfg.get("active", True)
+
+
 # ---------------------------------------------------------------- data
 
 
@@ -578,6 +583,9 @@ def produce(upload: bool = True, script_id: str | None = None) -> dict:
     from .simchannel import story_clip
 
     cfg, state = load(CONFIG, {}), load(STATE, {"videos": []})
+    if paused(cfg):
+        print("[econ] paused (\"active\": false in config/econ.json) – nothing to do", flush=True)
+        return {}
     script_id = script_id or next(iter(queue(state)), None)
     if not script_id:
         print("[econ] no script waiting – the writer adds new ones (docs/econ-writer.md); nothing to do", flush=True)
@@ -697,6 +705,8 @@ def youtube_sync() -> bool:
     import tempfile
 
     cfg, state = load(CONFIG, {}), load(STATE, {"videos": []})
+    if paused(cfg):
+        return False
     if not youtube.configured(cfg["youtube"].get("refresh_token_secret", "")):
         print("[econ] YouTube not connected – nothing to sync", flush=True)
         return False
@@ -808,7 +818,7 @@ def tiktok_backlog(max_pending: int = tiktok.MAX_WAITING) -> bool:
     import datetime as dt
 
     cfg, state = load(CONFIG, {}), load(STATE, {"videos": []})
-    if not tiktok.configured(cfg):
+    if paused(cfg) or not tiktok.configured(cfg):
         return False
     videos = state["videos"]
     changed = tiktok.refresh(cfg, videos)
@@ -833,6 +843,12 @@ def post_due_reel() -> bool:
     the US morning (config instagram.reel_hour). Called by the hourly sync."""
     cfg, state = load(CONFIG, {}), load(STATE, {"videos": []})
     if not instagram.configured(cfg):
+        return False
+    if paused(cfg):
+        try:
+            instagram.fresh_token(cfg)  # nothing is posted, but the token stays valid for when the channel resumes
+        except Exception as err:  # noqa: BLE001 – tried again next hour
+            print(f"  warning: instagram token refresh failed: {err}", flush=True)
         return False
     changed = False
     for rec in state["videos"]:
@@ -860,6 +876,9 @@ def backfill_reel(every_day: bool = True) -> bool:
     import datetime as dt
 
     cfg, state = load(CONFIG, {}), load(STATE, {"videos": []})
+    if paused(cfg):
+        print("[econ] paused (\"active\": false in config/econ.json) – no Reel", flush=True)
+        return False
     if not instagram.configured(cfg):
         print("[econ] Instagram not connected – no Reel to catch up", flush=True)
         return False

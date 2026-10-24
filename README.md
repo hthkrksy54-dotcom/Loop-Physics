@@ -77,6 +77,8 @@ Thema → Skript → Faktencheck → Sprecherstimme → Musik → Visuals → Un
 
 ## Real Numbers – Alltagsgeld, erklärt mit echten Zahlen
 
+**Pausiert seit 24.10.2026:** `"active": false` in [config/econ.json](config/econ.json). Keine neuen Folgen, Skripte, Reels, TikTok-Entwürfe oder Abgleiche; der Skript-Autor ist abgeschaltet und die Zeitpläne in [econ.yml](.github/workflows/econ.yml) und [econ-reels.yml](.github/workflows/econ-reels.yml) sind auskommentiert. Nur der Instagram-Zugang wird weiter erneuert, damit der Kanal ohne neue Verbindung wieder starten kann.
+
 | Baustein | Lösung |
 |---|---|
 | Ausrichtung | allgemeine Geld-Tipps für die breite Masse nach dem Vorbild von Finanzbär (und Finanzfluss): Meilensteine, Geldfresser, Sparen, Schulden, Rente, Index-Fonds allgemein, Psychologie des Geldes – keine Einzelaktien, keine Produkte; jedes Video sagt nach dem Hook „not financial advice“, Titel- und Endkarten zeigen es, ab und zu ein gesprochenes „Like & Abo“ ([Themen](content/econ/topics.md)) |

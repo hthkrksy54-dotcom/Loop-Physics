@@ -3,8 +3,10 @@ name: Real Numbers Reels
 # Once a day, 00:40 UTC (20:40 US Eastern summer time): post the Short of the oldest episode that has no
 # Instagram Reel yet (made before Instagram was connected, or its Reel failed). Nothing to do = nothing posted.
 on:
-  schedule:
-    - cron: "40 0 * * *"
+  # Paused since 24 Oct 2026 ("active": false in config/econ.json). To resume: set it to true and
+  # restore the schedule below.
+  # schedule:
+  #   - cron: "40 0 * * *"
   workflow_dispatch:
     inputs:
       all:
