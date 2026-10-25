@@ -214,7 +214,8 @@ COMPOSERS = {"fur_elise": "Beethoven", "ode_to_joy": "Beethoven", "mountain_king
              "canon": "Pachelbel", "nachtmusik": "Mozart", "turkish_march": "Mozart", "minuet": "Bach",
              "blue_danube": "Strauss", "lullaby": "Brahms", "morning_mood": "Grieg", "moonlight": "Beethoven",
              "toccata": "Bach", "funeral_march": "Chopin",
-             "carol_bells": "Leontovych", "sugar_plum": "Tchaikovsky"}
+             "carol_bells": "Leontovych", "sugar_plum": "Tchaikovsky",
+             "jingle_bells": "Pierpont"}
 TAGS = ["satisfying", "oddly satisfying", "physics simulation", "bouncing ball", "satisfying video",
         "simulation", "relaxing", "asmr", "classical music"]
 
