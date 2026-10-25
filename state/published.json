@@ -274,9 +274,13 @@
       "reel_due": "2026-10-25T14:00:00+00:00",
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7700465774200195095",
-        "status": "SEND_TO_USER_INBOX",
-        "caption": "Feel like you'll be found out?\nWhy do so many capable people feel that they do not really deserve their success – and that one day they will be found out?\n💬 When was the last time you felt like you didn't really belong somewhere – and how did it turn out?\nFull video essay on YouTube: Quiet Thoughts (@quietthoughts-20)\n#Psychology #ImpostorSyndrome #Philosophy #learnontiktok"
-      }
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Feel like you'll be found out?\nWhy do so many capable people feel that they do not really deserve their success – and that one day they will be found out?\n💬 When was the last time you felt like you didn't really belong somewhere – and how did it turn out?\nFull video essay on YouTube: Quiet Thoughts (@quietthoughts-20)\n#Psychology #ImpostorSyndrome #Philosophy #learnontiktok",
+        "url": "https://www.tiktok.com/@quiet_thoughts_yt/video/7700494641832971552"
+      },
+      "youtube_id": "dQU1tqUKk9U",
+      "thumbnail_set": true,
+      "youtube_short_id": "-p6-co4Gj3Y"
     }
   ]
 }

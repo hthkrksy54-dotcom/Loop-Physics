@@ -9,7 +9,7 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 ## 25.10. 05:00 UTC – Feel like you'll be found out?
 
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-impostor-phenomenon)
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7700494641832971552) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-impostor-phenomenon)
 
 ```text
 Feel like you'll be found out?
@@ -65,17 +65,5 @@ Ten compliments and one criticism – and you remember the criticism. This is no
 💬 What is one small good thing from today that almost slipped past you?
 Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
 #Psychology #NegativityBias #Philosophy #learnontiktok
-```
-
-## 20.10. 04:11 UTC – Why did Camus call this man happy?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7698684675329363232) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-myth-of-sisyphus)
-
-```text
-Why did Camus call this man happy?
-A man pushes a stone up a hill, watches it roll down, and starts again – forever. In 1942, Albert Camus took this ancient punishment and turned it into one of the most surprising ideas in modern philosophy.
-💬 What is the stone you push every day, and how do you walk back down to it?
-Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
-#Camus #Philosophy #Absurdism #psychology #learnontiktok
 ```
 
