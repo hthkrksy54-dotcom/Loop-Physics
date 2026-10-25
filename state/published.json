@@ -281,10 +281,11 @@
       "youtube_id": "dQU1tqUKk9U",
       "thumbnail_set": true,
       "youtube_short_id": "-p6-co4Gj3Y",
-      "reel_tries": 2,
+      "reel_tries": 3,
       "warnings": [
         "instagram: processing failed: {'status_code': 'ERROR', 'status': 'ERROR', 'id': '18143793739568561'}",
-        "instagram: processing failed: {'status_code': 'ERROR', 'status': 'ERROR', 'id': '18143803879568561'}"
+        "instagram: processing failed: {'status_code': 'ERROR', 'status': 'ERROR', 'id': '18143803879568561'}",
+        "instagram: processing failed: {'status_code': 'ERROR', 'status': 'ERROR', 'id': '18143807956568561'}"
       ]
     }
   ]
