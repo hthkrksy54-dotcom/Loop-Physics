@@ -8,19 +8,6 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 **Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the Halloween costume-reveal sound (New Engen), until Sat Oct 31 – fits gate_rush's JACKPOT burst · Spooky Scary Skeletons – Andrew Gold: evergreen Halloween meme sound, peaks right before Oct 31 · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook · All I Want for Christmas Is You – Mariah Carey: the yearly 'it's time' wave starts Nov 1 – queue it for the first November posts · Halloween Theme – John Carpenter: creepy build-up for dark runs until Oct 31
 
-## 25.10. 17:05 UTC – Can it smash through all 7 rings?
-
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261025-ring_breaker-7)
-
-⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
-
-```text
-Can it smash through all 7 rings?
-One ball, seven rings of tiles. The outer rings are tougher – the last one needs the whole swarm.
-💬 Which song is this? 🎵 Write it in the comments!
-#escape #satisfying #oddlysatisfying #physics #simulation
-```
-
 ## 24.10. 04:41 UTC – Can the hole eat the golden tower?
 
 Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261024-hole_eater-1)
@@ -100,6 +87,19 @@ One ball, 22 spinning rings, one gap in each – it has to find every exit to br
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 25.10. 17:05 UTC – Can it smash through all 7 rings?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7700682065133522209) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261025-ring_breaker-7)
+
+⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
+
+```text
+Can it smash through all 7 rings?
+One ball, seven rings of tiles. The outer rings are tougher – the last one needs the whole swarm.
+💬 Which song is this? 🎵 Write it in the comments!
+#escape #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 24.10. 22:41 UTC – What will 201 bounces draw?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7700541928898563361) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261024-stringart-56)
@@ -146,16 +146,5 @@ Can the net hold the golden giant?
 Everything is simulated in 3D, nothing is animated.
 💬 How many balls did you think it would hold?
 #3d #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 23.10. 17:01 UTC – 15 pendulums, one perfect moment
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7699936272621653280) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261023-pendulum-6)
-
-```text
-15 pendulums, one perfect moment
-15 pendulums, each swinging a little faster than the one before – waves and snakes appear, until they all line up again.
-💬 Did you see the snake?
-#pendulumwave #satisfying #oddlysatisfying #physics #simulation
 ```
 
