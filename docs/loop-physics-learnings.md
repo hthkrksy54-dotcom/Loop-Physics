@@ -3,9 +3,20 @@
 The concept designer reads this before every run and updates it at the end (newest first, at most ~20 points,
 remove what is outdated). Numbers: views factor vs the channel median (`python -m ytauto concepts`).
 
-- 2026-10-24 · **Series looks strongest (×2.23, tower_drop, 1 post)** – 3d ×0.97 vs ×0.85, fast ×0.96 vs ×0.90 (4) –
-  still neutral, keep one fast + one free. Second series started: hole_eater (LEVEL #N, hole.io formula: one hero that
-  grows and speeds up, ends on a golden tower). With two series we can tell format from luck once both have 4 posts.
+- 2026-10-25 · **Series is the standout format: ×5.18 over 2 concepts** (tower_drop ×9.8, hole_eater) vs ×0.95 without
+  – still under 4 concepts, but strong enough to keep one series per night. Third series started: gate_rush (RUN #N,
+  goal +500 balls per episode). 3d ×1.02 (8) vs ×0.90, fast ×1.02 (5) vs ×0.91 – neutral (0.8–1.2), keep one fast +
+  one free. Followers: Instagram 17, YouTube 56 (+9 in a day).
+- 2026-10-25 · **Short/loop has only one data point** (chladni_plate ×0.76) – too early to drop. Second short loop
+  built: bead_picture (~21 s, a heap of beads builds a pixel picture that is never named, then rains back = first
+  frame). Once short has 4 concepts with numbers, decide.
+- 2026-10-25 · **3D build tricks**: thousands of free balls are cheap in numba with a spatial *hash* (fixed 2^15 table,
+  linked lists) – 5,000 balls with peg rods, walls and ball contacts simulate a 70 s run in ~4 s. Rods that touch the
+  walls stop balls wedging between rod and wall (they stuck forever otherwise). Gates planned on the fly from the
+  *expected* count (per-ball cumulative product of the gates still ahead, realised averages once 30 balls passed)
+  steer an honest random process to its goal; the last gate stays "×?" until the front is close, then its number is
+  set from the real swarm – exact goal and a reveal moment. A narrow tall box makes "filling to the goal line" readable.
+  Clones inherit colour from where they fell through → rainbow stripes in the pile instead of one colour.
 - 2026-10-24 · **Experiment "softness" started** (softness_scale): the viral "0% vs 100% softness" format – the same net
   in 11 rounds, only XPBD compliance changes, 100% tears. Watch whether a comparison format pulls comments ("which % was
   best?").
@@ -15,13 +26,10 @@ remove what is outdated). Numbers: views factor vs the channel median (`python -
   composite it through the projected hole ellipse. Big sprites in ~6 % radius steps cut paint time from ~200 to
   ~140 ms/frame with many beads near the camera. A city of ~190 objects along an inward spiral gives ~3 melody
   notes/s by construction (planned swallow times).
-- 2026-10-24 · **Songs**: still no ranking for sim songs; Halloween reveal sounds (Ramalama, Spooky Scary Skeletons)
-  peak before Sat 31 Oct, Christmas wave from Nov 1. Own lift raised Ode to Joy and Frère Jacques to 1.2, Carol of the
-  Bells 1.2 ahead of December; Turkish March / Greensleeves lowered to 0.8. Song quiz 6 vs 7 posts, views ×1.00 vs
-  ×0.93, 0 comments – keep 0.5.
-- 2026-10-23 · **3D catches up: ×1.02 over 4 posts vs ×0.92 without** (fast ×0.91 over 3 – still neutral, keep one
-  fast + one free). Standouts unchanged: escape ×2.9, stringart ×2.9, polygon ×2.7, lava_climb ×2.6 – all "one hero
-  that speeds up and breaks through". Tonight's fast concept (tower_drop) is exactly that formula as a vertical fall.
+- 2026-10-25 · **Songs**: web still has no ranking for sim songs; Halloween (Ramalama, Spooky Scary Skeletons) until
+  Sat 31 Oct, Christmas wave from Nov 1. Carol of the Bells ×4.0 own lift → 1.5, Ode to Joy → 1.3, new Jingle Bells
+  (Pierpont 1857, PD) 1.3 until Jan 6. Song quiz 7 vs 9 posts: views ×1.17 vs ×0.89, comments 0.1 both – keep 0.5
+  until 8 per side.
 - 2026-10-23 · **Experiment "series" started** (tower_drop): TOWER #N, five floors more per episode, "NEXT: TOWER #N+1"
   above the follow button. No shared-code change needed: the run length is planned exactly and fits every seed, so the
   seed search always takes the next free seed and episode = seed + 1. Reusable trick for any future series.
@@ -33,10 +41,6 @@ remove what is outdated). Numbers: views factor vs the channel median (`python -
   camera works with a static gradient background (no studio slab). Cull debris flying at the lens (big projected
   radius / close depth) – otherwise blobs cover the title. A light "inside" a shell: paste far beads, add the glow,
   then paste near beads – it only shows through holes.
-- 2026-10-23 · **Songs**: no outside chart for sim songs again; trends are Halloween reveal sounds (Ramalama, Spooky
-  Scary Skeletons) and the Black Parade 20th anniversary (TikTok list only). Danse Macabre would be the ideal
-  Halloween PD melody but no verifiable note-by-note source was found – not added (add it once a PD score/MIDI can
-  be checked).
 - 2026-10-22 · **Followers are the bottleneck, not views**: Instagram 125,000 views → 13 followers, 12 shares,
   2 comments. Changed: the end button says "FOLLOW FOR MORE" (was "LIKE & SUBSCRIBE"), Instagram captions ask to
   send the clip on, daily follower counts in the "followers" line. Next: the `series` experiment (numbered episodes
@@ -49,9 +53,6 @@ remove what is outdated). Numbers: views factor vs the channel median (`python -
   need alternating ± mode combinations (the − combination always has a node on the diagonal, which traps every
   bead), a "shake-apart" thump at each new pattern and a little jitter so lines stay thick. Analytic physics in
   numpy (no XPBD) is enough when nothing has to tear: both concepts simulate in 1–5 s.
-- 2026-10-22 · **Songs**: no outside ranking for satisfying-sim songs on the web; Halloween roundups list only pop
-  and meme sounds (Ramalama, Spooky Scary Skeletons). Added Sugar Plum Fairy (Tchaikovsky, verified against a
-  public-domain MIDI) for the Nov–Dec season, boost 1.5 until Jan 6 – a well-known melody for the song quiz.
 - 2026-10-21 · **Experiment "guess" started** (hidden_shape): invisible shapes push up a sheet, the name appears
   only after a pause, the last one is never named – meant to pull guesses into the comments. Watch "experiment
   guess" (views and comments). Research: "guess the hidden object" and "0% vs 100% softness" soft-body shorts are
@@ -63,9 +64,6 @@ remove what is outdated). Numbers: views factor vs the channel median (`python -
 - 2026-10-21 · **Melody on the hero, enforced**: brick_core only passed once the melody went to the lead ball/core
   *and* a hit closer than note_gap to the last note became a clack – a simple, reusable pattern for swarms (used
   again for the territory sound fix and orb_escape on 22 Oct).
-- 2026-10-21 · **Song numbers** (22 Oct): Twinkle ×3.8 and Morning Mood ×2.3 are our best lifts (boosted 1.6 / 1.3);
-  Mountain King stays neutral (own lift ×0.9) despite Halloween; Toccata 1.8 until Nov 1. Song quiz: 2 vs 4 posts
-  (views ×0.93 vs ×0.98, no comments either side) – too early to judge.
 - 2026-10-20 · **Length is the biggest open question.** Trending satisfying Shorts are ~24 s long
   (trend check, 133 videos); ours run 61–86 s because TikTok's Creator Rewards need over a minute. Short videos
   earn nothing on TikTok but get watched to the end and replayed – test short-format concepts (min_video ~20 s,
