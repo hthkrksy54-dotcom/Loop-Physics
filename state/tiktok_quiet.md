@@ -7,6 +7,18 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
+## 25.10. 05:00 UTC – Feel like you'll be found out?
+
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-impostor-phenomenon)
+
+```text
+Feel like you'll be found out?
+Why do so many capable people feel that they do not really deserve their success – and that one day they will be found out?
+💬 When was the last time you felt like you didn't really belong somewhere – and how did it turn out?
+Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
+#Psychology #ImpostorSyndrome #Philosophy #learnontiktok
+```
+
 ## 24.10. 03:40 UTC – Seneca's answer to 'life is too short'
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7700186711866772769) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-shortness-of-life)
