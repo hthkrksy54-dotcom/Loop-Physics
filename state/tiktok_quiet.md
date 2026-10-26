@@ -7,6 +7,18 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
+## 26.10. 05:04 UTC – Why did you really choose that?
+
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-know-thyself)
+
+```text
+Why did you really choose that?
+"Know thyself" was carved at the temple of Apollo at Delphi, and Socrates built a whole way of life around it. But how well can we actually see into our own minds?
+💬 What is something about yourself that you only understood much later – or that someone else saw first?
+Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
+#Philosophy #KnowThyself #Socrates #psychology #learnontiktok
+```
+
 ## 25.10. 05:00 UTC – Feel like you'll be found out?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7700494641832971552) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-impostor-phenomenon)
