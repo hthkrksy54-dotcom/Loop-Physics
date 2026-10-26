@@ -922,10 +922,16 @@ def youtube_polish(apply: bool = False) -> None:
     existing = {p["snippet"]["title"]: p["id"] for p in get("playlists", part="snippet", mine="true",
                                                             maxResults=50).get("items", [])}
     for v, rec in matches:
-        meta = metadata(rec["kind"], rec["seed"], rec["melody"], cfg, rec.get("quiz", False))
+        prev, nxt = neighbours(records, rec["kind"], rec["seed"])
+        meta = metadata(rec["kind"], rec["seed"], rec["melody"], cfg, rec.get("quiz", False), prev, nxt)
         send("PUT", "videos", "snippet", {"id": v["id"], "snippet": {
             "title": meta["title"], "description": meta["description"], "tags": meta["tags"],
             "categoryId": cfg["youtube"]["category_id"], "defaultLanguage": cfg["youtube"]["default_language"]}})
+        if prev and prev not in {m[0]["id"] for m in matches}:  # the episode before now links on to this one
+            try:
+                describe(token, next(r for r in records if r.get("youtube_id") == prev), records, cfg)
+            except Exception as err:  # noqa: BLE001
+                print(f"  warning: link from the previous episode failed: {err}", flush=True)
         cls = sims.KINDS.get(rec["kind"])
         name, about = PLAYLISTS.get(rec["kind"]) or (cls and cls.playlist) or EXPERIMENTS
         if name not in existing:
