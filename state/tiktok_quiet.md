@@ -9,7 +9,7 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 ## 26.10. 05:04 UTC – Why did you really choose that?
 
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-know-thyself)
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-know-thyself)
 
 ```text
 Why did you really choose that?
