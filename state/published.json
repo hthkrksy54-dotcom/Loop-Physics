@@ -286,7 +286,10 @@
         "instagram: processing failed: {'status_code': 'ERROR', 'status': 'ERROR', 'id': '18143793739568561'}",
         "instagram: processing failed: {'status_code': 'ERROR', 'status': 'ERROR', 'id': '18143803879568561'}",
         "instagram: processing failed: {'status_code': 'ERROR', 'status': 'ERROR', 'id': '18143807956568561'}"
-      ]
+      ],
+      "instagram_id": "18388712398226518",
+      "instagram_url": "https://www.instagram.com/reel/De9TKg1JqfN/",
+      "instagram_story_id": "17995195674024522"
     },
     {
       "id": "know-thyself",
