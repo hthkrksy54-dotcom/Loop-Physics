@@ -9,7 +9,7 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 ## 26.10. 05:04 UTC – Why did you really choose that?
 
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-know-thyself)
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7700987028640369953) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-know-thyself)
 
 ```text
 Why did you really choose that?
@@ -65,17 +65,5 @@ Prisoners chained in a cave, watching shadows on a wall, convinced that the shad
 💬 What is one belief you held for years before you realised it was only a shadow?
 Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
 #Plato #Philosophy #AllegoryOfTheCave #psychology #learnontiktok
-```
-
-## 21.10. 03:07 UTC – Why one criticism beats nine compliments
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@quiet_thoughts_yt/video/7698969428767051040) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/video-en-negativity-bias)
-
-```text
-Why one criticism beats nine compliments
-Ten compliments and one criticism – and you remember the criticism. This is not a personal flaw.
-💬 What is one small good thing from today that almost slipped past you?
-Full video essay on YouTube: Quiet Thoughts (@quietthoughts-20)
-#Psychology #NegativityBias #Philosophy #learnontiktok
 ```
 
