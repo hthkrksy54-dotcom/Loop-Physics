@@ -892,20 +892,20 @@ def youtube_polish(apply: bool = False) -> None:
         m = re.fullmatch(r"P(?:T)?(?:(\d+)M)?(?:(\d+)S)?", v["contentDetails"]["duration"]) or None
         secs = (int(m.group(1) or 0) * 60 + int(m.group(2) or 0)) if m else 0
         fname = (v.get("fileDetails", {}).get("fileName") or "").casefold()
-        ms = int(v.get("fileDetails", {}).get("durationMs") or 0)  # the uploaded file's exact length, once processed
-        exact, tol = (ms / 1000, 0.3) if ms else (secs, 1.5)
+        # length: the file's exact length when YouTube reports it (fileDetails.durationMs), else whole seconds –
+        # rounded up (a 77.4 s render shows as 78 s), so it fits renders a little over a second shorter
+        ms = int(v.get("fileDetails", {}).get("durationMs") or 0)
+        exact = ms / 1000 if ms else float(secs)
+        lo, hi = (exact - 0.3, exact + 0.3) if ms else (exact - 1.2, exact + 0.2)
         title = _norm(v["snippet"]["title"])
         rec = next((r for r in records if r.get("youtube_id") == v["id"]), None)
         recent = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=7)
-        free = [r for r in records if not r.get("youtube_id") and abs(r.get("duration", 0) - exact) <= tol
+        free = [r for r in records if not r.get("youtube_id") and lo < r.get("duration", 0) <= hi
                 and dt.datetime.fromisoformat(r["date"]) > recent]
-        near = sorted(free, key=lambda r: abs(r.get("duration", 0) - exact))
         rec = rec or next((r for r in free if f"{r['kind']}-{r['seed']}" in fname), None) \
             or next((r for r in free if r["kind"] in fname), None) \
             or next((r for r in free if _norm(r["title"]) == title), None) \
-            or (free[0] if len(free) == 1 else None) \
-            or (near[0] if len(near) > 1 and abs(near[0]["duration"] - exact) < 0.8 * tol / 1.5  # clearly the closest
-                and abs(near[1]["duration"] - exact) - abs(near[0]["duration"] - exact) >= 0.5 * tol / 1.5 else None)
+            or (free[0] if len(free) == 1 else None)  # phone uploads have no file name: only an unambiguous length
         print(f"  {v['id']} {exact:5.1f}s views={v['statistics'].get('viewCount', 0):>5} file={fname[:38]!r:40} "
               f"title={v['snippet']['title'][:45]!r} -> {rec['kind'] + '-' + str(rec['seed']) if rec else 'NO MATCH'}",
               flush=True)
