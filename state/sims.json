@@ -648,7 +648,7 @@
       "instagram_id": "18030561041882795",
       "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/",
       "youtube_id": "3Qgx9BMIlXo",
-      "yt_views": 8664,
+      "yt_views": 8665,
       "stats": {
         "views": 2663,
         "reach": 2328,
@@ -942,7 +942,7 @@
         "at": "2026-10-25T10:08+00:00"
       },
       "youtube_id": "ZfGqvbJNXiM",
-      "yt_views": 1114
+      "yt_views": 1115
     },
     {
       "date": "2026-10-19T16:41:42+00:00",
@@ -1171,7 +1171,7 @@
         "at": "2026-10-25T10:08+00:00"
       },
       "youtube_id": "p-QSX4ORvRM",
-      "yt_views": 4078
+      "yt_views": 4087
     },
     {
       "date": "2026-10-21T10:42:07+00:00",
@@ -1230,7 +1230,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699168124997881120"
       },
       "youtube_id": "CwQDDCxYlNI",
-      "yt_views": 1569,
+      "yt_views": 1579,
       "stats": {
         "views": 1594,
         "reach": 1414,
@@ -1680,7 +1680,7 @@
       "instagram_id": "18073927901769025",
       "instagram_url": "https://www.instagram.com/reel/De54cmSkVC0/",
       "youtube_id": "uKuxOZvSyNk",
-      "yt_views": 1168,
+      "yt_views": 1176,
       "stats": {
         "views": 1261,
         "reach": 1133,
@@ -1709,7 +1709,7 @@
       "instagram_url": "https://www.instagram.com/reel/De6hPuGjv3w/",
       "instagram_story_id": "18017323295745870",
       "youtube_id": "J3SZOusPI8U",
-      "yt_views": 1309,
+      "yt_views": 1313,
       "tiktok_skip": "video no longer archived"
     },
     {
@@ -1736,7 +1736,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700682065133522209"
       },
       "youtube_id": "ZC7mDuf4NEo",
-      "yt_views": 1098
+      "yt_views": 1159
     },
     {
       "date": "2026-10-25T22:41:50+00:00",
@@ -1760,6 +1760,23 @@
         "status": "SEND_TO_USER_INBOX",
         "caption": "Can the ball fall through 110 floors?\nTower #3: a ball bounces down a spinning tower of 110 floors made of glossy beads. Every episode the tower gets five floors taller. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#ball #satisfying #oddlysatisfying #physics #simulation"
       }
+    },
+    {
+      "date": "2026-10-26T04:41:52+00:00",
+      "kind": "polygon",
+      "seed": 29,
+      "melody": "morning_mood",
+      "timbre": "chip",
+      "title": "Can the ball escape all 12 octagons? – Can you name the song?",
+      "duration": 69.2,
+      "why": "standout",
+      "quiz": true,
+      "tiktok_note": "Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.",
+      "drive": "https://drive.google.com/drive/folders/1nPHfj6DTQLQtB9ZssL2x6B9AaBd1CWSR",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261026-polygon-29",
+      "warnings": [
+        "instagram: processing failed: {'status_code': 'ERROR', 'status': 'ERROR', 'id': '18147318040545192'}"
+      ]
     }
   ],
   "followers": [
