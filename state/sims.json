@@ -942,7 +942,7 @@
         "at": "2026-10-25T10:08+00:00"
       },
       "youtube_id": "ZfGqvbJNXiM",
-      "yt_views": 1113
+      "yt_views": 1114
     },
     {
       "date": "2026-10-19T16:41:42+00:00",
@@ -1171,7 +1171,7 @@
         "at": "2026-10-25T10:08+00:00"
       },
       "youtube_id": "p-QSX4ORvRM",
-      "yt_views": 3980
+      "yt_views": 4013
     },
     {
       "date": "2026-10-21T10:42:07+00:00",
@@ -1230,7 +1230,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699168124997881120"
       },
       "youtube_id": "CwQDDCxYlNI",
-      "yt_views": 1557,
+      "yt_views": 1569,
       "stats": {
         "views": 1594,
         "reach": 1414,
@@ -1363,7 +1363,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699539842287389985"
       },
       "youtube_id": "k9fsayyKbKE",
-      "yt_views": 2213,
+      "yt_views": 2214,
       "stats": {
         "views": 1416,
         "reach": 1279,
@@ -1619,7 +1619,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700486887479299361"
       },
       "youtube_id": "NfesOyi_x70",
-      "yt_views": 2236,
+      "yt_views": 2272,
       "stats": {
         "views": 4300,
         "reach": 3927,
@@ -1680,7 +1680,7 @@
       "instagram_id": "18073927901769025",
       "instagram_url": "https://www.instagram.com/reel/De54cmSkVC0/",
       "youtube_id": "uKuxOZvSyNk",
-      "yt_views": 1167,
+      "yt_views": 1168,
       "stats": {
         "views": 1261,
         "reach": 1133,
@@ -1709,7 +1709,7 @@
       "instagram_url": "https://www.instagram.com/reel/De6hPuGjv3w/",
       "instagram_story_id": "18017323295745870",
       "youtube_id": "J3SZOusPI8U",
-      "yt_views": 1262,
+      "yt_views": 1290,
       "tiktok_skip": "video no longer archived"
     },
     {
@@ -1736,7 +1736,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700682065133522209"
       },
       "youtube_id": "ZC7mDuf4NEo",
-      "yt_views": 734
+      "yt_views": 1006
     },
     {
       "date": "2026-10-25T22:41:50+00:00",
@@ -1757,7 +1757,7 @@
       ],
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7700741941981382678",
-        "status": "PROCESSING_UPLOAD",
+        "status": "SEND_TO_USER_INBOX",
         "caption": "Can the ball fall through 110 floors?\nTower #3: a ball bounces down a spinning tower of 110 floors made of glossy beads. Every episode the tower gets five floors taller. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#ball #satisfying #oddlysatisfying #physics #simulation"
       }
     }
