@@ -476,7 +476,10 @@ def onscreen(lines: list[str]) -> str:
     return out
 
 
-def metadata(kind: str, seed: int, melody: str, cfg: dict, quiz: bool = False) -> dict:
+def metadata(kind: str, seed: int, melody: str, cfg: dict, quiz: bool = False,
+             prev: str | None = None, next_id: str | None = None) -> dict:
+    """Title, YouTube description, Instagram caption and tags. prev/next_id: YouTube ids of the neighbouring
+    episodes of a numbered series, linked in the description so one episode leads to the next."""
     rnd = random.Random(seed * 31 + len(kind))
     song_full = sims.MELODIES[melody][0]
     song = song_full.split(" – ")[0]
@@ -498,27 +501,42 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict, quiz: bool = False) -
         with_addon = f"{params['onscreen']} – {rnd.choice(addons)}"
         title = with_addon if len(with_addon) <= 95 else title
     generic = [q for q in tuning.get("questions") or []
-               if not re.search(r"\b(rings?|pendulums?|plinko|colou?rs?|polygons?|balls? wins?|escapes?|marbles?|races?)\b",
-                                q, re.I)]
+               if not re.search(r"\b(rings?|pendulums?|plinko|colou?rs?|polygons?|balls? wins?|escap\w*|marbles?|races?)\b",
+                                q, re.I) and not re.search(r"song|melod", q, re.I)]  # the description names the song
     question = rnd.choice((cls.questions or QUESTIONS.get(kind, ["Did you recognise the melody?"])) + generic[:3])
     if quiz:
         question = QUIZ_QUESTION
     tags_line = " ".join(["#satisfying"] + [f"#{t}" for t in (tuning.get("hashtags") or []) if t != "satisfying"][:3]) \
         if tuning.get("hashtags") else cfg["instagram"].get("hashtags", "")
     composer = "" if quiz else COMPOSERS.get(melody, "")
-    body = (_fmt(cls.body or BODIES.get(kind, "Every bounce plays the next note of {song}."),
-                 {**params, "song": song_full}) + "\n"
-            "Physics, picture and sound are all generated in code – no two runs are the same.")
+    what = cls.body or BODIES.get(kind) or (
+        TIKTOK_WHAT[kind] + " Every bounce plays the next note of {song}." if kind in TIKTOK_WHAT
+        else "Every bounce plays the next note of {song}.")
+    what = _fmt(what, {**params, "song": song_full})
+    body = what + ("" if re.search(r"simulated", what, re.I) else
+                   "\nPhysics, picture and sound are all generated in code – no two runs are the same.")
     music = ("🎵 The melody is a public-domain classic, played note by note by the simulation – no recording is used."
              if quiz else f"🎵 Music: {song_full} (public domain), played note by note by the simulation – "
                           "no recording is used.")  # says so up front, for any false copyright claim
-    description = "\n\n".join([
+    # the first line is what search and the expanded Short show: the question in the video, in plain words
+    lead = params["onscreen"].rstrip() + ("" if re.search(r"[?!.]$", params["onscreen"].rstrip()) else ".")
+    lead += (" Name the song before the finale." if quiz else
+                                 f" A satisfying physics simulation to {song}." if song else "")
+    series = re.match(r"([A-Z][A-Za-z ]{1,20}) #(\d+)", what) if cls.experiment == "series" else None
+    episodes = [f"◀ Previous episode: https://youtube.com/shorts/{prev}" if prev else "",
+                f"▶ Next episode: https://youtube.com/shorts/{next_id}" if next_id else ""]
+    follow = (f"🔔 Subscribe so you don't miss {series.group(1)} #{int(series.group(2)) + 1}." if series and not next_id
+              else f"🔔 Subscribe to {cfg['channel_name']} – a new simulation every few hours, each one built to a finale.")
+    description = "\n\n".join(x for x in [
+        lead,
         body,
+        "\n".join(e for e in episodes if e),
         music,
         f"💬 {question}",
-        f"Four new simulations every day on {cfg['channel_name']} – and a brand-new concept twice a day.",
-        "#satisfying #physics #simulation #shorts",
-    ])
+        follow,
+        " ".join(["#satisfying", "#physics", "#simulation"] + ([f"#{composer.lower()}"] if composer else [])
+                 + ["#shorts"]),
+    ] if x)
     caption = "\n\n".join([
         title,
         body,
@@ -533,6 +551,50 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict, quiz: bool = False) -
             "onscreen": params["onscreen"], "quiz": quiz,
             "tags": list(dict.fromkeys(TAGS + [t for t in (song.lower(), composer.lower()) if t]
                                        + (tuning.get("hashtags") or [])[:4]))}
+
+
+def neighbours(records: list[dict], kind: str, seed: int) -> tuple[str | None, str | None]:
+    """YouTube ids of the episodes before and after this one in a numbered series (episode = seed + 1)."""
+    if sims.KINDS[kind].experiment != "series":
+        return None, None
+    ids = {r["seed"]: r["youtube_id"] for r in records if r["kind"] == kind and r.get("youtube_id")}
+    return ids.get(seed - 1), ids.get(seed + 1)
+
+
+def describe(token: str, rec: dict, records: list[dict], cfg: dict) -> str:
+    """Give one upload the current description (with links to its neighbouring episodes); title and tags stay
+    as they are on YouTube. Returns the new description."""
+    import requests
+
+    api, h = "https://www.googleapis.com/youtube/v3", {"Authorization": f"Bearer {token}"}
+    r = requests.get(f"{api}/videos", params={"part": "snippet", "id": rec["youtube_id"]}, headers=h, timeout=30)
+    r.raise_for_status()
+    items = r.json().get("items") or []
+    if not items:
+        raise RuntimeError(f"{rec['youtube_id']} not found on the channel")
+    sn = items[0]["snippet"]
+    prev, nxt = neighbours(records, rec["kind"], rec["seed"])
+    desc = metadata(rec["kind"], rec["seed"], rec["melody"], cfg, rec.get("quiz", False), prev, nxt)["description"]
+    keep = {k: sn[k] for k in ("tags", "defaultLanguage", "defaultAudioLanguage") if sn.get(k)}  # PUT drops what it lacks
+    r = requests.put(f"{api}/videos", params={"part": "snippet"}, headers={**h, "Content-Type": "application/json"},
+                     data=json.dumps({"id": rec["youtube_id"], "snippet": {
+                         "title": sn["title"], "categoryId": sn["categoryId"], "description": desc, **keep}}),
+                     timeout=60)
+    if not r.ok:
+        raise RuntimeError(f"videos.update failed ({r.status_code}): {r.text[:200]}")
+    return desc
+
+
+def youtube_describe(last: int = 4) -> None:
+    """The newest `last` uploads get the current description template (run once after the template changes)."""
+    cfg, state = load(CONFIG, {}), load(STATE, {"videos": []})
+    token = _youtube_token(cfg)
+    if not token:
+        raise SystemExit("YouTube token or client credentials missing")
+    records = state.get("videos", [])
+    for rec in [r for r in records if r.get("youtube_id")][-last:]:
+        print(f"== https://youtube.com/shorts/{rec['youtube_id']} ({rec['kind']}-{rec['seed']})\n"
+              f"{describe(token, rec, records, cfg)}\n", flush=True)
 
 
 def _youtube_token(cfg: dict) -> str | None:
@@ -623,7 +685,7 @@ def run(upload: bool = True) -> dict:
         name = f"{stamp:%Y%m%d}-{kind}-{seed}"
         quiz = song_quiz(kind, state)
         try:
-            meta = metadata(kind, seed, melody, cfg, quiz)
+            meta = metadata(kind, seed, melody, cfg, quiz, neighbours(state.get("videos", []), kind, seed)[0])
             print(f"[sims] {name} ({why}): {meta['title']} ({sims.MELODIES[melody][0]}{', song quiz' if quiz else ''})",
                   flush=True)
             result = sims.render(kind, seed, OUT / f"{name}.mp4", melody, cfg.get("handle", ""), quiz=quiz)
@@ -695,6 +757,13 @@ def run(upload: bool = True) -> dict:
             print(f"  warning: youtube failed: {err}", flush=True)
     state.setdefault("videos", []).append(record)
     save(STATE, state)
+    prev = neighbours(state["videos"], kind, seed)[0]
+    if prev and record.get("youtube_id"):  # the episode before now links on to this one
+        try:
+            describe(token, next(r for r in state["videos"] if r.get("youtube_id") == prev), state["videos"], cfg)
+            print(f"  youtube: previous episode {prev} now links here", flush=True)
+        except Exception as err:  # noqa: BLE001
+            print(f"  warning: link from the previous episode failed: {err}", flush=True)
     if record.get("tiktok"):
         tiktok.write_queue(state["videos"], cfg["channel_name"], tips=sound_tips())
     removed = publish.cleanup_releases("sims-", keep_days=10)  # Instagram keeps its own copy

@@ -20,9 +20,9 @@ on:
         type: boolean
         default: false
       youtube:
-        description: "Only polish manual YouTube uploads (check = dry run)"
+        description: "Only polish manual YouTube uploads (check = dry run, describe = newest 4 get the current description)"
         type: choice
-        options: ["none", "check", "apply"]
+        options: ["none", "check", "apply", "describe"]
         default: "none"
       source:
         description: "Who started the run (timer = planned slot)"
@@ -33,7 +33,7 @@ permissions:
   actions: write  # to start the timer and overdue workflows
 
 concurrency:  # admin-only runs (branding, YouTube polish) never wait behind or replace video runs
-  group: ${{ (github.event.inputs.branding == 'true' || github.event.inputs.youtube == 'check' || github.event.inputs.youtube == 'apply') && 'sims-admin' || 'sims' }}
+  group: ${{ (github.event.inputs.branding == 'true' || github.event.inputs.youtube == 'check' || github.event.inputs.youtube == 'apply' || github.event.inputs.youtube == 'describe') && 'sims-admin' || 'sims' }}
   cancel-in-progress: false
 
 jobs:
@@ -60,7 +60,7 @@ jobs:
           IN_YOUTUBE: ${{ github.event.inputs.youtube }}
           IN_SOURCE: ${{ github.event.inputs.source }}
         run: |
-          if [ "$IN_BRANDING" = "true" ] || [ "$IN_YOUTUBE" = "check" ] || [ "$IN_YOUTUBE" = "apply" ]; then MODE=admin
+          if [ "$IN_BRANDING" = "true" ] || [ "$IN_YOUTUBE" = "check" ] || [ "$IN_YOUTUBE" = "apply" ] || [ "$IN_YOUTUBE" = "describe" ]; then MODE=admin
           else MODE=$(python -m ytauto sims --due); fi
           echo "mode=$MODE" >> "$GITHUB_OUTPUT"
           echo "mode: $MODE"
@@ -107,7 +107,7 @@ jobs:
           fi
 
       - name: Plan the next run and start overdue workflows
-        if: always() && github.event.inputs.branding != 'true' && github.event.inputs.youtube != 'check' && github.event.inputs.youtube != 'apply'
+        if: always() && github.event.inputs.branding != 'true' && github.event.inputs.youtube != 'check' && github.event.inputs.youtube != 'apply' && github.event.inputs.youtube != 'describe'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JOB_STATUS: ${{ job.status }}
