@@ -494,8 +494,15 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict, quiz: bool = False,
     addons = [a for a in tuning.get("title_addons") or []
               if "?" not in a and not (kind in ("pendulum", "chaos", "harmonograph") and "bounce" in a.lower())
               and not re.search(r"guess|name|song|melod", a, re.I)]  # the song name is on screen (or it is the quiz)
-    if quiz:
-        title = f"{params['onscreen']} – Can you name the song?"
+    what = cls.body or BODIES.get(kind) or (
+        TIKTOK_WHAT[kind] + " Every bounce plays the next note of {song}." if kind in TIKTOK_WHAT
+        else "Every bounce plays the next note of {song}.")
+    what = _fmt(what, {**params, "song": song_full})
+    series = re.match(r"([A-Z][A-Za-z ]{1,20}) #(\d+)", what) if cls.experiment == "series" else None
+    if series:  # a numbered series: the episode leads the title, so one episode sends viewers to the next
+        title = f"{series.group(1)} #{series.group(2)}: {params['onscreen']}"
+    elif quiz:  # short: the question in the video first, the quiz as a tail (the full question is on screen)
+        title = f"{params['onscreen']} 🎵 Name the song"
         title = title if len(title) <= 95 else "Can you name the song? Watch till the end"
     elif addons and rnd.random() < 0.5:  # half the time: the on-screen question plus a trending add-on
         with_addon = f"{params['onscreen']} – {rnd.choice(addons)}"
@@ -509,10 +516,6 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict, quiz: bool = False,
     tags_line = " ".join(["#satisfying"] + [f"#{t}" for t in (tuning.get("hashtags") or []) if t != "satisfying"][:3]) \
         if tuning.get("hashtags") else cfg["instagram"].get("hashtags", "")
     composer = "" if quiz else COMPOSERS.get(melody, "")
-    what = cls.body or BODIES.get(kind) or (
-        TIKTOK_WHAT[kind] + " Every bounce plays the next note of {song}." if kind in TIKTOK_WHAT
-        else "Every bounce plays the next note of {song}.")
-    what = _fmt(what, {**params, "song": song_full})
     body = what + ("" if re.search(r"simulated", what, re.I) else
                    "\nPhysics, picture and sound are all generated in code – no two runs are the same.")
     music = ("🎵 The melody is a public-domain classic, played note by note by the simulation – no recording is used."
@@ -522,7 +525,6 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict, quiz: bool = False,
     lead = params["onscreen"].rstrip() + ("" if re.search(r"[?!.]$", params["onscreen"].rstrip()) else ".")
     lead += (" Name the song before the finale." if quiz else
                                  f" A satisfying physics simulation to {song}." if song else "")
-    series = re.match(r"([A-Z][A-Za-z ]{1,20}) #(\d+)", what) if cls.experiment == "series" else None
     episodes = [f"◀ Previous episode: https://youtube.com/shorts/{prev}" if prev else "",
                 f"▶ Next episode: https://youtube.com/shorts/{next_id}" if next_id else ""]
     follow = (f"🔔 Subscribe so you don't miss {series.group(1)} #{int(series.group(2)) + 1}." if series and not next_id
@@ -890,19 +892,21 @@ def youtube_polish(apply: bool = False) -> None:
         m = re.fullmatch(r"P(?:T)?(?:(\d+)M)?(?:(\d+)S)?", v["contentDetails"]["duration"]) or None
         secs = (int(m.group(1) or 0) * 60 + int(m.group(2) or 0)) if m else 0
         fname = (v.get("fileDetails", {}).get("fileName") or "").casefold()
+        ms = int(v.get("fileDetails", {}).get("durationMs") or 0)  # the uploaded file's exact length, once processed
+        exact, tol = (ms / 1000, 0.3) if ms else (secs, 1.5)
         title = _norm(v["snippet"]["title"])
         rec = next((r for r in records if r.get("youtube_id") == v["id"]), None)
-        recent = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=4)
-        free = [r for r in records if not r.get("youtube_id") and abs(r.get("duration", 0) - secs) <= 1.5
+        recent = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=7)
+        free = [r for r in records if not r.get("youtube_id") and abs(r.get("duration", 0) - exact) <= tol
                 and dt.datetime.fromisoformat(r["date"]) > recent]
-        near = sorted(free, key=lambda r: abs(r.get("duration", 0) - secs))
+        near = sorted(free, key=lambda r: abs(r.get("duration", 0) - exact))
         rec = rec or next((r for r in free if f"{r['kind']}-{r['seed']}" in fname), None) \
             or next((r for r in free if r["kind"] in fname), None) \
             or next((r for r in free if _norm(r["title"]) == title), None) \
             or (free[0] if len(free) == 1 else None) \
-            or (near[0] if len(near) > 1 and abs(near[0]["duration"] - secs) < 0.8  # clearly the closest length
-                and abs(near[1]["duration"] - secs) - abs(near[0]["duration"] - secs) >= 0.5 else None)
-        print(f"  {v['id']} {secs:3d}s views={v['statistics'].get('viewCount', 0):>5} file={fname[:38]!r:40} "
+            or (near[0] if len(near) > 1 and abs(near[0]["duration"] - exact) < 0.8 * tol / 1.5  # clearly the closest
+                and abs(near[1]["duration"] - exact) - abs(near[0]["duration"] - exact) >= 0.5 * tol / 1.5 else None)
+        print(f"  {v['id']} {exact:5.1f}s views={v['statistics'].get('viewCount', 0):>5} file={fname[:38]!r:40} "
               f"title={v['snippet']['title'][:45]!r} -> {rec['kind'] + '-' + str(rec['seed']) if rec else 'NO MATCH'}",
               flush=True)
         if rec and v["id"] not in taken:
