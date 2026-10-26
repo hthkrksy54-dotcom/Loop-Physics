@@ -3,13 +3,31 @@
 The concept designer reads this before every run and updates it at the end (newest first, at most ~20 points,
 remove what is outdated). Numbers: views factor vs the channel median (`python -m ytauto concepts`).
 
+- 2026-10-26 · **Numbers**: series ×0.95 (3) vs ×0.89 – tower_drop (×8.9) carries it, hole_eater/gate_rush pull it to
+  neutral; still under 4, keep one series per night (new: press_drill). 3d ×0.95 (11) vs ×0.89 and fast ×0.98 (6) vs
+  ×0.76 – **fast is ×1.29 the rest with 6 concepts → rule ≥1.2×: from now on both nightly concepts are fast** (both
+  were tonight). short/loop ×0.66 (2), softness ×0.51 (1), halloween ×0.56 (1): weak, nothing new
+  in those. Followers: Instagram 19 (+5 in 2 d), YouTube 62 (+15 in 2 d).
+- 2026-10-26 · **Standouts share one shape**: tower_drop ×8.9, escape/polygon/lava_climb ×2.6, split_trampoline ×2.1 –
+  one hero, a visible goal that gets closer (floors, rings, lava, walls), hits speeding up to ~10/s. press_drill copies
+  that shape with a new mechanic (closing press vs. drilling); critical_mass tests the opposite (no single hero, an
+  exponential chain story told in rounds – experiment "rounds").
+- 2026-10-26 · **3D build tricks**: event-driven kinematics (solve the next wall hit with Newton on a smooth press curve,
+  bisect the press speed for the target length) makes a fully planned 60–70 s run in ~0.05 s – the series trick
+  (episode = seed + 1) works for any planned mechanic. Precompute when each bead is knocked out (searchsorted of the
+  needed depth into the per-hit depth list) instead of testing beads every frame. Draw only exposed beads of a solid
+  block (6-neighbour test on the occupancy grid): ~3,000-bead walls paint at ~70 ms/frame. Steep pitch (~0.9 rad) with
+  the moving axis pointing into the screen keeps a long scene inside the 9:16 frame. Pulled rods slide out sideways –
+  anything that rises crosses the title. Chain reactions: give the melody to a split only if note_gap has passed, else
+  clack – the gate stays green at hundreds of splits.
+- 2026-10-26 · **Songs**: song quiz reached 10 vs 12 posts – views ×1.11 vs ×0.92 (1.21×), comments equal → share 0.8.
+  Twinkle (×2.38) and Carol of the Bells (×2.28) → 1.7; new PD melody We Wish You a Merry Christmas (1.3 until Jan 6).
+  Web still has no ranking for sim songs.
 - 2026-10-25 · **Series is the standout format: ×5.18 over 2 concepts** (tower_drop ×9.8, hole_eater) vs ×0.95 without
   – still under 4 concepts, but strong enough to keep one series per night. Third series started: gate_rush (RUN #N,
   goal +500 balls per episode). 3d ×1.02 (8) vs ×0.90, fast ×1.02 (5) vs ×0.91 – neutral (0.8–1.2), keep one fast +
   one free. Followers: Instagram 17, YouTube 56 (+9 in a day).
-- 2026-10-25 · **Short/loop has only one data point** (chladni_plate ×0.76) – too early to drop. Second short loop
-  built: bead_picture (~21 s, a heap of beads builds a pixel picture that is never named, then rains back = first
-  frame). Once short has 4 concepts with numbers, decide.
+- 2026-10-25 · **Short/loop**: chladni_plate + bead_picture (~21 s loops) – ×0.66 over 2 so far. Decide at 4.
 - 2026-10-25 · **3D build tricks**: thousands of free balls are cheap in numba with a spatial *hash* (fixed 2^15 table,
   linked lists) – 5,000 balls with peg rods, walls and ball contacts simulate a 70 s run in ~4 s. Rods that touch the
   walls stop balls wedging between rod and wall (they stuck forever otherwise). Gates planned on the fly from the
@@ -26,16 +44,9 @@ remove what is outdated). Numbers: views factor vs the channel median (`python -
   composite it through the projected hole ellipse. Big sprites in ~6 % radius steps cut paint time from ~200 to
   ~140 ms/frame with many beads near the camera. A city of ~190 objects along an inward spiral gives ~3 melody
   notes/s by construction (planned swallow times).
-- 2026-10-25 · **Songs**: web still has no ranking for sim songs; Halloween (Ramalama, Spooky Scary Skeletons) until
-  Sat 31 Oct, Christmas wave from Nov 1. Carol of the Bells ×4.0 own lift → 1.5, Ode to Joy → 1.3, new Jingle Bells
-  (Pierpont 1857, PD) 1.3 until Jan 6. Song quiz 7 vs 9 posts: views ×1.17 vs ×0.89, comments 0.1 both – keep 0.5
-  until 8 per side.
 - 2026-10-23 · **Experiment "series" started** (tower_drop): TOWER #N, five floors more per episode, "NEXT: TOWER #N+1"
   above the follow button. No shared-code change needed: the run length is planned exactly and fits every seed, so the
   seed search always takes the next free seed and episode = seed + 1. Reusable trick for any future series.
-- 2026-10-23 · **Experiment "halloween" started** (pumpkin_carve): seasonal hook – steel balls carve a jack-o'-lantern
-  out of 4,000 beads, the candle lights the face at the end. Posts right before Oct 31; compare views, and expect it
-  to drop after Halloween in rotation.
 - 2026-10-23 · **3D build tricks**: planned (analytic) kinematics instead of XPBD for scripted mechanics (tower fall,
   shot schedule) make length, sound and visuals exact and simulate in milliseconds; set `planned_end`. A moving
   camera works with a static gradient background (no studio slab). Cull debris flying at the lens (big projected
@@ -72,7 +83,5 @@ remove what is outdated). Numbers: views factor vs the channel median (`python -
   views) are single balls that get faster with every bounce; polygon ×1.8 is the same idea. Busy many-ball
   battles and races mostly land between ×0.65 and ×1.3.
 - 2026-10-20 · **Calm drawing machines underperform**: pendulum ×0.59, harmonograph ×0.66, black_hole ×0.65.
-- 2026-10-20 · **Melodies matter**: twinkle, moonlight and morning_mood lift our views ~2.2–2.6×; Für Elise
-  carried the 38k escape run.
 - 2026-10-20 · **Sound = picture**: melody only on the hits the viewer follows, the rest clacks; the gate checks
   dropped notes and silences (`concept-check`).
