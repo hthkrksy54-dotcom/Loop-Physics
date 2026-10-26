@@ -1,0 +1,97 @@
+{
+  "id": "confirmation-bias",
+  "lang": "en",
+  "category": "psychology",
+  "label": "Psychology",
+  "title": "Why We Only See What We Already Believe – Confirmation Bias",
+  "title_card": "Confirmation Bias",
+  "thumbnail_text": "You are testing the wrong way",
+  "description": "Two, four, six – what is the rule? In this calm video essay we look at Peter Wason's famous number game from 1960, where most people tested their guesses in a way that could only ever confirm them. We follow the same habit back to Francis Bacon's Novum Organum (1620) and his story of the painted shipwreck survivors, look at research on selective exposure, and end with a few practical habits for looking for the evidence that could prove us wrong.",
+  "tags": [
+    "confirmation bias",
+    "peter wason",
+    "2-4-6 task",
+    "francis bacon",
+    "novum organum",
+    "selective exposure",
+    "cognitive bias",
+    "critical thinking",
+    "psychology",
+    "philosophy",
+    "changing your mind",
+    "calm"
+  ],
+  "hashtags": "#Psychology #ConfirmationBias #Philosophy",
+  "sections": [
+    {
+      "heading": null,
+      "text": "Here are three numbers: two, four, six.\n\nThey follow a rule. Your task is to find out what the rule is. You may suggest any other three numbers you like, and each time you will be told whether they fit the rule or not. When you feel sure, you announce your answer.\n\nTake a moment. What would you try?\n\nMost people think of something like eight, ten, twelve. Yes, that fits. Then twenty, forty, sixty. Yes, that fits too. So the rule must be: numbers that go up by two. Or perhaps even numbers in a row.\n\nIt feels like careful thinking. And in a now classic experiment, it led most people to the wrong answer."
+    },
+    {
+      "heading": "The Number Game",
+      "text": "The task comes from the British psychologist Peter Wason. In 1960 he published a study in which twenty-nine participants played exactly this game.\n\nThe rule he had in mind was very simple: any three numbers in ascending order. One, two, three fits. So does five, nineteen, two hundred. The only way to break it is to let the numbers go down, or stay the same.\n\nBut that is not what most people tried. They formed a guess early, something like even numbers going up by two, and then they kept suggesting examples that fit their guess. Every example came back with a yes. Every yes made them more confident.\n\nOnly six of the twenty-nine found the correct rule without first announcing a wrong one. Most announced at least one wrong rule with confidence, and some were wrong two or more times.\n\nThe problem was not intelligence. The problem was the kind of question they asked."
+    },
+    {
+      "heading": "Why a Yes Teaches So Little",
+      "text": "Think about what each yes actually told them. If your guess is up by two, and you test eight, ten, twelve, you get a yes. But you would also get a yes if the real rule were even numbers, or ascending numbers, or simply any numbers at all. The answer does not separate your idea from the others. It only agrees with it.\n\nNotice also how natural this is. Nobody told the participants to avoid tests that might fail. It simply did not occur to most of them. A guess, once formed, quietly decides which questions seem worth asking.\n\nThe question that would have helped is the uncomfortable one. Try one, two, three. Try ten, nine, eight. Try something your idea says should fail. If it fails, you have learned something. If it unexpectedly passes, you have learned even more.\n\nPsychologists came to call this pattern confirmation bias: the tendency to look for, interpret and remember information in ways that support what we already believe. It does not usually feel like bias. It feels like checking. We think we are testing our ideas, when really we are collecting applause for them.\n\nAnd the more often we hear yes, the harder it becomes to imagine that we might be wrong."
+    },
+    {
+      "heading": "A Warning from 1620",
+      "quote": {
+        "lead": "None of this would have surprised Francis Bacon. In 1620, in his Novum Organum, a book about how we should study nature, he described the same habit of mind:",
+        "text": "The human understanding when it has once adopted an opinion (either as being the received opinion or as being agreeable to itself) draws all things else to support and agree with it.",
+        "author": "Francis Bacon, Novum Organum (1620), Book I, Aphorism 46, trans. James Spedding, Robert Leslie Ellis and Douglas Denon Heath (1858)"
+      },
+      "text": "Bacon then tells a small story. A man was shown a painting that hung in a temple. It pictured people who had made vows to the gods and then escaped a shipwreck. Did he not now admit the power of the gods? The man answered with a quiet question of his own: but where are the pictures of those who made their vows and drowned anyway?\n\nThat question is the whole problem in miniature. The survivors are on the wall. The others are simply missing. And what is missing does not argue back.\n\nBacon saw the same thing in astrology, in dreams and in omens. People mark the times a prediction comes true, and pass over the times it fails, even when that happens far more often. And with far more subtlety, he warned, the same mischief creeps into philosophy and the sciences, where the first conclusion colours everything that comes after.\n\nBacon adds something that sounds almost modern. It is a peculiar and lasting error of the human mind, he writes, to be more moved by affirmatives than by negatives. And yet, in establishing any true rule, the negative instance is the stronger of the two.\n\nA thousand confirmations cannot prove a general claim. One clear counterexample can sink it."
+    },
+    {
+      "heading": "Choosing What We See",
+      "text": "Confirmation bias is not only about how we test ideas. It also shapes what we allow ourselves to see in the first place.\n\nPsychologists call this selective exposure. Given a choice between information that agrees with us and information that challenges us, we tend to reach for the first. In 2009, a team led by William Hart combined the results of many experiments on this question. Across them, people showed a moderate but consistent preference for information that supported their existing views.\n\nInterestingly, the preference was not fixed. It became weaker when the agreeable information was of poor quality, and it could even reverse when the challenging information was useful for a goal people actually had.\n\nThat is worth noticing. We are not simply prisoners of our beliefs. But comfort pulls one way, and accuracy has to be chosen.\n\nMuch of what we read and watch is chosen by habit. And habit, left alone, tends to choose agreement. Who we follow, which headlines we open, which friends we ask for advice. Not through any plan, but through thousands of small, pleasant agreements."
+    },
+    {
+      "heading": "Looking for the No",
+      "text": "So what can we do, if this is simply how minds work? There is no switch to turn it off. But there are small habits that make the uncomfortable question easier to ask.\n\nThe first: before you test an idea, ask yourself what would I expect to see if I were wrong? Then go and look for exactly that. In Wason's game, it means trying ten, nine, eight.\n\nThe second is to state the strongest version of the opposing view, so well that someone who holds it would accept your summary. If you cannot, you do not yet know what you are disagreeing with.\n\nThe third is to remember the times you changed your mind. Not as a scorecard, but as a reminder that it has happened before, and that you were better for it.\n\nAnd the fourth is simply to notice the feeling of agreement. That warm sense of yes, exactly. It is pleasant, and it is not evidence. It is a signal to slow down, not to speed up."
+    },
+    {
+      "heading": "Where Are the Drowned?",
+      "text": "We like to think of ourselves as people who follow the evidence. Often we do. But evidence does not arrive by itself. We choose which questions to ask, which pages to open, and which stories to remember.\n\nConfirmation bias is not a flaw of foolish people. It appeared in thoughtful students in a quiet experiment, and it was described more than three centuries earlier by a man who helped shape modern science.\n\nPerhaps the most useful thing to take from all this is Bacon's old question. When everything seems to agree with you, ask where the missing pictures are. Ask who is not on the wall.\n\nBeing wrong is uncomfortable. Staying wrong, without knowing it, is worse.\n\nAnd sometimes the most honest thing we can say about our beliefs is not: I am sure. It is: show me what I have missed."
+    }
+  ],
+  "short": {
+    "title": "The number game most people get wrong",
+    "hook": "Two, four, six. What's the rule?",
+    "text": "Two, four, six. These numbers follow a rule. In 1960, the psychologist Peter Wason asked people to find it by suggesting their own sets of three.\n\nMost guessed something like up by two, and tested eight, ten, twelve. Yes. Twenty, forty, sixty. Yes. So they felt sure.\n\nThe real rule was simply any three numbers in ascending order. Only six of twenty-nine found it without first announcing a wrong one.\n\nThey only tested examples that could confirm their guess. Never one that could break it.\n\nThat is confirmation bias. So next time you feel certain, ask: what would I expect to see if I were wrong? Then go and look for exactly that."
+  },
+  "sources": [
+    "Wason, P. C. (1960). On the failure to eliminate hypotheses in a conceptual task. Quarterly Journal of Experimental Psychology, 12(3), 129–140",
+    "Francis Bacon, Novum Organum (1620), Book I, Aphorism 46, trans. James Spedding, Robert Leslie Ellis and Douglas Denon Heath, The Works of Francis Bacon, Vol. IV (1858)",
+    "Hart, W., Albarracín, D., Eagly, A. H., Brechan, I., Lindberg, M. J. & Merrill, L. (2009). Feeling validated versus being correct: A meta-analysis of selective exposure to information. Psychological Bulletin, 135(4), 555–588",
+    "Nickerson, R. S. (1998). Confirmation bias: A ubiquitous phenomenon in many guises. Review of General Psychology, 2(2), 175–220"
+  ],
+  "question": "Can you remember a time you changed your mind about something important – and what finally did it?",
+  "carousel": {
+    "cover": "Why we only see agreement",
+    "slides": [
+      {
+        "text": "Only six of the twenty-nine found the correct rule without first announcing a wrong one.",
+        "sub": "Peter Wason's 2-4-6 task, 1960"
+      },
+      {
+        "text": "We think we are testing our ideas, when really we are collecting applause for them.",
+        "sub": "Confirmation bias"
+      },
+      {
+        "text": "A thousand confirmations cannot prove a general claim. One clear counterexample can sink it.",
+        "sub": "After Francis Bacon, Novum Organum (1620), I.46"
+      },
+      {
+        "text": "Across them, people showed a moderate but consistent preference for information that supported their existing views.",
+        "sub": "Hart et al., Psychological Bulletin, 2009"
+      },
+      {
+        "text": "What would I expect to see if I were wrong? Then go and look for exactly that.",
+        "sub": "A habit worth practising"
+      }
+    ]
+  }
+}
