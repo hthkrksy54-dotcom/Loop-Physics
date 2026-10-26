@@ -1363,7 +1363,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699539842287389985"
       },
       "youtube_id": "k9fsayyKbKE",
-      "yt_views": 2243,
+      "yt_views": 2263,
       "stats": {
         "views": 1416,
         "reach": 1279,
@@ -1709,7 +1709,7 @@
       "instagram_url": "https://www.instagram.com/reel/De6hPuGjv3w/",
       "instagram_story_id": "18017323295745870",
       "youtube_id": "J3SZOusPI8U",
-      "yt_views": 1446,
+      "yt_views": 1460,
       "tiktok_skip": "video no longer archived"
     },
     {
@@ -1736,7 +1736,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700682065133522209"
       },
       "youtube_id": "ZC7mDuf4NEo",
-      "yt_views": 1357
+      "yt_views": 1358
     },
     {
       "date": "2026-10-25T22:41:50+00:00",
@@ -1776,7 +1776,9 @@
       "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261026-polygon-29",
       "warnings": [
         "instagram: processing failed: {'status_code': 'ERROR', 'status': 'ERROR', 'id': '18147318040545192'}"
-      ]
+      ],
+      "youtube_id": "MSfMszCrxiQ",
+      "yt_views": 0
     },
     {
       "date": "2026-10-26T12:37:37+00:00",
@@ -1794,7 +1796,9 @@
       "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261026-split_trampoline-2",
       "instagram_id": "18145488688569005",
       "instagram_url": "https://www.instagram.com/reel/De9T9V4kWg1/",
-      "instagram_story_id": "17908453632586439"
+      "instagram_story_id": "17908453632586439",
+      "youtube_id": "klR6a8FmPRs",
+      "yt_views": 0
     }
   ],
   "followers": [
