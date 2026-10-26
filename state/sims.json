@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-25T10:08+00:00"
       },
-      "yt_views": 13933,
+      "yt_views": 13935,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -648,7 +648,7 @@
       "instagram_id": "18030561041882795",
       "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/",
       "youtube_id": "3Qgx9BMIlXo",
-      "yt_views": 8667,
+      "yt_views": 8668,
       "stats": {
         "views": 2663,
         "reach": 2328,
@@ -942,7 +942,7 @@
         "at": "2026-10-25T10:08+00:00"
       },
       "youtube_id": "ZfGqvbJNXiM",
-      "yt_views": 1115
+      "yt_views": 1120
     },
     {
       "date": "2026-10-19T16:41:42+00:00",
@@ -1095,7 +1095,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698820769953959201"
       },
       "youtube_id": "dzLI0_uSjVI",
-      "yt_views": 3807,
+      "yt_views": 3808,
       "stats": {
         "views": 1272,
         "reach": 1103,
@@ -1171,7 +1171,7 @@
         "at": "2026-10-25T10:08+00:00"
       },
       "youtube_id": "p-QSX4ORvRM",
-      "yt_views": 4235
+      "yt_views": 4267
     },
     {
       "date": "2026-10-21T10:42:07+00:00",
@@ -1230,7 +1230,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699168124997881120"
       },
       "youtube_id": "CwQDDCxYlNI",
-      "yt_views": 1591,
+      "yt_views": 1596,
       "stats": {
         "views": 1594,
         "reach": 1414,
@@ -1363,7 +1363,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699539842287389985"
       },
       "youtube_id": "k9fsayyKbKE",
-      "yt_views": 2250,
+      "yt_views": 2243,
       "stats": {
         "views": 1416,
         "reach": 1279,
@@ -1428,7 +1428,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699744856498801952"
       },
       "youtube_id": "kpj9MC6F2n0",
-      "yt_views": 1181,
+      "yt_views": 1183,
       "stats": {
         "views": 38397,
         "reach": 34771,
@@ -1619,7 +1619,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700486887479299361"
       },
       "youtube_id": "NfesOyi_x70",
-      "yt_views": 2558,
+      "yt_views": 2580,
       "stats": {
         "views": 4300,
         "reach": 3927,
@@ -1647,7 +1647,7 @@
       "instagram_url": "https://www.instagram.com/reel/De5PgzLG3V9/",
       "instagram_story_id": "18056154530802284",
       "youtube_id": "fb2RYZmVp6Y",
-      "yt_views": 946,
+      "yt_views": 947,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7700500416919865366",
         "status": "PUBLISH_COMPLETE",
@@ -1680,7 +1680,7 @@
       "instagram_id": "18073927901769025",
       "instagram_url": "https://www.instagram.com/reel/De54cmSkVC0/",
       "youtube_id": "uKuxOZvSyNk",
-      "yt_views": 1217,
+      "yt_views": 1225,
       "stats": {
         "views": 1261,
         "reach": 1133,
@@ -1709,7 +1709,7 @@
       "instagram_url": "https://www.instagram.com/reel/De6hPuGjv3w/",
       "instagram_story_id": "18017323295745870",
       "youtube_id": "J3SZOusPI8U",
-      "yt_views": 1403,
+      "yt_views": 1446,
       "tiktok_skip": "video no longer archived"
     },
     {
@@ -1736,7 +1736,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700682065133522209"
       },
       "youtube_id": "ZC7mDuf4NEo",
-      "yt_views": 1273
+      "yt_views": 1357
     },
     {
       "date": "2026-10-25T22:41:50+00:00",
@@ -1777,6 +1777,24 @@
       "warnings": [
         "instagram: processing failed: {'status_code': 'ERROR', 'status': 'ERROR', 'id': '18147318040545192'}"
       ]
+    },
+    {
+      "date": "2026-10-26T12:37:37+00:00",
+      "kind": "split_trampoline",
+      "seed": 2,
+      "melody": "canon",
+      "timbre": "glass",
+      "title": "Every golden bounce adds a new ball – Can you name the song?",
+      "duration": 77.4,
+      "why": "standout",
+      "quiz": true,
+      "tiktok_note": "Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.",
+      "concept": "A trampoline made of 1,296 touching spheres (3D): every landing of the golden ball pops out a new ball, the golden ball bounces lower and faster as the net fills, all the others keep bouncing like popcorn – the counter races to the frame's limit.",
+      "drive": "https://drive.google.com/drive/folders/1rc-TTon1jaR4F1Y9_tZbS7fvJ6cINr-0",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261026-split_trampoline-2",
+      "instagram_id": "18145488688569005",
+      "instagram_url": "https://www.instagram.com/reel/De9T9V4kWg1/",
+      "instagram_story_id": "17908453632586439"
     }
   ],
   "followers": [
