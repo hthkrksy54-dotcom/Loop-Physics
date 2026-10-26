@@ -156,11 +156,16 @@ def _user(token: str) -> str:
     return me.json()["user_id"]
 
 
-def _container(uid: str, token: str, fields: dict) -> str:
-    create = requests.post(f"{GRAPH}/{uid}/media", data={**fields, "access_token": token}, timeout=60)
-    if not create.ok:
-        raise InstagramError(f"container failed ({create.status_code}): {create.text[:300]}")
-    return create.json()["id"]
+def _container(uid: str, token: str, fields: dict, tries: int = 3) -> str:
+    for attempt in range(tries):
+        create = requests.post(f"{GRAPH}/{uid}/media", data={**fields, "access_token": token}, timeout=60)
+        if create.ok:
+            return create.json()["id"]
+        # 2207052 = Instagram could not fetch the media; a release asset uploaded seconds ago may not be served yet
+        if '"error_subcode":2207052' not in create.text or attempt == tries - 1:
+            raise InstagramError(f"container failed ({create.status_code}): {create.text[:300]}")
+        print(f"  media fetch failed, retrying in 30 s ({attempt + 1}/{tries - 1})", flush=True)
+        time.sleep(30)
 
 
 def _wait(container: str, token: str, tries: int = 60) -> None:
