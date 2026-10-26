@@ -63,6 +63,8 @@ jobs:
           git add -A state
           if ! git diff --cached --quiet; then
             git commit -m "Sync uploads [skip ci]"
-            git pull --rebase origin "${GITHUB_REF_NAME}"
-            git push origin "HEAD:${GITHUB_REF_NAME}"
+            for i in 1 2 3 4 5; do  # other workflows push too; retry instead of losing the state
+              git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break
+              sleep $((i * 10))
+            done
           fi

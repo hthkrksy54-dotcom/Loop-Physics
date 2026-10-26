@@ -211,6 +211,14 @@ def post_reel(cfg: dict, video_url: str, text: str, story: bool = True, highligh
     """Publish a Reel (and the same clip, or `story_url` – stories take at most 60 s – as a Story)."""
     token = fresh_token(cfg)
     uid = _user(token)
+    # already live? (a run that posted it but lost its state to a push race) – adopt it instead of posting twice
+    r = requests.get(f"{GRAPH}/{uid}/media", params={"fields": "id,caption,permalink,timestamp", "limit": 12,
+                                                     "access_token": token}, timeout=30)
+    for m in (r.json().get("data", []) if r.ok else []):
+        if " ".join((m.get("caption") or "").split()) == " ".join(text.split()) and \
+                _now() - dt.datetime.fromisoformat(m["timestamp"].replace("+0000", "+00:00")) < dt.timedelta(days=3):
+            print(f"  instagram reel already live: {m.get('permalink')} – not posted again", flush=True)
+            return {"instagram_id": m["id"], "instagram_url": m.get("permalink")}
     fields = {"media_type": "REELS", "video_url": video_url, "caption": text, "share_to_feed": "true"}
     try:
         if not cover_url:
