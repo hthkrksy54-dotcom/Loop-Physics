@@ -1,6 +1,6 @@
 """Second channel: one satisfying physics simulation Short per run (config/sims.json, state/sims.json).
 
-Four posts a day (SLOTS). New concepts always go first: the built-in kinds that were never posted, then the
+Three posts a day (SLOTS). New concepts always go first: the built-in kinds that were never posted, then the
 concepts the concept designer builds twice a day (ytauto/concepts/, see docs/concept-designer.md). In between, the
 concepts that already ran come back in a fresh variant (new seed: other numbers, colours, melody), weighted by how
 well they performed – standouts much more often, weak ones rarely – and never one of the last three again.
@@ -31,8 +31,8 @@ TUNING = ROOT / "config" / "sims_tuning.json"  # written daily by trends.py
 MUSIC = ROOT / "config" / "sims_music.json"  # viral-song research of the concept designer (twice a day)
 OUT = ROOT / "out" / "sims"
 STORY_EVERY = 2  # a story for every Reel would crowd the account's stories
-SLOTS = [(4, 40), (10, 40), (16, 40), (22, 40)]  # UTC, every 6 h: US Eastern 0:40, 6:40, 12:40, 18:40 (summer time);
-# even UTC hours, because the Loop Physics schedule runs every two hours
+SLOTS = [(4, 40), (10, 40), (22, 40)]  # UTC; 16:40 had the fewest views (median 17.–24.10.) and was dropped
+# to save GitHub Actions minutes – the schedule in sims.yml runs at these times (+1 min) and half an hour later
 SLOT_WINDOW = dt.timedelta(minutes=100)  # a missed or failed slot is retried until the next one is near
 STANDOUT = 1.6  # views at least this many times the channel median: a standout, comes back much more often
 TIKTOK_PENDING = 4  # one day of videos may wait in the TikTok inbox (TikTok holds 5); the heartbeat tops them up

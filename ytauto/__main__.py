@@ -554,7 +554,8 @@ def main(argv: list[str] | None = None) -> int:
     config = _load(CONFIG, {})
     unattended = os.environ.get("GITHUB_EVENT_NAME") == "schedule" or os.environ.get("IN_SOURCE") == "watchdog"
     for lang in args.langs:
-        why_not = watchdog.daily_slot(_load(STATE, {}).get(lang, [])) if unattended else None
+        why_not = watchdog.daily_slot(_load(STATE, {}).get(lang, []), None,
+                                      config.get(lang, {}).get("every_days", 1)) if unattended else None
         if why_not:
             print(f"[{lang}] {why_not} – skipping", flush=True)
             continue

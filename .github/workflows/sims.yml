@@ -1,14 +1,15 @@
 name: Loop Physics
 
-# Four simulations a day (SLOTS in ytauto/simchannel.py): new concepts (built twice a day by the concept
-# designer, docs/concept-designer.md) go first, in between the concepts that performed best come back in a fresh
-# variant. The timer chain starts this workflow for every slot; runs outside a slot only polish manual YouTube
-# uploads, top up the TikTok drafts and start overdue workflows. Own queue, so the long Quiet Thoughts renders
-# never delay or cancel these runs.
+# Three simulations a day (SLOTS in ytauto/simchannel.py): new concepts (built by the concept designer,
+# docs/concept-designer.md) go first, in between the concepts that performed best come back in a fresh variant.
+# One scheduled run per slot plus a backup half an hour later (GitHub sometimes drops scheduled runs; a slot is
+# only ever posted once) – the backup only polishes manual YouTube uploads, tops up the TikTok drafts and starts
+# overdue workflows. No waiting runners: every minute counts against the free GitHub Actions minutes.
+# Own queue, so the long Quiet Thoughts renders never delay or cancel these runs.
 on:
   schedule:
-    - cron: "41 */2 * * *"     # posting slots (GitHub sometimes drops scheduled runs – the timer chain and the
-    - cron: "13 */2 * * *"     # backup inside the slot window cover that; a slot is only ever posted once)
+    - cron: "41 4,10,22 * * *"   # posting slots
+    - cron: "11 5,11,23 * * *"   # backups inside the slot window
   workflow_dispatch:
     inputs:
       upload:
@@ -106,11 +107,10 @@ jobs:
             done
           fi
 
-      - name: Plan the next run and start overdue workflows
+      - name: Start overdue workflows
         if: always() && github.event.inputs.branding != 'true' && github.event.inputs.youtube != 'check' && github.event.inputs.youtube != 'apply' && github.event.inputs.youtube != 'describe'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          JOB_STATUS: ${{ job.status }}
         run: |
           dispatch() {  # workflow file, JSON inputs
             curl -sS -o /dev/null -w "  $1 -> %{http_code}\n" -X POST -H "Authorization: Bearer $GH_TOKEN" \
@@ -118,15 +118,6 @@ jobs:
               "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/$1/dispatches" \
               -d "{\"ref\":\"main\",\"inputs\":$2}"
           }
-          AT=$(python -c "
-          import os, datetime as dt
-          from ytauto import simchannel as sc
-          now = dt.datetime.now(dt.timezone.utc)
-          slot = sc.next_slot(now) + dt.timedelta(minutes=1)
-          later = now + dt.timedelta(minutes=120 if os.environ.get('JOB_STATUS') == 'success' else 60)  # heartbeat / retry
-          print(min(slot, later).isoformat(timespec='seconds'))")
-          echo "next Loop Physics run at $AT"
-          dispatch sims-timer.yml "{\"at\":\"$AT\"}"
           python -m ytauto watchdog | while read -r line; do
             wf=$(echo "$line" | python -c "import sys, json; print(json.load(sys.stdin)['workflow'])")
             inputs=$(echo "$line" | python -c "import sys, json; print(json.dumps(json.load(sys.stdin)['inputs']))")

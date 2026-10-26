@@ -29,7 +29,7 @@ It has a single user (the channel owner), no public sign-in and no viewer data.
 render the videos, authenticate with the owner's OAuth refresh tokens (stored encrypted) and publish to the
 owner's channels. See [docs/architecture.png](docs/architecture.png).
 
-**Impressum:** [IMPRESSUM.md](IMPRESSUM.md) – the hourly sync keeps its link at the end of every YouTube channel description (`ytauto/imprint.py`); Instagram and TikTok bios link to it by hand.
+**Impressum:** [IMPRESSUM.md](IMPRESSUM.md) – the sync (every four hours) keeps its link at the end of every YouTube channel description (`ytauto/imprint.py`); Instagram and TikTok bios link to it by hand.
 
 ---
 
@@ -50,13 +50,13 @@ Thema → Skript → Faktencheck → Sprecherstimme → Musik → Visuals → Un
 | Schnitt | ffmpeg (1080p, Kapitel, Untertitel, Lautheit −15 LUFS) | 0 € |
 | Shorts | automatische Hochkant-Version (ca. 50 s) pro Thema | 0 € |
 | Upload | YouTube Data API: Video, Thumbnail, Untertitel, Short | 0 € |
-| Ausführung | GitHub Actions, täglich ein Video um 4 Uhr deutscher Zeit, Sommer wie Winter (öffentliches Repo = unbegrenzte Minuten) | 0 € |
+| Ausführung | GitHub Actions, jeden zweiten Tag ein Video um 4:03 deutscher Zeit (Sommer 5:03) – `"every_days": 2` in [config/channels.json](config/channels.json); öffentliches Repo = unbegrenzte Minuten, privat nur das kleine Freikontingent | 0 € |
 | Instagram | jeder Short als Reel + Story (@quiet_thoughts_yt) um 10 Uhr New Yorker Zeit (das Video entsteht schon um 4 Uhr deutscher Zeit, der Upload-Wächter postet das Reel zur Zeit), Caption mit Frage + 3–5 Hashtags, Token verschlüsselt, verlängert sich selbst | 0 € |
-| TikTok | jeder Short zusammen mit dem Reel als Entwurf in den TikTok-Posteingang (höchstens 5 warten gleichzeitig – mehr lässt TikTok nicht zu –, der Upload-Wächter füllt stündlich nach), Beschreibungen zum Kopieren in [state/tiktok_quiet.md](state/tiktok_quiet.md); verbinden mit dem Workflow [TikTok verbinden](.github/workflows/tiktok-connect.yml) | 0 € |
+| TikTok | jeder Short zusammen mit dem Reel als Entwurf in den TikTok-Posteingang (höchstens 5 warten gleichzeitig – mehr lässt TikTok nicht zu –, der Upload-Wächter füllt alle 4 Stunden nach), Beschreibungen zum Kopieren in [state/tiktok_quiet.md](state/tiktok_quiet.md); verbinden mit dem Workflow [TikTok verbinden](.github/workflows/tiktok-connect.yml) | 0 € |
 | Karussells | Di/Do/Sa: Zitat-Karussell aus einem veröffentlichten Video + Zitat-Story ([Workflow](.github/workflows/carousel.yml)) | 0 € |
 | Stories | täglich eine frische Story (Zitat-Karte, sonntags Wochenrückblick), wenn nicht schon Reel/Karussell eine gepostet hat; jede Story wird mit ihrem Highlight protokolliert ([Workflow](.github/workflows/stories.yml)) | 0 € |
 | Highlights | keine API bei Instagram – sonntags kommt eine Liste, welche Stories in welches Highlight gehören (`python -m ytauto highlights`) | 0 € |
-| Upload-Wächter | stündlich: erkennt Videos, die du von Hand hochlädst, korrigiert Shorts, postet das passende Reel | 0 € |
+| Upload-Wächter | alle 4 Stunden (2:23, 6:23, 10:23 … UTC): erkennt Videos, die du von Hand hochlädst, korrigiert Shorts, postet das passende Reel | 0 € |
 | Google Drive | jedes Video aller drei Kanäle zusätzlich unter „Kanal-Videos/<Kanal>“, mit Texten zum Kopieren, 14 Tage lang ([gdrive.py](ytauto/gdrive.py)) | 0 € |
 
 **Einrichtung:** siehe [SETUP.md](SETUP.md). Die YouTube-Kanäle musst du einmal selbst anlegen.
@@ -65,7 +65,7 @@ Thema → Skript → Faktencheck → Sprecherstimme → Musik → Visuals → Un
 
 | Baustein | Lösung |
 |---|---|
-| Takt | 4 Videos am Tag, alle 6 Stunden: 4:40, 10:40, 16:40 und 22:40 UTC (deutsche Sommerzeit 6:40, 12:40, 18:40, 0:40; US-Ostküste 0:40, 6:40, 12:40, 18:40) ([Workflow](.github/workflows/sims.yml)); zwischen den Slots pflegt der Workflow YouTube-Uploads nach, füllt TikTok-Entwürfe auf und startet liegengebliebene Workflows |
+| Takt | 3 Videos am Tag: 4:40, 10:40 und 22:40 UTC (deutsche Winterzeit 5:40, 11:40, 23:40); der schwächste Slot 16:40 fiel am 26.10. weg, um GitHub-Minuten zu sparen ([Workflow](.github/workflows/sims.yml)). Je Slot ein geplanter Lauf plus eine Reserve 30 Minuten später, die YouTube-Uploads nachpflegt, TikTok-Entwürfe auffüllt und liegengebliebene Workflows startet – keine wartenden Runner mehr |
 | Neue Konzepte | jede Nacht um ca. 3:15 baut ein automatischer Konzept-Designer (geplante Claude-Session) nach [docs/concept-designer.md](docs/concept-designer.md) bis zu zwei neue Konzepte aus aktuellen viralen Trends – eine Datei in `ytauto/concepts/`, mit Qualitätsprüfung (`python -m ytauto concept-check`: u. a. Ton = Bild – jede Note auf einem sichtbaren Treffer, keine stummen Treffer-Massen, keine Pausen über 3,5 s). Stil seit Oktober 2026: neu interpretierte 3D-Partikel-Simulationen wie @particlesflow (Kugel-Netze/-Tücher auf einer Plattform, 3D-Werkzeug `ytauto/sim3d.py`, Beispiel `giant_net`). Tempo-Experiment: mindestens eines pro Nacht ist schnell (`tempo = "fast"`, viele/schnelle Bälle, 4+ hörbare Treffer pro Sekunde); `python -m ytauto concepts` vergleicht jedes Experiment (3D, schnell, kurz, eigene Tags) mit dem Rest; der Designer hat freie Hand ("nichts ist ein Muss"), passt nach den Zahlen an und führt das Kanal-Gedächtnis [docs/loop-physics-learnings.md](docs/loop-physics-learnings.md) |
 | Melodien | gewählt nach Viralität: eigene Aufrufe pro Melodie (z. B. Für Elise), Melodien in viralen Satisfying-Shorts (täglicher Trend-Check) und die nächtliche Song-Recherche des Konzept-Designers ([config/sims_music.json](config/sims_music.json): Boosts, saisonale Stücke, neue gemeinfreie Melodien); Song-Rätsel (Test seit 20.10.): in der Hälfte der Videos ist der Songname versteckt, im Video steht „CAN YOU NAME THIS SONG? Write it in the comments“ (Anteil `song_quiz_share` in config/sims_music.json; Auswertung Aufrufe + Kommentare in `python -m ytauto concepts`; auf TikTok dann den Originalton behalten); angesagte, urheberrechtlich geschützte Sounds stehen als Vorschlag oben in [state/tiktok.md](state/tiktok.md) – nur zum Auswählen in TikTok; Übersicht: `python -m ytauto melodies` |
 | Ende | nach dem Finale wird „FOLLOW FOR MORE“ eingeblendet (Instagram und TikTok bringen die meisten Aufrufe) |
@@ -73,7 +73,7 @@ Thema → Skript → Faktencheck → Sprecherstimme → Musik → Visuals → Un
 | Auswahl | neue Konzepte haben immer Vorrang; dazwischen kommen bereits gelaufene Konzepte als neue Variante zurück, gewichtet nach Aufrufen (Instagram + YouTube) – Ausreißer nach oben (≥ 1,6× Median) deutlich öfter, nie eins der letzten drei |
 | TikTok | jedes Video zusammen mit dem Reel als Entwurf in den TikTok-Posteingang (höchstens 4 warten gleichzeitig, TikTok hält höchstens 5), Beschreibungen zum Kopieren in [state/tiktok.md](state/tiktok.md) |
 | Robustheit | kaputte Konzepte werden übersprungen und vermerkt; verpasste Slots werden bis 6 h später nachgeholt; Übersicht mit `python -m ytauto concepts` |
-| Trends | täglicher Trend-Check ([Bericht](docs/loop-physics-trends.md)) |
+| Trends | Trend-Check jeden zweiten Tag ([Bericht](docs/loop-physics-trends.md)) |
 
 ## Real Numbers – Alltagsgeld, erklärt mit echten Zahlen
 

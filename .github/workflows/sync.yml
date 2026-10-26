@@ -1,10 +1,11 @@
 name: Sync uploads
 
-# Hourly: notice videos uploaded by hand on YouTube, fix their Shorts, post the Instagram Reels, and keep the
-# TikTok inboxes of Real Numbers and Quiet Thoughts topped up with drafts (at most 5 waiting each, TikTok's limit).
+# Every four hours (10:23 UTC is the Quiet Thoughts Reel time): notice videos uploaded by hand on YouTube, fix
+# their Shorts, post the Instagram Reels, and keep the TikTok inbox of Quiet Thoughts topped up with drafts (at most
+# 5 waiting, TikTok's limit). Fewer runs = fewer GitHub Actions minutes.
 on:
   schedule:
-    - cron: "23 * * * *"
+    - cron: "23 2,6,10,14,18,22 * * *"
   workflow_dispatch:
     inputs:
       tiktok_max:

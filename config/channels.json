@@ -26,6 +26,7 @@
     }
   },
   "en": {
+    "every_days": 2,
     "active": true,
     "channel_name": "Quiet Thoughts",
     "voice": "en-US-AndrewMultilingualNeural",

@@ -1,5 +1,5 @@
-"""GitHub drops or delays many scheduled runs. The Loop Physics timer (a run started by workflow_dispatch, which
-GitHub executes reliably) calls this every ~2 hours and starts whatever is overdue."""
+"""GitHub drops or delays many scheduled runs. Every Loop Physics run (six a day) calls this and starts whatever
+is overdue."""
 from __future__ import annotations
 
 import datetime as dt
@@ -21,31 +21,34 @@ def _today(iso: str | None, now: dt.datetime) -> bool:
     return bool(iso) and dt.datetime.fromisoformat(iso).astimezone(dt.timezone.utc).date() == now.date()
 
 
-def daily_slot(records: list[dict], now: dt.datetime | None = None) -> str | None:
-    """None when the day's video is due now, else why not. The schedules run at 2:03 and 3:03 UTC, so one of
-    them is 4:03 in Germany in summer and in winter; the other one stops here."""
+def daily_slot(records: list[dict], now: dt.datetime | None = None, every_days: int = 1) -> str | None:
+    """None when the day's video is due now, else why not. every_days = 2: a video every second day."""
     local = (now or dt.datetime.now(dt.timezone.utc)).astimezone(BERLIN)
     if local.hour < DAILY_HOUR:
         return f"too early ({local:%H:%M} German time – the day's video starts at {DAILY_HOUR}:00)"
-    if any(dt.datetime.fromisoformat(r["date"]).astimezone(BERLIN).date() == local.date() for r in records if r.get("date")):
+    days = [(local.date() - dt.datetime.fromisoformat(r["date"]).astimezone(BERLIN).date()).days
+            for r in records if r.get("date")]
+    if any(d == 0 for d in days):
         return "today's video is already out"
+    if any(0 < d < every_days for d in days):
+        return f"one video every {every_days} days – the last one is only {min(d for d in days if d > 0)} day old"
     return None
 
 
-def _overdue(records: list[dict], now: dt.datetime) -> bool:
-    """Due, and the scheduled run had half an hour to start (GitHub delays or drops scheduled runs)."""
+def _overdue(records: list[dict], now: dt.datetime, every_days: int = 1) -> bool:
+    """Due, and the scheduled run had time to start (GitHub delays or drops scheduled runs)."""
     local = now.astimezone(BERLIN)
-    return daily_slot(records, now) is None and local.hour * 60 + local.minute >= DAILY_HOUR * 60 + 30
+    return daily_slot(records, now, every_days) is None and local.hour * 60 + local.minute >= (DAILY_HOUR + 1) * 60 + 30
 
 
 def due(now: dt.datetime | None = None) -> list[tuple[str, dict]]:
     """(workflow file, dispatch inputs) for every job that should have run by now but hasn't."""
     now = now or dt.datetime.now(dt.timezone.utc)
     hm = now.hour * 60 + now.minute
-    out: list[tuple[str, dict]] = [("sync.yml", {})]  # cheap and idempotent: always
+    out: list[tuple[str, dict]] = []
 
-    tuning = _load("config/sims_tuning.json", {})
-    if not tuning.get("updated") or now - dt.datetime.fromisoformat(tuning["updated"]) > dt.timedelta(hours=24):
+    tuning = _load("config/sims_tuning.json", {})  # the trend check runs every second day
+    if not tuning.get("updated") or now - dt.datetime.fromisoformat(tuning["updated"]) > dt.timedelta(hours=50):
         out.append(("trends.yml", {}))
 
     config = _load("config/channels.json", {})
@@ -54,7 +57,7 @@ def due(now: dt.datetime | None = None) -> list[tuple[str, dict]]:
         if not cfg.get("active", True):
             continue
         recs = published.get(lang, [])
-        if _overdue(recs, now):  # one video every day
+        if _overdue(recs, now, cfg.get("every_days", 1)):
             out.append(("produce.yml", {"langs": lang, "source": "watchdog"}))
         ig = cfg.get("instagram") or {}
         if ig.get("enabled"):

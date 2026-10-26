@@ -1,10 +1,10 @@
 name: Loop Physics trends
 
-# Daily: what goes viral in satisfying Shorts + how our own Reels perform -> config/sims_tuning.json
+# Every second day: what goes viral in satisfying Shorts + how our own Reels perform -> config/sims_tuning.json
 # (format weights, lengths, title hooks, hashtags) and a readable report in docs/loop-physics-trends.md.
 on:
   schedule:
-    - cron: "41 5 * * *"
+    - cron: "41 5 */2 * *"
   workflow_dispatch:
 
 permissions:
