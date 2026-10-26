@@ -1,35 +1,38 @@
 {
-  "updated": "2026-10-25",
+  "updated": "2026-10-26",
   "boost": {
     "fur_elise": 1.5,
     "toccata": 1.8,
     "mountain_king": 1.0,
-    "twinkle": 1.6,
+    "twinkle": 1.7,
     "funeral_march": 1.4,
     "moonlight": 1.3,
-    "carol_bells": 1.5,
+    "carol_bells": 1.7,
     "morning_mood": 1.3,
     "sugar_plum": 1.5,
     "ode_to_joy": 1.3,
-    "frere_jacques": 1.2,
+    "frere_jacques": 1.3,
     "turkish_march": 0.8,
     "greensleeves": 0.8,
-    "jingle_bells": 1.3
+    "jingle_bells": 1.3,
+    "lullaby": 1.2,
+    "merry_christmas": 1.3
   },
   "seasonal_until": {
     "toccata": "2026-11-01",
     "funeral_march": "2026-11-01",
     "moonlight": "2026-11-01",
     "sugar_plum": "2027-01-06",
-    "jingle_bells": "2027-01-06"
+    "jingle_bells": "2027-01-06",
+    "merry_christmas": "2027-01-06"
   },
   "tiktok_sounds": [
-    "Ramalama (Bang Bang) – Róisín Murphy: still the Halloween costume-reveal sound (New Engen), until Sat Oct 31 – fits gate_rush's JACKPOT burst",
+    "Ramalama (Bang Bang) – Róisín Murphy: Halloween costume-reveal sound until Sat Oct 31 – fits press_drill's burst / critical_mass meltdown",
     "Spooky Scary Skeletons – Andrew Gold: evergreen Halloween meme sound, peaks right before Oct 31",
     "Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook",
     "All I Want for Christmas Is You – Mariah Carey: the yearly 'it's time' wave starts Nov 1 – queue it for the first November posts",
-    "Halloween Theme – John Carpenter: creepy build-up for dark runs until Oct 31"
+    "Vikāra – Benson Boone: listed as a rising sound (unverified for late October) – dramatic build-up for escalating runs"
   ],
-  "notes": "Own lift decides: Carol of the Bells ×4.0 (1 post) → 1.5 ahead of December, Twinkle ×2.7 (1.6), Ode to Joy ×2.05 → 1.3, Frère Jacques ×1.8 / Morning Mood ×1.7 stay. New: Jingle Bells (Pierpont 1857, PD) 1.3 until Jan 6 for the Christmas wave and the song quiz. Halloween until Nov 1: Toccata 1.8 + Funeral March 1.4. Danse Macabre still not added (no verifiable PD score, 25 Oct).",
-  "song_quiz_share": 0.5
+  "notes": "Own lift decides: Twinkle ×2.38 → 1.7, Carol of the Bells ×2.28 → 1.7 ahead of December, Toccata ×1.92 stays 1.8 until Nov 1, Frère Jacques ×1.76 → 1.3, Lullaby ×1.51 → 1.2. New: We Wish You a Merry Christmas (traditional, PD) 1.3 until Jan 6 next to Jingle Bells for the Christmas wave and the song quiz. Song quiz 10 vs 12 posts: views ×1.11 vs ×0.92 (= 1.21×), comments equal → share 0.5 → 0.8.",
+  "song_quiz_share": 0.8
 }

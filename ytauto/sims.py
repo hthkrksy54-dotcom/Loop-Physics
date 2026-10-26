@@ -104,6 +104,9 @@ MELODIES = {
     "jingle_bells": ("Jingle Bells – Pierpont", [  # chorus, as published 1857
         76, 76, 76, 76, 76, 76, 76, 79, 72, 74, 76, 77, 77, 77, 77, 77, 76, 76, 76, 76, 76, 74, 74, 76, 74, 79,
         76, 76, 76, 76, 76, 76, 76, 79, 72, 74, 76, 77, 77, 77, 77, 77, 76, 76, 76, 76, 79, 79, 77, 74, 72]),
+    "merry_christmas": ("We Wish You a Merry Christmas – traditional", [  # English carol, first verse in G
+        62, 67, 67, 69, 67, 66, 64, 64, 64, 69, 69, 71, 69, 67, 66, 62, 62, 71, 71, 72, 71, 69, 67, 64,
+        62, 62, 64, 69, 66, 67]),
 }
 TIMBRES = ["bell", "marimba", "pluck", "chip", "glass"]
 
