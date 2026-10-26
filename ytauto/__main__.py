@@ -356,7 +356,8 @@ def main(argv: list[str] | None = None) -> int:
     sc.add_argument("--youtube", choices=["check", "apply", "describe"],
                     help="match manual YouTube uploads and polish them; describe = newest 4 get the current description")
     sc.add_argument("--due", action="store_true", help="print 'post' if a posting slot is open, else 'idle'")
-    sc.add_argument("--reels", action="store_true", help="post the videos whose Instagram Reel failed, now")
+    sc.add_argument("--reels", nargs="?", const=0, type=int, metavar="N",
+                    help="post the videos whose Instagram Reel failed, now (N = at most N of them, oldest first)")
     tk = sub.add_parser("tiktok", help="TikTok setup: url | connect | check | send | backlog (--channel econ / quiet)")
     tk.add_argument("action", choices=["url", "connect", "check", "send", "refresh", "backlog"])
     tk.add_argument("--channel", choices=["sims", "econ", "quiet"], default="sims")
@@ -512,8 +513,8 @@ def main(argv: list[str] | None = None) -> int:
         if args.due:
             manual = not simchannel.planned_run()
             print("post" if manual or simchannel.slot_due(simchannel.load(simchannel.STATE, {})) else "idle")
-        elif args.reels:
-            simchannel.backfill_reels()
+        elif args.reels is not None:
+            simchannel.backfill_reels(args.reels or None)
         elif args.branding:
             simchannel.branding()
         elif args.youtube:

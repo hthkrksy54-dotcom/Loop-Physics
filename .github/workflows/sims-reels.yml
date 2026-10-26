@@ -1,9 +1,14 @@
 name: Loop Physics Reels nachholen
 
-# By hand: post every recent Loop Physics video whose Instagram Reel failed (e.g. while Instagram was not
-# reachable), oldest first. Shares the Loop Physics queue so it never races a posting run.
+# By hand: post the recent Loop Physics videos whose Instagram Reel failed (e.g. while Instagram was not
+# reachable), oldest first – all at once, or one per run to spread them over the day. Shares the Loop Physics
+# queue so it never races a posting run.
 on:
   workflow_dispatch:
+    inputs:
+      count:
+        description: "How many Reels (0 = all missing ones)"
+        default: "0"
 
 permissions:
   contents: write
@@ -32,7 +37,8 @@ jobs:
       - name: Catch up the Reels
         env:
           IG_TOKEN_KEY: ${{ secrets.IG_TOKEN_KEY }}
-        run: python -m ytauto sims --reels
+          IN_COUNT: ${{ github.event.inputs.count || '0' }}
+        run: python -m ytauto sims --reels "$IN_COUNT"
 
       - name: Save progress
         if: always()

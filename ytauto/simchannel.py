@@ -621,9 +621,10 @@ def story_clip(video: Path) -> Path | None:
     return out
 
 
-def backfill_reels() -> int:
+def backfill_reels(limit: int | None = None) -> int:
     """Post the videos whose Reel failed (Instagram not reachable) as Reels now, oldest first, without stories,
-    while their release – the public video URL – still exists. Returns how many went out."""
+    while their release – the public video URL – still exists; limit = at most this many (spread over the day
+    by starting the workflow several times). Returns how many went out."""
     cfg, state = load(CONFIG, {}), load(STATE, {"videos": []})
     if not instagram.configured(cfg):
         print("[sims] Instagram not connected – no Reels to catch up", flush=True)
@@ -632,6 +633,7 @@ def backfill_reels() -> int:
     now = dt.datetime.now(dt.timezone.utc)
     todo = [r for r in state["videos"] if not r.get("instagram_id") and r.get("release")
             and now - dt.datetime.fromisoformat(r["date"]) < dt.timedelta(days=9)]  # releases are kept 10 days
+    todo = todo[:limit] if limit else todo
     posted = 0
     for rec in todo:
         tag = rec["release"].rsplit("/", 1)[1]
