@@ -10,7 +10,7 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 ## 27.10. 06:33 UTC – Can it drill out before the walls close?
 
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261027-press_drill-0)
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261027-press_drill-0)
 
 ⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
 
