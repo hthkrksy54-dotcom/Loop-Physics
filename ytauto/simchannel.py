@@ -551,7 +551,7 @@ def metadata(kind: str, seed: int, melody: str, cfg: dict, quiz: bool = False,
     ])
     return {"title": title[:95], "description": description, "caption": caption[:2150], "question": question,
             "onscreen": params["onscreen"], "quiz": quiz,
-            "tags": list(dict.fromkeys(TAGS + [t for t in (song.lower(), composer.lower()) if t]
+            "tags": list(dict.fromkeys(TAGS + [t for t in (("" if quiz else song.lower()), composer.lower()) if t]
                                        + (tuning.get("hashtags") or [])[:4]))}
 
 
