@@ -812,6 +812,10 @@ def run(upload: bool = True) -> dict:
                 }, {"privacyStatus": "public", "selfDeclaredMadeForKids": False})
                 record["youtube_id"] = vid
                 print(f"  youtube: https://youtube.com/shorts/{vid}", flush=True)
+                try:
+                    print(f"  youtube: playlist {to_playlist(token, kind, vid)!r}", flush=True)
+                except Exception as err:  # noqa: BLE001 – the video is out; the playlist can wait
+                    print(f"  warning: playlist failed: {err}", flush=True)
         except Exception as err:
             record.setdefault("warnings", []).append(f"youtube: {err}")
             print(f"  warning: youtube failed: {err}", flush=True)
@@ -905,11 +909,52 @@ def _norm(text: str) -> str:
     return " ".join((text or "").replace("#shorts", "").replace("#Shorts", "").split()).casefold()
 
 
+def to_playlist(token: str, kind: str, video_id: str, existing: dict | None = None) -> str:
+    """Put the video into its format's playlist on the owner's channel (created on first use); returns its name.
+    existing: playlist title -> id, read once by the caller when it sorts several videos."""
+    import time
+
+    import requests
+
+    api, h = "https://www.googleapis.com/youtube/v3", {"Authorization": f"Bearer {token}"}
+    if existing is None:
+        r = requests.get(f"{api}/playlists", params={"part": "snippet", "mine": "true", "maxResults": 50}, headers=h,
+                         timeout=30)
+        r.raise_for_status()
+        existing = {p["snippet"]["title"]: p["id"] for p in r.json().get("items", [])}
+    cls = sims.KINDS.get(kind)
+    name, about = PLAYLISTS.get(kind) or (cls and cls.playlist) or EXPERIMENTS
+    if name not in existing:
+        r = requests.post(f"{api}/playlists", params={"part": "snippet,status"}, timeout=60,
+                          headers={**h, "Content-Type": "application/json"}, data=json.dumps({
+                              "snippet": {"title": name, "description": f"{about} A brand-new concept twice a day on "
+                                                                         "Loop Physics.", "defaultLanguage": "en"},
+                              "status": {"privacyStatus": "public"}}))
+        if not r.ok:
+            raise RuntimeError(f"playlists.insert failed ({r.status_code}): {r.text[:300]}")
+        existing[name] = r.json()["id"]
+        time.sleep(8)  # new playlists take a moment before YouTube accepts items
+    have = requests.get(f"{api}/playlistItems", headers=h, timeout=30,
+                        params={"part": "id", "playlistId": existing[name], "videoId": video_id})
+    if not (have.ok and have.json().get("items")):
+        for attempt in range(5):  # a brand-new playlist often answers 409 ABORTED for a few seconds
+            r = requests.post(f"{api}/playlistItems", params={"part": "snippet"}, timeout=60,
+                              headers={**h, "Content-Type": "application/json"}, data=json.dumps({"snippet": {
+                                  "playlistId": existing[name], "resourceId": {"kind": "youtube#video",
+                                                                               "videoId": video_id}}}))
+            if r.ok:
+                break
+            print(f"  playlist add retry {attempt + 1} ({r.status_code})", flush=True)
+            time.sleep(4 * (attempt + 1))
+        else:
+            raise RuntimeError(f"playlistItems failed ({r.status_code}): {r.text[:300]}")
+    return name
+
+
 def youtube_polish(apply: bool = False) -> None:
     """Match the owner's manual uploads to produced simulations, then (apply=True) give them our title,
     description and tags, sort them into one playlist per format and remember their YouTube ids."""
     import re
-    import time
 
     import requests
 
@@ -996,26 +1041,6 @@ def youtube_polish(apply: bool = False) -> None:
                 describe(token, next(r for r in records if r.get("youtube_id") == prev), records, cfg)
             except Exception as err:  # noqa: BLE001
                 print(f"  warning: link from the previous episode failed: {err}", flush=True)
-        cls = sims.KINDS.get(rec["kind"])
-        name, about = PLAYLISTS.get(rec["kind"]) or (cls and cls.playlist) or EXPERIMENTS
-        if name not in existing:
-            existing[name] = send("POST", "playlists", "snippet,status", {
-                "snippet": {"title": name, "description": f"{about} A brand-new concept twice a day on Loop Physics.",
-                            "defaultLanguage": "en"}, "status": {"privacyStatus": "public"}})["id"]
-            time.sleep(8)  # new playlists take a moment before YouTube accepts items
-        have = requests.get(f"{api}/playlistItems", headers=h, timeout=30,
-                            params={"part": "id", "playlistId": existing[name], "videoId": v["id"]})
-        if not (have.ok and have.json().get("items")):
-            for attempt in range(5):  # a brand-new playlist often answers 409 ABORTED for a few seconds
-                r = requests.post(f"{api}/playlistItems", params={"part": "snippet"}, timeout=60,
-                                  headers={**h, "Content-Type": "application/json"}, data=json.dumps({"snippet": {
-                                      "playlistId": existing[name],
-                                      "resourceId": {"kind": "youtube#video", "videoId": v["id"]}}}))
-                if r.ok:
-                    break
-                print(f"  playlist add retry {attempt + 1} ({r.status_code})", flush=True)
-                time.sleep(4 * (attempt + 1))
-            else:
-                raise SystemExit(f"playlistItems failed ({r.status_code}): {r.text[:300]}")
+        name = to_playlist(token, rec["kind"], v["id"], existing)
         print(f"  updated {v['id']}: {meta['title']!r} -> playlist {name!r}", flush=True)
     save(STATE, state)

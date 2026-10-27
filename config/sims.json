@@ -23,7 +23,7 @@
     "hashtags": "#satisfying #physics #simulation #oddlysatisfying"
   },
   "youtube": {
-    "upload_enabled": false,
+    "upload_enabled": true,
     "token_file": "state/youtube_sims.token",
     "category_id": "28",
     "default_language": "en",
