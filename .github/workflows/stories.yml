@@ -2,8 +2,10 @@ name: Instagram story
 
 # Daily: keep a fresh story up (quote card, Sunday a weekly recap) unless a Reel/carousel story already went out.
 on:
-  schedule:
-    - cron: "41 18 * * *"
+  # Paused since 27 Oct 2026 (Quiet Thoughts "active": false in config/channels.json). To resume: set it to
+  # true and restore the schedule below.
+  # schedule:
+  #   - cron: "41 18 * * *"
   workflow_dispatch:
 
 permissions:

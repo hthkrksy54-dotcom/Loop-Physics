@@ -37,6 +37,8 @@ owner's channels. See [docs/architecture.png](docs/architecture.png).
 
 Ruhige Video-Essays auf **Deutsch** und **Englisch**, vollautomatisch und **ohne laufende Kosten**.
 
+**Quiet Thoughts ist pausiert seit 27.10.2026:** `"active": false` in [config/channels.json](config/channels.json). Keine neuen Videos, Skripte, Reels, Stories, Karussells oder TikTok-Entwürfe; die wöchentliche Skript-Aufgabe ist abgeschaltet und die Zeitpläne in [produce.yml](.github/workflows/produce.yml), [stories.yml](.github/workflows/stories.yml) und [carousel.yml](.github/workflows/carousel.yml) sind auskommentiert. Nur der Instagram-Zugang wird weiter erneuert.
+
 ```
 Thema → Skript → Faktencheck → Sprecherstimme → Musik → Visuals → Untertitel → Video + Short + Thumbnail → Upload
 ```

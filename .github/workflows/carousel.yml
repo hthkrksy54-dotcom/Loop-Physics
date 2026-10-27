@@ -2,8 +2,10 @@ name: Instagram carousel
 
 # Tue/Thu/Sat, between the video days: a quote carousel from a published video + a quote Story.
 on:
-  schedule:
-    - cron: "12 16 * * 2,4,6"
+  # Paused since 27 Oct 2026 (Quiet Thoughts "active": false in config/channels.json). To resume: set it to
+  # true and restore the schedule below.
+  # schedule:
+  #   - cron: "12 16 * * 2,4,6"
   workflow_dispatch:
 
 permissions:

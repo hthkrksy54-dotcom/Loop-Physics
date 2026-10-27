@@ -1,11 +1,13 @@
 name: Produce videos
 
 on:
-  schedule:
-    # 3:03 UTC (4:03 German time in winter, 5:03 in summer). Quiet Thoughts makes a video every second day
-    # ("every_days" in config/channels.json): on the other days the run stops after a minute
-    # (watchdog.daily_slot); the Loop Physics watchdog starts it later if GitHub drops it
-    - cron: "3 3 * * *"
+  # Paused since 27 Oct 2026 (Quiet Thoughts "active": false in config/channels.json). To resume: set it to
+  # true and restore the schedule below.
+  # schedule:
+  #   # 3:03 UTC (4:03 German time in winter, 5:03 in summer). Quiet Thoughts makes a video every second day
+  #   # ("every_days" in config/channels.json): on the other days the run stops after a minute
+  #   # (watchdog.daily_slot); the Loop Physics watchdog starts it later if GitHub drops it
+  #   - cron: "3 3 * * *"
   workflow_dispatch:
     inputs:
       langs:

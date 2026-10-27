@@ -402,6 +402,11 @@ def main(argv: list[str] | None = None) -> int:
                 changed |= sync.run(lang, cfg, state, lambda tid, lang=lang: _load(SCRIPTS / lang / f"{tid}.json", None))
                 if instagram.configured(cfg):
                     changed |= post_due_reels(lang, cfg, state)
+            elif instagram.configured(cfg):  # paused: nothing is posted, but the token stays valid for a restart
+                try:
+                    instagram.fresh_token(cfg)
+                except Exception as err:  # noqa: BLE001 – tried again next run
+                    print(f"[{lang}] instagram token refresh failed: {err}", flush=True)
         if changed:
             _save(STATE, state)
         from . import econ
@@ -473,7 +478,7 @@ def main(argv: list[str] | None = None) -> int:
         elif args.action in ("refresh", "backlog") and args.channel == "econ":
             econ.tiktok_backlog(args.max or tiktok.MAX_WAITING)
         elif args.action in ("refresh", "backlog") and args.channel == "quiet":
-            if tiktok.configured(cfg):
+            if cfg.get("active", True) and tiktok.configured(cfg):
                 tiktok_backlog("en", cfg, args.max or tiktok.MAX_WAITING)
         elif args.action in ("refresh", "backlog"):  # heartbeat: what was posted, then top up the drafts
             state = simchannel.load(simchannel.STATE, {"videos": []})

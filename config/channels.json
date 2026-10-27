@@ -27,7 +27,7 @@
   },
   "en": {
     "every_days": 2,
-    "active": true,
+    "active": false,
     "channel_name": "Quiet Thoughts",
     "voice": "en-US-AndrewMultilingualNeural",
     "rate": "-5%",
