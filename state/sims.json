@@ -996,7 +996,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698572600271834400"
       },
       "youtube_id": "kXcnFg3p2OQ",
-      "yt_views": 5474,
+      "yt_views": 5472,
       "stats": {
         "views": 1289,
         "reach": 1095,
@@ -1171,7 +1171,7 @@
         "at": "2026-10-25T10:08+00:00"
       },
       "youtube_id": "p-QSX4ORvRM",
-      "yt_views": 4597
+      "yt_views": 4606
     },
     {
       "date": "2026-10-21T10:42:07+00:00",
@@ -1619,7 +1619,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700486887479299361"
       },
       "youtube_id": "NfesOyi_x70",
-      "yt_views": 2862,
+      "yt_views": 2871,
       "stats": {
         "views": 4300,
         "reach": 3927,
@@ -1680,7 +1680,7 @@
       "instagram_id": "18073927901769025",
       "instagram_url": "https://www.instagram.com/reel/De54cmSkVC0/",
       "youtube_id": "uKuxOZvSyNk",
-      "yt_views": 1293,
+      "yt_views": 1299,
       "stats": {
         "views": 1261,
         "reach": 1133,
@@ -1709,7 +1709,7 @@
       "instagram_url": "https://www.instagram.com/reel/De6hPuGjv3w/",
       "instagram_story_id": "18017323295745870",
       "youtube_id": "J3SZOusPI8U",
-      "yt_views": 1719,
+      "yt_views": 1749,
       "tiktok_skip": "video no longer archived"
     },
     {
@@ -1736,7 +1736,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700682065133522209"
       },
       "youtube_id": "ZC7mDuf4NEo",
-      "yt_views": 1495,
+      "yt_views": 1492,
       "instagram_id": "18114497642181962",
       "instagram_url": "https://www.instagram.com/reel/De9gv4Kigjl/"
     },
@@ -1783,7 +1783,7 @@
         "instagram: processing failed: {'status_code': 'ERROR', 'status': 'ERROR', 'id': '18147318040545192'}"
       ],
       "youtube_id": "MSfMszCrxiQ",
-      "yt_views": 1136,
+      "yt_views": 1146,
       "instagram_id": "18640302508061403",
       "instagram_url": "https://www.instagram.com/reel/De-F_ezlcwc/",
       "tiktok": {
@@ -1814,7 +1814,7 @@
       "yt_views": 908,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7701285532391065622",
-        "status": "PROCESSING_UPLOAD",
+        "status": "SEND_TO_USER_INBOX",
         "caption": "Every golden bounce adds a new ball\nA trampoline made of 1,296 touching spheres. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#3d #satisfying #oddlysatisfying #physics #simulation"
       }
     },
@@ -1835,7 +1835,7 @@
       "instagram_id": "18113998610608034",
       "instagram_url": "https://www.instagram.com/reel/De_OrNGCmSC/",
       "youtube_id": "TBvKa9blarA",
-      "yt_views": 10
+      "yt_views": 290
     }
   ],
   "followers": [
