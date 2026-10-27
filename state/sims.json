@@ -132,7 +132,7 @@
         "comments": 0,
         "at": "2026-10-25T10:08+00:00"
       },
-      "yt_views": 7732,
+      "yt_views": 7743,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697234724552984579",
         "status": "PUBLISH_COMPLETE",
@@ -648,7 +648,7 @@
       "instagram_id": "18030561041882795",
       "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/",
       "youtube_id": "3Qgx9BMIlXo",
-      "yt_views": 8668,
+      "yt_views": 8674,
       "stats": {
         "views": 2663,
         "reach": 2328,
@@ -870,7 +870,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698238496632212769"
       },
       "youtube_id": "AA8_FfvhJ8M",
-      "yt_views": 1485,
+      "yt_views": 1486,
       "stats": {
         "views": 1579,
         "reach": 1422,
@@ -996,7 +996,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698572600271834400"
       },
       "youtube_id": "kXcnFg3p2OQ",
-      "yt_views": 5460,
+      "yt_views": 5474,
       "stats": {
         "views": 1289,
         "reach": 1095,
@@ -1171,7 +1171,7 @@
         "at": "2026-10-25T10:08+00:00"
       },
       "youtube_id": "p-QSX4ORvRM",
-      "yt_views": 4267
+      "yt_views": 4519
     },
     {
       "date": "2026-10-21T10:42:07+00:00",
@@ -1363,7 +1363,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699539842287389985"
       },
       "youtube_id": "k9fsayyKbKE",
-      "yt_views": 2263,
+      "yt_views": 2281,
       "stats": {
         "views": 1416,
         "reach": 1279,
@@ -1428,7 +1428,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699744856498801952"
       },
       "youtube_id": "kpj9MC6F2n0",
-      "yt_views": 1183,
+      "yt_views": 1188,
       "stats": {
         "views": 38397,
         "reach": 34771,
@@ -1619,7 +1619,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700486887479299361"
       },
       "youtube_id": "NfesOyi_x70",
-      "yt_views": 2580,
+      "yt_views": 2799,
       "stats": {
         "views": 4300,
         "reach": 3927,
@@ -1647,7 +1647,7 @@
       "instagram_url": "https://www.instagram.com/reel/De5PgzLG3V9/",
       "instagram_story_id": "18056154530802284",
       "youtube_id": "fb2RYZmVp6Y",
-      "yt_views": 947,
+      "yt_views": 948,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7700500416919865366",
         "status": "PUBLISH_COMPLETE",
@@ -1680,7 +1680,7 @@
       "instagram_id": "18073927901769025",
       "instagram_url": "https://www.instagram.com/reel/De54cmSkVC0/",
       "youtube_id": "uKuxOZvSyNk",
-      "yt_views": 1225,
+      "yt_views": 1280,
       "stats": {
         "views": 1261,
         "reach": 1133,
@@ -1709,7 +1709,7 @@
       "instagram_url": "https://www.instagram.com/reel/De6hPuGjv3w/",
       "instagram_story_id": "18017323295745870",
       "youtube_id": "J3SZOusPI8U",
-      "yt_views": 1460,
+      "yt_views": 1647,
       "tiktok_skip": "video no longer archived"
     },
     {
@@ -1736,7 +1736,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700682065133522209"
       },
       "youtube_id": "ZC7mDuf4NEo",
-      "yt_views": 1358,
+      "yt_views": 1462,
       "instagram_id": "18114497642181962",
       "instagram_url": "https://www.instagram.com/reel/De9gv4Kigjl/"
     },
@@ -1759,8 +1759,9 @@
       ],
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7700741941981382678",
-        "status": "SEND_TO_USER_INBOX",
-        "caption": "Can the ball fall through 110 floors?\nTower #3: a ball bounces down a spinning tower of 110 floors made of glossy beads. Every episode the tower gets five floors taller. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#ball #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Can the ball fall through 110 floors?\nTower #3: a ball bounces down a spinning tower of 110 floors made of glossy beads. Every episode the tower gets five floors taller. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#ball #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7700962883236023584"
       },
       "instagram_id": "18106583798313615",
       "instagram_url": "https://www.instagram.com/reel/De90zxWElTT/"
@@ -1782,9 +1783,14 @@
         "instagram: processing failed: {'status_code': 'ERROR', 'status': 'ERROR', 'id': '18147318040545192'}"
       ],
       "youtube_id": "MSfMszCrxiQ",
-      "yt_views": 0,
+      "yt_views": 1046,
       "instagram_id": "18640302508061403",
-      "instagram_url": "https://www.instagram.com/reel/De-F_ezlcwc/"
+      "instagram_url": "https://www.instagram.com/reel/De-F_ezlcwc/",
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7701154734866122774",
+        "status": "SEND_TO_USER_INBOX",
+        "caption": "Can the ball escape all 12 octagons?\nOne ball, 12 nested polygons turning in opposite directions – and only one gap in each.\n💬 Which song is this? 🎵 Write it in the comments!\n#ballescape #satisfying #oddlysatisfying #physics #simulation"
+      }
     },
     {
       "date": "2026-10-26T12:37:37+00:00",
@@ -1804,7 +1810,7 @@
       "instagram_url": "https://www.instagram.com/reel/De9T9V4kWg1/",
       "instagram_story_id": "17908453632586439",
       "youtube_id": "klR6a8FmPRs",
-      "yt_views": 0
+      "yt_views": 908
     }
   ],
   "followers": [

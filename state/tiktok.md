@@ -6,19 +6,19 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
-**Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: still the Halloween costume-reveal sound (New Engen), until Sat Oct 31 – fits gate_rush's JACKPOT burst · Spooky Scary Skeletons – Andrew Gold: evergreen Halloween meme sound, peaks right before Oct 31 · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook · All I Want for Christmas Is You – Mariah Carey: the yearly 'it's time' wave starts Nov 1 – queue it for the first November posts · Halloween Theme – John Carpenter: creepy build-up for dark runs until Oct 31
+**Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: Halloween costume-reveal sound until Sat Oct 31 – fits press_drill's burst / critical_mass meltdown · Spooky Scary Skeletons – Andrew Gold: evergreen Halloween meme sound, peaks right before Oct 31 · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook · All I Want for Christmas Is You – Mariah Carey: the yearly 'it's time' wave starts Nov 1 – queue it for the first November posts · Vikāra – Benson Boone: listed as a rising sound (unverified for late October) – dramatic build-up for escalating runs
 
-## 25.10. 22:41 UTC – Can the ball fall through 110 floors?
+## 26.10. 04:41 UTC – Can the ball escape all 12 octagons?
 
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261025-tower_drop-2)
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261026-polygon-29)
 
 ⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
 
 ```text
-Can the ball fall through 110 floors?
-Tower #3: a ball bounces down a spinning tower of 110 floors made of glossy beads. Every episode the tower gets five floors taller. Everything is simulated in 3D, nothing is animated.
+Can the ball escape all 12 octagons?
+One ball, 12 nested polygons turning in opposite directions – and only one gap in each.
 💬 Which song is this? 🎵 Write it in the comments!
-#ball #satisfying #oddlysatisfying #physics #simulation
+#ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
 ## 24.10. 04:41 UTC – Can the hole eat the golden tower?
@@ -100,6 +100,19 @@ One ball, 22 spinning rings, one gap in each – it has to find every exit to br
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 25.10. 22:41 UTC – Can the ball fall through 110 floors?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7700962883236023584) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261025-tower_drop-2)
+
+⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
+
+```text
+Can the ball fall through 110 floors?
+Tower #3: a ball bounces down a spinning tower of 110 floors made of glossy beads. Every episode the tower gets five floors taller. Everything is simulated in 3D, nothing is animated.
+💬 Which song is this? 🎵 Write it in the comments!
+#ball #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 25.10. 17:05 UTC – Can it smash through all 7 rings?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7700682065133522209) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261025-ring_breaker-7)
@@ -148,16 +161,5 @@ Same net, same balls 0% to 100% softness
 The same net of 1,024 spheres, softer every round from 0% to 100% – and every round the same steel balls and the golden ball drop on it. Everything is simulated in 3D, nothing is animated.
 💬 Which song is this? 🎵 Write it in the comments!
 #softness #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 23.10. 22:41 UTC – Can the net hold the golden giant?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7700099489083772193) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261023-giant_net-2)
-
-```text
-Can the net hold the golden giant?
-Everything is simulated in 3D, nothing is animated.
-💬 How many balls did you think it would hold?
-#3d #satisfying #oddlysatisfying #physics #simulation
 ```
 
