@@ -31,7 +31,6 @@ jobs:
           LLM_PAUSE_SECONDS: "0"
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
-          GDRIVE_REFRESH_TOKEN: ${{ secrets.GDRIVE_REFRESH_TOKEN }}
           YT_REFRESH_TOKEN_DE: ${{ secrets.YT_REFRESH_TOKEN_DE }}
           YT_REFRESH_TOKEN_EN: ${{ secrets.YT_REFRESH_TOKEN_EN }}
           YT_REFRESH_TOKEN_ECON: ${{ secrets.YT_REFRESH_TOKEN_ECON }}

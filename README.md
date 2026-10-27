@@ -15,8 +15,8 @@ the owner's own YouTube channels using the YouTube Data API v3:
   charts drawn in code from public World Bank data (`videos.insert`, `thumbnails.set`, `captions.insert`, and
   `videos.update` to give the owner's own uploads their prepared title, description and tags).
 
-A copy of each video goes to the owner's own Google Drive (Drive API, scope `drive.file`: only files the tool
-created itself).
+Until 27 October 2026 a copy of each video also went to the owner's own Google Drive (Drive API, scope
+`drive.file`: only files the tool created itself); this is switched off.
 
 It has a single user (the channel owner), no public sign-in and no viewer data.
 
@@ -59,7 +59,7 @@ Thema → Skript → Faktencheck → Sprecherstimme → Musik → Visuals → Un
 | Stories | täglich eine frische Story (Zitat-Karte, sonntags Wochenrückblick), wenn nicht schon Reel/Karussell eine gepostet hat; jede Story wird mit ihrem Highlight protokolliert ([Workflow](.github/workflows/stories.yml)) | 0 € |
 | Highlights | keine API bei Instagram – sonntags kommt eine Liste, welche Stories in welches Highlight gehören (`python -m ytauto highlights`) | 0 € |
 | Upload-Wächter | alle 4 Stunden (2:23, 6:23, 10:23 … UTC): erkennt Videos, die du von Hand hochlädst, korrigiert Shorts, postet das passende Reel | 0 € |
-| Google Drive | jedes Video aller drei Kanäle zusätzlich unter „Kanal-Videos/<Kanal>“, mit Texten zum Kopieren, 14 Tage lang ([gdrive.py](ytauto/gdrive.py)) | 0 € |
+| Google Drive | abgeschaltet seit 27.10.2026 (die Workflows bekommen `GDRIVE_REFRESH_TOKEN` nicht mehr); vorher jedes Video zusätzlich unter „Kanal-Videos/<Kanal>“, 14 Tage lang ([gdrive.py](ytauto/gdrive.py)) | 0 € |
 
 **Einrichtung:** siehe [SETUP.md](SETUP.md). Die YouTube-Kanäle musst du einmal selbst anlegen.
 

@@ -92,7 +92,7 @@ def _instagram(cfg: dict) -> bool:
 
 def _drive(channels: list[str]) -> bool:
     if not gdrive.configured():
-        print(f"[--]   Google Drive: noch nicht verbunden ({gdrive.SECRET} fehlt)")
+        print(f"[--]   Google Drive: abgeschaltet ({gdrive.SECRET} wird den Workflows nicht mehr übergeben)")
         return True
     try:
         token = youtube.access_token(gdrive.SECRET)
