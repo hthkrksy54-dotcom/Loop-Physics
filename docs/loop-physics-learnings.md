@@ -3,6 +3,23 @@
 The concept designer reads this before every run and updates it at the end (newest first, at most ~20 points,
 remove what is outdated). Numbers: views factor vs the channel median (`python -m ytauto concepts`).
 
+- 2026-10-27 · **Numbers**: fast ×1.02 (6) vs ×0.78 = 1.31× → stays the rule, both concepts tonight are fast (bridge_run
+  10.5 hits/s, well_duel 5.1). series ×0.99 (3) vs ×0.91 – still neutral and under 4 with numbers; fourth series started
+  (bridge_run). 3d ×0.99 (11) vs ×0.91. Song quiz now 12 vs 12 posts: views ×0.95 both, comments equal → share stays 0.8.
+  Followers unchanged (Instagram 19, YouTube 62). New experiment **"versus"** (well_duel): red vs blue with a score
+  line and "RED WINS!" – battles have landed ×1.2–1.3 (zombie_tag, blade_duel, battle); does picking a side pull comments?
+- 2026-10-27 · **3D build tricks**: rigid pieces need no physics state – a snapped plank half is centre ballistic +
+  rotation matrix of (spin × τ), computed at render time from its snap time, so falling debris costs nothing in
+  simulate(). A chase is easy to plan: front(t) = ball progress − lag(t) (lag shrinking to ~1), then
+  searchsorted the snap time of every plank. Membranes as an analytic height field (sum of Lorentzian wells × border
+  taper) with marbles rolling on its finite-difference slope give orbits, captures and the inspiral in ~6 s for 400
+  marbles – no XPBD needed when nothing has to tear physically. Pre-spawn a few marbles already falling into the wells
+  with staggered tangential speed, or the first 2–3 s are silent. A camera behind a hero moving into the screen needs
+  yaw ≤ 0.2, or the hero drifts to the frame edge; never cull the hero by sprite size (it vanished at r ≥ 60 px).
+  Status lines in the counter (y 420), never near y 1500 – the melody credit sits there.
+- 2026-10-27 · **Songs**: no reliable web ranking for simulation songs again (only Halloween costume sounds and
+  "Two Fishes"). Own lift decides: Frère Jacques ×1.81 and Ode to Joy ×1.72 → boost 1.5, Greensleeves ×0.59 → 0.7.
+  New PD melody Deck the Halls (1.3 until Jan 6) for the Christmas wave from Nov 1.
 - 2026-10-26 · **Numbers**: series ×0.95 (3) vs ×0.89 – tower_drop (×8.9) carries it, hole_eater/gate_rush pull it to
   neutral; still under 4, keep one series per night (new: press_drill). 3d ×0.95 (11) vs ×0.89 and fast ×0.98 (6) vs
   ×0.76 – **fast is ×1.29 the rest with 6 concepts → rule ≥1.2×: from now on both nightly concepts are fast** (both
@@ -82,6 +99,5 @@ remove what is outdated). Numbers: views factor vs the channel median (`python -
 - 2026-10-20 · **Speed-up with one clear focus wins.** stringart ×4.2 and escape ×2.6 (best video 38,476
   views) are single balls that get faster with every bounce; polygon ×1.8 is the same idea. Busy many-ball
   battles and races mostly land between ×0.65 and ×1.3.
-- 2026-10-20 · **Calm drawing machines underperform**: pendulum ×0.59, harmonograph ×0.66, black_hole ×0.65.
 - 2026-10-20 · **Sound = picture**: melody only on the hits the viewer follows, the rest clacks; the gate checks
   dropped notes and silences (`concept-check`).
