@@ -353,7 +353,7 @@ def main(argv: list[str] | None = None) -> int:
     sc = sub.add_parser("sims", help="Loop Physics channel: render and publish the next simulation Short")
     sc.add_argument("--no-upload", action="store_true")
     sc.add_argument("--branding", action="store_true", help="set banner, description and keywords on YouTube")
-    sc.add_argument("--youtube", choices=["check", "apply", "describe"],
+    sc.add_argument("--youtube", choices=["check", "apply", "describe", "demo"],
                     help="match manual YouTube uploads and polish them; describe = newest 4 get the current description")
     sc.add_argument("--due", action="store_true", help="print 'post' if a posting slot is open, else 'idle'")
     sc.add_argument("--reels", nargs="?", const=0, type=int, metavar="N",
@@ -525,6 +525,8 @@ def main(argv: list[str] | None = None) -> int:
         elif args.youtube:
             if args.youtube == "describe":
                 simchannel.youtube_describe()
+            elif args.youtube == "demo":
+                simchannel.youtube_demo()
             else:
                 simchannel.youtube_polish(apply=args.youtube == "apply")
         else:

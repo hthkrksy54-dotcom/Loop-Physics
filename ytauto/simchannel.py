@@ -587,6 +587,59 @@ def describe(token: str, rec: dict, records: list[dict], cfg: dict) -> str:
     return desc
 
 
+def youtube_demo() -> None:
+    """For the YouTube API compliance review: publish the newest simulation that is not on YouTube yet exactly the
+    way a scheduled run does (videos.insert, resumable upload), then read the video back with videos.list and log
+    every step in English. The upload is remembered as a demo so the polish never takes it for a manual upload."""
+    import tempfile
+
+    import requests
+
+    cfg, state = load(CONFIG, {}), load(STATE, {"videos": []})
+    api = "https://www.googleapis.com/youtube/v3"
+    say = lambda text: print(text, flush=True)  # noqa: E731
+    say("== Step 1: OAuth 2.0 – exchange the channel owner's stored refresh token for an access token")
+    token = _youtube_token(cfg)
+    if not token:
+        raise SystemExit("YouTube token or client credentials missing")
+    h = {"Authorization": f"Bearer {token}"}
+    say("   access token received (scope: https://www.googleapis.com/auth/youtube; never printed or stored)")
+    ch = requests.get(f"{api}/channels", params={"part": "snippet", "mine": "true"}, headers=h, timeout=30).json()["items"][0]
+    say(f"== Step 2: channels.list(mine=true) – the token belongs to '{ch['snippet']['title']}' ({ch['id']})")
+    if ch["snippet"]["title"] != cfg["channel_name"]:
+        raise SystemExit("token belongs to another channel – stopping")
+    records = state.get("videos", [])
+    rec = next((r for r in reversed(records) if not r.get("youtube_id") and r.get("release")), None)
+    if not rec:
+        raise SystemExit("no rendered simulation waiting for YouTube")
+    tag = rec["release"].rsplit("/", 1)[1]
+    url = f"https://github.com/{os.environ.get('GITHUB_REPOSITORY', 'hthkrksy54-dotcom/Yt')}/releases/download/{tag}/" \
+          f"loop-physics-{tag[5:]}.mp4"
+    with tempfile.TemporaryDirectory() as tmp:
+        video = Path(tmp) / f"{tag}.mp4"
+        video.write_bytes(requests.get(url, timeout=300).content)
+        say(f"== Step 3: the video to publish – rendered by this tool on {rec['date'][:16]} UTC ({rec['kind']}, "
+            f"{rec['duration']} s, {video.stat().st_size / 1e6:.1f} MB): {url}")
+        prev, nxt = neighbours(records, rec["kind"], rec["seed"])
+        meta = metadata(rec["kind"], rec["seed"], rec["melody"], cfg, rec.get("quiz", False), prev, nxt)
+        snippet = {"title": meta["title"], "description": meta["description"], "tags": meta["tags"],
+                   "categoryId": cfg["youtube"]["category_id"], "defaultLanguage": cfg["youtube"]["default_language"]}
+        status = {"privacyStatus": "public", "selfDeclaredMadeForKids": False}
+        say("== Step 4: videos.insert (part=snippet,status, resumable upload) with this request body:")
+        say(json.dumps({"snippet": snippet, "status": status}, indent=2, ensure_ascii=False))
+        vid = youtube.upload_video(token, video, snippet, status)
+    say(f"   upload complete – YouTube returned the video id {vid}")
+    state.setdefault("api_demo", {})[vid] = {"date": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+                                             "record": f"{rec['kind']}-{rec['seed']}"}
+    save(STATE, state)
+    v = requests.get(f"{api}/videos", params={"part": "snippet,status", "id": vid}, headers=h, timeout=30).json()["items"][0]
+    say("== Step 5: end result, read back with videos.list(part=snippet,status):")
+    say(json.dumps({"id": vid, "title": v["snippet"]["title"], "channelTitle": v["snippet"]["channelTitle"],
+                    "status": v["status"]}, indent=2, ensure_ascii=False))
+    say(f"   requested privacyStatus: public – privacyStatus now: {v['status'].get('privacyStatus')}")
+    say(f"   https://youtube.com/shorts/{vid}")
+
+
 def youtube_describe(last: int = 4) -> None:
     """The newest `last` uploads get the current description template (run once after the template changes)."""
     cfg, state = load(CONFIG, {}), load(STATE, {"videos": []})
@@ -888,9 +941,11 @@ def youtube_polish(apply: bool = False) -> None:
         playlistId=ch["contentDetails"]["relatedPlaylists"]["uploads"]).get("items", [])]
     videos = get("videos", part="snippet,contentDetails,fileDetails,statistics", id=",".join(ids))["items"] if ids else []
     records = state.get("videos", [])
-    taken = {r["youtube_id"] for r in records if r.get("youtube_id")}
+    taken = {r["youtube_id"] for r in records if r.get("youtube_id")} | set(state.get("api_demo", {}))
     matches = []
     for v in videos:
+        if v["id"] in state.get("api_demo", {}):  # the compliance-review demo upload, not one of the owner's
+            continue
         m = re.fullmatch(r"P(?:T)?(?:(\d+)M)?(?:(\d+)S)?", v["contentDetails"]["duration"]) or None
         secs = (int(m.group(1) or 0) * 60 + int(m.group(2) or 0)) if m else 0
         fname = (v.get("fileDetails", {}).get("fileName") or "").casefold()

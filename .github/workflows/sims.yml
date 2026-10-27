@@ -21,9 +21,9 @@ on:
         type: boolean
         default: false
       youtube:
-        description: "Only polish manual YouTube uploads (check = dry run, describe = newest 4 get the current description)"
+        description: "Only polish manual YouTube uploads (check = dry run, describe = newest 4 get the current description, demo = API upload walkthrough for the compliance review)"
         type: choice
-        options: ["none", "check", "apply", "describe"]
+        options: ["none", "check", "apply", "describe", "demo"]
         default: "none"
       source:
         description: "Who started the run (timer = planned slot)"
@@ -34,7 +34,7 @@ permissions:
   actions: write  # to start the timer and overdue workflows
 
 concurrency:  # admin-only runs (branding, YouTube polish) never wait behind or replace video runs
-  group: ${{ (github.event.inputs.branding == 'true' || github.event.inputs.youtube == 'check' || github.event.inputs.youtube == 'apply' || github.event.inputs.youtube == 'describe') && 'sims-admin' || 'sims' }}
+  group: ${{ (github.event.inputs.branding == 'true' || github.event.inputs.youtube == 'check' || github.event.inputs.youtube == 'apply' || github.event.inputs.youtube == 'describe' || github.event.inputs.youtube == 'demo') && 'sims-admin' || 'sims' }}
   cancel-in-progress: false
 
 jobs:
@@ -61,7 +61,7 @@ jobs:
           IN_YOUTUBE: ${{ github.event.inputs.youtube }}
           IN_SOURCE: ${{ github.event.inputs.source }}
         run: |
-          if [ "$IN_BRANDING" = "true" ] || [ "$IN_YOUTUBE" = "check" ] || [ "$IN_YOUTUBE" = "apply" ] || [ "$IN_YOUTUBE" = "describe" ]; then MODE=admin
+          if [ "$IN_BRANDING" = "true" ] || [ "$IN_YOUTUBE" = "check" ] || [ "$IN_YOUTUBE" = "apply" ] || [ "$IN_YOUTUBE" = "describe" ] || [ "$IN_YOUTUBE" = "demo" ]; then MODE=admin
           else MODE=$(python -m ytauto sims --due); fi
           echo "mode=$MODE" >> "$GITHUB_OUTPUT"
           echo "mode: $MODE"
@@ -108,7 +108,7 @@ jobs:
           fi
 
       - name: Start overdue workflows
-        if: always() && github.event.inputs.branding != 'true' && github.event.inputs.youtube != 'check' && github.event.inputs.youtube != 'apply' && github.event.inputs.youtube != 'describe'
+        if: always() && github.event.inputs.branding != 'true' && github.event.inputs.youtube != 'check' && github.event.inputs.youtube != 'apply' && github.event.inputs.youtube != 'describe' && github.event.inputs.youtube != 'demo'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
