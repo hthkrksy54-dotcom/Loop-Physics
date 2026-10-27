@@ -16,6 +16,7 @@ on:
 
 permissions:
   contents: write
+  actions: write  # to start overdue workflows
 
 concurrency:
   group: produce
@@ -68,3 +69,17 @@ jobs:
               sleep $((i * 10))
             done
           fi
+
+      - name: Start overdue workflows
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python -m ytauto watchdog | while read -r line; do
+            wf=$(echo "$line" | python -c "import sys, json; print(json.load(sys.stdin)['workflow'])")
+            inputs=$(echo "$line" | python -c "import sys, json; print(json.dumps(json.load(sys.stdin)['inputs']))")
+            curl -sS -o /dev/null -w "  $wf -> %{http_code}\n" -X POST -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/$wf/dispatches" \
+              -d "{\"ref\":\"main\",\"inputs\":$inputs}"
+          done

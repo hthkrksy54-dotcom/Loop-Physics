@@ -1,5 +1,6 @@
-"""GitHub drops or delays many scheduled runs. Every Loop Physics run (six a day) calls this and starts whatever
-is overdue."""
+"""GitHub drops or delays scheduled runs, sometimes by hours. Every Loop Physics run and every sync calls this and
+starts whatever is overdue via workflow_dispatch, which GitHub runs right away – so the first scheduled run that
+does start catches up the others, without a runner waiting anywhere."""
 from __future__ import annotations
 
 import datetime as dt
@@ -46,6 +47,10 @@ def due(now: dt.datetime | None = None) -> list[tuple[str, dict]]:
     now = now or dt.datetime.now(dt.timezone.utc)
     hm = now.hour * 60 + now.minute
     out: list[tuple[str, dict]] = []
+
+    from . import simchannel  # Loop Physics: a posting slot without its post
+    if simchannel.slot_due(_load("state/sims.json", {}), now):
+        out.append(("sims.yml", {"source": "watchdog"}))
 
     tuning = _load("config/sims_tuning.json", {})  # the trend check runs every second day
     if not tuning.get("updated") or now - dt.datetime.fromisoformat(tuning["updated"]) > dt.timedelta(hours=50):
