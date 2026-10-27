@@ -6,19 +6,19 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
-**Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: Halloween costume-reveal sound until Sat Oct 31 – fits press_drill's burst / critical_mass meltdown · Spooky Scary Skeletons – Andrew Gold: evergreen Halloween meme sound, peaks right before Oct 31 · Two Fishes (Love Island USA clip) – top trending audio of October 2026 – deadpan voice-over hook · All I Want for Christmas Is You – Mariah Carey: the yearly 'it's time' wave starts Nov 1 – queue it for the first November posts · Vikāra – Benson Boone: listed as a rising sound (unverified for late October) – dramatic build-up for escalating runs
+**Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: Halloween costume-reveal sound, only until Sat Oct 31 – fits bridge_run's last-second leap · Spooky Scary Skeletons – Andrew Gold: evergreen Halloween meme sound, peaks right before Oct 31 · All I Want for Christmas Is You – Mariah Carey: the yearly 'it's time' wave starts Nov 1 – use it on the first November posts · Two Fishes (Love Island USA clip) – still the top trending voice-over audio of October 2026 – deadpan hook over a close finish · Vikāra – Benson Boone: listed as a rising sound (unverified for late October) – dramatic build-up for escalating runs
 
-## 26.10. 04:41 UTC – Can the ball escape all 12 octagons?
+## 26.10. 12:37 UTC – Every golden bounce adds a new ball
 
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261026-polygon-29)
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261026-split_trampoline-2)
 
 ⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
 
 ```text
-Can the ball escape all 12 octagons?
-One ball, 12 nested polygons turning in opposite directions – and only one gap in each.
+Every golden bounce adds a new ball
+A trampoline made of 1,296 touching spheres. Everything is simulated in 3D, nothing is animated.
 💬 Which song is this? 🎵 Write it in the comments!
-#ballescape #satisfying #oddlysatisfying #physics #simulation
+#3d #satisfying #oddlysatisfying #physics #simulation
 ```
 
 ## 24.10. 04:41 UTC – Can the hole eat the golden tower?
@@ -100,6 +100,19 @@ One ball, 22 spinning rings, one gap in each – it has to find every exit to br
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 26.10. 04:41 UTC – Can the ball escape all 12 octagons?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7701238992095825184) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261026-polygon-29)
+
+⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
+
+```text
+Can the ball escape all 12 octagons?
+One ball, 12 nested polygons turning in opposite directions – and only one gap in each.
+💬 Which song is this? 🎵 Write it in the comments!
+#ballescape #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 25.10. 22:41 UTC – Can the ball fall through 110 floors?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7700962883236023584) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261025-tower_drop-2)
@@ -148,18 +161,5 @@ Can the ball fall through 105 floors?
 Tower #2: a ball bounces down a spinning tower of 105 floors made of glossy beads. Every episode the tower gets five floors taller. Everything is simulated in 3D, nothing is animated.
 💬 Should the next tower spin faster?
 #ball #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 24.10. 10:41 UTC – Same net, same balls 0% to 100% softness
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7700186572179688737) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261024-softness_scale-0)
-
-⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
-
-```text
-Same net, same balls 0% to 100% softness
-The same net of 1,024 spheres, softer every round from 0% to 100% – and every round the same steel balls and the golden ball drop on it. Everything is simulated in 3D, nothing is animated.
-💬 Which song is this? 🎵 Write it in the comments!
-#softness #satisfying #oddlysatisfying #physics #simulation
 ```
 
