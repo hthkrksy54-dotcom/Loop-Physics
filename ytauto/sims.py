@@ -107,6 +107,9 @@ MELODIES = {
     "merry_christmas": ("We Wish You a Merry Christmas – traditional", [  # English carol, first verse in G
         62, 67, 67, 69, 67, 66, 64, 64, 64, 69, 69, 71, 69, 67, 66, 62, 62, 71, 71, 72, 71, 69, 67, 64,
         62, 62, 64, 69, 66, 67]),
+    "deck_halls": ("Deck the Halls – traditional", [  # Welsh "Nos Galan", first two lines in F (they are identical)
+        72, 70, 69, 67, 65, 67, 69, 65, 67, 69, 70, 67, 69, 67, 65, 64, 65,
+        72, 70, 69, 67, 65, 67, 69, 65, 67, 69, 70, 67, 69, 67, 65, 64, 65]),
 }
 TIMBRES = ["bell", "marimba", "pluck", "chip", "glass"]
 
