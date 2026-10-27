@@ -629,10 +629,13 @@ def youtube_demo() -> None:
         say(json.dumps({"snippet": snippet, "status": status}, indent=2, ensure_ascii=False))
         vid = youtube.upload_video(token, video, snippet, status)
     say(f"   upload complete – YouTube returned the video id {vid}")
-    state.setdefault("api_demo", {})[vid] = {"date": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
-                                             "record": f"{rec['kind']}-{rec['seed']}"}
-    save(STATE, state)
     v = requests.get(f"{api}/videos", params={"part": "snippet,status", "id": vid}, headers=h, timeout=30).json()["items"][0]
+    if v["status"].get("privacyStatus") == "public":  # a real post: the polish must not take it for a manual upload
+        rec["youtube_id"] = vid
+    else:  # locked private: remembered as the demo, so the owner's own upload of this video still gets matched
+        state.setdefault("api_demo", {})[vid] = {"date": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+                                                 "record": f"{rec['kind']}-{rec['seed']}"}
+    save(STATE, state)
     say("== Step 5: end result, read back with videos.list(part=snippet,status):")
     say(json.dumps({"id": vid, "title": v["snippet"]["title"], "channelTitle": v["snippet"]["channelTitle"],
                     "status": v["status"]}, indent=2, ensure_ascii=False))
