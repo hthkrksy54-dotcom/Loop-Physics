@@ -1,5 +1,26 @@
 # Loop Physics – what we learned
 
+- 2026-10-28 · **Numbers**: fast ×0.93 (7) vs ×0.90 = 1.03× – the 1.3× lead of the last two nights is gone, fast is
+  back to neutral → **one fast + one free per night again** (snowball_roll fast 7.4 hits/s, layer_drop normal 3.6).
+  series ×0.90 (4) vs ×0.92 – neutral at 4 concepts (tower_drop carries it alone); no new series tonight, keep the
+  running ones. 3d ×0.93 (12) vs ×0.86. Song quiz 14 vs 12: views ×1.08 vs ×0.92 (1.17×), comments 0.2 vs 0.1 →
+  share stays 0.8. Followers up: Instagram 27 (+13 in 4 d), YouTube 68 (+21 in 4 d) – the best 4 days so far.
+  New experiment **"suspense"** (layer_drop): the opposite of a speed-up – a rhythm that *slows* as every layer
+  holds longer, and an outcome that changes per post (stuck on layer 84–100 or all 100) to pull guesses.
+- 2026-10-28 · **3D build tricks**: accretion (a ball that picks up what it rolls over) is cheap when planned: one
+  120 Hz pass over the carpet rows near the ball decides every pick-up time (R³ = R0³ + K·beads, 0.15 s for 70,000
+  beads); stuck beads keep a local direction and roll with the ball; draw only the outer layer (picked within the
+  last ΔR *and* the last full turn – otherwise one side stays bare) over a solid core sprite, and spread the stick
+  points over the whole sphere (x / 0.8) or the poles show the core. A razor-edge outcome ("fails exactly on layer
+  S") must be bisected with the same integrator *and step* as the final run – then rescale time, never re-integrate
+  with scaled gravity (the discrete steps flip the outcome by one layer). Membrane dent = logarithmic profile
+  (point load), no XPBD needed; layer numbers next to the rim (projected text in draw_text) make a stack readable.
+  Sound for slow phases: put the melody on visible creaks (a white crack ring flashing around the dent) and on every
+  rebound of a stuck ball – silence otherwise exceeds 3.5 s.
+- 2026-10-28 · **Research**: still no reliable web ranking for sim shorts or songs this week; the recurring 3D
+  formats remain "ball vs N layers", softness comparisons and snowball/grow clips; seasonal pivot from Nov 1 to
+  Christmas. Own lift: Morning Mood ×2.02 (4 posts) → 1.6, Mountain King ×0.87 (4) → 0.9. New PD melody Joy to the
+  World (Mason 1839, 1.3 until Jan 6).
 The concept designer reads this before every run and updates it at the end (newest first, at most ~20 points,
 remove what is outdated). Numbers: views factor vs the channel median (`python -m ytauto concepts`).
 
@@ -17,14 +38,6 @@ remove what is outdated). Numbers: views factor vs the channel median (`python -
   with staggered tangential speed, or the first 2–3 s are silent. A camera behind a hero moving into the screen needs
   yaw ≤ 0.2, or the hero drifts to the frame edge; never cull the hero by sprite size (it vanished at r ≥ 60 px).
   Status lines in the counter (y 420), never near y 1500 – the melody credit sits there.
-- 2026-10-27 · **Songs**: no reliable web ranking for simulation songs again (only Halloween costume sounds and
-  "Two Fishes"). Own lift decides: Frère Jacques ×1.81 and Ode to Joy ×1.72 → boost 1.5, Greensleeves ×0.59 → 0.7.
-  New PD melody Deck the Halls (1.3 until Jan 6) for the Christmas wave from Nov 1.
-- 2026-10-26 · **Numbers**: series ×0.95 (3) vs ×0.89 – tower_drop (×8.9) carries it, hole_eater/gate_rush pull it to
-  neutral; still under 4, keep one series per night (new: press_drill). 3d ×0.95 (11) vs ×0.89 and fast ×0.98 (6) vs
-  ×0.76 – **fast is ×1.29 the rest with 6 concepts → rule ≥1.2×: from now on both nightly concepts are fast** (both
-  were tonight). short/loop ×0.66 (2), softness ×0.51 (1), halloween ×0.56 (1): weak, nothing new
-  in those. Followers: Instagram 19 (+5 in 2 d), YouTube 62 (+15 in 2 d).
 - 2026-10-26 · **Standouts share one shape**: tower_drop ×8.9, escape/polygon/lava_climb ×2.6, split_trampoline ×2.1 –
   one hero, a visible goal that gets closer (floors, rings, lava, walls), hits speeding up to ~10/s. press_drill copies
   that shape with a new mechanic (closing press vs. drilling); critical_mass tests the opposite (no single hero, an
@@ -37,13 +50,6 @@ remove what is outdated). Numbers: views factor vs the channel median (`python -
   the moving axis pointing into the screen keeps a long scene inside the 9:16 frame. Pulled rods slide out sideways –
   anything that rises crosses the title. Chain reactions: give the melody to a split only if note_gap has passed, else
   clack – the gate stays green at hundreds of splits.
-- 2026-10-26 · **Songs**: song quiz reached 10 vs 12 posts – views ×1.11 vs ×0.92 (1.21×), comments equal → share 0.8.
-  Twinkle (×2.38) and Carol of the Bells (×2.28) → 1.7; new PD melody We Wish You a Merry Christmas (1.3 until Jan 6).
-  Web still has no ranking for sim songs.
-- 2026-10-25 · **Series is the standout format: ×5.18 over 2 concepts** (tower_drop ×9.8, hole_eater) vs ×0.95 without
-  – still under 4 concepts, but strong enough to keep one series per night. Third series started: gate_rush (RUN #N,
-  goal +500 balls per episode). 3d ×1.02 (8) vs ×0.90, fast ×1.02 (5) vs ×0.91 – neutral (0.8–1.2), keep one fast +
-  one free. Followers: Instagram 17, YouTube 56 (+9 in a day).
 - 2026-10-25 · **Short/loop**: chladni_plate + bead_picture (~21 s loops) – ×0.66 over 2 so far. Decide at 4.
 - 2026-10-25 · **3D build tricks**: thousands of free balls are cheap in numba with a spatial *hash* (fixed 2^15 table,
   linked lists) – 5,000 balls with peg rods, walls and ball contacts simulate a 70 s run in ~4 s. Rods that touch the
@@ -52,18 +58,12 @@ remove what is outdated). Numbers: views factor vs the channel median (`python -
   steer an honest random process to its goal; the last gate stays "×?" until the front is close, then its number is
   set from the real swarm – exact goal and a reveal moment. A narrow tall box makes "filling to the goal line" readable.
   Clones inherit colour from where they fell through → rainbow stripes in the pile instead of one colour.
-- 2026-10-24 · **Experiment "softness" started** (softness_scale): the viral "0% vs 100% softness" format – the same net
-  in 11 rounds, only XPBD compliance changes, 100% tears. Watch whether a comparison format pulls comments ("which % was
-  best?").
 - 2026-10-24 · **3D build tricks**: XPBD stiffness is capped by iterations (12 iters: anything under ~1e-5.3
   compliance sags the same) – map softness on a log scale from ~10^-5.25 upwards so every round looks different;
   above ~10^-3.3 links open gaps and balls slip through. Hole/clipping look: draw beads below the floor onto a copy and
   composite it through the projected hole ellipse. Big sprites in ~6 % radius steps cut paint time from ~200 to
   ~140 ms/frame with many beads near the camera. A city of ~190 objects along an inward spiral gives ~3 melody
   notes/s by construction (planned swallow times).
-- 2026-10-23 · **Experiment "series" started** (tower_drop): TOWER #N, five floors more per episode, "NEXT: TOWER #N+1"
-  above the follow button. No shared-code change needed: the run length is planned exactly and fits every seed, so the
-  seed search always takes the next free seed and episode = seed + 1. Reusable trick for any future series.
 - 2026-10-23 · **3D build tricks**: planned (analytic) kinematics instead of XPBD for scripted mechanics (tower fall,
   shot schedule) make length, sound and visuals exact and simulate in milliseconds; set `planned_end`. A moving
   camera works with a static gradient background (no studio slab). Cull debris flying at the lens (big projected
