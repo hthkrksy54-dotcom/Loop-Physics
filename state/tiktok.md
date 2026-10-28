@@ -6,19 +6,19 @@
 
 Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am Anfang im Video steht.
 
-**Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): Ramalama (Bang Bang) – Róisín Murphy: Halloween costume-reveal sound, only until Sat Oct 31 – fits bridge_run's last-second leap · Spooky Scary Skeletons – Andrew Gold: evergreen Halloween meme sound, peaks right before Oct 31 · All I Want for Christmas Is You – Mariah Carey: the yearly 'it's time' wave starts Nov 1 – use it on the first November posts · Two Fishes (Love Island USA clip) – still the top trending voice-over audio of October 2026 – deadpan hook over a close finish · Vikāra – Benson Boone: listed as a rising sound (unverified for late October) – dramatic build-up for escalating runs
+**Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): All I Want for Christmas Is You – Mariah Carey: the yearly 'it's time' wave starts Nov 1 – use it on the first November posts (snowball_roll fits) · Spooky Scary Skeletons – Andrew Gold: evergreen Halloween meme sound, only until Sat Oct 31 · Ramalama (Bang Bang) – Róisín Murphy: Halloween costume-reveal sound, only until Sat Oct 31 · Two Fishes (Love Island USA clip) – still the top trending voice-over audio of October 2026 – deadpan hook over a close finish (layer_drop 'stuck' endings) · Last Christmas – Wham!: second big Christmas wave sound from early November – cosy fit for the snowball
 
-## 28.10. 01:41 UTC – What if we pull out every control rod?
+## 28.10. 06:02 UTC – Can the ball cross 500 planks in time?
 
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261028-critical_mass-1)
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261028-bridge_run-0)
 
 ⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
 
 ```text
-What if we pull out every control rod?
-A toy chain reaction: every neutron that hits a fuel sphere splits it into two halves and 2–3 new neutrons; the grey bead walls are control rods that swallow neutrons. Everything is simulated in 3D, nothing is animated.
+Can the ball cross 500 planks in time?
+Bridge #1: a ball hops across a bridge of  planks made of glossy beads while the bridge collapses behind it. Every episode the bridge gets 25 planks longer. Everything is simulated in 3D, nothing is animated.
 💬 Which song is this? 🎵 Write it in the comments!
-#chainreaction #satisfying #oddlysatisfying #physics #simulation
+#ball #satisfying #oddlysatisfying #physics #simulation
 ```
 
 ## 24.10. 04:41 UTC – Can the hole eat the golden tower?
@@ -100,6 +100,19 @@ One ball, 22 spinning rings, one gap in each – it has to find every exit to br
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 28.10. 01:41 UTC – What if we pull out every control rod?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7701599779725348128) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261028-critical_mass-1)
+
+⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
+
+```text
+What if we pull out every control rod?
+A toy chain reaction: every neutron that hits a fuel sphere splits it into two halves and 2–3 new neutrons; the grey bead walls are control rods that swallow neutrons. Everything is simulated in 3D, nothing is animated.
+💬 Which song is this? 🎵 Write it in the comments!
+#chainreaction #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 27.10. 06:33 UTC – Can it drill out before the walls close?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7701428327017385248) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261027-press_drill-0)
@@ -150,18 +163,5 @@ Can the ball fall through 110 floors?
 Tower #3: a ball bounces down a spinning tower of 110 floors made of glossy beads. Every episode the tower gets five floors taller. Everything is simulated in 3D, nothing is animated.
 💬 Which song is this? 🎵 Write it in the comments!
 #ball #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 25.10. 17:05 UTC – Can it smash through all 7 rings?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7700682065133522209) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261025-ring_breaker-7)
-
-⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
-
-```text
-Can it smash through all 7 rings?
-One ball, seven rings of tiles. The outer rings are tougher – the last one needs the whole swarm.
-💬 Which song is this? 🎵 Write it in the comments!
-#escape #satisfying #oddlysatisfying #physics #simulation
 ```
 
