@@ -1,23 +1,24 @@
 {
-  "updated": "2026-10-27",
+  "updated": "2026-10-28",
   "boost": {
     "fur_elise": 1.5,
     "toccata": 1.8,
-    "mountain_king": 1.0,
+    "mountain_king": 0.9,
     "twinkle": 1.7,
     "funeral_march": 1.4,
     "moonlight": 1.3,
     "carol_bells": 1.7,
-    "morning_mood": 1.3,
+    "morning_mood": 1.6,
     "sugar_plum": 1.5,
     "ode_to_joy": 1.5,
     "frere_jacques": 1.5,
     "turkish_march": 0.8,
     "greensleeves": 0.7,
     "jingle_bells": 1.3,
-    "lullaby": 1.2,
+    "lullaby": 1.3,
     "merry_christmas": 1.3,
-    "deck_halls": 1.3
+    "deck_halls": 1.3,
+    "joy_world": 1.3
   },
   "seasonal_until": {
     "toccata": "2026-11-01",
@@ -26,15 +27,16 @@
     "sugar_plum": "2027-01-06",
     "jingle_bells": "2027-01-06",
     "merry_christmas": "2027-01-06",
-    "deck_halls": "2027-01-06"
+    "deck_halls": "2027-01-06",
+    "joy_world": "2027-01-06"
   },
   "tiktok_sounds": [
-    "Ramalama (Bang Bang) – Róisín Murphy: Halloween costume-reveal sound, only until Sat Oct 31 – fits bridge_run's last-second leap",
-    "Spooky Scary Skeletons – Andrew Gold: evergreen Halloween meme sound, peaks right before Oct 31",
-    "All I Want for Christmas Is You – Mariah Carey: the yearly 'it's time' wave starts Nov 1 – use it on the first November posts",
-    "Two Fishes (Love Island USA clip) – still the top trending voice-over audio of October 2026 – deadpan hook over a close finish",
-    "Vikāra – Benson Boone: listed as a rising sound (unverified for late October) – dramatic build-up for escalating runs"
+    "All I Want for Christmas Is You – Mariah Carey: the yearly 'it's time' wave starts Nov 1 – use it on the first November posts (snowball_roll fits)",
+    "Spooky Scary Skeletons – Andrew Gold: evergreen Halloween meme sound, only until Sat Oct 31",
+    "Ramalama (Bang Bang) – Róisín Murphy: Halloween costume-reveal sound, only until Sat Oct 31",
+    "Two Fishes (Love Island USA clip) – still the top trending voice-over audio of October 2026 – deadpan hook over a close finish (layer_drop 'stuck' endings)",
+    "Last Christmas – Wham!: second big Christmas wave sound from early November – cosy fit for the snowball"
   ],
-  "notes": "Own lift decides: Twinkle ×2.42 and Carol of the Bells ×2.32 stay 1.7, Toccata ×2.01 1.8 until Nov 1, Frère Jacques ×1.81 and Ode to Joy ×1.72 → 1.5, Greensleeves ×0.59 → 0.7. New: Deck the Halls (traditional Welsh, PD) 1.3 until Jan 6 for the Christmas wave and the quiz. Song quiz 12 vs 12 posts: views ×0.95 both sides, comments equal → share stays 0.8.",
+  "notes": "Own lift decides: Twinkle ×2.81 / Carol of the Bells ×2.63 stay 1.7, Toccata ×2.56 1.8 until Nov 1, Morning Mood ×2.02 over 4 posts → 1.6, Mountain King ×0.87 over 4 → 0.9. New: Joy to the World (Mason 1839, PD) 1.3 until Jan 6 for the Christmas wave and the quiz. Song quiz 14 vs 12: views ×1.08 vs ×0.92 (1.17×), comments 0.2 vs 0.1 → share stays 0.8.",
   "song_quiz_share": 0.8
 }

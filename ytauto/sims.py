@@ -110,6 +110,9 @@ MELODIES = {
     "deck_halls": ("Deck the Halls – traditional", [  # Welsh "Nos Galan", first two lines in F (they are identical)
         72, 70, 69, 67, 65, 67, 69, 65, 67, 69, 70, 67, 69, 67, 65, 64, 65,
         72, 70, 69, 67, 65, 67, 69, 65, 67, 69, 70, 67, 69, 67, 65, 64, 65]),
+    "joy_world": ("Joy to the World – Mason", [  # Lowell Mason 1839 ("Antioch"), first three lines in D
+        74, 73, 71, 69, 67, 66, 64, 62, 69, 71, 71, 73, 73, 74, 74, 74, 73, 71, 69, 69, 67, 66,
+        74, 73, 71, 69, 67, 66, 64, 62]),
 }
 TIMBRES = ["bell", "marimba", "pluck", "chip", "glass"]
 
