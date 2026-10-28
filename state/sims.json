@@ -219,7 +219,7 @@
         "comments": 0,
         "at": "2026-10-27T10:55+00:00"
       },
-      "yt_views": 13939,
+      "yt_views": 13941,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7697232404259489814",
         "status": "PUBLISH_COMPLETE",
@@ -689,7 +689,7 @@
         "at": "2026-10-27T10:55+00:00"
       },
       "youtube_id": "9mtvZsZzC64",
-      "yt_views": 1723
+      "yt_views": 1724
     },
     {
       "date": "2026-10-17T16:41:44+00:00",
@@ -996,7 +996,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698572600271834400"
       },
       "youtube_id": "kXcnFg3p2OQ",
-      "yt_views": 5472,
+      "yt_views": 5479,
       "stats": {
         "views": 1291,
         "reach": 1096,
@@ -1095,7 +1095,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698820769953959201"
       },
       "youtube_id": "dzLI0_uSjVI",
-      "yt_views": 3810,
+      "yt_views": 3812,
       "stats": {
         "views": 1276,
         "reach": 1107,
@@ -1171,7 +1171,7 @@
         "at": "2026-10-27T10:55+00:00"
       },
       "youtube_id": "p-QSX4ORvRM",
-      "yt_views": 4667
+      "yt_views": 4672
     },
     {
       "date": "2026-10-21T10:42:07+00:00",
@@ -1363,7 +1363,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699539842287389985"
       },
       "youtube_id": "k9fsayyKbKE",
-      "yt_views": 2279,
+      "yt_views": 2281,
       "stats": {
         "views": 1424,
         "reach": 1286,
@@ -1428,7 +1428,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699744856498801952"
       },
       "youtube_id": "kpj9MC6F2n0",
-      "yt_views": 1197,
+      "yt_views": 1205,
       "stats": {
         "views": 65839,
         "reach": 61552,
@@ -1619,7 +1619,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700486887479299361"
       },
       "youtube_id": "NfesOyi_x70",
-      "yt_views": 2917,
+      "yt_views": 2979,
       "stats": {
         "views": 15986,
         "reach": 14659,
@@ -1680,7 +1680,7 @@
       "instagram_id": "18073927901769025",
       "instagram_url": "https://www.instagram.com/reel/De54cmSkVC0/",
       "youtube_id": "uKuxOZvSyNk",
-      "yt_views": 1316,
+      "yt_views": 1355,
       "stats": {
         "views": 1363,
         "reach": 1214,
@@ -1709,7 +1709,7 @@
       "instagram_url": "https://www.instagram.com/reel/De6hPuGjv3w/",
       "instagram_story_id": "18017323295745870",
       "youtube_id": "J3SZOusPI8U",
-      "yt_views": 1774,
+      "yt_views": 1832,
       "tiktok_skip": "video no longer archived",
       "stats": {
         "views": 1808,
@@ -1745,7 +1745,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700682065133522209"
       },
       "youtube_id": "ZC7mDuf4NEo",
-      "yt_views": 1534,
+      "yt_views": 1584,
       "instagram_id": "18114497642181962",
       "instagram_url": "https://www.instagram.com/reel/De9gv4Kigjl/",
       "stats": {
@@ -1792,7 +1792,8 @@
         "comments": 0,
         "at": "2026-10-27T10:55+00:00"
       },
-      "youtube_id": "XNDvJNetw78"
+      "youtube_id": "XNDvJNetw78",
+      "yt_views": 1248
     },
     {
       "date": "2026-10-26T04:41:52+00:00",
@@ -1811,7 +1812,7 @@
         "instagram: processing failed: {'status_code': 'ERROR', 'status': 'ERROR', 'id': '18147318040545192'}"
       ],
       "youtube_id": "MSfMszCrxiQ",
-      "yt_views": 1191,
+      "yt_views": 1215,
       "instagram_id": "18640302508061403",
       "instagram_url": "https://www.instagram.com/reel/De-F_ezlcwc/",
       "tiktok": {
@@ -1848,7 +1849,7 @@
       "instagram_url": "https://www.instagram.com/reel/De9T9V4kWg1/",
       "instagram_story_id": "17908453632586439",
       "youtube_id": "klR6a8FmPRs",
-      "yt_views": 916,
+      "yt_views": 902,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7701285532391065622",
         "status": "PUBLISH_COMPLETE",
@@ -1882,7 +1883,7 @@
       "instagram_id": "18113998610608034",
       "instagram_url": "https://www.instagram.com/reel/De_OrNGCmSC/",
       "youtube_id": "TBvKa9blarA",
-      "yt_views": 1124,
+      "yt_views": 1193,
       "stats": {
         "views": 1248,
         "reach": 1157,
@@ -1897,6 +1898,25 @@
         "status": "SEND_TO_USER_INBOX",
         "caption": "Can it drill out before the walls close?\nPress #1: a ball rolls between two walls made of glossy beads,  cm thick, while a press pushes them together. Every episode the walls get one bead layer thicker. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#ball #satisfying #oddlysatisfying #physics #simulation"
       }
+    },
+    {
+      "date": "2026-10-28T01:41:00+00:00",
+      "kind": "critical_mass",
+      "seed": 1,
+      "melody": "minuet",
+      "timbre": "chip",
+      "title": "What if we pull out every control rod? 🎵 Name the song",
+      "duration": 69.0,
+      "why": "new",
+      "quiz": true,
+      "tiktok_note": "Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.",
+      "concept": "A toy chain reaction in 3D: a platform full of glossy fuel spheres, every neutron that hits one splits it into two halves and 2–3 new neutrons. Grey bead walls (control rods) swallow neutrons. Every round rods are pulled out – the chains grow from a dozen splits to hundreds – and the last round has no rods at all.",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261028-critical_mass-1",
+      "instagram_id": "18642375697024295",
+      "instagram_url": "https://www.instagram.com/reel/DfBSLLZiCSi/",
+      "instagram_story_id": "18076412648472271",
+      "youtube_id": "8s4ghGbAFhk",
+      "yt_views": 0
     }
   ],
   "followers": [
