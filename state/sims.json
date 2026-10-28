@@ -996,7 +996,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698572600271834400"
       },
       "youtube_id": "kXcnFg3p2OQ",
-      "yt_views": 5479,
+      "yt_views": 5476,
       "stats": {
         "views": 1291,
         "reach": 1096,
@@ -1095,7 +1095,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698820769953959201"
       },
       "youtube_id": "dzLI0_uSjVI",
-      "yt_views": 3812,
+      "yt_views": 3811,
       "stats": {
         "views": 1276,
         "reach": 1107,
@@ -1363,7 +1363,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699539842287389985"
       },
       "youtube_id": "k9fsayyKbKE",
-      "yt_views": 2281,
+      "yt_views": 2280,
       "stats": {
         "views": 1424,
         "reach": 1286,
@@ -1619,7 +1619,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700486887479299361"
       },
       "youtube_id": "NfesOyi_x70",
-      "yt_views": 2994,
+      "yt_views": 3006,
       "stats": {
         "views": 15986,
         "reach": 14659,
@@ -1680,7 +1680,7 @@
       "instagram_id": "18073927901769025",
       "instagram_url": "https://www.instagram.com/reel/De54cmSkVC0/",
       "youtube_id": "uKuxOZvSyNk",
-      "yt_views": 1359,
+      "yt_views": 1380,
       "stats": {
         "views": 1363,
         "reach": 1214,
@@ -1709,7 +1709,7 @@
       "instagram_url": "https://www.instagram.com/reel/De6hPuGjv3w/",
       "instagram_story_id": "18017323295745870",
       "youtube_id": "J3SZOusPI8U",
-      "yt_views": 1846,
+      "yt_views": 1851,
       "tiktok_skip": "video no longer archived",
       "stats": {
         "views": 1808,
@@ -1745,7 +1745,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700682065133522209"
       },
       "youtube_id": "ZC7mDuf4NEo",
-      "yt_views": 1591,
+      "yt_views": 1600,
       "instagram_id": "18114497642181962",
       "instagram_url": "https://www.instagram.com/reel/De9gv4Kigjl/",
       "stats": {
@@ -1793,7 +1793,7 @@
         "at": "2026-10-27T10:55+00:00"
       },
       "youtube_id": "XNDvJNetw78",
-      "yt_views": 1345
+      "yt_views": 1514
     },
     {
       "date": "2026-10-26T04:41:52+00:00",
@@ -1812,7 +1812,7 @@
         "instagram: processing failed: {'status_code': 'ERROR', 'status': 'ERROR', 'id': '18147318040545192'}"
       ],
       "youtube_id": "MSfMszCrxiQ",
-      "yt_views": 1229,
+      "yt_views": 1237,
       "instagram_id": "18640302508061403",
       "instagram_url": "https://www.instagram.com/reel/De-F_ezlcwc/",
       "tiktok": {
@@ -1849,7 +1849,7 @@
       "instagram_url": "https://www.instagram.com/reel/De9T9V4kWg1/",
       "instagram_story_id": "17908453632586439",
       "youtube_id": "klR6a8FmPRs",
-      "yt_views": 902,
+      "yt_views": 907,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7701285532391065622",
         "status": "PUBLISH_COMPLETE",
@@ -1883,7 +1883,7 @@
       "instagram_id": "18113998610608034",
       "instagram_url": "https://www.instagram.com/reel/De_OrNGCmSC/",
       "youtube_id": "TBvKa9blarA",
-      "yt_views": 1198,
+      "yt_views": 1216,
       "stats": {
         "views": 1248,
         "reach": 1157,
@@ -1917,7 +1917,7 @@
       "instagram_url": "https://www.instagram.com/reel/DfBSLLZiCSi/",
       "instagram_story_id": "18076412648472271",
       "youtube_id": "8s4ghGbAFhk",
-      "yt_views": 414,
+      "yt_views": 727,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7701534704649947158",
         "status": "PROCESSING_UPLOAD",
@@ -1939,7 +1939,26 @@
       "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261028-bridge_run-0",
       "instagram_id": "18137831164641894",
       "instagram_url": "https://www.instagram.com/reel/DfBwHs_jW0_/",
-      "youtube_id": "wINmBZyGwY0"
+      "youtube_id": "wINmBZyGwY0",
+      "yt_views": 730
+    },
+    {
+      "date": "2026-10-28T10:48:03+00:00",
+      "kind": "well_duel",
+      "seed": 0,
+      "melody": "morning_mood",
+      "timbre": "bell",
+      "title": "Which gravity well swallows the other? 🎵 Name the song",
+      "duration": 77.5,
+      "why": "new",
+      "quiz": true,
+      "tiktok_note": "Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.",
+      "concept": "Two heavy balls, red and blue, sink into a stretchy membrane of ~2,000 glossy beads (3D), each a gravity well. Hundreds of marbles roll in from the rim, orbit and spiral into one of the wells – every catch makes that ball heavier and its well deeper, so it catches more. The two wells circle each other closer and faster until they merge: the heavier one swallows the other.",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261028-well_duel-0",
+      "warnings": [
+        "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
+      ],
+      "youtube_id": "1YsWc_lN3kA"
     }
   ],
   "followers": [
