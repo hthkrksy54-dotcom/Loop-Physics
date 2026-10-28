@@ -689,7 +689,7 @@
         "at": "2026-10-27T10:55+00:00"
       },
       "youtube_id": "9mtvZsZzC64",
-      "yt_views": 1724
+      "yt_views": 1723
     },
     {
       "date": "2026-10-17T16:41:44+00:00",
@@ -1619,7 +1619,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700486887479299361"
       },
       "youtube_id": "NfesOyi_x70",
-      "yt_views": 2979,
+      "yt_views": 2963,
       "stats": {
         "views": 15986,
         "reach": 14659,
@@ -1680,7 +1680,7 @@
       "instagram_id": "18073927901769025",
       "instagram_url": "https://www.instagram.com/reel/De54cmSkVC0/",
       "youtube_id": "uKuxOZvSyNk",
-      "yt_views": 1355,
+      "yt_views": 1350,
       "stats": {
         "views": 1363,
         "reach": 1214,
@@ -1709,7 +1709,7 @@
       "instagram_url": "https://www.instagram.com/reel/De6hPuGjv3w/",
       "instagram_story_id": "18017323295745870",
       "youtube_id": "J3SZOusPI8U",
-      "yt_views": 1832,
+      "yt_views": 1823,
       "tiktok_skip": "video no longer archived",
       "stats": {
         "views": 1808,
@@ -1745,7 +1745,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700682065133522209"
       },
       "youtube_id": "ZC7mDuf4NEo",
-      "yt_views": 1584,
+      "yt_views": 1583,
       "instagram_id": "18114497642181962",
       "instagram_url": "https://www.instagram.com/reel/De9gv4Kigjl/",
       "stats": {
@@ -1793,7 +1793,7 @@
         "at": "2026-10-27T10:55+00:00"
       },
       "youtube_id": "XNDvJNetw78",
-      "yt_views": 1248
+      "yt_views": 1270
     },
     {
       "date": "2026-10-26T04:41:52+00:00",
@@ -1849,7 +1849,7 @@
       "instagram_url": "https://www.instagram.com/reel/De9T9V4kWg1/",
       "instagram_story_id": "17908453632586439",
       "youtube_id": "klR6a8FmPRs",
-      "yt_views": 902,
+      "yt_views": 901,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7701285532391065622",
         "status": "PUBLISH_COMPLETE",
@@ -1883,7 +1883,7 @@
       "instagram_id": "18113998610608034",
       "instagram_url": "https://www.instagram.com/reel/De_OrNGCmSC/",
       "youtube_id": "TBvKa9blarA",
-      "yt_views": 1193,
+      "yt_views": 1182,
       "stats": {
         "views": 1248,
         "reach": 1157,
@@ -1895,8 +1895,9 @@
       },
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7701378074943850518",
-        "status": "SEND_TO_USER_INBOX",
-        "caption": "Can it drill out before the walls close?\nPress #1: a ball rolls between two walls made of glossy beads,  cm thick, while a press pushes them together. Every episode the walls get one bead layer thicker. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#ball #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Can it drill out before the walls close?\nPress #1: a ball rolls between two walls made of glossy beads,  cm thick, while a press pushes them together. Every episode the walls get one bead layer thicker. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#ball #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7701428327017385248"
       }
     },
     {
@@ -1916,7 +1917,12 @@
       "instagram_url": "https://www.instagram.com/reel/DfBSLLZiCSi/",
       "instagram_story_id": "18076412648472271",
       "youtube_id": "8s4ghGbAFhk",
-      "yt_views": 0
+      "yt_views": 135,
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7701534704649947158",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "What if we pull out every control rod?\nA toy chain reaction: every neutron that hits a fuel sphere splits it into two halves and 2–3 new neutrons; the grey bead walls are control rods that swallow neutrons. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#chainreaction #satisfying #oddlysatisfying #physics #simulation"
+      }
     }
   ],
   "followers": [
