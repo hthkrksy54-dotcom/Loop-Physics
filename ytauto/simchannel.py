@@ -33,7 +33,7 @@ OUT = ROOT / "out" / "sims"
 STORY_EVERY = 2  # a story for every Reel would crowd the account's stories
 SLOTS = [(4, 40), (10, 40), (22, 40)]  # UTC; 16:40 had the fewest views (median 17.–24.10.) and was dropped
 # to save GitHub Actions minutes – the schedule in sims.yml runs at these times (+1 min) and half an hour later
-SLOT_WINDOW = dt.timedelta(hours=4)  # GitHub starts scheduled runs up to hours late: a slot still gets its post
+SLOT_WINDOW = dt.timedelta(hours=5, minutes=30)  # GitHub starts scheduled runs up to 5+ hours late (27.10.: 5 h 19)
 STANDOUT = 1.6  # views at least this many times the channel median: a standout, comes back much more often
 TIKTOK_PENDING = 4  # one day of videos may wait in the TikTok inbox (TikTok holds 5); the heartbeat tops them up
 EXPERIMENTS = ("Loop Physics experiments", "A brand-new simulation concept every time.")
