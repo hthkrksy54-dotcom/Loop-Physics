@@ -1680,7 +1680,7 @@
       "instagram_id": "18073927901769025",
       "instagram_url": "https://www.instagram.com/reel/De54cmSkVC0/",
       "youtube_id": "uKuxOZvSyNk",
-      "yt_views": 1410,
+      "yt_views": 1412,
       "stats": {
         "views": 1363,
         "reach": 1214,
@@ -1709,7 +1709,7 @@
       "instagram_url": "https://www.instagram.com/reel/De6hPuGjv3w/",
       "instagram_story_id": "18017323295745870",
       "youtube_id": "J3SZOusPI8U",
-      "yt_views": 1884,
+      "yt_views": 1886,
       "tiktok_skip": "video no longer archived",
       "stats": {
         "views": 1808,
@@ -1793,7 +1793,7 @@
         "at": "2026-10-27T10:55+00:00"
       },
       "youtube_id": "XNDvJNetw78",
-      "yt_views": 2112
+      "yt_views": 2108
     },
     {
       "date": "2026-10-26T04:41:52+00:00",
@@ -1883,7 +1883,7 @@
       "instagram_id": "18113998610608034",
       "instagram_url": "https://www.instagram.com/reel/De_OrNGCmSC/",
       "youtube_id": "TBvKa9blarA",
-      "yt_views": 1238,
+      "yt_views": 1240,
       "stats": {
         "views": 1248,
         "reach": 1157,
@@ -1941,7 +1941,7 @@
       "instagram_id": "18137831164641894",
       "instagram_url": "https://www.instagram.com/reel/DfBwHs_jW0_/",
       "youtube_id": "wINmBZyGwY0",
-      "yt_views": 1134,
+      "yt_views": 1135,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7701675832649041942",
         "status": "PUBLISH_COMPLETE",
@@ -1966,10 +1966,10 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "1YsWc_lN3kA",
-      "yt_views": 1024,
+      "yt_views": 1076,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7701901877470005270",
-        "status": "PROCESSING_UPLOAD",
+        "status": "SEND_TO_USER_INBOX",
         "caption": "Which gravity well swallows the other?\nTwo heavy balls sink into a stretchy membrane of glossy beads – two gravity wells. The two wells circle each other closer and faster until they merge – the heavier one swallows the other and the membrane tears. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#gravity #satisfying #oddlysatisfying #physics #simulation"
       }
     },
@@ -1990,7 +1990,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "maAPp94nk28",
-      "yt_views": 860
+      "yt_views": 1016
     }
   ],
   "followers": [
