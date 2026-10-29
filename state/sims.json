@@ -648,7 +648,7 @@
       "instagram_id": "18030561041882795",
       "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/",
       "youtube_id": "3Qgx9BMIlXo",
-      "yt_views": 8674,
+      "yt_views": 8675,
       "stats": {
         "views": 2669,
         "reach": 2328,
@@ -1095,7 +1095,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698820769953959201"
       },
       "youtube_id": "dzLI0_uSjVI",
-      "yt_views": 3812,
+      "yt_views": 3813,
       "stats": {
         "views": 1276,
         "reach": 1107,
@@ -1171,7 +1171,7 @@
         "at": "2026-10-27T10:55+00:00"
       },
       "youtube_id": "p-QSX4ORvRM",
-      "yt_views": 4673
+      "yt_views": 4672
     },
     {
       "date": "2026-10-21T10:42:07+00:00",
@@ -1363,7 +1363,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699539842287389985"
       },
       "youtube_id": "k9fsayyKbKE",
-      "yt_views": 2282,
+      "yt_views": 2281,
       "stats": {
         "views": 1424,
         "reach": 1286,
@@ -1619,7 +1619,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700486887479299361"
       },
       "youtube_id": "NfesOyi_x70",
-      "yt_views": 3065,
+      "yt_views": 3066,
       "stats": {
         "views": 15986,
         "reach": 14659,
@@ -1680,7 +1680,7 @@
       "instagram_id": "18073927901769025",
       "instagram_url": "https://www.instagram.com/reel/De54cmSkVC0/",
       "youtube_id": "uKuxOZvSyNk",
-      "yt_views": 1412,
+      "yt_views": 1416,
       "stats": {
         "views": 1363,
         "reach": 1214,
@@ -1709,7 +1709,7 @@
       "instagram_url": "https://www.instagram.com/reel/De6hPuGjv3w/",
       "instagram_story_id": "18017323295745870",
       "youtube_id": "J3SZOusPI8U",
-      "yt_views": 1886,
+      "yt_views": 1891,
       "tiktok_skip": "video no longer archived",
       "stats": {
         "views": 1808,
@@ -1745,7 +1745,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700682065133522209"
       },
       "youtube_id": "ZC7mDuf4NEo",
-      "yt_views": 1658,
+      "yt_views": 1693,
       "instagram_id": "18114497642181962",
       "instagram_url": "https://www.instagram.com/reel/De9gv4Kigjl/",
       "stats": {
@@ -1793,7 +1793,7 @@
         "at": "2026-10-27T10:55+00:00"
       },
       "youtube_id": "XNDvJNetw78",
-      "yt_views": 2108
+      "yt_views": 2332
     },
     {
       "date": "2026-10-26T04:41:52+00:00",
@@ -1812,7 +1812,7 @@
         "instagram: processing failed: {'status_code': 'ERROR', 'status': 'ERROR', 'id': '18147318040545192'}"
       ],
       "youtube_id": "MSfMszCrxiQ",
-      "yt_views": 1274,
+      "yt_views": 1280,
       "instagram_id": "18640302508061403",
       "instagram_url": "https://www.instagram.com/reel/De-F_ezlcwc/",
       "tiktok": {
@@ -1883,7 +1883,7 @@
       "instagram_id": "18113998610608034",
       "instagram_url": "https://www.instagram.com/reel/De_OrNGCmSC/",
       "youtube_id": "TBvKa9blarA",
-      "yt_views": 1240,
+      "yt_views": 1252,
       "stats": {
         "views": 1248,
         "reach": 1157,
@@ -1917,7 +1917,7 @@
       "instagram_url": "https://www.instagram.com/reel/DfBSLLZiCSi/",
       "instagram_story_id": "18076412648472271",
       "youtube_id": "8s4ghGbAFhk",
-      "yt_views": 1023,
+      "yt_views": 1026,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7701534704649947158",
         "status": "PUBLISH_COMPLETE",
@@ -1966,7 +1966,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "1YsWc_lN3kA",
-      "yt_views": 1076,
+      "yt_views": 1121,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7701901877470005270",
         "status": "SEND_TO_USER_INBOX",
@@ -1990,7 +1990,25 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "maAPp94nk28",
-      "yt_views": 1016
+      "yt_views": 1231
+    },
+    {
+      "date": "2026-10-29T08:41:31+00:00",
+      "kind": "layer_drop",
+      "seed": 0,
+      "melody": "carol_bells",
+      "timbre": "pluck",
+      "title": "How many layers can the ball break? 🎵 Name the song",
+      "duration": 72.2,
+      "why": "new",
+      "quiz": true,
+      "tiktok_note": "Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.",
+      "concept": "A heavy steel ball falls onto a stack of 100 stretchy membranes made of glossy beads (3D), each stronger than the one above: the first ones it punches through in a blink, then every layer stretches deeper and holds longer before it tears – the rhythm slows down and the suspense rises. Some runs it breaks all 100, some runs it gets stuck on one of the last layers.",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261029-layer_drop-0",
+      "warnings": [
+        "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
+      ],
+      "youtube_id": "h3hcKfPWsc0"
     }
   ],
   "followers": [
