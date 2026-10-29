@@ -996,7 +996,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698572600271834400"
       },
       "youtube_id": "kXcnFg3p2OQ",
-      "yt_views": 5476,
+      "yt_views": 5474,
       "stats": {
         "views": 1291,
         "reach": 1096,
@@ -1680,7 +1680,7 @@
       "instagram_id": "18073927901769025",
       "instagram_url": "https://www.instagram.com/reel/De54cmSkVC0/",
       "youtube_id": "uKuxOZvSyNk",
-      "yt_views": 1416,
+      "yt_views": 1424,
       "stats": {
         "views": 1363,
         "reach": 1214,
@@ -1709,7 +1709,7 @@
       "instagram_url": "https://www.instagram.com/reel/De6hPuGjv3w/",
       "instagram_story_id": "18017323295745870",
       "youtube_id": "J3SZOusPI8U",
-      "yt_views": 1891,
+      "yt_views": 1889,
       "tiktok_skip": "video no longer archived",
       "stats": {
         "views": 1808,
@@ -1745,7 +1745,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700682065133522209"
       },
       "youtube_id": "ZC7mDuf4NEo",
-      "yt_views": 1693,
+      "yt_views": 1705,
       "instagram_id": "18114497642181962",
       "instagram_url": "https://www.instagram.com/reel/De9gv4Kigjl/",
       "stats": {
@@ -1793,7 +1793,7 @@
         "at": "2026-10-27T10:55+00:00"
       },
       "youtube_id": "XNDvJNetw78",
-      "yt_views": 2332
+      "yt_views": 2409
     },
     {
       "date": "2026-10-26T04:41:52+00:00",
@@ -1812,7 +1812,7 @@
         "instagram: processing failed: {'status_code': 'ERROR', 'status': 'ERROR', 'id': '18147318040545192'}"
       ],
       "youtube_id": "MSfMszCrxiQ",
-      "yt_views": 1280,
+      "yt_views": 1292,
       "instagram_id": "18640302508061403",
       "instagram_url": "https://www.instagram.com/reel/De-F_ezlcwc/",
       "tiktok": {
@@ -1883,7 +1883,7 @@
       "instagram_id": "18113998610608034",
       "instagram_url": "https://www.instagram.com/reel/De_OrNGCmSC/",
       "youtube_id": "TBvKa9blarA",
-      "yt_views": 1252,
+      "yt_views": 1260,
       "stats": {
         "views": 1248,
         "reach": 1157,
@@ -1966,7 +1966,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "1YsWc_lN3kA",
-      "yt_views": 1121,
+      "yt_views": 1147,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7701901877470005270",
         "status": "SEND_TO_USER_INBOX",
@@ -1990,7 +1990,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "maAPp94nk28",
-      "yt_views": 1231
+      "yt_views": 1235
     },
     {
       "date": "2026-10-29T08:41:31+00:00",
@@ -2008,7 +2008,27 @@
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
-      "youtube_id": "h3hcKfPWsc0"
+      "youtube_id": "h3hcKfPWsc0",
+      "yt_views": 839
+    },
+    {
+      "date": "2026-10-29T11:04:23+00:00",
+      "kind": "tower_drop",
+      "seed": 3,
+      "melody": "turkish_march",
+      "timbre": "glass",
+      "title": "Tower #4: Can the ball fall through 115 floors?",
+      "duration": 70.1,
+      "why": "standout",
+      "quiz": true,
+      "tiktok_note": "Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.",
+      "concept": "A ball bounces down a spinning tower of 100+ floors, each a disc of hundreds of glossy beads (3D) with one gap: it drops through when the gap spins under it and the floor bursts into beads. Every ten floors it gets faster; the last 12 floors are smashed in FIRE MODE. A numbered series: TOWER #N, five floors more every episode, the finale teases the next tower.",
+      "release": "https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261029-tower_drop-3",
+      "warnings": [
+        "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
+      ],
+      "youtube_id": "lflOs0sLRZs",
+      "yt_views": 0
     }
   ],
   "followers": [
