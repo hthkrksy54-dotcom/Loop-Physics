@@ -1171,7 +1171,7 @@
         "at": "2026-10-27T10:55+00:00"
       },
       "youtube_id": "p-QSX4ORvRM",
-      "yt_views": 4675
+      "yt_views": 4673
     },
     {
       "date": "2026-10-21T10:42:07+00:00",
@@ -1363,7 +1363,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699539842287389985"
       },
       "youtube_id": "k9fsayyKbKE",
-      "yt_views": 2281,
+      "yt_views": 2282,
       "stats": {
         "views": 1424,
         "reach": 1286,
@@ -1619,7 +1619,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700486887479299361"
       },
       "youtube_id": "NfesOyi_x70",
-      "yt_views": 3066,
+      "yt_views": 3065,
       "stats": {
         "views": 15986,
         "reach": 14659,
@@ -1680,7 +1680,7 @@
       "instagram_id": "18073927901769025",
       "instagram_url": "https://www.instagram.com/reel/De54cmSkVC0/",
       "youtube_id": "uKuxOZvSyNk",
-      "yt_views": 1404,
+      "yt_views": 1410,
       "stats": {
         "views": 1363,
         "reach": 1214,
@@ -1745,7 +1745,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700682065133522209"
       },
       "youtube_id": "ZC7mDuf4NEo",
-      "yt_views": 1650,
+      "yt_views": 1658,
       "instagram_id": "18114497642181962",
       "instagram_url": "https://www.instagram.com/reel/De9gv4Kigjl/",
       "stats": {
@@ -1793,7 +1793,7 @@
         "at": "2026-10-27T10:55+00:00"
       },
       "youtube_id": "XNDvJNetw78",
-      "yt_views": 2047
+      "yt_views": 2112
     },
     {
       "date": "2026-10-26T04:41:52+00:00",
@@ -1812,7 +1812,7 @@
         "instagram: processing failed: {'status_code': 'ERROR', 'status': 'ERROR', 'id': '18147318040545192'}"
       ],
       "youtube_id": "MSfMszCrxiQ",
-      "yt_views": 1262,
+      "yt_views": 1274,
       "instagram_id": "18640302508061403",
       "instagram_url": "https://www.instagram.com/reel/De-F_ezlcwc/",
       "tiktok": {
@@ -1849,7 +1849,7 @@
       "instagram_url": "https://www.instagram.com/reel/De9T9V4kWg1/",
       "instagram_story_id": "17908453632586439",
       "youtube_id": "klR6a8FmPRs",
-      "yt_views": 960,
+      "yt_views": 958,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7701285532391065622",
         "status": "PUBLISH_COMPLETE",
@@ -1883,7 +1883,7 @@
       "instagram_id": "18113998610608034",
       "instagram_url": "https://www.instagram.com/reel/De_OrNGCmSC/",
       "youtube_id": "TBvKa9blarA",
-      "yt_views": 1237,
+      "yt_views": 1238,
       "stats": {
         "views": 1248,
         "reach": 1157,
@@ -1917,7 +1917,7 @@
       "instagram_url": "https://www.instagram.com/reel/DfBSLLZiCSi/",
       "instagram_story_id": "18076412648472271",
       "youtube_id": "8s4ghGbAFhk",
-      "yt_views": 1010,
+      "yt_views": 1023,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7701534704649947158",
         "status": "PUBLISH_COMPLETE",
@@ -1941,11 +1941,12 @@
       "instagram_id": "18137831164641894",
       "instagram_url": "https://www.instagram.com/reel/DfBwHs_jW0_/",
       "youtube_id": "wINmBZyGwY0",
-      "yt_views": 1137,
+      "yt_views": 1134,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7701675832649041942",
-        "status": "PROCESSING_UPLOAD",
-        "caption": "Can the ball cross 500 planks in time?\nBridge #1: a ball hops across a bridge of  planks made of glossy beads while the bridge collapses behind it. Every episode the bridge gets 25 planks longer. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#ball #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Can the ball cross 500 planks in time?\nBridge #1: a ball hops across a bridge of  planks made of glossy beads while the bridge collapses behind it. Every episode the bridge gets 25 planks longer. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#ball #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7701835630191398176"
       }
     },
     {
@@ -1965,7 +1966,12 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "1YsWc_lN3kA",
-      "yt_views": 1017
+      "yt_views": 1024,
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7701901877470005270",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "Which gravity well swallows the other?\nTwo heavy balls sink into a stretchy membrane of glossy beads – two gravity wells. The two wells circle each other closer and faster until they merge – the heavier one swallows the other and the membrane tears. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#gravity #satisfying #oddlysatisfying #physics #simulation"
+      }
     },
     {
       "date": "2026-10-28T22:43:28+00:00",
@@ -1984,7 +1990,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "maAPp94nk28",
-      "yt_views": 0
+      "yt_views": 860
     }
   ],
   "followers": [
