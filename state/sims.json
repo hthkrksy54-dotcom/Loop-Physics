@@ -648,7 +648,7 @@
       "instagram_id": "18030561041882795",
       "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/",
       "youtube_id": "3Qgx9BMIlXo",
-      "yt_views": 8677,
+      "yt_views": 8678,
       "stats": {
         "views": 2669,
         "reach": 2328,
@@ -1095,7 +1095,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698820769953959201"
       },
       "youtube_id": "dzLI0_uSjVI",
-      "yt_views": 3815,
+      "yt_views": 3816,
       "stats": {
         "views": 1276,
         "reach": 1107,
@@ -1171,7 +1171,7 @@
         "at": "2026-10-27T10:55+00:00"
       },
       "youtube_id": "p-QSX4ORvRM",
-      "yt_views": 4679
+      "yt_views": 4680
     },
     {
       "date": "2026-10-21T10:42:07+00:00",
@@ -1793,7 +1793,7 @@
         "at": "2026-10-27T10:55+00:00"
       },
       "youtube_id": "XNDvJNetw78",
-      "yt_views": 2848
+      "yt_views": 2851
     },
     {
       "date": "2026-10-26T04:41:52+00:00",
@@ -1812,7 +1812,7 @@
         "instagram: processing failed: {'status_code': 'ERROR', 'status': 'ERROR', 'id': '18147318040545192'}"
       ],
       "youtube_id": "MSfMszCrxiQ",
-      "yt_views": 1344,
+      "yt_views": 1348,
       "instagram_id": "18640302508061403",
       "instagram_url": "https://www.instagram.com/reel/De-F_ezlcwc/",
       "tiktok": {
@@ -1966,7 +1966,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "1YsWc_lN3kA",
-      "yt_views": 1269,
+      "yt_views": 1270,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7701901877470005270",
         "status": "PUBLISH_COMPLETE",
@@ -1991,7 +1991,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "maAPp94nk28",
-      "yt_views": 1501,
+      "yt_views": 1493,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7702276168459880470",
         "status": "SEND_TO_USER_INBOX",
@@ -2015,7 +2015,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "h3hcKfPWsc0",
-      "yt_views": 1370
+      "yt_views": 1386
     },
     {
       "date": "2026-10-29T11:04:23+00:00",
@@ -2034,7 +2034,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "lflOs0sLRZs",
-      "yt_views": 1287
+      "yt_views": 1340
     },
     {
       "date": "2026-10-29T22:53:14+00:00",
@@ -2072,6 +2072,24 @@
       ],
       "youtube_id": "3ThPu9gXyQ8",
       "yt_views": 0
+    },
+    {
+      "date": "2026-10-30T11:00:15+00:00",
+      "kind": "orb_escape",
+      "seed": 4,
+      "melody": "carol_bells",
+      "timbre": "marimba",
+      "title": "Can the ball escape 5 orbs of glass? 🎵 Name the song",
+      "duration": 72.8,
+      "why": "rotation",
+      "quiz": true,
+      "tiktok_note": "Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.",
+      "concept": "A ball is trapped inside 5–6 nested glass orbs, each made of hundreds of touching spheres (3D). Every hit makes it faster, dents the orb and knocks beads out, which rain onto the platform – after enough hits (or through a hole) the orb shatters and the next, bigger one begins.",
+      "release": "https://github.com/hthkrksy54-dotcom/Loop-Physics/releases/tag/sims-20261030-orb_escape-4",
+      "warnings": [
+        "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
+      ],
+      "youtube_id": "B1Am2kXhHtg"
     }
   ],
   "followers": [
