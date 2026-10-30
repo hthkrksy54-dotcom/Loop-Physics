@@ -8,17 +8,17 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 **Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): All I Want for Christmas Is You – Mariah Carey: the yearly 'it's time' wave starts Nov 1 – use it on the first November posts (snowball_roll fits) · Spooky Scary Skeletons – Andrew Gold: evergreen Halloween meme sound, only until Sat Oct 31 · Ramalama (Bang Bang) – Róisín Murphy: Halloween costume-reveal sound, only until Sat Oct 31 · Two Fishes (Love Island USA clip) – still the top trending voice-over audio of October 2026 – deadpan hook over a close finish (layer_drop 'stuck' endings) · Last Christmas – Wham!: second big Christmas wave sound from early November – cosy fit for the snowball
 
-## 28.10. 10:48 UTC – Which gravity well swallows the other?
+## 28.10. 22:43 UTC – Can the snowball smash the ice wall?
 
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261028-well_duel-0)
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261028-snowball_roll-1)
 
 ⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
 
 ```text
-Which gravity well swallows the other?
-Two heavy balls sink into a stretchy membrane of glossy beads – two gravity wells. The two wells circle each other closer and faster until they merge – the heavier one swallows the other and the membrane tears. Everything is simulated in 3D, nothing is animated.
+Can the snowball smash the ice wall?
+A tiny ball rolls down a slope covered in a carpet of glossy beads and picks up every bead it rolls over – it grows layer by layer and gets faster all the way down. At the bottom waits a wall of ice beads. Everything is simulated in 3D, nothing is animated.
 💬 Which song is this? 🎵 Write it in the comments!
-#gravity #satisfying #oddlysatisfying #physics #simulation
+#ball #satisfying #oddlysatisfying #physics #simulation
 ```
 
 ## 24.10. 04:41 UTC – Can the hole eat the golden tower?
@@ -100,6 +100,19 @@ One ball, 22 spinning rings, one gap in each – it has to find every exit to br
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 28.10. 10:48 UTC – Which gravity well swallows the other?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7702073739093069089) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261028-well_duel-0)
+
+⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
+
+```text
+Which gravity well swallows the other?
+Two heavy balls sink into a stretchy membrane of glossy beads – two gravity wells. The two wells circle each other closer and faster until they merge – the heavier one swallows the other and the membrane tears. Everything is simulated in 3D, nothing is animated.
+💬 Which song is this? 🎵 Write it in the comments!
+#gravity #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 28.10. 06:02 UTC – Can the ball cross 500 planks in time?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7701835630191398176) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261028-bridge_run-0)
@@ -150,18 +163,5 @@ Every golden bounce adds a new ball
 A trampoline made of 1,296 touching spheres. Everything is simulated in 3D, nothing is animated.
 💬 Which song is this? 🎵 Write it in the comments!
 #3d #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 26.10. 04:41 UTC – Can the ball escape all 12 octagons?
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7701238992095825184) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261026-polygon-29)
-
-⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
-
-```text
-Can the ball escape all 12 octagons?
-One ball, 12 nested polygons turning in opposite directions – and only one gap in each.
-💬 Which song is this? 🎵 Write it in the comments!
-#ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 

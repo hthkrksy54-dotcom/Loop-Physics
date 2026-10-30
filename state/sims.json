@@ -1095,7 +1095,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698820769953959201"
       },
       "youtube_id": "dzLI0_uSjVI",
-      "yt_views": 3817,
+      "yt_views": 3818,
       "stats": {
         "views": 1276,
         "reach": 1107,
@@ -1793,7 +1793,7 @@
         "at": "2026-10-27T10:55+00:00"
       },
       "youtube_id": "XNDvJNetw78",
-      "yt_views": 2714
+      "yt_views": 2739
     },
     {
       "date": "2026-10-26T04:41:52+00:00",
@@ -1812,7 +1812,7 @@
         "instagram: processing failed: {'status_code': 'ERROR', 'status': 'ERROR', 'id': '18147318040545192'}"
       ],
       "youtube_id": "MSfMszCrxiQ",
-      "yt_views": 1320,
+      "yt_views": 1328,
       "instagram_id": "18640302508061403",
       "instagram_url": "https://www.instagram.com/reel/De-F_ezlcwc/",
       "tiktok": {
@@ -1883,7 +1883,7 @@
       "instagram_id": "18113998610608034",
       "instagram_url": "https://www.instagram.com/reel/De_OrNGCmSC/",
       "youtube_id": "TBvKa9blarA",
-      "yt_views": 1273,
+      "yt_views": 1276,
       "stats": {
         "views": 1248,
         "reach": 1157,
@@ -1966,11 +1966,12 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "1YsWc_lN3kA",
-      "yt_views": 1227,
+      "yt_views": 1244,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7701901877470005270",
-        "status": "SEND_TO_USER_INBOX",
-        "caption": "Which gravity well swallows the other?\nTwo heavy balls sink into a stretchy membrane of glossy beads – two gravity wells. The two wells circle each other closer and faster until they merge – the heavier one swallows the other and the membrane tears. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#gravity #satisfying #oddlysatisfying #physics #simulation"
+        "status": "PUBLISH_COMPLETE",
+        "caption": "Which gravity well swallows the other?\nTwo heavy balls sink into a stretchy membrane of glossy beads – two gravity wells. The two wells circle each other closer and faster until they merge – the heavier one swallows the other and the membrane tears. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#gravity #satisfying #oddlysatisfying #physics #simulation",
+        "url": "https://www.tiktok.com/@loop_physics/video/7702073739093069089"
       }
     },
     {
@@ -1990,7 +1991,12 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "maAPp94nk28",
-      "yt_views": 1422
+      "yt_views": 1423,
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7702276168459880470",
+        "status": "PROCESSING_UPLOAD",
+        "caption": "Can the snowball smash the ice wall?\nA tiny ball rolls down a slope covered in a carpet of glossy beads and picks up every bead it rolls over – it grows layer by layer and gets faster all the way down. At the bottom waits a wall of ice beads. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#ball #satisfying #oddlysatisfying #physics #simulation"
+      }
     },
     {
       "date": "2026-10-29T08:41:31+00:00",
@@ -2009,7 +2015,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "h3hcKfPWsc0",
-      "yt_views": 1321
+      "yt_views": 1346
     },
     {
       "date": "2026-10-29T11:04:23+00:00",
@@ -2028,7 +2034,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "lflOs0sLRZs",
-      "yt_views": 1210
+      "yt_views": 1255
     },
     {
       "date": "2026-10-29T22:53:14+00:00",
@@ -2046,7 +2052,8 @@
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
-      "youtube_id": "3mLk1I_Ehlg"
+      "youtube_id": "3mLk1I_Ehlg",
+      "yt_views": 778
     }
   ],
   "followers": [
