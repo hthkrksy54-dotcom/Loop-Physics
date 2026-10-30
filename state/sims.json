@@ -1793,7 +1793,7 @@
         "at": "2026-10-27T10:55+00:00"
       },
       "youtube_id": "XNDvJNetw78",
-      "yt_views": 2739
+      "yt_views": 2749
     },
     {
       "date": "2026-10-26T04:41:52+00:00",
@@ -1812,7 +1812,7 @@
         "instagram: processing failed: {'status_code': 'ERROR', 'status': 'ERROR', 'id': '18147318040545192'}"
       ],
       "youtube_id": "MSfMszCrxiQ",
-      "yt_views": 1328,
+      "yt_views": 1332,
       "instagram_id": "18640302508061403",
       "instagram_url": "https://www.instagram.com/reel/De-F_ezlcwc/",
       "tiktok": {
@@ -1966,7 +1966,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "1YsWc_lN3kA",
-      "yt_views": 1244,
+      "yt_views": 1258,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7701901877470005270",
         "status": "PUBLISH_COMPLETE",
@@ -1991,10 +1991,10 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "maAPp94nk28",
-      "yt_views": 1423,
+      "yt_views": 1481,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7702276168459880470",
-        "status": "PROCESSING_UPLOAD",
+        "status": "SEND_TO_USER_INBOX",
         "caption": "Can the snowball smash the ice wall?\nA tiny ball rolls down a slope covered in a carpet of glossy beads and picks up every bead it rolls over – it grows layer by layer and gets faster all the way down. At the bottom waits a wall of ice beads. Everything is simulated in 3D, nothing is animated.\n💬 Which song is this? 🎵 Write it in the comments!\n#ball #satisfying #oddlysatisfying #physics #simulation"
       }
     },
@@ -2015,7 +2015,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "h3hcKfPWsc0",
-      "yt_views": 1346
+      "yt_views": 1321
     },
     {
       "date": "2026-10-29T11:04:23+00:00",
@@ -2053,7 +2053,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "3mLk1I_Ehlg",
-      "yt_views": 778
+      "yt_views": 906
     }
   ],
   "followers": [
