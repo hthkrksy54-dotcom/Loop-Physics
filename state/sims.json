@@ -1793,7 +1793,7 @@
         "at": "2026-10-27T10:55+00:00"
       },
       "youtube_id": "XNDvJNetw78",
-      "yt_views": 2851
+      "yt_views": 2873
     },
     {
       "date": "2026-10-26T04:41:52+00:00",
@@ -1883,7 +1883,7 @@
       "instagram_id": "18113998610608034",
       "instagram_url": "https://www.instagram.com/reel/De_OrNGCmSC/",
       "youtube_id": "TBvKa9blarA",
-      "yt_views": 1286,
+      "yt_views": 1300,
       "stats": {
         "views": 1248,
         "reach": 1157,
@@ -2034,7 +2034,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "lflOs0sLRZs",
-      "yt_views": 1340
+      "yt_views": 1363
     },
     {
       "date": "2026-10-29T22:53:14+00:00",
@@ -2053,7 +2053,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "3mLk1I_Ehlg",
-      "yt_views": 988
+      "yt_views": 1010
     },
     {
       "date": "2026-10-30T08:47:13+00:00",
@@ -2071,7 +2071,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "3ThPu9gXyQ8",
-      "yt_views": 0
+      "yt_views": 156
     },
     {
       "date": "2026-10-30T11:00:15+00:00",
@@ -2089,7 +2089,8 @@
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
-      "youtube_id": "B1Am2kXhHtg"
+      "youtube_id": "B1Am2kXhHtg",
+      "yt_views": 66
     }
   ],
   "followers": [
