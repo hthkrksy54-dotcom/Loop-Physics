@@ -8,15 +8,15 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 **Gerade virale Sounds** (in TikTok statt der Melodie wählbar, wenn sie passen): All I Want for Christmas Is You – Mariah Carey: the yearly 'it's time' wave starts Nov 1 – use it on the first November posts (snowball_roll fits) · Spooky Scary Skeletons – Andrew Gold: evergreen Halloween meme sound, only until Sat Oct 31 · Ramalama (Bang Bang) – Róisín Murphy: Halloween costume-reveal sound, only until Sat Oct 31 · Two Fishes (Love Island USA clip) – still the top trending voice-over audio of October 2026 – deadpan hook over a close finish (layer_drop 'stuck' endings) · Last Christmas – Wham!: second big Christmas wave sound from early November – cosy fit for the snowball
 
-## 28.10. 22:43 UTC – Can the snowball smash the ice wall?
+## 29.10. 08:41 UTC – How many layers can the ball break?
 
-Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261028-snowball_roll-1)
+Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261029-layer_drop-0)
 
 ⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
 
 ```text
-Can the snowball smash the ice wall?
-A tiny ball rolls down a slope covered in a carpet of glossy beads and picks up every bead it rolls over – it grows layer by layer and gets faster all the way down. At the bottom waits a wall of ice beads. Everything is simulated in 3D, nothing is animated.
+How many layers can the ball break?
+A heavy steel ball falls onto a stack of 100 stretchy membranes made of glossy beads, each one stronger than the one above. How many can it break? Everything is simulated in 3D, nothing is animated.
 💬 Which song is this? 🎵 Write it in the comments!
 #ball #satisfying #oddlysatisfying #physics #simulation
 ```
@@ -100,6 +100,19 @@ One ball, 22 spinning rings, one gap in each – it has to find every exit to br
 #ballescape #satisfying #oddlysatisfying #physics #simulation
 ```
 
+## 28.10. 22:43 UTC – Can the snowball smash the ice wall?
+
+Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7702741181742026017) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261028-snowball_roll-1)
+
+⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
+
+```text
+Can the snowball smash the ice wall?
+A tiny ball rolls down a slope covered in a carpet of glossy beads and picks up every bead it rolls over – it grows layer by layer and gets faster all the way down. At the bottom waits a wall of ice beads. Everything is simulated in 3D, nothing is animated.
+💬 Which song is this? 🎵 Write it in the comments!
+#ball #satisfying #oddlysatisfying #physics #simulation
+```
+
 ## 28.10. 10:48 UTC – Which gravity well swallows the other?
 
 Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7702073739093069089) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261028-well_duel-0)
@@ -150,18 +163,5 @@ Can it drill out before the walls close?
 Press #1: a ball rolls between two walls made of glossy beads,  cm thick, while a press pushes them together. Every episode the walls get one bead layer thicker. Everything is simulated in 3D, nothing is animated.
 💬 Which song is this? 🎵 Write it in the comments!
 #ball #satisfying #oddlysatisfying #physics #simulation
-```
-
-## 26.10. 12:37 UTC – Every golden bounce adds a new ball
-
-Status: **gepostet** · [auf TikTok](https://www.tiktok.com/@loop_physics/video/7701297107247844640) · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261026-split_trampoline-2)
-
-⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
-
-```text
-Every golden bounce adds a new ball
-A trampoline made of 1,296 touching spheres. Everything is simulated in 3D, nothing is animated.
-💬 Which song is this? 🎵 Write it in the comments!
-#3d #satisfying #oddlysatisfying #physics #simulation
 ```
 
