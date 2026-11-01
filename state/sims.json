@@ -1171,7 +1171,7 @@
         "at": "2026-10-27T10:55+00:00"
       },
       "youtube_id": "p-QSX4ORvRM",
-      "yt_views": 4686
+      "yt_views": 4687
     },
     {
       "date": "2026-10-21T10:42:07+00:00",
@@ -1993,7 +1993,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "maAPp94nk28",
-      "yt_views": 1636,
+      "yt_views": 1637,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7702276168459880470",
         "status": "PUBLISH_COMPLETE",
@@ -2018,7 +2018,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "h3hcKfPWsc0",
-      "yt_views": 1933,
+      "yt_views": 1938,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7702778184039254038",
         "status": "SEND_TO_USER_INBOX",
@@ -2042,7 +2042,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "lflOs0sLRZs",
-      "yt_views": 1724
+      "yt_views": 1714
     },
     {
       "date": "2026-10-29T22:53:14+00:00",
@@ -2079,7 +2079,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "3ThPu9gXyQ8",
-      "yt_views": 1447
+      "yt_views": 1448
     },
     {
       "date": "2026-10-30T11:00:15+00:00",
@@ -2098,7 +2098,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "B1Am2kXhHtg",
-      "yt_views": 1268
+      "yt_views": 1272
     },
     {
       "date": "2026-10-31T01:46:40+00:00",
@@ -2135,7 +2135,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "SYVI0a4DWJA",
-      "yt_views": 1391
+      "yt_views": 1392
     },
     {
       "date": "2026-10-31T10:52:29+00:00",
@@ -2171,7 +2171,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "mPPyAPOgkMc",
-      "yt_views": 372
+      "yt_views": 377
     },
     {
       "date": "2026-11-01T09:26:31+00:00",
@@ -2208,7 +2208,8 @@
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
-      "youtube_id": "hpa6CqQJAyo"
+      "youtube_id": "hpa6CqQJAyo",
+      "yt_views": 1
     }
   ],
   "followers": [
