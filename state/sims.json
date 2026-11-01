@@ -648,7 +648,7 @@
       "instagram_id": "18030561041882795",
       "instagram_url": "https://www.instagram.com/reel/DemJJPhjZ7M/",
       "youtube_id": "3Qgx9BMIlXo",
-      "yt_views": 8679,
+      "yt_views": 8680,
       "stats": {
         "views": 2669,
         "reach": 2328,
@@ -1095,7 +1095,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698820769953959201"
       },
       "youtube_id": "dzLI0_uSjVI",
-      "yt_views": 3816,
+      "yt_views": 3817,
       "stats": {
         "views": 1276,
         "reach": 1107,
@@ -1171,7 +1171,7 @@
         "at": "2026-10-27T10:55+00:00"
       },
       "youtube_id": "p-QSX4ORvRM",
-      "yt_views": 4685
+      "yt_views": 4686
     },
     {
       "date": "2026-10-21T10:42:07+00:00",
@@ -1196,7 +1196,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699120827538754849"
       },
       "youtube_id": "k4sUyvitAjk",
-      "yt_views": 1122,
+      "yt_views": 1123,
       "stats": {
         "views": 1553,
         "reach": 1436,
@@ -1363,7 +1363,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7699539842287389985"
       },
       "youtube_id": "k9fsayyKbKE",
-      "yt_views": 2283,
+      "yt_views": 2284,
       "stats": {
         "views": 1424,
         "reach": 1286,
@@ -1711,7 +1711,7 @@
       "instagram_url": "https://www.instagram.com/reel/De6hPuGjv3w/",
       "instagram_story_id": "18017323295745870",
       "youtube_id": "J3SZOusPI8U",
-      "yt_views": 1902,
+      "yt_views": 1901,
       "tiktok_skip": "video no longer archived",
       "stats": {
         "views": 1808,
@@ -1747,7 +1747,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700682065133522209"
       },
       "youtube_id": "ZC7mDuf4NEo",
-      "yt_views": 1760,
+      "yt_views": 1759,
       "instagram_id": "18114497642181962",
       "instagram_url": "https://www.instagram.com/reel/De9gv4Kigjl/",
       "stats": {
@@ -1795,7 +1795,7 @@
         "at": "2026-10-27T10:55+00:00"
       },
       "youtube_id": "XNDvJNetw78",
-      "yt_views": 3156
+      "yt_views": 3148
     },
     {
       "date": "2026-10-26T04:41:52+00:00",
@@ -1814,7 +1814,7 @@
         "instagram: processing failed: {'status_code': 'ERROR', 'status': 'ERROR', 'id': '18147318040545192'}"
       ],
       "youtube_id": "MSfMszCrxiQ",
-      "yt_views": 1360,
+      "yt_views": 1359,
       "instagram_id": "18640302508061403",
       "instagram_url": "https://www.instagram.com/reel/De-F_ezlcwc/",
       "tiktok": {
@@ -1885,7 +1885,7 @@
       "instagram_id": "18113998610608034",
       "instagram_url": "https://www.instagram.com/reel/De_OrNGCmSC/",
       "youtube_id": "TBvKa9blarA",
-      "yt_views": 1331,
+      "yt_views": 1329,
       "stats": {
         "views": 1248,
         "reach": 1157,
@@ -1919,7 +1919,7 @@
       "instagram_url": "https://www.instagram.com/reel/DfBSLLZiCSi/",
       "instagram_story_id": "18076412648472271",
       "youtube_id": "8s4ghGbAFhk",
-      "yt_views": 1060,
+      "yt_views": 1059,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7701534704649947158",
         "status": "PUBLISH_COMPLETE",
@@ -1968,7 +1968,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "1YsWc_lN3kA",
-      "yt_views": 1351,
+      "yt_views": 1355,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7701901877470005270",
         "status": "PUBLISH_COMPLETE",
@@ -1993,7 +1993,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "maAPp94nk28",
-      "yt_views": 1616,
+      "yt_views": 1636,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7702276168459880470",
         "status": "PUBLISH_COMPLETE",
@@ -2018,7 +2018,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "h3hcKfPWsc0",
-      "yt_views": 1890,
+      "yt_views": 1933,
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7702778184039254038",
         "status": "SEND_TO_USER_INBOX",
@@ -2042,7 +2042,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "lflOs0sLRZs",
-      "yt_views": 1638
+      "yt_views": 1714
     },
     {
       "date": "2026-10-29T22:53:14+00:00",
@@ -2061,7 +2061,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "3mLk1I_Ehlg",
-      "yt_views": 1139
+      "yt_views": 1142
     },
     {
       "date": "2026-10-30T08:47:13+00:00",
@@ -2079,7 +2079,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "3ThPu9gXyQ8",
-      "yt_views": 1363
+      "yt_views": 1440
     },
     {
       "date": "2026-10-30T11:00:15+00:00",
@@ -2098,7 +2098,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "B1Am2kXhHtg",
-      "yt_views": 1187
+      "yt_views": 1231
     },
     {
       "date": "2026-10-31T01:46:40+00:00",
@@ -2116,7 +2116,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "KZRNkf-9tVA",
-      "yt_views": 1284
+      "yt_views": 1307
     },
     {
       "date": "2026-10-31T08:34:30+00:00",
@@ -2135,7 +2135,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "SYVI0a4DWJA",
-      "yt_views": 1320
+      "yt_views": 1363
     },
     {
       "date": "2026-10-31T10:52:29+00:00",
@@ -2152,7 +2152,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "6nUse05k6j4",
-      "yt_views": 1020
+      "yt_views": 1036
     },
     {
       "date": "2026-11-01T02:19:07+00:00",
@@ -2170,7 +2170,27 @@
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
-      "youtube_id": "mPPyAPOgkMc"
+      "youtube_id": "mPPyAPOgkMc",
+      "yt_views": 300
+    },
+    {
+      "date": "2026-11-01T09:26:31+00:00",
+      "kind": "giant_net",
+      "seed": 4,
+      "melody": "sugar_plum",
+      "timbre": "marimba",
+      "title": "Can the net hold the golden giant? 🎵 Name the song",
+      "duration": 71.4,
+      "why": "rotation",
+      "quiz": true,
+      "tiktok_note": "Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.",
+      "concept": "A net of 1,296 touching spheres (3D, simulated like cloth) catches a rain of steel balls that gets faster and faster – the net sags deeper with every ball, coloured by depth – until a golden giant drops onto the pile.",
+      "release": "https://github.com/hthkrksy54-dotcom/Loop-Physics/releases/tag/sims-20261101-giant_net-4",
+      "warnings": [
+        "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
+      ],
+      "youtube_id": "jT4Cft14Jsc",
+      "yt_views": 0
     }
   ],
   "followers": [
