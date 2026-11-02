@@ -10,7 +10,7 @@ Welcher Text zu welchem Entwurf gehört: Die erste Zeile ist der Satz, der am An
 
 ## 29.10. 11:04 UTC – Can the ball fall through 115 floors?
 
-Status: **wird verarbeitet** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261029-tower_drop-3)
+Status: **im Posteingang** · [Video](https://github.com/hthkrksy54-dotcom/Yt/releases/tag/sims-20261029-tower_drop-3)
 
 ⚠️ Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.
 
