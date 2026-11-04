@@ -1171,7 +1171,7 @@
         "at": "2026-10-27T10:55+00:00"
       },
       "youtube_id": "p-QSX4ORvRM",
-      "yt_views": 4688
+      "yt_views": 4689
     },
     {
       "date": "2026-10-21T10:42:07+00:00",
@@ -2104,7 +2104,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "B1Am2kXhHtg",
-      "yt_views": 1774
+      "yt_views": 1775
     },
     {
       "date": "2026-10-31T01:46:40+00:00",
@@ -2122,7 +2122,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "KZRNkf-9tVA",
-      "yt_views": 1500
+      "yt_views": 1503
     },
     {
       "date": "2026-10-31T08:34:30+00:00",
@@ -2141,7 +2141,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "SYVI0a4DWJA",
-      "yt_views": 1717
+      "yt_views": 1732
     },
     {
       "date": "2026-10-31T10:52:29+00:00",
@@ -2196,7 +2196,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "jT4Cft14Jsc",
-      "yt_views": 1803
+      "yt_views": 1810
     },
     {
       "date": "2026-11-01T11:28:29+00:00",
@@ -2215,7 +2215,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "hpa6CqQJAyo",
-      "yt_views": 1017
+      "yt_views": 1018
     },
     {
       "date": "2026-11-02T01:36:58+00:00",
@@ -2234,7 +2234,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "Km_tUkyF1Uw",
-      "yt_views": 1146
+      "yt_views": 1168
     },
     {
       "date": "2026-11-02T09:41:00+00:00",
@@ -2253,7 +2253,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "__ktaVdq_Ig",
-      "yt_views": 1084
+      "yt_views": 1087
     },
     {
       "date": "2026-11-02T12:51:35+00:00",
@@ -2272,7 +2272,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "8JTG3hEUnd8",
-      "yt_views": 1266
+      "yt_views": 1283
     },
     {
       "date": "2026-11-03T03:31:36+00:00",
@@ -2291,7 +2291,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "q_7qs-R6AgE",
-      "yt_views": 327
+      "yt_views": 356
     },
     {
       "date": "2026-11-03T12:19:01+00:00",
@@ -2309,7 +2309,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "ev1Mqv82i9Y",
-      "yt_views": 1001
+      "yt_views": 1038
     },
     {
       "date": "2026-11-03T23:36:57+00:00",
@@ -2326,7 +2326,8 @@
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
-      "youtube_id": "UUsHRNVRaho"
+      "youtube_id": "UUsHRNVRaho",
+      "yt_views": 289
     }
   ],
   "followers": [
