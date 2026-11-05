@@ -1028,7 +1028,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7698674089967242529"
       },
       "youtube_id": "ZxqzD9QX9AU",
-      "yt_views": 1107,
+      "yt_views": 1109,
       "stats": {
         "views": 1224,
         "reach": 1154,
@@ -1171,7 +1171,7 @@
         "at": "2026-10-27T10:55+00:00"
       },
       "youtube_id": "p-QSX4ORvRM",
-      "yt_views": 4696
+      "yt_views": 4711
     },
     {
       "date": "2026-10-21T10:42:07+00:00",
@@ -2141,7 +2141,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "SYVI0a4DWJA",
-      "yt_views": 1761
+      "yt_views": 1764
     },
     {
       "date": "2026-10-31T10:52:29+00:00",
@@ -2196,7 +2196,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "jT4Cft14Jsc",
-      "yt_views": 1926
+      "yt_views": 1956
     },
     {
       "date": "2026-11-01T11:28:29+00:00",
@@ -2234,7 +2234,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "Km_tUkyF1Uw",
-      "yt_views": 1266
+      "yt_views": 1273
     },
     {
       "date": "2026-11-02T09:41:00+00:00",
@@ -2253,7 +2253,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "__ktaVdq_Ig",
-      "yt_views": 1120
+      "yt_views": 1131
     },
     {
       "date": "2026-11-02T12:51:35+00:00",
@@ -2272,7 +2272,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "8JTG3hEUnd8",
-      "yt_views": 1472
+      "yt_views": 1509
     },
     {
       "date": "2026-11-03T03:31:36+00:00",
@@ -2309,7 +2309,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "ev1Mqv82i9Y",
-      "yt_views": 1129
+      "yt_views": 1142
     },
     {
       "date": "2026-11-03T23:36:57+00:00",
@@ -2327,7 +2327,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "UUsHRNVRaho",
-      "yt_views": 710
+      "yt_views": 729
     },
     {
       "date": "2026-11-04T09:30:43+00:00",
@@ -2346,7 +2346,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "5lahACyuRtM",
-      "yt_views": 1693
+      "yt_views": 1926
     },
     {
       "date": "2026-11-04T12:29:45+00:00",
@@ -2382,7 +2382,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "V_yVUAQLezQ",
-      "yt_views": 500
+      "yt_views": 613
     },
     {
       "date": "2026-11-05T09:40:10+00:00",
@@ -2399,7 +2399,25 @@
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
-      "youtube_id": "Xhw5jO1mLpI"
+      "youtube_id": "Xhw5jO1mLpI",
+      "yt_views": 768
+    },
+    {
+      "date": "2026-11-05T12:43:07+00:00",
+      "kind": "hidden_shape",
+      "seed": 4,
+      "melody": "merry_christmas",
+      "timbre": "bell",
+      "title": "What's under the sheet? – Sound on",
+      "duration": 74.4,
+      "why": "standout",
+      "quiz": false,
+      "concept": "Invisible shapes push up a stretchy sheet of 1,600 spheres from below, bump by bump (every bump plays a note) – a ring, a heart, a star, a cat … guess each one before its name appears. Every round is quicker.",
+      "release": "https://github.com/hthkrksy54-dotcom/Loop-Physics/releases/tag/sims-20261105-hidden_shape-4",
+      "warnings": [
+        "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
+      ],
+      "youtube_id": "l0okcbaadic"
     }
   ],
   "followers": [
