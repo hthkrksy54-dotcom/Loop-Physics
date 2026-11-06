@@ -1814,7 +1814,7 @@
         "instagram: processing failed: {'status_code': 'ERROR', 'status': 'ERROR', 'id': '18147318040545192'}"
       ],
       "youtube_id": "MSfMszCrxiQ",
-      "yt_views": 1367,
+      "yt_views": 1368,
       "instagram_id": "18640302508061403",
       "instagram_url": "https://www.instagram.com/reel/De-F_ezlcwc/",
       "tiktok": {
@@ -2234,7 +2234,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "Km_tUkyF1Uw",
-      "yt_views": 1329
+      "yt_views": 1338
     },
     {
       "date": "2026-11-02T09:41:00+00:00",
@@ -2272,7 +2272,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "8JTG3hEUnd8",
-      "yt_views": 1569
+      "yt_views": 1582
     },
     {
       "date": "2026-11-03T03:31:36+00:00",
@@ -2309,7 +2309,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "ev1Mqv82i9Y",
-      "yt_views": 1177
+      "yt_views": 1192
     },
     {
       "date": "2026-11-03T23:36:57+00:00",
@@ -2346,7 +2346,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "5lahACyuRtM",
-      "yt_views": 2081
+      "yt_views": 2094
     },
     {
       "date": "2026-11-04T12:29:45+00:00",
@@ -2364,7 +2364,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "xguHC_lKp-k",
-      "yt_views": 1606
+      "yt_views": 1681
     },
     {
       "date": "2026-11-04T23:47:53+00:00",
@@ -2382,7 +2382,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "V_yVUAQLezQ",
-      "yt_views": 804
+      "yt_views": 902
     },
     {
       "date": "2026-11-05T09:40:10+00:00",
@@ -2400,7 +2400,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "Xhw5jO1mLpI",
-      "yt_views": 1136
+      "yt_views": 1140
     },
     {
       "date": "2026-11-05T12:43:07+00:00",
@@ -2418,7 +2418,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "l0okcbaadic",
-      "yt_views": 1181
+      "yt_views": 1196
     },
     {
       "date": "2026-11-05T23:45:34+00:00",
@@ -2436,7 +2436,25 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "3EzOLuHvPi4",
-      "yt_views": 768
+      "yt_views": 989
+    },
+    {
+      "date": "2026-11-06T09:33:02+00:00",
+      "kind": "lava_climb",
+      "seed": 15,
+      "melody": "canon",
+      "timbre": "bell",
+      "title": "Which ball escapes the rising lava? 🎵 Name the song",
+      "duration": 68.1,
+      "why": "standout",
+      "quiz": true,
+      "tiktok_note": "Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.",
+      "concept": "Five coloured balls jump from platform to platform up a tall tower while lava rises from below: every landing launches the ball at a platform above, a miss means falling back down, the lava speeds up and swallows whoever falls behind – the first ball through the golden exit escapes.",
+      "release": "https://github.com/hthkrksy54-dotcom/Loop-Physics/releases/tag/sims-20261106-lava_climb-15",
+      "warnings": [
+        "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
+      ],
+      "youtube_id": "v9Ezy_hhtdM"
     }
   ],
   "followers": [
