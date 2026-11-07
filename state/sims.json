@@ -1171,7 +1171,7 @@
         "at": "2026-10-27T10:55+00:00"
       },
       "youtube_id": "p-QSX4ORvRM",
-      "yt_views": 4717
+      "yt_views": 4718
     },
     {
       "date": "2026-10-21T10:42:07+00:00",
@@ -1747,7 +1747,7 @@
         "url": "https://www.tiktok.com/@loop_physics/video/7700682065133522209"
       },
       "youtube_id": "ZC7mDuf4NEo",
-      "yt_views": 1767,
+      "yt_views": 1768,
       "instagram_id": "18114497642181962",
       "instagram_url": "https://www.instagram.com/reel/De9gv4Kigjl/",
       "stats": {
@@ -2141,7 +2141,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "SYVI0a4DWJA",
-      "yt_views": 1771
+      "yt_views": 1772
     },
     {
       "date": "2026-10-31T10:52:29+00:00",
@@ -2309,7 +2309,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "ev1Mqv82i9Y",
-      "yt_views": 1250
+      "yt_views": 1251
     },
     {
       "date": "2026-11-03T23:36:57+00:00",
@@ -2346,7 +2346,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "5lahACyuRtM",
-      "yt_views": 2176
+      "yt_views": 2181
     },
     {
       "date": "2026-11-04T12:29:45+00:00",
@@ -2364,7 +2364,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "xguHC_lKp-k",
-      "yt_views": 1810
+      "yt_views": 1820
     },
     {
       "date": "2026-11-04T23:47:53+00:00",
@@ -2400,7 +2400,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "Xhw5jO1mLpI",
-      "yt_views": 1201
+      "yt_views": 1209
     },
     {
       "date": "2026-11-05T12:43:07+00:00",
@@ -2418,7 +2418,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\",\"type\":\"OAuthExc"
       ],
       "youtube_id": "l0okcbaadic",
-      "yt_views": 1248
+      "yt_views": 1264
     },
     {
       "date": "2026-11-05T23:45:34+00:00",
@@ -2436,7 +2436,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "3EzOLuHvPi4",
-      "yt_views": 1088
+      "yt_views": 1098
     },
     {
       "date": "2026-11-06T09:33:02+00:00",
@@ -2455,7 +2455,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "v9Ezy_hhtdM",
-      "yt_views": 2501
+      "yt_views": 2520
     },
     {
       "date": "2026-11-06T13:09:01+00:00",
@@ -2474,7 +2474,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "e8-jwp6gsRE",
-      "yt_views": 1098
+      "yt_views": 1099
     },
     {
       "date": "2026-11-06T23:18:21+00:00",
@@ -2493,7 +2493,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "AiARU_s5_34",
-      "yt_views": 1097
+      "yt_views": 1166
     },
     {
       "date": "2026-11-07T08:57:46+00:00",
@@ -2510,7 +2510,25 @@
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
-      "youtube_id": "ZZK45Dk_epM"
+      "youtube_id": "ZZK45Dk_epM",
+      "yt_views": 839
+    },
+    {
+      "date": "2026-11-07T11:18:00+00:00",
+      "kind": "zombie_tag",
+      "seed": 1,
+      "melody": "deck_halls",
+      "timbre": "chip",
+      "title": "Can anyone survive 64 seconds? – Try not to blink",
+      "duration": 66.6,
+      "why": "standout",
+      "quiz": false,
+      "concept": "Forty balls and one zombie ball in a shrinking arena: every ball the zombie touches turns into a zombie, the horde hunts the nearest survivor while the survivors flee – survive the countdown or the last one gets caught.",
+      "release": "https://github.com/hthkrksy54-dotcom/Loop-Physics/releases/tag/sims-20261107-zombie_tag-1",
+      "warnings": [
+        "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
+      ],
+      "youtube_id": "CdTkZVXQW60"
     }
   ],
   "followers": [
