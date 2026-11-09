@@ -1,73 +1,75 @@
 # Loop Physics – Trend-Check
 
-Stand: 2026-11-07 11:54 UTC · 142 angesagte Satisfying-Shorts der letzten 7 Tage ausgewertet · typische Länge 32 s
+Stand: 2026-11-09 14:18 UTC · 143 angesagte Satisfying-Shorts der letzten 7 Tage ausgewertet · typische Länge 30 s
 
-Diese Woche dominieren schnelle Renn- und Fall-Formate wie Gate Rush, Bridge Run und Layer Drop. Wir kombinieren diese Trends mit unseren Ball‑Escape‑Fragen und fügen passende Add‑Ons wie „Sound on“ oder „Guess the song“ hinzu. So bleiben die Shorts spannend und laden die Zuschauer zum Kommentieren ein.
+Diese Woche dominieren Simulationen mit vielen Ringen und langen Fallstrecken. Wir kombinieren die beliebtesten Formate wie Gate Rush und Bridge Run mit Musik‑ und ASMR‑Elementen, um die Zuschauer zum Mitraten zu motivieren. So entstehen kurze Fragen, die zum Kommentieren einladen und gleichzeitig die Trends nutzen.
 
 ## Konzepte
 
-Neue Konzepte haben Vorrang. Warteschlange: leer. Dazwischen kommen gelaufene Konzepte nach Aufrufen gewichtet zurück; Ausreißer nach oben (mind. 1.6× Kanal-Median von 1598 Aufrufen) deutlich öfter: stringart, polygon, plinko, escape, zombie_tag, ring_breaker, crown_race.
+Neue Konzepte haben Vorrang. Warteschlange: leer. Dazwischen kommen gelaufene Konzepte nach Aufrufen gewichtet zurück; Ausreißer nach oben (mind. 1.6× Kanal-Median von 1358 Aufrufen) deutlich öfter: stringart, polygon, plinko, escape, lava_climb, ring_breaker, crown_race, chaos, brick_core, bead_picture, orb_escape, blade_duel, softness_scale, zombie_tag, split_trampoline.
 
 | Konzept | Posts | Aufrufe vs. Median | bestes Video | Trend-Anteil |
 |---|---:|---:|---:|---:|
-| stringart ⭐ | 5 | ×3.66 | 11352 | 0 % |
-| polygon ⭐ | 6 | ×2.84 | 9230 | 5 % |
-| plinko ⭐ | 3 | ×2.19 | 6821 | 0 % |
-| escape ⭐ | 8 | ×2.13 | 42889 | 1 % |
-| zombie_tag ⭐ | 1 | ×2.07 | 3311 | 71 % |
-| ring_breaker ⭐ | 2 | ×1.75 | 3192 | 59 % |
-| crown_race ⭐ | 1 | ×1.62 | 2582 | 75 % |
-| lava_climb | 3 | ×1.57 | 6771 | 75 % |
-| hole_eater | 1 | ×1.51 | 2405 | 42 % |
-| chaos | 2 | ×1.46 | 2911 | 0 % |
-| bead_picture | 2 | ×1.41 | 3717 | 39 % |
-| brick_core | 3 | ×1.41 | 3200 | 2 % |
-| orb_escape | 2 | ×1.4 | 2683 | 37 % |
-| blade_duel | 4 | ×1.4 | 3665 | 0 % |
-| softness_scale | 2 | ×1.39 | 2837 | 37 % |
-| split_trampoline | 3 | ×1.37 | 5958 | 39 % |
-| battle | 2 | ×1.32 | 3132 | 17 % |
-| layer_drop | 2 | ×1.32 | 2181 | 76 % |
-| gate_rush | 2 | ×1.27 | 2805 | 88 % |
-| chladni_plate | 1 | ×1.24 | 1986 | 42 % |
-| race | 1 | ×1.23 | 1967 | 45 % |
-| giant_net | 3 | ×1.23 | 5097 | 30 % |
-| hidden_shape | 2 | ×1.23 | 2679 | 39 % |
-| tower_drop | 7 | ×1.13 | 67071 | 76 % |
-| grow | 2 | ×1.12 | 2171 | 0 % |
-| press_drill | 2 | ×1.07 | 2587 | 76 % |
-| merge_2048 | 2 | ×1.05 | 1833 | 79 % |
-| territory | 1 | ×1.05 | 1675 | 0 % |
-| snowball_roll | 1 | ×1.05 | 1676 | 76 % |
-| multiply | 1 | ×1.05 | 1680 | 0 % |
-| black_hole | 1 | ×1.04 | 1657 | 2 % |
-| harmonograph | 1 | ×1.02 | 1635 | 0 % |
-| pumpkin_carve | 1 | ×0.93 | 1493 | 37 % |
-| floor_smash | 2 | ×0.9 | 2333 | 37 % |
-| domino_scale | 2 | ×0.88 | 1825 | 4 % |
-| well_duel | 1 | ×0.86 | 1368 | 37 % |
-| pendulum | 3 | ×0.85 | 1574 | 2 % |
-| bridge_run | 1 | ×0.72 | 1153 | 83 % |
-| critical_mass | 1 | ×0.67 | 1067 | 37 % |
+| stringart ⭐ | 6 | ×3.49 | 11352 | 1 % |
+| polygon ⭐ | 6 | ×3.34 | 9230 | 11 % |
+| plinko ⭐ | 4 | ×2.57 | 6821 | 0 % |
+| escape ⭐ | 8 | ×2.5 | 42889 | 1 % |
+| lava_climb ⭐ | 3 | ×2.13 | 6771 | 66 % |
+| ring_breaker ⭐ | 2 | ×2.06 | 3192 | 52 % |
+| crown_race ⭐ | 1 | ×1.9 | 2582 | 67 % |
+| chaos ⭐ | 2 | ×1.72 | 2911 | 0 % |
+| brick_core ⭐ | 3 | ×1.66 | 3200 | 5 % |
+| bead_picture ⭐ | 2 | ×1.66 | 3717 | 58 % |
+| orb_escape ⭐ | 2 | ×1.65 | 2683 | 56 % |
+| blade_duel ⭐ | 4 | ×1.65 | 3665 | 1 % |
+| softness_scale ⭐ | 2 | ×1.64 | 2837 | 56 % |
+| zombie_tag ⭐ | 2 | ×1.63 | 3311 | 60 % |
+| split_trampoline ⭐ | 3 | ×1.61 | 5964 | 57 % |
+| battle | 2 | ×1.58 | 3132 | 16 % |
+| layer_drop | 2 | ×1.57 | 2221 | 73 % |
+| hidden_shape | 2 | ×1.56 | 2679 | 57 % |
+| gate_rush | 2 | ×1.5 | 2805 | 91 % |
+| chladni_plate | 1 | ×1.46 | 1986 | 60 % |
+| giant_net | 3 | ×1.45 | 5097 | 34 % |
+| tower_drop | 7 | ×1.33 | 67071 | 73 % |
+| grow | 2 | ×1.32 | 2171 | 2 % |
+| hole_eater | 2 | ×1.28 | 2405 | 60 % |
+| press_drill | 2 | ×1.26 | 2587 | 73 % |
+| multiply | 1 | ×1.24 | 1680 | 4 % |
+| merge_2048 | 2 | ×1.23 | 1833 | 77 % |
+| territory | 1 | ×1.23 | 1675 | 1 % |
+| snowball_roll | 1 | ×1.23 | 1677 | 73 % |
+| black_hole | 1 | ×1.22 | 1657 | 2 % |
+| harmonograph | 1 | ×1.2 | 1635 | 4 % |
+| pumpkin_carve | 1 | ×1.1 | 1493 | 56 % |
+| floor_smash | 2 | ×1.06 | 2333 | 56 % |
+| domino_scale | 2 | ×1.04 | 1825 | 7 % |
+| pendulum | 3 | ×0.99 | 1574 | 4 % |
+| race | 2 | ×0.92 | 1967 | 34 % |
+| well_duel | 2 | ×0.89 | 1372 | 57 % |
+| bridge_run | 1 | ×0.85 | 1153 | 86 % |
+| critical_mass | 1 | ×0.79 | 1067 | 56 % |
 
 ## Angesagte Schlagwörter
 
-ball, simulation, physics, marble, run, marble run, escape, asmr, ball escape, rings, balls, bouncing, song, physics simulation, guess
+ball, simulation, physics, marble, balls, marble run, run, asmr, bouncing, escape, rings, ball escape, song, bouncingball, physics simulation
 
 ## Hashtags in den Captions
 
-#satisfying #simulation #asmr #oddlysatisfying
+#satisfying #simulation #oddlysatisfying #bouncingball
 
 ## Titel-Zusätze (werden an die Frage im Video gehängt)
 
 - … – Sound on
 - … – Guess the song
-- … – Watch till the end
-- … – Try not to blink
 - … – Listen closely
-- … – Hold your breath
-- … – Stay till the finish
-- … – Keep it quiet
+- … – Wait for the ending
+- … – Try not to blink
+- … – Watch the bounce
+- … – Feel the rhythm
+- … – Spot the pattern
+- … – Catch the drop
+- … – Hear the echo
 
 ## Unsere Top 10 Reels
 
