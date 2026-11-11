@@ -2511,7 +2511,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "ZZK45Dk_epM",
-      "yt_views": 2121
+      "yt_views": 2129
     },
     {
       "date": "2026-11-07T11:18:00+00:00",
@@ -2529,7 +2529,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "CdTkZVXQW60",
-      "yt_views": 1131
+      "yt_views": 1134
     },
     {
       "date": "2026-11-08T01:32:44+00:00",
@@ -2548,7 +2548,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "GXf4VGdnxj8",
-      "yt_views": 1113
+      "yt_views": 1114
     },
     {
       "date": "2026-11-08T09:13:49+00:00",
@@ -2602,7 +2602,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "uSxco_LBMnA",
-      "yt_views": 1125
+      "yt_views": 1138
     },
     {
       "date": "2026-11-09T09:57:42+00:00",
@@ -2620,7 +2620,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "X80NekJ7D0Y",
-      "yt_views": 1275
+      "yt_views": 1288
     },
     {
       "date": "2026-11-10T12:57:29+00:00",
@@ -2639,7 +2639,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "mVsYRRdfrfs",
-      "yt_views": 1201
+      "yt_views": 1251
     },
     {
       "date": "2026-11-10T23:34:17+00:00",
@@ -2658,7 +2658,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "X_Ukmy1On7c",
-      "yt_views": 1015
+      "yt_views": 1020
     },
     {
       "date": "2026-11-11T09:37:14+00:00",
@@ -2675,7 +2675,25 @@
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
-      "youtube_id": "lXWzOAdWaow"
+      "youtube_id": "lXWzOAdWaow",
+      "yt_views": 72
+    },
+    {
+      "date": "2026-11-11T12:07:07+00:00",
+      "kind": "polygon",
+      "seed": 60,
+      "melody": "deck_halls",
+      "timbre": "glass",
+      "title": "Can the ball escape all 8 hexagons? 🎵 Name the song",
+      "duration": 65.6,
+      "why": "standout",
+      "quiz": true,
+      "tiktok_note": "Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.",
+      "release": "https://github.com/hthkrksy54-dotcom/Loop-Physics/releases/tag/sims-20261111-polygon-60",
+      "warnings": [
+        "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
+      ],
+      "youtube_id": "VGoDJaUaP1A"
     }
   ],
   "followers": [
