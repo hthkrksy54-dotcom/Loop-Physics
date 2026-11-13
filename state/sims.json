@@ -2767,7 +2767,8 @@
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
-      "youtube_id": "uAXkYmdIRvA"
+      "youtube_id": "uAXkYmdIRvA",
+      "yt_views": 126
     }
   ],
   "followers": [
