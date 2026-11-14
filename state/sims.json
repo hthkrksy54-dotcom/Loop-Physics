@@ -2658,7 +2658,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "X_Ukmy1On7c",
-      "yt_views": 1128
+      "yt_views": 1132
     },
     {
       "date": "2026-11-11T09:37:14+00:00",
@@ -2731,7 +2731,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "TWhypkV0qro",
-      "yt_views": 1119
+      "yt_views": 1120
     },
     {
       "date": "2026-11-13T02:42:55+00:00",
@@ -2749,7 +2749,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "z0TGDh5unBM",
-      "yt_views": 1251
+      "yt_views": 1286
     },
     {
       "date": "2026-11-13T12:35:16+00:00",
@@ -2768,7 +2768,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "uAXkYmdIRvA",
-      "yt_views": 1172
+      "yt_views": 1242
     },
     {
       "date": "2026-11-13T23:43:36+00:00",
@@ -2786,7 +2786,8 @@
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
-      "youtube_id": "XX2WD0ciRTY"
+      "youtube_id": "XX2WD0ciRTY",
+      "yt_views": 756
     }
   ],
   "followers": [
