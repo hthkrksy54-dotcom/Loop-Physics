@@ -2639,7 +2639,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "mVsYRRdfrfs",
-      "yt_views": 1967
+      "yt_views": 1970
     },
     {
       "date": "2026-11-10T23:34:17+00:00",
@@ -2731,7 +2731,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "TWhypkV0qro",
-      "yt_views": 1137
+      "yt_views": 1138
     },
     {
       "date": "2026-11-13T02:42:55+00:00",
@@ -2749,7 +2749,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "z0TGDh5unBM",
-      "yt_views": 1323
+      "yt_views": 1357
     },
     {
       "date": "2026-11-13T12:35:16+00:00",
@@ -2768,7 +2768,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "uAXkYmdIRvA",
-      "yt_views": 1301
+      "yt_views": 1332
     },
     {
       "date": "2026-11-13T23:43:36+00:00",
@@ -2805,7 +2805,25 @@
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
-      "youtube_id": "aL0XNt95ER8"
+      "youtube_id": "aL0XNt95ER8",
+      "yt_views": 781
+    },
+    {
+      "date": "2026-11-14T11:43:48+00:00",
+      "kind": "orb_escape",
+      "seed": 5,
+      "melody": "merry_christmas",
+      "timbre": "glass",
+      "title": "Can the ball escape 6 orbs of glass? – Watch the bounce",
+      "duration": 75.2,
+      "why": "standout",
+      "quiz": false,
+      "concept": "A ball is trapped inside 5–6 nested glass orbs, each made of hundreds of touching spheres (3D). Every hit makes it faster, dents the orb and knocks beads out, which rain onto the platform – after enough hits (or through a hole) the orb shatters and the next, bigger one begins.",
+      "release": "https://github.com/hthkrksy54-dotcom/Loop-Physics/releases/tag/sims-20261114-orb_escape-5",
+      "warnings": [
+        "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
+      ],
+      "youtube_id": "fxkz7H8jqTE"
     }
   ],
   "followers": [
