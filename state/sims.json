@@ -2768,7 +2768,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "uAXkYmdIRvA",
-      "yt_views": 1517
+      "yt_views": 1516
     },
     {
       "date": "2026-11-13T23:43:36+00:00",
@@ -2824,7 +2824,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "fxkz7H8jqTE",
-      "yt_views": 1123
+      "yt_views": 1122
     },
     {
       "date": "2026-11-15T02:06:26+00:00",
@@ -2842,7 +2842,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "o9H_V-OtXRg",
-      "yt_views": 2237
+      "yt_views": 2174
     },
     {
       "date": "2026-11-15T09:38:47+00:00",
@@ -2878,7 +2878,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "asLHfnpBzK4",
-      "yt_views": 1497
+      "yt_views": 1491
     },
     {
       "date": "2026-11-15T22:59:56+00:00",
@@ -2896,7 +2896,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "p7kfQ3jj2aU",
-      "yt_views": 1161
+      "yt_views": 1164
     },
     {
       "date": "2026-11-16T09:56:52+00:00",
@@ -2915,7 +2915,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "QefQoLGWZdQ",
-      "yt_views": 943
+      "yt_views": 946
     },
     {
       "date": "2026-11-17T04:46:33+00:00",
@@ -2951,7 +2951,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "QOhANmfMMFQ",
-      "yt_views": 926
+      "yt_views": 940
     },
     {
       "date": "2026-11-18T01:02:48+00:00",
@@ -2968,7 +2968,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "re-PQx1GDOg",
-      "yt_views": 1134
+      "yt_views": 1155
     },
     {
       "date": "2026-11-18T13:24:29+00:00",
@@ -2987,7 +2987,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "WhoMfRBYfN0",
-      "yt_views": 1038
+      "yt_views": 1063
     },
     {
       "date": "2026-11-19T03:41:43+00:00",
@@ -3005,7 +3005,23 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "F-cDe9Y6mS8",
-      "yt_views": 0
+      "yt_views": 5
+    },
+    {
+      "date": "2026-11-19T13:50:54+00:00",
+      "kind": "polygon",
+      "seed": 61,
+      "melody": "nachtmusik",
+      "timbre": "marimba",
+      "title": "One ball vs. 10 spinning polygons",
+      "duration": 72.1,
+      "why": "standout",
+      "quiz": false,
+      "release": "https://github.com/hthkrksy54-dotcom/Loop-Physics/releases/tag/sims-20261119-polygon-61",
+      "warnings": [
+        "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
+      ],
+      "youtube_id": "d2DFJXAvsjo"
     }
   ],
   "followers": [
