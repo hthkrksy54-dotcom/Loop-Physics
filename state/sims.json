@@ -2878,7 +2878,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "asLHfnpBzK4",
-      "yt_views": 1494
+      "yt_views": 1491
     },
     {
       "date": "2026-11-15T22:59:56+00:00",
@@ -2932,7 +2932,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "PakjLbXBr4s",
-      "yt_views": 1085
+      "yt_views": 1095
     },
     {
       "date": "2026-11-17T14:18:29+00:00",
@@ -2951,7 +2951,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "QOhANmfMMFQ",
-      "yt_views": 958
+      "yt_views": 986
     },
     {
       "date": "2026-11-18T01:02:48+00:00",
@@ -2968,7 +2968,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "re-PQx1GDOg",
-      "yt_views": 1164
+      "yt_views": 1162
     },
     {
       "date": "2026-11-18T13:24:29+00:00",
@@ -2987,7 +2987,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "WhoMfRBYfN0",
-      "yt_views": 1073
+      "yt_views": 1074
     },
     {
       "date": "2026-11-19T03:41:43+00:00",
@@ -3005,7 +3005,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "F-cDe9Y6mS8",
-      "yt_views": 978
+      "yt_views": 989
     },
     {
       "date": "2026-11-19T13:50:54+00:00",
@@ -3022,7 +3022,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "d2DFJXAvsjo",
-      "yt_views": 945
+      "yt_views": 956
     },
     {
       "date": "2026-11-20T00:43:40+00:00",
@@ -3041,7 +3041,25 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "TbbS8dLGBRI",
-      "yt_views": 201
+      "yt_views": 562
+    },
+    {
+      "date": "2026-11-20T13:32:52+00:00",
+      "kind": "lava_climb",
+      "seed": 26,
+      "melody": "jingle_bells",
+      "timbre": "glass",
+      "title": "Which ball escapes the rising lava? 🎵 Name the song",
+      "duration": 69.3,
+      "why": "standout",
+      "quiz": true,
+      "tiktok_note": "Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.",
+      "concept": "Five coloured balls jump from platform to platform up a tall tower while lava rises from below: every landing launches the ball at a platform above, a miss means falling back down, the lava speeds up and swallows whoever falls behind – the first ball through the golden exit escapes.",
+      "release": "https://github.com/hthkrksy54-dotcom/Loop-Physics/releases/tag/sims-20261120-lava_climb-26",
+      "warnings": [
+        "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
+      ],
+      "youtube_id": "AswbUlEybaw"
     }
   ],
   "followers": [
