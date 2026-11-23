@@ -1,43 +1,43 @@
 # Loop Physics – Trend-Check
 
-Stand: 2026-11-23 15:53 UTC · 134 angesagte Satisfying-Shorts der letzten 7 Tage ausgewertet · typische Länge 27 s
+Stand: 2026-11-23 16:27 UTC · 133 angesagte Satisfying-Shorts der letzten 7 Tage ausgewertet · typische Länge 27 s
 
-Diese Woche dominieren Bridge Run, Gate Rush und Layer Drop die Trends. Wir kombinieren diese Formate mit unseren Ball‑Escape‑Fragen, um mehr ASMR‑ und Physik‑Momente zu bieten. So bleibt unser Content frisch und passend zu den beliebtesten Simulationen.
+Diese Woche dominieren Simulationen mit vielen Ringen, Kettenreaktionen und schnellen Fallen. Wir setzen vermehrt auf Fragen zu Fluchtwegen, Rennzeiten und überraschenden Geräuschen, um das Interesse zu steigern. So kombinieren wir die beliebtesten Trends wie "gate_rush" und "layer_drop" mit klaren, kurzen Add‑Ons.
 
 ## Konzepte
 
-Neue Konzepte haben Vorrang. Warteschlange: leer. Dazwischen kommen gelaufene Konzepte nach Aufrufen gewichtet zurück; Ausreißer nach oben (mind. 1.6× Kanal-Median von 1164 Aufrufen) deutlich öfter: stringart, plinko, escape, lava_climb, chladni_plate, split_trampoline, giant_net, polygon.
+Neue Konzepte haben Vorrang. Warteschlange: leer. Dazwischen kommen gelaufene Konzepte nach Aufrufen gewichtet zurück; Ausreißer nach oben (mind. 1.6× Kanal-Median von 1164 Aufrufen) deutlich öfter: stringart, plinko, escape, lava_climb, chladni_plate, giant_net, split_trampoline, polygon.
 
 | Konzept | Posts | Aufrufe vs. Median | bestes Video | Trend-Anteil |
 |---|---:|---:|---:|---:|
 | stringart ⭐ | 8 | ×3.08 | 11352 | 5 % |
 | plinko ⭐ | 5 | ×2.98 | 6821 | 0 % |
 | escape ⭐ | 9 | ×2.65 | 42889 | 0 % |
-| lava_climb ⭐ | 5 | ×2.19 | 6771 | 53 % |
+| lava_climb ⭐ | 5 | ×2.19 | 6771 | 54 % |
 | chladni_plate ⭐ | 1 | ×1.71 | 1986 | 70 % |
-| split_trampoline ⭐ | 5 | ×1.69 | 5965 | 64 % |
 | giant_net ⭐ | 3 | ×1.69 | 5097 | 38 % |
+| split_trampoline ⭐ | 5 | ×1.69 | 5965 | 64 % |
 | polygon ⭐ | 8 | ×1.6 | 9230 | 5 % |
 | tower_drop | 7 | ×1.56 | 67071 | 78 % |
 | orb_escape | 3 | ×1.54 | 2683 | 63 % |
 | grow | 2 | ×1.54 | 2171 | 0 % |
 | ring_breaker | 4 | ×1.53 | 3193 | 45 % |
-| hole_eater | 2 | ×1.52 | 2405 | 71 % |
-| layer_drop | 4 | ×1.52 | 2225 | 78 % |
 | chaos | 3 | ×1.52 | 2911 | 0 % |
+| layer_drop | 4 | ×1.52 | 2225 | 78 % |
+| hole_eater | 2 | ×1.52 | 2405 | 71 % |
 | press_drill | 2 | ×1.48 | 2587 | 78 % |
 | brick_core | 4 | ×1.46 | 3200 | 2 % |
+| territory | 1 | ×1.44 | 1675 | 0 % |
 | merge_2048 | 2 | ×1.44 | 1833 | 79 % |
 | multiply | 1 | ×1.44 | 1680 | 1 % |
-| territory | 1 | ×1.44 | 1675 | 0 % |
 | black_hole | 1 | ×1.42 | 1657 | 0 % |
 | softness_scale | 3 | ×1.4 | 2837 | 63 % |
 | hidden_shape | 3 | ×1.36 | 2679 | 64 % |
 | pumpkin_carve | 1 | ×1.28 | 1493 | 63 % |
 | blade_duel | 6 | ×1.28 | 3665 | 1 % |
 | floor_smash | 2 | ×1.24 | 2333 | 64 % |
-| snowball_roll | 2 | ×1.22 | 1679 | 78 % |
 | domino_scale | 2 | ×1.22 | 1825 | 1 % |
+| snowball_roll | 2 | ×1.22 | 1679 | 78 % |
 | bead_picture | 3 | ×1.18 | 3717 | 64 % |
 | pendulum | 3 | ×1.16 | 1574 | 0 % |
 | race | 2 | ×1.13 | 1967 | 28 % |
@@ -46,13 +46,13 @@ Neue Konzepte haben Vorrang. Warteschlange: leer. Dazwischen kommen gelaufene Ko
 | harmonograph | 3 | ×1.04 | 1635 | 2 % |
 | battle | 3 | ×1.03 | 3132 | 20 % |
 | bridge_run | 1 | ×0.99 | 1154 | 86 % |
-| zombie_tag | 3 | ×0.98 | 3311 | 50 % |
+| zombie_tag | 3 | ×0.98 | 3311 | 51 % |
 | critical_mass | 1 | ×0.92 | 1067 | 63 % |
-| crown_race | 3 | ×0.91 | 2582 | 53 % |
+| crown_race | 3 | ×0.91 | 2582 | 54 % |
 
 ## Angesagte Schlagwörter
 
-ball, simulation, asmr, balls, marble, run, marble run, rings, physics, escape, bouncingball, ball escape, colorful, bowling balls, bowling
+ball, simulation, asmr, balls, marble, marble run, run, rings, physics, escape, bouncingball, ball escape, bowling, bowling balls, shatter
 
 ## Hashtags in den Captions
 
@@ -61,14 +61,13 @@ ball, simulation, asmr, balls, marble, run, marble run, rings, physics, escape, 
 ## Titel-Zusätze (werden an die Frage im Video gehängt)
 
 - … – Sound on
-- … – Listen closely
 - … – Try not to blink
 - … – Guess the pattern
-- … – Watch the bounce
-- … – Feel the rhythm
+- … – Listen closely
+- … – Watch till the end
 - … – Hold your breath
-- … – Spot the glitch
-- … – Stay till the end
+- … – Stay till the finish
+- … – Keep it quiet
 
 ## Unsere Top 10 Reels
 
