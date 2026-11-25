@@ -3098,7 +3098,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "MTA0U_vQC5o",
-      "yt_views": 1440
+      "yt_views": 1438
     },
     {
       "date": "2026-11-21T23:29:37+00:00",
@@ -3190,7 +3190,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "ykuc4-WyXQM",
-      "yt_views": 1381
+      "yt_views": 1386
     },
     {
       "date": "2026-11-24T06:21:31+00:00",
@@ -3246,7 +3246,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "bv-v5AytRg0",
-      "yt_views": 1051
+      "yt_views": 1063
     },
     {
       "date": "2026-11-25T05:01:53+00:00",
@@ -3264,7 +3264,8 @@
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
-      "youtube_id": "ZVy-wopMsrc"
+      "youtube_id": "ZVy-wopMsrc",
+      "yt_views": 28
     }
   ],
   "followers": [
