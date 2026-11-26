@@ -3134,7 +3134,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "9aRJOzIldvE",
-      "yt_views": 1644
+      "yt_views": 1648
     },
     {
       "date": "2026-11-22T23:41:24+00:00",
@@ -3152,7 +3152,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "OZ3rdv-DX4M",
-      "yt_views": 1140
+      "yt_views": 1145
     },
     {
       "date": "2026-11-23T10:56:44+00:00",
@@ -3171,7 +3171,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "OLe_wp---iE",
-      "yt_views": 2315
+      "yt_views": 2344
     },
     {
       "date": "2026-11-24T01:45:37+00:00",
@@ -3190,7 +3190,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "ykuc4-WyXQM",
-      "yt_views": 1477
+      "yt_views": 1500
     },
     {
       "date": "2026-11-24T06:21:31+00:00",
@@ -3209,7 +3209,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "D3SriQMpErs",
-      "yt_views": 871
+      "yt_views": 892
     },
     {
       "date": "2026-11-24T12:40:44+00:00",
@@ -3227,7 +3227,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "1LoNDdPj7mg",
-      "yt_views": 1322
+      "yt_views": 1346
     },
     {
       "date": "2026-11-24T23:33:57+00:00",
@@ -3246,7 +3246,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "bv-v5AytRg0",
-      "yt_views": 1381
+      "yt_views": 1413
     },
     {
       "date": "2026-11-25T05:01:53+00:00",
@@ -3265,7 +3265,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "ZVy-wopMsrc",
-      "yt_views": 1241
+      "yt_views": 1270
     },
     {
       "date": "2026-11-25T11:29:40+00:00",
@@ -3284,7 +3284,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "jBhvIZ-NKOM",
-      "yt_views": 1291
+      "yt_views": 1363
     },
     {
       "date": "2026-11-25T23:11:33+00:00",
@@ -3303,7 +3303,7 @@
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
       "youtube_id": "jxcFEHRDZFU",
-      "yt_views": 718
+      "yt_views": 847
     },
     {
       "date": "2026-11-26T04:57:29+00:00",
@@ -3320,7 +3320,25 @@
       "warnings": [
         "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
       ],
-      "youtube_id": "JVAC6ub_Bqg"
+      "youtube_id": "JVAC6ub_Bqg",
+      "yt_views": 1203
+    },
+    {
+      "date": "2026-11-26T11:08:17+00:00",
+      "kind": "multiply",
+      "seed": 4,
+      "melody": "lullaby",
+      "timbre": "bell",
+      "title": "Every bounce adds a new ball 🎵 Name the song",
+      "duration": 63.4,
+      "why": "rotation",
+      "quiz": true,
+      "tiktok_note": "Song-Rätsel: Originalton behalten (keinen anderen Sound wählen) – die Frage dreht sich um die Melodie.",
+      "release": "https://github.com/hthkrksy54-dotcom/Loop-Physics/releases/tag/sims-20261126-multiply-4",
+      "warnings": [
+        "instagram: Instagram access for @loop_physics is not working: token check failed (400): {\"error\":{\"message\":\"Error validating access token: This Instagram account needs to complete a checkpoint before it can access this app. To recover access, log in to www.instagram.com and follow the i"
+      ],
+      "youtube_id": "XOwnvze8wBs"
     }
   ],
   "followers": [
